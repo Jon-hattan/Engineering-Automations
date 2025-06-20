@@ -1,0 +1,45 @@
+﻿{
+  "Metadata": {
+    "Id": "b06fb60e-b22c-4152-9e7e-4246db6d5e32",
+    "Kind": "FormIo"
+  },
+  "DesignProperties": {
+    "Title": "loading popup",
+    "Width": 50,
+    "Height": 50,
+    "Theme": "Default",
+    "ShowInTaskbar": true,
+    "ShowMargin": true,
+    "CustomStyle": ".text {\r\nfont-weight: bold;\r\ntext-align: center;\r\n}\r\n\r\n.loading-popup{\r\nfont-weight: bold;\r\ntext-align: center;\r\n}\r\n\r\n\r\n"
+  },
+  "Data": {
+    "components": [
+      {
+        "html": "<p>Your table is loading, please wait.</p>",
+        "label": "Content",
+        "customClass": "text",
+        "refreshOnChange": false,
+        "key": "content",
+        "type": "content",
+        "input": false,
+        "tableView": false
+      },
+      {
+        "label": "HTML",
+        "className": "loading-popup",
+        "attrs": [
+          {
+            "attr": "",
+            "value": ""
+          }
+        ],
+        "content": "<img id=\"myimage\" src=\"loading-5325468-4450387.webp\">",
+        "refreshOnChange": false,
+        "key": "html",
+        "type": "htmlelement",
+        "input": false,
+        "tableView": false
+      }
+    ]
+  }
+}
