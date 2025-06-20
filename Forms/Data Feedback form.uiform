@@ -60,7 +60,7 @@
                 "conditional": {
                   "show": true,
                   "when": "undoButtonVisible",
-                  "eq": "True"
+                  "eq": "true"
                 },
                 "type": "button",
                 "input": true
@@ -90,7 +90,7 @@
         "input": true
       },
       {
-        "label": "undo_button_visible",
+        "label": "undo",
         "key": "undoButtonVisible",
         "type": "hidden",
         "input": true,

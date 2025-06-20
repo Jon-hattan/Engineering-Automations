@@ -94,7 +94,7 @@
       <AssemblyReference>Microsoft.VisualBasic.Core</AssemblyReference>
     </sco:Collection>
   </TextExpression.ReferencesForImplementation>
-  <Sequence DisplayName="test2" sap:VirtualizedContainerService.HintSize="1311,768" sap2010:WorkflowViewState.IdRef="Sequence_1">
+  <Sequence DisplayName="test2" sap:VirtualizedContainerService.HintSize="1311,651" sap2010:WorkflowViewState.IdRef="Sequence_1">
     <Sequence.Variables>
       <Variable x:TypeArguments="x:String" Name="filename" />
       <Variable x:TypeArguments="sd:DataTable" Name="table" />
@@ -108,7 +108,7 @@
     </sap:WorkflowViewStateService.ViewState>
     <ufa:ShowFormActivity Height="{x:Null}" InstanceName="{x:Null}" Left="{x:Null}" ShowInTaskbar="{x:Null}" ShowMargin="{x:Null}" Title="{x:Null}" Top="{x:Null}" TopMost="{x:Null}" Width="{x:Null}" WindowState="{x:Null}" DisplayName="Show Form" FormId="a1597cd9-22a5-4ee5-93ca-995679802a8d" sap:VirtualizedContainerService.HintSize="416,218" sap2010:WorkflowViewState.IdRef="ShowFormActivity_1" IsAsync="True">
       <ufa:ShowFormActivity.Arguments>
-        <scg:Dictionary x:TypeArguments="x:String, Argument" />
+        <InArgument x:TypeArguments="x:Boolean" x:Key="undoButtonVisible">False</InArgument>
       </ufa:ShowFormActivity.Arguments>
     </ufa:ShowFormActivity>
     <ui:StartTriggers ArgumentsVariable="{x:Null}" ContinueOnError="{x:Null}" DisplayName="Run Local Triggers" sap:VirtualizedContainerService.HintSize="416,127" sap2010:WorkflowViewState.IdRef="StartTriggers_1" UnSafe="False" WorkflowFileName=".local\generated\Triggers.Generated.xaml">
@@ -122,7 +122,6 @@
         <OutArgument x:TypeArguments="x:Boolean" x:Key="finish">[finish]</OutArgument>
       </ufa:GetFormFieldsActivity.Arguments>
     </ufa:GetFormFieldsActivity>
-    <ufa:CloseFormActivity FormId="{x:Null}" InstanceName="{x:Null}" DisplayName="Close Form" sap:VirtualizedContainerService.HintSize="416,120" sap2010:WorkflowViewState.IdRef="CloseFormActivity_1" />
-    <ui:MessageBox Caption="{x:Null}" ChosenButton="{x:Null}" AutoCloseAfter="00:00:00" DisplayName="Message Box" sap:VirtualizedContainerService.HintSize="416,108" sap2010:WorkflowViewState.IdRef="MessageBox_2" Text="[finish &amp; vbNewLine &amp; feedback]" />
+    <ufa:CloseFormActivity FormId="{x:Null}" InstanceName="{x:Null}" DisplayName="Close Form" sap:VirtualizedContainerService.HintSize="416,111" sap2010:WorkflowViewState.IdRef="CloseFormActivity_1" />
   </Sequence>
 </Activity>
