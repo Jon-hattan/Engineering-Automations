@@ -22,6 +22,21 @@
         "type": "label"
       },
       {
+        "label": "HTML",
+        "attrs": [
+          {
+            "attr": "",
+            "value": ""
+          }
+        ],
+        "content": "{{data.htmlTable}}",
+        "refreshOnChange": true,
+        "key": "htmlTable",
+        "type": "htmlelement",
+        "input": false,
+        "tableView": false
+      },
+      {
         "label": "If you are unsatified with the data generated, please fill in type in the box below what you like to be changed. (The request will be taken by an LLM. Please be as descriptive as possible). <b> Otherwise, click 'Finish'. </b>",
         "tableView": true,
         "key": "Feedback",
