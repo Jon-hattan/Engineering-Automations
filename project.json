@@ -9,8 +9,9 @@
     "UiPath.Form.Activities": "[25.4.1]",
     "UiPath.GSuite.Activities": "3.0.10",
     "UiPath.IntegrationService.Activities": "[1.15.0]",
+    "UiPath.Mail.Activities": "[2.2.0-preview]",
     "UiPath.MicrosoftOffice365.Activities": "[3.2.0-preview]",
-    "UiPath.System.Activities": "[25.4.2]"
+    "UiPath.System.Activities": "[25.4.4]"
   },
   "webServices": [],
   "entitiesStores": [],

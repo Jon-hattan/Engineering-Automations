@@ -1,0 +1,47 @@
+﻿{
+  "Metadata": {
+    "Id": "aff229fd-7129-4ae4-9e43-636800e1963c",
+    "Kind": "FormIo"
+  },
+  "DesignProperties": {
+    "Title": "testform",
+    "Theme": "Default",
+    "ShowInTaskbar": true,
+    "ShowMargin": true,
+    "CustomStyle": ""
+  },
+  "Data": {
+    "components": [
+      {
+        "label": "Text Field",
+        "tableView": true,
+        "key": "textField",
+        "type": "textfield",
+        "input": true
+      },
+      {
+        "label": "HTML",
+        "attrs": [
+          {
+            "attr": "",
+            "value": ""
+          }
+        ],
+        "content": "{{data.htmlTable}}",
+        "refreshOnChange": true,
+        "key": "htmlTable",
+        "type": "htmlelement",
+        "input": false,
+        "tableView": false
+      },
+      {
+        "type": "button",
+        "label": "Submit",
+        "key": "submit",
+        "disableOnInvalid": true,
+        "input": true,
+        "tableView": false
+      }
+    ]
+  }
+}
