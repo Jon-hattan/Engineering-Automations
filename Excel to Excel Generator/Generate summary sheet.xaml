@@ -1,15 +1,4 @@
-<Activity mc:Ignorable="sap sap2010" x:Class="test4" xmlns="http://schemas.microsoft.com/netfx/2009/xaml/activities" xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" xmlns:sap="http://schemas.microsoft.com/netfx/2009/xaml/activities/presentation" xmlns:sap2010="http://schemas.microsoft.com/netfx/2010/xaml/activities/presentation" xmlns:scg="clr-namespace:System.Collections.Generic;assembly=System.Private.CoreLib" xmlns:sco="clr-namespace:System.Collections.ObjectModel;assembly=System.Private.CoreLib" xmlns:ufa="clr-namespace:UiPath.Forms.Activities;assembly=UiPath.Forms.Activities" xmlns:ui="http://schemas.uipath.com/workflow/activities" xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml">
-  <x:Members>
-    <x:Property Name="title" Type="InArgument(x:String)" />
-    <x:Property Name="exceloutput_filePath" Type="OutArgument(x:String)" />
-    <x:Property Name="selected_output_sheet" Type="OutArgument(x:String)" />
-    <x:Property Name="exceltemplate_filePath" Type="OutArgument(x:String)" />
-    <x:Property Name="selected_template_sheet" Type="OutArgument(x:String)" />
-  </x:Members>
-  <VisualBasic.Settings>
-    <x:Null />
-  </VisualBasic.Settings>
-  <sap2010:WorkflowViewState.IdRef>test4_1</sap2010:WorkflowViewState.IdRef>
+<Activity mc:Ignorable="sap sap2010" x:Class="Generate_summary_sheet" VisualBasic.Settings="{x:Null}" sap2010:WorkflowViewState.IdRef="Generate_summary_sheet_1" xmlns="http://schemas.microsoft.com/netfx/2009/xaml/activities" xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" xmlns:sap="http://schemas.microsoft.com/netfx/2009/xaml/activities/presentation" xmlns:sap2010="http://schemas.microsoft.com/netfx/2010/xaml/activities/presentation" xmlns:scg="clr-namespace:System.Collections.Generic;assembly=System.Private.CoreLib" xmlns:sco="clr-namespace:System.Collections.ObjectModel;assembly=System.Private.CoreLib" xmlns:sd="clr-namespace:System.Data;assembly=System.Data.Common" xmlns:ui="http://schemas.uipath.com/workflow/activities" xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml">
   <TextExpression.NamespacesForImplementation>
     <sco:Collection x:TypeArguments="x:String">
       <x:String>System.Activities</x:String>
@@ -37,12 +26,7 @@
       <x:String>GlobalVariablesNamespace</x:String>
       <x:String>GlobalConstantsNamespace</x:String>
       <x:String>System.Runtime.Serialization</x:String>
-      <x:String>UiPath.Studio.Forms.Runtime</x:String>
       <x:String>System.Reflection</x:String>
-      <x:String>UiPath.Forms.Activities</x:String>
-      <x:String>UiPath.Platform.GlobalVariables</x:String>
-      <x:String>UiPath.Forms.Activities.Base</x:String>
-      <x:String>UiPath.Platform.Triggers</x:String>
       <x:String>System.Linq.Expressions</x:String>
     </sco:Collection>
   </TextExpression.NamespacesForImplementation>
@@ -74,12 +58,9 @@
       <AssemblyReference>System.Private.DataContractSerialization</AssemblyReference>
       <AssemblyReference>System.Runtime.Serialization.Formatters</AssemblyReference>
       <AssemblyReference>System.Runtime.Serialization.Primitives</AssemblyReference>
-      <AssemblyReference>UiPath.Studio.Forms.Runtime</AssemblyReference>
       <AssemblyReference>System.Reflection.DispatchProxy</AssemblyReference>
       <AssemblyReference>System.Reflection.TypeExtensions</AssemblyReference>
       <AssemblyReference>System.Reflection.Metadata</AssemblyReference>
-      <AssemblyReference>UiPath.Forms.Activities</AssemblyReference>
-      <AssemblyReference>UiPath.Platform</AssemblyReference>
       <AssemblyReference>System.Memory.Data</AssemblyReference>
       <AssemblyReference>UiPath.Excel.Activities.Design</AssemblyReference>
       <AssemblyReference>System.Console</AssemblyReference>
@@ -92,35 +73,27 @@
       <AssemblyReference>System.Collections</AssemblyReference>
       <AssemblyReference>System.Collections.NonGeneric</AssemblyReference>
       <AssemblyReference>System.Linq.Expressions</AssemblyReference>
-      <AssemblyReference>System.CodeDom</AssemblyReference>
-      <AssemblyReference>Microsoft.VisualBasic.Forms</AssemblyReference>
-      <AssemblyReference>Microsoft.VisualBasic.Core</AssemblyReference>
     </sco:Collection>
   </TextExpression.ReferencesForImplementation>
-  <Sequence DisplayName="test4" sap:VirtualizedContainerService.HintSize="1311,648" sap2010:WorkflowViewState.IdRef="Sequence_1">
+  <Sequence DisplayName="Generate_summary_sheet" sap:VirtualizedContainerService.HintSize="1315,636.04" sap2010:WorkflowViewState.IdRef="Sequence_1">
+    <Sequence.Variables>
+      <Variable x:TypeArguments="x:String" Name="filepath" />
+      <Variable x:TypeArguments="x:String" Name="table" />
+    </Sequence.Variables>
     <sap:WorkflowViewStateService.ViewState>
       <scg:Dictionary x:TypeArguments="x:String, x:Object">
         <x:Boolean x:Key="IsExpanded">True</x:Boolean>
       </scg:Dictionary>
     </sap:WorkflowViewStateService.ViewState>
-    <ufa:ShowFormActivity Height="{x:Null}" InstanceName="{x:Null}" Left="{x:Null}" ShowInTaskbar="{x:Null}" ShowMargin="{x:Null}" Title="{x:Null}" Top="{x:Null}" TopMost="{x:Null}" Width="{x:Null}" WindowState="{x:Null}" DisplayName="Show Form" FormId="38efa2d6-d038-43d8-9169-20fec1495836" sap:VirtualizedContainerService.HintSize="416,218" sap2010:WorkflowViewState.IdRef="ShowFormActivity_1" IsAsync="True">
-      <ufa:ShowFormActivity.Arguments>
-        <InArgument x:TypeArguments="x:String" x:Key="title">[title]</InArgument>
-      </ufa:ShowFormActivity.Arguments>
-    </ufa:ShowFormActivity>
-    <ui:StartTriggers ArgumentsVariable="{x:Null}" ContinueOnError="{x:Null}" DisplayName="Run Local Triggers" sap:VirtualizedContainerService.HintSize="416,127" sap2010:WorkflowViewState.IdRef="StartTriggers_1" UnSafe="False" WorkflowFileName=".local\generated\Triggers.Generated.xaml">
-      <ui:StartTriggers.Arguments>
-        <scg:Dictionary x:TypeArguments="x:String, Argument" />
-      </ui:StartTriggers.Arguments>
-    </ui:StartTriggers>
-    <ufa:GetFormFieldsActivity InstanceName="{x:Null}" DisplayName="Get Form Values" FormId="38efa2d6-d038-43d8-9169-20fec1495836" sap:VirtualizedContainerService.HintSize="416,172" sap2010:WorkflowViewState.IdRef="GetFormFieldsActivity_1">
-      <ufa:GetFormFieldsActivity.Arguments>
-        <OutArgument x:TypeArguments="x:String" x:Key="exceltemplate_filePath">[exceltemplate_filePath]</OutArgument>
-        <OutArgument x:TypeArguments="x:String" x:Key="exceloutput_filePath">[exceloutput_filePath]</OutArgument>
-        <OutArgument x:TypeArguments="x:String" x:Key="sheets_lst_output">[selected_output_sheet]</OutArgument>
-        <OutArgument x:TypeArguments="x:String" x:Key="sheets_lst_template">[selected_template_sheet]</OutArgument>
-      </ufa:GetFormFieldsActivity.Arguments>
-    </ufa:GetFormFieldsActivity>
-    <ui:MessageBox Caption="{x:Null}" ChosenButton="{x:Null}" AutoCloseAfter="00:00:00" DisplayName="Message Box" sap:VirtualizedContainerService.HintSize="416,108" sap2010:WorkflowViewState.IdRef="MessageBox_1" Text="[exceloutput_filePath &amp; &quot; &quot; &amp; selected_output_sheet &amp; vbNewLine &amp; exceltemplate_filePath  &amp; &quot; &quot; &amp; selected_template_sheet]" />
+    <ui:InvokeWorkflowFile ArgumentsVariable="{x:Null}" ContinueOnError="{x:Null}" DisplayName="Generic Excel to Excel Generator - Invoke Workflow File (Excel to Excel Generator\Generic Excel to Excel Generator.xaml)" sap:VirtualizedContainerService.HintSize="416,168" sap2010:WorkflowViewState.IdRef="InvokeWorkflowFile_1" UnSafe="False" WorkflowFileName="Excel to Excel Generator\Generic Excel to Excel Generator.xaml">
+      <ui:InvokeWorkflowFile.Arguments>
+        <InArgument x:TypeArguments="x:String" x:Key="customPrompt">Provide a summary table</InArgument>
+        <InArgument x:TypeArguments="x:Boolean" x:Key="custom_excel_write">False</InArgument>
+        <OutArgument x:TypeArguments="sd:DataTable" x:Key="generatedTable" />
+        <OutArgument x:TypeArguments="x:String" x:Key="excel_file_path_arg">[filepath]</OutArgument>
+        <OutArgument x:TypeArguments="x:String" x:Key="excelSheetName" />
+        <InArgument x:TypeArguments="x:String" x:Key="title">Summary</InArgument>
+      </ui:InvokeWorkflowFile.Arguments>
+    </ui:InvokeWorkflowFile>
   </Sequence>
 </Activity>

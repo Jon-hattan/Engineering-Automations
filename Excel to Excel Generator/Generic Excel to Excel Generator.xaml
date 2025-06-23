@@ -1,4 +1,4 @@
-<Activity mc:Ignorable="sap sap2010" x:Class="Main" this:Main.title="Generic Table Generator" this:Main.customPrompt="create a table from the data" this:Main.custom_excel_write="True" xmlns="http://schemas.microsoft.com/netfx/2009/xaml/activities" xmlns:isactr="http://schemas.uipath.com/workflow/integration-service-activities/isactr" xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" xmlns:s="clr-namespace:System;assembly=System.Private.CoreLib" xmlns:sap="http://schemas.microsoft.com/netfx/2009/xaml/activities/presentation" xmlns:sap2010="http://schemas.microsoft.com/netfx/2010/xaml/activities/presentation" xmlns:sc="clr-namespace:System.ComponentModel;assembly=System.ComponentModel.TypeConverter" xmlns:scg="clr-namespace:System.Collections.Generic;assembly=System.Private.CoreLib" xmlns:sco="clr-namespace:System.Collections.ObjectModel;assembly=System.Private.CoreLib" xmlns:sd="clr-namespace:System.Data;assembly=System.Data.Common" xmlns:this="clr-namespace:" xmlns:uasa="clr-namespace:UiPath.Activities.System.Arrays;assembly=UiPath.System.Activities" xmlns:uasc="clr-namespace:UiPath.Activities.System.Collections;assembly=UiPath.System.Activities" xmlns:ue="clr-namespace:UiPath.Excel;assembly=UiPath.Excel.Activities" xmlns:ueab="clr-namespace:UiPath.Excel.Activities.Business;assembly=UiPath.Excel.Activities" xmlns:ufa="clr-namespace:UiPath.Forms.Activities;assembly=UiPath.Forms.Activities" xmlns:ui="http://schemas.uipath.com/workflow/activities" xmlns:uiascb="clr-namespace:UiPath.IntegrationService.Activities.SWEntities.CD9CAA8ACB5_v2_sub_generateChatCompletion_Create.Bundle;assembly=CD9CAA8ACB5_v2_sub_g.RO0JB4QXNDQ1A3W7H4gmEz12" xmlns:uisape="clr-namespace:UiPath.IntelligentOCR.StudioWeb.Activities.PDF.ExtractPDFText;assembly=UiPath.IntelligentOCR.StudioWeb.Activities" xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml">
+<Activity mc:Ignorable="sap sap2010" x:Class="Main" this:Main.title="Generic Table Generator" this:Main.custom_excel_write="False" xmlns="http://schemas.microsoft.com/netfx/2009/xaml/activities" xmlns:isactr="http://schemas.uipath.com/workflow/integration-service-activities/isactr" xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" xmlns:s="clr-namespace:System;assembly=System.Private.CoreLib" xmlns:sap="http://schemas.microsoft.com/netfx/2009/xaml/activities/presentation" xmlns:sap2010="http://schemas.microsoft.com/netfx/2010/xaml/activities/presentation" xmlns:sc="clr-namespace:System.ComponentModel;assembly=System.ComponentModel.TypeConverter" xmlns:scg="clr-namespace:System.Collections.Generic;assembly=System.Private.CoreLib" xmlns:sco="clr-namespace:System.Collections.ObjectModel;assembly=System.Private.CoreLib" xmlns:sd="clr-namespace:System.Data;assembly=System.Data.Common" xmlns:this="clr-namespace:" xmlns:uasa="clr-namespace:UiPath.Activities.System.Arrays;assembly=UiPath.System.Activities" xmlns:uasc="clr-namespace:UiPath.Activities.System.Collections;assembly=UiPath.System.Activities" xmlns:ue="clr-namespace:UiPath.Excel;assembly=UiPath.Excel.Activities" xmlns:ueab="clr-namespace:UiPath.Excel.Activities.Business;assembly=UiPath.Excel.Activities" xmlns:ufa="clr-namespace:UiPath.Forms.Activities;assembly=UiPath.Forms.Activities" xmlns:ui="http://schemas.uipath.com/workflow/activities" xmlns:uiascb="clr-namespace:UiPath.IntegrationService.Activities.SWEntities.CD9CAA8ACB5_v2_sub_generateChatCompletion_Create.Bundle;assembly=CD9CAA8ACB5_v2_sub_g.RO0JB4QXNDQ1A3W7H4gmEz12" xmlns:upr="clr-namespace:UiPath.Platform.ResourceHandling;assembly=UiPath.Platform" xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml">
   <x:Members>
     <x:Property Name="title" Type="InArgument(x:String)" />
     <x:Property Name="customPrompt" Type="InArgument(x:String)" />
@@ -7,6 +7,11 @@
     <x:Property Name="excel_file_path_arg" Type="OutArgument(x:String)" />
     <x:Property Name="excelSheetName" Type="OutArgument(x:String)" />
   </x:Members>
+  <this:Main.customPrompt>
+    <InArgument x:TypeArguments="x:String">
+      <Literal x:TypeArguments="x:String" Value="" />
+    </InArgument>
+  </this:Main.customPrompt>
   <VisualBasic.Settings>
     <x:Null />
   </VisualBasic.Settings>
@@ -298,14 +303,11 @@
       <AssemblyReference>System.Linq.Async.Queryable</AssemblyReference>
     </sco:Collection>
   </TextExpression.ReferencesForImplementation>
-  <Sequence sap2010:Annotation.AnnotationText="using content generator in integration service activities, search for the all the equipments in a technical proposal, and their respective quantities, electrical power, voltage, etc. store in a datatable" DisplayName="Main Sequence" sap:VirtualizedContainerService.HintSize="1311,7133" sap2010:WorkflowViewState.IdRef="Sequence_1">
+  <Sequence sap2010:Annotation.AnnotationText="using content generator in integration service activities, search for the all the equipments in a technical proposal, and their respective quantities, electrical power, voltage, etc. store in a datatable" DisplayName="Main Sequence" sap:VirtualizedContainerService.HintSize="1309,7792" sap2010:WorkflowViewState.IdRef="Sequence_1">
     <Sequence.Variables>
       <Variable x:TypeArguments="x:String" Name="ProposalText" />
       <Variable x:TypeArguments="x:String" Name="ExtractedInfo" />
       <Variable x:TypeArguments="x:String" Name="DataTableString" />
-      <Variable x:TypeArguments="x:String" Name="excel_filePath" />
-      <Variable x:TypeArguments="scg:List(x:String)" Name="pdf_filePaths" />
-      <Variable x:TypeArguments="x:String" Name="selectedSheet" />
       <Variable x:TypeArguments="sd:DataTable" Name="Table" />
       <Variable x:TypeArguments="x:String" Name="Feedback" />
       <Variable x:TypeArguments="x:Boolean" Default="False" Name="finish" />
@@ -314,6 +316,13 @@
       <Variable x:TypeArguments="scg:IList(x:String)" Default="[New List(of String)]" Name="cacheCSV" />
       <Variable x:TypeArguments="x:Boolean" Default="False" Name="undoButtonVisible" />
       <Variable x:TypeArguments="x:String" Name="htmlContent" />
+      <Variable x:TypeArguments="x:String" Name="exceltemplate_filePath" />
+      <Variable x:TypeArguments="x:String" Name="exceloutput_filePath" />
+      <Variable x:TypeArguments="x:String" Name="selected_output_sheet" />
+      <Variable x:TypeArguments="x:String" Name="selected_template_sheet" />
+      <Variable x:TypeArguments="sd:DataTable" Name="TemplateSheet" />
+      <Variable x:TypeArguments="x:String" Name="TemplateSheet_STR" />
+      <Variable x:TypeArguments="x:String" Name="GenericPrompt" />
     </Sequence.Variables>
     <sap:WorkflowViewStateService.ViewState>
       <scg:Dictionary x:TypeArguments="x:String, x:Object">
@@ -321,15 +330,83 @@
         <x:Boolean x:Key="IsAnnotationDocked">True</x:Boolean>
       </scg:Dictionary>
     </sap:WorkflowViewStateService.ViewState>
-    <ui:InvokeWorkflowFile ArgumentsVariable="{x:Null}" ContinueOnError="{x:Null}" DisplayName="Select Excel and PDF - Invoke Workflow File (Auxillary Sequences\Select Excel and PDF.xaml)" sap:VirtualizedContainerService.HintSize="1166,177" sap2010:WorkflowViewState.IdRef="InvokeWorkflowFile_1" UnSafe="False" WorkflowFileName="Auxillary Sequences\Select Excel and PDF.xaml">
-      <ui:InvokeWorkflowFile.Arguments>
-        <OutArgument x:TypeArguments="x:String" x:Key="excel_filePath">[excel_filePath]</OutArgument>
-        <OutArgument x:TypeArguments="scg:List(x:String)" x:Key="pdf_filePaths">[pdf_filePaths]</OutArgument>
-        <OutArgument x:TypeArguments="x:String" x:Key="selectedSheet">[selectedSheet]</OutArgument>
-        <InArgument x:TypeArguments="x:String" x:Key="title">[title]</InArgument>
-      </ui:InvokeWorkflowFile.Arguments>
-    </ui:InvokeWorkflowFile>
-    <Parallel sap2010:Annotation.AnnotationText="Extract text from pdf. Churn into gpt-4. Receive table in CSV format. Write to Excel.&#xA;&#xA;Open loading popup to show user it is loading." sap:VirtualizedContainerService.HintSize="1166,1878" sap2010:WorkflowViewState.IdRef="Parallel_1">
+    <ui:CommentOut DisplayName="Comment Out" sap:VirtualizedContainerService.HintSize="1166,339" sap2010:WorkflowViewState.IdRef="CommentOut_20">
+      <ui:CommentOut.Body>
+        <Sequence DisplayName="Ignored Activities" sap:VirtualizedContainerService.HintSize="450,228" sap2010:WorkflowViewState.IdRef="Sequence_50">
+          <sap:WorkflowViewStateService.ViewState>
+            <scg:Dictionary x:TypeArguments="x:String, x:Object">
+              <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+            </scg:Dictionary>
+          </sap:WorkflowViewStateService.ViewState>
+          <ui:InvokeWorkflowFile ArgumentsVariable="{x:Null}" ContinueOnError="{x:Null}" DisplayName="Select Excel and PDF - Invoke Workflow File (Auxillary Sequences\Select Excel and PDF.xaml)" sap:VirtualizedContainerService.HintSize="416,168" sap2010:WorkflowViewState.IdRef="InvokeWorkflowFile_1" UnSafe="False" WorkflowFileName="Auxillary Sequences\File Select Sequences\Select Excel Template and Output.xaml">
+            <ui:InvokeWorkflowFile.Arguments>
+              <OutArgument x:TypeArguments="x:String" x:Key="exceloutput_filePath">[exceloutput_filePath]</OutArgument>
+              <OutArgument x:TypeArguments="x:String" x:Key="exceltemplate_filePath">[exceltemplate_filePath]</OutArgument>
+              <OutArgument x:TypeArguments="x:String" x:Key="selected_output_sheet">[selected_output_sheet]</OutArgument>
+              <InArgument x:TypeArguments="x:String" x:Key="title">[title]</InArgument>
+              <OutArgument x:TypeArguments="x:String" x:Key="selected_template_sheet">[selected_template_sheet]</OutArgument>
+            </ui:InvokeWorkflowFile.Arguments>
+          </ui:InvokeWorkflowFile>
+        </Sequence>
+      </ui:CommentOut.Body>
+    </ui:CommentOut>
+    <Assign sap:VirtualizedContainerService.HintSize="1166,114" sap2010:WorkflowViewState.IdRef="Assign_14">
+      <Assign.To>
+        <OutArgument x:TypeArguments="x:String">[exceloutput_filePath]</OutArgument>
+      </Assign.To>
+      <Assign.Value>
+        <InArgument x:TypeArguments="x:String">C:\Users\CHEWJ1\Desktop\automation test.xlsx</InArgument>
+      </Assign.Value>
+    </Assign>
+    <Assign sap:VirtualizedContainerService.HintSize="1166,114" sap2010:WorkflowViewState.IdRef="Assign_15">
+      <Assign.To>
+        <OutArgument x:TypeArguments="x:String">[exceltemplate_filePath]</OutArgument>
+      </Assign.To>
+      <Assign.Value>
+        <InArgument x:TypeArguments="x:String">C:\Users\CHEWJ1\Downloads\C4C1 Electrical Load List (1).xlsx</InArgument>
+      </Assign.Value>
+    </Assign>
+    <Assign sap:VirtualizedContainerService.HintSize="1166,114" sap2010:WorkflowViewState.IdRef="Assign_16">
+      <Assign.To>
+        <OutArgument x:TypeArguments="x:String">[selected_output_sheet]</OutArgument>
+      </Assign.To>
+      <Assign.Value>
+        <InArgument x:TypeArguments="x:String">Sheet5</InArgument>
+      </Assign.Value>
+    </Assign>
+    <Assign sap:VirtualizedContainerService.HintSize="1166,114" sap2010:WorkflowViewState.IdRef="Assign_17">
+      <Assign.To>
+        <OutArgument x:TypeArguments="x:String">[selected_template_sheet]</OutArgument>
+      </Assign.To>
+      <Assign.Value>
+        <InArgument x:TypeArguments="x:String">Metadata</InArgument>
+      </Assign.Value>
+    </Assign>
+    <Assign sap:VirtualizedContainerService.HintSize="1166,115" sap2010:WorkflowViewState.IdRef="Assign_13">
+      <Assign.To>
+        <OutArgument x:TypeArguments="x:String">[GenericPrompt]</OutArgument>
+      </Assign.To>
+      <Assign.Value>
+        <InArgument x:TypeArguments="x:String" xml:space="preserve">[String.Format("You are a data transformation assistant. You will be given an Excel file With multiple sheets. Your task Is To analyze the specified sheet And generate a New table based On user instructions. 
+This table will be written starting From cell A1 In a New Excel file. 
+
+## INPUT CONTEXT
+- The content Of the Excel sheet Is provided below As an excel sheet
+- Specifically, process the sheet called : {0} . ENSURE THAT YOU ONLY LOOK AT THAT SHEET. NO OTHER SHEET. ONLY THIS SHEET
+- ALL FORMULAS TO BE EXTRACTED. The data may contain formulas, Not just raw values. Ensure they are extracted.
+- The user may give specific instructions, such As which rows Or columns To keep, rename, combine, reformat, Or calculate.
+- Some instructions may include Using the sheet As a template To generate a New version (e.g., adapting an electrical load list For a different system).
+- Ensure any formulas are preserved Or appropriately recalculated In the New data. Ensure that the cell references are also modified to fit the new positions of all the cells, given that the first cell will be on A1.
+
+## YOUR TASK
+1. Analyze the provided sheet based On user instructions.
+2. Generate a New table In response, in CSV format. Ensure that commas are included with the appropriate escape characters.
+3. Maintain logical Structure And relationships.
+4. PRESERVE FORMULAS INDICATED. Ensure any formulas are translated accurately In the New table, e.g., If cells are shifted, the formula should reference the correct New cell positions.
+5. Do Not include any explanations Or extra text—only the transformed table. ", selected_template_sheet) &amp; vbNewLine &amp; customPrompt]</InArgument>
+      </Assign.Value>
+    </Assign>
+    <Parallel sap2010:Annotation.AnnotationText="Extract text from pdf. Churn into gpt-4. Receive table in CSV format. Write to Excel.&#xA;&#xA;Open loading popup to show user it is loading." sap:VirtualizedContainerService.HintSize="1166,1397" sap2010:WorkflowViewState.IdRef="Parallel_1">
       <Parallel.Variables>
         <Variable x:TypeArguments="x:Boolean" Default="False" Name="process_finished" />
       </Parallel.Variables>
@@ -340,7 +417,7 @@
           <x:Boolean x:Key="IsAnnotationDocked">True</x:Boolean>
         </scg:Dictionary>
       </sap:WorkflowViewStateService.ViewState>
-      <Sequence DisplayName="Fill out table using pdf data" sap:VirtualizedContainerService.HintSize="544,1742" sap2010:WorkflowViewState.IdRef="Sequence_4">
+      <Sequence DisplayName="Fill out table using pdf data" sap:VirtualizedContainerService.HintSize="508,1261" sap2010:WorkflowViewState.IdRef="Sequence_4">
         <Sequence.Variables>
           <Variable x:TypeArguments="x:String" Name="Data" />
           <Variable x:TypeArguments="x:Int32" Name="document_idx" />
@@ -351,40 +428,66 @@
             <x:Boolean x:Key="IsPinned">False</x:Boolean>
           </scg:Dictionary>
         </sap:WorkflowViewStateService.ViewState>
-        <ui:ForEach x:TypeArguments="x:String" sap2010:Annotation.AnnotationText="Collate all the pdfs into one text" CurrentIndex="[document_idx]" DisplayName="For Each currentPath" sap:VirtualizedContainerService.HintSize="470,448" sap2010:WorkflowViewState.IdRef="ForEach`1_1" Values="[pdf_filePaths]">
-          <ui:ForEach.Body>
-            <ActivityAction x:TypeArguments="x:String">
-              <ActivityAction.Argument>
-                <DelegateInArgument x:TypeArguments="x:String" Name="currentPath" />
-              </ActivityAction.Argument>
-              <Sequence DisplayName="Body" sap:VirtualizedContainerService.HintSize="468,287" sap2010:WorkflowViewState.IdRef="Sequence_41">
-                <Sequence.Variables>
-                  <Variable x:TypeArguments="x:String" Name="currentText" />
-                </Sequence.Variables>
+        <ui:CommentOut DisplayName="Comment Out" sap:VirtualizedContainerService.HintSize="434,57" sap2010:WorkflowViewState.IdRef="CommentOut_18">
+          <ui:CommentOut.Body>
+            <Sequence DisplayName="Ignored Activities" sap:VirtualizedContainerService.HintSize="450,25" sap2010:WorkflowViewState.IdRef="Sequence_48">
+              <sap:WorkflowViewStateService.ViewState>
+                <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                  <x:Boolean x:Key="IsExpanded">False</x:Boolean>
+                  <x:Boolean x:Key="IsPinned">False</x:Boolean>
+                </scg:Dictionary>
+              </sap:WorkflowViewStateService.ViewState>
+              <ueab:ExcelProcessScopeX DisplayAlerts="{x:Null}" ExistingProcessAction="{x:Null}" FileConflictResolution="{x:Null}" LaunchMethod="{x:Null}" LaunchTimeout="{x:Null}" MacroSettings="{x:Null}" ProcessMode="{x:Null}" ShowExcelWindow="{x:Null}" DisplayName="Excel Process Scope" sap:VirtualizedContainerService.HintSize="416,57" sap2010:WorkflowViewState.IdRef="ExcelProcessScopeX_5">
+                <ueab:ExcelProcessScopeX.Body>
+                  <ActivityAction x:TypeArguments="ui:IExcelProcess">
+                    <ActivityAction.Argument>
+                      <DelegateInArgument x:TypeArguments="ui:IExcelProcess" Name="ExcelProcessScopeTag" />
+                    </ActivityAction.Argument>
+                    <Sequence DisplayName="Do" sap:VirtualizedContainerService.HintSize="546,604" sap2010:WorkflowViewState.IdRef="Sequence_45">
+                      <sap:WorkflowViewStateService.ViewState>
+                        <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                          <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+                        </scg:Dictionary>
+                      </sap:WorkflowViewStateService.ViewState>
+                      <ueab:ExcelApplicationCard Password="{x:Null}" SensitivityLabel="{x:Null}" AutoSave="False" CreateNewFile="False" DisplayName="Use Excel File" sap:VirtualizedContainerService.HintSize="512,544" sap2010:WorkflowViewState.IdRef="ExcelApplicationCard_5" ReadFormatting="Default" ResizeWindow="None" SensitivityOperation="None" WorkbookPath="[exceltemplate_filePath]">
+                        <ueab:ExcelApplicationCard.Body>
+                          <ActivityAction x:TypeArguments="ue:IWorkbookQuickHandle">
+                            <ActivityAction.Argument>
+                              <DelegateInArgument x:TypeArguments="ue:IWorkbookQuickHandle" Name="ExcelTemplate" />
+                            </ActivityAction.Argument>
+                            <Sequence DisplayName="Do" sap:VirtualizedContainerService.HintSize="478,252" sap2010:WorkflowViewState.IdRef="Sequence_46">
+                              <sap:WorkflowViewStateService.ViewState>
+                                <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                                  <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+                                </scg:Dictionary>
+                              </sap:WorkflowViewStateService.ViewState>
+                              <ueab:ReadRangeX DisplayName="Read Range" sap:VirtualizedContainerService.HintSize="444,192" sap2010:WorkflowViewState.IdRef="ReadRangeX_1" Range="[ExcelTemplate.Sheet(selected_template_sheet)]" ReadFormatting="RawValue" SaveTo="[TemplateSheet]" />
+                            </Sequence>
+                          </ActivityAction>
+                        </ueab:ExcelApplicationCard.Body>
+                      </ueab:ExcelApplicationCard>
+                    </Sequence>
+                  </ActivityAction>
+                </ueab:ExcelProcessScopeX.Body>
                 <sap:WorkflowViewStateService.ViewState>
                   <scg:Dictionary x:TypeArguments="x:String, x:Object">
-                    <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+                    <x:Boolean x:Key="IsExpanded">False</x:Boolean>
+                    <x:Boolean x:Key="IsPinned">False</x:Boolean>
                   </scg:Dictionary>
                 </sap:WorkflowViewStateService.ViewState>
-                <uisape:ExtractPDFText FilePassword="{x:Null}" OcrEngine="{x:Null}" ApplyOcr="False" DisplayName="Extract PDF Text" sap:VirtualizedContainerService.HintSize="434,122" sap2010:WorkflowViewState.IdRef="ExtractPDFText_1" PdfFile="[LocalResource.FromPath(currentPath)]" Text="[currentText]" />
-                <Assign sap:VirtualizedContainerService.HintSize="434,105" sap2010:WorkflowViewState.IdRef="Assign_9">
-                  <Assign.To>
-                    <OutArgument x:TypeArguments="x:String">[ProposalText]</OutArgument>
-                  </Assign.To>
-                  <Assign.Value>
-                    <InArgument x:TypeArguments="x:String">[ProposalText &amp; String.format("DOCUMENT {0}", document_idx.ToString) &amp; vbNewLine &amp; currentText]</InArgument>
-                  </Assign.Value>
-                </Assign>
-              </Sequence>
-            </ActivityAction>
-          </ui:ForEach.Body>
+              </ueab:ExcelProcessScopeX>
+              <ui:OutputDataTable DataTable="[TemplateSheet]" DisplayName="Output Data Table as Text" sap:VirtualizedContainerService.HintSize="416,112" sap2010:WorkflowViewState.IdRef="OutputDataTable_1" Text="[TemplateSheet_STR]" />
+              <ui:MessageBox Caption="{x:Null}" ChosenButton="{x:Null}" AutoCloseAfter="00:00:00" DisplayName="Message Box" sap:VirtualizedContainerService.HintSize="416,108" sap2010:WorkflowViewState.IdRef="MessageBox_1" Text="[&quot;1&quot;]" />
+            </Sequence>
+          </ui:CommentOut.Body>
           <sap:WorkflowViewStateService.ViewState>
             <scg:Dictionary x:TypeArguments="x:String, x:Object">
-              <x:Boolean x:Key="IsAnnotationDocked">True</x:Boolean>
+              <x:Boolean x:Key="IsExpanded">False</x:Boolean>
+              <x:Boolean x:Key="IsPinned">False</x:Boolean>
             </scg:Dictionary>
           </sap:WorkflowViewStateService.ViewState>
-        </ui:ForEach>
-        <ui:CommentOut DisplayName="Comment Out" sap:VirtualizedContainerService.HintSize="470,57" sap2010:WorkflowViewState.IdRef="CommentOut_3">
+        </ui:CommentOut>
+        <ui:CommentOut DisplayName="Comment Out" sap:VirtualizedContainerService.HintSize="434,57" sap2010:WorkflowViewState.IdRef="CommentOut_3">
           <ui:CommentOut.Body>
             <Sequence DisplayName="Ignored Activities" sap:VirtualizedContainerService.HintSize="450,216" sap2010:WorkflowViewState.IdRef="Sequence_11">
               <sap:WorkflowViewStateService.ViewState>
@@ -402,16 +505,16 @@
             </scg:Dictionary>
           </sap:WorkflowViewStateService.ViewState>
         </ui:CommentOut>
-        <isactr:ConnectorActivity Configuration="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" ConnectionId="434f8ea0-0534-465a-8e55-96d9caa8acb5" DisplayName="Content Generation" sap:VirtualizedContainerService.HintSize="470,419" sap2010:WorkflowViewState.IdRef="ConnectorActivity_2" UiPathActivityTypeId="aba52a00-4c05-318d-8f99-5ad924b2f277">
+        <isactr:ConnectorActivity Configuration="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" ConnectionId="434f8ea0-0534-465a-8e55-96d9caa8acb5" DisplayName="Content Generation" sap:VirtualizedContainerService.HintSize="434,521" sap2010:WorkflowViewState.IdRef="ConnectorActivity_2" UiPathActivityTypeId="aba52a00-4c05-318d-8f99-5ad924b2f277">
           <isactr:ConnectorActivity.FieldObjects>
             <isactr:FieldObject Name="modelName" Type="FieldArgument">
               <isactr:FieldObject.Value>
-                <InArgument x:TypeArguments="x:String">gpt-4</InArgument>
+                <InArgument x:TypeArguments="x:String">anthropic.claude-3-5-sonnet-20241022-v2:0</InArgument>
               </isactr:FieldObject.Value>
             </isactr:FieldObject>
             <isactr:FieldObject Name="prompt" Type="FieldArgument">
               <isactr:FieldObject.Value>
-                <InArgument x:TypeArguments="x:String">[CustomPrompt &amp; vbnewline &amp; ProposalText]</InArgument>
+                <InArgument x:TypeArguments="x:String">[GenericPrompt]</InArgument>
               </isactr:FieldObject.Value>
             </isactr:FieldObject>
             <isactr:FieldObject Name="isPIIEnabled" Type="FieldArgument">
@@ -425,33 +528,41 @@
             <isactr:FieldObject Name="confidenceThreshold" Type="FieldArgument" />
             <isactr:FieldObject Name="topK" Type="FieldArgument">
               <isactr:FieldObject.Value>
-                <InArgument x:TypeArguments="x:Int32" />
+                <InArgument x:TypeArguments="x:Int32">40</InArgument>
               </isactr:FieldObject.Value>
             </isactr:FieldObject>
             <isactr:FieldObject Name="contextGrounding" Type="FieldArgument">
               <isactr:FieldObject.Value>
-                <InArgument x:TypeArguments="x:String">None</InArgument>
+                <InArgument x:TypeArguments="x:String">File resource</InArgument>
               </isactr:FieldObject.Value>
             </isactr:FieldObject>
-            <isactr:FieldObject Name="_file" Type="FieldArgument" />
+            <isactr:FieldObject Name="_file" Type="FieldArgument">
+              <isactr:FieldObject.Value>
+                <InArgument x:TypeArguments="upr:IResource">[LocalResource.FromPath(exceltemplate_filePath)]</InArgument>
+              </isactr:FieldObject.Value>
+            </isactr:FieldObject>
             <isactr:FieldObject Name="folderKey" Type="FieldArgument" />
             <isactr:FieldObject Name="topP" Type="FieldArgument">
               <isactr:FieldObject.Value>
-                <InArgument x:TypeArguments="x:Double" />
+                <InArgument x:TypeArguments="x:Double">0.8</InArgument>
               </isactr:FieldObject.Value>
             </isactr:FieldObject>
             <isactr:FieldObject Name="indexID" Type="FieldArgument" />
-            <isactr:FieldObject Name="numberOfResults" Type="FieldArgument" />
-            <isactr:FieldObject Name="top_p" Type="FieldArgument">
+            <isactr:FieldObject Name="numberOfResults" Type="FieldArgument">
               <isactr:FieldObject.Value>
                 <InArgument x:TypeArguments="x:Int64">1</InArgument>
               </isactr:FieldObject.Value>
             </isactr:FieldObject>
+            <isactr:FieldObject Name="top_p" Type="FieldArgument" />
             <isactr:FieldObject Name="instruction" Type="FieldArgument">
               <isactr:FieldObject.Value>
-                <InArgument x:TypeArguments="x:String" xml:space="preserve">Collate all info into a table using CSV format. Ensure that the WHOLE text is formattable from string to CSV later down the pipeline. 
-Ensure that commas included in the tables as part of the elemnts are used with the proper escape characters. 
-Ensure that newline characters are properly escaped
+                <InArgument x:TypeArguments="x:String" xml:space="preserve">Collate all info into a table using CSV format representing the New sheet contents, starting at cell A1. Ensure that the WHOLE text is formattable from string to CSV later down the pipeline. 
+Ensure:
+- commas included in the tables as part of the elemnts are used with the proper escape characters. 
+- newline characters are properly escaped
+- Header Is clearly defined.
+- ALL FORMULAS TO BE PRESERVED Where needed And updated To reflect New cell ranges.
+- Format Is clean, consistent, And usable By automation tools. 
 DO NOT PROVIDE ANY OTHER COMMENTARY. Ensure that data in each document is distinct, unless otherwise stated </InArgument>
               </isactr:FieldObject.Value>
             </isactr:FieldObject>
@@ -507,7 +618,7 @@ DO NOT PROVIDE ANY OTHER COMMENTARY. Ensure that data in each document is distin
             </isactr:FieldObject>
           </isactr:ConnectorActivity.FieldObjects>
         </isactr:ConnectorActivity>
-        <ui:CommentOut DisplayName="Comment Out" sap:VirtualizedContainerService.HintSize="470,57" sap2010:WorkflowViewState.IdRef="CommentOut_1">
+        <ui:CommentOut DisplayName="Comment Out" sap:VirtualizedContainerService.HintSize="434,57" sap2010:WorkflowViewState.IdRef="CommentOut_1">
           <ui:CommentOut.Body>
             <Sequence DisplayName="Ignored Activities" sap:VirtualizedContainerService.HintSize="450,216" sap2010:WorkflowViewState.IdRef="Sequence_9">
               <sap:WorkflowViewStateService.ViewState>
@@ -525,15 +636,32 @@ DO NOT PROVIDE ANY OTHER COMMENTARY. Ensure that data in each document is distin
             </scg:Dictionary>
           </sap:WorkflowViewStateService.ViewState>
         </ui:CommentOut>
-        <ui:GenerateDataTable ColumnSizes="{x:Null}" NewLineSeparator="{x:Null}" Positions="{x:Null}" CSVParsing="True" ColumnSeparators="," DataTable="[Table]" DisplayName="Generate Data Table From Text" sap:VirtualizedContainerService.HintSize="470,233" sap2010:WorkflowViewState.IdRef="GenerateDataTable_1" Input="[ExtractedInfo]" UseColumnHeader="True" />
-        <ui:RemoveDataRow Row="{x:Null}" sap2010:Annotation.AnnotationText="remove ''' from last row" DataTable="[Table]" DisplayName="Remove Data Row" sap:VirtualizedContainerService.HintSize="470,249" sap2010:WorkflowViewState.IdRef="RemoveDataRow_5" RowIndex="[Table.RowCount-1]">
+        <ui:GenerateDataTable ColumnSizes="{x:Null}" NewLineSeparator="{x:Null}" Positions="{x:Null}" CSVParsing="True" ColumnSeparators="," DataTable="[Table]" DisplayName="Generate Data Table From Text" sap:VirtualizedContainerService.HintSize="434,233" sap2010:WorkflowViewState.IdRef="GenerateDataTable_1" Input="[ExtractedInfo]" UseColumnHeader="True" />
+        <ui:CommentOut DisplayName="Comment Out" sap:VirtualizedContainerService.HintSize="434,57" sap2010:WorkflowViewState.IdRef="CommentOut_19">
+          <ui:CommentOut.Body>
+            <Sequence DisplayName="Ignored Activities" sap:VirtualizedContainerService.HintSize="450,300" sap2010:WorkflowViewState.IdRef="Sequence_49">
+              <sap:WorkflowViewStateService.ViewState>
+                <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                  <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+                </scg:Dictionary>
+              </sap:WorkflowViewStateService.ViewState>
+              <ui:RemoveDataRow Row="{x:Null}" sap2010:Annotation.AnnotationText="remove ''' from last row" DataTable="[Table]" DisplayName="Remove Data Row" sap:VirtualizedContainerService.HintSize="416,240" sap2010:WorkflowViewState.IdRef="RemoveDataRow_5" RowIndex="[Table.RowCount-1]">
+                <sap:WorkflowViewStateService.ViewState>
+                  <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                    <x:Boolean x:Key="IsAnnotationDocked">True</x:Boolean>
+                  </scg:Dictionary>
+                </sap:WorkflowViewStateService.ViewState>
+              </ui:RemoveDataRow>
+            </Sequence>
+          </ui:CommentOut.Body>
           <sap:WorkflowViewStateService.ViewState>
             <scg:Dictionary x:TypeArguments="x:String, x:Object">
-              <x:Boolean x:Key="IsAnnotationDocked">True</x:Boolean>
+              <x:Boolean x:Key="IsExpanded">False</x:Boolean>
+              <x:Boolean x:Key="IsPinned">False</x:Boolean>
             </scg:Dictionary>
           </sap:WorkflowViewStateService.ViewState>
-        </ui:RemoveDataRow>
-        <ui:CommentOut DisplayName="Comment Out" sap:VirtualizedContainerService.HintSize="470,57" sap2010:WorkflowViewState.IdRef="CommentOut_2">
+        </ui:CommentOut>
+        <ui:CommentOut DisplayName="Comment Out" sap:VirtualizedContainerService.HintSize="434,57" sap2010:WorkflowViewState.IdRef="CommentOut_2">
           <ui:CommentOut.Body>
             <Sequence DisplayName="Ignored Activities" sap:VirtualizedContainerService.HintSize="450,269" sap2010:WorkflowViewState.IdRef="Sequence_10">
               <sap:WorkflowViewStateService.ViewState>
@@ -555,7 +683,7 @@ DO NOT PROVIDE ANY OTHER COMMENTARY. Ensure that data in each document is distin
             </scg:Dictionary>
           </sap:WorkflowViewStateService.ViewState>
         </ui:CommentOut>
-        <ui:CommentOut DisplayName="Comment Out" sap:VirtualizedContainerService.HintSize="470,57" sap2010:WorkflowViewState.IdRef="CommentOut_12">
+        <ui:CommentOut DisplayName="Comment Out" sap:VirtualizedContainerService.HintSize="434,57" sap2010:WorkflowViewState.IdRef="CommentOut_12">
           <ui:CommentOut.Body>
             <Sequence DisplayName="Ignored Activities" sap:VirtualizedContainerService.HintSize="449.6,108" sap2010:WorkflowViewState.IdRef="Sequence_35">
               <sap:WorkflowViewStateService.ViewState>
@@ -629,7 +757,7 @@ DO NOT PROVIDE ANY OTHER COMMENTARY. Ensure that data in each document is distin
             </scg:Dictionary>
           </sap:WorkflowViewStateService.ViewState>
         </ui:CommentOut>
-        <Assign sap:VirtualizedContainerService.HintSize="470,105" sap2010:WorkflowViewState.IdRef="Assign_1">
+        <Assign sap:VirtualizedContainerService.HintSize="434,105" sap2010:WorkflowViewState.IdRef="Assign_1">
           <Assign.To>
             <OutArgument x:TypeArguments="x:Boolean">[process_finished]</OutArgument>
           </Assign.To>
@@ -638,7 +766,7 @@ DO NOT PROVIDE ANY OTHER COMMENTARY. Ensure that data in each document is distin
           </Assign.Value>
         </Assign>
       </Sequence>
-      <Sequence sap:VirtualizedContainerService.HintSize="492,1742" sap2010:WorkflowViewState.IdRef="Sequence_12">
+      <Sequence sap:VirtualizedContainerService.HintSize="492,1261" sap2010:WorkflowViewState.IdRef="Sequence_12">
         <sap:WorkflowViewStateService.ViewState>
           <scg:Dictionary x:TypeArguments="x:String, x:Object">
             <x:Boolean x:Key="IsExpanded">True</x:Boolean>
@@ -677,9 +805,9 @@ DO NOT PROVIDE ANY OTHER COMMENTARY. Ensure that data in each document is distin
     </Parallel>
     <uasa:AppendItemToList x:TypeArguments="sd:DataTable" ItemIndex="{x:Null}" DisplayName="Append Item to List" sap:VirtualizedContainerService.HintSize="1166,165" sap2010:WorkflowViewState.IdRef="AppendItemToList`1_2" ItemToAppend="[Table.Copy]" List="[cacheTable]" />
     <uasa:AppendItemToList x:TypeArguments="x:String" ItemIndex="{x:Null}" DisplayName="Append Item to List" sap:VirtualizedContainerService.HintSize="1166,165" sap2010:WorkflowViewState.IdRef="AppendItemToList`1_4" ItemToAppend="[ExtractedInfo]" List="[cacheCSV]" />
-    <ui:InterruptibleWhile CurrentIndex="{x:Null}" Condition="[not finish]" DisplayName="While" sap:VirtualizedContainerService.HintSize="1166,4090" sap2010:WorkflowViewState.IdRef="InterruptibleWhile_2">
+    <ui:InterruptibleWhile CurrentIndex="{x:Null}" Condition="[not finish]" DisplayName="While" sap:VirtualizedContainerService.HintSize="1166,3943" sap2010:WorkflowViewState.IdRef="InterruptibleWhile_2">
       <ui:InterruptibleWhile.Body>
-        <Sequence DisplayName="Body" sap:VirtualizedContainerService.HintSize="1164,3960" sap2010:WorkflowViewState.IdRef="Sequence_17">
+        <Sequence DisplayName="Body" sap:VirtualizedContainerService.HintSize="1164,3813" sap2010:WorkflowViewState.IdRef="Sequence_17">
           <Sequence.Variables>
             <Variable x:TypeArguments="x:Boolean" Name="undoToPreviousTable" />
           </Sequence.Variables>
@@ -728,7 +856,7 @@ String.Join("", Table.Columns.Cast(Of DataColumn).Select(Function(col) If(index 
             </ufa:GetFormFieldsActivity.Arguments>
           </ufa:GetFormFieldsActivity>
           <ufa:CloseFormActivity InstanceName="{x:Null}" DisplayName="Close Form" FormId="a1597cd9-22a5-4ee5-93ca-995679802a8d" sap:VirtualizedContainerService.HintSize="1130,121" sap2010:WorkflowViewState.IdRef="CloseFormActivity_3" />
-          <ui:IfElseIfV2 Condition="[finish]" DisplayName="Else If" sap:VirtualizedContainerService.HintSize="1130,2928" sap2010:WorkflowViewState.IdRef="IfElseIfV2_1">
+          <ui:IfElseIfV2 Condition="[finish]" DisplayName="Else If" sap:VirtualizedContainerService.HintSize="1130,2781" sap2010:WorkflowViewState.IdRef="IfElseIfV2_1">
             <ui:IfElseIfV2.Else>
               <Sequence DisplayName="Else" sap:VirtualizedContainerService.HintSize="1128,25" sap2010:WorkflowViewState.IdRef="Sequence_32">
                 <sap:WorkflowViewStateService.ViewState>
@@ -841,14 +969,14 @@ String.Join("", Table.Columns.Cast(Of DataColumn).Select(Function(col) If(index 
                 </ui:IfElseIfBlock>
                 <ui:IfElseIfBlock BlockType="ElseIf" Condition="[regenerateTable]" DisplayName="If else if block" sap2010:WorkflowViewState.IdRef="IfElseIfBlock_3">
                   <ui:IfElseIfBlock.Then>
-                    <Sequence DisplayName="Body" sap:VirtualizedContainerService.HintSize="1128,1754" sap2010:WorkflowViewState.IdRef="Sequence_34">
+                    <Sequence DisplayName="Body" sap:VirtualizedContainerService.HintSize="1128,1607" sap2010:WorkflowViewState.IdRef="Sequence_34">
                       <sap:WorkflowViewStateService.ViewState>
                         <scg:Dictionary x:TypeArguments="x:String, x:Object">
                           <x:Boolean x:Key="IsExpanded">True</x:Boolean>
                           <x:Boolean x:Key="IsPinned">False</x:Boolean>
                         </scg:Dictionary>
                       </sap:WorkflowViewStateService.ViewState>
-                      <Parallel sap2010:Annotation.AnnotationText="Extract text from pdf. Churn into gpt-4. Receive table in CSV format. Write to Excel.&#xA;&#xA;Open loading popup to show user it is loading." DisplayName="regenerate table" sap:VirtualizedContainerService.HintSize="1094,1373" sap2010:WorkflowViewState.IdRef="Parallel_2">
+                      <Parallel sap2010:Annotation.AnnotationText="Extract text from pdf. Churn into gpt-4. Receive table in CSV format. Write to Excel.&#xA;&#xA;Open loading popup to show user it is loading." DisplayName="regenerate table" sap:VirtualizedContainerService.HintSize="1094,1226" sap2010:WorkflowViewState.IdRef="Parallel_2">
                         <Parallel.Variables>
                           <Variable x:TypeArguments="x:Boolean" Default="False" Name="process_finished" />
                         </Parallel.Variables>
@@ -859,7 +987,7 @@ String.Join("", Table.Columns.Cast(Of DataColumn).Select(Function(col) If(index 
                             <x:Boolean x:Key="IsAnnotationDocked">True</x:Boolean>
                           </scg:Dictionary>
                         </sap:WorkflowViewStateService.ViewState>
-                        <Sequence DisplayName="Fill out table using pdf data" sap:VirtualizedContainerService.HintSize="508,1237" sap2010:WorkflowViewState.IdRef="Sequence_18">
+                        <Sequence DisplayName="Fill out table using pdf data" sap:VirtualizedContainerService.HintSize="508,1090" sap2010:WorkflowViewState.IdRef="Sequence_18">
                           <Sequence.Variables>
                             <Variable x:TypeArguments="x:String" Name="Data" />
                           </Sequence.Variables>
@@ -869,16 +997,16 @@ String.Join("", Table.Columns.Cast(Of DataColumn).Select(Function(col) If(index 
                               <x:Boolean x:Key="IsPinned">False</x:Boolean>
                             </scg:Dictionary>
                           </sap:WorkflowViewStateService.ViewState>
-                          <isactr:ConnectorActivity Configuration="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" ConnectionId="434f8ea0-0534-465a-8e55-96d9caa8acb5" DisplayName="Content Generation" sap:VirtualizedContainerService.HintSize="434,419" sap2010:WorkflowViewState.IdRef="ConnectorActivity_3" UiPathActivityTypeId="aba52a00-4c05-318d-8f99-5ad924b2f277">
+                          <isactr:ConnectorActivity Configuration="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" ConnectionId="434f8ea0-0534-465a-8e55-96d9caa8acb5" DisplayName="Content Generation" sap:VirtualizedContainerService.HintSize="434,521" sap2010:WorkflowViewState.IdRef="ConnectorActivity_3" UiPathActivityTypeId="aba52a00-4c05-318d-8f99-5ad924b2f277">
                             <isactr:ConnectorActivity.FieldObjects>
                               <isactr:FieldObject Name="modelName" Type="FieldArgument">
                                 <isactr:FieldObject.Value>
-                                  <InArgument x:TypeArguments="x:String">gpt-4</InArgument>
+                                  <InArgument x:TypeArguments="x:String">anthropic.claude-3-5-sonnet-20241022-v2:0</InArgument>
                                 </isactr:FieldObject.Value>
                               </isactr:FieldObject>
                               <isactr:FieldObject Name="prompt" Type="FieldArgument">
                                 <isactr:FieldObject.Value>
-                                  <InArgument x:TypeArguments="x:String" xml:space="preserve">[CustomPrompt &amp; vbnewline &amp; ProposalText &amp; vbNewLine &amp; "you generated this: " &amp; vbNewLine &amp; ExtractedInfo  &amp; vbNewLine &amp; "Tweak the table according to the user feedback: " &amp; vbNewLine &amp; Feedback]</InArgument>
+                                  <InArgument x:TypeArguments="x:String" xml:space="preserve">[GenericPrompt &amp; vbnewline &amp; "you generated this: " &amp; vbNewLine &amp; ExtractedInfo  &amp; vbNewLine &amp; "Tweak the table according to the user feedback: " &amp; vbNewLine &amp; Feedback]</InArgument>
                                 </isactr:FieldObject.Value>
                               </isactr:FieldObject>
                               <isactr:FieldObject Name="isPIIEnabled" Type="FieldArgument">
@@ -892,31 +1020,42 @@ String.Join("", Table.Columns.Cast(Of DataColumn).Select(Function(col) If(index 
                               <isactr:FieldObject Name="confidenceThreshold" Type="FieldArgument" />
                               <isactr:FieldObject Name="topK" Type="FieldArgument">
                                 <isactr:FieldObject.Value>
-                                  <InArgument x:TypeArguments="x:Int32" />
+                                  <InArgument x:TypeArguments="x:Int32">40</InArgument>
                                 </isactr:FieldObject.Value>
                               </isactr:FieldObject>
                               <isactr:FieldObject Name="contextGrounding" Type="FieldArgument">
                                 <isactr:FieldObject.Value>
-                                  <InArgument x:TypeArguments="x:String">None</InArgument>
+                                  <InArgument x:TypeArguments="x:String">File resource</InArgument>
                                 </isactr:FieldObject.Value>
                               </isactr:FieldObject>
-                              <isactr:FieldObject Name="_file" Type="FieldArgument" />
+                              <isactr:FieldObject Name="_file" Type="FieldArgument">
+                                <isactr:FieldObject.Value>
+                                  <InArgument x:TypeArguments="upr:IResource">[LocalResource.FromPath(exceltemplate_filePath)]</InArgument>
+                                </isactr:FieldObject.Value>
+                              </isactr:FieldObject>
                               <isactr:FieldObject Name="folderKey" Type="FieldArgument" />
                               <isactr:FieldObject Name="topP" Type="FieldArgument">
                                 <isactr:FieldObject.Value>
-                                  <InArgument x:TypeArguments="x:Double" />
+                                  <InArgument x:TypeArguments="x:Double">0.8</InArgument>
                                 </isactr:FieldObject.Value>
                               </isactr:FieldObject>
                               <isactr:FieldObject Name="indexID" Type="FieldArgument" />
-                              <isactr:FieldObject Name="numberOfResults" Type="FieldArgument" />
-                              <isactr:FieldObject Name="top_p" Type="FieldArgument">
+                              <isactr:FieldObject Name="numberOfResults" Type="FieldArgument">
                                 <isactr:FieldObject.Value>
                                   <InArgument x:TypeArguments="x:Int64">1</InArgument>
                                 </isactr:FieldObject.Value>
                               </isactr:FieldObject>
+                              <isactr:FieldObject Name="top_p" Type="FieldArgument" />
                               <isactr:FieldObject Name="instruction" Type="FieldArgument">
                                 <isactr:FieldObject.Value>
-                                  <InArgument x:TypeArguments="x:String" xml:space="preserve">Collate all info into a table using CSV format. Ensure that the WHOLE text is formattable from string to CSV later down the pipeline. Ensure that commas included in the tables as part of the elemnts are used with the proper escape characters. DO NOT PROVIDE ANY OTHER COMMENTARY </InArgument>
+                                  <InArgument x:TypeArguments="x:String" xml:space="preserve">Collate all info into a table using CSV format representing the New sheet contents, starting at cell A1. Ensure that the WHOLE text is formattable from string to CSV later down the pipeline. 
+Ensure:
+- commas included in the tables as part of the elemnts are used with the proper escape characters. 
+- newline characters are properly escaped
+- Header Is clearly defined.
+- All formulas are preserved Where needed And updated To reflect New cell ranges.
+- Format Is clean, consistent, And usable By automation tools. 
+DO NOT PROVIDE ANY OTHER COMMENTARY. Ensure that data in each document is distinct, unless otherwise stated </InArgument>
                                 </isactr:FieldObject.Value>
                               </isactr:FieldObject>
                               <isactr:FieldObject Name="max_tokens" Type="FieldArgument">
@@ -990,13 +1129,6 @@ String.Join("", Table.Columns.Cast(Of DataColumn).Select(Function(col) If(index 
                             </sap:WorkflowViewStateService.ViewState>
                           </ui:CommentOut>
                           <ui:GenerateDataTable ColumnSizes="{x:Null}" NewLineSeparator="{x:Null}" Positions="{x:Null}" CSVParsing="True" ColumnSeparators="," DataTable="[Table]" DisplayName="Generate Data Table From Text" sap:VirtualizedContainerService.HintSize="434,233" sap2010:WorkflowViewState.IdRef="GenerateDataTable_2" Input="[ExtractedInfo]" UseColumnHeader="True" />
-                          <ui:RemoveDataRow Row="{x:Null}" sap2010:Annotation.AnnotationText="remove ''' from last row" DataTable="[Table]" DisplayName="Remove Data Row" sap:VirtualizedContainerService.HintSize="434,249" sap2010:WorkflowViewState.IdRef="RemoveDataRow_6" RowIndex="[Table.RowCount-1]">
-                            <sap:WorkflowViewStateService.ViewState>
-                              <scg:Dictionary x:TypeArguments="x:String, x:Object">
-                                <x:Boolean x:Key="IsAnnotationDocked">True</x:Boolean>
-                              </scg:Dictionary>
-                            </sap:WorkflowViewStateService.ViewState>
-                          </ui:RemoveDataRow>
                           <ui:CommentOut DisplayName="Comment Out" sap:VirtualizedContainerService.HintSize="434,57" sap2010:WorkflowViewState.IdRef="CommentOut_9">
                             <ui:CommentOut.Body>
                               <Sequence DisplayName="Ignored Activities" sap:VirtualizedContainerService.HintSize="450,269" sap2010:WorkflowViewState.IdRef="Sequence_20">
@@ -1103,7 +1235,7 @@ String.Join("", Table.Columns.Cast(Of DataColumn).Select(Function(col) If(index 
                             </Assign.Value>
                           </Assign>
                         </Sequence>
-                        <Sequence sap:VirtualizedContainerService.HintSize="492,1237" sap2010:WorkflowViewState.IdRef="Sequence_25">
+                        <Sequence sap:VirtualizedContainerService.HintSize="492,1090" sap2010:WorkflowViewState.IdRef="Sequence_25">
                           <sap:WorkflowViewStateService.ViewState>
                             <scg:Dictionary x:TypeArguments="x:String, x:Object">
                               <x:Boolean x:Key="IsExpanded">True</x:Boolean>
@@ -1190,34 +1322,51 @@ String.Join("", Table.Columns.Cast(Of DataColumn).Select(Function(col) If(index 
         <InArgument x:TypeArguments="sd:DataTable">[Table]</InArgument>
       </Assign.Value>
     </Assign>
-    <Assign sap:VirtualizedContainerService.HintSize="1166,114" sap2010:WorkflowViewState.IdRef="Assign_11">
-      <Assign.To>
-        <OutArgument x:TypeArguments="x:String">[excel_file_path_arg]</OutArgument>
-      </Assign.To>
-      <Assign.Value>
-        <InArgument x:TypeArguments="x:String">[excel_filePath]</InArgument>
-      </Assign.Value>
-    </Assign>
-    <Assign sap:VirtualizedContainerService.HintSize="1166,114" sap2010:WorkflowViewState.IdRef="Assign_12">
-      <Assign.To>
-        <OutArgument x:TypeArguments="x:String">[excelSheetName]</OutArgument>
-      </Assign.To>
-      <Assign.Value>
-        <InArgument x:TypeArguments="x:String">[selectedSheet]</InArgument>
-      </Assign.Value>
-    </Assign>
-    <If Condition="[Not custom_excel_write]" sap:VirtualizedContainerService.HintSize="1166,262" sap2010:WorkflowViewState.IdRef="If_1">
-      <If.Then>
-        <Sequence DisplayName="Then" sap:VirtualizedContainerService.HintSize="484,108" sap2010:WorkflowViewState.IdRef="Sequence_43">
+    <ui:CommentOut DisplayName="Comment Out" sap:VirtualizedContainerService.HintSize="1166,57" sap2010:WorkflowViewState.IdRef="CommentOut_17">
+      <ui:CommentOut.Body>
+        <Sequence DisplayName="Ignored Activities" sap:VirtualizedContainerService.HintSize="468,279" sap2010:WorkflowViewState.IdRef="Sequence_47">
           <sap:WorkflowViewStateService.ViewState>
             <scg:Dictionary x:TypeArguments="x:String, x:Object">
               <x:Boolean x:Key="IsExpanded">True</x:Boolean>
             </scg:Dictionary>
           </sap:WorkflowViewStateService.ViewState>
-          <Sequence sap:VirtualizedContainerService.HintSize="450,48" sap2010:WorkflowViewState.IdRef="Sequence_37">
+          <Assign sap:VirtualizedContainerService.HintSize="434,114" sap2010:WorkflowViewState.IdRef="Assign_11">
+            <Assign.To>
+              <OutArgument x:TypeArguments="x:String">[excel_file_path_arg]</OutArgument>
+            </Assign.To>
+            <Assign.Value>
+              <InArgument x:TypeArguments="x:String">[excel_filePath]</InArgument>
+            </Assign.Value>
+          </Assign>
+          <Assign sap:VirtualizedContainerService.HintSize="434,105" sap2010:WorkflowViewState.IdRef="Assign_12">
+            <Assign.To>
+              <OutArgument x:TypeArguments="x:String">[excelSheetName]</OutArgument>
+            </Assign.To>
+            <Assign.Value>
+              <InArgument x:TypeArguments="x:String">[selectedSheet]</InArgument>
+            </Assign.Value>
+          </Assign>
+        </Sequence>
+      </ui:CommentOut.Body>
+      <sap:WorkflowViewStateService.ViewState>
+        <scg:Dictionary x:TypeArguments="x:String, x:Object">
+          <x:Boolean x:Key="IsExpanded">False</x:Boolean>
+          <x:Boolean x:Key="IsPinned">False</x:Boolean>
+        </scg:Dictionary>
+      </sap:WorkflowViewStateService.ViewState>
+    </ui:CommentOut>
+    <If Condition="[Not custom_excel_write]" sap:VirtualizedContainerService.HintSize="1166,987" sap2010:WorkflowViewState.IdRef="If_1">
+      <If.Then>
+        <Sequence DisplayName="Then" sap:VirtualizedContainerService.HintSize="620,833" sap2010:WorkflowViewState.IdRef="Sequence_43">
+          <sap:WorkflowViewStateService.ViewState>
+            <scg:Dictionary x:TypeArguments="x:String, x:Object">
+              <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+            </scg:Dictionary>
+          </sap:WorkflowViewStateService.ViewState>
+          <Sequence sap:VirtualizedContainerService.HintSize="586,773" sap2010:WorkflowViewState.IdRef="Sequence_37">
             <sap:WorkflowViewStateService.ViewState>
               <scg:Dictionary x:TypeArguments="x:String, x:Object">
-                <x:Boolean x:Key="IsExpanded">False</x:Boolean>
+                <x:Boolean x:Key="IsExpanded">True</x:Boolean>
                 <x:Boolean x:Key="IsPinned">False</x:Boolean>
               </scg:Dictionary>
             </sap:WorkflowViewStateService.ViewState>
@@ -1233,11 +1382,11 @@ String.Join("", Table.Columns.Cast(Of DataColumn).Select(Function(col) If(index 
                         <x:Boolean x:Key="IsExpanded">True</x:Boolean>
                       </scg:Dictionary>
                     </sap:WorkflowViewStateService.ViewState>
-                    <ueab:ExcelApplicationCard Password="{x:Null}" ReadFormatting="{x:Null}" SensitivityLabel="{x:Null}" DisplayName="Use Excel File" sap:VirtualizedContainerService.HintSize="484,520" sap2010:WorkflowViewState.IdRef="ExcelApplicationCard_4" KeepExcelFileOpen="True" ResizeWindow="None" SensitivityOperation="None" WorkbookPath="[excel_filePath]">
+                    <ueab:ExcelApplicationCard Password="{x:Null}" ReadFormatting="{x:Null}" SensitivityLabel="{x:Null}" DisplayName="Use Excel File" sap:VirtualizedContainerService.HintSize="484,520" sap2010:WorkflowViewState.IdRef="ExcelApplicationCard_4" KeepExcelFileOpen="True" ResizeWindow="None" SensitivityOperation="None" WorkbookPath="[exceloutput_filePath]">
                       <ueab:ExcelApplicationCard.Body>
                         <ActivityAction x:TypeArguments="ue:IWorkbookQuickHandle">
                           <ActivityAction.Argument>
-                            <DelegateInArgument x:TypeArguments="ue:IWorkbookQuickHandle" Name="Excel" />
+                            <DelegateInArgument x:TypeArguments="ue:IWorkbookQuickHandle" Name="ExcelOutput" />
                           </ActivityAction.Argument>
                           <Sequence DisplayName="Do" sap:VirtualizedContainerService.HintSize="450,228" sap2010:WorkflowViewState.IdRef="Sequence_39">
                             <sap:WorkflowViewStateService.ViewState>
@@ -1245,7 +1394,7 @@ String.Join("", Table.Columns.Cast(Of DataColumn).Select(Function(col) If(index 
                                 <x:Boolean x:Key="IsExpanded">True</x:Boolean>
                               </scg:Dictionary>
                             </sap:WorkflowViewStateService.ViewState>
-                            <ui:ExcelWriteRange StartingCell="{x:Null}" AddHeaders="False" DataTable="[Table]" DisplayName="Write Range" sap:VirtualizedContainerService.HintSize="416,120" sap2010:WorkflowViewState.IdRef="ExcelWriteRange_4" SheetName="[selectedSheet]" />
+                            <ui:ExcelWriteRange StartingCell="{x:Null}" AddHeaders="False" DataTable="[Table]" DisplayName="Write Range" sap:VirtualizedContainerService.HintSize="416,120" sap2010:WorkflowViewState.IdRef="ExcelWriteRange_4" SheetName="[selected_output_sheet]" />
                             <ui:CommentOut DisplayName="Comment Out" sap:VirtualizedContainerService.HintSize="416,48" sap2010:WorkflowViewState.IdRef="CommentOut_15">
                               <ui:CommentOut.Body>
                                 <Sequence DisplayName="Ignored Activities" sap:VirtualizedContainerService.HintSize="468,242" sap2010:WorkflowViewState.IdRef="Sequence_40">
@@ -1254,7 +1403,7 @@ String.Join("", Table.Columns.Cast(Of DataColumn).Select(Function(col) If(index 
                                       <x:Boolean x:Key="IsExpanded">True</x:Boolean>
                                     </scg:Dictionary>
                                   </sap:WorkflowViewStateService.ViewState>
-                                  <ueab:WriteRangeX Destination="[Excel.Sheet(selectedSheet)]" DisplayName="Write DataTable to Excel" sap:VirtualizedContainerService.HintSize="434,182" sap2010:WorkflowViewState.IdRef="WriteRangeX_6" IgnoreEmptySource="False" Source="[Table]" />
+                                  <ueab:WriteRangeX Destination="[ExcelOutput.Sheet(selectedSheet)]" DisplayName="Write DataTable to Excel" sap:VirtualizedContainerService.HintSize="434,182" sap2010:WorkflowViewState.IdRef="WriteRangeX_6" IgnoreEmptySource="False" Source="[Table]" />
                                 </Sequence>
                               </ui:CommentOut.Body>
                               <sap:WorkflowViewStateService.ViewState>
@@ -1282,7 +1431,7 @@ String.Join("", Table.Columns.Cast(Of DataColumn).Select(Function(col) If(index 
         </Sequence>
       </If.Then>
       <If.Else>
-        <Sequence DisplayName="Else" sap:VirtualizedContainerService.HintSize="484,25" sap2010:WorkflowViewState.IdRef="Sequence_44">
+        <Sequence DisplayName="Else" sap:VirtualizedContainerService.HintSize="620,25" sap2010:WorkflowViewState.IdRef="Sequence_44">
           <sap:WorkflowViewStateService.ViewState>
             <scg:Dictionary x:TypeArguments="x:String, x:Object">
               <x:Boolean x:Key="IsExpanded">False</x:Boolean>

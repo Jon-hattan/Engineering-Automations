@@ -296,7 +296,7 @@
         <x:Boolean x:Key="IsAnnotationDocked">True</x:Boolean>
       </scg:Dictionary>
     </sap:WorkflowViewStateService.ViewState>
-    <ui:InvokeWorkflowFile ArgumentsVariable="{x:Null}" ContinueOnError="{x:Null}" DisplayName="General Table Generator - Invoke Workflow File (Table Generator\General Table Generator.xaml)" sap:VirtualizedContainerService.HintSize="416,168" sap2010:WorkflowViewState.IdRef="InvokeWorkflowFile_1" UnSafe="False" WorkflowFileName="Table Generator\Generic PDF to Excel Table Generator.xaml">
+    <ui:InvokeWorkflowFile ArgumentsVariable="{x:Null}" ContinueOnError="{x:Null}" DisplayName="General Table Generator - Invoke Workflow File (Table Generator\General Table Generator.xaml)" sap:VirtualizedContainerService.HintSize="416,168" sap2010:WorkflowViewState.IdRef="InvokeWorkflowFile_1" UnSafe="False" WorkflowFileName="PDF to Table Generator\Generic PDF to Excel Table Generator.xaml">
       <ui:InvokeWorkflowFile.Arguments>
         <InArgument x:TypeArguments="x:String" x:Key="title">Issue Register</InArgument>
         <InArgument x:TypeArguments="x:String" x:Key="customPrompt" xml:space="preserve">create an issue register, with the following columns: ITEM NO, Discipline, ACTION ITEM, PENDING ACTION, ASSIGNED
