@@ -1,0 +1,200 @@
+<Activity mc:Ignorable="sap sap2010" x:Class="test_3" VisualBasic.Settings="{x:Null}" sap2010:WorkflowViewState.IdRef="test_3_1" xmlns="http://schemas.microsoft.com/netfx/2009/xaml/activities" xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" xmlns:sap="http://schemas.microsoft.com/netfx/2009/xaml/activities/presentation" xmlns:sap2010="http://schemas.microsoft.com/netfx/2010/xaml/activities/presentation" xmlns:scg="clr-namespace:System.Collections.Generic;assembly=System.Private.CoreLib" xmlns:sco="clr-namespace:System.Collections.ObjectModel;assembly=System.Private.CoreLib" xmlns:sd="clr-namespace:System.Data;assembly=System.Data.Common" xmlns:ue="clr-namespace:UiPath.Excel;assembly=UiPath.Excel.Activities" xmlns:ueab="clr-namespace:UiPath.Excel.Activities.Business;assembly=UiPath.Excel.Activities" xmlns:ui="http://schemas.uipath.com/workflow/activities" xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml">
+  <TextExpression.NamespacesForImplementation>
+    <sco:Collection x:TypeArguments="x:String">
+      <x:String>System.Activities</x:String>
+      <x:String>System.Activities.Statements</x:String>
+      <x:String>System.Activities.Expressions</x:String>
+      <x:String>System.Activities.Validation</x:String>
+      <x:String>System.Activities.XamlIntegration</x:String>
+      <x:String>Microsoft.VisualBasic</x:String>
+      <x:String>Microsoft.VisualBasic.Activities</x:String>
+      <x:String>System</x:String>
+      <x:String>System.Collections</x:String>
+      <x:String>System.Collections.Generic</x:String>
+      <x:String>System.Collections.ObjectModel</x:String>
+      <x:String>System.Data</x:String>
+      <x:String>System.Diagnostics</x:String>
+      <x:String>System.Drawing</x:String>
+      <x:String>System.IO</x:String>
+      <x:String>System.Linq</x:String>
+      <x:String>System.Net.Mail</x:String>
+      <x:String>System.Xml</x:String>
+      <x:String>System.Xml.Linq</x:String>
+      <x:String>UiPath.Core</x:String>
+      <x:String>UiPath.Core.Activities</x:String>
+      <x:String>System.Windows.Markup</x:String>
+      <x:String>GlobalVariablesNamespace</x:String>
+      <x:String>GlobalConstantsNamespace</x:String>
+      <x:String>System.Runtime.Serialization</x:String>
+      <x:String>UiPath.Excel</x:String>
+      <x:String>UiPath.Excel.Model</x:String>
+      <x:String>UiPath.Excel.Activities.Business</x:String>
+      <x:String>UiPath.Shared.Activities</x:String>
+      <x:String>System.Reflection</x:String>
+      <x:String>System.ComponentModel</x:String>
+      <x:String>System.Xml.Serialization</x:String>
+      <x:String>System.Linq.Expressions</x:String>
+      <x:String>System.Numerics</x:String>
+      <x:String>UiPath.Excel.Activities</x:String>
+      <x:String>UiPath.Shared.Activities.Business</x:String>
+    </sco:Collection>
+  </TextExpression.NamespacesForImplementation>
+  <TextExpression.ReferencesForImplementation>
+    <sco:Collection x:TypeArguments="AssemblyReference">
+      <AssemblyReference>Microsoft.VisualBasic</AssemblyReference>
+      <AssemblyReference>mscorlib</AssemblyReference>
+      <AssemblyReference>System</AssemblyReference>
+      <AssemblyReference>System.Activities</AssemblyReference>
+      <AssemblyReference>System.ComponentModel.TypeConverter</AssemblyReference>
+      <AssemblyReference>System.Core</AssemblyReference>
+      <AssemblyReference>System.Data</AssemblyReference>
+      <AssemblyReference>System.Data.Common</AssemblyReference>
+      <AssemblyReference>System.Data.DataSetExtensions</AssemblyReference>
+      <AssemblyReference>System.Drawing</AssemblyReference>
+      <AssemblyReference>System.Drawing.Common</AssemblyReference>
+      <AssemblyReference>System.Drawing.Primitives</AssemblyReference>
+      <AssemblyReference>System.Linq</AssemblyReference>
+      <AssemblyReference>System.Net.Mail</AssemblyReference>
+      <AssemblyReference>System.ObjectModel</AssemblyReference>
+      <AssemblyReference>System.Private.CoreLib</AssemblyReference>
+      <AssemblyReference>System.Xaml</AssemblyReference>
+      <AssemblyReference>System.Xml</AssemblyReference>
+      <AssemblyReference>System.Xml.Linq</AssemblyReference>
+      <AssemblyReference>UiPath.System.Activities</AssemblyReference>
+      <AssemblyReference>UiPath.UiAutomation.Activities</AssemblyReference>
+      <AssemblyReference>UiPath.Studio.Constants</AssemblyReference>
+      <AssemblyReference>System.Private.ServiceModel</AssemblyReference>
+      <AssemblyReference>System.Private.DataContractSerialization</AssemblyReference>
+      <AssemblyReference>System.Runtime.Serialization.Formatters</AssemblyReference>
+      <AssemblyReference>System.Runtime.Serialization.Primitives</AssemblyReference>
+      <AssemblyReference>UiPath.Excel.Activities</AssemblyReference>
+      <AssemblyReference>UiPath.Excel.Activities.Design</AssemblyReference>
+      <AssemblyReference>UiPath.Excel</AssemblyReference>
+      <AssemblyReference>UiPath.Web.Activities</AssemblyReference>
+      <AssemblyReference>UiPath.OCR.Activities</AssemblyReference>
+      <AssemblyReference>UiPath.MicrosoftOffice365.Activities</AssemblyReference>
+      <AssemblyReference>UiPath.IntelligentOCR.StudioWeb.Activities</AssemblyReference>
+      <AssemblyReference>UiPath.Mail.Activities</AssemblyReference>
+      <AssemblyReference>UiPath.GSuite.Activities</AssemblyReference>
+      <AssemblyReference>System.Reflection.DispatchProxy</AssemblyReference>
+      <AssemblyReference>System.Reflection.TypeExtensions</AssemblyReference>
+      <AssemblyReference>System.Reflection.Metadata</AssemblyReference>
+      <AssemblyReference>System.ComponentModel.EventBasedAsync</AssemblyReference>
+      <AssemblyReference>PresentationFramework</AssemblyReference>
+      <AssemblyReference>WindowsBase</AssemblyReference>
+      <AssemblyReference>System.ComponentModel</AssemblyReference>
+      <AssemblyReference>System.ComponentModel.Primitives</AssemblyReference>
+      <AssemblyReference>System.Private.Xml</AssemblyReference>
+      <AssemblyReference>System.Memory.Data</AssemblyReference>
+      <AssemblyReference>System.Console</AssemblyReference>
+      <AssemblyReference>System.Security.Permissions</AssemblyReference>
+      <AssemblyReference>System.Memory</AssemblyReference>
+      <AssemblyReference>System.Configuration.ConfigurationManager</AssemblyReference>
+      <AssemblyReference>System.Private.Uri</AssemblyReference>
+      <AssemblyReference>System.Data.SqlClient</AssemblyReference>
+      <AssemblyReference>System.Linq.Expressions</AssemblyReference>
+      <AssemblyReference>UiPath.System.Activities.Design</AssemblyReference>
+      <AssemblyReference>System.Runtime.Numerics</AssemblyReference>
+      <AssemblyReference>System.Linq.Async</AssemblyReference>
+      <AssemblyReference>System.Collections</AssemblyReference>
+      <AssemblyReference>System.Collections.NonGeneric</AssemblyReference>
+      <AssemblyReference>System.Linq.Async.Queryable</AssemblyReference>
+      <AssemblyReference>System.Linq.Parallel</AssemblyReference>
+      <AssemblyReference>System.Collections.Immutable</AssemblyReference>
+      <AssemblyReference>System.Linq.Queryable</AssemblyReference>
+    </sco:Collection>
+  </TextExpression.ReferencesForImplementation>
+  <Sequence DisplayName="test_3" sap:VirtualizedContainerService.HintSize="1311,1789" sap2010:WorkflowViewState.IdRef="Sequence_1">
+    <Sequence.Variables>
+      <Variable x:TypeArguments="x:String" Name="tableName" />
+      <Variable x:TypeArguments="x:Int32" Name="headerRowIndex" />
+      <Variable x:TypeArguments="sd:DataTable" Name="generatedTable" />
+    </Sequence.Variables>
+    <sap:WorkflowViewStateService.ViewState>
+      <scg:Dictionary x:TypeArguments="x:String, x:Object">
+        <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+      </scg:Dictionary>
+    </sap:WorkflowViewStateService.ViewState>
+    <ui:BuildDataTable DataTable="[generatedTable]" DisplayName="Build Data Table" sap:VirtualizedContainerService.HintSize="570,92" sap2010:WorkflowViewState.IdRef="BuildDataTable_1" TableInfo="&lt;NewDataSet&gt;&#xD;&#xA;  &lt;xs:schema id=&quot;NewDataSet&quot; xmlns=&quot;&quot; xmlns:xs=&quot;http://www.w3.org/2001/XMLSchema&quot; xmlns:msdata=&quot;urn:schemas-microsoft-com:xml-msdata&quot;&gt;&#xD;&#xA;    &lt;xs:element name=&quot;NewDataSet&quot; msdata:IsDataSet=&quot;true&quot; msdata:MainDataTable=&quot;TableName&quot; msdata:UseCurrentLocale=&quot;true&quot;&gt;&#xD;&#xA;      &lt;xs:complexType&gt;&#xD;&#xA;        &lt;xs:choice minOccurs=&quot;0&quot; maxOccurs=&quot;unbounded&quot;&gt;&#xD;&#xA;          &lt;xs:element name=&quot;TableName&quot;&gt;&#xD;&#xA;            &lt;xs:complexType&gt;&#xD;&#xA;              &lt;xs:sequence&gt;&#xD;&#xA;                &lt;xs:element name=&quot;Column1&quot; msdata:Caption=&quot;&quot; minOccurs=&quot;0&quot;&gt;&#xD;&#xA;                  &lt;xs:simpleType&gt;&#xD;&#xA;                    &lt;xs:restriction base=&quot;xs:string&quot;&gt;&#xD;&#xA;                      &lt;xs:maxLength value=&quot;100&quot; /&gt;&#xD;&#xA;                    &lt;/xs:restriction&gt;&#xD;&#xA;                  &lt;/xs:simpleType&gt;&#xD;&#xA;                &lt;/xs:element&gt;&#xD;&#xA;                &lt;xs:element name=&quot;Column2&quot; msdata:Caption=&quot;&quot; type=&quot;xs:int&quot; minOccurs=&quot;0&quot; /&gt;&#xD;&#xA;                &lt;xs:element name=&quot;yes&quot; msdata:Caption=&quot;&quot; type=&quot;xs:string&quot; minOccurs=&quot;0&quot; /&gt;&#xD;&#xA;              &lt;/xs:sequence&gt;&#xD;&#xA;            &lt;/xs:complexType&gt;&#xD;&#xA;          &lt;/xs:element&gt;&#xD;&#xA;        &lt;/xs:choice&gt;&#xD;&#xA;      &lt;/xs:complexType&gt;&#xD;&#xA;    &lt;/xs:element&gt;&#xD;&#xA;  &lt;/xs:schema&gt;&#xD;&#xA;  &lt;TableName&gt;&#xD;&#xA;    &lt;Column1&gt;2&lt;/Column1&gt;&#xD;&#xA;    &lt;Column2&gt;1&lt;/Column2&gt;&#xD;&#xA;    &lt;yes&gt;e&lt;/yes&gt;&#xD;&#xA;  &lt;/TableName&gt;&#xD;&#xA;  &lt;TableName&gt;&#xD;&#xA;    &lt;Column2&gt;33&lt;/Column2&gt;&#xD;&#xA;    &lt;yes&gt;1&lt;/yes&gt;&#xD;&#xA;  &lt;/TableName&gt;&#xD;&#xA;  &lt;TableName&gt;&#xD;&#xA;    &lt;Column1&gt;2&lt;/Column1&gt;&#xD;&#xA;    &lt;Column2&gt;1&lt;/Column2&gt;&#xD;&#xA;    &lt;yes&gt;2&lt;/yes&gt;&#xD;&#xA;  &lt;/TableName&gt;&#xD;&#xA;  &lt;TableName&gt;&#xD;&#xA;    &lt;Column1&gt;2&lt;/Column1&gt;&#xD;&#xA;    &lt;Column2&gt;1&lt;/Column2&gt;&#xD;&#xA;    &lt;yes&gt;11&lt;/yes&gt;&#xD;&#xA;  &lt;/TableName&gt;&#xD;&#xA;&lt;/NewDataSet&gt;" />
+    <ui:Comment sap:VirtualizedContainerService.HintSize="570,569" sap2010:WorkflowViewState.IdRef="Comment_1" Text="&#xD;&#xA;&#xD;&#xA;'find table name'&#xD;&#xA;Dim table = worksheet.ListObjects(1)&#xD;&#xA;tableName = table.Name&#xD;&#xA;headerRowIndex = table.HeaderRowRange.Row +1&#xD;&#xA;&#xD;&#xA;&#xD;&#xA;' Find the column index for all&#xD;&#xA;Dim equipemnt_colidx As Integer = -1&#xD;&#xA;Dim dutycycle_colidx As Integer = -1&#xD;&#xA;Dim kwRating_colidx As Integer  = -1&#xD;&#xA;Dim voltage_colidx  As Integer= -1&#xD;&#xA;Dim duty_colidx  As Integer= -1&#xD;&#xA;Dim standby_colidx  As Integer= -1&#xD;&#xA;Dim phase_colidx  As Integer= -1&#xD;&#xA;Dim feedermotorstarter_colidx  As Integer= -1&#xD;&#xA;Dim efficiency_colidx  As Integer= -1&#xD;&#xA;Dim powerfactor_colidx  As Integer= -1&#xD;&#xA;Dim FLC_colidx  As Integer= -1&#xD;&#xA;&#xD;&#xA;&#xD;&#xA;For Each col As Microsoft.Office.Interop.Excel.ListColumn In table.ListColumns&#xD;&#xA;    If col.Name.ToLower().Contains(&quot;src&quot;) Then&#xD;&#xA;        srcColumnIndex = col.Index&#xD;&#xA; End If&#xD;&#xA;  If col.Name.ToLower().Contains(&quot;revision&quot;) Then&#xD;&#xA;        srcRevIndex = col.Index&#xD;&#xA;    End If&#xD;&#xA; If col.Name.ToLower().Contains(&quot;status&quot;) Then&#xD;&#xA;        srcStatusIndex = col.Index&#xD;&#xA;    End If&#xD;&#xA; If col.Name.ToLower().Contains(&quot;workflow closed&quot;) Then&#xD;&#xA;        srcWorkflowClosedIndex = col.Index&#xD;&#xA;    End If&#xD;&#xA;&#xD;&#xA; If srcColumnIndex &lt;&gt; -1 AndAlso srcRevIndex &lt;&gt; -1 AndAlso srcStatusIndex &lt;&gt; -1  AndAlso  srcWorkflowClosedIndex &lt;&gt; -1 Then&#xD;&#xA;  Exit For&#xD;&#xA; End If&#xD;&#xA;Next&#xD;&#xA;&#xD;&#xA;&#xD;&#xA;Col_letter_SRC = Convert.ToChar(64+srcColumnIndex) 'RMB THAT IT IS ONE BASED INDEXING FOR MICROSOFT OFFICE INTEROP&#xD;&#xA;Col_letter_Revision = Convert.ToChar(64+srcRevIndex)&#xD;&#xA;Col_letter_Status = Convert.ToChar(64+srcStatusIndex)&#xD;&#xA;Col_letter_WorkflowClosed = Convert.ToChar(64+srcWorkflowClosedIndex)" />
+    <ui:InvokeCode ContinueOnError="{x:Null}" Code="Dim excelApp As Microsoft.Office.Interop.Excel.Application = New Microsoft.Office.Interop.Excel.Application&#xD;&#xA;Dim workbook As Microsoft.Office.Interop.Excel.Workbook = excelApp.Workbooks.Open(filePath)&#xD;&#xA;Dim worksheet As Microsoft.Office.Interop.Excel.Worksheet = CType(workbook.Sheets(sheetName), Microsoft.Office.Interop.Excel.Worksheet)&#xD;&#xA;&#xD;&#xA;&#xD;&#xA;'find table name'&#xD;&#xA;Dim table = worksheet.ListObjects(1)&#xD;&#xA;tableName = table.Name&#xD;&#xA;headerRowIndex = table.HeaderRowRange.Row +1&#xD;&#xA;&#xD;&#xA;&#xD;&#xA;' Find the column index for all&#xD;&#xA;Dim equipemnt_colidx As Integer = -1&#xD;&#xA;Dim dutycycle_colidx As Integer = -1&#xD;&#xA;Dim kwRating_colidx As Integer  = -1&#xD;&#xA;Dim voltage_colidx  As Integer= -1&#xD;&#xA;Dim duty_colidx  As Integer= -1&#xD;&#xA;Dim standby_colidx  As Integer= -1&#xD;&#xA;Dim phase_colidx  As Integer= -1&#xD;&#xA;Dim feedermotorstarter_colidx  As Integer= -1&#xD;&#xA;Dim efficiency_colidx  As Integer= -1&#xD;&#xA;Dim powerfactor_colidx  As Integer= -1&#xD;&#xA;Dim FLC_colidx  As Integer= -1&#xD;&#xA;&#xD;&#xA;&#xD;&#xA;For Each col As Microsoft.Office.Interop.Excel.ListColumn In table.ListColumns&#xD;&#xA;    If col.Name.ToLower().Contains(&quot;equipment&quot;) AndAlso Not col.Name.ToLower().Contains(&quot;name&quot;)  Then&#xD;&#xA;         equipemnt_colidx = col.Index&#xD;&#xA; &#x9;End If&#xD;&#xA;&#x9;&#xD;&#xA;  If col.Name.ToLower().Contains(&quot;duty cycle&quot;) Then&#xD;&#xA;        dutycycle_colidx = col.Index&#xD;&#xA;    End If&#xD;&#xA;&#xD;&#xA;If colName.Contains(&quot;kw rating&quot;) Then&#xD;&#xA;        kwRating_colIdx = col.Index&#xD;&#xA;    End If&#xD;&#xA;&#xD;&#xA;    If colName.Contains(&quot;voltage&quot;) Then&#xD;&#xA;        voltage_colIdx = col.Index&#xD;&#xA;    End If&#xD;&#xA;&#xD;&#xA;    If colName.Contains(&quot;duty&quot;) Then&#xD;&#xA;        duty_colIdx = col.Index&#xD;&#xA;    End If&#xD;&#xA;&#xD;&#xA;    If colName.Contains(&quot;standby&quot;) Then&#xD;&#xA;        standby_colIdx = col.Index&#xD;&#xA;    End If&#xD;&#xA;&#xD;&#xA;    If colName.Contains(&quot;phase&quot;) Then&#xD;&#xA;        phase_colIdx = col.Index&#xD;&#xA;    End If&#xD;&#xA;&#xD;&#xA;    If colName.Contains(&quot;feeder motor starter&quot;) Then&#xD;&#xA;        feederMotorStarter_colIdx = col.Index&#xD;&#xA;    End If&#xD;&#xA;&#xD;&#xA;    If colName.Contains(&quot;efficiency&quot;) Then&#xD;&#xA;        efficiency_colIdx = col.Index&#xD;&#xA;    End If&#xD;&#xA;&#xD;&#xA;    If colName.Contains(&quot;power factor&quot;) Then&#xD;&#xA;        powerFactor_colIdx = col.Index&#xD;&#xA;    End If&#xD;&#xA;&#xD;&#xA;    If colName.Contains(&quot;flc&quot;) Then&#xD;&#xA;        flc_colIdx = col.Index&#xD;&#xA;    End If&#xD;&#xA;&#xD;&#xA;&#xD;&#xA; If srcColumnIndex &lt;&gt; -1 AndAlso srcRevIndex &lt;&gt; -1 AndAlso srcStatusIndex &lt;&gt; -1  AndAlso  srcWorkflowClosedIndex &lt;&gt; -1 Then&#xD;&#xA;  Exit For&#xD;&#xA; End If&#xD;&#xA;Next&#xD;&#xA;&#xD;&#xA;&#xD;&#xA;Col_letter_SRC = Convert.ToChar(64+srcColumnIndex) 'RMB THAT IT IS ONE BASED INDEXING FOR MICROSOFT OFFICE INTEROP&#xD;&#xA;Col_letter_Revision = Convert.ToChar(64+srcRevIndex)&#xD;&#xA;Col_letter_Status = Convert.ToChar(64+srcStatusIndex)&#xD;&#xA;Col_letter_WorkflowClosed = Convert.ToChar(64+srcWorkflowClosedIndex)&#xD;&#xA;&#xD;&#xA;workbook.Close(True)&#xD;&#xA;excelApp.Quit()&#xD;&#xA;&#xD;&#xA;System.Runtime.InteropServices.Marshal.ReleaseComObject(worksheet)&#xD;&#xA;System.Runtime.InteropServices.Marshal.ReleaseComObject(workbook)&#xD;&#xA;System.Runtime.InteropServices.Marshal.ReleaseComObject(excelApp)&#xD;&#xA;" DisplayName="Invoke Code" sap:VirtualizedContainerService.HintSize="570,197" sap2010:WorkflowViewState.IdRef="InvokeCode_1">
+      <ui:InvokeCode.Arguments>
+        <InArgument x:TypeArguments="x:String" x:Key="filePath">
+          <Literal x:TypeArguments="x:String">C:\Users\CHEWJ1\Downloads\C4C1 Electrical Load List (1).xlsx</Literal>
+        </InArgument>
+        <InArgument x:TypeArguments="x:String" x:Key="sheetName">
+          <Literal x:TypeArguments="x:String">Metadata</Literal>
+        </InArgument>
+        <OutArgument x:TypeArguments="x:String" x:Key="tableName">
+          <VisualBasicReference x:TypeArguments="x:String" ExpressionText="tableName" />
+        </OutArgument>
+        <OutArgument x:TypeArguments="x:Int32" x:Key="headerRowIndex">
+          <VisualBasicReference x:TypeArguments="x:Int32" ExpressionText="headerRowIndex" />
+        </OutArgument>
+      </ui:InvokeCode.Arguments>
+    </ui:InvokeCode>
+    <ueab:ExcelProcessScopeX DisplayAlerts="{x:Null}" ExistingProcessAction="{x:Null}" FileConflictResolution="{x:Null}" LaunchMethod="{x:Null}" LaunchTimeout="{x:Null}" MacroSettings="{x:Null}" ProcessMode="{x:Null}" ShowExcelWindow="{x:Null}" DisplayName="Excel Process Scope" sap:VirtualizedContainerService.HintSize="570,908" sap2010:WorkflowViewState.IdRef="ExcelProcessScopeX_1">
+      <ueab:ExcelProcessScopeX.Body>
+        <ActivityAction x:TypeArguments="ui:IExcelProcess">
+          <ActivityAction.Argument>
+            <DelegateInArgument x:TypeArguments="ui:IExcelProcess" Name="ExcelProcessScopeTag" />
+          </ActivityAction.Argument>
+          <Sequence DisplayName="Do" sap:VirtualizedContainerService.HintSize="536,798" sap2010:WorkflowViewState.IdRef="Sequence_3">
+            <sap:WorkflowViewStateService.ViewState>
+              <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+              </scg:Dictionary>
+            </sap:WorkflowViewStateService.ViewState>
+            <ueab:ExcelApplicationCard Password="{x:Null}" ReadFormatting="{x:Null}" SensitivityLabel="{x:Null}" AutoSave="False" DisplayName="Use Excel File" sap:VirtualizedContainerService.HintSize="502,738" sap2010:WorkflowViewState.IdRef="ExcelApplicationCard_1" ResizeWindow="None" SensitivityOperation="None" WorkbookPath="C:\Users\CHEWJ1\Downloads\C4C1 Electrical Load List (1).xlsx">
+              <ueab:ExcelApplicationCard.Body>
+                <ActivityAction x:TypeArguments="ue:IWorkbookQuickHandle">
+                  <ActivityAction.Argument>
+                    <DelegateInArgument x:TypeArguments="ue:IWorkbookQuickHandle" Name="Excel" />
+                  </ActivityAction.Argument>
+                  <Sequence DisplayName="Do" sap:VirtualizedContainerService.HintSize="468,446" sap2010:WorkflowViewState.IdRef="Sequence_2">
+                    <Sequence.Variables>
+                      <Variable x:TypeArguments="x:String" Name="numba" />
+                    </Sequence.Variables>
+                    <sap:WorkflowViewStateService.ViewState>
+                      <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                        <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+                      </scg:Dictionary>
+                    </sap:WorkflowViewStateService.ViewState>
+                    <ueab:InsertRowsX SpecificIndex="{x:Null}" DisplayName="Insert Rows" HasHeaders="True" sap:VirtualizedContainerService.HintSize="434,218" sap2010:WorkflowViewState.IdRef="InsertRowsX_1" InsertPosition="Start" NbOfRows="[generatedTable.RowCount]" Range="[Excel.Table(tableName)]" />
+                    <ueab:ExcelForEachRowX DisplayName="For Each Excel Row" EmptyRowBehavior="Stop" HasHeaders="True" sap:VirtualizedContainerService.HintSize="434,57" sap2010:WorkflowViewState.IdRef="ExcelForEachRowX_1" Range="[Excel.Table(tableName)]" SaveAfterEachRow="False">
+                      <ueab:ExcelForEachRowX.Body>
+                        <ActivityAction x:TypeArguments="ue:CurrentRowQuickHandle, x:Int32">
+                          <ActivityAction.Argument1>
+                            <DelegateInArgument x:TypeArguments="ue:CurrentRowQuickHandle" Name="CurrentRow" />
+                          </ActivityAction.Argument1>
+                          <ActivityAction.Argument2>
+                            <DelegateInArgument x:TypeArguments="x:Int32" Name="CurrentIndex" />
+                          </ActivityAction.Argument2>
+                          <Sequence DisplayName="Do" sap:VirtualizedContainerService.HintSize="468,242" sap2010:WorkflowViewState.IdRef="Sequence_5">
+                            <sap:WorkflowViewStateService.ViewState>
+                              <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                                <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+                              </scg:Dictionary>
+                            </sap:WorkflowViewStateService.ViewState>
+                            <ueab:WriteCellX Value="{x:Null}" Cell="[CurrentRow.ByField(&quot;Tag Number&quot;)]" DisplayName="Write Cell" sap:VirtualizedContainerService.HintSize="434,182" sap2010:WorkflowViewState.IdRef="WriteCellX_2" />
+                          </Sequence>
+                        </ActivityAction>
+                      </ueab:ExcelForEachRowX.Body>
+                      <sap:WorkflowViewStateService.ViewState>
+                        <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                          <x:Boolean x:Key="IsExpanded">False</x:Boolean>
+                          <x:Boolean x:Key="IsPinned">False</x:Boolean>
+                        </scg:Dictionary>
+                      </sap:WorkflowViewStateService.ViewState>
+                    </ueab:ExcelForEachRowX>
+                    <ui:ExcelWriteRange AddHeaders="False" DataTable="[generatedTable]" DisplayName="Write Range" sap:VirtualizedContainerService.HintSize="434,111" sap2010:WorkflowViewState.IdRef="ExcelWriteRange_1" SheetName="Metadata" StartingCell="[&quot;A&quot; &amp; headerRowIndex.ToString]" />
+                  </Sequence>
+                </ActivityAction>
+              </ueab:ExcelApplicationCard.Body>
+            </ueab:ExcelApplicationCard>
+          </Sequence>
+        </ActivityAction>
+      </ueab:ExcelProcessScopeX.Body>
+    </ueab:ExcelProcessScopeX>
+  </Sequence>
+</Activity>

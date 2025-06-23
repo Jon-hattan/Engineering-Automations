@@ -281,12 +281,13 @@
       <AssemblyReference>System.Memory.Data</AssemblyReference>
     </sco:Collection>
   </TextExpression.ReferencesForImplementation>
-  <Sequence sap2010:Annotation.AnnotationText="using content generator in integration service activities, search for the all the equipments in a technical proposal, and their respective quantities, electrical power, voltage, etc. store in a datatable" DisplayName="Main Sequence" sap:VirtualizedContainerService.HintSize="931.2,388.44000000000005" sap2010:WorkflowViewState.IdRef="Sequence_1">
+  <Sequence sap2010:Annotation.AnnotationText="using content generator in integration service activities, search for the all the equipments in a technical proposal, and their respective quantities, electrical power, voltage, etc. store in a datatable" DisplayName="Main Sequence" sap:VirtualizedContainerService.HintSize="1317,640.04" sap2010:WorkflowViewState.IdRef="Sequence_1">
     <Sequence.Variables>
       <Variable x:TypeArguments="x:String" Name="ProposalText" />
       <Variable x:TypeArguments="x:String" Name="ExtractedEquipmentInfo" />
       <Variable x:TypeArguments="sd:DataTable" Name="EquipmentDataTable" />
       <Variable x:TypeArguments="x:String" Name="DataTableString" />
+      <Variable x:TypeArguments="sd:DataTable" Name="generatedTable" />
     </Sequence.Variables>
     <sap:WorkflowViewStateService.ViewState>
       <scg:Dictionary x:TypeArguments="x:String, x:Object">
@@ -294,7 +295,7 @@
         <x:Boolean x:Key="IsAnnotationDocked">True</x:Boolean>
       </scg:Dictionary>
     </sap:WorkflowViewStateService.ViewState>
-    <ui:InvokeWorkflowFile ArgumentsVariable="{x:Null}" ContinueOnError="{x:Null}" DisplayName="General Table Generator - Invoke Workflow File (Table Generator\General Table Generator.xaml)" sap:VirtualizedContainerService.HintSize="416,167.2" sap2010:WorkflowViewState.IdRef="InvokeWorkflowFile_1" UnSafe="False" WorkflowFileName="Table Generator\General Table Generator.xaml">
+    <ui:InvokeWorkflowFile ArgumentsVariable="{x:Null}" ContinueOnError="{x:Null}" DisplayName="General Table Generator - Invoke Workflow File (Table Generator\General Table Generator.xaml)" sap:VirtualizedContainerService.HintSize="416,168" sap2010:WorkflowViewState.IdRef="InvokeWorkflowFile_1" UnSafe="False" WorkflowFileName="Table Generator\General Table Generator.xaml">
       <ui:InvokeWorkflowFile.Arguments>
         <InArgument x:TypeArguments="x:String" x:Key="title">Issue Register</InArgument>
         <InArgument x:TypeArguments="x:String" x:Key="customPrompt" xml:space="preserve">create an issue register, with the following columns: ITEM NO, Discipline, ACTION ITEM, PENDING ACTION, ASSIGNED
@@ -327,6 +328,10 @@ ENSURE THAT THE COMMAS ARE INCLUDED WITH ESCAPE CHARACTERS SO THAT THEY ARENT PR
 
 
 </InArgument>
+        <InArgument x:TypeArguments="x:Boolean" x:Key="custom_excel_write">False</InArgument>
+        <OutArgument x:TypeArguments="sd:DataTable" x:Key="generatedTable">[generatedTable]</OutArgument>
+        <OutArgument x:TypeArguments="x:String" x:Key="excel_file_path_arg" />
+        <OutArgument x:TypeArguments="x:String" x:Key="excelSheetName" />
       </ui:InvokeWorkflowFile.Arguments>
     </ui:InvokeWorkflowFile>
   </Sequence>
