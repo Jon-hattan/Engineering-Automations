@@ -1,4 +1,3 @@
-﻿<?xml version="1.0" encoding="utf-8"?>
 <Activity mc:Ignorable="sap sap2010" x:Class="Main" this:Main.title="Generic Table Generator" this:Main.customPrompt="create a table from the data" this:Main.custom_excel_write="True" xmlns="http://schemas.microsoft.com/netfx/2009/xaml/activities" xmlns:isactr="http://schemas.uipath.com/workflow/integration-service-activities/isactr" xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" xmlns:s="clr-namespace:System;assembly=System.Private.CoreLib" xmlns:sap="http://schemas.microsoft.com/netfx/2009/xaml/activities/presentation" xmlns:sap2010="http://schemas.microsoft.com/netfx/2010/xaml/activities/presentation" xmlns:sc="clr-namespace:System.ComponentModel;assembly=System.ComponentModel.TypeConverter" xmlns:scg="clr-namespace:System.Collections.Generic;assembly=System.Private.CoreLib" xmlns:sco="clr-namespace:System.Collections.ObjectModel;assembly=System.Private.CoreLib" xmlns:sd="clr-namespace:System.Data;assembly=System.Data.Common" xmlns:this="clr-namespace:" xmlns:uasa="clr-namespace:UiPath.Activities.System.Arrays;assembly=UiPath.System.Activities" xmlns:uasc="clr-namespace:UiPath.Activities.System.Collections;assembly=UiPath.System.Activities" xmlns:ue="clr-namespace:UiPath.Excel;assembly=UiPath.Excel.Activities" xmlns:ueab="clr-namespace:UiPath.Excel.Activities.Business;assembly=UiPath.Excel.Activities" xmlns:ufa="clr-namespace:UiPath.Forms.Activities;assembly=UiPath.Forms.Activities" xmlns:ui="http://schemas.uipath.com/workflow/activities" xmlns:uiascb="clr-namespace:UiPath.IntegrationService.Activities.SWEntities.CD9CAA8ACB5_v2_sub_generateChatCompletion_Create.Bundle;assembly=CD9CAA8ACB5_v2_sub_g.RO0JB4QXNDQ1A3W7H4gmEz12" xmlns:uisape="clr-namespace:UiPath.IntelligentOCR.StudioWeb.Activities.PDF.ExtractPDFText;assembly=UiPath.IntelligentOCR.StudioWeb.Activities" xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml">
   <x:Members>
     <x:Property Name="title" Type="InArgument(x:String)" />
@@ -299,7 +298,7 @@
       <AssemblyReference>System.Linq.Async.Queryable</AssemblyReference>
     </sco:Collection>
   </TextExpression.ReferencesForImplementation>
-  <Sequence sap2010:Annotation.AnnotationText="using content generator in integration service activities, search for the all the equipments in a technical proposal, and their respective quantities, electrical power, voltage, etc. store in a datatable" DisplayName="Main Sequence" sap:VirtualizedContainerService.HintSize="1311,7133" sap2010:WorkflowViewState.IdRef="Sequence_1">
+  <Sequence sap2010:Annotation.AnnotationText="using content generator in integration service activities, search for the all the equipments in a technical proposal, and their respective quantities, electrical power, voltage, etc. store in a datatable" DisplayName="Main Sequence" sap:VirtualizedContainerService.HintSize="1289,7404" sap2010:WorkflowViewState.IdRef="Sequence_1">
     <Sequence.Variables>
       <Variable x:TypeArguments="x:String" Name="ProposalText" />
       <Variable x:TypeArguments="x:String" Name="ExtractedInfo" />
@@ -315,6 +314,7 @@
       <Variable x:TypeArguments="scg:IList(x:String)" Default="[New List(of String)]" Name="cacheCSV" />
       <Variable x:TypeArguments="x:Boolean" Default="False" Name="undoButtonVisible" />
       <Variable x:TypeArguments="x:String" Name="htmlContent" />
+      <Variable x:TypeArguments="x:Boolean" Name="back" />
     </Sequence.Variables>
     <sap:WorkflowViewStateService.ViewState>
       <scg:Dictionary x:TypeArguments="x:String, x:Object">
@@ -328,8 +328,31 @@
         <OutArgument x:TypeArguments="scg:List(x:String)" x:Key="pdf_filePaths">[pdf_filePaths]</OutArgument>
         <OutArgument x:TypeArguments="x:String" x:Key="selectedSheet">[selectedSheet]</OutArgument>
         <InArgument x:TypeArguments="x:String" x:Key="title">[title]</InArgument>
+        <OutArgument x:TypeArguments="x:Boolean" x:Key="back">[back]</OutArgument>
       </ui:InvokeWorkflowFile.Arguments>
     </ui:InvokeWorkflowFile>
+    <If Condition="[back]" sap:VirtualizedContainerService.HintSize="1166,271" sap2010:WorkflowViewState.IdRef="If_2">
+      <If.Then>
+        <Sequence DisplayName="Then" sap:VirtualizedContainerService.HintSize="416,108" sap2010:WorkflowViewState.IdRef="Sequence_46">
+          <sap:WorkflowViewStateService.ViewState>
+            <scg:Dictionary x:TypeArguments="x:String, x:Object">
+              <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+            </scg:Dictionary>
+          </sap:WorkflowViewStateService.ViewState>
+          <ui:Return sap:VirtualizedContainerService.HintSize="382,48" sap2010:WorkflowViewState.IdRef="Return_1" />
+        </Sequence>
+      </If.Then>
+      <If.Else>
+        <Sequence DisplayName="Else" sap:VirtualizedContainerService.HintSize="416,25" sap2010:WorkflowViewState.IdRef="Sequence_45">
+          <sap:WorkflowViewStateService.ViewState>
+            <scg:Dictionary x:TypeArguments="x:String, x:Object">
+              <x:Boolean x:Key="IsExpanded">False</x:Boolean>
+              <x:Boolean x:Key="IsPinned">False</x:Boolean>
+            </scg:Dictionary>
+          </sap:WorkflowViewStateService.ViewState>
+        </Sequence>
+      </If.Else>
+    </If>
     <Parallel sap2010:Annotation.AnnotationText="Extract text from pdf. Churn into gpt-4. Receive table in CSV format. Write to Excel.&#xA;&#xA;Open loading popup to show user it is loading." sap:VirtualizedContainerService.HintSize="1166,1878" sap2010:WorkflowViewState.IdRef="Parallel_1">
       <Parallel.Variables>
         <Variable x:TypeArguments="x:Boolean" Default="False" Name="process_finished" />

@@ -303,7 +303,7 @@
       <AssemblyReference>System.Linq.Async.Queryable</AssemblyReference>
     </sco:Collection>
   </TextExpression.ReferencesForImplementation>
-  <Sequence sap2010:Annotation.AnnotationText="using content generator in integration service activities, search for the all the equipments in a technical proposal, and their respective quantities, electrical power, voltage, etc. store in a datatable" DisplayName="Main Sequence" sap:VirtualizedContainerService.HintSize="1309,7792" sap2010:WorkflowViewState.IdRef="Sequence_1">
+  <Sequence sap2010:Annotation.AnnotationText="using content generator in integration service activities, search for the all the equipments in a technical proposal, and their respective quantities, electrical power, voltage, etc. store in a datatable" DisplayName="Main Sequence" sap:VirtualizedContainerService.HintSize="1311,7792" sap2010:WorkflowViewState.IdRef="Sequence_1">
     <Sequence.Variables>
       <Variable x:TypeArguments="x:String" Name="ProposalText" />
       <Variable x:TypeArguments="x:String" Name="ExtractedInfo" />
@@ -553,7 +553,11 @@ This table will be written starting From cell A1 In a New Excel file.
                 <InArgument x:TypeArguments="x:Int64">1</InArgument>
               </isactr:FieldObject.Value>
             </isactr:FieldObject>
-            <isactr:FieldObject Name="top_p" Type="FieldArgument" />
+            <isactr:FieldObject Name="top_p" Type="FieldArgument">
+              <isactr:FieldObject.Value>
+                <InArgument x:TypeArguments="x:Int64" />
+              </isactr:FieldObject.Value>
+            </isactr:FieldObject>
             <isactr:FieldObject Name="instruction" Type="FieldArgument">
               <isactr:FieldObject.Value>
                 <InArgument x:TypeArguments="x:String" xml:space="preserve">Collate all info into a table using CSV format representing the New sheet contents, starting at cell A1. Ensure that the WHOLE text is formattable from string to CSV later down the pipeline. 

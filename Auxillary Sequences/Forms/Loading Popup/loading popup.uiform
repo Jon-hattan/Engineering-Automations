@@ -10,15 +10,23 @@
     "Theme": "Default",
     "ShowInTaskbar": true,
     "ShowMargin": true,
-    "CustomStyle": ".text {\r\nfont-weight: bold;\r\ntext-align: center;\r\n}\r\n\r\n.loading-popup{\r\nfont-weight: bold;\r\ntext-align: center;\r\n}\r\n\r\n\r\n"
+    "CustomStyle": ".text {\r\nfont-weight: bold;\r\ntext-align: center;\r\n}\r\n\r\n.content {\r\ntext-align: center;\r\n}\r\n\r\n.loading-popup{\r\nfont-weight: bold;\r\ntext-align: center;\r\n}\r\n\r\n\r\n"
   },
   "Data": {
     "components": [
       {
-        "html": "<p>Your table is loading, please wait.</p>",
+        "html": "<p>Loading, please wait.</p>",
         "label": "Content",
         "customClass": "text",
         "refreshOnChange": false,
+        "key": "content",
+        "type": "content",
+        "input": false,
+        "tableView": false
+      },
+      {
+        "label": "Content",
+        "refreshOnChange": true,
         "key": "content",
         "type": "content",
         "input": false,

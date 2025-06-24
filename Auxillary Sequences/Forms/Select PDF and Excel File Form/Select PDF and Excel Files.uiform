@@ -8,10 +8,19 @@
     "Theme": "Default",
     "ShowInTaskbar": true,
     "ShowMargin": true,
-    "CustomStyle": ""
+    "CustomStyle": "."
   },
   "Data": {
     "components": [
+      {
+        "label": "< Back",
+        "action": "event",
+        "showValidations": false,
+        "tableView": false,
+        "key": "back",
+        "type": "button",
+        "input": true
+      },
       {
         "tag": "h1",
         "key": "label2",
@@ -123,7 +132,7 @@
         ]
       },
       {
-        "label": "Submit",
+        "label": "Begin Automation",
         "action": "event",
         "showValidations": false,
         "tableView": false,
