@@ -1,4 +1,3 @@
-﻿<?xml version="1.0" encoding="utf-8"?>
 <Activity mc:Ignorable="sap sap2010" x:Class="Sequence" VisualBasic.Settings="{x:Null}" sap2010:WorkflowViewState.IdRef="ActivityBuilder_1" xmlns="http://schemas.microsoft.com/netfx/2009/xaml/activities" xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" xmlns:sap="http://schemas.microsoft.com/netfx/2009/xaml/activities/presentation" xmlns:sap2010="http://schemas.microsoft.com/netfx/2010/xaml/activities/presentation" xmlns:scg="clr-namespace:System.Collections.Generic;assembly=System.Private.CoreLib" xmlns:sco="clr-namespace:System.Collections.ObjectModel;assembly=System.Private.CoreLib" xmlns:sd="clr-namespace:System.Data;assembly=System.Data.Common" xmlns:ue="clr-namespace:UiPath.Excel;assembly=UiPath.Excel.Activities" xmlns:ueab="clr-namespace:UiPath.Excel.Activities.Business;assembly=UiPath.Excel.Activities" xmlns:ui="http://schemas.uipath.com/workflow/activities" xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml">
   <TextExpression.NamespacesForImplementation>
     <sco:Collection x:TypeArguments="x:String">
@@ -151,20 +150,12 @@ Some of these data may need to be inferred. Do not stray too much from what is g
               <x:Boolean x:Key="IsExpanded">True</x:Boolean>
             </scg:Dictionary>
           </sap:WorkflowViewStateService.ViewState>
-          <ui:InvokeCode ContinueOnError="{x:Null}" Code="Dim excelApp As Microsoft.Office.Interop.Excel.Application = New Microsoft.Office.Interop.Excel.Application&#xD;&#xA;Dim workbook As Microsoft.Office.Interop.Excel.Workbook = excelApp.Workbooks.Open(filePath)&#xD;&#xA;Dim worksheet As Microsoft.Office.Interop.Excel.Worksheet = CType(workbook.Sheets(sheetName), Microsoft.Office.Interop.Excel.Worksheet)&#xD;&#xA;&#xD;&#xA;'find table name'&#xD;&#xA;Dim table = worksheet.ListObjects(1)&#xD;&#xA;tableName = table.Name&#xD;&#xA;headerRowIndex = table.HeaderRowRange.Row +1&#xD;&#xA;&#xD;&#xA;workbook.Close(True)&#xD;&#xA;excelApp.Quit()&#xD;&#xA;&#xD;&#xA;System.Runtime.InteropServices.Marshal.ReleaseComObject(worksheet)&#xD;&#xA;System.Runtime.InteropServices.Marshal.ReleaseComObject(workbook)&#xD;&#xA;System.Runtime.InteropServices.Marshal.ReleaseComObject(excelApp)&#xD;&#xA;" DisplayName="Invoke Code" sap:VirtualizedContainerService.HintSize="416,197" sap2010:WorkflowViewState.IdRef="InvokeCode_1">
+          <ui:InvokeCode ContinueOnError="{x:Null}" Code="Dim excelApp As Microsoft.Office.Interop.Excel.Application = New Microsoft.Office.Interop.Excel.Application&#xA;Dim workbook As Microsoft.Office.Interop.Excel.Workbook = excelApp.Workbooks.Open(filePath)&#xA;Dim worksheet As Microsoft.Office.Interop.Excel.Worksheet = CType(workbook.Sheets(sheetName), Microsoft.Office.Interop.Excel.Worksheet)&#xA;&#xA;'find table name'&#xA;Dim table = worksheet.ListObjects(1)&#xA;tableName = table.Name&#xA;headerRowIndex = table.HeaderRowRange.Row +1&#xA;&#xA;workbook.Close(True)&#xA;excelApp.Quit()&#xA;&#xA;System.Runtime.InteropServices.Marshal.ReleaseComObject(worksheet)&#xA;System.Runtime.InteropServices.Marshal.ReleaseComObject(workbook)&#xA;System.Runtime.InteropServices.Marshal.ReleaseComObject(excelApp)&#xA;" DisplayName="Invoke Code" sap:VirtualizedContainerService.HintSize="416,197" sap2010:WorkflowViewState.IdRef="InvokeCode_1">
             <ui:InvokeCode.Arguments>
-              <InArgument x:TypeArguments="x:String" x:Key="filePath">
-                <VisualBasicValue x:TypeArguments="x:String" ExpressionText="excelfilepath" />
-              </InArgument>
-              <InArgument x:TypeArguments="x:String" x:Key="sheetName">
-                <VisualBasicValue x:TypeArguments="x:String" ExpressionText="sheetName" />
-              </InArgument>
-              <OutArgument x:TypeArguments="x:String" x:Key="tableName">
-                <VisualBasicReference x:TypeArguments="x:String" ExpressionText="tableName" />
-              </OutArgument>
-              <OutArgument x:TypeArguments="x:Int32" x:Key="headerRowIndex">
-                <VisualBasicReference x:TypeArguments="x:Int32" ExpressionText="headerRowIndex" />
-              </OutArgument>
+              <InArgument x:TypeArguments="x:String" x:Key="filePath">[excelfilepath]</InArgument>
+              <InArgument x:TypeArguments="x:String" x:Key="sheetName">[sheetName]</InArgument>
+              <OutArgument x:TypeArguments="x:String" x:Key="tableName">[tableName]</OutArgument>
+              <OutArgument x:TypeArguments="x:Int32" x:Key="headerRowIndex">[headerRowIndex]</OutArgument>
             </ui:InvokeCode.Arguments>
           </ui:InvokeCode>
           <ueab:ExcelProcessScopeX DisplayAlerts="{x:Null}" ExistingProcessAction="{x:Null}" FileConflictResolution="{x:Null}" LaunchMethod="{x:Null}" LaunchTimeout="{x:Null}" MacroSettings="{x:Null}" ProcessMode="{x:Null}" ShowExcelWindow="{x:Null}" DisplayName="Excel Process Scope" sap:VirtualizedContainerService.HintSize="416,48" sap2010:WorkflowViewState.IdRef="ExcelProcessScopeX_1">

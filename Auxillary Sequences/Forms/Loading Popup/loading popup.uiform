@@ -10,7 +10,7 @@
     "Theme": "Default",
     "ShowInTaskbar": true,
     "ShowMargin": true,
-    "CustomStyle": ".text {\r\nfont-weight: bold;\r\ntext-align: center;\r\n}\r\n\r\n.content {\r\ntext-align: center;\r\n}\r\n\r\n.loading-popup{\r\nfont-weight: bold;\r\ntext-align: center;\r\n}\r\n\r\n\r\n"
+    "CustomStyle": ".text {\r\nfont-weight: bold;\r\ntext-align: center;\r\n}\r\n.addtext {\r\ntext-align: center;\r\n}\r\n\r\n.progresstext {\r\ntext-align: center;\r\n}\r\n\r\n\r\n.content {\r\ntext-align: center;\r\n}\r\n\r\n.loading-popup{\r\nmargin-top: 20px;\r\ntext-align: center;\r\n}\r\n\r\n\r\n"
   },
   "Data": {
     "components": [
@@ -19,13 +19,14 @@
         "label": "Content",
         "customClass": "text",
         "refreshOnChange": false,
-        "key": "content",
+        "key": "content1",
         "type": "content",
         "input": false,
         "tableView": false
       },
       {
         "label": "Content",
+        "customClass": "addtext",
         "refreshOnChange": true,
         "key": "content",
         "type": "content",
@@ -33,17 +34,27 @@
         "tableView": false
       },
       {
+        "label": "Content",
+        "customClass": "progresstext",
+        "refreshOnChange": true,
+        "key": "progress",
+        "type": "content",
+        "input": false,
+        "tableView": false
+      },
+      {
         "label": "HTML",
-        "className": "loading-popup",
+        "tag": "div",
         "attrs": [
           {
             "attr": "",
             "value": ""
           }
         ],
-        "content": "<img id=\"myimage\" src=\"loading-5325468-4450387.webp\">",
+        "content": "\n\n<img Type = image from base64 src=\"loading-gif.gif\">",
         "refreshOnChange": false,
-        "key": "html",
+        "customClass": "loading-popup",
+        "key": "loading",
         "type": "htmlelement",
         "input": false,
         "tableView": false
