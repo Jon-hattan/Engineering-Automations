@@ -1,4 +1,4 @@
-<Activity mc:Ignorable="sap sap2010" x:Class="Page_Number_Generator" this:Page_Number_Generator.filePath="C:\Users\CHEWJ1\Downloads\B.pdf" this:Page_Number_Generator.FrontPagePattern="(?i)R\s*_*\s*E\s*_*\s*Q\s*_*\s*U\s*_*\s*E\s*_*\s*S\s*_*\s*T\s*_*\s*[\s_]*F\s*_*\s*O\s*_*\s*R\s*_*\s*[\s_]*I\s*_*\s*N\s*_*\s*S\s*_*\s*P\s*_*\s*E\s*_*\s*C\s*_*\s*T\s*_*\s*I\s*_*\s*O\s*_*\s*N\s*_*\s*[\s_]*O?\s*_*\s*F?\s*_*\s*[\s_]*W\s*_*\s*O\s*_*\s*R\s*_*\s*K\s*_*\s*S\s*_*\s*[\(（]\s*R\s*_*\s*F\s*_*\s*I\s*_*\s*W\s*[\)）]" this:Page_Number_Generator.NamingPattern="\b\d{5,}-[A-Z0-9]+(?:-[A-Z0-9]+)+\b" this:Page_Number_Generator.TotalPages="200" xmlns="http://schemas.microsoft.com/netfx/2009/xaml/activities" xmlns:isactr="http://schemas.uipath.com/workflow/integration-service-activities/isactr" xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" xmlns:sap="http://schemas.microsoft.com/netfx/2009/xaml/activities/presentation" xmlns:sap2010="http://schemas.microsoft.com/netfx/2010/xaml/activities/presentation" xmlns:scg="clr-namespace:System.Collections.Generic;assembly=System.Private.CoreLib" xmlns:sco="clr-namespace:System.Collections.ObjectModel;assembly=System.Private.CoreLib" xmlns:sd="clr-namespace:System.Drawing;assembly=System.Drawing.Common" xmlns:sd1="clr-namespace:System.Drawing;assembly=System.Drawing.Primitives" xmlns:si="clr-namespace:System.IO;assembly=System.Private.CoreLib" xmlns:this="clr-namespace:" xmlns:uasa="clr-namespace:UiPath.Activities.System.Arrays;assembly=UiPath.System.Activities" xmlns:ufa="clr-namespace:UiPath.Forms.Activities;assembly=UiPath.Forms.Activities" xmlns:ui="http://schemas.uipath.com/workflow/activities" xmlns:uiascb="clr-namespace:UiPath.IntegrationService.Activities.SWEntities.CD9CAA8ACB5_v2_sub_generateChatCompletion_Create.Bundle;assembly=CD9CAA8ACB5_v2_sub_g.RO0JB4QXNDQ1A3W7H4gmEz12" xmlns:uisape="clr-namespace:UiPath.IntelligentOCR.StudioWeb.Activities.PDF.ExtractPDFPageRange;assembly=UiPath.IntelligentOCR.StudioWeb.Activities" xmlns:uisape1="clr-namespace:UiPath.IntelligentOCR.StudioWeb.Activities.PDF.ExtractPDFText;assembly=UiPath.IntelligentOCR.StudioWeb.Activities" xmlns:uisape2="clr-namespace:UiPath.IntelligentOCR.StudioWeb.Activities.PDF.ExtractPDFImages;assembly=UiPath.IntelligentOCR.StudioWeb.Activities" xmlns:uisapg="clr-namespace:UiPath.IntelligentOCR.StudioWeb.Activities.PDF.GetPDFPageCount;assembly=UiPath.IntelligentOCR.StudioWeb.Activities" xmlns:uisapm="clr-namespace:UiPath.IntelligentOCR.StudioWeb.Activities.PDF.MergePDFs;assembly=UiPath.IntelligentOCR.StudioWeb.Activities" xmlns:upr="clr-namespace:UiPath.Platform.ResourceHandling;assembly=UiPath.Platform" xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml">
+<Activity mc:Ignorable="sap sap2010" x:Class="Page_Number_Generator" this:Page_Number_Generator.filePath="C:\Users\CHEWJ1\Downloads\B.pdf" this:Page_Number_Generator.FrontPagePattern="(?i)R\s*_*\s*E\s*_*\s*Q\s*_*\s*U\s*_*\s*E\s*_*\s*S\s*_*\s*T\s*_*\s*[\s_]*F\s*_*\s*O\s*_*\s*R\s*_*\s*[\s_]*I\s*_*\s*N\s*_*\s*S\s*_*\s*P\s*_*\s*E\s*_*\s*C\s*_*\s*T\s*_*\s*I\s*_*\s*O\s*_*\s*N\s*_*\s*[\s_]*O?\s*_*\s*F?\s*_*\s*[\s_]*W\s*_*\s*O\s*_*\s*R\s*_*\s*K\s*_*\s*S\s*_*\s*[\(（]\s*R\s*_*\s*F\s*_*\s*I\s*_*\s*W\s*[\)）]" this:Page_Number_Generator.NamingPattern="\b\d{5,}-[A-Z0-9]+(?:-[A-Z0-9]+)+\b" xmlns="http://schemas.microsoft.com/netfx/2009/xaml/activities" xmlns:isactr="http://schemas.uipath.com/workflow/integration-service-activities/isactr" xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" xmlns:sap="http://schemas.microsoft.com/netfx/2009/xaml/activities/presentation" xmlns:sap2010="http://schemas.microsoft.com/netfx/2010/xaml/activities/presentation" xmlns:scg="clr-namespace:System.Collections.Generic;assembly=System.Private.CoreLib" xmlns:sco="clr-namespace:System.Collections.ObjectModel;assembly=System.Private.CoreLib" xmlns:sd="clr-namespace:System.Drawing;assembly=System.Drawing.Common" xmlns:sd1="clr-namespace:System.Drawing;assembly=System.Drawing.Primitives" xmlns:si="clr-namespace:System.IO;assembly=System.Private.CoreLib" xmlns:this="clr-namespace:" xmlns:uasa="clr-namespace:UiPath.Activities.System.Arrays;assembly=UiPath.System.Activities" xmlns:ufa="clr-namespace:UiPath.Forms.Activities;assembly=UiPath.Forms.Activities" xmlns:ui="http://schemas.uipath.com/workflow/activities" xmlns:uiascb="clr-namespace:UiPath.IntegrationService.Activities.SWEntities.CD9CAA8ACB5_v2_sub_generateChatCompletion_Create.Bundle;assembly=CD9CAA8ACB5_v2_sub_g.RO0JB4QXNDQ1A3W7H4gmEz12" xmlns:uisape="clr-namespace:UiPath.IntelligentOCR.StudioWeb.Activities.PDF.ExtractPDFPageRange;assembly=UiPath.IntelligentOCR.StudioWeb.Activities" xmlns:uisape1="clr-namespace:UiPath.IntelligentOCR.StudioWeb.Activities.PDF.ExtractPDFText;assembly=UiPath.IntelligentOCR.StudioWeb.Activities" xmlns:uisape2="clr-namespace:UiPath.IntelligentOCR.StudioWeb.Activities.PDF.ExtractPDFImages;assembly=UiPath.IntelligentOCR.StudioWeb.Activities" xmlns:uisapg="clr-namespace:UiPath.IntelligentOCR.StudioWeb.Activities.PDF.GetPDFPageCount;assembly=UiPath.IntelligentOCR.StudioWeb.Activities" xmlns:uisapm="clr-namespace:UiPath.IntelligentOCR.StudioWeb.Activities.PDF.MergePDFs;assembly=UiPath.IntelligentOCR.StudioWeb.Activities" xmlns:upr="clr-namespace:UiPath.Platform.ResourceHandling;assembly=UiPath.Platform" xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml">
   <x:Members>
     <x:Property Name="filePath" Type="InArgument(x:String)" />
     <x:Property Name="documentNames_hash" Type="OutArgument(scg:HashSet(x:String))" />
@@ -170,10 +170,10 @@
         <x:Boolean x:Key="IsExpanded">True</x:Boolean>
       </scg:Dictionary>
     </sap:WorkflowViewStateService.ViewState>
-    <ui:GetFileInfoX DisplayName="Get File Info" FilePath="[filePath]" sap:VirtualizedContainerService.HintSize="1164,165" sap2010:WorkflowViewState.IdRef="GetFileInfoX_1" Output="[fileInfo]" />
-    <uisapg:GetPDFPageCount FilePassword="{x:Null}" DisplayName="Get PDF Page Count" sap:VirtualizedContainerService.HintSize="1164,122" sap2010:WorkflowViewState.IdRef="GetPDFPageCount_3" PageCount="[pagecount]" PdfFile="[LocalResource.FromPath(filePath)]" />
-    <ui:CreateDirectory ContinueOnError="{x:Null}" Output="{x:Null}" DisplayName="Create Folder" sap:VirtualizedContainerService.HintSize="1164,112" sap2010:WorkflowViewState.IdRef="CreateDirectory_1" Path="[IO.Path.Combine(Environment.GetFolderPath(Environment.SpecialFolder.Desktop), &quot;automationPDFs&quot;)]" />
-    <Assign sap:VirtualizedContainerService.HintSize="1164,114" sap2010:WorkflowViewState.IdRef="Assign_4">
+    <ui:GetFileInfoX DisplayName="Get File Info" FilePath="[filePath]" sap:VirtualizedContainerService.HintSize="1218,165" sap2010:WorkflowViewState.IdRef="GetFileInfoX_1" Output="[fileInfo]" />
+    <uisapg:GetPDFPageCount FilePassword="{x:Null}" DisplayName="Get PDF Page Count" sap:VirtualizedContainerService.HintSize="1218,122" sap2010:WorkflowViewState.IdRef="GetPDFPageCount_3" PageCount="[pagecount]" PdfFile="[LocalResource.FromPath(filePath)]" />
+    <ui:CreateDirectory ContinueOnError="{x:Null}" Output="{x:Null}" DisplayName="Create Folder" sap:VirtualizedContainerService.HintSize="1218,112" sap2010:WorkflowViewState.IdRef="CreateDirectory_1" Path="[IO.Path.Combine(Environment.GetFolderPath(Environment.SpecialFolder.Desktop), &quot;automationPDFs&quot;)]" />
+    <Assign sap:VirtualizedContainerService.HintSize="1218,114" sap2010:WorkflowViewState.IdRef="Assign_4">
       <Assign.To>
         <OutArgument x:TypeArguments="x:Boolean">[process_finished]</OutArgument>
       </Assign.To>
@@ -181,7 +181,7 @@
         <InArgument x:TypeArguments="x:Boolean">False</InArgument>
       </Assign.Value>
     </Assign>
-    <Assign sap:VirtualizedContainerService.HintSize="1164,114" sap2010:WorkflowViewState.IdRef="Assign_12">
+    <Assign sap:VirtualizedContainerService.HintSize="1218,114" sap2010:WorkflowViewState.IdRef="Assign_12">
       <Assign.To>
         <OutArgument x:TypeArguments="scg:HashSet(x:String)">[documentNames_hash]</OutArgument>
       </Assign.To>
@@ -195,7 +195,7 @@
         </scg:Dictionary>
       </sap:WorkflowViewStateService.ViewState>
     </Assign>
-    <ui:CommentOut DisplayName="Comment Out" sap:VirtualizedContainerService.HintSize="1164,57" sap2010:WorkflowViewState.IdRef="CommentOut_1">
+    <ui:CommentOut DisplayName="Comment Out" sap:VirtualizedContainerService.HintSize="1218,57" sap2010:WorkflowViewState.IdRef="CommentOut_1">
       <ui:CommentOut.Body>
         <Sequence DisplayName="Ignored Activities" sap:VirtualizedContainerService.HintSize="450,108" sap2010:WorkflowViewState.IdRef="Sequence_17">
           <sap:WorkflowViewStateService.ViewState>
@@ -262,7 +262,7 @@
         </scg:Dictionary>
       </sap:WorkflowViewStateService.ViewState>
     </ui:CommentOut>
-    <Parallel sap:VirtualizedContainerService.HintSize="1164,3793" sap2010:WorkflowViewState.IdRef="Parallel_2">
+    <Parallel sap:VirtualizedContainerService.HintSize="1218,3793" sap2010:WorkflowViewState.IdRef="Parallel_2">
       <Parallel.Variables>
         <Variable x:TypeArguments="x:Int32" Name="idx" />
         <Variable x:TypeArguments="x:Int32" Default="0" Name="progress" />
@@ -273,10 +273,10 @@
           <x:Boolean x:Key="IsPinned">False</x:Boolean>
         </scg:Dictionary>
       </sap:WorkflowViewStateService.ViewState>
-      <Sequence sap:VirtualizedContainerService.HintSize="490,3714" sap2010:WorkflowViewState.IdRef="Sequence_30">
+      <Sequence sap:VirtualizedContainerService.HintSize="544,3714" sap2010:WorkflowViewState.IdRef="Sequence_30">
         <sap:WorkflowViewStateService.ViewState>
           <scg:Dictionary x:TypeArguments="x:String, x:Object">
-            <x:Boolean x:Key="IsExpanded">False</x:Boolean>
+            <x:Boolean x:Key="IsExpanded">True</x:Boolean>
             <x:Boolean x:Key="IsPinned">False</x:Boolean>
           </scg:Dictionary>
         </sap:WorkflowViewStateService.ViewState>

@@ -8,7 +8,7 @@
     "Theme": "Default",
     "ShowInTaskbar": true,
     "ShowMargin": true,
-    "CustomStyle": ".beginbutton {\r\n\r\nbottom: 0px;\r\nleft: 0px;\r\n\r\n}"
+    "CustomStyle": ".backbutton {\r\ndisplay: inline-block;\r\nbackground-color: lightblue;\r\n}\r\n\r\n.beginbutton {\r\ndisplay: inline-block;\r\nwidth: fit-content;\r\nmargin-left: 10px;\r\n}"
   },
   "Data": {
     "components": [
@@ -16,112 +16,11 @@
         "label": "< Back",
         "action": "event",
         "showValidations": false,
+        "customClass": "backbutton",
         "tableView": false,
         "key": "back",
         "type": "button",
         "input": true
-      },
-      {
-        "key": "title",
-        "input": false,
-        "tableView": false,
-        "label": "Label",
-        "type": "label"
-      },
-      {
-        "columns": [
-          {
-            "components": [
-              {
-                "content": "Select PDF files.",
-                "key": "label",
-                "input": false,
-                "tableView": false,
-                "label": "Label",
-                "type": "label"
-              },
-              {
-                "label": "Select Files",
-                "action": "event",
-                "showValidations": false,
-                "tableView": false,
-                "key": "selectFiles",
-                "type": "button",
-                "input": true
-              },
-              {
-                "label": "Container",
-                "key": "container",
-                "type": "container",
-                "input": true,
-                "tableView": false,
-                "components": [
-                  {
-                    "label": "Content",
-                    "refreshOnChange": true,
-                    "key": "pdf_fileNames",
-                    "type": "content",
-                    "input": false,
-                    "tableView": false
-                  }
-                ]
-              }
-            ],
-            "width": 6,
-            "offset": 0,
-            "push": 0,
-            "pull": 0,
-            "size": "md",
-            "currentWidth": 6
-          },
-          {
-            "components": [
-              {
-                "content": "Select where to put the processed files.",
-                "key": "label1",
-                "input": false,
-                "tableView": false,
-                "label": "Label",
-                "type": "label"
-              },
-              {
-                "label": "Select Destination Folder",
-                "action": "event",
-                "showValidations": false,
-                "tableView": false,
-                "key": "selectDestinationFolder",
-                "type": "button",
-                "input": true
-              },
-              {
-                "label": "Content",
-                "refreshOnChange": true,
-                "key": "destination_folder_path",
-                "type": "content",
-                "input": false,
-                "tableView": false
-              }
-            ],
-            "width": 6,
-            "offset": 0,
-            "push": 0,
-            "pull": 0,
-            "size": "md",
-            "currentWidth": 6
-          }
-        ],
-        "key": "columns",
-        "type": "columns",
-        "input": false,
-        "tableView": false,
-        "label": "Columns"
-      },
-      {
-        "label": "filepaths",
-        "key": "pdf_filePaths",
-        "type": "hidden",
-        "input": true,
-        "tableView": false
       },
       {
         "label": "Begin Automation",
@@ -133,6 +32,127 @@
         "key": "beginAutomation",
         "type": "button",
         "input": true
+      },
+      {
+        "tag": "h1",
+        "key": "title",
+        "input": false,
+        "tableView": false,
+        "label": "Label",
+        "type": "label"
+      },
+      {
+        "label": "Container",
+        "key": "container2",
+        "type": "container",
+        "input": true,
+        "tableView": false,
+        "components": [
+          {
+            "columns": [
+              {
+                "components": [
+                  {
+                    "content": "Select PDF files.",
+                    "key": "label",
+                    "input": false,
+                    "tableView": false,
+                    "label": "Label",
+                    "type": "label"
+                  },
+                  {
+                    "label": "Select Files",
+                    "action": "event",
+                    "showValidations": false,
+                    "tableView": false,
+                    "key": "selectFiles",
+                    "type": "button",
+                    "input": true
+                  },
+                  {
+                    "label": "Container",
+                    "key": "container",
+                    "type": "container",
+                    "input": true,
+                    "tableView": false,
+                    "components": [
+                      {
+                        "label": "Content",
+                        "refreshOnChange": true,
+                        "key": "pdf_fileNames",
+                        "type": "content",
+                        "input": false,
+                        "tableView": false
+                      }
+                    ]
+                  }
+                ],
+                "width": 6,
+                "offset": 0,
+                "push": 0,
+                "pull": 0,
+                "size": "md",
+                "currentWidth": 6
+              },
+              {
+                "components": [
+                  {
+                    "content": "Select where to put the processed files.",
+                    "key": "label1",
+                    "input": false,
+                    "tableView": false,
+                    "label": "Label",
+                    "type": "label"
+                  },
+                  {
+                    "label": "Select Destination Folder",
+                    "action": "event",
+                    "showValidations": false,
+                    "tableView": false,
+                    "key": "selectDestinationFolder",
+                    "type": "button",
+                    "input": true
+                  },
+                  {
+                    "label": "Container",
+                    "key": "container1",
+                    "type": "container",
+                    "input": true,
+                    "tableView": false,
+                    "components": [
+                      {
+                        "label": "Content",
+                        "refreshOnChange": true,
+                        "key": "destination_folder_path",
+                        "type": "content",
+                        "input": false,
+                        "tableView": false
+                      }
+                    ]
+                  }
+                ],
+                "width": 6,
+                "offset": 0,
+                "push": 0,
+                "pull": 0,
+                "size": "md",
+                "currentWidth": 6
+              }
+            ],
+            "key": "columns",
+            "type": "columns",
+            "input": false,
+            "tableView": false,
+            "label": "Columns"
+          },
+          {
+            "label": "filepaths",
+            "key": "pdf_filePaths",
+            "type": "hidden",
+            "input": true,
+            "tableView": false
+          }
+        ]
       }
     ]
   }
