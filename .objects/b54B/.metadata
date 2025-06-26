@@ -1,0 +1,12 @@
+﻿{
+  "Name": "Edge Prolog Converge",
+  "Type": "App",
+  "Id": "b54BOPdmyE6MpB0WaQWpsw",
+  "Reference": "xGt2OSXt7UW47kSHt2k5yg/b54BOPdmyE6MpB0WaQWpsw",
+  "Created": "2025-06-26T04:47:24.03792Z",
+  "Updated": "2025-06-26T04:47:24.03792Z",
+  "CreatedBy": [
+    "UiPath.UIAutomationCore, Version=25.10.4.0, Culture=neutral, PublicKeyToken=null",
+    "UiPath.Platform, Version=25.4.0.0, Culture=neutral, PublicKeyToken=null"
+  ]
+}

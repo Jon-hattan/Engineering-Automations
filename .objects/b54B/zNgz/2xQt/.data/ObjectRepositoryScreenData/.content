@@ -1,0 +1,8 @@
+<?xml version="1.0" encoding="utf-16"?>
+<ObjectRepositoryScreenData ContentHash="Pj7UM4laYE2a7AWzyLw6oA" Reference="xGt2OSXt7UW47kSHt2k5yg/2xQt5_VFDEueyBOeIAzvnA" xmlns="http://schemas.uipath.com/workflow/activities/uix" xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml">
+  <ObjectRepositoryScreenData.Data>
+    <TargetApp x:Key="TargetApp" Area="0, 0, 1245, 1005" BrowserType="Edge" ContentHash="XAUboKA2LkGyNM3VxxUNkA" IconBase64="iVBORw0KGgoAAAANSUhEUgAAABAAAAAQCAYAAAAf8/9hAAAAAXNSR0IArs4c6QAAAARnQU1BAACxjwv8YQUAAAAJcEhZcwAAFiUAABYlAUlSJPAAAAGmSURBVDhPjZI/SCNBFMZ/u/45iMgJgifoFSJYBS0E7Tw8i2s8RLA4rvEqEcRO1CsEFRtBBDkEwc6gXLKbRNSLuJ0gB4K9hZUgImqjRE2y7jyZQDQuifHHFDO8731882bAx/wgC91BevXeNDD99ZJsT7NzFub6S5A+fX63iZFdEJ4gIvvI1Qa3P7oYeS15B/Zvot4uXiaOl9rEG+9nHijXNYM30uQSWJPY4iC3f0ln4ijZQf4MsVZRxkddL3qlnIFOIHvInYX7YOOlojzKLrI+RqKmioZ8bXEDB0lGyKRjqAcbdW/halNnjsPGWoL+3ix+A50gFUXSMSQVRSUjuDrJ8QqnbU18ze8paZBNYfMoCcSZ5aSxloHcYAsb7L1c4V7PIYanm1dH+R+o5DtQp+dZ0MCafElwZ+G5myhvG5n5yb8ykx6gptQQbeUgN2HSagtJ2rjD3wgBnUB1weZ8dAL9kdQW6iJEsredRaDVgIBf+4rnrzyOJQfI8TKXHS1MAS2GwQe/viiJWRJHS5w31zMMfDYNKvyaN/nVw0hzPYPAJ9PwPVUBngDOiMjgta3rWAAAAABJRU5ErkJggg==" Reference="xGt2OSXt7UW47kSHt2k5yg/2xQt5_VFDEueyBOeIAzvnA" Selector="&lt;html app='msedge.exe' title='Editing Request for Inspection Works' /&gt;" Url="https://convergeaus.jacobs.com/PrologConverge/WebClient/InspectionsTests.aspx*" Version="V2">
+      <imageRef attrName="InformativeScreenshot" originalValue="628a151a42ed03e860a43000318f4ca9.jpg" xmlns="">0GxrxjhAE30yKD_6MvU4wHA</imageRef>
+    </TargetApp>
+  </ObjectRepositoryScreenData.Data>
+</ObjectRepositoryScreenData>
