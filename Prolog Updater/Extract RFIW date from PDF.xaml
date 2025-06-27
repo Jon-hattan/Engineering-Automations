@@ -1,0 +1,323 @@
+<Activity mc:Ignorable="sap sap2010" x:Class="test_extraction_date" xmlns="http://schemas.microsoft.com/netfx/2009/xaml/activities" xmlns:isactr="http://schemas.uipath.com/workflow/integration-service-activities/isactr" xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" xmlns:njl="clr-namespace:Newtonsoft.Json.Linq;assembly=Newtonsoft.Json" xmlns:s="clr-namespace:System;assembly=System.Private.CoreLib" xmlns:sap="http://schemas.microsoft.com/netfx/2009/xaml/activities/presentation" xmlns:sap2010="http://schemas.microsoft.com/netfx/2010/xaml/activities/presentation" xmlns:scg="clr-namespace:System.Collections.Generic;assembly=System.Private.CoreLib" xmlns:sco="clr-namespace:System.Collections.ObjectModel;assembly=System.Private.CoreLib" xmlns:ui="http://schemas.uipath.com/workflow/activities" xmlns:uiascb="clr-namespace:UiPath.IntegrationService.Activities.SWEntities.CD9CAA8ACB5_v1_sub_objectminus_signdetection_Create.Bundle;assembly=CD9CAA8ACB5_v1_sub_o.vmbtv3cj5mC1d73Fqzu3xa3" xmlns:uiascb1="clr-namespace:UiPath.IntegrationService.Activities.SWEntities.CD9CAA8ACB5_ner_Create.Bundle;assembly=CD9CAA8ACB5_ner_Crea.Tzd1940clSF1bOSwJ2nDNG24" xmlns:uisape="clr-namespace:UiPath.IntelligentOCR.StudioWeb.Activities.PDF.ExtractPDFImages;assembly=UiPath.IntelligentOCR.StudioWeb.Activities" xmlns:uisape1="clr-namespace:UiPath.IntelligentOCR.StudioWeb.Activities.PDF.ExtractPDFPageRange;assembly=UiPath.IntelligentOCR.StudioWeb.Activities" xmlns:uisape2="clr-namespace:UiPath.IntelligentOCR.StudioWeb.Activities.PDF.ExtractPDFText;assembly=UiPath.IntelligentOCR.StudioWeb.Activities" xmlns:upr="clr-namespace:UiPath.Platform.ResourceHandling;assembly=UiPath.Platform" xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml">
+  <x:Members>
+    <x:Property Name="Date_Inspection" Type="OutArgument(x:String)" />
+    <x:Property Name="filePath" Type="InArgument(x:String)" />
+  </x:Members>
+  <VisualBasic.Settings>
+    <x:Null />
+  </VisualBasic.Settings>
+  <sap2010:WorkflowViewState.IdRef>test_extraction_date_1</sap2010:WorkflowViewState.IdRef>
+  <TextExpression.NamespacesForImplementation>
+    <sco:Collection x:TypeArguments="x:String">
+      <x:String>System.Activities</x:String>
+      <x:String>System.Activities.Statements</x:String>
+      <x:String>System.Activities.Expressions</x:String>
+      <x:String>System.Activities.Validation</x:String>
+      <x:String>System.Activities.XamlIntegration</x:String>
+      <x:String>Microsoft.VisualBasic</x:String>
+      <x:String>Microsoft.VisualBasic.Activities</x:String>
+      <x:String>System</x:String>
+      <x:String>System.Collections</x:String>
+      <x:String>System.Collections.Generic</x:String>
+      <x:String>System.Collections.ObjectModel</x:String>
+      <x:String>System.Data</x:String>
+      <x:String>System.Diagnostics</x:String>
+      <x:String>System.Drawing</x:String>
+      <x:String>System.IO</x:String>
+      <x:String>System.Linq</x:String>
+      <x:String>System.Net.Mail</x:String>
+      <x:String>System.Xml</x:String>
+      <x:String>System.Xml.Linq</x:String>
+      <x:String>UiPath.Core</x:String>
+      <x:String>UiPath.Core.Activities</x:String>
+      <x:String>System.Windows.Markup</x:String>
+      <x:String>GlobalVariablesNamespace</x:String>
+      <x:String>GlobalConstantsNamespace</x:String>
+      <x:String>UiPath.IntegrationService.Activities.Runtime.Models.FilterBuilder</x:String>
+      <x:String>System.Runtime.Serialization</x:String>
+      <x:String>UiPath.IntegrationService.Activities.Runtime.Models</x:String>
+      <x:String>System.ComponentModel</x:String>
+      <x:String>UiPath.IntegrationService.Activities.Runtime.Helpers.TypeDetailsCustomization</x:String>
+      <x:String>UiPath.IntegrationService.Activities.Runtime.Activities</x:String>
+      <x:String>UiPath.Platform.Activities</x:String>
+      <x:String>UiPath.Platform.ResourceHandling</x:String>
+      <x:String>UiPath.IntelligentOCR.StudioWeb.Activities.PDF.ExtractPDFImages</x:String>
+      <x:String>UiPath.IntelligentOCR.StudioWeb.Activities.PDF</x:String>
+      <x:String>System.Reflection</x:String>
+      <x:String>System.Linq.Expressions</x:String>
+      <x:String>UiPath.Platform</x:String>
+      <x:String>UiPath.IntelligentOCR.StudioWeb.Activities.PDF.ExtractPDFPageRange</x:String>
+      <x:String>UiPath.IntelligentOCR.StudioWeb.Activities.PDF.ExtractPDFText</x:String>
+      <x:String>UiPath.IntegrationService.Activities.SWEntities.CD9CAA8ACB5_ner_Create.Bundle</x:String>
+      <x:String>UiPath.IntegrationService.Activities.SWEntities.CD9CAA8ACB5_ner_Create.Bundle</x:String>
+      <x:String>System.Text.RegularExpressions</x:String>
+      <x:String>Newtonsoft.Json.Linq</x:String>
+      <x:String>Newtonsoft.Json</x:String>
+      <x:String>System.Dynamic</x:String>
+      <x:String>System.Collections.Specialized</x:String>
+      <x:String>UiPath.Web.Activities</x:String>
+      <x:String>System.Numerics</x:String>
+    </sco:Collection>
+  </TextExpression.NamespacesForImplementation>
+  <TextExpression.ReferencesForImplementation>
+    <sco:Collection x:TypeArguments="AssemblyReference">
+      <AssemblyReference>Microsoft.VisualBasic</AssemblyReference>
+      <AssemblyReference>mscorlib</AssemblyReference>
+      <AssemblyReference>System</AssemblyReference>
+      <AssemblyReference>System.Activities</AssemblyReference>
+      <AssemblyReference>System.ComponentModel.TypeConverter</AssemblyReference>
+      <AssemblyReference>System.Core</AssemblyReference>
+      <AssemblyReference>System.Data</AssemblyReference>
+      <AssemblyReference>System.Data.Common</AssemblyReference>
+      <AssemblyReference>System.Data.DataSetExtensions</AssemblyReference>
+      <AssemblyReference>System.Drawing</AssemblyReference>
+      <AssemblyReference>System.Drawing.Common</AssemblyReference>
+      <AssemblyReference>System.Drawing.Primitives</AssemblyReference>
+      <AssemblyReference>System.Linq</AssemblyReference>
+      <AssemblyReference>System.Net.Mail</AssemblyReference>
+      <AssemblyReference>System.ObjectModel</AssemblyReference>
+      <AssemblyReference>System.Private.CoreLib</AssemblyReference>
+      <AssemblyReference>System.Xaml</AssemblyReference>
+      <AssemblyReference>System.Xml</AssemblyReference>
+      <AssemblyReference>System.Xml.Linq</AssemblyReference>
+      <AssemblyReference>UiPath.System.Activities</AssemblyReference>
+      <AssemblyReference>UiPath.UiAutomation.Activities</AssemblyReference>
+      <AssemblyReference>UiPath.Studio.Constants</AssemblyReference>
+      <AssemblyReference>UiPath.IntegrationService.Activities.Runtime</AssemblyReference>
+      <AssemblyReference>System.Private.ServiceModel</AssemblyReference>
+      <AssemblyReference>System.Private.DataContractSerialization</AssemblyReference>
+      <AssemblyReference>System.Runtime.Serialization.Formatters</AssemblyReference>
+      <AssemblyReference>System.Runtime.Serialization.Primitives</AssemblyReference>
+      <AssemblyReference>System.ComponentModel.EventBasedAsync</AssemblyReference>
+      <AssemblyReference>PresentationFramework</AssemblyReference>
+      <AssemblyReference>WindowsBase</AssemblyReference>
+      <AssemblyReference>System.ComponentModel</AssemblyReference>
+      <AssemblyReference>System.ComponentModel.Primitives</AssemblyReference>
+      <AssemblyReference>UiPath.Platform</AssemblyReference>
+      <AssemblyReference>CD9CAA8ACB5_v1_sub_o.vmbtv3cj5mC1d73Fqzu3xa3</AssemblyReference>
+      <AssemblyReference>UiPath.IntelligentOCR.StudioWeb.Activities</AssemblyReference>
+      <AssemblyReference>System.Reflection.DispatchProxy</AssemblyReference>
+      <AssemblyReference>System.Reflection.TypeExtensions</AssemblyReference>
+      <AssemblyReference>System.Reflection.Metadata</AssemblyReference>
+      <AssemblyReference>System.Memory.Data</AssemblyReference>
+      <AssemblyReference>UiPath.Excel.Activities.Design</AssemblyReference>
+      <AssemblyReference>System.Console</AssemblyReference>
+      <AssemblyReference>System.Security.Permissions</AssemblyReference>
+      <AssemblyReference>System.Memory</AssemblyReference>
+      <AssemblyReference>System.Configuration.ConfigurationManager</AssemblyReference>
+      <AssemblyReference>System.Private.Uri</AssemblyReference>
+      <AssemblyReference>System.Linq.Async</AssemblyReference>
+      <AssemblyReference>System.Collections</AssemblyReference>
+      <AssemblyReference>System.Collections.NonGeneric</AssemblyReference>
+      <AssemblyReference>System.Linq.Expressions</AssemblyReference>
+      <AssemblyReference>UiPath.CodedWorkflows</AssemblyReference>
+      <AssemblyReference>System.Linq.Async.Queryable</AssemblyReference>
+      <AssemblyReference>System.Linq.Parallel</AssemblyReference>
+      <AssemblyReference>System.Collections.Immutable</AssemblyReference>
+      <AssemblyReference>System.Linq.Queryable</AssemblyReference>
+      <AssemblyReference>CD9CAA8ACB5_ner_Crea.Tzd1940clSF1bOSwJ2nDNG24</AssemblyReference>
+      <AssemblyReference>System.Text.RegularExpressions</AssemblyReference>
+      <AssemblyReference>Newtonsoft.Json</AssemblyReference>
+      <AssemblyReference>System.Collections.Specialized</AssemblyReference>
+      <AssemblyReference>UiPath.Web.Activities</AssemblyReference>
+      <AssemblyReference>System.Runtime.Numerics</AssemblyReference>
+    </sco:Collection>
+  </TextExpression.ReferencesForImplementation>
+  <Sequence DisplayName="test_extraction_date" sap:VirtualizedContainerService.HintSize="1305,1361" sap2010:WorkflowViewState.IdRef="Sequence_1">
+    <Sequence.Variables>
+      <Variable x:TypeArguments="upr:ILocalResource" Name="exportedPDF" />
+      <Variable x:TypeArguments="x:String" Name="extractedText" />
+      <Variable x:TypeArguments="njl:JArray" Name="jArr" />
+      <Variable x:TypeArguments="x:String" Name="output" />
+    </Sequence.Variables>
+    <sap:WorkflowViewStateService.ViewState>
+      <scg:Dictionary x:TypeArguments="x:String, x:Object">
+        <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+      </scg:Dictionary>
+    </sap:WorkflowViewStateService.ViewState>
+    <ui:CommentOut DisplayName="Comment Out" sap:VirtualizedContainerService.HintSize="470,57" sap2010:WorkflowViewState.IdRef="CommentOut_1">
+      <ui:CommentOut.Body>
+        <Sequence DisplayName="Ignored Activities" sap:VirtualizedContainerService.HintSize="450,664" sap2010:WorkflowViewState.IdRef="Sequence_2">
+          <sap:WorkflowViewStateService.ViewState>
+            <scg:Dictionary x:TypeArguments="x:String, x:Object">
+              <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+            </scg:Dictionary>
+          </sap:WorkflowViewStateService.ViewState>
+          <uisape:ExtractPDFImages FilePassword="{x:Null}" DisplayName="Extract PDF Images" ExtractedImages="[extractedImages]" sap:VirtualizedContainerService.HintSize="416,122" sap2010:WorkflowViewState.IdRef="ExtractPDFImages_1" ImageExtension="JPEG" PdfFile="[LocalResource.FromPath(&quot;C:\\Users\\CHEWJ1\\Desktop\\RFIW\\131241-WSB00-RN-K-5970.pdf&quot;)]" />
+          <ui:CommentOut DisplayName="Comment Out" sap:VirtualizedContainerService.HintSize="416,57" sap2010:WorkflowViewState.IdRef="CommentOut_2">
+            <ui:CommentOut.Body>
+              <Sequence DisplayName="Ignored Activities" sap:VirtualizedContainerService.HintSize="450,288" sap2010:WorkflowViewState.IdRef="Sequence_3">
+                <sap:WorkflowViewStateService.ViewState>
+                  <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                    <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+                  </scg:Dictionary>
+                </sap:WorkflowViewStateService.ViewState>
+                <ui:StartProcess WorkingDirectory="{x:Null}" Arguments="[extractedImages(0).localpath]" DisplayName="Start Process" FileName="explorer.exe" sap:VirtualizedContainerService.HintSize="416,120" sap2010:WorkflowViewState.IdRef="StartProcess_2" />
+                <ui:MessageBox Caption="{x:Null}" ChosenButton="{x:Null}" AutoCloseAfter="00:00:00" DisplayName="Message Box" sap:VirtualizedContainerService.HintSize="416,108" sap2010:WorkflowViewState.IdRef="MessageBox_4" Text="[&quot;huh&quot;]" />
+              </Sequence>
+            </ui:CommentOut.Body>
+            <sap:WorkflowViewStateService.ViewState>
+              <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                <x:Boolean x:Key="IsExpanded">False</x:Boolean>
+                <x:Boolean x:Key="IsPinned">False</x:Boolean>
+              </scg:Dictionary>
+            </sap:WorkflowViewStateService.ViewState>
+          </ui:CommentOut>
+          <isactr:ConnectorActivity Configuration="H4sIAAAAAAAACr1XbVPjNhD+Kx5/ajuJjyTQXjOlM4mBkis0KaHHhxuGUaxNoost+fQSyGX4713JLzg4huvLMDAkknZXz+4+u1q2/hmDmKpQcE0YB+n3t/4UiIyWZBZDduj3P922/BFPjS43tv4fJAG/7xNKmWaCk3jElZYmsgvlt/wTptKYbHKxQSnmsYqcNxfSo6DBLa0WqEiy1K36/jjdp6OFJ2GOaD29BE/MPqP2kxEvlSICpQK0dr1J7eWZCK6nQuqxpNbNXss/EzIhGs8pc5pEbn7BaxhftLKPXx2gOTGx/khig6a2jw4iWyC6rT8RyjmFJqYQCU7RAqqEIkkFB25Nn5SmXUiKxQ2jC8DzrX/DOBX310zHL4QJdTO53fBMpFgzCh5p1ApFbBL+O2yKC065ZnpTPdk1eQVzkMCjLLbgpL0ZYDA85WgB1OUMfytXeSgWgzu4X7JoaVOEoLy5kWhmR7R69TlzMXq7O10Wi1CMmgT+UZBzAODuxK9c6KobailMTNGbnKDoyowo/IsOCKeDV2mQjAS7IPLYvN3tj0htV94XIiK570NBLVfGPCR8TbDu8WJ4bJXF765hUC/308rBTjQz/nkcxTzCKeIqT20Cs3w7F1hCFi69L9fx4f9bxxOJ9/7XKq54/1LZVsQa6tTFqblYbbA9Ma9kfE911YVsoCuU2F8d1ZteqI7KqgFJlc3N0pZ9V/DFMImAHM0a2Fhh35wh0ufMG1na1Gjndq3fJo0Fod53yqQpkghLIecZ2lLfP1Ett/0apEukFEuJtKQcqUusQ0EnRCIUrKpauSSCQuy+P0d9aU+KbO9Cv8YguXLB8h6dFGFzpuwWBfRok2AYnXsq64hWBJ9w7UXI4hjyLOa+ZUVRqwl/ker2oWh3D7qH7U4HP1HklJuk+tzvk2nWr/gexcRQaPfaR20lOAfdXnf7VW3C9VKKlEVBXdSa7Bx0u5nO4221eC8wn8NN7koR8lcT96cBV8yvJ22W9cDdfBWbtUzl00h+Xg94gXqkzhmlwEvA/4ZZGIex0XvHsg9M3607/X6Gp70zYu14Ms4AnzTOYE9u/MUmRC+DEdewkA7nFOSaRRAMUHXtelkwvSnaWhCe/BwOBu8H4fAIsdwpM7vL4CSMG3VnQ1HiugslEA3B0HAaQ/CN4i1v3x3BOpnpdS/6fJSEHfpT7+zLV9N7IL2W9xGkQu3jTnBgf1Ado2wkHHMwWpK45U3MLGaRbcRiBfyYmzjO2wAoZNecxArZdAUK3wYFTezKslJ7OW0mMTFOusazoh1nCVHTkjN7H9Zq997N10BKsrFtAvaIPifka44V69BgwpurqcHfRu/spvr0w23NPXdgwZfzSkaB+iBxwZS2grY1ZmMQieNCGvsf9r57nCpLQ8Hbe3+LZW2HTIKjbVm6eLj1cx6irmOieyux0UVaSKQebhssfb1s5x+ESbpCobzMNrkfBSy8uIwqbjeU/bnWadZG7Agi0G2EFxI7XV8IsTKpa8QWXrk/lOJegRxpSPL9fDxCkPl/hRMSrfD9rDrUOdr1KIeVdQ/vN+CDkffUMKqSVStH74MfS89ebVnfEoBxClnXsqFz7aMWlfH0GvcsTly9W3fe7TFzQfjC2BnDjr+4viQPE1xO2Vfc6h4coE2ihmh/hSQLlyhtg5oz7Boe9DAW0cqF7/Fvtwa9Nn8PAAA=" ConnectionId="434f8ea0-0534-465a-8e55-96d9caa8acb5" DisplayName="Detect Object" sap:VirtualizedContainerService.HintSize="416,317" sap2010:WorkflowViewState.IdRef="ConnectorActivity_2" UiPathActivityTypeId="9d45f723-9ec1-35ba-a239-8a26c2d3362b">
+            <isactr:ConnectorActivity.FieldObjects>
+              <isactr:FieldObject Name="entities" Type="FieldArgument">
+                <isactr:FieldObject.Value>
+                  <InArgument x:TypeArguments="scg:Dictionary(x:String, x:String)" xml:space="preserve">[new System.Collections.Generic.Dictionary(Of System.String, System.String) From { { "Date Approval", "Analyze the first page of a document called an RFIW (inspections list) and extract the date that is hand-written beside the signature. This date is the APPROVAL DATE. it is the date the inspection was approved. 
+The image may contain multiple dates, but only the date next to the signature should be extracted. 
+The extracted date should be in the format DD/MM/YYYY. it will be found on the same line as 'Approval by QP / RE / RTO (sign, name, date)'
+Corroborate your date with the date beside the signature on the right of the box with the text 'Name &amp; Signature of QP / RE / RTO'. 
+Corroborate your date with the 'Date &amp; Time Inspected'.
+They should be the same. If they are not the same, use the latest date.
+If they are not the same. ENSURE you output DD/MM/YY (unsure) to indicate that you are unsure.
+There may be MULTIPLE Inspections, so ensure you pick the date from the LATEST inspection
+
+ Pay extremely close attention to the difference between 4 and 9, which are often confused.
+ • 9 typically has a closed loop or circle at the top.
+ • 4 is usually made with straight, angular lines, often forming a triangle at the top." } }]</InArgument>
+                </isactr:FieldObject.Value>
+              </isactr:FieldObject>
+              <isactr:FieldObject Name="_file" Type="FieldArgument">
+                <isactr:FieldObject.Value>
+                  <InArgument x:TypeArguments="upr:IResource">[extractedImages(0)]</InArgument>
+                </isactr:FieldObject.Value>
+              </isactr:FieldObject>
+              <isactr:FieldObject Name="modelName" Type="FieldArgument">
+                <isactr:FieldObject.Value>
+                  <InArgument x:TypeArguments="x:String">gpt-4</InArgument>
+                </isactr:FieldObject.Value>
+              </isactr:FieldObject>
+              <isactr:FieldObject Name="additionalInstructions" Type="FieldArgument">
+                <isactr:FieldObject.Value>
+                  <InArgument x:TypeArguments="scg:Dictionary(x:String, x:String)" xml:space="preserve">[new System.Collections.Generic.Dictionary(Of System.String, System.String) From { { "Date Approval", "Ensure that you only extract out the date and do not provide any other text. the only thing that should be ouputted should be in the form of DD/MM/YYYY. ONLY INCLUDE AN EXTRA TEXT IF you are unsure of the text.
+ Do not guess—if unsure, note it in brackets. For example: DD/MM/YYYY (unsure)
+
+
+" } }]</InArgument>
+                </isactr:FieldObject.Value>
+              </isactr:FieldObject>
+              <isactr:FieldObject Name="Jit_v1_sub_objectminus_signdetection" Type="FieldArgument">
+                <isactr:FieldObject.Value>
+                  <OutArgument x:TypeArguments="uiascb:v1_sub_objectminus_signdetection_Create" />
+                </isactr:FieldObject.Value>
+              </isactr:FieldObject>
+              <isactr:FieldObject Name="out_detectedObjectsString" Type="FieldArgument">
+                <isactr:FieldObject.Value>
+                  <OutArgument x:TypeArguments="x:String">[detectedObjects]</OutArgument>
+                </isactr:FieldObject.Value>
+              </isactr:FieldObject>
+              <isactr:FieldObject Name="out_detectedObjectNames_array" Type="FieldArgument">
+                <isactr:FieldObject.Value>
+                  <OutArgument x:TypeArguments="s:String[]" />
+                </isactr:FieldObject.Value>
+              </isactr:FieldObject>
+            </isactr:ConnectorActivity.FieldObjects>
+          </isactr:ConnectorActivity>
+          <ui:MessageBox Caption="{x:Null}" ChosenButton="{x:Null}" AutoCloseAfter="00:00:00" DisplayName="Message Box" sap:VirtualizedContainerService.HintSize="416,108" sap2010:WorkflowViewState.IdRef="MessageBox_1" Text="[&quot;detected object: &quot; &amp; detectedObjects]" />
+        </Sequence>
+      </ui:CommentOut.Body>
+      <sap:WorkflowViewStateService.ViewState>
+        <scg:Dictionary x:TypeArguments="x:String, x:Object">
+          <x:Boolean x:Key="IsExpanded">False</x:Boolean>
+          <x:Boolean x:Key="IsPinned">False</x:Boolean>
+        </scg:Dictionary>
+      </sap:WorkflowViewStateService.ViewState>
+    </ui:CommentOut>
+    <uisape1:ExtractPDFPageRange FilePassword="{x:Null}" ResultFileName="{x:Null}" DisplayName="Extract PDF Page Range" ExportedPdf="[exportedPDF]" sap:VirtualizedContainerService.HintSize="470,173" sap2010:WorkflowViewState.IdRef="ExtractPDFPageRange_1" PageRange="1" PdfFile="[LocalResource.FromPath(filePath)]" />
+    <uisape2:ExtractPDFText FilePassword="{x:Null}" ApplyOcr="True" DisplayName="Extract PDF Text" sap:VirtualizedContainerService.HintSize="470,122" sap2010:WorkflowViewState.IdRef="ExtractPDFText_1" OcrEngine="UIPATH_DOCUMENT_OCR" PdfFile="[exportedPDF]" Text="[extractedText]" />
+    <ui:DeleteFileX DisplayName="Delete File" sap:VirtualizedContainerService.HintSize="470,112" sap2010:WorkflowViewState.IdRef="DeleteFileX_1" Path="[exportedPDF.LocalPath]" />
+    <isactr:ConnectorActivity Configuration="H4sIAAAAAAAACp1VbU/bMBD+K5Y/ZxllMLFqTGrDWxnQinbwYULITY7Wq2tntgOEiv++s+O2Ce+a+iHy3fnueR7fXRf0gIPITKKkZVyCpu0FHQLT6ZSNBVRO2v59FdGezAu7MizoGZsDbVML95ZGdI+bXLAyGH0sWbrApJrnliuJrtEUvINYRZhkonwAcqM0kXgzIyAttxwMXhuVuUtlrOZygueh0ravMwex5ZPyCeZb0IEyPOQeaD5nuqSPET2HvwXXkNG21QVEFc0TlbIQ2lWZi1vRqBVuUtmvOZ4REdxYom5WsJFRRuwUuCbZOtg4rsaL6pwVfeS8JqnGfyC1TZJfELTSc2bRn/HUJUJu3ys9ourzw6O6YYWwF0wUmGrx+I42EU3UPFcSIaN1b5XYE18eLnk2AfQv6CWXmbobcSueiFE5mpIMtLrlGfy/HIkSxVz+hLJRsPTNUXc3y7qXcq/gkvnSZT32iHumbwR56ZYV66kbAc2atdNbWUPx16MfP9yrOIL9wr44g0u9K//HW/jkaftqSNVE8gecxHHpYZ7tn5O5ykAQLr2B10f77Rl1vMAg/xsmDPI6B4ONZ2DJc3lOCs3s6/RXrPoyYfKWmSqwNrzH3F673fWUuPtkJPTQecUtPGxTiDWVX3zA7DTuSQsTRIXuIehbnkLcweG49TLFw8ulpHGy9y3pdHY6SXfbQbhONCCXuFvITEC8tkTkpch49JC1vm1tpGJ40Br3h3fHm3Lv7HBzKyIXoA1W323FG+6H93HICw27EgqrmYjIoBgLnrphUTOQu7IQgr4v+gfVxX1vUFYfHfS+wlbtSWOZTGHANGprEaNbEgErZvNo/QhIiRtNaYSH5oLnqOqn8GFcZzMMCoqWQfplGyAUvw7DI1YPe2Rtfgp2qhCNW2vWLfmEpVNAMmpW5H7cHJqVvavVnQHdszAP9rADEVP4TxuwdMYmUMff2m4SCCiqviCHIDs9sm6FemQ9y/ZO/HVF5MNN+QLvfg5VGzqBfCc9E6M/HKHNwcPT5+raCZOTApn55YDnU3Y/wOMQR5u2Nzc2MAczXcw3w8FNphjttAstM8Lh7gqVzrxKj/8ADvphIyQIAAA=" ConnectionId="434f8ea0-0534-465a-8e55-96d9caa8acb5" DisplayName="Named Entity Recognition" sap:VirtualizedContainerService.HintSize="470,266" sap2010:WorkflowViewState.IdRef="ConnectorActivity_3" UiPathActivityTypeId="0382f08f-15b5-306a-8f82-cf3ac367436d">
+      <isactr:ConnectorActivity.FieldObjects>
+        <isactr:FieldObject Name="text" Type="FieldArgument">
+          <isactr:FieldObject.Value>
+            <InArgument x:TypeArguments="x:String">[extractedText]</InArgument>
+          </isactr:FieldObject.Value>
+        </isactr:FieldObject>
+        <isactr:FieldObject Name="entities" Type="FieldArgument">
+          <isactr:FieldObject.Value>
+            <InArgument x:TypeArguments="scg:Dictionary(x:String, x:String)" xml:space="preserve">[new System.Collections.Generic.Dictionary(Of System.String, System.String) From { { "Date approved", "Analyze the first page of a document called an RFIW (inspections list) and extract the date that is hand-written beside the signature. This date is the APPROVAL DATE. it is the date the inspection was approved. 
+The pdf may contain multiple dates, but only the date next to the signature should be extracted. 
+The extracted date should be in the format DD/MM/YYYY. it will be found on the same line as 'Approval by QP / RE / RTO (sign, name, date)'
+Corroborate your date with the date beside the signature on the right of the box with the text 'Name &amp; Signature of QP / RE / RTO'. 
+Corroborate your date with the 'Date &amp; Time Inspected'.
+They should be the same. If they are not the same, use the latest date.
+If they are not the same. ENSURE you output DD/MM/YY (unsure) to indicate that you are unsure.
+There may be MULTIPLE Inspections, so ensure you pick the date from the LATEST inspection
+DO NOT output in json format. output in pure text" } }]</InArgument>
+          </isactr:FieldObject.Value>
+        </isactr:FieldObject>
+        <isactr:FieldObject Name="out_entitiesOutput" Type="FieldArgument">
+          <isactr:FieldObject.Value>
+            <OutArgument x:TypeArguments="x:String">[output]</OutArgument>
+          </isactr:FieldObject.Value>
+        </isactr:FieldObject>
+        <isactr:FieldObject Name="Jit_ner" Type="FieldArgument">
+          <isactr:FieldObject.Value>
+            <OutArgument x:TypeArguments="uiascb1:ner_Create" />
+          </isactr:FieldObject.Value>
+        </isactr:FieldObject>
+      </isactr:ConnectorActivity.FieldObjects>
+    </isactr:ConnectorActivity>
+    <ui:DeserializeJsonArray DisplayName="Deserialize JSON Array" sap:VirtualizedContainerService.HintSize="470,92" sap2010:WorkflowViewState.IdRef="DeserializeJsonArray_1" JsonArray="[jArr]" JsonString="[output]" />
+    <If Condition="[jArr.Count &gt; 0]" sap:VirtualizedContainerService.HintSize="470,468" sap2010:WorkflowViewState.IdRef="If_1">
+      <If.Then>
+        <Sequence DisplayName="Then" sap:VirtualizedContainerService.HintSize="468,165" sap2010:WorkflowViewState.IdRef="Sequence_4">
+          <sap:WorkflowViewStateService.ViewState>
+            <scg:Dictionary x:TypeArguments="x:String, x:Object">
+              <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+            </scg:Dictionary>
+          </sap:WorkflowViewStateService.ViewState>
+          <Assign sap:VirtualizedContainerService.HintSize="434,105" sap2010:WorkflowViewState.IdRef="Assign_3">
+            <Assign.To>
+              <OutArgument x:TypeArguments="x:String">[Date_Inspection]</OutArgument>
+            </Assign.To>
+            <Assign.Value>
+              <InArgument x:TypeArguments="x:String">[jArr(0)("text").ToString]</InArgument>
+            </Assign.Value>
+          </Assign>
+        </Sequence>
+      </If.Then>
+      <If.Else>
+        <Sequence DisplayName="Else" sap:VirtualizedContainerService.HintSize="468,165" sap2010:WorkflowViewState.IdRef="Sequence_5">
+          <sap:WorkflowViewStateService.ViewState>
+            <scg:Dictionary x:TypeArguments="x:String, x:Object">
+              <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+            </scg:Dictionary>
+          </sap:WorkflowViewStateService.ViewState>
+          <Assign sap:VirtualizedContainerService.HintSize="434,105" sap2010:WorkflowViewState.IdRef="Assign_4">
+            <Assign.To>
+              <OutArgument x:TypeArguments="x:String">[Date_Inspection]</OutArgument>
+            </Assign.To>
+            <Assign.Value>
+              <InArgument x:TypeArguments="x:String">
+                <Literal x:TypeArguments="x:String" Value="" />
+              </InArgument>
+            </Assign.Value>
+          </Assign>
+        </Sequence>
+      </If.Else>
+    </If>
+    <ui:CommentOut DisplayName="Comment Out" sap:VirtualizedContainerService.HintSize="470,48" sap2010:WorkflowViewState.IdRef="CommentOut_3">
+      <ui:CommentOut.Body>
+        <Sequence DisplayName="Ignored Activities" sap:VirtualizedContainerService.HintSize="450,168" sap2010:WorkflowViewState.IdRef="Sequence_6">
+          <sap:WorkflowViewStateService.ViewState>
+            <scg:Dictionary x:TypeArguments="x:String, x:Object">
+              <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+            </scg:Dictionary>
+          </sap:WorkflowViewStateService.ViewState>
+          <ui:MessageBox Caption="{x:Null}" ChosenButton="{x:Null}" AutoCloseAfter="00:00:02" DisplayName="Message Box" sap:VirtualizedContainerService.HintSize="416,108" sap2010:WorkflowViewState.IdRef="MessageBox_5" Text="[&quot;Date : &quot; &amp; Date_inspection]" />
+        </Sequence>
+      </ui:CommentOut.Body>
+      <sap:WorkflowViewStateService.ViewState>
+        <scg:Dictionary x:TypeArguments="x:String, x:Object">
+          <x:Boolean x:Key="IsExpanded">False</x:Boolean>
+          <x:Boolean x:Key="IsPinned">False</x:Boolean>
+        </scg:Dictionary>
+      </sap:WorkflowViewStateService.ViewState>
+    </ui:CommentOut>
+  </Sequence>
+</Activity>

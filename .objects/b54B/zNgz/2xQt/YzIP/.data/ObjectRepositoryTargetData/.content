@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="utf-16"?>
+<ObjectRepositoryTargetData ContentHash="rxdveid3CEitA0hJ0zj-qQ" Reference="xGt2OSXt7UW47kSHt2k5yg/YzIPG7OfJ0WZeC82WPRZNw" xmlns="http://schemas.uipath.com/workflow/activities/uix" xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml">
+  <ObjectRepositoryTargetData.Data>
+    <TargetAnchorable x:Key="TargetAnchorable" BrowserURL="convergeaus.jacobs.com/PrologConverge/WebClient/InspectionsTests.aspx" DesignTimeRectangle="519, 223, 103, 49" ElementType="Button" FullSelectorArgument="&lt;ctrl name='Leave site?' role='dialog' /&gt;&lt;ctrl name='Leave' role='push button' /&gt;" Guid="f50cf94a-2907-42af-afe6-f02927f9f901" ScopeSelectorArgument="&lt;wnd app='msedge.exe' cls='Chrome_WidgetWin_1' title='Leave site?' /&gt;" SearchSteps="Selector" Version="V6" Visibility="Interactive" WaitForReadyArgument="None">
+      <imageRef attrName="InformativeScreenshot" originalValue="7aacf095a436d03b6941038cb8d15e12.png" xmlns="">0y1qmO2_7lkK0Wd75fhWeGw</imageRef>
+    </TargetAnchorable>
+    <x:String x:Key="ActivityType">Click</x:String>
+  </ObjectRepositoryTargetData.Data>
+</ObjectRepositoryTargetData>

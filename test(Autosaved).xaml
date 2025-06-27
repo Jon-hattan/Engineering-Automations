@@ -40,6 +40,8 @@
       <x:String>UiPath.OCR.Activities</x:String>
       <x:String>UiPath.OCR.Contracts.Activities</x:String>
       <x:String>System.Security</x:String>
+      <x:String>UiPath.Shared.Activities</x:String>
+      <x:String>System.Reflection</x:String>
     </sco:Collection>
   </TextExpression.NamespacesForImplementation>
   <TextExpression.ReferencesForImplementation>
@@ -111,18 +113,23 @@
       <AssemblyReference>UiPath.OCR.Contracts</AssemblyReference>
       <AssemblyReference>UiPath.Platform</AssemblyReference>
       <AssemblyReference>System.Runtime.InteropServices</AssemblyReference>
+      <AssemblyReference>GlobalVariablesT1PNoYwrqg</AssemblyReference>
     </sco:Collection>
   </TextExpression.ReferencesForImplementation>
-  <Sequence DisplayName="test" sap:VirtualizedContainerService.HintSize="1311,1817" sap2010:WorkflowViewState.IdRef="Sequence_1">
+  <Sequence DisplayName="test" sap:VirtualizedContainerService.HintSize="1311,1993" sap2010:WorkflowViewState.IdRef="Sequence_1">
     <Sequence.Variables>
-      <Variable x:TypeArguments="x:String" Name="rfiwname" />
+      <Variable x:TypeArguments="x:String" Name="rfiwname">
+        <Variable.Default>
+          <Literal x:TypeArguments="x:String">131241-WSB00-RN-K-6209</Literal>
+        </Variable.Default>
+      </Variable>
     </Sequence.Variables>
     <sap:WorkflowViewStateService.ViewState>
       <scg:Dictionary x:TypeArguments="x:String, x:Object">
         <x:Boolean x:Key="IsExpanded">True</x:Boolean>
       </scg:Dictionary>
     </sap:WorkflowViewStateService.ViewState>
-    <ui:CommentOut DisplayName="Comment Out" sap:VirtualizedContainerService.HintSize="552,219" sap2010:WorkflowViewState.IdRef="CommentOut_1">
+    <ui:CommentOut DisplayName="Comment Out" sap:VirtualizedContainerService.HintSize="552,57" sap2010:WorkflowViewState.IdRef="CommentOut_1">
       <ui:CommentOut.Body>
         <Sequence DisplayName="Ignored Activities" sap:VirtualizedContainerService.HintSize="450,108" sap2010:WorkflowViewState.IdRef="Sequence_10">
           <sap:WorkflowViewStateService.ViewState>
@@ -204,6 +211,12 @@
           </ueab:ExcelApplicationCard>
         </Sequence>
       </ui:CommentOut.Body>
+      <sap:WorkflowViewStateService.ViewState>
+        <scg:Dictionary x:TypeArguments="x:String, x:Object">
+          <x:Boolean x:Key="IsExpanded">False</x:Boolean>
+          <x:Boolean x:Key="IsPinned">False</x:Boolean>
+        </scg:Dictionary>
+      </sap:WorkflowViewStateService.ViewState>
     </ui:CommentOut>
     <Assign sap:VirtualizedContainerService.HintSize="552,114" sap2010:WorkflowViewState.IdRef="Assign_3">
       <Assign.To>
@@ -213,13 +226,20 @@
         <InArgument x:TypeArguments="x:String">131241-WSB00-RN-K-6209</InArgument>
       </Assign.Value>
     </Assign>
-    <uix:NApplicationCard AttachMode="ByInstance" DisplayName="Edge Prolog Converge" HealingAgentBehavior="Job" sap:VirtualizedContainerService.HintSize="552,1461" sap2010:WorkflowViewState.IdRef="NApplicationCard_1" InteractionMode="DebuggerApi" ScopeGuid="463dd901-5d80-4b4e-9cec-b2f9168b80a7" Version="V2">
+    <uix:NApplicationCard AttachMode="ByInstance" DisplayName="Edge Prolog Converge" HealingAgentBehavior="Job" sap:VirtualizedContainerService.HintSize="552,1799" sap2010:WorkflowViewState.IdRef="NApplicationCard_1" InteractionMode="DebuggerApi" ScopeGuid="463dd901-5d80-4b4e-9cec-b2f9168b80a7" Version="V2">
       <uix:NApplicationCard.Body>
         <ActivityAction x:TypeArguments="x:Object">
           <ActivityAction.Argument>
             <DelegateInArgument x:TypeArguments="x:Object" Name="WSSessionData" />
           </ActivityAction.Argument>
-          <Sequence DisplayName="Do" sap:VirtualizedContainerService.HintSize="518,1156" sap2010:WorkflowViewState.IdRef="Sequence_11">
+          <Sequence DisplayName="Do" sap:VirtualizedContainerService.HintSize="518,1494" sap2010:WorkflowViewState.IdRef="Sequence_11">
+            <Sequence.Variables>
+              <Variable x:TypeArguments="x:String" Name="rfiwname_shortened">
+                <Variable.Default>
+                  <Literal x:TypeArguments="x:String">131241-WSB00-RN-K</Literal>
+                </Variable.Default>
+              </Variable>
+            </Sequence.Variables>
             <sap:WorkflowViewStateService.ViewState>
               <scg:Dictionary x:TypeArguments="x:String, x:Object">
                 <x:Boolean x:Key="IsExpanded">True</x:Boolean>
@@ -229,7 +249,7 @@
               <uix:NTypeInto.Target>
                 <uix:TargetAnchorable BrowserURL="convergeaus.jacobs.com/PrologConverge/WebClient/navigate.aspx" ContentHash="F-Df8gLWBU-3NvJnG86b5A" DesignTimeRectangle="260, 437, 249, 32" FuzzySelectorArgument="&lt;webctrl id='fraMainPI' tag='IFRAME' matching:id='fuzzy' fuzzylevel:id='0.0' /&gt;&lt;webctrl parentid='dvCH_lstList_InspectionsTests' tag='TABLE' matching:parentid='fuzzy' fuzzylevel:parentid='0.0' /&gt;&lt;webctrl class='WEI6J7 WEI688  WGGIJH' tag='TD' type='FilterColumn' aaname='' matching:class='fuzzy' fuzzylevel:class='0.0' matching:aaname='fuzzy' fuzzylevel:aaname='0.0' /&gt;" Guid="51db66fb-bff2-4778-a03b-8a534d32dc3c" InformativeScreenshot="f5160a15a8b86595701caf46f12b5c09.png" Reference="xGt2OSXt7UW47kSHt2k5yg/ec4hHHlJlU-2VVO5ep_uvA" ScopeSelectorArgument="&lt;html app='msedge.exe' title='Prolog Converge' /&gt;" SearchSteps="FuzzySelector" Version="V6" Visibility="Interactive" WaitForReadyArgument="None">
                   <uix:TargetAnchorable.Anchors>
-                    <scg:List x:TypeArguments="uix:ITarget" Capacity="4">
+                    <scg:List x:TypeArguments="uix:ITarget" Capacity="1">
                       <uix:Target DesignTimeRectangle="261, 397, 141, 24" FuzzySelectorArgument="&lt;webctrl id='fraMainPI' tag='IFRAME' matching:id='fuzzy' fuzzylevel:id='0.0' /&gt;&lt;webctrl parentid='dvCH_lstList_InspectionsTests' tag='TABLE' matching:parentid='fuzzy' fuzzylevel:parentid='0.0' /&gt;&lt;webctrl isleaf='1' type='' class='' tag='NOBR' aaname='RFIW Number' matching:isleaf='fuzzy' fuzzylevel:isleaf='0.0' matching:class='fuzzy' fuzzylevel:class='0.0' matching:aaname='fuzzy' fuzzylevel:aaname='0.0' check:innerText='RFIW Number' /&gt;" Guid="f869cbd0-9082-44f3-80a2-24ad890f0aa7" SearchSteps="FuzzySelector" />
                     </scg:List>
                   </uix:TargetAnchorable.Anchors>
@@ -246,6 +266,24 @@
                 </uix:VerifyExecutionTypeIntoOptions>
               </uix:NTypeInto.VerifyOptions>
             </uix:NTypeInto>
+            <Assign sap2010:Annotation.AnnotationText="have to shorten for detection" sap:VirtualizedContainerService.HintSize="484,145" sap2010:WorkflowViewState.IdRef="Assign_4">
+              <Assign.To>
+                <OutArgument x:TypeArguments="x:String">[rfiwname_shortened]</OutArgument>
+              </Assign.To>
+              <Assign.Value>
+                <InArgument x:TypeArguments="x:String">[rfiwname.Substring(0, 18)]</InArgument>
+              </Assign.Value>
+              <sap:WorkflowViewStateService.ViewState>
+                <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                  <x:Boolean x:Key="IsAnnotationDocked">True</x:Boolean>
+                </scg:Dictionary>
+              </sap:WorkflowViewStateService.ViewState>
+            </Assign>
+            <uix:NCheckElement Result="{x:Null}" DelayBefore="0" DisplayName="Check Element '131241-WSB00-RN-K-6209(1)'" HealingAgentBehavior="SameAsCard" sap:VirtualizedContainerService.HintSize="484,189" sap2010:WorkflowViewState.IdRef="NCheckElement_1" ScopeIdentifier="463dd901-5d80-4b4e-9cec-b2f9168b80a7" Version="V4">
+              <uix:NCheckElement.Target>
+                <uix:TargetAnchorable BrowserURL="convergeaus.jacobs.com/PrologConverge/WebClient/navigate.aspx" CVScreenId="b0cb0694-33bc-4890-adc4-b9ecd9bd01c8" ContentHash="FbRmi_VgAkCoUA-znfOqSw" CvTextArea="260, 531, 244, 18" CvTextArgument="[rfiwname_shortened]" CvType="Text" DesignTimeRectangle="261, 531, 243, 18" FuzzySelectorArgument="[string.Format(&quot;&lt;webctrl id='fraMainPI' tag='IFRAME' matching:id='fuzzy' fuzzylevel:id='0.0' /&gt;&lt;webctrl id='tb_lstList_InspectionsTests' tag='TABLE' matching:id='fuzzy' fuzzylevel:id='0.0' /&gt;&lt;webctrl type='' tag='NOBR' class='' aaname={0} matching:class='fuzzy' fuzzylevel:class='0.0' matching:aaname='fuzzy' fuzzylevel:aaname='0.0' check:innerText='{0}' /&gt;&quot;, rfiwname_shortened)]" Guid="4c5a9dbf-2b04-48c6-8507-37ba26d86559" InformativeScreenshot="43a6649362de7ef75b14e72982d27194.png" Reference="xGt2OSXt7UW47kSHt2k5yg/DOJmGKelq0mJ4dZELEugvA" ScopeSelectorArgument="&lt;html app='msedge.exe' title='Prolog Converge' /&gt;" SearchSteps="FuzzySelector, CV" Version="V6" Visibility="Interactive" WaitForReadyArgument="None" />
+              </uix:NCheckElement.Target>
+            </uix:NCheckElement>
             <uix:NClick ActivateBefore="True" ClickType="Double" DisplayName="Click '131241-WSB00-RN-K-6209'" HealingAgentBehavior="SameAsCard" sap:VirtualizedContainerService.HintSize="484,225" sap2010:WorkflowViewState.IdRef="NClick_1" KeyModifiers="None" MouseButton="Left" ScopeIdentifier="463dd901-5d80-4b4e-9cec-b2f9168b80a7" Version="V4">
               <uix:NClick.Target>
                 <uix:TargetAnchorable BrowserURL="convergeaus.jacobs.com/PrologConverge/WebClient/navigate.aspx" ContentHash="IR-qnkELOkiCvgs-b9P9qQ" DesignTimeRectangle="263, 529, 249, 22" FuzzySelectorArgument="[string.Format(&quot;&lt;webctrl id='fraMainPI' tag='IFRAME' matching:id='fuzzy' fuzzylevel:id='0.0' /&gt;&lt;webctrl id='tb_lstList_InspectionsTests' tag='TABLE' matching:id='fuzzy' fuzzylevel:id='0.0' /&gt;&lt;webctrl type='' tag='NOBR' class='' aaname='{0}' matching:class='fuzzy' fuzzylevel:class='0.0' matching:aaname='fuzzy' fuzzylevel:aaname='0.0' check:innerText='{0}' /&gt;&quot;, rfiwname)]" Guid="b387d597-4961-4dbe-9c38-a0f1bff52ecb" InformativeScreenshot="9a5518ba40bf322281db3f7d6c742ebb.png" Reference="xGt2OSXt7UW47kSHt2k5yg/2eKMhYC0UkSDb-lyWesIrg" ScopeSelectorArgument="&lt;html app='msedge.exe' title='Prolog Converge' /&gt;" SearchSteps="FuzzySelector" Version="V6" Visibility="Interactive" WaitForReadyArgument="None" />
@@ -261,13 +299,13 @@
                 </uix:VerifyExecutionOptions>
               </uix:NClick.VerifyOptions>
             </uix:NClick>
-            <uix:NApplicationCard AttachMode="ByInstance" DisplayName="Edge Editing Request for Inspection Works" HealingAgentBehavior="Job" sap:VirtualizedContainerService.HintSize="484,585" sap2010:WorkflowViewState.IdRef="NApplicationCard_2" InteractionMode="DebuggerApi" ScopeGuid="8b9baeca-9b54-45af-a6da-4e72931a6b45" Version="V2">
+            <uix:NApplicationCard AttachMode="ByInstance" DisplayName="Edge Editing Request for Inspection Works" HealingAgentBehavior="Job" sap:VirtualizedContainerService.HintSize="484,587" sap2010:WorkflowViewState.IdRef="NApplicationCard_2" InteractionMode="DebuggerApi" ScopeGuid="8b9baeca-9b54-45af-a6da-4e72931a6b45" Version="V2">
               <uix:NApplicationCard.Body>
                 <ActivityAction x:TypeArguments="x:Object">
                   <ActivityAction.Argument>
                     <DelegateInArgument x:TypeArguments="x:Object" Name="WSSessionData" />
                   </ActivityAction.Argument>
-                  <Sequence DisplayName="Do" sap:VirtualizedContainerService.HintSize="450,278" sap2010:WorkflowViewState.IdRef="Sequence_12">
+                  <Sequence DisplayName="Do" sap:VirtualizedContainerService.HintSize="450,280" sap2010:WorkflowViewState.IdRef="Sequence_12">
                     <sap:WorkflowViewStateService.ViewState>
                       <scg:Dictionary x:TypeArguments="x:String, x:Object">
                         <x:Boolean x:Key="IsExpanded">True</x:Boolean>

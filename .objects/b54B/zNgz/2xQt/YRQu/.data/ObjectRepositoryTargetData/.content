@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="utf-16"?>
+<ObjectRepositoryTargetData ContentHash="_DYVr_wuHUWwzZC0e06Fsg" Reference="xGt2OSXt7UW47kSHt2k5yg/YRQujT8_zUmeXorN6mMhuw" xmlns="http://schemas.uipath.com/workflow/activities/uix" xmlns:scg="clr-namespace:System.Collections.Generic;assembly=System.Private.CoreLib" xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml">
+  <ObjectRepositoryTargetData.Data>
+    <TargetAnchorable x:Key="TargetAnchorable" BrowserURL="convergeaus.jacobs.com/PrologConverge/WebClient/InspectionsTests.aspx" DesignTimeRectangle="609, 529, 79, 23" ElementType="Text" FuzzySelectorArgument="&lt;webctrl id='ugDocuments' tag='TABLE' matching:id='fuzzy' fuzzylevel:id='0.0' /&gt;&lt;webctrl type='' tag='A' class='' aaname='Download' matching:class='fuzzy' fuzzylevel:class='0.0' matching:aaname='fuzzy' fuzzylevel:aaname='0.0' check:innerText='Download' /&gt;" Guid="ac014fa4-7e49-4086-a879-bf37ce87b7dd" ScopeSelectorArgument="&lt;html app='msedge.exe' title='????ing Request for Inspection Works' /&gt;" SearchSteps="FuzzySelector" Version="V6" Visibility="Interactive" WaitForReadyArgument="None">
+      <TargetAnchorable.Anchors>
+        <scg:List x:TypeArguments="ITarget" Capacity="1">
+          <Target DesignTimeRectangle="19, 479, 75, 123" ElementType="Text" FuzzySelectorArgument="[string.Format(&quot;&lt;webctrl id='ugDocuments' tag='TABLE' matching:id='fuzzy' fuzzylevel:id='0.0' /&gt;&lt;webctrl isleaf='1' type='' class='ui-iggrid-selectedcell ui-state-active' tag='TD' aaname='WSB01-TP-7020 Hot Loop Check Magnesium Hydroxide Preparation GL 1-5 / F-H' matching:isleaf='fuzzy' fuzzylevel:isleaf='0.0' matching:class='fuzzy' fuzzylevel:class='0.0' matching:aaname='fuzzy' fuzzylevel:aaname='0.0' check:innerText='{0}' /&gt;&quot;, fileDesc)]" Guid="707e7983-ab4e-41f6-a991-929340658c5f" SearchSteps="FuzzySelector" />
+        </scg:List>
+      </TargetAnchorable.Anchors>
+      <imageRef attrName="InformativeScreenshot" originalValue="3b181a6df3491c16772b8f8e274c39d7.png" xmlns="">0O-zY8_4sZ0CTuaSP8KmDjA</imageRef>
+    </TargetAnchorable>
+    <scg:List x:TypeArguments="ObjectRepositoryVariableData" x:Key="Variables" Capacity="1">
+      <ObjectRepositoryVariableData Name="fileDesc" />
+    </scg:List>
+    <x:String x:Key="ActivityType">Click</x:String>
+  </ObjectRepositoryTargetData.Data>
+</ObjectRepositoryTargetData>

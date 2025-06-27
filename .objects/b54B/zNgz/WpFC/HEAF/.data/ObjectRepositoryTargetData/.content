@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="utf-16"?>
+<ObjectRepositoryTargetData ContentHash="OoyuMIafPEe99MGBvTeNCg" xmlns="http://schemas.uipath.com/workflow/activities/uix" xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml">
+  <ObjectRepositoryTargetData.Data>
+    <TargetAnchorable x:Key="TargetAnchorable" BrowserURL="convergeaus.jacobs.com/PrologConverge/WebClient/navigate.aspx" DesignTimeRectangle="263, 529, 249, 22" FuzzySelectorArgument="&lt;webctrl id='fraMainPI' tag='IFRAME' matching:id='fuzzy' fuzzylevel:id='0.0' /&gt;&lt;webctrl id='tb_lstList_InspectionsTests' tag='TABLE' matching:id='fuzzy' fuzzylevel:id='0.0' /&gt;&lt;webctrl type='' tag='NOBR' class='' aaname='131241-WSB00-RN-K-6209' matching:class='fuzzy' fuzzylevel:class='0.0' matching:aaname='fuzzy' fuzzylevel:aaname='0.0' check:innerText='131241-WSB00-RN-K-6209' /&gt;" Guid="caa23642-6698-40ca-a951-dc10b1ced713" ScopeSelectorArgument="&lt;html app='msedge.exe' title='Prolog Converge' /&gt;" SearchSteps="FuzzySelector" Version="V6" Visibility="Interactive" WaitForReadyArgument="None">
+      <imageRef attrName="InformativeScreenshot" originalValue="7671a694e3edf180e09b2c2c657472e8.png" xmlns="">0weiRC4F4o0ilt9WQoL-gSg</imageRef>
+    </TargetAnchorable>
+    <x:String x:Key="ActivityType">Click</x:String>
+  </ObjectRepositoryTargetData.Data>
+</ObjectRepositoryTargetData>

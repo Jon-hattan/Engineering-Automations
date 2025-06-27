@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="utf-16"?>
+<ObjectRepositoryTargetData ContentHash="WhklNUxH8E-AWJ3yNLIFjg" Reference="xGt2OSXt7UW47kSHt2k5yg/p6JNqHOKVEGecjb0R_-h6w" xmlns="http://schemas.uipath.com/workflow/activities/uix" xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml">
+  <ObjectRepositoryTargetData.Data>
+    <TargetAnchorable x:Key="TargetAnchorable" BrowserURL="convergeaus.jacobs.com/PrologConverge/WebClient/InspectionsTests.aspx" DesignTimeRectangle="1165, 1, 70, 46" ElementType="Button" FullSelectorArgument="&lt;ctrl name='????ing Request for Inspection Works - Microsoft Edge' role='pane' /&gt;&lt;ctrl name='Close' role='push button' /&gt;" Guid="76805d10-aa00-43ba-bf05-af4b29982ff3" ScopeSelectorArgument="&lt;wnd app='msedge.exe' cls='Chrome_WidgetWin_1' title='????ing Request for Inspection Works - Work - Microsoft​ Edge' /&gt;" SearchSteps="Selector" Version="V6" Visibility="Interactive" WaitForReadyArgument="None">
+      <imageRef attrName="InformativeScreenshot" originalValue="c60d333cee39d8a9dedad161ec1daa6a.png" xmlns="">0yIROt-MMrEyUG9CfxvHhkQ</imageRef>
+    </TargetAnchorable>
+    <x:String x:Key="ActivityType">Click</x:String>
+  </ObjectRepositoryTargetData.Data>
+</ObjectRepositoryTargetData>

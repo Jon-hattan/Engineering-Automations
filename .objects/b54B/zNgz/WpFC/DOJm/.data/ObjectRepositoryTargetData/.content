@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="utf-16"?>
+<ObjectRepositoryTargetData ContentHash="tl7MGYLT1kKo3812nePtzQ" Reference="xGt2OSXt7UW47kSHt2k5yg/DOJmGKelq0mJ4dZELEugvA" xmlns="http://schemas.uipath.com/workflow/activities/uix" xmlns:scg="clr-namespace:System.Collections.Generic;assembly=System.Private.CoreLib" xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml">
+  <ObjectRepositoryTargetData.Data>
+    <TargetAnchorable x:Key="TargetAnchorable" BrowserURL="convergeaus.jacobs.com/PrologConverge/WebClient/navigate.aspx" CVScreenId="4e088d65-d1b5-4260-a064-6e8e0e1a0f01" CvTextArea="260, 531, 244, 18" CvTextArgument="[rfiwname_shortened]" CvType="Text" DesignTimeRectangle="261, 531, 243, 18" FuzzySelectorArgument="[string.Format(&quot;&lt;webctrl id='fraMainPI' tag='IFRAME' matching:id='fuzzy' fuzzylevel:id='0.0' /&gt;&lt;webctrl id='tb_lstList_InspectionsTests' tag='TABLE' matching:id='fuzzy' fuzzylevel:id='0.0' /&gt;&lt;webctrl type='' tag='NOBR' class='' aaname='{0}' matching:class='fuzzy' fuzzylevel:class='0.0' matching:aaname='fuzzy' fuzzylevel:aaname='0.0' check:innerText='{0}' /&gt;&quot;, rfiwname)]" Guid="b5197642-177c-419d-978a-aaea6e5983f7" ScopeSelectorArgument="&lt;html app='msedge.exe' title='Prolog Converge' /&gt;" SearchSteps="FuzzySelector, CV" Version="V6" Visibility="Interactive" WaitForReadyArgument="None">
+      <TargetAnchorable.Anchors>
+        <scg:List x:TypeArguments="ITarget" Capacity="1">
+          <Target CVScreenId="722930f8-351c-4463-9bfa-b6f32704e886" CvTextArea="92, 483, 328, 23" CvTextArgument="Discipline: Testing &amp; Commissioning" CvType="Text" DesignTimeRectangle="90, 471, 1789, 45" ElementType="Text" FuzzySelectorArgument="&lt;webctrl id='fraMainPI' tag='IFRAME' matching:id='fuzzy' fuzzylevel:id='0.0' /&gt;&lt;webctrl id='tb_lstList_InspectionsTests' tag='TABLE' matching:id='fuzzy' fuzzylevel:id='0.0' /&gt;&lt;webctrl isleaf='1' type='GroupCell' tag='TD' class='InListGroupHeader' aaname='Discipline: Testing &amp;amp; Commissioning' matching:isleaf='fuzzy' fuzzylevel:isleaf='0.0' matching:class='fuzzy' fuzzylevel:class='0.0' matching:aaname='fuzzy' fuzzylevel:aaname='0.0' check:innerText='Discipline: Testing &amp;amp; Commissioning' /&gt;" Guid="33ebd6e3-d313-4d4b-8dc3-68a4c85741d4" SearchSteps="FuzzySelector, CV" />
+        </scg:List>
+      </TargetAnchorable.Anchors>
+      <imageRef attrName="InformativeScreenshot" originalValue="2afdc25b26a730af3085d4beadc7dec4.png" xmlns="">0KmnGYDwjikiUTbM3o3bUbQ</imageRef>
+    </TargetAnchorable>
+    <scg:List x:TypeArguments="ObjectRepositoryVariableData" x:Key="Variables" Capacity="2">
+      <ObjectRepositoryVariableData DefaultValue="131241-WSB00-RN-K-6209" Name="rfiwname" />
+      <ObjectRepositoryVariableData DefaultValue="131241-WSB00-RN-K" Name="rfiwname_shortened" />
+    </scg:List>
+    <x:String x:Key="ActivityType">Click</x:String>
+  </ObjectRepositoryTargetData.Data>
+</ObjectRepositoryTargetData>

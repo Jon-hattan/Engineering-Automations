@@ -1,0 +1,13 @@
+﻿{
+  "Name": "131241-WSB00-RN-K-6209(1)",
+  "Type": "Element",
+  "Id": "DOJmGKelq0mJ4dZELEugvA",
+  "Reference": "xGt2OSXt7UW47kSHt2k5yg/DOJmGKelq0mJ4dZELEugvA",
+  "ParentRef": "xGt2OSXt7UW47kSHt2k5yg/WpFCrSdeTkqPNWx2GjVSug",
+  "Created": "2025-06-27T02:23:18.4956691Z",
+  "Updated": "2025-06-27T02:23:18.4956691Z",
+  "CreatedBy": [
+    "UiPath.UIAutomationCore, Version=25.10.4.0, Culture=neutral, PublicKeyToken=null",
+    "UiPath.Platform, Version=25.4.0.0, Culture=neutral, PublicKeyToken=null"
+  ]
+}
