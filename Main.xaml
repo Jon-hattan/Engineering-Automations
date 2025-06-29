@@ -149,9 +149,9 @@
       <x:String>UiPath.Forms.Activities</x:String>
       <x:String>UiPath.Platform.GlobalVariables</x:String>
       <x:String>UiPath.Forms.Activities.Base</x:String>
+      <x:String>UiPath.Platform.Triggers</x:String>
       <x:String>GlobalVariablesNamespace</x:String>
       <x:String>GlobalConstantsNamespace</x:String>
-      <x:String>UiPath.Platform.Triggers</x:String>
     </sco:Collection>
   </TextExpression.NamespacesForImplementation>
   <TextExpression.ReferencesForImplementation>
@@ -282,7 +282,7 @@
       <AssemblyReference>System.Memory.Data</AssemblyReference>
     </sco:Collection>
   </TextExpression.ReferencesForImplementation>
-  <Sequence sap2010:Annotation.AnnotationText="using content generator in integration service activities, search for the all the equipments in a technical proposal, and their respective quantities, electrical power, voltage, etc. store in a datatable" DisplayName="Main Sequence" sap:VirtualizedContainerService.HintSize="1311,2119" sap2010:WorkflowViewState.IdRef="Sequence_1">
+  <Sequence sap2010:Annotation.AnnotationText="using content generator in integration service activities, search for the all the equipments in a technical proposal, and their respective quantities, electrical power, voltage, etc. store in a datatable" DisplayName="Main Sequence" sap:VirtualizedContainerService.HintSize="925.2,2135.2" sap2010:WorkflowViewState.IdRef="Sequence_1">
     <Sequence.Variables>
       <Variable x:TypeArguments="x:String" Name="ProposalText" />
       <Variable x:TypeArguments="x:String" Name="ExtractedInfo" />
@@ -299,17 +299,17 @@
         <x:Boolean x:Key="IsAnnotationDocked">True</x:Boolean>
       </scg:Dictionary>
     </sap:WorkflowViewStateService.ViewState>
-    <ufa:ShowFormActivity Height="{x:Null}" InstanceName="{x:Null}" Left="{x:Null}" ShowInTaskbar="{x:Null}" ShowMargin="{x:Null}" Title="{x:Null}" Top="{x:Null}" TopMost="{x:Null}" Width="{x:Null}" WindowState="{x:Null}" DisplayName="Show Form" FormId="94648528-99b2-4e47-bda9-638af2dadd49" sap:VirtualizedContainerService.HintSize="418,218" sap2010:WorkflowViewState.IdRef="ShowFormActivity_2" IsAsync="True">
+    <ufa:ShowFormActivity Height="{x:Null}" InstanceName="{x:Null}" Left="{x:Null}" ShowInTaskbar="{x:Null}" ShowMargin="{x:Null}" Title="{x:Null}" Top="{x:Null}" TopMost="{x:Null}" Width="{x:Null}" WindowState="{x:Null}" DisplayName="Show Form" FormId="94648528-99b2-4e47-bda9-638af2dadd49" sap:VirtualizedContainerService.HintSize="417.6,219.2" sap2010:WorkflowViewState.IdRef="ShowFormActivity_2" IsAsync="True">
       <ufa:ShowFormActivity.Arguments>
         <scg:Dictionary x:TypeArguments="x:String, Argument" />
       </ufa:ShowFormActivity.Arguments>
     </ufa:ShowFormActivity>
-    <ui:StartTriggers ArgumentsVariable="{x:Null}" ContinueOnError="{x:Null}" DisplayName="Run Local Triggers" sap:VirtualizedContainerService.HintSize="418,127" sap2010:WorkflowViewState.IdRef="StartTriggers_1" UnSafe="False" WorkflowFileName=".local\generated\Triggers.Generated.xaml">
+    <ui:StartTriggers ArgumentsVariable="{x:Null}" ContinueOnError="{x:Null}" DisplayName="Run Local Triggers" sap:VirtualizedContainerService.HintSize="417.6,128" sap2010:WorkflowViewState.IdRef="StartTriggers_1" UnSafe="False" WorkflowFileName=".local\generated\Triggers.Generated.xaml">
       <ui:StartTriggers.Arguments>
         <scg:Dictionary x:TypeArguments="x:String, Argument" />
       </ui:StartTriggers.Arguments>
     </ui:StartTriggers>
-    <ufa:GetFormFieldsActivity InstanceName="{x:Null}" DisplayName="Get Form Values" FormId="94648528-99b2-4e47-bda9-638af2dadd49" sap:VirtualizedContainerService.HintSize="418,172" sap2010:WorkflowViewState.IdRef="GetFormFieldsActivity_1">
+    <ufa:GetFormFieldsActivity InstanceName="{x:Null}" DisplayName="Get Form Values" FormId="94648528-99b2-4e47-bda9-638af2dadd49" sap:VirtualizedContainerService.HintSize="417.6,172.8" sap2010:WorkflowViewState.IdRef="GetFormFieldsActivity_1">
       <ufa:GetFormFieldsActivity.Arguments>
         <OutArgument x:TypeArguments="x:Boolean" x:Key="GTgen">[GTgen]</OutArgument>
         <OutArgument x:TypeArguments="x:Boolean" x:Key="ELLgen">[ELLgen]</OutArgument>
