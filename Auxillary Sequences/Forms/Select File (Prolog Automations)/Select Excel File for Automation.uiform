@@ -1,0 +1,142 @@
+﻿{
+  "Metadata": {
+    "Id": "21ef3e50-b9fd-40cd-8788-06a5932282ce",
+    "Kind": "FormIo"
+  },
+  "DesignProperties": {
+    "Title": "Select Excel File for Automation",
+    "Theme": "Default",
+    "ShowInTaskbar": true,
+    "ShowMargin": true,
+    "CustomStyle": ".selectbutton {\r\n\r\n}"
+  },
+  "Data": {
+    "components": [
+      {
+        "tag": "h1",
+        "content": "Select File",
+        "key": "title",
+        "input": false,
+        "tableView": false,
+        "label": "Label",
+        "type": "label"
+      },
+      {
+        "content": "Select the excel file to update.",
+        "key": "label",
+        "input": false,
+        "tableView": false,
+        "label": "Label",
+        "type": "label"
+      },
+      {
+        "label": "Select Excel File",
+        "action": "event",
+        "showValidations": false,
+        "theme": "secondary",
+        "customClass": "selectbutton",
+        "tableView": false,
+        "key": "selectExcelFile",
+        "type": "button",
+        "input": true
+      },
+      {
+        "label": "Content",
+        "refreshOnChange": true,
+        "key": "fileName",
+        "type": "content",
+        "input": false,
+        "tableView": false
+      },
+      {
+        "label": "Select the contract.",
+        "widget": "choicesjs",
+        "tableView": true,
+        "data": {
+          "values": [
+            {
+              "label": "C3E",
+              "value": "C2A"
+            },
+            {
+              "label": "C4A",
+              "value": "C4A"
+            },
+            {
+              "label": "C4B",
+              "value": "C4B"
+            }
+          ]
+        },
+        "key": "selectedcontract",
+        "type": "select",
+        "input": true
+      },
+      {
+        "label": "Select which Test Packs to update.",
+        "tableView": false,
+        "defaultValue": {
+          "drySat": false,
+          "commCheck": false,
+          "hotLoopCheck": false,
+          "wetSat": false,
+          "Dry SAT": false,
+          "Comm Check": false,
+          "Hot Loop": false,
+          "Wet SAT": false
+        },
+        "values": [
+          {
+            "label": "Dry SAT",
+            "value": "Dry SAT",
+            "shortcut": ""
+          },
+          {
+            "label": "Comm Check",
+            "value": "Comm Check",
+            "shortcut": ""
+          },
+          {
+            "label": "Hot Loop Check",
+            "value": "Hot Loop",
+            "shortcut": ""
+          },
+          {
+            "label": "Wet SAT",
+            "value": "Wet SAT",
+            "shortcut": ""
+          }
+        ],
+        "key": "TPselect",
+        "type": "selectboxes",
+        "input": true,
+        "inputType": "checkbox"
+      },
+      {
+        "html": "<p>Warning: Once automation begins, <strong>do not move the mouse or the keyboard. </strong>Let the automation run on its own. Otherwise, you might disrupt the automation.</p>",
+        "label": "Warning",
+        "refreshOnChange": false,
+        "key": "warning",
+        "type": "content",
+        "input": false,
+        "tableView": false
+      },
+      {
+        "label": "Begin Automation",
+        "action": "event",
+        "showValidations": false,
+        "tableView": false,
+        "key": "beginAutomation",
+        "type": "button",
+        "input": true
+      },
+      {
+        "label": "filePath",
+        "key": "filePath",
+        "type": "hidden",
+        "input": true,
+        "tableView": false
+      }
+    ]
+  }
+}

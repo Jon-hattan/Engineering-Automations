@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="utf-16"?>
+<ObjectRepositoryTargetData ContentHash="MetygWJgCkq783SI-k2O0Q" xmlns="http://schemas.uipath.com/workflow/activities/uix" xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml">
+  <ObjectRepositoryTargetData.Data>
+    <TargetAnchorable x:Key="TargetAnchorable" BrowserURL="convergeaus.jacobs.com/PrologConverge/WebClient/navigate.aspx" CVScreenId="eeb9c2cc-54f3-4b44-b6c5-df6601457295" CvTextArea="94, 432, 181, 14" CvTextArgument="Request for Inspection Works" CvType="Text" DesignTimeRectangle="90, 428, 190, 23" ElementType="Text" FullSelectorArgument="&lt;webctrl id='fraMainPI' tag='IFRAME' /&gt;&lt;webctrl name='fraTree' tag='IFRAME' /&gt;&lt;webctrl aaname='Request for Inspection Works' tag='A' /&gt;" Guid="d8b18673-2093-4fd7-bc7d-bd698a902d55" ScopeSelectorArgument="&lt;html app='msedge.exe' title='Prolog Converge' /&gt;" SearchSteps="Selector, CV" Version="V6" Visibility="Interactive" WaitForReadyArgument="None">
+      <imageRef attrName="InformativeScreenshot" originalValue="da3944ebce836866a6ae97e58200dec9.png" xmlns="">0poea3iEdbUK8m-cXx2HglQ</imageRef>
+    </TargetAnchorable>
+    <x:String x:Key="ActivityType">Click</x:String>
+  </ObjectRepositoryTargetData.Data>
+</ObjectRepositoryTargetData>

@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="utf-16"?>
+<ObjectRepositoryTargetData ContentHash="6DV0q8hmp0uUmgR9aTA6qg" Reference="xGt2OSXt7UW47kSHt2k5yg/P7H64A_U4kGYLS8FxtugcQ" xmlns="http://schemas.uipath.com/workflow/activities/uix" xmlns:scg="clr-namespace:System.Collections.Generic;assembly=System.Private.CoreLib" xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml">
+  <ObjectRepositoryTargetData.Data>
+    <TargetAnchorable x:Key="TargetAnchorable" BrowserURL="convergeaus.jacobs.com/PrologConverge/WebClient/navigate.aspx" CVScreenId="720c0063-7e20-41e6-b01f-bbadc6af7549" CvElementArea="550, 1005, 19, 26" CvTextArea="462, 1007, 89, 20" CvTextArgument="[CurrentContract]" CvType="ArrowButton" DesignTimeRectangle="460, 1009, 109, 27" ElementType="Text" FuzzySelectorArgument="[string.Format(&quot;&lt;webctrl id='TopBannerPI_mnuTopArea' tag='A' type='' class='' aaname='C4B - Digestion Pre-treatment and Sidestream Nitrogen Removal Facility - Part 1: Construction Works' matching:id='fuzzy' fuzzylevel:id='0.0' matching:class='fuzzy' fuzzylevel:class='0.0' matching:aaname='fuzzy' fuzzylevel:aaname='0.0' check:innerText='{0}' /&gt;&quot;, CurrentContract)]" Guid="336ec93e-0038-4d88-a307-9c3e50b62500" ImageBase64="" ScopeSelectorArgument="&lt;html app='msedge.exe' title='Prolog Converge' /&gt;" SearchSteps="FuzzySelector, CV" Version="V6" Visibility="Interactive" WaitForReadyArgument="None">
+      <imageRef attrName="InformativeScreenshot" originalValue="534ba9e09c77b5573664d0eaf861e8a0.png" xmlns="">0W7kCStvJ3ECAQtv_-_tP4w</imageRef>
+    </TargetAnchorable>
+    <scg:List x:TypeArguments="ObjectRepositoryVariableData" x:Key="Variables" Capacity="1">
+      <ObjectRepositoryVariableData Name="CurrentContract" />
+    </scg:List>
+    <x:String x:Key="ActivityType">Click</x:String>
+  </ObjectRepositoryTargetData.Data>
+</ObjectRepositoryTargetData>

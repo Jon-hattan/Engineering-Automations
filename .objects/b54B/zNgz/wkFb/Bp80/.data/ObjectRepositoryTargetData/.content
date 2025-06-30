@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="utf-16"?>
+<ObjectRepositoryTargetData ContentHash="-F8FgFS0ukq26SdJ04kMhg" Reference="2cLmJu5YmECa74LfIK_pQw/BO8FKEmZk0e4dwFNYd-T0g" xmlns="http://schemas.uipath.com/workflow/activities/uix" xmlns:scg="clr-namespace:System.Collections.Generic;assembly=System.Private.CoreLib" xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml">
+  <ObjectRepositoryTargetData.Data>
+    <TargetAnchorable x:Key="TargetAnchorable" BrowserURL="convergeaus.jacobs.com/PrologConverge/WebClient/projects.aspx" CVScreenId="5a877a19-94fd-4bb8-9330-27df75727be8" CvTextArea="1000, 355, 343, 13" CvTextArgument="[CurrentContract]" CvType="Text" DesignTimeRectangle="1000, 356, 26, 12" FuzzySelectorArgument="[string.Format(&quot;&lt;webctrl id='fraMainPI' tag='IFRAME' matching:id='fuzzy' fuzzylevel:id='0.0' /&gt;&lt;webctrl id='tb_lstList_Table' tag='TABLE' matching:id='fuzzy' fuzzylevel:id='0.0' /&gt;&lt;webctrl type='' class='' tag='NOBR' aaname='C4A - Biosolids &amp;amp; Digesters - Part 1: Construction Works' matching:class='fuzzy' fuzzylevel:class='0.0' matching:aaname='fuzzy' fuzzylevel:aaname='0.0' check:innerText='{0}' /&gt;&quot;, CurrentContract)]" Guid="3c0befe4-76e0-4265-b24d-a5b390ca5404" NativeTextArgument="[CurrentContract]" ScopeSelectorArgument="&lt;html app='msedge.exe' title='Prolog Converge' /&gt;" SearchSteps="TextNative, CV" Version="V6" Visibility="Interactive" WaitForReadyArgument="None">
+      <imageRef attrName="InformativeScreenshot" originalValue="8c1b0cfe647d18892845227b1cc56800.png" xmlns="">0pjX7r964g0G2BqjmFqwSzw</imageRef>
+    </TargetAnchorable>
+    <scg:List x:TypeArguments="ObjectRepositoryVariableData" x:Key="Variables" Capacity="1">
+      <ObjectRepositoryVariableData DefaultValue="C4B" IsVariable="False" Name="CurrentContract" />
+    </scg:List>
+    <x:String x:Key="ActivityType">Click</x:String>
+  </ObjectRepositoryTargetData.Data>
+</ObjectRepositoryTargetData>

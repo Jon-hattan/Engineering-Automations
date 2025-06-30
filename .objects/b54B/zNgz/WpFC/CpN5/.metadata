@@ -1,0 +1,13 @@
+﻿{
+  "Name": "Element 'RFI5144740 Daily Detail…'",
+  "Type": "Element",
+  "Id": "CpN5xtR-OUujdNRL7z5eKQ",
+  "Reference": "xGt2OSXt7UW47kSHt2k5yg/CpN5xtR-OUujdNRL7z5eKQ",
+  "ParentRef": "xGt2OSXt7UW47kSHt2k5yg/WpFCrSdeTkqPNWx2GjVSug",
+  "Created": "2025-06-30T08:52:28.3893086Z",
+  "Updated": "2025-06-30T08:52:28.3893086Z",
+  "CreatedBy": [
+    "UiPath.UIAutomationCore, Version=25.10.4.0, Culture=neutral, PublicKeyToken=null",
+    "UiPath.Platform, Version=25.4.0.0, Culture=neutral, PublicKeyToken=null"
+  ]
+}

@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="utf-16"?>
+<ObjectRepositoryTargetData ContentHash="3ZkuN5toOEekzzKLNN7Gvg" Reference="xGt2OSXt7UW47kSHt2k5yg/CpN5xtR-OUujdNRL7z5eKQ" xmlns="http://schemas.uipath.com/workflow/activities/uix" xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml">
+  <ObjectRepositoryTargetData.Data>
+    <TargetAnchorable x:Key="TargetAnchorable" BrowserURL="convergeaus.jacobs.com/PrologConverge/WebClient/navigate.aspx" CVScreenId="f740201c-c98b-404e-83dc-d84754ffb4f6" CvElementArea="254, 219, 19, 21" CvTextArea="113, 222, 308, 18" CvTextArgument="Project Overview Project Summary" CvType="ArrowButton" DesignTimeRectangle="113, 203, 307, 53" FullSelectorArgument="&lt;webctrl id='fraMainPI' tag='IFRAME' /&gt;&lt;webctrl id='tblFormNavTop' tag='TABLE' /&gt;&lt;webctrl parentid='tblFormNavTop' tableCol='3' tableRow='1' tag='TD' /&gt;" FuzzySelectorArgument="&lt;webctrl id='fraMainPI' tag='IFRAME' matching:id='fuzzy' fuzzylevel:id='0.0' /&gt;&lt;webctrl id='tblFormNavTop' tag='TABLE' matching:id='fuzzy' fuzzylevel:id='0.0' /&gt;&lt;webctrl parentid='tblFormNavTop' type='' class='' tag='TD' aaname='                         ' matching:parentid='fuzzy' fuzzylevel:parentid='0.0' matching:class='fuzzy' fuzzylevel:class='0.0' matching:aaname='fuzzy' fuzzylevel:aaname='0.0' check:innerText='Project Overview Project Summary' /&gt;" Guid="f833301b-4444-4e42-9b6c-b90ae37ac867" ScopeSelectorArgument="&lt;html app='msedge.exe' title='Prolog Converge' /&gt;" SearchSteps="Selector, FuzzySelector, CV" Version="V6" Visibility="Interactive" WaitForReadyArgument="None">
+      <imageRef attrName="InformativeScreenshot" originalValue="230601f51fbd7a715ac0da8f9e92b533.png" xmlns="">0vrCNOJ326E6dnZlDgSF3cA</imageRef>
+    </TargetAnchorable>
+    <x:String x:Key="ActivityType">Click</x:String>
+  </ObjectRepositoryTargetData.Data>
+</ObjectRepositoryTargetData>

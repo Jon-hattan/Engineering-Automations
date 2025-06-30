@@ -1,0 +1,14 @@
+﻿{
+  "Name": "Label 'C4B - Digestion Pre-tre…'",
+  "Type": "Element",
+  "TaxonomyType": "Label",
+  "Id": "P7H64A_U4kGYLS8FxtugcQ",
+  "Reference": "xGt2OSXt7UW47kSHt2k5yg/P7H64A_U4kGYLS8FxtugcQ",
+  "ParentRef": "xGt2OSXt7UW47kSHt2k5yg/wkFbeF5_HE2FoBg4aeNIQw",
+  "Created": "2025-06-30T08:46:27.4472575Z",
+  "Updated": "2025-06-30T08:46:27.4472575Z",
+  "CreatedBy": [
+    "UiPath.UIAutomationCore, Version=25.10.4.0, Culture=neutral, PublicKeyToken=null",
+    "UiPath.Platform, Version=25.4.0.0, Culture=neutral, PublicKeyToken=null"
+  ]
+}
