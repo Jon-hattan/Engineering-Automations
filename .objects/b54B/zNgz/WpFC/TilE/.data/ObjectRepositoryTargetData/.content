@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="utf-16"?>
+<ObjectRepositoryTargetData ContentHash="3YwQpPqcKU-Cdffk-v1rkg" Reference="xGt2OSXt7UW47kSHt2k5yg/TilE12uhg0CdCgpPmy98iQ" xmlns="http://schemas.uipath.com/workflow/activities/uix" xmlns:scg="clr-namespace:System.Collections.Generic;assembly=System.Private.CoreLib" xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml">
+  <ObjectRepositoryTargetData.Data>
+    <TargetAnchorable x:Key="TargetAnchorable" BrowserURL="convergeaus.jacobs.com/PrologConverge/WebClient/navigate.aspx" CVScreenId="7488bec6-ff16-42dc-8ed8-c45a195279b3" CvTextArea="713, 356, 302, 15" CvTextArgument="[TPNumber]" CvType="Text" DesignTimeRectangle="82, 274, 20, 16" FuzzySelectorArgument="[string.Format(&quot;&lt;webctrl id='fraMainPI' tag='IFRAME' matching:id='fuzzy' fuzzylevel:id='0.0' /&gt;&lt;webctrl id='tb_lstList_InspectionsTests' tag='TABLE' matching:id='fuzzy' fuzzylevel:id='0.0' /&gt;&lt;webctrl type='' class='' tag='NOBR' aaname='{0}' matching:class='fuzzy' fuzzylevel:class='0.0' matching:aaname='fuzzy' fuzzylevel:aaname='0.0' check:innerText='{0}' /&gt;&quot;, TPNumber)]" Guid="3f9341b9-8dcb-4c3c-8e3e-5edf9297d328" ScopeSelectorArgument="&lt;html app='msedge.exe' title='Prolog Converge' /&gt;" SearchSteps="FuzzySelector, CV" Version="V6" Visibility="Interactive" WaitForReadyArgument="None">
+      <TargetAnchorable.Anchors>
+        <scg:List x:TypeArguments="ITarget" Capacity="1">
+          <Target CVScreenId="7488bec6-ff16-42dc-8ed8-c45a195279b3" CvTextArea="712, 268, 77, 16" CvTextArgument="Description" CvType="Text" DesignTimeRectangle="713, 267, 75, 16" FuzzySelectorArgument="&lt;webctrl id='fraMainPI' tag='IFRAME' matching:id='fuzzy' fuzzylevel:id='0.0' /&gt;&lt;webctrl parentid='dvCH_lstList_InspectionsTests' tag='TABLE' matching:parentid='fuzzy' fuzzylevel:parentid='0.0' /&gt;&lt;webctrl isleaf='1' type='' class='' tag='NOBR' aaname='Description' matching:isleaf='fuzzy' fuzzylevel:isleaf='0.0' matching:class='fuzzy' fuzzylevel:class='0.0' matching:aaname='fuzzy' fuzzylevel:aaname='0.0' check:innerText='Description' /&gt;" Guid="fa9f451a-cd7c-40cd-bef1-dbad9f223a20" SearchSteps="FuzzySelector, CV" />
+        </scg:List>
+      </TargetAnchorable.Anchors>
+      <imageRef attrName="InformativeScreenshot" originalValue="e89e8bc82a628a2e700df99b46207ce5.png" xmlns="">0gCw5lbwzRUeT3JNBACEKuQ</imageRef>
+    </TargetAnchorable>
+    <scg:List x:TypeArguments="ObjectRepositoryVariableData" x:Key="Variables" Capacity="1">
+      <ObjectRepositoryVariableData DefaultValue="WSB01-TP-7010" IsVariable="False" Name="TPNumber" />
+    </scg:List>
+    <x:String x:Key="ActivityType">Click</x:String>
+  </ObjectRepositoryTargetData.Data>
+</ObjectRepositoryTargetData>

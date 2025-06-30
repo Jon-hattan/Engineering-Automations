@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="utf-16"?>
+<ObjectRepositoryTargetData ContentHash="uyqb2MduiUeALOXFSa3m3g" xmlns="http://schemas.uipath.com/workflow/activities/uix" xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml">
+  <ObjectRepositoryTargetData.Data>
+    <TargetAnchorable x:Key="TargetAnchorable" BrowserURL="convergeaus.jacobs.com/PrologConverge/WebClient/navigate.aspx" DesignTimeRectangle="61, 582, 1816, 16" ElementType="Text" FullSelectorArgument="&lt;webctrl id='fraMainPI' tag='IFRAME' /&gt;&lt;webctrl id='lstList_ND' tag='DIV' /&gt;" FuzzySelectorArgument="&lt;webctrl id='fraMainPI' tag='IFRAME' matching:id='fuzzy' fuzzylevel:id='0.0' /&gt;&lt;webctrl id='lstList_ND' tag='DIV' type='' class='WEI6J7' aaname='There are no Inspections &amp;amp; Tests Records ' matching:id='fuzzy' fuzzylevel:id='0.0' matching:class='fuzzy' fuzzylevel:class='0.0' matching:aaname='fuzzy' fuzzylevel:aaname='0.0' check:innerText='There are no Inspections &amp;amp; Tests Records' /&gt;" Guid="db86ea9b-c60d-4b65-bb15-de5a186c5426" ScopeSelectorArgument="&lt;html app='msedge.exe' title='Prolog Converge' /&gt;" SearchSteps="Selector, FuzzySelector" Version="V6" Visibility="Interactive" WaitForReadyArgument="None">
+      <imageRef attrName="InformativeScreenshot" originalValue="776f8a57c903987d3749f6db0be3223b.png" xmlns="">05eU39fKJuUa-tE134NHWJA</imageRef>
+    </TargetAnchorable>
+    <x:String x:Key="ActivityType">CheckState</x:String>
+  </ObjectRepositoryTargetData.Data>
+</ObjectRepositoryTargetData>

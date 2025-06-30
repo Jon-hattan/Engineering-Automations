@@ -1,0 +1,13 @@
+﻿{
+  "Name": "Click RFIW",
+  "Type": "Element",
+  "Id": "TilE12uhg0CdCgpPmy98iQ",
+  "Reference": "xGt2OSXt7UW47kSHt2k5yg/TilE12uhg0CdCgpPmy98iQ",
+  "ParentRef": "xGt2OSXt7UW47kSHt2k5yg/WpFCrSdeTkqPNWx2GjVSug",
+  "Created": "2025-06-30T01:46:03.3043092Z",
+  "Updated": "2025-06-30T01:46:03.3043092Z",
+  "CreatedBy": [
+    "UiPath.UIAutomationCore, Version=25.10.4.0, Culture=neutral, PublicKeyToken=null",
+    "UiPath.Platform, Version=25.4.0.0, Culture=neutral, PublicKeyToken=null"
+  ]
+}

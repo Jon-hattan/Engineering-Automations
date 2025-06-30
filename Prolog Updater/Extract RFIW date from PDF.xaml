@@ -1,4 +1,4 @@
-<Activity mc:Ignorable="sap sap2010" x:Class="test_extraction_date" xmlns="http://schemas.microsoft.com/netfx/2009/xaml/activities" xmlns:isactr="http://schemas.uipath.com/workflow/integration-service-activities/isactr" xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" xmlns:njl="clr-namespace:Newtonsoft.Json.Linq;assembly=Newtonsoft.Json" xmlns:s="clr-namespace:System;assembly=System.Private.CoreLib" xmlns:sap="http://schemas.microsoft.com/netfx/2009/xaml/activities/presentation" xmlns:sap2010="http://schemas.microsoft.com/netfx/2010/xaml/activities/presentation" xmlns:scg="clr-namespace:System.Collections.Generic;assembly=System.Private.CoreLib" xmlns:sco="clr-namespace:System.Collections.ObjectModel;assembly=System.Private.CoreLib" xmlns:ui="http://schemas.uipath.com/workflow/activities" xmlns:uiascb="clr-namespace:UiPath.IntegrationService.Activities.SWEntities.CD9CAA8ACB5_v1_sub_objectminus_signdetection_Create.Bundle;assembly=CD9CAA8ACB5_v1_sub_o.vmbtv3cj5mC1d73Fqzu3xa3" xmlns:uiascb1="clr-namespace:UiPath.IntegrationService.Activities.SWEntities.CD9CAA8ACB5_ner_Create.Bundle;assembly=CD9CAA8ACB5_ner_Crea.Tzd1940clSF1bOSwJ2nDNG24" xmlns:uisape="clr-namespace:UiPath.IntelligentOCR.StudioWeb.Activities.PDF.ExtractPDFImages;assembly=UiPath.IntelligentOCR.StudioWeb.Activities" xmlns:uisape1="clr-namespace:UiPath.IntelligentOCR.StudioWeb.Activities.PDF.ExtractPDFPageRange;assembly=UiPath.IntelligentOCR.StudioWeb.Activities" xmlns:uisape2="clr-namespace:UiPath.IntelligentOCR.StudioWeb.Activities.PDF.ExtractPDFText;assembly=UiPath.IntelligentOCR.StudioWeb.Activities" xmlns:upr="clr-namespace:UiPath.Platform.ResourceHandling;assembly=UiPath.Platform" xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml">
+<Activity mc:Ignorable="sap sap2010" x:Class="test_extraction_date" this:test_extraction_date.filePath="C:\Users\CHEWJ1\Downloads\131241-WSB01-RN-N-5726.pdf" xmlns="http://schemas.microsoft.com/netfx/2009/xaml/activities" xmlns:isactr="http://schemas.uipath.com/workflow/integration-service-activities/isactr" xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" xmlns:njl="clr-namespace:Newtonsoft.Json.Linq;assembly=Newtonsoft.Json" xmlns:s="clr-namespace:System;assembly=System.Private.CoreLib" xmlns:sap="http://schemas.microsoft.com/netfx/2009/xaml/activities/presentation" xmlns:sap2010="http://schemas.microsoft.com/netfx/2010/xaml/activities/presentation" xmlns:scg="clr-namespace:System.Collections.Generic;assembly=System.Private.CoreLib" xmlns:sco="clr-namespace:System.Collections.ObjectModel;assembly=System.Private.CoreLib" xmlns:this="clr-namespace:" xmlns:ui="http://schemas.uipath.com/workflow/activities" xmlns:uiascb="clr-namespace:UiPath.IntegrationService.Activities.SWEntities.CD9CAA8ACB5_v1_sub_objectminus_signdetection_Create.Bundle;assembly=CD9CAA8ACB5_v1_sub_o.vmbtv3cj5mC1d73Fqzu3xa3" xmlns:uiascb1="clr-namespace:UiPath.IntegrationService.Activities.SWEntities.CD9CAA8ACB5_ner_Create.Bundle;assembly=CD9CAA8ACB5_ner_Crea.Tzd1940clSF1bOSwJ2nDNG24" xmlns:uisape="clr-namespace:UiPath.IntelligentOCR.StudioWeb.Activities.PDF.ExtractPDFImages;assembly=UiPath.IntelligentOCR.StudioWeb.Activities" xmlns:uisape1="clr-namespace:UiPath.IntelligentOCR.StudioWeb.Activities.PDF.ExtractPDFPageRange;assembly=UiPath.IntelligentOCR.StudioWeb.Activities" xmlns:uisape2="clr-namespace:UiPath.IntelligentOCR.StudioWeb.Activities.PDF.ExtractPDFText;assembly=UiPath.IntelligentOCR.StudioWeb.Activities" xmlns:upr="clr-namespace:UiPath.Platform.ResourceHandling;assembly=UiPath.Platform" xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml">
   <x:Members>
     <x:Property Name="Date_Inspection" Type="OutArgument(x:String)" />
     <x:Property Name="filePath" Type="InArgument(x:String)" />
@@ -57,6 +57,7 @@
       <x:String>System.Collections.Specialized</x:String>
       <x:String>UiPath.Web.Activities</x:String>
       <x:String>System.Numerics</x:String>
+      <x:String>System.Globalization</x:String>
     </sco:Collection>
   </TextExpression.NamespacesForImplementation>
   <TextExpression.ReferencesForImplementation>
@@ -123,7 +124,7 @@
       <AssemblyReference>System.Runtime.Numerics</AssemblyReference>
     </sco:Collection>
   </TextExpression.ReferencesForImplementation>
-  <Sequence DisplayName="test_extraction_date" sap:VirtualizedContainerService.HintSize="1305,1361" sap2010:WorkflowViewState.IdRef="Sequence_1">
+  <Sequence DisplayName="test_extraction_date" sap:VirtualizedContainerService.HintSize="942.6666666666666,1472" sap2010:WorkflowViewState.IdRef="Sequence_1">
     <Sequence.Variables>
       <Variable x:TypeArguments="upr:ILocalResource" Name="exportedPDF" />
       <Variable x:TypeArguments="x:String" Name="extractedText" />
@@ -135,7 +136,7 @@
         <x:Boolean x:Key="IsExpanded">True</x:Boolean>
       </scg:Dictionary>
     </sap:WorkflowViewStateService.ViewState>
-    <ui:CommentOut DisplayName="Comment Out" sap:VirtualizedContainerService.HintSize="470,57" sap2010:WorkflowViewState.IdRef="CommentOut_1">
+    <ui:CommentOut DisplayName="Comment Out" sap:VirtualizedContainerService.HintSize="470,57.333333333333336" sap2010:WorkflowViewState.IdRef="CommentOut_1">
       <ui:CommentOut.Body>
         <Sequence DisplayName="Ignored Activities" sap:VirtualizedContainerService.HintSize="450,664" sap2010:WorkflowViewState.IdRef="Sequence_2">
           <sap:WorkflowViewStateService.ViewState>
@@ -227,10 +228,10 @@ There may be MULTIPLE Inspections, so ensure you pick the date from the LATEST i
         </scg:Dictionary>
       </sap:WorkflowViewStateService.ViewState>
     </ui:CommentOut>
-    <uisape1:ExtractPDFPageRange FilePassword="{x:Null}" ResultFileName="{x:Null}" DisplayName="Extract PDF Page Range" ExportedPdf="[exportedPDF]" sap:VirtualizedContainerService.HintSize="470,173" sap2010:WorkflowViewState.IdRef="ExtractPDFPageRange_1" PageRange="1" PdfFile="[LocalResource.FromPath(filePath)]" />
-    <uisape2:ExtractPDFText FilePassword="{x:Null}" ApplyOcr="True" DisplayName="Extract PDF Text" sap:VirtualizedContainerService.HintSize="470,122" sap2010:WorkflowViewState.IdRef="ExtractPDFText_1" OcrEngine="UIPATH_DOCUMENT_OCR" PdfFile="[exportedPDF]" Text="[extractedText]" />
-    <ui:DeleteFileX DisplayName="Delete File" sap:VirtualizedContainerService.HintSize="470,112" sap2010:WorkflowViewState.IdRef="DeleteFileX_1" Path="[exportedPDF.LocalPath]" />
-    <isactr:ConnectorActivity Configuration="H4sIAAAAAAAACp1VbU/bMBD+K5Y/ZxllMLFqTGrDWxnQinbwYULITY7Wq2tntgOEiv++s+O2Ce+a+iHy3fnueR7fXRf0gIPITKKkZVyCpu0FHQLT6ZSNBVRO2v59FdGezAu7MizoGZsDbVML95ZGdI+bXLAyGH0sWbrApJrnliuJrtEUvINYRZhkonwAcqM0kXgzIyAttxwMXhuVuUtlrOZygueh0ravMwex5ZPyCeZb0IEyPOQeaD5nuqSPET2HvwXXkNG21QVEFc0TlbIQ2lWZi1vRqBVuUtmvOZ4REdxYom5WsJFRRuwUuCbZOtg4rsaL6pwVfeS8JqnGfyC1TZJfELTSc2bRn/HUJUJu3ys9ourzw6O6YYWwF0wUmGrx+I42EU3UPFcSIaN1b5XYE18eLnk2AfQv6CWXmbobcSueiFE5mpIMtLrlGfy/HIkSxVz+hLJRsPTNUXc3y7qXcq/gkvnSZT32iHumbwR56ZYV66kbAc2atdNbWUPx16MfP9yrOIL9wr44g0u9K//HW/jkaftqSNVE8gecxHHpYZ7tn5O5ykAQLr2B10f77Rl1vMAg/xsmDPI6B4ONZ2DJc3lOCs3s6/RXrPoyYfKWmSqwNrzH3F673fWUuPtkJPTQecUtPGxTiDWVX3zA7DTuSQsTRIXuIehbnkLcweG49TLFw8ulpHGy9y3pdHY6SXfbQbhONCCXuFvITEC8tkTkpch49JC1vm1tpGJ40Br3h3fHm3Lv7HBzKyIXoA1W323FG+6H93HICw27EgqrmYjIoBgLnrphUTOQu7IQgr4v+gfVxX1vUFYfHfS+wlbtSWOZTGHANGprEaNbEgErZvNo/QhIiRtNaYSH5oLnqOqn8GFcZzMMCoqWQfplGyAUvw7DI1YPe2Rtfgp2qhCNW2vWLfmEpVNAMmpW5H7cHJqVvavVnQHdszAP9rADEVP4TxuwdMYmUMff2m4SCCiqviCHIDs9sm6FemQ9y/ZO/HVF5MNN+QLvfg5VGzqBfCc9E6M/HKHNwcPT5+raCZOTApn55YDnU3Y/wOMQR5u2Nzc2MAczXcw3w8FNphjttAstM8Lh7gqVzrxKj/8ADvphIyQIAAA=" ConnectionId="434f8ea0-0534-465a-8e55-96d9caa8acb5" DisplayName="Named Entity Recognition" sap:VirtualizedContainerService.HintSize="470,266" sap2010:WorkflowViewState.IdRef="ConnectorActivity_3" UiPathActivityTypeId="0382f08f-15b5-306a-8f82-cf3ac367436d">
+    <uisape1:ExtractPDFPageRange DisplayName="Extract PDF Page Range" ExportedPdf="[exportedPDF]" FilePassword="{x:Null}" sap:VirtualizedContainerService.HintSize="470,176.66666666666666" sap2010:WorkflowViewState.IdRef="ExtractPDFPageRange_1" PageRange="1" PdfFile="[LocalResource.FromPath(filePath)]" ResultFileName="{x:Null}" />
+    <uisape2:ExtractPDFText ApplyOcr="True" DisplayName="Extract PDF Text" FilePassword="{x:Null}" sap:VirtualizedContainerService.HintSize="470,124" sap2010:WorkflowViewState.IdRef="ExtractPDFText_1" OcrEngine="UIPATH_DOCUMENT_OCR" PdfFile="[exportedPDF]" Text="[extractedText]" />
+    <ui:DeleteFileX DisplayName="Delete File" sap:VirtualizedContainerService.HintSize="470,114" sap2010:WorkflowViewState.IdRef="DeleteFileX_1" Path="[exportedPDF.LocalPath]" />
+    <isactr:ConnectorActivity Configuration="H4sIAAAAAAAACp1VbU/bMBD+K5Y/ZxllMLFqTGrDWxnQinbwYULITY7Wq2tntgOEiv++s+O2Ce+a+iHy3fnueR7fXRf0gIPITKKkZVyCpu0FHQLT6ZSNBVRO2v59FdGezAu7MizoGZsDbVML95ZGdI+bXLAyGH0sWbrApJrnliuJrtEUvINYRZhkonwAcqM0kXgzIyAttxwMXhuVuUtlrOZygueh0ravMwex5ZPyCeZb0IEyPOQeaD5nuqSPET2HvwXXkNG21QVEFc0TlbIQ2lWZi1vRqBVuUtmvOZ4REdxYom5WsJFRRuwUuCbZOtg4rsaL6pwVfeS8JqnGfyC1TZJfELTSc2bRn/HUJUJu3ys9ourzw6O6YYWwF0wUmGrx+I42EU3UPFcSIaN1b5XYE18eLnk2AfQv6CWXmbobcSueiFE5mpIMtLrlGfy/HIkSxVz+hLJRsPTNUXc3y7qXcq/gkvnSZT32iHumbwR56ZYV66kbAc2atdNbWUPx16MfP9yrOIL9wr44g0u9K//HW/jkaftqSNVE8gecxHHpYZ7tn5O5ykAQLr2B10f77Rl1vMAg/xsmDPI6B4ONZ2DJc3lOCs3s6/RXrPoyYfKWmSqwNrzH3F673fWUuPtkJPTQecUtPGxTiDWVX3zA7DTuSQsTRIXuIehbnkLcweG49TLFw8ulpHGy9y3pdHY6SXfbQbhONCCXuFvITEC8tkTkpch49JC1vm1tpGJ40Br3h3fHm3Lv7HBzKyIXoA1W323FG+6H93HICw27EgqrmYjIoBgLnrphUTOQu7IQgr4v+gfVxX1vUFYfHfS+wlbtSWOZTGHANGprEaNbEgErZvNo/QhIiRtNaYSH5oLnqOqn8GFcZzMMCoqWQfplGyAUvw7DI1YPe2Rtfgp2qhCNW2vWLfmEpVNAMmpW5H7cHJqVvavVnQHdszAP9rADEVP4TxuwdMYmUMff2m4SCCiqviCHIDs9sm6FemQ9y/ZO/HVF5MNN+QLvfg5VGzqBfCc9E6M/HKHNwcPT5+raCZOTApn55YDnU3Y/wOMQR5u2Nzc2MAczXcw3w8FNphjttAstM8Lh7gqVzrxKj/8ADvphIyQIAAA=" ConnectionId="434f8ea0-0534-465a-8e55-96d9caa8acb5" DisplayName="Named Entity Recognition" sap:VirtualizedContainerService.HintSize="470,270.6666666666667" sap2010:WorkflowViewState.IdRef="ConnectorActivity_3" UiPathActivityTypeId="0382f08f-15b5-306a-8f82-cf3ac367436d">
       <isactr:ConnectorActivity.FieldObjects>
         <isactr:FieldObject Name="text" Type="FieldArgument">
           <isactr:FieldObject.Value>
@@ -242,11 +243,15 @@ There may be MULTIPLE Inspections, so ensure you pick the date from the LATEST i
             <InArgument x:TypeArguments="scg:Dictionary(x:String, x:String)" xml:space="preserve">[new System.Collections.Generic.Dictionary(Of System.String, System.String) From { { "Date approved", "Analyze the first page of a document called an RFIW (inspections list) and extract the date that is hand-written beside the signature. This date is the APPROVAL DATE. it is the date the inspection was approved. 
 The pdf may contain multiple dates, but only the date next to the signature should be extracted. 
 The extracted date should be in the format DD/MM/YYYY. it will be found on the same line as 'Approval by QP / RE / RTO (sign, name, date)'
+IF the DAY or MONTH is only one digit, ensure that you add an extra leading 0.
+if the year is written only in two digits, ensure you add the first two digits too. (eg: 25 becomes 2025.)
 Corroborate your date with the date beside the signature on the right of the box with the text 'Name &amp; Signature of QP / RE / RTO'. 
 Corroborate your date with the 'Date &amp; Time Inspected'.
 They should be the same. If they are not the same, use the latest date.
 If they are not the same. ENSURE you output DD/MM/YY (unsure) to indicate that you are unsure.
 There may be MULTIPLE Inspections, so ensure you pick the date from the LATEST inspection
+ENSURE IT IS IN THE FORM DD/MM/YYYY. ADD LEADING ZEROES IF THERE IS ONLY ONE DIGIT FOR MONTH OR DAY.
+if it is not in DD/MM/YYYY. YOU have to modify it
 DO NOT output in json format. output in pure text" } }]</InArgument>
           </isactr:FieldObject.Value>
         </isactr:FieldObject>
@@ -263,15 +268,15 @@ DO NOT output in json format. output in pure text" } }]</InArgument>
       </isactr:ConnectorActivity.FieldObjects>
     </isactr:ConnectorActivity>
     <ui:DeserializeJsonArray DisplayName="Deserialize JSON Array" sap:VirtualizedContainerService.HintSize="470,92" sap2010:WorkflowViewState.IdRef="DeserializeJsonArray_1" JsonArray="[jArr]" JsonString="[output]" />
-    <If Condition="[jArr.Count &gt; 0]" sap:VirtualizedContainerService.HintSize="470,468" sap2010:WorkflowViewState.IdRef="If_1">
+    <If Condition="[jArr.Count &gt; 0]" sap:VirtualizedContainerService.HintSize="470,476" sap2010:WorkflowViewState.IdRef="If_1">
       <If.Then>
-        <Sequence DisplayName="Then" sap:VirtualizedContainerService.HintSize="468,165" sap2010:WorkflowViewState.IdRef="Sequence_4">
+        <Sequence DisplayName="Then" sap:VirtualizedContainerService.HintSize="468,168" sap2010:WorkflowViewState.IdRef="Sequence_4">
           <sap:WorkflowViewStateService.ViewState>
             <scg:Dictionary x:TypeArguments="x:String, x:Object">
               <x:Boolean x:Key="IsExpanded">True</x:Boolean>
             </scg:Dictionary>
           </sap:WorkflowViewStateService.ViewState>
-          <Assign sap:VirtualizedContainerService.HintSize="434,105" sap2010:WorkflowViewState.IdRef="Assign_3">
+          <Assign sap:VirtualizedContainerService.HintSize="434,108" sap2010:WorkflowViewState.IdRef="Assign_3">
             <Assign.To>
               <OutArgument x:TypeArguments="x:String">[Date_Inspection]</OutArgument>
             </Assign.To>
@@ -282,42 +287,40 @@ DO NOT output in json format. output in pure text" } }]</InArgument>
         </Sequence>
       </If.Then>
       <If.Else>
-        <Sequence DisplayName="Else" sap:VirtualizedContainerService.HintSize="468,165" sap2010:WorkflowViewState.IdRef="Sequence_5">
+        <Sequence DisplayName="Else" sap:VirtualizedContainerService.HintSize="468,168" sap2010:WorkflowViewState.IdRef="Sequence_5">
           <sap:WorkflowViewStateService.ViewState>
             <scg:Dictionary x:TypeArguments="x:String, x:Object">
               <x:Boolean x:Key="IsExpanded">True</x:Boolean>
             </scg:Dictionary>
           </sap:WorkflowViewStateService.ViewState>
-          <Assign sap:VirtualizedContainerService.HintSize="434,105" sap2010:WorkflowViewState.IdRef="Assign_4">
+          <Assign sap:VirtualizedContainerService.HintSize="434,108" sap2010:WorkflowViewState.IdRef="Assign_4">
             <Assign.To>
               <OutArgument x:TypeArguments="x:String">[Date_Inspection]</OutArgument>
             </Assign.To>
             <Assign.Value>
               <InArgument x:TypeArguments="x:String">
-                <Literal x:TypeArguments="x:String" Value="" />
+                <Literal x:TypeArguments="x:String">
+                  <Literal.Result>
+                    <OutArgument x:TypeArguments="x:String" />
+                  </Literal.Result></Literal>
               </InArgument>
             </Assign.Value>
           </Assign>
         </Sequence>
       </If.Else>
     </If>
-    <ui:CommentOut DisplayName="Comment Out" sap:VirtualizedContainerService.HintSize="470,48" sap2010:WorkflowViewState.IdRef="CommentOut_3">
-      <ui:CommentOut.Body>
-        <Sequence DisplayName="Ignored Activities" sap:VirtualizedContainerService.HintSize="450,168" sap2010:WorkflowViewState.IdRef="Sequence_6">
-          <sap:WorkflowViewStateService.ViewState>
-            <scg:Dictionary x:TypeArguments="x:String, x:Object">
-              <x:Boolean x:Key="IsExpanded">True</x:Boolean>
-            </scg:Dictionary>
-          </sap:WorkflowViewStateService.ViewState>
-          <ui:MessageBox Caption="{x:Null}" ChosenButton="{x:Null}" AutoCloseAfter="00:00:02" DisplayName="Message Box" sap:VirtualizedContainerService.HintSize="416,108" sap2010:WorkflowViewState.IdRef="MessageBox_5" Text="[&quot;Date : &quot; &amp; Date_inspection]" />
-        </Sequence>
-      </ui:CommentOut.Body>
+    <Assign sap2010:Annotation.AnnotationText="Convert to MM/DD/YYYY" sap:VirtualizedContainerService.HintSize="470,138.66666666666666" sap2010:WorkflowViewState.IdRef="Assign_10">
+      <Assign.To>
+        <OutArgument x:TypeArguments="x:String">[Date_Inspection]</OutArgument>
+      </Assign.To>
+      <Assign.Value>
+        <InArgument x:TypeArguments="x:String">[DateTime.ParseExact(Date_Inspection, {"dd/MM/yyyy", "d/M/yyyy", "dd/M/yyyy", "d/MM/yyyy"}, System.Globalization.CultureInfo.InvariantCulture).ToString("MM/dd/yyyy")]</InArgument>
+      </Assign.Value>
       <sap:WorkflowViewStateService.ViewState>
         <scg:Dictionary x:TypeArguments="x:String, x:Object">
-          <x:Boolean x:Key="IsExpanded">False</x:Boolean>
-          <x:Boolean x:Key="IsPinned">False</x:Boolean>
+          <x:Boolean x:Key="IsAnnotationDocked">True</x:Boolean>
         </scg:Dictionary>
       </sap:WorkflowViewStateService.ViewState>
-    </ui:CommentOut>
+    </Assign>
   </Sequence>
 </Activity>
