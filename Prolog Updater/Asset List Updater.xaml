@@ -1,11 +1,4 @@
-<Activity mc:Ignorable="sap sap2010" x:Class="Asset_List_Updater" this:Asset_List_Updater.Checks="[New Dictionary(of String, Boolean)]" xmlns="http://schemas.microsoft.com/netfx/2009/xaml/activities" xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" xmlns:s="clr-namespace:System;assembly=System.Private.CoreLib" xmlns:sap="http://schemas.microsoft.com/netfx/2009/xaml/activities/presentation" xmlns:sap2010="http://schemas.microsoft.com/netfx/2010/xaml/activities/presentation" xmlns:scg="clr-namespace:System.Collections.Generic;assembly=System.Private.CoreLib" xmlns:sco="clr-namespace:System.Collections.ObjectModel;assembly=System.Private.CoreLib" xmlns:this="clr-namespace:" xmlns:ue="clr-namespace:UiPath.Excel;assembly=UiPath.Excel.Activities" xmlns:ueab="clr-namespace:UiPath.Excel.Activities.Business;assembly=UiPath.Excel.Activities" xmlns:ueabf="clr-namespace:UiPath.Excel.Activities.Business.Filter;assembly=UiPath.Excel.Activities" xmlns:ui="http://schemas.uipath.com/workflow/activities" xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml">
-  <x:Members>
-    <x:Property Name="Checks" Type="InArgument(scg:Dictionary(x:String, x:Boolean))" />
-  </x:Members>
-  <VisualBasic.Settings>
-    <x:Null />
-  </VisualBasic.Settings>
-  <sap2010:WorkflowViewState.IdRef>Asset_List_Updater_1</sap2010:WorkflowViewState.IdRef>
+<Activity mc:Ignorable="sap sap2010" x:Class="Asset_List_Updater" VisualBasic.Settings="{x:Null}" sap2010:WorkflowViewState.IdRef="Asset_List_Updater_1" xmlns="http://schemas.microsoft.com/netfx/2009/xaml/activities" xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" xmlns:s="clr-namespace:System;assembly=System.Private.CoreLib" xmlns:sap="http://schemas.microsoft.com/netfx/2009/xaml/activities/presentation" xmlns:sap2010="http://schemas.microsoft.com/netfx/2010/xaml/activities/presentation" xmlns:scg="clr-namespace:System.Collections.Generic;assembly=System.Private.CoreLib" xmlns:sco="clr-namespace:System.Collections.ObjectModel;assembly=System.Private.CoreLib" xmlns:ue="clr-namespace:UiPath.Excel;assembly=UiPath.Excel.Activities" xmlns:ueab="clr-namespace:UiPath.Excel.Activities.Business;assembly=UiPath.Excel.Activities" xmlns:ueabf="clr-namespace:UiPath.Excel.Activities.Business.Filter;assembly=UiPath.Excel.Activities" xmlns:ui="http://schemas.uipath.com/workflow/activities" xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml">
   <TextExpression.NamespacesForImplementation>
     <sco:Collection x:TypeArguments="x:String">
       <x:String>System.Activities</x:String>
@@ -148,9 +141,12 @@
       <AssemblyReference>System.Collections.Immutable</AssemblyReference>
       <AssemblyReference>System.Linq.Queryable</AssemblyReference>
       <AssemblyReference>UiPath.MicrosoftOffice365</AssemblyReference>
+      <AssemblyReference>System.CodeDom</AssemblyReference>
+      <AssemblyReference>Microsoft.VisualBasic.Forms</AssemblyReference>
+      <AssemblyReference>Microsoft.VisualBasic.Core</AssemblyReference>
     </sco:Collection>
   </TextExpression.ReferencesForImplementation>
-  <Sequence DisplayName="Asset_List_Updater" sap:VirtualizedContainerService.HintSize="1216,918.6666666666666" sap2010:WorkflowViewState.IdRef="Sequence_1">
+  <Sequence DisplayName="Asset_List_Updater" sap:VirtualizedContainerService.HintSize="1216,1037.3333333333333" sap2010:WorkflowViewState.IdRef="Sequence_1">
     <Sequence.Variables>
       <Variable x:TypeArguments="scg:Dictionary(x:String, s:String[])" Default="[New Dictionary(of String, String())]" Name="TPDictionary_CommCheck" />
       <Variable x:TypeArguments="scg:Dictionary(x:String, s:String[])" Default="[New Dictionary(of String, String())]" Name="TPDictionary_HotLoop" />
@@ -159,6 +155,12 @@
       <Variable x:TypeArguments="x:String" Name="tableName" />
       <Variable x:TypeArguments="x:String" Name="filePath" />
       <Variable x:TypeArguments="x:String" Name="selectedcontract" />
+      <Variable x:TypeArguments="x:String" Name="selectedSheet" />
+      <Variable x:TypeArguments="scg:Dictionary(x:String, x:Boolean)" Name="Checks">
+        <Variable.Default>
+          <VisualBasicValue x:TypeArguments="scg:Dictionary(x:String, x:Boolean)" ExpressionText="New Dictionary(of String, Boolean)" />
+        </Variable.Default>
+      </Variable>
     </Sequence.Variables>
     <sap:WorkflowViewStateService.ViewState>
       <scg:Dictionary x:TypeArguments="x:String, x:Object">
@@ -171,6 +173,7 @@
         <OutArgument x:TypeArguments="scg:Dictionary(x:String, x:Boolean)" x:Key="Checks">[Checks]</OutArgument>
         <OutArgument x:TypeArguments="x:String" x:Key="filePath">[filePath]</OutArgument>
         <OutArgument x:TypeArguments="x:String" x:Key="selectedcontract">[selectedcontract]</OutArgument>
+        <OutArgument x:TypeArguments="x:String" x:Key="selectedSheet">[selectedSheet]</OutArgument>
       </ui:InvokeWorkflowFile.Arguments>
     </ui:InvokeWorkflowFile>
     <ui:InvokeWorkflowFile ArgumentsVariable="{x:Null}" ContinueOnError="{x:Null}" DisplayName="Select Contract (RFIW) - Invoke Workflow File (Prolog Updater\Other Sequences\Select Contract (RFIW).xaml)" sap:VirtualizedContainerService.HintSize="416,177.33333333333334" sap2010:WorkflowViewState.IdRef="InvokeWorkflowFile_10" UnSafe="False" WorkflowFileName="Prolog Updater\Other Sequences\Select Contract (RFIW).xaml">
@@ -180,7 +183,7 @@
     </ui:InvokeWorkflowFile>
     <ui:InvokeCode ContinueOnError="{x:Null}" sap2010:Annotation.AnnotationText="Find Table Name" Code="Try:&#xA;Dim excelApp As Microsoft.Office.Interop.Excel.Application = New Microsoft.Office.Interop.Excel.Application&#xA;Dim workbook As Microsoft.Office.Interop.Excel.Workbook = excelApp.Workbooks.Open(filePath)&#xA;Dim worksheet As Microsoft.Office.Interop.Excel.Worksheet = CType(workbook.Sheets(sheetName), Microsoft.Office.Interop.Excel.Worksheet)&#xA;&#xA;&#xA;'find table name'&#xA;Dim table = worksheet.ListObjects(1)&#xA;tableName = table.Name&#xA;&#xA;workbook.Close(True)&#xA;excelApp.Quit()&#xA;&#xA;System.Runtime.InteropServices.Marshal.ReleaseComObject(worksheet)&#xA;System.Runtime.InteropServices.Marshal.ReleaseComObject(workbook)&#xA;System.Runtime.InteropServices.Marshal.ReleaseComObject(excelApp)&#xA;Catch ex As Exception&#xA;&#x9;Msgbox(ex.Message)&#xA;&#x9;&#xA;End try" DisplayName="Invoke Code" sap:VirtualizedContainerService.HintSize="416,228" sap2010:WorkflowViewState.IdRef="InvokeCode_1">
       <ui:InvokeCode.Arguments>
-        <InArgument x:TypeArguments="x:String" x:Key="sheetName">Asset List</InArgument>
+        <InArgument x:TypeArguments="x:String" x:Key="sheetName">[selectedSheet]</InArgument>
         <OutArgument x:TypeArguments="x:String" x:Key="tableName">[tableName]</OutArgument>
         <InArgument x:TypeArguments="x:String" x:Key="filePath">[filePath]</InArgument>
       </ui:InvokeCode.Arguments>
@@ -288,53 +291,53 @@
         </scg:Dictionary>
       </sap:WorkflowViewStateService.ViewState>
     </ui:CommentOut>
-    <ueab:ExcelProcessScopeX DisplayAlerts="{x:Null}" ExistingProcessAction="{x:Null}" FileConflictResolution="{x:Null}" LaunchMethod="{x:Null}" LaunchTimeout="{x:Null}" MacroSettings="{x:Null}" ProcessMode="{x:Null}" ShowExcelWindow="{x:Null}" sap2010:Annotation.AnnotationText="Update Sheet" DisplayName="Excel Process Scope" sap:VirtualizedContainerService.HintSize="416,78.66666666666667" sap2010:WorkflowViewState.IdRef="ExcelProcessScopeX_4">
+    <ueab:ExcelProcessScopeX DisplayAlerts="{x:Null}" ExistingProcessAction="{x:Null}" FileConflictResolution="{x:Null}" LaunchMethod="{x:Null}" LaunchTimeout="{x:Null}" MacroSettings="{x:Null}" ProcessMode="{x:Null}" ShowExcelWindow="{x:Null}" sap2010:Annotation.AnnotationText="Update Sheet" DisplayName="Excel Process Scope" sap:VirtualizedContainerService.HintSize="416,88" sap2010:WorkflowViewState.IdRef="ExcelProcessScopeX_4">
       <ueab:ExcelProcessScopeX.Body>
         <ActivityAction x:TypeArguments="ui:IExcelProcess">
           <ActivityAction.Argument>
             <DelegateInArgument x:TypeArguments="ui:IExcelProcess" Name="ExcelProcessScopeTag" />
           </ActivityAction.Argument>
-          <Sequence DisplayName="Do" sap:VirtualizedContainerService.HintSize="536,847.3333333333334" sap2010:WorkflowViewState.IdRef="Sequence_53">
+          <Sequence DisplayName="Do" sap:VirtualizedContainerService.HintSize="608,3306" sap2010:WorkflowViewState.IdRef="Sequence_53">
             <sap:WorkflowViewStateService.ViewState>
               <scg:Dictionary x:TypeArguments="x:String, x:Object">
                 <x:Boolean x:Key="IsExpanded">True</x:Boolean>
                 <x:Boolean x:Key="IsPinned">False</x:Boolean>
               </scg:Dictionary>
             </sap:WorkflowViewStateService.ViewState>
-            <ueab:ExcelApplicationCard Password="{x:Null}" ReadFormatting="{x:Null}" SensitivityLabel="{x:Null}" DisplayName="Use Excel File" sap:VirtualizedContainerService.HintSize="502,787.3333333333334" sap2010:WorkflowViewState.IdRef="ExcelApplicationCard_4" ResizeWindow="None" SensitivityOperation="None" WorkbookPath="[filePath]">
+            <ueab:ExcelApplicationCard Password="{x:Null}" ReadFormatting="{x:Null}" SensitivityLabel="{x:Null}" DisplayName="Use Excel File" sap:VirtualizedContainerService.HintSize="574,3246" sap2010:WorkflowViewState.IdRef="ExcelApplicationCard_4" ResizeWindow="None" SensitivityOperation="None" WorkbookPath="[filePath]">
               <ueab:ExcelApplicationCard.Body>
                 <ActivityAction x:TypeArguments="ue:IWorkbookQuickHandle">
                   <ActivityAction.Argument>
                     <DelegateInArgument x:TypeArguments="ue:IWorkbookQuickHandle" Name="AssetList" />
                   </ActivityAction.Argument>
-                  <Sequence DisplayName="Do" sap:VirtualizedContainerService.HintSize="468,484" sap2010:WorkflowViewState.IdRef="Sequence_19">
+                  <Sequence DisplayName="Do" sap:VirtualizedContainerService.HintSize="540,2942.6666666666665" sap2010:WorkflowViewState.IdRef="Sequence_19">
                     <sap:WorkflowViewStateService.ViewState>
                       <scg:Dictionary x:TypeArguments="x:String, x:Object">
                         <x:Boolean x:Key="IsExpanded">True</x:Boolean>
                       </scg:Dictionary>
                     </sap:WorkflowViewStateService.ViewState>
-                    <ueab:FilterX ColumnName="{x:Null}" FilterArgument="{x:Null}" ClearFilter="True" DisplayName="Filter" HasHeaders="True" sap:VirtualizedContainerService.HintSize="434,204" sap2010:WorkflowViewState.IdRef="FilterX_6" Range="[AssetList.Table(tableName)]" />
-                    <If Condition="[Checks(&quot;Comm Check&quot;)]" DisplayName="If comm check" sap:VirtualizedContainerService.HintSize="434,57.333333333333336" sap2010:WorkflowViewState.IdRef="If_13">
+                    <ueab:FilterX ColumnName="{x:Null}" FilterArgument="{x:Null}" ClearFilter="True" DisplayName="Filter" HasHeaders="True" sap:VirtualizedContainerService.HintSize="506,204" sap2010:WorkflowViewState.IdRef="FilterX_6" Range="[AssetList.Table(tableName)]" />
+                    <If Condition="[Checks(&quot;Comm Check&quot;)]" DisplayName="If comm check" sap:VirtualizedContainerService.HintSize="506,1286.6666666666667" sap2010:WorkflowViewState.IdRef="If_13">
                       <sap:WorkflowViewStateService.ViewState>
                         <scg:Dictionary x:TypeArguments="x:String, x:Object">
-                          <x:Boolean x:Key="IsExpanded">False</x:Boolean>
+                          <x:Boolean x:Key="IsExpanded">True</x:Boolean>
                           <x:Boolean x:Key="IsPinned">False</x:Boolean>
                         </scg:Dictionary>
                       </sap:WorkflowViewStateService.ViewState>
                       <If.Then>
-                        <Sequence DisplayName="Then" sap:VirtualizedContainerService.HintSize="504,1002.6666666666666" sap2010:WorkflowViewState.IdRef="Sequence_56">
+                        <Sequence DisplayName="Then" sap:VirtualizedContainerService.HintSize="504,1121.3333333333333" sap2010:WorkflowViewState.IdRef="Sequence_56">
                           <sap:WorkflowViewStateService.ViewState>
                             <scg:Dictionary x:TypeArguments="x:String, x:Object">
                               <x:Boolean x:Key="IsExpanded">True</x:Boolean>
                             </scg:Dictionary>
                           </sap:WorkflowViewStateService.ViewState>
-                          <ui:ForEach x:TypeArguments="x:String" CurrentIndex="{x:Null}" sap2010:Annotation.AnnotationText="Update Comm Check Test Packs" DisplayName="For Each currentTP" sap:VirtualizedContainerService.HintSize="470,748" sap2010:WorkflowViewState.IdRef="ForEach`1_1" Values="[TPDictionary_CommCheck.Keys.AsEnumerable()]">
+                          <ui:ForEach x:TypeArguments="x:String" CurrentIndex="{x:Null}" sap2010:Annotation.AnnotationText="Update Comm Check Test Packs" DisplayName="For Each currentTP" sap:VirtualizedContainerService.HintSize="470,866.6666666666666" sap2010:WorkflowViewState.IdRef="ForEach`1_1" Values="[TPDictionary_CommCheck.Keys.AsEnumerable()]">
                             <ui:ForEach.Body>
                               <ActivityAction x:TypeArguments="x:String">
                                 <ActivityAction.Argument>
                                   <DelegateInArgument x:TypeArguments="x:String" Name="currentTP" />
                                 </ActivityAction.Argument>
-                                <Sequence DisplayName="Body" sap:VirtualizedContainerService.HintSize="468,585.3333333333334" sap2010:WorkflowViewState.IdRef="Sequence_40">
+                                <Sequence DisplayName="Body" sap:VirtualizedContainerService.HintSize="468,704" sap2010:WorkflowViewState.IdRef="Sequence_40">
                                   <Sequence.Variables>
                                     <Variable x:TypeArguments="x:Int32" Name="rowCount" />
                                   </Sequence.Variables>
@@ -390,7 +393,7 @@
                                       </ueabf:FilterArgument>
                                     </ueab:FilterX.FilterArgument>
                                   </ueab:FilterX>
-                                  <ueab:ExcelForEachRowX DisplayName="For Each Excel Row" EmptyRowBehavior="Stop" HasHeaders="True" sap:VirtualizedContainerService.HintSize="434,48" sap2010:WorkflowViewState.IdRef="ExcelForEachRowX_1" Range="[AssetList.Table(tableName)]" SaveAfterEachRow="False">
+                                  <ueab:ExcelForEachRowX DisplayName="For Each Excel Row" EmptyRowBehavior="Stop" HasHeaders="True" sap:VirtualizedContainerService.HintSize="434,57.333333333333336" sap2010:WorkflowViewState.IdRef="ExcelForEachRowX_1" Range="[AssetList.Table(tableName)]" SaveAfterEachRow="False">
                                     <ueab:ExcelForEachRowX.Body>
                                       <ActivityAction x:TypeArguments="ue:CurrentRowQuickHandle, x:Int32">
                                         <ActivityAction.Argument1>
@@ -435,6 +438,7 @@
                                       </scg:Dictionary>
                                     </sap:WorkflowViewStateService.ViewState>
                                   </ueab:ExcelForEachRowX>
+                                  <ui:MessageBox Caption="{x:Null}" ChosenButton="{x:Null}" AutoCloseAfter="00:00:02" DisplayName="Message Box" sap:VirtualizedContainerService.HintSize="434,109.33333333333333" sap2010:WorkflowViewState.IdRef="MessageBox_1" Text="[currentTP &amp; &quot; completed.&quot;]" />
                                 </Sequence>
                               </ActivityAction>
                             </ui:ForEach.Body>
@@ -484,33 +488,33 @@
                         </Sequence>
                       </If.Else>
                     </If>
-                    <If Condition="[Checks(&quot;Hot Loop&quot;)]" DisplayName="If hot loop" sap:VirtualizedContainerService.HintSize="434,57.333333333333336" sap2010:WorkflowViewState.IdRef="If_14">
+                    <If Condition="[Checks(&quot;Hot Loop&quot;)]" DisplayName="If hot loop" sap:VirtualizedContainerService.HintSize="506,1286.6666666666667" sap2010:WorkflowViewState.IdRef="If_14">
                       <sap:WorkflowViewStateService.ViewState>
                         <scg:Dictionary x:TypeArguments="x:String, x:Object">
-                          <x:Boolean x:Key="IsExpanded">False</x:Boolean>
+                          <x:Boolean x:Key="IsExpanded">True</x:Boolean>
                           <x:Boolean x:Key="IsPinned">False</x:Boolean>
                         </scg:Dictionary>
                       </sap:WorkflowViewStateService.ViewState>
                       <If.Then>
-                        <Sequence DisplayName="Then" sap:VirtualizedContainerService.HintSize="572,1676.6666666666667" sap2010:WorkflowViewState.IdRef="Sequence_57">
+                        <Sequence DisplayName="Then" sap:VirtualizedContainerService.HintSize="504,1121.3333333333333" sap2010:WorkflowViewState.IdRef="Sequence_57">
                           <sap:WorkflowViewStateService.ViewState>
                             <scg:Dictionary x:TypeArguments="x:String, x:Object">
                               <x:Boolean x:Key="IsExpanded">True</x:Boolean>
                             </scg:Dictionary>
                           </sap:WorkflowViewStateService.ViewState>
-                          <ui:ForEach x:TypeArguments="x:String" CurrentIndex="{x:Null}" sap2010:Annotation.AnnotationText="Update Hot Loop Check Test Packs" DisplayName="For Each currentTP" sap:VirtualizedContainerService.HintSize="538,1422" sap2010:WorkflowViewState.IdRef="ForEach`1_2" Values="[TPDictionary_HotLoop.Keys.AsEnumerable()]">
+                          <ui:ForEach x:TypeArguments="x:String" CurrentIndex="{x:Null}" sap2010:Annotation.AnnotationText="Update Hot Loop Check Test Packs" DisplayName="For Each currentTP" sap:VirtualizedContainerService.HintSize="470,866.6666666666666" sap2010:WorkflowViewState.IdRef="ForEach`1_2" Values="[TPDictionary_HotLoop.Keys.AsEnumerable()]">
                             <ui:ForEach.Body>
                               <ActivityAction x:TypeArguments="x:String">
                                 <ActivityAction.Argument>
                                   <DelegateInArgument x:TypeArguments="x:String" Name="currentTP" />
                                 </ActivityAction.Argument>
-                                <Sequence DisplayName="Body" sap:VirtualizedContainerService.HintSize="536,1259.3333333333333" sap2010:WorkflowViewState.IdRef="Sequence_42">
+                                <Sequence DisplayName="Body" sap:VirtualizedContainerService.HintSize="468,704" sap2010:WorkflowViewState.IdRef="Sequence_42">
                                   <sap:WorkflowViewStateService.ViewState>
                                     <scg:Dictionary x:TypeArguments="x:String, x:Object">
                                       <x:Boolean x:Key="IsExpanded">True</x:Boolean>
                                     </scg:Dictionary>
                                   </sap:WorkflowViewStateService.ViewState>
-                                  <If Condition="[TPDictionary_HotLoop(currentTP)(0).Equals(&quot;Pending Inspection&quot;)]" sap:VirtualizedContainerService.HintSize="502,273.3333333333333" sap2010:WorkflowViewState.IdRef="If_12">
+                                  <If Condition="[TPDictionary_HotLoop(currentTP)(0).Equals(&quot;Pending Inspection&quot;)]" sap:VirtualizedContainerService.HintSize="434,273.3333333333333" sap2010:WorkflowViewState.IdRef="If_12">
                                     <If.Then>
                                       <Sequence DisplayName="Then" sap:VirtualizedContainerService.HintSize="416,108" sap2010:WorkflowViewState.IdRef="Sequence_47">
                                         <sap:WorkflowViewStateService.ViewState>
@@ -532,7 +536,7 @@
                                       </Sequence>
                                     </If.Else>
                                   </If>
-                                  <ueab:FilterX ClearFilter="False" ColumnName="Hot Loop Check Test Pack" DisplayName="Filter" HasHeaders="True" sap:VirtualizedContainerService.HintSize="502,204" sap2010:WorkflowViewState.IdRef="FilterX_2" Range="[AssetList.Table(tableName)]">
+                                  <ueab:FilterX ClearFilter="False" ColumnName="Hot Loop Check Test Pack" DisplayName="Filter" HasHeaders="True" sap:VirtualizedContainerService.HintSize="434,204" sap2010:WorkflowViewState.IdRef="FilterX_2" Range="[AssetList.Table(tableName)]">
                                     <ueab:FilterX.FilterArgument>
                                       <ueabf:FilterArgument Mode="Basic">
                                         <ueabf:FilterArgument.AdvancedFiltersArgument>
@@ -557,7 +561,7 @@
                                       </ueabf:FilterArgument>
                                     </ueab:FilterX.FilterArgument>
                                   </ueab:FilterX>
-                                  <ueab:ExcelForEachRowX DisplayName="For Each Excel Row" EmptyRowBehavior="Stop" HasHeaders="True" sap:VirtualizedContainerService.HintSize="502,722" sap2010:WorkflowViewState.IdRef="ExcelForEachRowX_2" Range="[AssetList.Table(tableName)]" SaveAfterEachRow="False">
+                                  <ueab:ExcelForEachRowX DisplayName="For Each Excel Row" EmptyRowBehavior="Stop" HasHeaders="True" sap:VirtualizedContainerService.HintSize="434,57.333333333333336" sap2010:WorkflowViewState.IdRef="ExcelForEachRowX_2" Range="[AssetList.Table(tableName)]" SaveAfterEachRow="False">
                                     <ueab:ExcelForEachRowX.Body>
                                       <ActivityAction x:TypeArguments="ue:CurrentRowQuickHandle, x:Int32">
                                         <ActivityAction.Argument1>
@@ -597,11 +601,12 @@
                                     </ueab:ExcelForEachRowX.Body>
                                     <sap:WorkflowViewStateService.ViewState>
                                       <scg:Dictionary x:TypeArguments="x:String, x:Object">
-                                        <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+                                        <x:Boolean x:Key="IsExpanded">False</x:Boolean>
                                         <x:Boolean x:Key="IsPinned">False</x:Boolean>
                                       </scg:Dictionary>
                                     </sap:WorkflowViewStateService.ViewState>
                                   </ueab:ExcelForEachRowX>
+                                  <ui:MessageBox Caption="{x:Null}" ChosenButton="{x:Null}" AutoCloseAfter="00:00:02" DisplayName="Message Box" sap:VirtualizedContainerService.HintSize="434,109.33333333333333" sap2010:WorkflowViewState.IdRef="MessageBox_2" Text="[currentTP &amp; &quot; completed.&quot;]" />
                                 </Sequence>
                               </ActivityAction>
                             </ui:ForEach.Body>
@@ -613,7 +618,7 @@
                               </scg:Dictionary>
                             </sap:WorkflowViewStateService.ViewState>
                           </ui:ForEach>
-                          <ueab:FilterX ColumnName="{x:Null}" ClearFilter="True" DisplayName="Filter" HasHeaders="True" sap:VirtualizedContainerService.HintSize="538,194.66666666666666" sap2010:WorkflowViewState.IdRef="FilterX_7" Range="[AssetList.Table(tableName)]">
+                          <ueab:FilterX ColumnName="{x:Null}" ClearFilter="True" DisplayName="Filter" HasHeaders="True" sap:VirtualizedContainerService.HintSize="470,194.66666666666666" sap2010:WorkflowViewState.IdRef="FilterX_7" Range="[AssetList.Table(tableName)]">
                             <ueab:FilterX.FilterArgument>
                               <ueabf:FilterArgument Mode="Basic">
                                 <ueabf:FilterArgument.AdvancedFiltersArgument>
@@ -641,7 +646,7 @@
                         </Sequence>
                       </If.Then>
                       <If.Else>
-                        <Sequence DisplayName="Else" sap:VirtualizedContainerService.HintSize="572,25.333333333333332" sap2010:WorkflowViewState.IdRef="Sequence_58">
+                        <Sequence DisplayName="Else" sap:VirtualizedContainerService.HintSize="504,25.333333333333332" sap2010:WorkflowViewState.IdRef="Sequence_58">
                           <sap:WorkflowViewStateService.ViewState>
                             <scg:Dictionary x:TypeArguments="x:String, x:Object">
                               <x:Boolean x:Key="IsExpanded">False</x:Boolean>
@@ -651,7 +656,7 @@
                         </Sequence>
                       </If.Else>
                     </If>
-                    <If Condition="[Checks(&quot;Dry SAT&quot;)]" DisplayName="If dry SAT" sap:VirtualizedContainerService.HintSize="434,57.333333333333336" sap2010:WorkflowViewState.IdRef="If_16">
+                    <If Condition="[Checks(&quot;Dry SAT&quot;)]" DisplayName="If dry SAT" sap:VirtualizedContainerService.HintSize="506,57.333333333333336" sap2010:WorkflowViewState.IdRef="If_16">
                       <sap:WorkflowViewStateService.ViewState>
                         <scg:Dictionary x:TypeArguments="x:String, x:Object">
                           <x:Boolean x:Key="IsExpanded">False</x:Boolean>
@@ -818,7 +823,7 @@
                         </Sequence>
                       </If.Else>
                     </If>
-                    <If Condition="[Checks(&quot;Wet SAT&quot;)]" DisplayName="If wet SAT" sap:VirtualizedContainerService.HintSize="434,48" sap2010:WorkflowViewState.IdRef="If_15">
+                    <If Condition="[Checks(&quot;Wet SAT&quot;)]" DisplayName="If wet SAT" sap:VirtualizedContainerService.HintSize="506,48" sap2010:WorkflowViewState.IdRef="If_15">
                       <sap:WorkflowViewStateService.ViewState>
                         <scg:Dictionary x:TypeArguments="x:String, x:Object">
                           <x:Boolean x:Key="IsExpanded">False</x:Boolean>
@@ -1006,5 +1011,6 @@
         </scg:Dictionary>
       </sap:WorkflowViewStateService.ViewState>
     </ueab:ExcelProcessScopeX>
+    <ui:MessageBox ChosenButton="{x:Null}" AutoCloseAfter="00:00:00" Caption="Updated Test Packs" DisplayName="Message Box" sap:VirtualizedContainerService.HintSize="416,109.33333333333333" sap2010:WorkflowViewState.IdRef="MessageBox_3" Text="[&quot;Dry SAT:&quot; &amp; vbNewLine &amp; String.Join(Environment.NewLine, TPDictionary_DrySAT.Select(Function(kv) $&quot;Key: {kv.Key}, Value: {String.Join(&quot;,&quot;, kv.Value)}&quot;)) &amp; vbNewLine &amp; &quot;&#xA;&quot; &amp; &quot;Comm Check&quot; &amp; vbNewLine &amp; String.Join(Environment.NewLine, TPDictionary_CommCheck.Select(Function(kv) $&quot;Key: {kv.Key}, Value: {String.Join(&quot;,&quot;, kv.Value)}&quot;)) &amp; vbNewLine &amp; &quot;&#xA;&quot; &amp; &quot;Hot Loop&quot; &amp; vbNewLine &amp; String.Join(Environment.NewLine, TPDictionary_HotLoop.Select(Function(kv) $&quot;Key: {kv.Key}, Value: {String.Join(&quot;,&quot;, kv.Value)}&quot;)) &amp; vbNewLine &amp; &quot;&#xA;&quot; &amp; &quot;WetSAT&quot; &amp; vbNewLine &amp; String.Join(Environment.NewLine, TPDictionary_WetSAT.Select(Function(kv) $&quot;Key: {kv.Key}, Value: {String.Join(&quot;,&quot;, kv.Value)}&quot;)) &amp; vbNewLine &amp; &quot;&#xA;&quot;]" />
   </Sequence>
 </Activity>

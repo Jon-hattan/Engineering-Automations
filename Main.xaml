@@ -282,7 +282,7 @@
       <AssemblyReference>System.Memory.Data</AssemblyReference>
     </sco:Collection>
   </TextExpression.ReferencesForImplementation>
-  <Sequence sap2010:Annotation.AnnotationText="using content generator in integration service activities, search for the all the equipments in a technical proposal, and their respective quantities, electrical power, voltage, etc. store in a datatable" DisplayName="Main Sequence" sap:VirtualizedContainerService.HintSize="925.2,2135.2" sap2010:WorkflowViewState.IdRef="Sequence_1">
+  <Sequence sap2010:Annotation.AnnotationText="using content generator in integration service activities, search for the all the equipments in a technical proposal, and their respective quantities, electrical power, voltage, etc. store in a datatable" DisplayName="Main Sequence" sap:VirtualizedContainerService.HintSize="1216,2404.6666666666665" sap2010:WorkflowViewState.IdRef="Sequence_1">
     <Sequence.Variables>
       <Variable x:TypeArguments="x:String" Name="ProposalText" />
       <Variable x:TypeArguments="x:String" Name="ExtractedInfo" />
@@ -292,6 +292,8 @@
       <Variable x:TypeArguments="x:Boolean" Name="IRgen" />
       <Variable x:TypeArguments="x:Boolean" Name="RFIWsep" />
       <Variable x:TypeArguments="x:Boolean" Name="GENsep" />
+      <Variable x:TypeArguments="x:Boolean" Name="prologPID" />
+      <Variable x:TypeArguments="x:Boolean" Name="prologTnC" />
     </Sequence.Variables>
     <sap:WorkflowViewStateService.ViewState>
       <scg:Dictionary x:TypeArguments="x:String, x:Object">
@@ -299,29 +301,31 @@
         <x:Boolean x:Key="IsAnnotationDocked">True</x:Boolean>
       </scg:Dictionary>
     </sap:WorkflowViewStateService.ViewState>
-    <ufa:ShowFormActivity Height="{x:Null}" InstanceName="{x:Null}" Left="{x:Null}" ShowInTaskbar="{x:Null}" ShowMargin="{x:Null}" Title="{x:Null}" Top="{x:Null}" TopMost="{x:Null}" Width="{x:Null}" WindowState="{x:Null}" DisplayName="Show Form" FormId="94648528-99b2-4e47-bda9-638af2dadd49" sap:VirtualizedContainerService.HintSize="417.6,219.2" sap2010:WorkflowViewState.IdRef="ShowFormActivity_2" IsAsync="True">
+    <ufa:ShowFormActivity Height="{x:Null}" InstanceName="{x:Null}" Left="{x:Null}" ShowInTaskbar="{x:Null}" ShowMargin="{x:Null}" Title="{x:Null}" Top="{x:Null}" TopMost="{x:Null}" Width="{x:Null}" DisplayName="Show Form" FormId="94648528-99b2-4e47-bda9-638af2dadd49" sap:VirtualizedContainerService.HintSize="418,225.33333333333334" sap2010:WorkflowViewState.IdRef="ShowFormActivity_2" IsAsync="True" WindowState="[UiPath.Studio.Forms.Runtime.WindowState.Maximized]">
       <ufa:ShowFormActivity.Arguments>
         <scg:Dictionary x:TypeArguments="x:String, Argument" />
       </ufa:ShowFormActivity.Arguments>
     </ufa:ShowFormActivity>
-    <ui:StartTriggers ArgumentsVariable="{x:Null}" ContinueOnError="{x:Null}" DisplayName="Run Local Triggers" sap:VirtualizedContainerService.HintSize="417.6,128" sap2010:WorkflowViewState.IdRef="StartTriggers_1" UnSafe="False" WorkflowFileName=".local\generated\Triggers.Generated.xaml">
+    <ui:StartTriggers ArgumentsVariable="{x:Null}" ContinueOnError="{x:Null}" DisplayName="Run Local Triggers" sap:VirtualizedContainerService.HintSize="418,131.33333333333334" sap2010:WorkflowViewState.IdRef="StartTriggers_1" UnSafe="False" WorkflowFileName=".local\generated\Triggers.Generated.xaml">
       <ui:StartTriggers.Arguments>
         <scg:Dictionary x:TypeArguments="x:String, Argument" />
       </ui:StartTriggers.Arguments>
     </ui:StartTriggers>
-    <ufa:GetFormFieldsActivity InstanceName="{x:Null}" DisplayName="Get Form Values" FormId="94648528-99b2-4e47-bda9-638af2dadd49" sap:VirtualizedContainerService.HintSize="417.6,172.8" sap2010:WorkflowViewState.IdRef="GetFormFieldsActivity_1">
+    <ufa:GetFormFieldsActivity InstanceName="{x:Null}" DisplayName="Get Form Values" FormId="94648528-99b2-4e47-bda9-638af2dadd49" sap:VirtualizedContainerService.HintSize="418,177.33333333333334" sap2010:WorkflowViewState.IdRef="GetFormFieldsActivity_1">
       <ufa:GetFormFieldsActivity.Arguments>
         <OutArgument x:TypeArguments="x:Boolean" x:Key="GTgen">[GTgen]</OutArgument>
         <OutArgument x:TypeArguments="x:Boolean" x:Key="ELLgen">[ELLgen]</OutArgument>
         <OutArgument x:TypeArguments="x:Boolean" x:Key="IRgen">[IRgen]</OutArgument>
         <OutArgument x:TypeArguments="x:Boolean" x:Key="rfiwSeparator">[RFIWsep]</OutArgument>
         <OutArgument x:TypeArguments="x:Boolean" x:Key="genSeparator">[GENsep]</OutArgument>
+        <OutArgument x:TypeArguments="x:Boolean" x:Key="prologPID">[prologPID]</OutArgument>
+        <OutArgument x:TypeArguments="x:Boolean" x:Key="prologTC">[prologTnC]</OutArgument>
       </ufa:GetFormFieldsActivity.Arguments>
     </ufa:GetFormFieldsActivity>
-    <ufa:CloseFormActivity InstanceName="{x:Null}" DisplayName="Close Form" FormId="94648528-99b2-4e47-bda9-638af2dadd49" sap:VirtualizedContainerService.HintSize="418,121" sap2010:WorkflowViewState.IdRef="CloseFormActivity_1" />
-    <ui:IfElseIfV2 Condition="[GTgen]" DisplayName="Else If" sap:VirtualizedContainerService.HintSize="418,1427" sap2010:WorkflowViewState.IdRef="IfElseIfV2_1">
+    <ufa:CloseFormActivity InstanceName="{x:Null}" DisplayName="Close Form" FormId="94648528-99b2-4e47-bda9-638af2dadd49" sap:VirtualizedContainerService.HintSize="418,124" sap2010:WorkflowViewState.IdRef="CloseFormActivity_1" />
+    <ui:IfElseIfV2 Condition="[GTgen]" DisplayName="Else If" sap:VirtualizedContainerService.HintSize="418,1693.3333333333333" sap2010:WorkflowViewState.IdRef="IfElseIfV2_1">
       <ui:IfElseIfV2.Else>
-        <Sequence DisplayName="Else" sap:VirtualizedContainerService.HintSize="416,91" sap2010:WorkflowViewState.IdRef="Sequence_15">
+        <Sequence DisplayName="Else" sap:VirtualizedContainerService.HintSize="416,90.66666666666667" sap2010:WorkflowViewState.IdRef="Sequence_15">
           <sap:WorkflowViewStateService.ViewState>
             <scg:Dictionary x:TypeArguments="x:String, x:Object">
               <x:Boolean x:Key="IsExpanded">True</x:Boolean>
@@ -381,12 +385,28 @@
           </ui:IfElseIfBlock>
           <ui:IfElseIfBlock BlockType="ElseIf" Condition="[GENsep]" DisplayName="If else if block" sap2010:WorkflowViewState.IdRef="IfElseIfBlock_4">
             <ui:IfElseIfBlock.Then>
-              <Sequence DisplayName="Body" sap:VirtualizedContainerService.HintSize="416,91" sap2010:WorkflowViewState.IdRef="Sequence_17">
+              <Sequence DisplayName="Body" sap:VirtualizedContainerService.HintSize="416,90.66666666666667" sap2010:WorkflowViewState.IdRef="Sequence_17">
                 <sap:WorkflowViewStateService.ViewState>
                   <scg:Dictionary x:TypeArguments="x:String, x:Object">
                     <x:Boolean x:Key="IsExpanded">True</x:Boolean>
                   </scg:Dictionary>
                 </sap:WorkflowViewStateService.ViewState>
+              </Sequence>
+            </ui:IfElseIfBlock.Then>
+          </ui:IfElseIfBlock>
+          <ui:IfElseIfBlock BlockType="ElseIf" Condition="[prologTnC]" DisplayName="If else if block" sap2010:WorkflowViewState.IdRef="IfElseIfBlock_5">
+            <ui:IfElseIfBlock.Then>
+              <Sequence DisplayName="Body" sap:VirtualizedContainerService.HintSize="416,228" sap2010:WorkflowViewState.IdRef="Sequence_18">
+                <sap:WorkflowViewStateService.ViewState>
+                  <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                    <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+                  </scg:Dictionary>
+                </sap:WorkflowViewStateService.ViewState>
+                <ui:InvokeWorkflowFile ArgumentsVariable="{x:Null}" ContinueOnError="{x:Null}" DisplayName="Asset List Updater - Invoke Workflow File (Prolog Updater\Asset List Updater.xaml)" sap:VirtualizedContainerService.HintSize="382,168" sap2010:WorkflowViewState.IdRef="InvokeWorkflowFile_6" UnSafe="False" WorkflowFileName="Prolog Updater\Asset List Updater.xaml">
+                  <ui:InvokeWorkflowFile.Arguments>
+                    <scg:Dictionary x:TypeArguments="x:String, Argument" />
+                  </ui:InvokeWorkflowFile.Arguments>
+                </ui:InvokeWorkflowFile>
               </Sequence>
             </ui:IfElseIfBlock.Then>
           </ui:IfElseIfBlock>

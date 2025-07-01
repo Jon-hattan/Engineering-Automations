@@ -49,6 +49,14 @@
         "tableView": false
       },
       {
+        "label": "Select the sheet.",
+        "widget": "choicesjs",
+        "tableView": true,
+        "key": "sheetslst",
+        "type": "select",
+        "input": true
+      },
+      {
         "label": "Select the contract.",
         "widget": "choicesjs",
         "tableView": true,

@@ -118,7 +118,7 @@
       <AssemblyReference>System.Linq.Queryable</AssemblyReference>
     </sco:Collection>
   </TextExpression.ReferencesForImplementation>
-  <Sequence DisplayName="test" sap:VirtualizedContainerService.HintSize="1311,1533" sap2010:WorkflowViewState.IdRef="Sequence_1">
+  <Sequence DisplayName="test" sap:VirtualizedContainerService.HintSize="1216,1557.3333333333333" sap2010:WorkflowViewState.IdRef="Sequence_1">
     <Sequence.Variables>
       <Variable x:TypeArguments="x:String" Name="pdf_fileName" />
       <Variable x:TypeArguments="x:String" Name="excel_fileName" />
@@ -130,30 +130,30 @@
         <x:Boolean x:Key="IsExpanded">True</x:Boolean>
       </scg:Dictionary>
     </sap:WorkflowViewStateService.ViewState>
-    <ufa:ShowFormActivity Height="{x:Null}" InstanceName="{x:Null}" Left="{x:Null}" ShowInTaskbar="{x:Null}" ShowMargin="{x:Null}" Title="{x:Null}" Top="{x:Null}" TopMost="{x:Null}" Width="{x:Null}" WindowState="{x:Null}" DisplayName="Show Form" FormId="e7426916-0833-43d7-bb76-a2a3e6d5c196" sap:VirtualizedContainerService.HintSize="470,218" sap2010:WorkflowViewState.IdRef="ShowFormActivity_1" IsAsync="True">
+    <ufa:ShowFormActivity Height="{x:Null}" InstanceName="{x:Null}" Left="{x:Null}" ShowInTaskbar="{x:Null}" ShowMargin="{x:Null}" Title="{x:Null}" Top="{x:Null}" TopMost="{x:Null}" Width="{x:Null}" WindowState="{x:Null}" DisplayName="Show Form" FormId="e7426916-0833-43d7-bb76-a2a3e6d5c196" sap:VirtualizedContainerService.HintSize="470,225.33333333333334" sap2010:WorkflowViewState.IdRef="ShowFormActivity_1" IsAsync="True">
       <ufa:ShowFormActivity.Arguments>
         <InArgument x:TypeArguments="x:String" x:Key="label2">[title]</InArgument>
       </ufa:ShowFormActivity.Arguments>
     </ufa:ShowFormActivity>
-    <ui:StartTriggers ArgumentsVariable="{x:Null}" ContinueOnError="{x:Null}" DisplayName="Run Local Triggers" sap:VirtualizedContainerService.HintSize="470,127" sap2010:WorkflowViewState.IdRef="StartTriggers_1" UnSafe="False" WorkflowFileName=".local\generated\Triggers.Generated.xaml">
+    <ui:StartTriggers ArgumentsVariable="{x:Null}" ContinueOnError="{x:Null}" DisplayName="Run Local Triggers" sap:VirtualizedContainerService.HintSize="470,131.33333333333334" sap2010:WorkflowViewState.IdRef="StartTriggers_1" UnSafe="False" WorkflowFileName=".local\generated\Triggers.Generated.xaml">
       <ui:StartTriggers.Arguments>
         <scg:Dictionary x:TypeArguments="x:String, Argument" />
       </ui:StartTriggers.Arguments>
     </ui:StartTriggers>
-    <ufa:GetFormFieldsActivity InstanceName="{x:Null}" DisplayName="Get Form Values" FormId="e7426916-0833-43d7-bb76-a2a3e6d5c196" sap:VirtualizedContainerService.HintSize="470,172" sap2010:WorkflowViewState.IdRef="GetFormFieldsActivity_5">
+    <ufa:GetFormFieldsActivity InstanceName="{x:Null}" DisplayName="Get Form Values" FormId="e7426916-0833-43d7-bb76-a2a3e6d5c196" sap:VirtualizedContainerService.HintSize="470,177.33333333333334" sap2010:WorkflowViewState.IdRef="GetFormFieldsActivity_5">
       <ufa:GetFormFieldsActivity.Arguments>
         <OutArgument x:TypeArguments="x:Boolean" x:Key="back">[back]</OutArgument>
       </ufa:GetFormFieldsActivity.Arguments>
     </ufa:GetFormFieldsActivity>
-    <If Condition="[not back]" sap:VirtualizedContainerService.HintSize="470,993" sap2010:WorkflowViewState.IdRef="If_1">
+    <If Condition="[not back]" sap:VirtualizedContainerService.HintSize="470,1000.6666666666666" sap2010:WorkflowViewState.IdRef="If_1">
       <If.Then>
-        <Sequence DisplayName="Then" sap:VirtualizedContainerService.HintSize="468,515" sap2010:WorkflowViewState.IdRef="Sequence_3">
+        <Sequence DisplayName="Then" sap:VirtualizedContainerService.HintSize="468,520.6666666666666" sap2010:WorkflowViewState.IdRef="Sequence_3">
           <sap:WorkflowViewStateService.ViewState>
             <scg:Dictionary x:TypeArguments="x:String, x:Object">
               <x:Boolean x:Key="IsExpanded">True</x:Boolean>
             </scg:Dictionary>
           </sap:WorkflowViewStateService.ViewState>
-          <ufa:GetFormFieldsActivity InstanceName="{x:Null}" DisplayName="Get Form Values" FormId="e7426916-0833-43d7-bb76-a2a3e6d5c196" sap:VirtualizedContainerService.HintSize="434,172" sap2010:WorkflowViewState.IdRef="GetFormFieldsActivity_4">
+          <ufa:GetFormFieldsActivity InstanceName="{x:Null}" DisplayName="Get Form Values" FormId="e7426916-0833-43d7-bb76-a2a3e6d5c196" sap:VirtualizedContainerService.HintSize="434,177.33333333333334" sap2010:WorkflowViewState.IdRef="GetFormFieldsActivity_4">
             <ufa:GetFormFieldsActivity.Arguments>
               <OutArgument x:TypeArguments="x:String" x:Key="pdf_fileName">[pdf_fileName]</OutArgument>
               <OutArgument x:TypeArguments="x:String" x:Key="excel_fileName">[excel_fileName]</OutArgument>

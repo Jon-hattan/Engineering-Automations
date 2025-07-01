@@ -4,6 +4,7 @@
     <x:Property Name="filePath" Type="OutArgument(x:String)" />
     <x:Property Name="Checks" Type="OutArgument(scg:Dictionary(x:String, x:Boolean))" />
     <x:Property Name="selectedcontract" Type="OutArgument(x:String)" />
+    <x:Property Name="selectedSheet" Type="OutArgument(x:String)" />
   </x:Members>
   <VisualBasic.Settings>
     <x:Null />
@@ -121,6 +122,7 @@
         <OutArgument x:TypeArguments="x:String" x:Key="filePath">[filePath]</OutArgument>
         <OutArgument x:TypeArguments="scg:IEnumerable(x:String)" x:Key="TPselect">[SelectedTP]</OutArgument>
         <OutArgument x:TypeArguments="x:String" x:Key="selectedcontract">[selectedcontract]</OutArgument>
+        <OutArgument x:TypeArguments="x:String" x:Key="sheetslst">[selectedSheet]</OutArgument>
       </ufa:GetFormFieldsActivity.Arguments>
     </ufa:GetFormFieldsActivity>
     <ufa:CloseFormActivity InstanceName="{x:Null}" DisplayName="Close Form" FormId="21ef3e50-b9fd-40cd-8788-06a5932282ce" sap:VirtualizedContainerService.HintSize="470,124" sap2010:WorkflowViewState.IdRef="CloseFormActivity_1" />
