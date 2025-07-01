@@ -1,0 +1,12 @@
+﻿{
+  "Name": "131241-WSB01-DR-P-6080 - PDF-XChange Editor",
+  "Type": "App",
+  "Id": "6ZYJFkO-K0CdorFbOdnxIQ",
+  "Reference": "xGt2OSXt7UW47kSHt2k5yg/6ZYJFkO-K0CdorFbOdnxIQ",
+  "Created": "2025-07-01T06:09:54.3756858Z",
+  "Updated": "2025-07-01T06:09:54.3756858Z",
+  "CreatedBy": [
+    "UiPath.UIAutomationCore, Version=25.10.4.0, Culture=neutral, PublicKeyToken=null",
+    "UiPath.Platform, Version=25.4.0.0, Culture=neutral, PublicKeyToken=null"
+  ]
+}
