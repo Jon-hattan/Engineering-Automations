@@ -1,0 +1,13 @@
+﻿{
+  "Name": "Edge Reading Submittals(2)",
+  "Type": "Screen",
+  "Id": "XjdnKYfXk0i5FKYbnjDKBg",
+  "Reference": "xGt2OSXt7UW47kSHt2k5yg/XjdnKYfXk0i5FKYbnjDKBg",
+  "ParentRef": "xGt2OSXt7UW47kSHt2k5yg/zNgzgOHBJ0-EePhqPvEeWg",
+  "Created": "2025-07-02T06:40:44.2016402Z",
+  "Updated": "2025-07-02T06:40:44.2016402Z",
+  "CreatedBy": [
+    "UiPath.UIAutomationCore, Version=25.10.4.0, Culture=neutral, PublicKeyToken=null",
+    "UiPath.Platform, Version=25.4.0.0, Culture=neutral, PublicKeyToken=null"
+  ]
+}

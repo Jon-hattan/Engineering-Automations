@@ -1,0 +1,13 @@
+﻿{
+  "Name": "131235-WIL04-DR-P-6010 - PDF-XChange Editor",
+  "Type": "Screen",
+  "Id": "azRws-oh30qsXz-7zKiLeg",
+  "Reference": "xGt2OSXt7UW47kSHt2k5yg/azRws-oh30qsXz-7zKiLeg",
+  "ParentRef": "xGt2OSXt7UW47kSHt2k5yg/i8UuNrrsWEyxtj0DfoBuCg",
+  "Created": "2025-07-02T00:57:25.6872894Z",
+  "Updated": "2025-07-02T00:57:25.6872894Z",
+  "CreatedBy": [
+    "UiPath.UIAutomationCore, Version=25.10.4.0, Culture=neutral, PublicKeyToken=null",
+    "UiPath.Platform, Version=25.4.0.0, Culture=neutral, PublicKeyToken=null"
+  ]
+}

@@ -1,0 +1,13 @@
+﻿{
+  "Name": "Yellow",
+  "Type": "Element",
+  "Id": "dga0fSYr1ESOWKn289wYAA",
+  "Reference": "xGt2OSXt7UW47kSHt2k5yg/dga0fSYr1ESOWKn289wYAA",
+  "ParentRef": "xGt2OSXt7UW47kSHt2k5yg/azRws-oh30qsXz-7zKiLeg",
+  "Created": "2025-07-02T05:27:13.2854624Z",
+  "Updated": "2025-07-02T05:27:13.2854624Z",
+  "CreatedBy": [
+    "UiPath.UIAutomationCore, Version=25.10.4.0, Culture=neutral, PublicKeyToken=null",
+    "UiPath.Platform, Version=25.4.0.0, Culture=neutral, PublicKeyToken=null"
+  ]
+}

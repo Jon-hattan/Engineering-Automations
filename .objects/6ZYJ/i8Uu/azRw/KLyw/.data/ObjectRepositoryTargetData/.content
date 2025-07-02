@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="utf-16"?>
+<ObjectRepositoryTargetData ContentHash="2NnTPAAn902MmsY3Su8ywQ" xmlns="http://schemas.uipath.com/workflow/activities/uix" xmlns:scg="clr-namespace:System.Collections.Generic;assembly=System.Private.CoreLib" xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml">
+  <ObjectRepositoryTargetData.Data>
+    <TargetAnchorable x:Key="TargetAnchorable" DesignTimeRectangle="261, 4, 20, 22" ElementType="Button" FullSelectorArgument="&lt;wnd aaname='Pages window' cls='UIX:Window' /&gt;&lt;ctrl automationid='btn.options@' /&gt;" FuzzySelectorArgument="&lt;wnd aaname='Pages window' cls='UIX:Window' matching:aaname='fuzzy' fuzzylevel:aaname='0.0' /&gt;&lt;ctrl automationid='btn.options@' role='push button' matching:automationid='fuzzy' fuzzylevel:automationid='0.0' check:text='Find Options' /&gt;" Guid="78230829-0c53-4ab0-a166-96cf00cc951f" ScopeSelectorArgument="&lt;wnd app='pdfxedit.exe' cls='PXE:{C*AD*E*B1E*D8AF3B9D}' title='131235-WDL21-DR-P-6044* - PDF-XChange Editor' /&gt;" SearchSteps="Selector, FuzzySelector" Version="V6" Visibility="Interactive" WaitForReadyArgument="None">
+      <TargetAnchorable.Anchors>
+        <scg:List x:TypeArguments="ITarget" Capacity="4">
+          <Target DesignTimeRectangle="25, 4, 190, 22" ElementType="InputBox" FullSelectorArgument="&lt;wnd aaname='Pages window' cls='UIX:Window' /&gt;&lt;ctrl automationid='cb.findText@' role='editable text' /&gt;" FuzzySelectorArgument="&lt;wnd aaname='Pages window' cls='UIX:Window' matching:aaname='fuzzy' fuzzylevel:aaname='0.0' /&gt;&lt;ctrl automationid='cb.findText@' role='editable text' matching:automationid='fuzzy' fuzzylevel:automationid='0.0' /&gt;" Guid="8fd40d83-4b4c-434c-a4b7-f4d992b79151" SearchSteps="Selector, FuzzySelector" />
+        </scg:List>
+      </TargetAnchorable.Anchors>
+      <imageRef attrName="InformativeScreenshot" originalValue="976772eae820aee4597d0eb9716639c0.png" xmlns="">0aTgPRggDukyfDyn08Usp8Q</imageRef>
+    </TargetAnchorable>
+    <x:String x:Key="ActivityType">Click</x:String>
+  </ObjectRepositoryTargetData.Data>
+</ObjectRepositoryTargetData>

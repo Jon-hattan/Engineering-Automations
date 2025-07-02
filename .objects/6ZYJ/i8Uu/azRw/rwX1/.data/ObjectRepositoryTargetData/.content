@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="utf-16"?>
+<ObjectRepositoryTargetData ContentHash="Lkx2oeS2tkeylv9gxhOruw" Reference="xGt2OSXt7UW47kSHt2k5yg/rwX1yUIkuku5V8kQr2aeKg" xmlns="http://schemas.uipath.com/workflow/activities/uix" xmlns:scg="clr-namespace:System.Collections.Generic;assembly=System.Private.CoreLib" xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml">
+  <ObjectRepositoryTargetData.Data>
+    <TargetAnchorable x:Key="TargetAnchorable" CvTextArgument="[TagNumber]" DesignTimeRectangle="1089, 495, 30, 5" ElementType="Text" FuzzyAccuracy="0.9" FuzzySelectorArgument="[string.Format(&quot;&lt;wnd cls='UIX:Window' /&gt;&lt;ctrl automationid='pagesView@' matching:automationid='fuzzy' fuzzylevel:automationid='0.0' /&gt;&lt;ctrl automationid='C7@' role='text' matching:automationid='fuzzy' fuzzylevel:automationid='0.0' check:text='{0}' /&gt;&quot;, TagNumber)]" Guid="cf15aa96-bdbc-4b48-b610-1244bb31d3a4" ScopeSelectorArgument="&lt;wnd app='pdfxedit.exe' omit:cls='PXE:{C*D8AF3B9D}' title='131235-WDL21-DR-P-6044* - PDF-XChange Editor' /&gt;" SearchSteps="FuzzySelector, CV" Version="V6" Visibility="Interactive" WaitForReadyArgument="None">
+      <imageRef attrName="InformativeScreenshot" originalValue="b57709ac4a6d3e399d68642bb6fdb977.png" xmlns="">0f5DulxkEWkue_ibxCHb__A</imageRef>
+    </TargetAnchorable>
+    <scg:List x:TypeArguments="ObjectRepositoryVariableData" x:Key="Variables" Capacity="1">
+      <ObjectRepositoryVariableData DefaultValue="FSL-0701" Name="TagNumber" />
+    </scg:List>
+    <x:String x:Key="ActivityType">Click</x:String>
+  </ObjectRepositoryTargetData.Data>
+</ObjectRepositoryTargetData>

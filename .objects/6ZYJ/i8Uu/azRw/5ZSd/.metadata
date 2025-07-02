@@ -1,0 +1,13 @@
+﻿{
+  "Name": "Green",
+  "Type": "Element",
+  "Id": "5ZSdExZppkaDz9UDHm1RCA",
+  "Reference": "xGt2OSXt7UW47kSHt2k5yg/5ZSdExZppkaDz9UDHm1RCA",
+  "ParentRef": "xGt2OSXt7UW47kSHt2k5yg/azRws-oh30qsXz-7zKiLeg",
+  "Created": "2025-07-02T05:21:09.4952331Z",
+  "Updated": "2025-07-02T05:21:09.4952331Z",
+  "CreatedBy": [
+    "UiPath.UIAutomationCore, Version=25.10.4.0, Culture=neutral, PublicKeyToken=null",
+    "UiPath.Platform, Version=25.4.0.0, Culture=neutral, PublicKeyToken=null"
+  ]
+}

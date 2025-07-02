@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="utf-16"?>
+<ObjectRepositoryTargetData ContentHash="OlXM7TM6NUiOmDfZw3qDMA" Reference="xGt2OSXt7UW47kSHt2k5yg/W-99nSTFmk2oVT__bHwadw" xmlns="http://schemas.uipath.com/workflow/activities/uix" xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml">
+  <ObjectRepositoryTargetData.Data>
+    <TargetAnchorable x:Key="TargetAnchorable" DesignTimeRectangle="-172, 264, 172, 28" ElementType="Button" FullSelectorArgument="&lt;ctrl automationid='cmd.find.annotateResults@' /&gt;&lt;ctrl automationid='cmd.addAnnotsByFindResult.highlight@' /&gt;" FuzzySelectorArgument="&lt;ctrl automationid='cmd.find.annotateResults@' matching:automationid='fuzzy' fuzzylevel:automationid='0.0' /&gt;&lt;ctrl automationid='cmd.addAnnotsByFindResult.highlight@' role='push button' matching:automationid='fuzzy' fuzzylevel:automationid='0.0' check:text='Highlight' /&gt;" Guid="76bb2948-4e32-4e15-922e-e5a3e92c0cf6" ScopeSelectorArgument="&lt;wnd app='pdfxedit.exe' cls='UIX:Window' idx='*' /&gt;" SearchSteps="Selector, FuzzySelector" Version="V6" Visibility="Interactive" WaitForReadyArgument="None">
+      <imageRef attrName="InformativeScreenshot" originalValue="1d811556eb264c7f0a454262c3cc434d.png" xmlns="">0pj_X2fGuHESdTgM47m5xYQ</imageRef>
+    </TargetAnchorable>
+    <x:String x:Key="ActivityType">Click</x:String>
+  </ObjectRepositoryTargetData.Data>
+</ObjectRepositoryTargetData>

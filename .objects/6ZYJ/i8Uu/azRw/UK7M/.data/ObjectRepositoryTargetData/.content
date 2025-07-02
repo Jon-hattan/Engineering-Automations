@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="utf-16"?>
+<ObjectRepositoryTargetData ContentHash="rVDrFQIbK0idzmCupALEXw" Reference="xGt2OSXt7UW47kSHt2k5yg/UK7Mrotn0UeBW_KKIzuzTw" xmlns="http://schemas.uipath.com/workflow/activities/uix" xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml">
+  <ObjectRepositoryTargetData.Data>
+    <TargetAnchorable x:Key="TargetAnchorable" DesignTimeRectangle="25, 4, 190, 22" ElementType="InputBox" FullSelectorArgument="&lt;wnd aaname='Pages window' cls='UIX:Window' /&gt;&lt;ctrl automationid='cb.findText@' role='editable text' /&gt;" FuzzySelectorArgument="&lt;wnd aaname='Pages window' cls='UIX:Window' matching:aaname='fuzzy' fuzzylevel:aaname='0.0' /&gt;&lt;ctrl automationid='cb.findText@' role='editable text' matching:automationid='fuzzy' fuzzylevel:automationid='0.0' /&gt;" Guid="d3cc541c-c441-4b09-8eda-1e9bf5d26c67" ScopeSelectorArgument="&lt;wnd app='pdfxedit.exe' omit:cls='PXE:{C*AD*E*B1E*D8AF3B9D}' omit:title='131235-WDL21-DR-P-6044* - PDF-XChange Editor' /&gt;" SearchSteps="Selector, FuzzySelector" Version="V6" Visibility="Interactive" WaitForReadyArgument="None">
+      <imageRef attrName="InformativeScreenshot" originalValue="90f9767b11b08c0c965384d0af1cdea4.png" xmlns="">0ylPzsjFH9EqtGv8FJ2-1mg</imageRef>
+    </TargetAnchorable>
+    <x:String x:Key="ActivityType">TypeInto</x:String>
+  </ObjectRepositoryTargetData.Data>
+</ObjectRepositoryTargetData>

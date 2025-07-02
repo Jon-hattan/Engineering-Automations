@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="utf-16"?>
+<ObjectRepositoryTargetData ContentHash="IKrnwkosDkqI57ZVm8dUmA" Reference="xGt2OSXt7UW47kSHt2k5yg/YB7OXOOmZESIB8M3cbOuiA" xmlns="http://schemas.uipath.com/workflow/activities/uix" xmlns:scg="clr-namespace:System.Collections.Generic;assembly=System.Private.CoreLib" xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml">
+  <ObjectRepositoryTargetData.Data>
+    <TargetAnchorable x:Key="TargetAnchorable" CvTextArgument="[EquipmentNumber]" DesignTimeRectangle="1135, 600, 17, 6" ElementType="Text" FuzzyAccuracy="0.8" FuzzySelectorArgument="[string.Format(&quot;&lt;wnd cls='UIX:Window' /&gt;&lt;ctrl automationid='pagesView@' matching:automationid='fuzzy' fuzzylevel:automationid='0.0' /&gt;&lt;ctrl automationid='A6@' role='text' matching:automationid='fuzzy' fuzzylevel:automationid='0.0' check:text='{0}' /&gt;&quot;, EquipmentNumber)]" Guid="1e263604-4f5b-4bdd-a839-49b75807a9f2" ScopeSelectorArgument="&lt;wnd app='pdfxedit.exe' omit:cls='PXE:{C*D8AF3B9D}' title='131235-WDL21-DR-P-6044* - PDF-XChange Editor' /&gt;" SearchSteps="FuzzySelector, CV" Version="V6" Visibility="Interactive" WaitForReadyArgument="None">
+      <TargetAnchorable.Anchors>
+        <scg:List x:TypeArguments="ITarget" Capacity="1">
+          <Target CvTextArgument="[EquipmentTag]" DesignTimeRectangle="1137, 589, 12, 6" ElementType="Text" FuzzyAccuracy="0.8" FuzzySelectorArgument="[string.Format(&quot;&lt;wnd cls='UIX:Window' /&gt;&lt;ctrl automationid='pagesView@' matching:automationid='fuzzy' fuzzylevel:automationid='0.0' /&gt;&lt;ctrl automationid='A5@' role='text' matching:automationid='fuzzy' fuzzylevel:automationid='0.0' check:text='{0}' /&gt;&quot;, EquipmentTag)]" Guid="6dea0b5b-ae66-40a3-86f4-d4a86923e3a2" SearchSteps="FuzzySelector, CV" />
+        </scg:List>
+      </TargetAnchorable.Anchors>
+      <imageRef attrName="InformativeScreenshot" originalValue="94baedf11ce2e4f4937b3af23264a25f.png" xmlns="">0bu7DLFygrkeTRUVVH0LI8A</imageRef>
+    </TargetAnchorable>
+    <scg:List x:TypeArguments="ObjectRepositoryVariableData" x:Key="Variables" Capacity="2">
+      <ObjectRepositoryVariableData Name="EquipmentNumber" />
+      <ObjectRepositoryVariableData Name="EquipmentTag" />
+    </scg:List>
+    <x:String x:Key="ActivityType">Click</x:String>
+  </ObjectRepositoryTargetData.Data>
+</ObjectRepositoryTargetData>

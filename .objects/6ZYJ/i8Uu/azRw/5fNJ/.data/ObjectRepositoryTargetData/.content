@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="utf-16"?>
+<ObjectRepositoryTargetData ContentHash="tLvuIvBFukWEJlQeA_jRYA" Reference="xGt2OSXt7UW47kSHt2k5yg/5fNJ1Ktu6kWhf-fjKXQIVA" xmlns="http://schemas.uipath.com/workflow/activities/uix" xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml">
+  <ObjectRepositoryTargetData.Data>
+    <TargetAnchorable x:Key="TargetAnchorable" DesignTimeRectangle="39, 205, 1874, 789" FullSelectorArgument="&lt;wnd aaname='Pages window' cls='UIX:Window' /&gt;" FuzzySelectorArgument="&lt;wnd aaname='Pages window' cls='UIX:Window' matching:aaname='fuzzy' fuzzylevel:aaname='0.0' check:text='Pages window' /&gt;" Guid="12ae3925-0c6e-48cf-8414-f537e10d5400" ScopeSelectorArgument="&lt;wnd app='pdfxedit.exe' omit:cls='PXE:{C*AD*E*B1E*D8AF3B9D}' title='* - PDF-XChange Editor' /&gt;" SearchSteps="Selector, FuzzySelector" Version="V6" Visibility="Interactive" WaitForReadyArgument="None">
+      <imageRef attrName="InformativeScreenshot" originalValue="ff1985645a368ae9d24ac8b9b8fdcd08.png" xmlns="">0jb14iT-cAUu_Ox7qI0SC-w</imageRef>
+    </TargetAnchorable>
+    <x:String x:Key="ActivityType">CheckState</x:String>
+  </ObjectRepositoryTargetData.Data>
+</ObjectRepositoryTargetData>

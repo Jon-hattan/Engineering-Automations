@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="utf-16"?>
+<ObjectRepositoryTargetData ContentHash="-Ahm1cHZx0mdq_ETQmLmgg" Reference="xGt2OSXt7UW47kSHt2k5yg/zii0j4IOLEOU4hk-1Wm4CQ" xmlns="http://schemas.uipath.com/workflow/activities/uix" xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml">
+  <ObjectRepositoryTargetData.Data>
+    <TargetAnchorable x:Key="TargetAnchorable" DesignTimeRectangle="644, 5, 40, 23" ElementType="Button" FullSelectorArgument="&lt;ctrl name='Reading Submittals - Microsoft Edge' role='pane' /&gt;&lt;ctrl name='Downloads, completed' role='push button' /&gt;" FuzzySelectorArgument="&lt;ctrl name='Reading Submittals - Microsoft Edge' role='pane' matching:name='fuzzy' fuzzylevel:name='0.0' /&gt;&lt;ctrl name='Downloads, completed' role='push button' automationid='' matching:name='fuzzy' fuzzylevel:name='0.0' matching:automationid='fuzzy' fuzzylevel:automationid='0.0' check:text='Downloads, in progress' /&gt;" Guid="fc2c04bf-6a49-458a-bcd1-db114fe15a29" ScopeSelectorArgument="&lt;wnd app='msedge.exe' cls='Chrome_WidgetWin_1' title='Reading Submittals - Work - Microsoft​ Edge' /&gt;" SearchSteps="Selector, FuzzySelector" Version="V6" Visibility="Interactive" WaitForReadyArgument="None">
+      <imageRef attrName="InformativeScreenshot" originalValue="8f2efee66da4587fa7be475682a44e89.png" xmlns="">0QfXCfKkWB0icBGeULifezA</imageRef>
+    </TargetAnchorable>
+    <x:String x:Key="ActivityType">CheckState</x:String>
+  </ObjectRepositoryTargetData.Data>
+</ObjectRepositoryTargetData>

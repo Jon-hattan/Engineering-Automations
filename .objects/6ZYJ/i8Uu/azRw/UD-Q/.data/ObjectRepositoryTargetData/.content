@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="utf-16"?>
+<ObjectRepositoryTargetData ContentHash="EuSNquVJnkS5nyqDB9I9GQ" Reference="xGt2OSXt7UW47kSHt2k5yg/UD-Q5uMYQ0Oq-b3h6fpjKQ" xmlns="http://schemas.uipath.com/workflow/activities/uix" xmlns:scg="clr-namespace:System.Collections.Generic;assembly=System.Private.CoreLib" xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml">
+  <ObjectRepositoryTargetData.Data>
+    <TargetAnchorable x:Key="TargetAnchorable" CvTextArgument="Annotate Find Results" DesignTimeRectangle="3, 264, 159, 28" ElementType="Button" FullSelectorArgument="&lt;ctrl automationid='cmd.find.annotateResults@' /&gt;" FuzzySelectorArgument="&lt;ctrl automationid='cmd.find.annotateResults@' role='push button' matching:automationid='fuzzy' fuzzylevel:automationid='0.0' check:text='Annotate Find Results' /&gt;" Guid="91f7da42-d281-4eda-bb14-d88a3433f618" NativeTextArgument="Annotate Find Results" ScopeSelectorArgument="&lt;wnd app='pdfxedit.exe' cls='UIX:Window' idx='*' /&gt;" SearchSteps="Selector, FuzzySelector, TextNative" Version="V6" Visibility="Interactive" WaitForReadyArgument="None">
+      <TargetAnchorable.Anchors>
+        <scg:List x:TypeArguments="ITarget" Capacity="1">
+          <Target DesignTimeRectangle="0, 0, 307, 30" Guid="cf3b8d8f-bc69-496b-bf65-83f2fe860fa0" SearchSteps="FuzzySelector" />
+        </scg:List>
+      </TargetAnchorable.Anchors>
+      <imageRef attrName="InformativeScreenshot" originalValue="fedc283de12895feb4b568f651842b4f.png" xmlns="">0Ym5IHGiPYEmoRwBZkALTNw</imageRef>
+    </TargetAnchorable>
+    <x:String x:Key="ActivityType">Click</x:String>
+  </ObjectRepositoryTargetData.Data>
+</ObjectRepositoryTargetData>

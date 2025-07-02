@@ -1,0 +1,14 @@
+﻿{
+  "Name": "editable text cb.findTe…",
+  "Type": "Element",
+  "TaxonomyType": "Input",
+  "Id": "UK7Mrotn0UeBW_KKIzuzTw",
+  "Reference": "xGt2OSXt7UW47kSHt2k5yg/UK7Mrotn0UeBW_KKIzuzTw",
+  "ParentRef": "xGt2OSXt7UW47kSHt2k5yg/azRws-oh30qsXz-7zKiLeg",
+  "Created": "2025-07-02T02:46:14.1186187Z",
+  "Updated": "2025-07-02T02:46:14.1186187Z",
+  "CreatedBy": [
+    "UiPath.UIAutomationCore, Version=25.10.4.0, Culture=neutral, PublicKeyToken=null",
+    "UiPath.Platform, Version=25.4.0.0, Culture=neutral, PublicKeyToken=null"
+  ]
+}
