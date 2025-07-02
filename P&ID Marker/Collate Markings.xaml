@@ -143,7 +143,7 @@
       <AssemblyReference>UiPath.CodedWorkflows</AssemblyReference>
     </sco:Collection>
   </TextExpression.ReferencesForImplementation>
-  <Sequence DisplayName="Collate_Markings" sap:VirtualizedContainerService.HintSize="1230,3512.6666666666665" sap2010:WorkflowViewState.IdRef="Sequence_1">
+  <Sequence DisplayName="Collate_Markings" sap:VirtualizedContainerService.HintSize="1230,3606" sap2010:WorkflowViewState.IdRef="Sequence_1">
     <Sequence.Variables>
       <Variable x:TypeArguments="scg:Dictionary(x:String, scg:Dictionary(x:String, x:String))" Name="PID_tags_status" />
       <Variable x:TypeArguments="scg:Dictionary(x:String, x:String)" Name="PID_src" />
@@ -219,14 +219,14 @@
         </Assign.Value>
       </Assign>
     </Sequence>
-    <Parallel sap:VirtualizedContainerService.HintSize="1230,2270.6666666666665" sap2010:WorkflowViewState.IdRef="Parallel_2">
+    <Parallel sap:VirtualizedContainerService.HintSize="1230,2544" sap2010:WorkflowViewState.IdRef="Parallel_2">
       <sap:WorkflowViewStateService.ViewState>
         <scg:Dictionary x:TypeArguments="x:String, x:Object">
           <x:Boolean x:Key="IsExpanded">True</x:Boolean>
           <x:Boolean x:Key="IsPinned">False</x:Boolean>
         </scg:Dictionary>
       </sap:WorkflowViewStateService.ViewState>
-      <Sequence DisplayName="Do" sap:VirtualizedContainerService.HintSize="592,2191.3333333333335" sap2010:WorkflowViewState.IdRef="Sequence_2">
+      <Sequence DisplayName="Do" sap:VirtualizedContainerService.HintSize="592,2464.6666666666665" sap2010:WorkflowViewState.IdRef="Sequence_2">
         <Sequence.Variables>
           <Variable x:TypeArguments="x:String" Name="AssetlistPath" />
           <Variable x:TypeArguments="x:String" Name="tableRange" />
@@ -1190,7 +1190,7 @@
             <InArgument x:TypeArguments="x:String">["C:\Users\CHEWJ1\Downloads\Asset List (20250421) (3).xlsx"]</InArgument>
           </Assign.Value>
         </Assign>
-        <Sequence sap:VirtualizedContainerService.HintSize="518,1444.6666666666667" sap2010:WorkflowViewState.IdRef="Sequence_42">
+        <Sequence sap:VirtualizedContainerService.HintSize="518,1718" sap2010:WorkflowViewState.IdRef="Sequence_42">
           <Sequence.Variables>
             <Variable x:TypeArguments="sd:DataTable" Name="testPackTable" />
           </Sequence.Variables>
@@ -1218,13 +1218,13 @@
               </ActivityAction>
             </ui:ExcelApplicationScope.Body>
           </ui:ExcelApplicationScope>
-          <ui:ForEachRow ColumnNames="{x:Null}" CurrentIndex="{x:Null}" DataTable="[TestPackTable]" DisplayName="For Each Row in Data Table" sap:VirtualizedContainerService.HintSize="484,976" sap2010:WorkflowViewState.IdRef="ForEachRow_4">
+          <ui:ForEachRow ColumnNames="{x:Null}" CurrentIndex="{x:Null}" DataTable="[TestPackTable]" DisplayName="For Each Row in Data Table" sap:VirtualizedContainerService.HintSize="484,1249.3333333333333" sap2010:WorkflowViewState.IdRef="ForEachRow_4">
             <ui:ForEachRow.Body>
               <ActivityAction x:TypeArguments="sd:DataRow">
                 <ActivityAction.Argument>
                   <DelegateInArgument x:TypeArguments="sd:DataRow" Name="CurrentRow" />
                 </ActivityAction.Argument>
-                <Sequence DisplayName="Body" sap:VirtualizedContainerService.HintSize="468,801.3333333333334" sap2010:WorkflowViewState.IdRef="Sequence_39">
+                <Sequence DisplayName="Body" sap:VirtualizedContainerService.HintSize="468,1074.6666666666667" sap2010:WorkflowViewState.IdRef="Sequence_39">
                   <Sequence.Variables>
                     <Variable x:TypeArguments="x:String" Name="currentPID" />
                     <Variable x:TypeArguments="x:String" Name="currentTag" />
@@ -1235,6 +1235,28 @@
                       <x:Boolean x:Key="IsExpanded">True</x:Boolean>
                     </scg:Dictionary>
                   </sap:WorkflowViewStateService.ViewState>
+                  <If Condition="[CurrentRow(&quot;Required for CM3&quot;).ToString.trim() = &quot;No&quot;]" sap:VirtualizedContainerService.HintSize="434,273.3333333333333" sap2010:WorkflowViewState.IdRef="If_12">
+                    <If.Then>
+                      <Sequence DisplayName="Then" sap:VirtualizedContainerService.HintSize="416,108" sap2010:WorkflowViewState.IdRef="Sequence_62">
+                        <sap:WorkflowViewStateService.ViewState>
+                          <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                            <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+                          </scg:Dictionary>
+                        </sap:WorkflowViewStateService.ViewState>
+                        <ui:Continue sap:VirtualizedContainerService.HintSize="382,48" sap2010:WorkflowViewState.IdRef="Continue_1" />
+                      </Sequence>
+                    </If.Then>
+                    <If.Else>
+                      <Sequence DisplayName="Else" sap:VirtualizedContainerService.HintSize="416,25.333333333333332" sap2010:WorkflowViewState.IdRef="Sequence_63">
+                        <sap:WorkflowViewStateService.ViewState>
+                          <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                            <x:Boolean x:Key="IsExpanded">False</x:Boolean>
+                            <x:Boolean x:Key="IsPinned">False</x:Boolean>
+                          </scg:Dictionary>
+                        </sap:WorkflowViewStateService.ViewState>
+                      </Sequence>
+                    </If.Else>
+                  </If>
                   <Assign sap:VirtualizedContainerService.HintSize="434,117.33333333333333" sap2010:WorkflowViewState.IdRef="Assign_55">
                     <Assign.To>
                       <OutArgument x:TypeArguments="x:String">[currentPID]</OutArgument>
@@ -1484,7 +1506,7 @@
           </Assign.Value>
         </Assign>
       </Sequence>
-      <Sequence sap:VirtualizedContainerService.HintSize="544,2191.3333333333335" sap2010:WorkflowViewState.IdRef="Sequence_14">
+      <Sequence sap:VirtualizedContainerService.HintSize="544,2464.6666666666665" sap2010:WorkflowViewState.IdRef="Sequence_14">
         <sap:WorkflowViewStateService.ViewState>
           <scg:Dictionary x:TypeArguments="x:String, x:Object">
             <x:Boolean x:Key="IsExpanded">True</x:Boolean>
@@ -1533,8 +1555,25 @@
         <ufa:CloseFormActivity InstanceName="{x:Null}" DisplayName="Close Form" FormId="b06fb60e-b22c-4152-9e7e-4246db6d5e32" sap:VirtualizedContainerService.HintSize="470,114.66666666666667" sap2010:WorkflowViewState.IdRef="CloseFormActivity_1" />
       </Sequence>
     </Parallel>
-    <ui:MessageBox Caption="{x:Null}" ChosenButton="{x:Null}" AutoCloseAfter="00:00:05" DisplayName="Message Box" sap:VirtualizedContainerService.HintSize="1230,118.66666666666667" sap2010:WorkflowViewState.IdRef="MessageBox_7" Text="[String.Join(Environment.NewLine &amp; Environment.NewLine, PID_tags_status.Select(Function(kvp1) $&quot;{kvp1.Key}{Environment.NewLine}{String.Join(Environment.NewLine, kvp1.Value.Select(Function(kvp2) $&quot;{kvp2.Key}: {kvp2.Value}&quot;))}&quot;).ToArray())]" />
-    <ui:MessageBox Caption="{x:Null}" ChosenButton="{x:Null}" AutoCloseAfter="00:00:05" DisplayName="Message Box" sap:VirtualizedContainerService.HintSize="1230,118.66666666666667" sap2010:WorkflowViewState.IdRef="MessageBox_8" Text="[String.Join(Environment.NewLine, PID_src.Select(Function(kvp) $&quot;{kvp.Key}: {kvp.Value}&quot;))]" />
+    <ui:CommentOut DisplayName="Comment Out" sap:VirtualizedContainerService.HintSize="1230,57.333333333333336" sap2010:WorkflowViewState.IdRef="CommentOut_13">
+      <ui:CommentOut.Body>
+        <Sequence DisplayName="Ignored Activities" sap:VirtualizedContainerService.HintSize="450,288" sap2010:WorkflowViewState.IdRef="Sequence_61">
+          <sap:WorkflowViewStateService.ViewState>
+            <scg:Dictionary x:TypeArguments="x:String, x:Object">
+              <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+            </scg:Dictionary>
+          </sap:WorkflowViewStateService.ViewState>
+          <ui:MessageBox Caption="{x:Null}" ChosenButton="{x:Null}" AutoCloseAfter="00:00:05" DisplayName="Message Box" sap:VirtualizedContainerService.HintSize="416,118.66666666666667" sap2010:WorkflowViewState.IdRef="MessageBox_7" Text="[String.Join(Environment.NewLine &amp; Environment.NewLine, PID_tags_status.Select(Function(kvp1) $&quot;{kvp1.Key}{Environment.NewLine}{String.Join(Environment.NewLine, kvp1.Value.Select(Function(kvp2) $&quot;{kvp2.Key}: {kvp2.Value}&quot;))}&quot;).ToArray())]" />
+          <ui:MessageBox Caption="{x:Null}" ChosenButton="{x:Null}" AutoCloseAfter="00:00:05" DisplayName="Message Box" sap:VirtualizedContainerService.HintSize="416,109.33333333333333" sap2010:WorkflowViewState.IdRef="MessageBox_8" Text="[String.Join(Environment.NewLine, PID_src.Select(Function(kvp) $&quot;{kvp.Key}: {kvp.Value}&quot;))]" />
+        </Sequence>
+      </ui:CommentOut.Body>
+      <sap:WorkflowViewStateService.ViewState>
+        <scg:Dictionary x:TypeArguments="x:String, x:Object">
+          <x:Boolean x:Key="IsExpanded">False</x:Boolean>
+          <x:Boolean x:Key="IsPinned">False</x:Boolean>
+        </scg:Dictionary>
+      </sap:WorkflowViewStateService.ViewState>
+    </ui:CommentOut>
     <ui:CreateDirectory ContinueOnError="True" DisplayName="Create Folder" sap:VirtualizedContainerService.HintSize="1230,114" sap2010:WorkflowViewState.IdRef="CreateDirectory_3" Output="[FolderResource]" Path="[System.IO.Path.Combine(Environment.GetFolderPath(Environment.SpecialFolder.Desktop), &quot;Vikash Deliverables&quot;, SysPackageNo)]" />
     <ui:InvokeWorkflowFile ArgumentsVariable="{x:Null}" ContinueOnError="{x:Null}" DisplayName="Download PnIDs - Invoke Workflow File (P&amp;ID Marker\Download PnIDs.xaml)" sap:VirtualizedContainerService.HintSize="1230,177.33333333333334" sap2010:WorkflowViewState.IdRef="InvokeWorkflowFile_2" UnSafe="False" WorkflowFileName="P&amp;ID Marker\Download PnIDs.xaml">
       <ui:InvokeWorkflowFile.Arguments>
