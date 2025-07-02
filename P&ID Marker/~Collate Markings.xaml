@@ -141,9 +141,10 @@
       <AssemblyReference>System.IO.FileSystem.DriveInfo</AssemblyReference>
       <AssemblyReference>System.Runtime.InteropServices</AssemblyReference>
       <AssemblyReference>UiPath.CodedWorkflows</AssemblyReference>
+      <AssemblyReference>GlobalVariablesT1PNoYwrqg</AssemblyReference>
     </sco:Collection>
   </TextExpression.ReferencesForImplementation>
-  <Sequence DisplayName="Collate_Markings" sap:VirtualizedContainerService.HintSize="1230,3512.6666666666665" sap2010:WorkflowViewState.IdRef="Sequence_1">
+  <Sequence DisplayName="Collate_Markings" sap:VirtualizedContainerService.HintSize="1230,3332.6666666666665" sap2010:WorkflowViewState.IdRef="Sequence_1">
     <Sequence.Variables>
       <Variable x:TypeArguments="scg:Dictionary(x:String, scg:Dictionary(x:String, x:String))" Name="PID_tags_status" />
       <Variable x:TypeArguments="scg:Dictionary(x:String, x:String)" Name="PID_src" />
@@ -1533,8 +1534,25 @@
         <ufa:CloseFormActivity InstanceName="{x:Null}" DisplayName="Close Form" FormId="b06fb60e-b22c-4152-9e7e-4246db6d5e32" sap:VirtualizedContainerService.HintSize="470,114.66666666666667" sap2010:WorkflowViewState.IdRef="CloseFormActivity_1" />
       </Sequence>
     </Parallel>
-    <ui:MessageBox Caption="{x:Null}" ChosenButton="{x:Null}" AutoCloseAfter="00:00:05" DisplayName="Message Box" sap:VirtualizedContainerService.HintSize="1230,118.66666666666667" sap2010:WorkflowViewState.IdRef="MessageBox_7" Text="[String.Join(Environment.NewLine &amp; Environment.NewLine, PID_tags_status.Select(Function(kvp1) $&quot;{kvp1.Key}{Environment.NewLine}{String.Join(Environment.NewLine, kvp1.Value.Select(Function(kvp2) $&quot;{kvp2.Key}: {kvp2.Value}&quot;))}&quot;).ToArray())]" />
-    <ui:MessageBox Caption="{x:Null}" ChosenButton="{x:Null}" AutoCloseAfter="00:00:05" DisplayName="Message Box" sap:VirtualizedContainerService.HintSize="1230,118.66666666666667" sap2010:WorkflowViewState.IdRef="MessageBox_8" Text="[String.Join(Environment.NewLine, PID_src.Select(Function(kvp) $&quot;{kvp.Key}: {kvp.Value}&quot;))]" />
+    <ui:CommentOut DisplayName="Comment Out" sap:VirtualizedContainerService.HintSize="1230,57.333333333333336" sap2010:WorkflowViewState.IdRef="CommentOut_13">
+      <ui:CommentOut.Body>
+        <Sequence DisplayName="Ignored Activities" sap:VirtualizedContainerService.HintSize="450,288" sap2010:WorkflowViewState.IdRef="Sequence_61">
+          <sap:WorkflowViewStateService.ViewState>
+            <scg:Dictionary x:TypeArguments="x:String, x:Object">
+              <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+            </scg:Dictionary>
+          </sap:WorkflowViewStateService.ViewState>
+          <ui:MessageBox Caption="{x:Null}" ChosenButton="{x:Null}" AutoCloseAfter="00:00:05" DisplayName="Message Box" sap:VirtualizedContainerService.HintSize="416,118.66666666666667" sap2010:WorkflowViewState.IdRef="MessageBox_7" Text="[String.Join(Environment.NewLine &amp; Environment.NewLine, PID_tags_status.Select(Function(kvp1) $&quot;{kvp1.Key}{Environment.NewLine}{String.Join(Environment.NewLine, kvp1.Value.Select(Function(kvp2) $&quot;{kvp2.Key}: {kvp2.Value}&quot;))}&quot;).ToArray())]" />
+          <ui:MessageBox Caption="{x:Null}" ChosenButton="{x:Null}" AutoCloseAfter="00:00:05" DisplayName="Message Box" sap:VirtualizedContainerService.HintSize="416,109.33333333333333" sap2010:WorkflowViewState.IdRef="MessageBox_8" Text="[String.Join(Environment.NewLine, PID_src.Select(Function(kvp) $&quot;{kvp.Key}: {kvp.Value}&quot;))]" />
+        </Sequence>
+      </ui:CommentOut.Body>
+      <sap:WorkflowViewStateService.ViewState>
+        <scg:Dictionary x:TypeArguments="x:String, x:Object">
+          <x:Boolean x:Key="IsExpanded">False</x:Boolean>
+          <x:Boolean x:Key="IsPinned">False</x:Boolean>
+        </scg:Dictionary>
+      </sap:WorkflowViewStateService.ViewState>
+    </ui:CommentOut>
     <ui:CreateDirectory ContinueOnError="True" DisplayName="Create Folder" sap:VirtualizedContainerService.HintSize="1230,114" sap2010:WorkflowViewState.IdRef="CreateDirectory_3" Output="[FolderResource]" Path="[System.IO.Path.Combine(Environment.GetFolderPath(Environment.SpecialFolder.Desktop), &quot;Vikash Deliverables&quot;, SysPackageNo)]" />
     <ui:InvokeWorkflowFile ArgumentsVariable="{x:Null}" ContinueOnError="{x:Null}" DisplayName="Download PnIDs - Invoke Workflow File (P&amp;ID Marker\Download PnIDs.xaml)" sap:VirtualizedContainerService.HintSize="1230,177.33333333333334" sap2010:WorkflowViewState.IdRef="InvokeWorkflowFile_2" UnSafe="False" WorkflowFileName="P&amp;ID Marker\Download PnIDs.xaml">
       <ui:InvokeWorkflowFile.Arguments>

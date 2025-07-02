@@ -18,7 +18,7 @@
         "html": "<p>Loading, please wait.</p>",
         "label": "Content",
         "customClass": "text",
-        "refreshOnChange": false,
+        "refreshOnChange": true,
         "key": "content1",
         "type": "content",
         "input": false,
