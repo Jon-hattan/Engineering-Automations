@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="utf-16"?>
+<ObjectRepositoryTargetData ContentHash="wgm7ncxu_EuOLxzUh-9eyw" xmlns="http://schemas.uipath.com/workflow/activities/uix" xmlns:scg="clr-namespace:System.Collections.Generic;assembly=System.Private.CoreLib" xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml">
+  <ObjectRepositoryTargetData.Data>
+    <TargetAnchorable x:Key="TargetAnchorable" BrowserURL="convergeaus.jacobs.com/PrologConverge/WebClient/SubmittalPackage.aspx" DesignTimeRectangle="263, 550, 130, 38" ElementType="Text" FuzzySelectorArgument="[string.Format(&quot;&lt;webctrl id='ugDocuments' tag='TABLE' matching:id='fuzzy' fuzzylevel:id='0.0' /&gt;&lt;webctrl isleaf='1' type='' class='TextDisabled ui-iggrid-selectedcell ui-state-active' tag='TD' aaname='131241-WSB01-DR-P-6032.pdf' matching:isleaf='fuzzy' fuzzylevel:isleaf='0.0' matching:class='fuzzy' fuzzylevel:class='0.0' matching:aaname='fuzzy' fuzzylevel:aaname='0.0' check:innerText='{0}' /&gt;&quot;, PID_filename)]" Guid="cbe766fd-2329-4037-a719-6b28ed05c997" ScopeSelectorArgument="&lt;html app='msedge.exe' title='Reading Submittals' /&gt;" SearchSteps="FuzzySelector" Version="V6" Visibility="Interactive" WaitForReadyArgument="None">
+      <imageRef attrName="InformativeScreenshot" originalValue="b717fc17f30cdc03bef0131b52d08903.png" xmlns="">05XMarsDWXEy_3i5ydedmDg</imageRef>
+    </TargetAnchorable>
+    <scg:List x:TypeArguments="ObjectRepositoryVariableData" x:Key="Variables" Capacity="1">
+      <ObjectRepositoryVariableData DefaultValue="131241-WSB01-DR-P-6032.pdf" Name="PID_filename" />
+    </scg:List>
+    <x:String x:Key="ActivityType">MouseScrollSearchedElement</x:String>
+  </ObjectRepositoryTargetData.Data>
+</ObjectRepositoryTargetData>

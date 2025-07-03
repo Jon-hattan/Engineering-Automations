@@ -1,0 +1,14 @@
+﻿{
+  "Name": "Check if found",
+  "Type": "Element",
+  "TaxonomyType": "Label",
+  "Id": "Jg0wslxmzkWUI46BIkMrsQ",
+  "Reference": "xGt2OSXt7UW47kSHt2k5yg/Jg0wslxmzkWUI46BIkMrsQ",
+  "ParentRef": "xGt2OSXt7UW47kSHt2k5yg/azRws-oh30qsXz-7zKiLeg",
+  "Created": "2025-07-03T08:05:25.8098352Z",
+  "Updated": "2025-07-03T08:05:25.8098352Z",
+  "CreatedBy": [
+    "UiPath.UIAutomationCore, Version=25.10.4.0, Culture=neutral, PublicKeyToken=null",
+    "UiPath.Platform, Version=25.4.0.0, Culture=neutral, PublicKeyToken=null"
+  ]
+}

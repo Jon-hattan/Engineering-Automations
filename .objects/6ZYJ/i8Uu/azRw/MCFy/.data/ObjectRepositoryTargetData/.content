@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="utf-16"?>
+<ObjectRepositoryTargetData ContentHash="o3IpEjnKEkqWmTUKzbW_Rw" Reference="xGt2OSXt7UW47kSHt2k5yg/MCFybF5_wk-bMTP3r0EYaw" xmlns="http://schemas.uipath.com/workflow/activities/uix" xmlns:scg="clr-namespace:System.Collections.Generic;assembly=System.Private.CoreLib" xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml">
+  <ObjectRepositoryTargetData.Data>
+    <TargetAnchorable x:Key="TargetAnchorable" DesignTimeRectangle="756, 834, 442, 120" ElementType="Text" FuzzySelectorArgument="[string.Format(&quot;&lt;wnd cls='UIX:Window' /&gt;&lt;ctrl automationid='pagesView@' matching:automationid='fuzzy' fuzzylevel:automationid='0.0' /&gt;&lt;ctrl automationid='106@' role='text' matching:automationid='fuzzy' fuzzylevel:automationid='0.0' check:text='{0}' /&gt;&quot;, EquipmentNumber)]" Guid="66173848-1c64-4750-abb8-ba0329ebf7c6" ImageBase64="" ScopeSelectorArgument="&lt;wnd app='pdfxedit.exe' omit:cls='PXE:{C*AD*E*B1E*D8AF3B9D}' title='* - PDF-XChange Editor' /&gt;" SearchSteps="FuzzySelector" Version="V6" Visibility="Interactive" WaitForReadyArgument="None">
+      <TargetAnchorable.Anchors>
+        <scg:List x:TypeArguments="ITarget" Capacity="1">
+          <Target DesignTimeRectangle="796, 539, 359, 120" ElementType="Text" FuzzySelectorArgument="[string.Format(&quot;&lt;wnd cls='UIX:Window' /&gt;&lt;ctrl automationid='pagesView@' matching:automationid='fuzzy' fuzzylevel:automationid='0.0' /&gt;&lt;ctrl automationid='DE@' role='text' matching:automationid='fuzzy' fuzzylevel:automationid='0.0' check:text='{0}' /&gt;&quot;, EquipmentTag)]" Guid="24ca5415-7b4c-48e2-bb6b-fac847b632d7" ImageBase64="" SearchSteps="FuzzySelector" />
+        </scg:List>
+      </TargetAnchorable.Anchors>
+      <TargetAnchorable.PointOffset>
+        <PointOffset Position="BottomRight" X="0" Y="0" />
+      </TargetAnchorable.PointOffset>
+      <imageRef attrName="InformativeScreenshot" originalValue="3090e3ef4bf569bed992a1898b22aa8a.png" xmlns="">0J5XiKFzehEGy40pHKOBa1w</imageRef>
+    </TargetAnchorable>
+    <scg:List x:TypeArguments="ObjectRepositoryVariableData" x:Key="Variables" Capacity="2">
+      <ObjectRepositoryVariableData DefaultValue="0102" Name="EquipmentNumber" />
+      <ObjectRepositoryVariableData DefaultValue="LSL" Name="EquipmentTag" />
+    </scg:List>
+    <x:String x:Key="ActivityType">Click</x:String>
+  </ObjectRepositoryTargetData.Data>
+</ObjectRepositoryTargetData>

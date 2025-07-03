@@ -1,16 +1,16 @@
 <?xml version="1.0" encoding="utf-16"?>
-<ObjectRepositoryTargetData ContentHash="j0btOVX_vUenmKU_Ahqh8w" xmlns="http://schemas.uipath.com/workflow/activities/uix" xmlns:scg="clr-namespace:System.Collections.Generic;assembly=System.Private.CoreLib" xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml">
+<ObjectRepositoryTargetData ContentHash="s4BSuB8xqkyoGDkAPxysKw" Reference="xGt2OSXt7UW47kSHt2k5yg/w9xyS4lkxkCxTXxqp9CtOg" xmlns="http://schemas.uipath.com/workflow/activities/uix" xmlns:scg="clr-namespace:System.Collections.Generic;assembly=System.Private.CoreLib" xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml">
   <ObjectRepositoryTargetData.Data>
     <TargetAnchorable x:Key="TargetAnchorable" BrowserURL="convergeaus.jacobs.com/PrologConverge/WebClient/SubmittalPackage.aspx" CVScreenId="458e3642-b9ad-479e-a5b4-4c8850fb071e" CvTextArea="406, 371, 54, 12" CvTextArgument="Download" CvType="Text" DesignTimeRectangle="407, 585, 52, 16" ElementType="Text" FuzzySelectorArgument="&lt;webctrl id='ugDocuments' tag='TABLE' matching:id='fuzzy' fuzzylevel:id='0.0' /&gt;&lt;webctrl type='' tag='A' class='' aaname='Download' matching:class='fuzzy' fuzzylevel:class='0.0' matching:aaname='fuzzy' fuzzylevel:aaname='0.0' check:innerText='Download' /&gt;" Guid="4958ed7b-4edc-492e-a55d-2da1660a6a58" ScopeSelectorArgument="&lt;html app='msedge.exe' title='Reading Submittals' /&gt;" SearchSteps="FuzzySelector, CV" Version="V6" Visibility="Interactive" WaitForReadyArgument="None">
       <TargetAnchorable.Anchors>
         <scg:List x:TypeArguments="ITarget" Capacity="4">
-          <Target DesignTimeRectangle="263, 566, 130, 54" ElementType="Text" FuzzySelectorArgument="[string.Format(&quot;&lt;webctrl id='ugDocuments' tag='TABLE' matching:id='fuzzy' fuzzylevel:id='0.0' /&gt;&lt;webctrl class='TextDisabled' type='' aaname='131241-WSD02-DR-P-6000.dgn' tag='TD' matching:class='fuzzy' fuzzylevel:class='0.0' matching:aaname='fuzzy' fuzzylevel:aaname='0.0' check:innerText='{0}' /&gt;&quot;, PID_filename)]" Guid="38b70430-08b6-46a2-8a0c-7f162fcd800a" SearchSteps="FuzzySelector" />
+          <Target DesignTimeRectangle="263, 566, 130, 54" ElementType="Text" FuzzyAccuracy="0.52" FuzzySelectorArgument="[string.Format(&quot;&lt;webctrl id='ugDocuments' tag='TABLE' matching:id='fuzzy' fuzzylevel:id='0.0' /&gt;&lt;webctrl class='TextDisabled' type='' aaname='131241-WSD02-DR-P-6000.dgn' tag='TD' matching:class='fuzzy' fuzzylevel:class='0.0' matching:aaname='fuzzy' fuzzylevel:aaname='0.0' check:innerText='{0}' /&gt;&quot;, PID_filename)]" Guid="38b70430-08b6-46a2-8a0c-7f162fcd800a" ImageBase64="" SearchSteps="FuzzySelector" />
         </scg:List>
       </TargetAnchorable.Anchors>
-      <imageRef attrName="InformativeScreenshot" originalValue="e6a76bf48db223aa20291d1af0f4906a.png" xmlns="">0hwDMOZOMLESV7zwYZsLZKQ</imageRef>
+      <imageRef attrName="InformativeScreenshot" originalValue="12caf1d23928afa5f178f96622329f3d.png" xmlns="">0zDgXiIZJJ0ygy7yQYgSf8A</imageRef>
     </TargetAnchorable>
     <scg:List x:TypeArguments="ObjectRepositoryVariableData" x:Key="Variables" Capacity="1">
-      <ObjectRepositoryVariableData DefaultValue="131241-WSB01-DR-P-6020.pdf" Name="PID_filename" />
+      <ObjectRepositoryVariableData DefaultValue="131241-WSB01-DR-P-6032.pdf" Name="PID_filename" />
     </scg:List>
     <x:String x:Key="ActivityType">Click</x:String>
   </ObjectRepositoryTargetData.Data>

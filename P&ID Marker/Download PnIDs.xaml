@@ -1,9 +1,9 @@
-<Activity mc:Ignorable="sap sap2010" x:Class="Download_PnID" xmlns="http://schemas.microsoft.com/netfx/2009/xaml/activities" xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" xmlns:p="http://schemas.uipath.com/workflow/activities/ocr" xmlns:sap="http://schemas.microsoft.com/netfx/2009/xaml/activities/presentation" xmlns:sap2010="http://schemas.microsoft.com/netfx/2010/xaml/activities/presentation" xmlns:scg="clr-namespace:System.Collections.Generic;assembly=System.Private.CoreLib" xmlns:sco="clr-namespace:System.Collections.ObjectModel;assembly=System.Private.CoreLib" xmlns:sd="clr-namespace:System.Drawing;assembly=System.Drawing.Common" xmlns:sd1="clr-namespace:System.Drawing;assembly=System.Drawing.Primitives" xmlns:sd2="clr-namespace:System.Data;assembly=System.Data.Common" xmlns:si="clr-namespace:System.IO;assembly=System.Private.CoreLib" xmlns:ui="http://schemas.uipath.com/workflow/activities" xmlns:uix="http://schemas.uipath.com/workflow/activities/uix" xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml">
+<Activity mc:Ignorable="sap sap2010" x:Class="Download_PnID" xmlns="http://schemas.microsoft.com/netfx/2009/xaml/activities" xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" xmlns:p="http://schemas.uipath.com/workflow/activities/ocr" xmlns:s="clr-namespace:System;assembly=System.Private.CoreLib" xmlns:sap="http://schemas.microsoft.com/netfx/2009/xaml/activities/presentation" xmlns:sap2010="http://schemas.microsoft.com/netfx/2010/xaml/activities/presentation" xmlns:scg="clr-namespace:System.Collections.Generic;assembly=System.Private.CoreLib" xmlns:sco="clr-namespace:System.Collections.ObjectModel;assembly=System.Private.CoreLib" xmlns:sd="clr-namespace:System.Drawing;assembly=System.Drawing.Common" xmlns:sd1="clr-namespace:System.Drawing;assembly=System.Drawing.Primitives" xmlns:sd2="clr-namespace:System.Data;assembly=System.Data.Common" xmlns:si="clr-namespace:System.IO;assembly=System.Private.CoreLib" xmlns:ui="http://schemas.uipath.com/workflow/activities" xmlns:uix="http://schemas.uipath.com/workflow/activities/uix" xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml">
   <x:Members>
     <x:Property Name="PID_tags_status" Type="InArgument(scg:Dictionary(x:String, scg:Dictionary(x:String, x:String)))" />
     <x:Property Name="PID_src" Type="InArgument(scg:Dictionary(x:String, x:String))" />
     <x:Property Name="CollatedFolder" Type="InArgument(si:FileInfo)" />
-    <x:Property Name="CurrentTP" Type="InArgument(x:String)" />
+    <x:Property Name="CurrentSP" Type="InArgument(x:String)" />
   </x:Members>
   <VisualBasic.Settings>
     <x:Null />
@@ -59,6 +59,7 @@
       <x:String>UiPath.UIAutomationNext.Models.ExtractData</x:String>
       <x:String>UiPath.Platform.ResourceHandling</x:String>
       <x:String>System.Text.RegularExpressions</x:String>
+      <x:String>System.Activities.Runtime.Collections</x:String>
     </sco:Collection>
   </TextExpression.NamespacesForImplementation>
   <TextExpression.ReferencesForImplementation>
@@ -139,36 +140,48 @@
       <x:Boolean x:Key="ShouldCollapseAll">False</x:Boolean>
     </scg:Dictionary>
   </sap:WorkflowViewStateService.ViewState>
-  <Sequence DisplayName="Download_PnID" sap:VirtualizedContainerService.HintSize="874,5608" sap2010:WorkflowViewState.IdRef="Sequence_1">
+  <Sequence DisplayName="Download_PnID" sap:VirtualizedContainerService.HintSize="1020,7715.333333333333" sap2010:WorkflowViewState.IdRef="Sequence_1">
+    <Sequence.Variables>
+      <Variable x:TypeArguments="x:Int32" Name="index">
+        <sap:WorkflowViewStateService.ViewState>
+          <scg:Dictionary x:TypeArguments="x:String, x:Object">
+            <x:String x:Key="SourceIdRef">ForEach`1_1</x:String>
+            <x:String x:Key="SourcePropertyName">CurrentIndex</x:String>
+          </scg:Dictionary>
+        </sap:WorkflowViewStateService.ViewState>
+      </Variable>
+    </Sequence.Variables>
     <sap:WorkflowViewStateService.ViewState>
       <scg:Dictionary x:TypeArguments="x:String, x:Object">
         <x:Boolean x:Key="IsExpanded">True</x:Boolean>
       </scg:Dictionary>
     </sap:WorkflowViewStateService.ViewState>
-    <Sequence sap:VirtualizedContainerService.HintSize="780,5585.333333333333" sap2010:WorkflowViewState.IdRef="Sequence_4">
+    <Sequence sap:VirtualizedContainerService.HintSize="1020,7692.666666666667" sap2010:WorkflowViewState.IdRef="Sequence_4">
       <sap:WorkflowViewStateService.ViewState>
         <scg:Dictionary x:TypeArguments="x:String, x:Object">
           <x:Boolean x:Key="IsExpanded">True</x:Boolean>
           <x:Boolean x:Key="IsPinned">False</x:Boolean>
         </scg:Dictionary>
       </sap:WorkflowViewStateService.ViewState>
-      <ui:ForEach x:TypeArguments="x:String" CurrentIndex="{x:Null}" DisplayName="For Each currentPID" sap:VirtualizedContainerService.HintSize="746,5502.666666666667" sap2010:WorkflowViewState.IdRef="ForEach`1_1" Values="[PID_tags_status.Keys.AsEnumerable()]">
+      <ui:ForEach x:TypeArguments="x:String" CurrentIndex="[index]" DisplayName="For Each currentPID" sap:VirtualizedContainerService.HintSize="986,7610" sap2010:WorkflowViewState.IdRef="ForEach`1_1" Values="[PID_tags_status.Keys.AsEnumerable()]">
         <ui:ForEach.Body>
           <ActivityAction x:TypeArguments="x:String">
             <ActivityAction.Argument>
               <DelegateInArgument x:TypeArguments="x:String" Name="currentPID" />
             </ActivityAction.Argument>
-            <Sequence DisplayName="Body" sap:VirtualizedContainerService.HintSize="744,5380" sap2010:WorkflowViewState.IdRef="Sequence_2">
+            <Sequence DisplayName="Body" sap:VirtualizedContainerService.HintSize="984,7487.333333333333" sap2010:WorkflowViewState.IdRef="Sequence_2">
               <Sequence.Variables>
                 <Variable x:TypeArguments="x:Boolean" Name="PIDexists" />
+                <Variable x:TypeArguments="x:Boolean" Name="markedPIDexists" />
               </Sequence.Variables>
               <sap:WorkflowViewStateService.ViewState>
                 <scg:Dictionary x:TypeArguments="x:String, x:Object">
                   <x:Boolean x:Key="IsExpanded">True</x:Boolean>
                 </scg:Dictionary>
               </sap:WorkflowViewStateService.ViewState>
-              <ui:FileExistsX DisplayName="File Exists" Exists="[PIDexists]" sap:VirtualizedContainerService.HintSize="710,168.66666666666666" sap2010:WorkflowViewState.IdRef="FileExistsX_1" Path="[Path.Combine(CollatedFolder.FullName, currentTP, currentPID &amp; &quot;.pdf&quot;)]" />
-              <If Condition="[PIDexists]" sap:VirtualizedContainerService.HintSize="710,273.3333333333333" sap2010:WorkflowViewState.IdRef="If_1">
+              <ui:FileExistsX DisplayName="File Exists" Exists="[PIDexists]" sap:VirtualizedContainerService.HintSize="950,168.66666666666666" sap2010:WorkflowViewState.IdRef="FileExistsX_1" Path="[Path.Combine(CollatedFolder.FullName, CurrentSP, currentPID &amp; &quot;.pdf&quot;)]" />
+              <ui:FileExistsX DisplayName="File Exists" Exists="[markedPIDexists]" sap:VirtualizedContainerService.HintSize="950,168.66666666666666" sap2010:WorkflowViewState.IdRef="FileExistsX_4" Path="[Path.Combine(CollatedFolder.FullName, CurrentSP, currentPID &amp; &quot; marked&quot; &amp; &quot;.pdf&quot;)]" />
+              <If Condition="[PIDexists orElse markedPIDexists orElse not PID_src.containskey(currentPID)]" DisplayName="If PID already downloaded or PID doesnt exist in prolog" sap:VirtualizedContainerService.HintSize="950,273.3333333333333" sap2010:WorkflowViewState.IdRef="If_1">
                 <sap:WorkflowViewStateService.ViewState>
                   <scg:Dictionary x:TypeArguments="x:String, x:Object">
                     <x:Boolean x:Key="IsExpanded">True</x:Boolean>
@@ -196,13 +209,13 @@
                   </Sequence>
                 </If.Else>
               </If>
-              <uix:NApplicationCard AttachMode="ByInstance" DisplayName="Edge Prolog Converge" HealingAgentBehavior="Job" sap:VirtualizedContainerService.HintSize="710,4878" sap2010:WorkflowViewState.IdRef="NApplicationCard_1" InteractionMode="DebuggerApi" ScopeGuid="7d6a64e0-5812-4015-8f66-0187699324d9" Version="V2">
+              <uix:NApplicationCard AttachMode="ByInstance" DisplayName="Edge Prolog Converge" HealingAgentBehavior="Job" sap:VirtualizedContainerService.HintSize="950,6816.666666666667" sap2010:WorkflowViewState.IdRef="NApplicationCard_1" InteractionMode="DebuggerApi" ScopeGuid="7d6a64e0-5812-4015-8f66-0187699324d9" Version="V2">
                 <uix:NApplicationCard.Body>
                   <ActivityAction x:TypeArguments="x:Object">
                     <ActivityAction.Argument>
                       <DelegateInArgument x:TypeArguments="x:Object" Name="WSSessionData" />
                     </ActivityAction.Argument>
-                    <Sequence DisplayName="Do" sap:VirtualizedContainerService.HintSize="676,4570.666666666667" sap2010:WorkflowViewState.IdRef="Sequence_3">
+                    <Sequence DisplayName="Do" sap:VirtualizedContainerService.HintSize="916,6509.333333333333" sap2010:WorkflowViewState.IdRef="Sequence_3">
                       <Sequence.Variables>
                         <Variable x:TypeArguments="x:String" Name="largestRevNumber" />
                         <Variable x:TypeArguments="x:String" Name="dynamic_selector" />
@@ -212,7 +225,7 @@
                           <x:Boolean x:Key="IsExpanded">True</x:Boolean>
                         </scg:Dictionary>
                       </sap:WorkflowViewStateService.ViewState>
-                      <uix:NTypeInto ActivateBefore="True" ClickBeforeMode="Single" ClipboardMode="Never" DelayBetweenKeys="0.05" DisplayName="Type Into 'Subject'" EmptyFieldMode="SingleLine" HealingAgentBehavior="SameAsCard" sap:VirtualizedContainerService.HintSize="642,292.6666666666667" sap2010:WorkflowViewState.IdRef="NTypeInto_1" InteractionMode="HardwareEvents" ScopeIdentifier="7d6a64e0-5812-4015-8f66-0187699324d9" Text="P&amp;ID" Version="V4">
+                      <uix:NTypeInto ActivateBefore="True" ClickBeforeMode="Single" ClipboardMode="Never" DelayBetweenKeys="0.05" DisplayName="Type Into 'Subject'" EmptyFieldMode="SingleLine" HealingAgentBehavior="SameAsCard" sap:VirtualizedContainerService.HintSize="882,292.6666666666667" sap2010:WorkflowViewState.IdRef="NTypeInto_1" InteractionMode="HardwareEvents" ScopeIdentifier="7d6a64e0-5812-4015-8f66-0187699324d9" Text="P&amp;ID" Version="V4">
                         <uix:NTypeInto.Target>
                           <uix:TargetAnchorable BrowserURL="convergeaus.jacobs.com/PrologConverge/WebClient/navigate.aspx" ContentHash="LFmYWZFd-0GeVbG0QmeMYA" DesignTimeRectangle="315, 293, 465, 20" FuzzySelectorArgument="&lt;webctrl id='fraMainPI' tag='IFRAME' matching:id='fuzzy' fuzzylevel:id='0.0' /&gt;&lt;webctrl parentid='dvCH_lstList_SubmittalPackages' tag='TABLE' matching:parentid='fuzzy' fuzzylevel:parentid='0.0' /&gt;&lt;webctrl class='WEI6J7 WEI688  WGGIJH' aaname='' tag='TD' type='FilterColumn' matching:class='fuzzy' fuzzylevel:class='0.0' matching:aaname='fuzzy' fuzzylevel:aaname='0.0' /&gt;" Guid="82964bca-73fe-4558-b49d-eaffd5c89273" InformativeScreenshot="838718ff1eecb52af2e8165e91a1f086.png" Reference="xGt2OSXt7UW47kSHt2k5yg/_zQMLse1Kk-BiWQcr6Hrnw" ScopeSelectorArgument="&lt;html app='msedge.exe' title='Prolog Converge' /&gt;" SearchSteps="FuzzySelector" Version="V6" Visibility="Interactive" WaitForReadyArgument="None">
                             <uix:TargetAnchorable.Anchors>
@@ -233,7 +246,7 @@
                           </uix:VerifyExecutionTypeIntoOptions>
                         </uix:NTypeInto.VerifyOptions>
                       </uix:NTypeInto>
-                      <uix:NTypeInto ActivateBefore="True" ClickBeforeMode="Single" ClipboardMode="Never" DelayBetweenKeys="0.05" DisplayName="Type Into 'Submittal #'" EmptyFieldMode="SingleLine" HealingAgentBehavior="SameAsCard" sap:VirtualizedContainerService.HintSize="642,292.6666666666667" sap2010:WorkflowViewState.IdRef="NTypeInto_2" InteractionMode="HardwareEvents" ScopeIdentifier="7d6a64e0-5812-4015-8f66-0187699324d9" Text="[PID_src(currentPID) + &quot;[k(Enter)]&quot;]" Version="V4">
+                      <uix:NTypeInto ActivateBefore="True" ClickBeforeMode="Single" ClipboardMode="Never" DelayBetweenKeys="0.05" DisplayName="Type Into 'Submittal #'" EmptyFieldMode="SingleLine" HealingAgentBehavior="SameAsCard" sap:VirtualizedContainerService.HintSize="882,292.6666666666667" sap2010:WorkflowViewState.IdRef="NTypeInto_2" InteractionMode="HardwareEvents" ScopeIdentifier="7d6a64e0-5812-4015-8f66-0187699324d9" Text="[PID_src(currentPID) + &quot;[k(Enter)]&quot;]" Version="V4">
                         <uix:NTypeInto.Target>
                           <uix:TargetAnchorable BrowserURL="convergeaus.jacobs.com/PrologConverge/WebClient/navigate.aspx" ContentHash="NPuNlxJyh0-OHOw7rGuT-g" DesignTimeRectangle="131, 293, 184, 20" FuzzySelectorArgument="&lt;webctrl id='fraMainPI' tag='IFRAME' matching:id='fuzzy' fuzzylevel:id='0.0' /&gt;&lt;webctrl parentid='dvCH_lstList_SubmittalPackages' tag='TABLE' matching:parentid='fuzzy' fuzzylevel:parentid='0.0' /&gt;&lt;webctrl class='WEI6J7 WEI688  WGGIJH' tag='TD' type='FilterColumn' aaname='' matching:class='fuzzy' fuzzylevel:class='0.0' matching:aaname='fuzzy' fuzzylevel:aaname='0.0' /&gt;" Guid="735bfce3-28e8-452a-8e37-dd7938ed3591" InformativeScreenshot="37009b49c0c15c26ccc70611c8444182.png" Reference="xGt2OSXt7UW47kSHt2k5yg/fjBX6fWCk0W5qp1qzVWnaw" ScopeSelectorArgument="&lt;html app='msedge.exe' title='Prolog Converge' /&gt;" SearchSteps="FuzzySelector" Version="V6" Visibility="Interactive" WaitForReadyArgument="None">
                             <uix:TargetAnchorable.Anchors>
@@ -254,14 +267,14 @@
                           </uix:VerifyExecutionTypeIntoOptions>
                         </uix:NTypeInto.VerifyOptions>
                       </uix:NTypeInto>
-                      <ui:InvokeWorkflowFile ArgumentsVariable="{x:Null}" ContinueOnError="{x:Null}" DisplayName="Find LargestRevNumber and Is_locked - Invoke Workflow File (P&amp;ID Marker\Find LargestRevNumber and Is_locked.xaml)" sap:VirtualizedContainerService.HintSize="642,177.33333333333334" sap2010:WorkflowViewState.IdRef="InvokeWorkflowFile_1" UnSafe="False" WorkflowFileName="P&amp;ID Marker\Find LargestRevNumber and Is_locked.xaml">
+                      <ui:InvokeWorkflowFile ArgumentsVariable="{x:Null}" ContinueOnError="{x:Null}" DisplayName="Find LargestRevNumber and Is_locked - Invoke Workflow File (P&amp;ID Marker\Find LargestRevNumber and Is_locked.xaml)" sap:VirtualizedContainerService.HintSize="882,177.33333333333334" sap2010:WorkflowViewState.IdRef="InvokeWorkflowFile_1" UnSafe="False" WorkflowFileName="P&amp;ID Marker\Find LargestRevNumber and Is_locked.xaml">
                         <ui:InvokeWorkflowFile.Arguments>
                           <InArgument x:TypeArguments="x:String" x:Key="SRC_num">[PID_src(currentPID)]</InArgument>
                           <OutArgument x:TypeArguments="x:String" x:Key="LargestRevNumber">[largestRevNumber]</OutArgument>
                           <OutArgument x:TypeArguments="x:Boolean" x:Key="Is_Locked" />
                         </ui:InvokeWorkflowFile.Arguments>
                       </ui:InvokeWorkflowFile>
-                      <Assign sap:VirtualizedContainerService.HintSize="642,117.33333333333333" sap2010:WorkflowViewState.IdRef="Assign_1">
+                      <Assign sap:VirtualizedContainerService.HintSize="882,117.33333333333333" sap2010:WorkflowViewState.IdRef="Assign_1">
                         <Assign.To>
                           <OutArgument x:TypeArguments="x:String">[dynamic_selector]</OutArgument>
                         </Assign.To>
@@ -269,12 +282,12 @@
                           <InArgument x:TypeArguments="x:String">[string.Format("&lt;webctrl id='fraMainPI' tag='IFRAME' matching:id='fuzzy' fuzzylevel:id='0.0' /&gt;&lt;webctrl id='tb_lstList_SubmittalPackages' tag='TABLE' matching:id='fuzzy' fuzzylevel:id='0.0' /&gt;&lt;webctrl type='' class='' tag='NOBR' aaname='{0}' matching:class='fuzzy' fuzzylevel:class='0.0' matching:aaname='fuzzy' fuzzylevel:aaname='0.0' check:innerText='{0}' /&gt;", LargestRevNumber)]</InArgument>
                         </Assign.Value>
                       </Assign>
-                      <uix:NClick ActivateBefore="True" ClickType="Double" DisplayName="Click Largest Rev Number" HealingAgentBehavior="SameAsCard" sap:VirtualizedContainerService.HintSize="642,191.33333333333334" sap2010:WorkflowViewState.IdRef="NClick_1" InteractionMode="DebuggerApi" KeyModifiers="None" MouseButton="Left" ScopeIdentifier="7d6a64e0-5812-4015-8f66-0187699324d9" Version="V4">
+                      <uix:NClick ActivateBefore="True" ClickType="Double" DisplayName="Click Largest Rev Number" HealingAgentBehavior="SameAsCard" sap:VirtualizedContainerService.HintSize="882,191.33333333333334" sap2010:WorkflowViewState.IdRef="NClick_1" InteractionMode="DebuggerApi" KeyModifiers="None" MouseButton="Left" ScopeIdentifier="7d6a64e0-5812-4015-8f66-0187699324d9" Version="V4">
                         <uix:NClick.Target>
                           <uix:TargetAnchorable BrowserURL="convergeaus.jacobs.com/PrologConverge/WebClient/navigate.aspx" CVScreenId="25d2a1a1-0daa-479f-9a85-5e59f22a2828" ContentHash="57NAf6X59km0PogiwRMt5Q" CvTextArea="791, 677, 15, 16" CvTextArgument="[largestRevNumber]" CvType="Text" DesignTimeRectangle="998, 531, 39, 18" FuzzySelectorArgument="[dynamic_selector]" Guid="48abb019-29aa-4e5f-88b2-247bf711dfbe" ImageBase64="" InformativeScreenshot="d0eed6f764d80978cacf797e231ddb91.png" NativeTextArgument="[largestRevNumber]" Reference="2cLmJu5YmECa74LfIK_pQw/AZXCHHf-d0G7Po_4C1LCWw" ScopeSelectorArgument="&lt;html app='msedge.exe' title='Prolog Converge' /&gt;" SearchSteps="FuzzySelector, TextNative, CV" Version="V6" Visibility="Interactive" WaitForReadyArgument="None" />
                         </uix:NClick.Target>
                       </uix:NClick>
-                      <uix:NCheckState sap2010:Annotation.AnnotationText="Checking all relevant details about latest revision in Prolog" DisplayName="Check App State 'Reading Submittals - Wo…'" EnableIfExists="False" HealingAgentBehavior="Disabled" sap:VirtualizedContainerService.HintSize="642,516" sap2010:WorkflowViewState.IdRef="NCheckState_1" IsLoose="True" Timeout="10" Version="V4">
+                      <uix:NCheckState sap2010:Annotation.AnnotationText="Checking all relevant details about latest revision in Prolog" DisplayName="Check App State 'Reading Submittals - Wo…'" EnableIfExists="False" HealingAgentBehavior="Disabled" sap:VirtualizedContainerService.HintSize="882,516" sap2010:WorkflowViewState.IdRef="NCheckState_1" IsLoose="True" Timeout="10" Version="V4">
                         <uix:NCheckState.IfExists>
                           <Sequence DisplayName="Target appears" sap:VirtualizedContainerService.HintSize="450,93" sap2010:WorkflowViewState.IdRef="Sequence_17">
                             <sap:WorkflowViewStateService.ViewState>
@@ -306,13 +319,13 @@
                           </scg:Dictionary>
                         </sap:WorkflowViewStateService.ViewState>
                       </uix:NCheckState>
-                      <uix:NApplicationCard AttachMode="ByInstance" CloseMode="Never" DisplayName="Edge Reading Submittals(2)" HealingAgentBehavior="Job" sap:VirtualizedContainerService.HintSize="642,2920.6666666666665" sap2010:WorkflowViewState.IdRef="NApplicationCard_2" InteractionMode="DebuggerApi" ScopeGuid="329f03eb-fe68-46b2-b90a-97de11c5861f" Version="V2">
+                      <uix:NApplicationCard AttachMode="ByInstance" CloseMode="Never" DisplayName="Edge Reading Submittals(2)" HealingAgentBehavior="Job" sap:VirtualizedContainerService.HintSize="882,4859.333333333333" sap2010:WorkflowViewState.IdRef="NApplicationCard_2" InteractionMode="DebuggerApi" ScopeGuid="329f03eb-fe68-46b2-b90a-97de11c5861f" Version="V2">
                         <uix:NApplicationCard.Body>
                           <ActivityAction x:TypeArguments="x:Object">
                             <ActivityAction.Argument>
                               <DelegateInArgument x:TypeArguments="x:Object" Name="WSSessionData" />
                             </ActivityAction.Argument>
-                            <Sequence DisplayName="Reading/Editing Submittals" sap:VirtualizedContainerService.HintSize="608,2678.6666666666665" sap2010:WorkflowViewState.IdRef="Sequence_10">
+                            <Sequence DisplayName="Reading/Editing Submittals" sap:VirtualizedContainerService.HintSize="848,4614.666666666667" sap2010:WorkflowViewState.IdRef="Sequence_10">
                               <Sequence.Variables>
                                 <Variable x:TypeArguments="sd2:DataTable" Name="Submittal_Files" />
                               </Sequence.Variables>
@@ -322,9 +335,13 @@
                                   <x:Boolean x:Key="IsPinned">False</x:Boolean>
                                 </scg:Dictionary>
                               </sap:WorkflowViewStateService.ViewState>
-                              <Sequence DisplayName="Check each P&amp;ID in the submittal" sap:VirtualizedContainerService.HintSize="574,2508.6666666666665" sap2010:WorkflowViewState.IdRef="Sequence_11">
+                              <Sequence DisplayName="Check each P&amp;ID in the submittal" sap:VirtualizedContainerService.HintSize="814,4442" sap2010:WorkflowViewState.IdRef="Sequence_11">
                                 <Sequence.Variables>
-                                  <Variable x:TypeArguments="x:Int32" Default="0" Name="curr_PnIDcount" />
+                                  <Variable x:TypeArguments="x:Int32" Name="curr_PnIDcount">
+                                    <Variable.Default>
+                                      <Literal x:TypeArguments="x:Int32" />
+                                    </Variable.Default>
+                                  </Variable>
                                 </Sequence.Variables>
                                 <sap:WorkflowViewStateService.ViewState>
                                   <scg:Dictionary x:TypeArguments="x:String, x:Object">
@@ -332,7 +349,7 @@
                                     <x:Boolean x:Key="IsPinned">False</x:Boolean>
                                   </scg:Dictionary>
                                 </sap:WorkflowViewStateService.ViewState>
-                                <uix:NClick ActivateBefore="True" ClickType="Single" DelayAfter="0" DelayBefore="0" DisplayName="Click 'Files (23)'" HealingAgentBehavior="SameAsCard" sap:VirtualizedContainerService.HintSize="540,229.33333333333334" sap2010:WorkflowViewState.IdRef="NClick_3" KeyModifiers="None" MouseButton="Left" ScopeIdentifier="329f03eb-fe68-46b2-b90a-97de11c5861f" Version="V4">
+                                <uix:NClick ActivateBefore="True" ClickType="Single" DelayAfter="0" DelayBefore="0" DisplayName="Click 'Files (23)'" HealingAgentBehavior="SameAsCard" sap:VirtualizedContainerService.HintSize="780,229.33333333333334" sap2010:WorkflowViewState.IdRef="NClick_3" KeyModifiers="None" MouseButton="Left" ScopeIdentifier="329f03eb-fe68-46b2-b90a-97de11c5861f" Version="V4">
                                   <uix:NClick.Target>
                                     <uix:TargetAnchorable BrowserURL="convergeaus.jacobs.com/PrologConverge/WebClient/SubmittalPackage.aspx" CVScreenId="1868e27c-1d64-47ac-a70c-347f2f266c94" ContentHash="pKbz6fbFiEaC8dm-n2dRpQ" CvTextArea="394, 390, 78, 21" CvTextArgument="Files" CvType="Text" DesignTimeRectangle="396, 387, 76, 33" ElementType="Text" FullSelectorArgument="&lt;webctrl aaname='Files*' parentid='mainTabControl' tag='SPAN' /&gt;" Guid="8eb8b69d-b22d-423a-acc8-ad14eb3de7b9" InformativeScreenshot="07be8d71c2d1cc523b664aea283438ad.png" Reference="SRHzbWhimEWn6FoI8hcZfg/IpWTEMeim0KmG1qrFgLYyQ" ScopeSelectorArgument="&lt;html app='msedge.exe' title='Reading Submittals' /&gt;" SearchSteps="Selector, CV" Version="V6" Visibility="Interactive" WaitForReadyArgument="None" />
                                   </uix:NClick.Target>
@@ -353,7 +370,7 @@
                                     </scg:Dictionary>
                                   </sap:WorkflowViewStateService.ViewState>
                                 </uix:NClick>
-                                <uix:NExtractData AppendResults="False" ContinueOnError="True" DataTable="[Submittal_Files]" DelayAfter="0" DisplayName="Extract Table Data 'Extract Table Data'" ExtractDataSettings="&lt;Table xmlns:xsi='http://www.w3.org/2001/XMLSchema-instance' xmlns:xsd='http://www.w3.org/2001/XMLSchema' Type='Table' AddCvHeader='true' IsScrollEnabled='false'&gt;&#xA;&#x9;&lt;Column xsi:type='DataColumn' ReferenceName='Column-0' ReferenceIdx='0' Name='Column-0' IsDeleted='true'&gt;&#xA;&#x9;&#x9;&lt;IsValidName&gt;true&lt;/IsValidName&gt;&#xA;&#x9;&#x9;&lt;ValidationErrorMessage /&gt;&#xA;&#x9;&#x9;&lt;IsExtra&gt;false&lt;/IsExtra&gt;&#xA;&#x9;&#x9;&lt;CanExtractSimilar&gt;false&lt;/CanExtractSimilar&gt;&#xA;&#x9;&#x9;&lt;Format xsi:type='TextColumnFormat' /&gt;&#xA;&#x9;&lt;/Column&gt;&#xA;&#x9;&lt;Column xsi:type='DataColumn' ReferenceName='Column-1' ReferenceIdx='1' Name='Column-1' IsDeleted='true'&gt;&#xA;&#x9;&#x9;&lt;IsValidName&gt;true&lt;/IsValidName&gt;&#xA;&#x9;&#x9;&lt;ValidationErrorMessage /&gt;&#xA;&#x9;&#x9;&lt;IsExtra&gt;false&lt;/IsExtra&gt;&#xA;&#x9;&#x9;&lt;CanExtractSimilar&gt;false&lt;/CanExtractSimilar&gt;&#xA;&#x9;&#x9;&lt;Format xsi:type='TextColumnFormat' /&gt;&#xA;&#x9;&lt;/Column&gt;&#xA;&#x9;&lt;Column xsi:type='DataColumn' ReferenceName='Column-2' ReferenceIdx='2' Name='Column-2'&gt;&#xA;&#x9;&#x9;&lt;IsValidName&gt;true&lt;/IsValidName&gt;&#xA;&#x9;&#x9;&lt;ValidationErrorMessage /&gt;&#xA;&#x9;&#x9;&lt;IsExtra&gt;false&lt;/IsExtra&gt;&#xA;&#x9;&#x9;&lt;CanExtractSimilar&gt;false&lt;/CanExtractSimilar&gt;&#xA;&#x9;&#x9;&lt;Format xsi:type='TextColumnFormat' /&gt;&#xA;&#x9;&lt;/Column&gt;&#xA;&#x9;&lt;Column xsi:type='DataColumn' ReferenceName='Column-3' ReferenceIdx='3' Name='Column-3'&gt;&#xA;&#x9;&#x9;&lt;IsValidName&gt;true&lt;/IsValidName&gt;&#xA;&#x9;&#x9;&lt;ValidationErrorMessage /&gt;&#xA;&#x9;&#x9;&lt;IsExtra&gt;false&lt;/IsExtra&gt;&#xA;&#x9;&#x9;&lt;CanExtractSimilar&gt;false&lt;/CanExtractSimilar&gt;&#xA;&#x9;&#x9;&lt;Format xsi:type='TextColumnFormat' /&gt;&#xA;&#x9;&lt;/Column&gt;&#xA;&#x9;&lt;Column xsi:type='DataColumn' ReferenceName='Column-4' ReferenceIdx='4' Name='Column-4' IsDeleted='true'&gt;&#xA;&#x9;&#x9;&lt;IsValidName&gt;true&lt;/IsValidName&gt;&#xA;&#x9;&#x9;&lt;ValidationErrorMessage /&gt;&#xA;&#x9;&#x9;&lt;IsExtra&gt;false&lt;/IsExtra&gt;&#xA;&#x9;&#x9;&lt;CanExtractSimilar&gt;false&lt;/CanExtractSimilar&gt;&#xA;&#x9;&#x9;&lt;Format xsi:type='TextColumnFormat' /&gt;&#xA;&#x9;&lt;/Column&gt;&#xA;&#x9;&lt;Column xsi:type='DataColumn' ReferenceName='Column-4 Url' ReferenceIdx='5' Name='Column-4 Url' IsDeleted='true'&gt;&#xA;&#x9;&#x9;&lt;IsValidName&gt;true&lt;/IsValidName&gt;&#xA;&#x9;&#x9;&lt;ValidationErrorMessage /&gt;&#xA;&#x9;&#x9;&lt;IsExtra&gt;false&lt;/IsExtra&gt;&#xA;&#x9;&#x9;&lt;CanExtractSimilar&gt;false&lt;/CanExtractSimilar&gt;&#xA;&#x9;&#x9;&lt;Format xsi:type='TextColumnFormat' /&gt;&#xA;&#x9;&lt;/Column&gt;&#xA;&#x9;&lt;Column xsi:type='DataColumn' ReferenceName='Column-5' ReferenceIdx='6' Name='Column-5' IsDeleted='true'&gt;&#xA;&#x9;&#x9;&lt;IsValidName&gt;true&lt;/IsValidName&gt;&#xA;&#x9;&#x9;&lt;ValidationErrorMessage /&gt;&#xA;&#x9;&#x9;&lt;IsExtra&gt;false&lt;/IsExtra&gt;&#xA;&#x9;&#x9;&lt;CanExtractSimilar&gt;false&lt;/CanExtractSimilar&gt;&#xA;&#x9;&#x9;&lt;Format xsi:type='TextColumnFormat' /&gt;&#xA;&#x9;&lt;/Column&gt;&#xA;&#x9;&lt;Column xsi:type='DataColumn' ReferenceName='Column-5 Url' ReferenceIdx='7' Name='Column-5 Url' IsDeleted='true'&gt;&#xA;&#x9;&#x9;&lt;IsValidName&gt;true&lt;/IsValidName&gt;&#xA;&#x9;&#x9;&lt;ValidationErrorMessage /&gt;&#xA;&#x9;&#x9;&lt;IsExtra&gt;false&lt;/IsExtra&gt;&#xA;&#x9;&#x9;&lt;CanExtractSimilar&gt;false&lt;/CanExtractSimilar&gt;&#xA;&#x9;&#x9;&lt;Format xsi:type='TextColumnFormat' /&gt;&#xA;&#x9;&lt;/Column&gt;&#xA;&#x9;&lt;Column xsi:type='DataColumn' ReferenceName='Column-6' ReferenceIdx='8' Name='Column-6' IsDeleted='true'&gt;&#xA;&#x9;&#x9;&lt;IsValidName&gt;true&lt;/IsValidName&gt;&#xA;&#x9;&#x9;&lt;ValidationErrorMessage /&gt;&#xA;&#x9;&#x9;&lt;IsExtra&gt;false&lt;/IsExtra&gt;&#xA;&#x9;&#x9;&lt;CanExtractSimilar&gt;false&lt;/CanExtractSimilar&gt;&#xA;&#x9;&#x9;&lt;Format xsi:type='TextColumnFormat' /&gt;&#xA;&#x9;&lt;/Column&gt;&#xA;&#x9;&lt;Column xsi:type='DataColumn' ReferenceName='Column-7' ReferenceIdx='9' Name='Column-7' IsDeleted='true'&gt;&#xA;&#x9;&#x9;&lt;IsValidName&gt;true&lt;/IsValidName&gt;&#xA;&#x9;&#x9;&lt;ValidationErrorMessage /&gt;&#xA;&#x9;&#x9;&lt;IsExtra&gt;false&lt;/IsExtra&gt;&#xA;&#x9;&#x9;&lt;CanExtractSimilar&gt;false&lt;/CanExtractSimilar&gt;&#xA;&#x9;&#x9;&lt;Format xsi:type='TextColumnFormat' /&gt;&#xA;&#x9;&lt;/Column&gt;&#xA;&#x9;&lt;Column xsi:type='DataColumn' ReferenceName='Column-8' ReferenceIdx='10' Name='Column-8' IsDeleted='true'&gt;&#xA;&#x9;&#x9;&lt;IsValidName&gt;true&lt;/IsValidName&gt;&#xA;&#x9;&#x9;&lt;ValidationErrorMessage /&gt;&#xA;&#x9;&#x9;&lt;IsExtra&gt;false&lt;/IsExtra&gt;&#xA;&#x9;&#x9;&lt;CanExtractSimilar&gt;false&lt;/CanExtractSimilar&gt;&#xA;&#x9;&#x9;&lt;Format xsi:type='TextColumnFormat' /&gt;&#xA;&#x9;&lt;/Column&gt;&#xA;&#x9;&lt;Column xsi:type='DataColumn' ReferenceName='Column-9' ReferenceIdx='11' Name='Column-9' IsDeleted='true'&gt;&#xA;&#x9;&#x9;&lt;IsValidName&gt;true&lt;/IsValidName&gt;&#xA;&#x9;&#x9;&lt;ValidationErrorMessage /&gt;&#xA;&#x9;&#x9;&lt;IsExtra&gt;false&lt;/IsExtra&gt;&#xA;&#x9;&#x9;&lt;CanExtractSimilar&gt;false&lt;/CanExtractSimilar&gt;&#xA;&#x9;&#x9;&lt;Format xsi:type='TextColumnFormat' /&gt;&#xA;&#x9;&lt;/Column&gt;&#xA;&#x9;&lt;Column xsi:type='DataColumn' ReferenceName='Column-10' ReferenceIdx='12' Name='Column-10' IsDeleted='true'&gt;&#xA;&#x9;&#x9;&lt;IsValidName&gt;true&lt;/IsValidName&gt;&#xA;&#x9;&#x9;&lt;ValidationErrorMessage /&gt;&#xA;&#x9;&#x9;&lt;IsExtra&gt;false&lt;/IsExtra&gt;&#xA;&#x9;&#x9;&lt;CanExtractSimilar&gt;false&lt;/CanExtractSimilar&gt;&#xA;&#x9;&#x9;&lt;Format xsi:type='TextColumnFormat' /&gt;&#xA;&#x9;&lt;/Column&gt;&#xA;&lt;/Table&gt;" ExtractMetadata="&lt;extract-table get_columns_name='1' get_empty_columns='1' columns_name_source='Longest'&gt;&lt;column name='Column-0' attr='fulltext' /&gt;&lt;column name='Column-1' attr='fulltext' /&gt;&lt;column name='Column-2' attr='fulltext' /&gt;&lt;column name='Column-3' attr='fulltext' /&gt;&lt;column name='Column-4' attr='fulltext' name2='Column-4 Url' attr2='href' /&gt;&lt;column name='Column-5' attr='fulltext' name2='Column-5 Url' attr2='href' /&gt;&lt;column name='Column-6' attr='fulltext' /&gt;&lt;column name='Column-7' attr='fulltext' /&gt;&lt;column name='Column-8' attr='fulltext' /&gt;&lt;column name='Column-9' attr='fulltext' /&gt;&lt;column name='Column-10' attr='fulltext' /&gt;&lt;/extract-table&gt;" HealingAgentBehavior="SameAsCard" sap:VirtualizedContainerService.HintSize="540,192" sap2010:WorkflowViewState.IdRef="NExtractData_2" LimitExtractionTo="None" MaximumResults="0" ScopeIdentifier="329f03eb-fe68-46b2-b90a-97de11c5861f" Version="V4">
+                                <uix:NExtractData AppendResults="False" ContinueOnError="True" DataTable="[Submittal_Files]" DelayAfter="0" DisplayName="Extract Table Data 'Extract Table Data'" ExtractDataSettings="&lt;Table xmlns:xsi='http://www.w3.org/2001/XMLSchema-instance' xmlns:xsd='http://www.w3.org/2001/XMLSchema' Type='Table' AddCvHeader='true' IsScrollEnabled='false'&gt;&#xA;&#x9;&lt;Column xsi:type='DataColumn' ReferenceName='Column-0' ReferenceIdx='0' Name='Column-0' IsDeleted='true'&gt;&#xA;&#x9;&#x9;&lt;IsValidName&gt;true&lt;/IsValidName&gt;&#xA;&#x9;&#x9;&lt;ValidationErrorMessage /&gt;&#xA;&#x9;&#x9;&lt;IsExtra&gt;false&lt;/IsExtra&gt;&#xA;&#x9;&#x9;&lt;CanExtractSimilar&gt;false&lt;/CanExtractSimilar&gt;&#xA;&#x9;&#x9;&lt;Format xsi:type='TextColumnFormat' /&gt;&#xA;&#x9;&lt;/Column&gt;&#xA;&#x9;&lt;Column xsi:type='DataColumn' ReferenceName='Column-1' ReferenceIdx='1' Name='Column-1' IsDeleted='true'&gt;&#xA;&#x9;&#x9;&lt;IsValidName&gt;true&lt;/IsValidName&gt;&#xA;&#x9;&#x9;&lt;ValidationErrorMessage /&gt;&#xA;&#x9;&#x9;&lt;IsExtra&gt;false&lt;/IsExtra&gt;&#xA;&#x9;&#x9;&lt;CanExtractSimilar&gt;false&lt;/CanExtractSimilar&gt;&#xA;&#x9;&#x9;&lt;Format xsi:type='TextColumnFormat' /&gt;&#xA;&#x9;&lt;/Column&gt;&#xA;&#x9;&lt;Column xsi:type='DataColumn' ReferenceName='Column-2' ReferenceIdx='2' Name='Column-2'&gt;&#xA;&#x9;&#x9;&lt;IsValidName&gt;true&lt;/IsValidName&gt;&#xA;&#x9;&#x9;&lt;ValidationErrorMessage /&gt;&#xA;&#x9;&#x9;&lt;IsExtra&gt;false&lt;/IsExtra&gt;&#xA;&#x9;&#x9;&lt;CanExtractSimilar&gt;false&lt;/CanExtractSimilar&gt;&#xA;&#x9;&#x9;&lt;Format xsi:type='TextColumnFormat' /&gt;&#xA;&#x9;&lt;/Column&gt;&#xA;&#x9;&lt;Column xsi:type='DataColumn' ReferenceName='Column-3' ReferenceIdx='3' Name='Column-3'&gt;&#xA;&#x9;&#x9;&lt;IsValidName&gt;true&lt;/IsValidName&gt;&#xA;&#x9;&#x9;&lt;ValidationErrorMessage /&gt;&#xA;&#x9;&#x9;&lt;IsExtra&gt;false&lt;/IsExtra&gt;&#xA;&#x9;&#x9;&lt;CanExtractSimilar&gt;false&lt;/CanExtractSimilar&gt;&#xA;&#x9;&#x9;&lt;Format xsi:type='TextColumnFormat' /&gt;&#xA;&#x9;&lt;/Column&gt;&#xA;&#x9;&lt;Column xsi:type='DataColumn' ReferenceName='Column-4' ReferenceIdx='4' Name='Column-4' IsDeleted='true'&gt;&#xA;&#x9;&#x9;&lt;IsValidName&gt;true&lt;/IsValidName&gt;&#xA;&#x9;&#x9;&lt;ValidationErrorMessage /&gt;&#xA;&#x9;&#x9;&lt;IsExtra&gt;false&lt;/IsExtra&gt;&#xA;&#x9;&#x9;&lt;CanExtractSimilar&gt;false&lt;/CanExtractSimilar&gt;&#xA;&#x9;&#x9;&lt;Format xsi:type='TextColumnFormat' /&gt;&#xA;&#x9;&lt;/Column&gt;&#xA;&#x9;&lt;Column xsi:type='DataColumn' ReferenceName='Column-4 Url' ReferenceIdx='5' Name='Column-4 Url' IsDeleted='true'&gt;&#xA;&#x9;&#x9;&lt;IsValidName&gt;true&lt;/IsValidName&gt;&#xA;&#x9;&#x9;&lt;ValidationErrorMessage /&gt;&#xA;&#x9;&#x9;&lt;IsExtra&gt;false&lt;/IsExtra&gt;&#xA;&#x9;&#x9;&lt;CanExtractSimilar&gt;false&lt;/CanExtractSimilar&gt;&#xA;&#x9;&#x9;&lt;Format xsi:type='TextColumnFormat' /&gt;&#xA;&#x9;&lt;/Column&gt;&#xA;&#x9;&lt;Column xsi:type='DataColumn' ReferenceName='Column-5' ReferenceIdx='6' Name='Column-5' IsDeleted='true'&gt;&#xA;&#x9;&#x9;&lt;IsValidName&gt;true&lt;/IsValidName&gt;&#xA;&#x9;&#x9;&lt;ValidationErrorMessage /&gt;&#xA;&#x9;&#x9;&lt;IsExtra&gt;false&lt;/IsExtra&gt;&#xA;&#x9;&#x9;&lt;CanExtractSimilar&gt;false&lt;/CanExtractSimilar&gt;&#xA;&#x9;&#x9;&lt;Format xsi:type='TextColumnFormat' /&gt;&#xA;&#x9;&lt;/Column&gt;&#xA;&#x9;&lt;Column xsi:type='DataColumn' ReferenceName='Column-5 Url' ReferenceIdx='7' Name='Column-5 Url' IsDeleted='true'&gt;&#xA;&#x9;&#x9;&lt;IsValidName&gt;true&lt;/IsValidName&gt;&#xA;&#x9;&#x9;&lt;ValidationErrorMessage /&gt;&#xA;&#x9;&#x9;&lt;IsExtra&gt;false&lt;/IsExtra&gt;&#xA;&#x9;&#x9;&lt;CanExtractSimilar&gt;false&lt;/CanExtractSimilar&gt;&#xA;&#x9;&#x9;&lt;Format xsi:type='TextColumnFormat' /&gt;&#xA;&#x9;&lt;/Column&gt;&#xA;&#x9;&lt;Column xsi:type='DataColumn' ReferenceName='Column-6' ReferenceIdx='8' Name='Column-6' IsDeleted='true'&gt;&#xA;&#x9;&#x9;&lt;IsValidName&gt;true&lt;/IsValidName&gt;&#xA;&#x9;&#x9;&lt;ValidationErrorMessage /&gt;&#xA;&#x9;&#x9;&lt;IsExtra&gt;false&lt;/IsExtra&gt;&#xA;&#x9;&#x9;&lt;CanExtractSimilar&gt;false&lt;/CanExtractSimilar&gt;&#xA;&#x9;&#x9;&lt;Format xsi:type='TextColumnFormat' /&gt;&#xA;&#x9;&lt;/Column&gt;&#xA;&#x9;&lt;Column xsi:type='DataColumn' ReferenceName='Column-7' ReferenceIdx='9' Name='Column-7' IsDeleted='true'&gt;&#xA;&#x9;&#x9;&lt;IsValidName&gt;true&lt;/IsValidName&gt;&#xA;&#x9;&#x9;&lt;ValidationErrorMessage /&gt;&#xA;&#x9;&#x9;&lt;IsExtra&gt;false&lt;/IsExtra&gt;&#xA;&#x9;&#x9;&lt;CanExtractSimilar&gt;false&lt;/CanExtractSimilar&gt;&#xA;&#x9;&#x9;&lt;Format xsi:type='TextColumnFormat' /&gt;&#xA;&#x9;&lt;/Column&gt;&#xA;&#x9;&lt;Column xsi:type='DataColumn' ReferenceName='Column-8' ReferenceIdx='10' Name='Column-8' IsDeleted='true'&gt;&#xA;&#x9;&#x9;&lt;IsValidName&gt;true&lt;/IsValidName&gt;&#xA;&#x9;&#x9;&lt;ValidationErrorMessage /&gt;&#xA;&#x9;&#x9;&lt;IsExtra&gt;false&lt;/IsExtra&gt;&#xA;&#x9;&#x9;&lt;CanExtractSimilar&gt;false&lt;/CanExtractSimilar&gt;&#xA;&#x9;&#x9;&lt;Format xsi:type='TextColumnFormat' /&gt;&#xA;&#x9;&lt;/Column&gt;&#xA;&#x9;&lt;Column xsi:type='DataColumn' ReferenceName='Column-9' ReferenceIdx='11' Name='Column-9' IsDeleted='true'&gt;&#xA;&#x9;&#x9;&lt;IsValidName&gt;true&lt;/IsValidName&gt;&#xA;&#x9;&#x9;&lt;ValidationErrorMessage /&gt;&#xA;&#x9;&#x9;&lt;IsExtra&gt;false&lt;/IsExtra&gt;&#xA;&#x9;&#x9;&lt;CanExtractSimilar&gt;false&lt;/CanExtractSimilar&gt;&#xA;&#x9;&#x9;&lt;Format xsi:type='TextColumnFormat' /&gt;&#xA;&#x9;&lt;/Column&gt;&#xA;&#x9;&lt;Column xsi:type='DataColumn' ReferenceName='Column-10' ReferenceIdx='12' Name='Column-10' IsDeleted='true'&gt;&#xA;&#x9;&#x9;&lt;IsValidName&gt;true&lt;/IsValidName&gt;&#xA;&#x9;&#x9;&lt;ValidationErrorMessage /&gt;&#xA;&#x9;&#x9;&lt;IsExtra&gt;false&lt;/IsExtra&gt;&#xA;&#x9;&#x9;&lt;CanExtractSimilar&gt;false&lt;/CanExtractSimilar&gt;&#xA;&#x9;&#x9;&lt;Format xsi:type='TextColumnFormat' /&gt;&#xA;&#x9;&lt;/Column&gt;&#xA;&lt;/Table&gt;" ExtractMetadata="&lt;extract-table get_columns_name='1' get_empty_columns='1' columns_name_source='Longest'&gt;&lt;column name='Column-0' attr='fulltext' /&gt;&lt;column name='Column-1' attr='fulltext' /&gt;&lt;column name='Column-2' attr='fulltext' /&gt;&lt;column name='Column-3' attr='fulltext' /&gt;&lt;column name='Column-4' attr='fulltext' name2='Column-4 Url' attr2='href' /&gt;&lt;column name='Column-5' attr='fulltext' name2='Column-5 Url' attr2='href' /&gt;&lt;column name='Column-6' attr='fulltext' /&gt;&lt;column name='Column-7' attr='fulltext' /&gt;&lt;column name='Column-8' attr='fulltext' /&gt;&lt;column name='Column-9' attr='fulltext' /&gt;&lt;column name='Column-10' attr='fulltext' /&gt;&lt;/extract-table&gt;" HealingAgentBehavior="SameAsCard" sap:VirtualizedContainerService.HintSize="780,192" sap2010:WorkflowViewState.IdRef="NExtractData_2" LimitExtractionTo="None" MaximumResults="0" ScopeIdentifier="329f03eb-fe68-46b2-b90a-97de11c5861f" Version="V4">
                                   <uix:NExtractData.Target>
                                     <uix:TargetAnchorable BrowserURL="https://convergeaus.jacobs.com/PrologConverge/WebClient/SubmittalPackage.aspx?Action=Edit&amp;pep=55&amp;PKID=48788&amp;RI=0&amp;rtp=0&amp;PPID=1267" ContentHash="KJRq2Nc6KkasjnNjZ_e__w" DesignTimeRectangle="19, 518, 1815, 1587" DesignTimeScaleFactor="1.5" FullSelectorArgument="&lt;webctrl id='ugDocuments' tag='TABLE' /&gt;" Guid="5da58ce5-f054-4397-8e8c-7c4fe43d2237" InformativeScreenshot="e153f0fc4f3dfd2b80e020848c5a6738.png" Reference="SRHzbWhimEWn6FoI8hcZfg/QHV_bxfhRk2mkpDVWqxexA" ScopeSelectorArgument="&lt;html app='msedge.exe' title='Reading Submittals' /&gt;" SearchSteps="Selector" Version="V6" Visibility="Interactive" />
                                   </uix:NExtractData.Target>
@@ -364,8 +381,8 @@
                                     </scg:Dictionary>
                                   </sap:WorkflowViewStateService.ViewState>
                                 </uix:NExtractData>
-                                <ui:Comment sap:VirtualizedContainerService.HintSize="540,127.33333333333333" sap2010:WorkflowViewState.IdRef="Comment_3" Text="// Case 1: Contractor puts it in a zip file &#xA;// Case 2: Contractor puts it all individually in the document" />
-                                <Assign DisplayName="check if there are new pnids" sap:VirtualizedContainerService.HintSize="540,117.33333333333333" sap2010:WorkflowViewState.IdRef="Assign_7">
+                                <ui:Comment sap:VirtualizedContainerService.HintSize="780,127.33333333333333" sap2010:WorkflowViewState.IdRef="Comment_3" Text="// Case 1: Contractor puts it in a zip file &#xA;// Case 2: Contractor puts it all individually in the document" />
+                                <Assign DisplayName="check if there are new pnids" sap:VirtualizedContainerService.HintSize="780,117.33333333333333" sap2010:WorkflowViewState.IdRef="Assign_7">
                                   <Assign.To>
                                     <OutArgument x:TypeArguments="x:Int32">[curr_PnIDcount]</OutArgument>
                                   </Assign.To>
@@ -373,7 +390,7 @@
                                     <InArgument x:TypeArguments="x:Int32">[Submittal_Files.AsEnumerable().Count(Function(row) row.Field(Of String)(1).Contains("-DR-P-") AndAlso row.Field(Of String)(1).Contains(".pdf"))]</InArgument>
                                   </Assign.Value>
                                 </Assign>
-                                <ui:CommentOut DisplayName="Comment Out" sap:VirtualizedContainerService.HintSize="540,57.333333333333336" sap2010:WorkflowViewState.IdRef="CommentOut_1">
+                                <ui:CommentOut DisplayName="Comment Out" sap:VirtualizedContainerService.HintSize="780,57.333333333333336" sap2010:WorkflowViewState.IdRef="CommentOut_1">
                                   <ui:CommentOut.Body>
                                     <Sequence DisplayName="Ignored Activities" sap:VirtualizedContainerService.HintSize="449.6,168.8" sap2010:WorkflowViewState.IdRef="Sequence_19">
                                       <sap:WorkflowViewStateService.ViewState>
@@ -391,7 +408,7 @@
                                     </scg:Dictionary>
                                   </sap:WorkflowViewStateService.ViewState>
                                 </ui:CommentOut>
-                                <If Condition="[curr_PnIDcount = 0]" DisplayName="Find out method of P&amp;ID extraction" sap:VirtualizedContainerService.HintSize="540,1690.6666666666667" sap2010:WorkflowViewState.IdRef="If_3">
+                                <If Condition="[curr_PnIDcount = 0]" DisplayName="Find out method of P&amp;ID extraction" sap:VirtualizedContainerService.HintSize="780,3624" sap2010:WorkflowViewState.IdRef="If_3">
                                   <sap:WorkflowViewStateService.ViewState>
                                     <scg:Dictionary x:TypeArguments="x:String, x:Object">
                                       <x:Boolean x:Key="IsExpanded">True</x:Boolean>
@@ -399,7 +416,7 @@
                                     </scg:Dictionary>
                                   </sap:WorkflowViewStateService.ViewState>
                                   <If.Then>
-                                    <Sequence DisplayName="Then check if there is a zip folder" sap:VirtualizedContainerService.HintSize="538,25.333333333333332" sap2010:WorkflowViewState.IdRef="Sequence_12">
+                                    <Sequence DisplayName="Then check if there is a zip folder" sap:VirtualizedContainerService.HintSize="778,25.333333333333332" sap2010:WorkflowViewState.IdRef="Sequence_12">
                                       <Sequence.Variables>
                                         <Variable x:TypeArguments="x:Boolean" Name="contains_zip" />
                                       </Sequence.Variables>
@@ -526,14 +543,14 @@
                                     </Sequence>
                                   </If.Then>
                                   <If.Else>
-                                    <Sequence DisplayName="Else the P&amp;IDs are in prolog" sap:VirtualizedContainerService.HintSize="538,1649.3333333333333" sap2010:WorkflowViewState.IdRef="Sequence_32">
+                                    <Sequence DisplayName="Else the P&amp;IDs are in prolog" sap:VirtualizedContainerService.HintSize="778,3465.3333333333335" sap2010:WorkflowViewState.IdRef="Sequence_32">
                                       <sap:WorkflowViewStateService.ViewState>
                                         <scg:Dictionary x:TypeArguments="x:String, x:Object">
                                           <x:Boolean x:Key="IsExpanded">True</x:Boolean>
                                           <x:Boolean x:Key="IsPinned">False</x:Boolean>
                                         </scg:Dictionary>
                                       </sap:WorkflowViewStateService.ViewState>
-                                      <Sequence sap2010:Annotation.AnnotationText="Updates submittals_hash, storing keys as the document code and value as the document name" DisplayName="Process Table for Submittal Files" sap:VirtualizedContainerService.HintSize="504,1589.3333333333333" sap2010:WorkflowViewState.IdRef="Sequence_16">
+                                      <Sequence sap2010:Annotation.AnnotationText="Updates submittals_hash, storing keys as the document code and value as the document name" DisplayName="Process Table for Submittal Files" sap:VirtualizedContainerService.HintSize="744,3405.3333333333335" sap2010:WorkflowViewState.IdRef="Sequence_16">
                                         <sap:WorkflowViewStateService.ViewState>
                                           <scg:Dictionary x:TypeArguments="x:String, x:Object">
                                             <x:Boolean x:Key="IsExpanded">True</x:Boolean>
@@ -541,15 +558,19 @@
                                             <x:Boolean x:Key="IsAnnotationDocked">True</x:Boolean>
                                           </scg:Dictionary>
                                         </sap:WorkflowViewStateService.ViewState>
-                                        <ui:ForEach x:TypeArguments="x:Int32" CurrentIndex="{x:Null}" DisplayName="For Each Current_Row_Idx" sap:VirtualizedContainerService.HintSize="470,1461.3333333333333" sap2010:WorkflowViewState.IdRef="ForEach`1_2" Values="[Enumerable.Range(0, Submittal_Files.Rows.Count).Select(Function(i) i)]">
+                                        <ui:ForEach x:TypeArguments="x:Int32" CurrentIndex="{x:Null}" DisplayName="For Each Current_Row_Idx" sap:VirtualizedContainerService.HintSize="710,3292" sap2010:WorkflowViewState.IdRef="ForEach`1_2" Values="[Enumerable.Range(0, Submittal_Files.Rows.Count).Select(Function(i) i)]">
                                           <ui:ForEach.Body>
                                             <ActivityAction x:TypeArguments="x:Int32">
                                               <ActivityAction.Argument>
                                                 <DelegateInArgument x:TypeArguments="x:Int32" Name="Current_Row_Idx" />
                                               </ActivityAction.Argument>
-                                              <Sequence DisplayName="Updating row info from the files section" sap:VirtualizedContainerService.HintSize="468,1338.6666666666667" sap2010:WorkflowViewState.IdRef="Sequence_14">
+                                              <Sequence DisplayName="Updating row info from the files section" sap:VirtualizedContainerService.HintSize="708,3169.3333333333335" sap2010:WorkflowViewState.IdRef="Sequence_14">
                                                 <Sequence.Variables>
-                                                  <Variable x:TypeArguments="x:String" Default="131241-WSB01-DR-P-6020.pdf" Name="PID_filename" />
+                                                  <Variable x:TypeArguments="x:String" Name="PID_filename">
+                                                    <Variable.Default>
+                                                      <Literal x:TypeArguments="x:String">131241-WSB01-DR-P-6065.pdf</Literal>
+                                                    </Variable.Default>
+                                                  </Variable>
                                                   <Variable x:TypeArguments="x:Boolean" Name="is_PID" />
                                                   <Variable x:TypeArguments="x:String" Name="PID_actualName" />
                                                   <Variable x:TypeArguments="x:Boolean" Name="is_pdf" />
@@ -559,7 +580,7 @@
                                                     <x:Boolean x:Key="IsExpanded">True</x:Boolean>
                                                   </scg:Dictionary>
                                                 </sap:WorkflowViewStateService.ViewState>
-                                                <Assign sap:VirtualizedContainerService.HintSize="434,117.33333333333333" sap2010:WorkflowViewState.IdRef="Assign_10">
+                                                <Assign sap:VirtualizedContainerService.HintSize="674,117.33333333333333" sap2010:WorkflowViewState.IdRef="Assign_10">
                                                   <Assign.To>
                                                     <OutArgument x:TypeArguments="x:String">[PID_filename]</OutArgument>
                                                   </Assign.To>
@@ -567,7 +588,7 @@
                                                     <InArgument x:TypeArguments="x:String">[Submittal_Files.Rows(Current_Row_Idx)(1).ToString()]</InArgument>
                                                   </Assign.Value>
                                                 </Assign>
-                                                <Assign sap:VirtualizedContainerService.HintSize="434,117.33333333333333" sap2010:WorkflowViewState.IdRef="Assign_15">
+                                                <Assign sap:VirtualizedContainerService.HintSize="674,117.33333333333333" sap2010:WorkflowViewState.IdRef="Assign_15">
                                                   <Assign.To>
                                                     <OutArgument x:TypeArguments="x:Boolean">[is_PID]</OutArgument>
                                                   </Assign.To>
@@ -575,7 +596,7 @@
                                                     <InArgument x:TypeArguments="x:Boolean">[PID_filename.Trim().contains("-DR-P-")]</InArgument>
                                                   </Assign.Value>
                                                 </Assign>
-                                                <Assign sap:VirtualizedContainerService.HintSize="434,117.33333333333333" sap2010:WorkflowViewState.IdRef="Assign_17">
+                                                <Assign sap:VirtualizedContainerService.HintSize="674,117.33333333333333" sap2010:WorkflowViewState.IdRef="Assign_17">
                                                   <Assign.To>
                                                     <OutArgument x:TypeArguments="x:Boolean">[is_pdf]</OutArgument>
                                                   </Assign.To>
@@ -583,7 +604,7 @@
                                                     <InArgument x:TypeArguments="x:Boolean">[PID_filename.Trim().contains(".pdf")]</InArgument>
                                                   </Assign.Value>
                                                 </Assign>
-                                                <Assign sap:VirtualizedContainerService.HintSize="434,117.33333333333333" sap2010:WorkflowViewState.IdRef="Assign_16">
+                                                <Assign sap:VirtualizedContainerService.HintSize="674,117.33333333333333" sap2010:WorkflowViewState.IdRef="Assign_16">
                                                   <Assign.To>
                                                     <OutArgument x:TypeArguments="x:String">[PID_actualName]</OutArgument>
                                                   </Assign.To>
@@ -591,8 +612,8 @@
                                                     <InArgument x:TypeArguments="x:String" xml:space="preserve">[System.Text.RegularExpressions.Regex.Match(PID_fileName,  "\b\d{6}-[A-Z]{3}\d{2}-DR-P-\d{4}\b").Value]</InArgument>
                                                   </Assign.Value>
                                                 </Assign>
-                                                <ui:FileExistsX DisplayName="File Exists" Exists="[PIDexists]" sap:VirtualizedContainerService.HintSize="434,168.66666666666666" sap2010:WorkflowViewState.IdRef="FileExistsX_3" Path="[Path.Combine(CollatedFolder.FullName, currentTP, PID_fileName.Trim())]" />
-                                                <If Condition="[is_pdf AndAlso is_PID andAlso not PIDexists andAlso PID_tags_status.ContainsKey(PID_actualName) andAlso Not PID_filename.Contains(&quot;markup&quot;)]" DisplayName="Loop through the pdf version of the P&amp;IDs" sap:VirtualizedContainerService.HintSize="434,640.6666666666666" sap2010:WorkflowViewState.IdRef="If_8">
+                                                <ui:FileExistsX DisplayName="File Exists" Exists="[PIDexists]" sap:VirtualizedContainerService.HintSize="674,168.66666666666666" sap2010:WorkflowViewState.IdRef="FileExistsX_3" Path="[Path.Combine(CollatedFolder.FullName, CurrentSP, PID_fileName.Trim())]" />
+                                                <If Condition="[is_pdf AndAlso is_PID andAlso not PIDexists andAlso PID_tags_status.ContainsKey(PID_actualName) andAlso Not PID_filename.Contains(&quot;markup&quot;)]" DisplayName="Loop through the pdf version of the P&amp;IDs" sap:VirtualizedContainerService.HintSize="674,2471.3333333333335" sap2010:WorkflowViewState.IdRef="If_8">
                                                   <sap:WorkflowViewStateService.ViewState>
                                                     <scg:Dictionary x:TypeArguments="x:String, x:Object">
                                                       <x:Boolean x:Key="IsExpanded">True</x:Boolean>
@@ -600,7 +621,7 @@
                                                     </scg:Dictionary>
                                                   </sap:WorkflowViewStateService.ViewState>
                                                   <If.Then>
-                                                    <Sequence DisplayName="is a P&amp;ID" sap:VirtualizedContainerService.HintSize="416,484.6666666666667" sap2010:WorkflowViewState.IdRef="Sequence_15">
+                                                    <Sequence DisplayName="is a P&amp;ID" sap:VirtualizedContainerService.HintSize="672,2315.3333333333335" sap2010:WorkflowViewState.IdRef="Sequence_15">
                                                       <Sequence.Variables>
                                                         <Variable x:TypeArguments="si:FileInfo" Name="downloadedFile" />
                                                       </Sequence.Variables>
@@ -610,98 +631,213 @@
                                                           <x:Boolean x:Key="IsPinned">False</x:Boolean>
                                                         </scg:Dictionary>
                                                       </sap:WorkflowViewStateService.ViewState>
-                                                      <ui:RetryScope DisplayName="Retry Scope" sap:VirtualizedContainerService.HintSize="382,57.333333333333336" sap2010:WorkflowViewState.IdRef="RetryScope_1">
+                                                      <ui:RetryScope DisplayName="Retry Scope" sap:VirtualizedContainerService.HintSize="638,2255.3333333333335" sap2010:WorkflowViewState.IdRef="RetryScope_2" RetryInterval="00:00:00">
                                                         <ui:RetryScope.ActivityBody>
                                                           <ActivityAction>
-                                                            <Sequence DisplayName="Action" sap:VirtualizedContainerService.HintSize="596,1058" sap2010:WorkflowViewState.IdRef="Sequence_36">
+                                                            <Sequence DisplayName="Action" sap:VirtualizedContainerService.HintSize="596,2054" sap2010:WorkflowViewState.IdRef="Sequence_45">
                                                               <sap:WorkflowViewStateService.ViewState>
                                                                 <scg:Dictionary x:TypeArguments="x:String, x:Object">
                                                                   <x:Boolean x:Key="IsExpanded">True</x:Boolean>
                                                                 </scg:Dictionary>
                                                               </sap:WorkflowViewStateService.ViewState>
-                                                              <ui:GetLastDownloadedFile FileResource="{x:Null}" IgnoreFiles="{x:Null}" DisplayName="Wait for Download" DownloadFolder="[System.IO.Path.Combine(Environment.GetFolderPath(Environment.SpecialFolder.UserProfile), &quot;Downloads&quot;)]" File="[downloadedFile]" sap:VirtualizedContainerService.HintSize="562,998" sap2010:WorkflowViewState.IdRef="GetLastDownloadedFile_2" Timeout="30">
-                                                                <ui:GetLastDownloadedFile.Body>
+                                                              <ui:RetryScope DisplayName="Retry Scope" sap:VirtualizedContainerService.HintSize="562,1502.6666666666667" sap2010:WorkflowViewState.IdRef="RetryScope_1" RetryInterval="00:00:00">
+                                                                <ui:RetryScope.ActivityBody>
                                                                   <ActivityAction>
-                                                                    <Sequence DisplayName="Do" sap:VirtualizedContainerService.HintSize="528,713.3333333333334" sap2010:WorkflowViewState.IdRef="Sequence_33">
+                                                                    <Sequence DisplayName="Action" sap:VirtualizedContainerService.HintSize="520,1212" sap2010:WorkflowViewState.IdRef="Sequence_36">
+                                                                      <Sequence.Variables>
+                                                                        <Variable x:TypeArguments="x:Int32" Name="waittime" />
+                                                                      </Sequence.Variables>
                                                                       <sap:WorkflowViewStateService.ViewState>
                                                                         <scg:Dictionary x:TypeArguments="x:String, x:Object">
                                                                           <x:Boolean x:Key="IsExpanded">True</x:Boolean>
                                                                         </scg:Dictionary>
                                                                       </sap:WorkflowViewStateService.ViewState>
-                                                                      <uix:NClick ActivateBefore="True" ClickType="Single" DisplayName="Click 'Download'" HealingAgentBehavior="SameAsCard" sap:VirtualizedContainerService.HintSize="494,229.33333333333334" sap2010:WorkflowViewState.IdRef="NClick_5" KeyModifiers="None" MouseButton="Left" ScopeIdentifier="329f03eb-fe68-46b2-b90a-97de11c5861f" Version="V4">
-                                                                        <uix:NClick.Target>
-                                                                          <uix:TargetAnchorable BrowserURL="convergeaus.jacobs.com/PrologConverge/WebClient/SubmittalPackage.aspx" CVScreenId="458e3642-b9ad-479e-a5b4-4c8850fb071e" ContentHash="j0btOVX_vUenmKU_Ahqh8w" CvTextArea="406, 371, 54, 12" CvTextArgument="Download" CvType="Text" DesignTimeRectangle="407, 585, 52, 16" ElementType="Text" FuzzySelectorArgument="&lt;webctrl id='ugDocuments' tag='TABLE' matching:id='fuzzy' fuzzylevel:id='0.0' /&gt;&lt;webctrl type='' tag='A' class='' aaname='Download' matching:class='fuzzy' fuzzylevel:class='0.0' matching:aaname='fuzzy' fuzzylevel:aaname='0.0' check:innerText='Download' /&gt;" Guid="4958ed7b-4edc-492e-a55d-2da1660a6a58" InformativeScreenshot="e6a76bf48db223aa20291d1af0f4906a.png" Reference="xGt2OSXt7UW47kSHt2k5yg/w9xyS4lkxkCxTXxqp9CtOg" ScopeSelectorArgument="&lt;html app='msedge.exe' title='Reading Submittals' /&gt;" SearchSteps="FuzzySelector, CV" Version="V6" Visibility="Interactive" WaitForReadyArgument="None">
-                                                                            <uix:TargetAnchorable.Anchors>
-                                                                              <scg:List x:TypeArguments="uix:ITarget" Capacity="1">
-                                                                                <uix:Target DesignTimeRectangle="263, 566, 130, 54" ElementType="Text" FuzzySelectorArgument="[string.Format(&quot;&lt;webctrl id='ugDocuments' tag='TABLE' matching:id='fuzzy' fuzzylevel:id='0.0' /&gt;&lt;webctrl class='TextDisabled' type='' aaname='131241-WSD02-DR-P-6000.dgn' tag='TD' matching:class='fuzzy' fuzzylevel:class='0.0' matching:aaname='fuzzy' fuzzylevel:aaname='0.0' check:innerText='{0}' /&gt;&quot;, PID_filename)]" Guid="38b70430-08b6-46a2-8a0c-7f162fcd800a" SearchSteps="FuzzySelector" />
-                                                                              </scg:List>
-                                                                            </uix:TargetAnchorable.Anchors>
-                                                                          </uix:TargetAnchorable>
-                                                                        </uix:NClick.Target>
-                                                                        <uix:NClick.VerifyOptions>
-                                                                          <uix:VerifyExecutionOptions DisplayName="{x:Null}" Mode="Appears">
-                                                                            <uix:VerifyExecutionOptions.Retry>
-                                                                              <InArgument x:TypeArguments="x:Boolean" />
-                                                                            </uix:VerifyExecutionOptions.Retry>
-                                                                            <uix:VerifyExecutionOptions.Timeout>
-                                                                              <InArgument x:TypeArguments="x:Double" />
-                                                                            </uix:VerifyExecutionOptions.Timeout>
-                                                                          </uix:VerifyExecutionOptions>
-                                                                        </uix:NClick.VerifyOptions>
-                                                                      </uix:NClick>
-                                                                      <uix:NCheckState DisplayName="Check App State 'Downloads, 100% complete'" EnableIfExists="False" HealingAgentBehavior="Disabled" sap:VirtualizedContainerService.HintSize="494,424" sap2010:WorkflowViewState.IdRef="NCheckState_2" ScopeIdentifier="329f03eb-fe68-46b2-b90a-97de11c5861f" Timeout="5" Version="V4">
-                                                                        <uix:NCheckState.IfExists>
-                                                                          <Sequence DisplayName="Target appears" sap:VirtualizedContainerService.HintSize="450,92.66666666666667" sap2010:WorkflowViewState.IdRef="Sequence_34">
-                                                                            <sap:WorkflowViewStateService.ViewState>
-                                                                              <scg:Dictionary x:TypeArguments="x:String, x:Object">
-                                                                                <x:Boolean x:Key="IsExpanded">True</x:Boolean>
-                                                                              </scg:Dictionary>
-                                                                            </sap:WorkflowViewStateService.ViewState>
-                                                                          </Sequence>
-                                                                        </uix:NCheckState.IfExists>
-                                                                        <uix:NCheckState.IfNotExists>
-                                                                          <Sequence DisplayName="Target does not appear" sap:VirtualizedContainerService.HintSize="450,180" sap2010:WorkflowViewState.IdRef="Sequence_35">
-                                                                            <sap:WorkflowViewStateService.ViewState>
-                                                                              <scg:Dictionary x:TypeArguments="x:String, x:Object">
-                                                                                <x:Boolean x:Key="IsExpanded">True</x:Boolean>
-                                                                              </scg:Dictionary>
-                                                                            </sap:WorkflowViewStateService.ViewState>
-                                                                            <Throw Exception="[New Exception(&quot;File failed to download&quot;)]" sap:VirtualizedContainerService.HintSize="416,117.33333333333333" sap2010:WorkflowViewState.IdRef="Throw_1" />
-                                                                          </Sequence>
-                                                                        </uix:NCheckState.IfNotExists>
-                                                                        <uix:NCheckState.Target>
-                                                                          <uix:TargetAnchorable ContentHash="-Ahm1cHZx0mdq_ETQmLmgg" DesignTimeRectangle="644, 5, 40, 23" ElementType="Button" FullSelectorArgument="&lt;ctrl name='Reading Submittals - Microsoft Edge' role='pane' /&gt;&lt;ctrl name='Downloads, completed' role='push button' /&gt;" FuzzySelectorArgument="&lt;ctrl name='Reading Submittals - Microsoft Edge' role='pane' matching:name='fuzzy' fuzzylevel:name='0.0' /&gt;&lt;ctrl name='Downloads, completed' role='push button' automationid='' matching:name='fuzzy' fuzzylevel:name='0.0' matching:automationid='fuzzy' fuzzylevel:automationid='0.0' check:text='Downloads, in progress' /&gt;" Guid="fc2c04bf-6a49-458a-bcd1-db114fe15a29" InformativeScreenshot="8f2efee66da4587fa7be475682a44e89.png" Reference="xGt2OSXt7UW47kSHt2k5yg/zii0j4IOLEOU4hk-1Wm4CQ" ScopeSelectorArgument="&lt;wnd app='msedge.exe' cls='Chrome_WidgetWin_1' title='Reading Submittals - Work - Microsoft​ Edge' /&gt;" SearchSteps="Selector, FuzzySelector" Version="V6" Visibility="Interactive" WaitForReadyArgument="None" />
-                                                                        </uix:NCheckState.Target>
-                                                                      </uix:NCheckState>
+                                                                      <ui:GetLastDownloadedFile FileResource="{x:Null}" IgnoreFiles="{x:Null}" DisplayName="Wait for Download" DownloadFolder="[System.IO.Path.Combine(Environment.GetFolderPath(Environment.SpecialFolder.UserProfile), &quot;Downloads&quot;)]" File="[downloadedFile]" sap:VirtualizedContainerService.HintSize="486,1152" sap2010:WorkflowViewState.IdRef="GetLastDownloadedFile_2" Timeout="5">
+                                                                        <ui:GetLastDownloadedFile.Body>
+                                                                          <ActivityAction>
+                                                                            <Sequence DisplayName="Do" sap:VirtualizedContainerService.HintSize="452,867.3333333333334" sap2010:WorkflowViewState.IdRef="Sequence_33">
+                                                                              <sap:WorkflowViewStateService.ViewState>
+                                                                                <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                                                                                  <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+                                                                                </scg:Dictionary>
+                                                                              </sap:WorkflowViewStateService.ViewState>
+                                                                              <TryCatch DisplayName="Try Catch" sap:VirtualizedContainerService.HintSize="418,759.3333333333334" sap2010:WorkflowViewState.IdRef="TryCatch_1">
+                                                                                <sap:WorkflowViewStateService.ViewState>
+                                                                                  <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                                                                                    <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+                                                                                    <x:Boolean x:Key="IsPinned">False</x:Boolean>
+                                                                                  </scg:Dictionary>
+                                                                                </sap:WorkflowViewStateService.ViewState>
+                                                                                <TryCatch.Try>
+                                                                                  <Sequence DisplayName="Try" sap:VirtualizedContainerService.HintSize="416,280" sap2010:WorkflowViewState.IdRef="Sequence_39">
+                                                                                    <sap:WorkflowViewStateService.ViewState>
+                                                                                      <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                                                                                        <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+                                                                                      </scg:Dictionary>
+                                                                                    </sap:WorkflowViewStateService.ViewState>
+                                                                                    <uix:NClick ActivateBefore="True" ClickType="Single" DisplayName="Click 'Download'" HealingAgentBehavior="SameAsCard" sap:VirtualizedContainerService.HintSize="382,220" sap2010:WorkflowViewState.IdRef="NClick_5" KeyModifiers="None" MouseButton="Left" ScopeIdentifier="329f03eb-fe68-46b2-b90a-97de11c5861f" Timeout="2" Version="V4">
+                                                                                      <uix:NClick.Target>
+                                                                                        <uix:TargetAnchorable BrowserURL="convergeaus.jacobs.com/PrologConverge/WebClient/SubmittalPackage.aspx" CVScreenId="458e3642-b9ad-479e-a5b4-4c8850fb071e" ContentHash="s4BSuB8xqkyoGDkAPxysKw" CvTextArea="406, 371, 54, 12" CvTextArgument="Download" CvType="Text" DesignTimeRectangle="407, 585, 52, 16" ElementType="Text" FuzzySelectorArgument="&lt;webctrl id='ugDocuments' tag='TABLE' matching:id='fuzzy' fuzzylevel:id='0.0' /&gt;&lt;webctrl type='' tag='A' class='' aaname='Download' matching:class='fuzzy' fuzzylevel:class='0.0' matching:aaname='fuzzy' fuzzylevel:aaname='0.0' check:innerText='Download' /&gt;" Guid="4958ed7b-4edc-492e-a55d-2da1660a6a58" InformativeScreenshot="12caf1d23928afa5f178f96622329f3d.png" Reference="xGt2OSXt7UW47kSHt2k5yg/w9xyS4lkxkCxTXxqp9CtOg" ScopeSelectorArgument="&lt;html app='msedge.exe' title='Reading Submittals' /&gt;" SearchSteps="FuzzySelector, CV" Version="V6" Visibility="Interactive" WaitForReadyArgument="None">
+                                                                                          <uix:TargetAnchorable.Anchors>
+                                                                                            <scg:List x:TypeArguments="uix:ITarget" Capacity="1">
+                                                                                              <uix:Target DesignTimeRectangle="263, 566, 130, 54" ElementType="Text" FuzzyAccuracy="0.52" FuzzySelectorArgument="[string.Format(&quot;&lt;webctrl id='ugDocuments' tag='TABLE' matching:id='fuzzy' fuzzylevel:id='0.0' /&gt;&lt;webctrl class='TextDisabled' type='' aaname='131241-WSD02-DR-P-6000.dgn' tag='TD' matching:class='fuzzy' fuzzylevel:class='0.0' matching:aaname='fuzzy' fuzzylevel:aaname='0.0' check:innerText='{0}' /&gt;&quot;, PID_filename)]" Guid="38b70430-08b6-46a2-8a0c-7f162fcd800a" ImageBase64="" SearchSteps="FuzzySelector" />
+                                                                                            </scg:List>
+                                                                                          </uix:TargetAnchorable.Anchors>
+                                                                                        </uix:TargetAnchorable>
+                                                                                      </uix:NClick.Target>
+                                                                                      <uix:NClick.VerifyOptions>
+                                                                                        <uix:VerifyExecutionOptions DisplayName="{x:Null}" Mode="Appears">
+                                                                                          <uix:VerifyExecutionOptions.Retry>
+                                                                                            <InArgument x:TypeArguments="x:Boolean" />
+                                                                                          </uix:VerifyExecutionOptions.Retry>
+                                                                                          <uix:VerifyExecutionOptions.Timeout>
+                                                                                            <InArgument x:TypeArguments="x:Double" />
+                                                                                          </uix:VerifyExecutionOptions.Timeout>
+                                                                                        </uix:VerifyExecutionOptions>
+                                                                                      </uix:NClick.VerifyOptions>
+                                                                                    </uix:NClick>
+                                                                                  </Sequence>
+                                                                                </TryCatch.Try>
+                                                                                <TryCatch.Catches>
+                                                                                  <Catch x:TypeArguments="s:Exception" sap2010:WorkflowViewState.IdRef="Catch`1_1">
+                                                                                    <ActivityAction x:TypeArguments="s:Exception">
+                                                                                      <ActivityAction.Argument>
+                                                                                        <DelegateInArgument x:TypeArguments="s:Exception" Name="exception" />
+                                                                                      </ActivityAction.Argument>
+                                                                                      <Sequence DisplayName="Body" sap:VirtualizedContainerService.HintSize="416,280" sap2010:WorkflowViewState.IdRef="Sequence_40">
+                                                                                        <sap:WorkflowViewStateService.ViewState>
+                                                                                          <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                                                                                            <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+                                                                                            <x:Boolean x:Key="IsPinned">False</x:Boolean>
+                                                                                          </scg:Dictionary>
+                                                                                        </sap:WorkflowViewStateService.ViewState>
+                                                                                        <uix:NClick ActivateBefore="True" ClickType="Single" DisplayName="Click 'Download'" HealingAgentBehavior="SameAsCard" sap:VirtualizedContainerService.HintSize="382,220" sap2010:WorkflowViewState.IdRef="NClick_8" KeyModifiers="None" MouseButton="Left" ScopeIdentifier="329f03eb-fe68-46b2-b90a-97de11c5861f" Timeout="2" Version="V4">
+                                                                                          <uix:NClick.Target>
+                                                                                            <uix:TargetAnchorable BrowserURL="convergeaus.jacobs.com/PrologConverge/WebClient/SubmittalPackage.aspx" CVScreenId="9c45e034-c645-4d5d-8df5-8f31335b012c" CvTextArea="406, 504, 54, 12" CvTextArgument="Download" CvType="Text" DesignTimeRectangle="407, 364, 52, 16" ElementType="Text" FuzzySelectorArgument="&lt;webctrl id='ugDocuments' tag='TABLE' matching:id='fuzzy' fuzzylevel:id='0.0' /&gt;&lt;webctrl type='' tag='A' class='' aaname='Download' matching:class='fuzzy' fuzzylevel:class='0.0' matching:aaname='fuzzy' fuzzylevel:aaname='0.0' check:innerText='Download' /&gt;" Guid="83f3f571-d0b0-4417-92ce-4e55228aa6f4" InformativeScreenshot="d90e2da124a0d0f06b592d40ce84cb8d.png" ScopeSelectorArgument="&lt;html app='msedge.exe' title='Reading Submittals' /&gt;" SearchSteps="FuzzySelector, CV" Version="V6" Visibility="Interactive" WaitForReadyArgument="None">
+                                                                                              <uix:TargetAnchorable.Anchors>
+                                                                                                <scg:List x:TypeArguments="uix:ITarget" Capacity="4">
+                                                                                                  <uix:Target DesignTimeRectangle="263, 345, 130, 54" ElementType="Text" FuzzySelectorArgument="[string.Format(&quot;&lt;webctrl id='ugDocuments' tag='TABLE' matching:id='fuzzy' fuzzylevel:id='0.0' /&gt;&lt;webctrl isleaf='1' type='' class='TextDisabled ui-iggrid-selectedcell ui-state-active' tag='TD' aaname='{0}' matching:isleaf='fuzzy' fuzzylevel:isleaf='0.0' matching:class='fuzzy' fuzzylevel:class='0.0' matching:aaname='fuzzy' fuzzylevel:aaname='0.0' check:innerText='{0}' /&gt;&quot;, PID_filename)]" Guid="a089dc84-1db1-4f77-b008-1d0e7196f4bd" SearchSteps="FuzzySelector" />
+                                                                                                </scg:List>
+                                                                                              </uix:TargetAnchorable.Anchors>
+                                                                                            </uix:TargetAnchorable>
+                                                                                          </uix:NClick.Target>
+                                                                                          <uix:NClick.VerifyOptions>
+                                                                                            <uix:VerifyExecutionOptions DisplayName="{x:Null}" Mode="Appears">
+                                                                                              <uix:VerifyExecutionOptions.Retry>
+                                                                                                <InArgument x:TypeArguments="x:Boolean" />
+                                                                                              </uix:VerifyExecutionOptions.Retry>
+                                                                                              <uix:VerifyExecutionOptions.Timeout>
+                                                                                                <InArgument x:TypeArguments="x:Double" />
+                                                                                              </uix:VerifyExecutionOptions.Timeout>
+                                                                                            </uix:VerifyExecutionOptions>
+                                                                                          </uix:NClick.VerifyOptions>
+                                                                                        </uix:NClick>
+                                                                                      </Sequence>
+                                                                                    </ActivityAction>
+                                                                                  </Catch>
+                                                                                </TryCatch.Catches>
+                                                                                <TryCatch.Finally>
+                                                                                  <Sequence DisplayName="Finally" sap:VirtualizedContainerService.HintSize="416,25.333333333333332" sap2010:WorkflowViewState.IdRef="Sequence_41">
+                                                                                    <sap:WorkflowViewStateService.ViewState>
+                                                                                      <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                                                                                        <x:Boolean x:Key="IsExpanded">False</x:Boolean>
+                                                                                        <x:Boolean x:Key="IsPinned">False</x:Boolean>
+                                                                                      </scg:Dictionary>
+                                                                                    </sap:WorkflowViewStateService.ViewState>
+                                                                                  </Sequence>
+                                                                                </TryCatch.Finally>
+                                                                              </TryCatch>
+                                                                              <ui:CommentOut DisplayName="Comment Out" sap:VirtualizedContainerService.HintSize="418,48" sap2010:WorkflowViewState.IdRef="CommentOut_6">
+                                                                                <ui:CommentOut.Body>
+                                                                                  <Sequence DisplayName="Ignored Activities" sap:VirtualizedContainerService.HintSize="450,108" sap2010:WorkflowViewState.IdRef="Sequence_38">
+                                                                                    <sap:WorkflowViewStateService.ViewState>
+                                                                                      <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                                                                                        <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+                                                                                      </scg:Dictionary>
+                                                                                    </sap:WorkflowViewStateService.ViewState>
+                                                                                    <uix:NCheckState DisplayName="Check App State 'Downloads, 100% complete'" EnableIfExists="False" HealingAgentBehavior="Disabled" sap:VirtualizedContainerService.HintSize="416,48" sap2010:WorkflowViewState.IdRef="NCheckState_2" ScopeIdentifier="329f03eb-fe68-46b2-b90a-97de11c5861f" Timeout="5" Version="V4">
+                                                                                      <uix:NCheckState.IfExists>
+                                                                                        <Sequence DisplayName="Target appears" sap:VirtualizedContainerService.HintSize="450,92.66666666666667" sap2010:WorkflowViewState.IdRef="Sequence_34">
+                                                                                          <sap:WorkflowViewStateService.ViewState>
+                                                                                            <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                                                                                              <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+                                                                                            </scg:Dictionary>
+                                                                                          </sap:WorkflowViewStateService.ViewState>
+                                                                                        </Sequence>
+                                                                                      </uix:NCheckState.IfExists>
+                                                                                      <uix:NCheckState.IfNotExists>
+                                                                                        <Sequence DisplayName="Target does not appear" sap:VirtualizedContainerService.HintSize="450,180" sap2010:WorkflowViewState.IdRef="Sequence_35">
+                                                                                          <sap:WorkflowViewStateService.ViewState>
+                                                                                            <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                                                                                              <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+                                                                                            </scg:Dictionary>
+                                                                                          </sap:WorkflowViewStateService.ViewState>
+                                                                                          <Throw Exception="[New Exception(&quot;File failed to download&quot;)]" sap:VirtualizedContainerService.HintSize="416,117.33333333333333" sap2010:WorkflowViewState.IdRef="Throw_1" />
+                                                                                        </Sequence>
+                                                                                      </uix:NCheckState.IfNotExists>
+                                                                                      <uix:NCheckState.Target>
+                                                                                        <uix:TargetAnchorable ContentHash="-Ahm1cHZx0mdq_ETQmLmgg" DesignTimeRectangle="644, 5, 40, 23" ElementType="Button" FullSelectorArgument="&lt;ctrl name='Reading Submittals - Microsoft Edge' role='pane' /&gt;&lt;ctrl name='Downloads, completed' role='push button' /&gt;" FuzzySelectorArgument="&lt;ctrl name='Reading Submittals - Microsoft Edge' role='pane' matching:name='fuzzy' fuzzylevel:name='0.0' /&gt;&lt;ctrl name='Downloads, completed' role='push button' automationid='' matching:name='fuzzy' fuzzylevel:name='0.0' matching:automationid='fuzzy' fuzzylevel:automationid='0.0' check:text='Downloads, in progress' /&gt;" Guid="fc2c04bf-6a49-458a-bcd1-db114fe15a29" InformativeScreenshot="8f2efee66da4587fa7be475682a44e89.png" Reference="xGt2OSXt7UW47kSHt2k5yg/zii0j4IOLEOU4hk-1Wm4CQ" ScopeSelectorArgument="&lt;wnd app='msedge.exe' cls='Chrome_WidgetWin_1' title='Reading Submittals - Work - Microsoft​ Edge' /&gt;" SearchSteps="Selector, FuzzySelector" Version="V6" Visibility="Interactive" WaitForReadyArgument="None" />
+                                                                                      </uix:NCheckState.Target>
+                                                                                      <sap:WorkflowViewStateService.ViewState>
+                                                                                        <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                                                                                          <x:Boolean x:Key="IsExpanded">False</x:Boolean>
+                                                                                          <x:Boolean x:Key="IsPinned">False</x:Boolean>
+                                                                                        </scg:Dictionary>
+                                                                                      </sap:WorkflowViewStateService.ViewState>
+                                                                                    </uix:NCheckState>
+                                                                                  </Sequence>
+                                                                                </ui:CommentOut.Body>
+                                                                                <sap:WorkflowViewStateService.ViewState>
+                                                                                  <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                                                                                    <x:Boolean x:Key="IsExpanded">False</x:Boolean>
+                                                                                    <x:Boolean x:Key="IsPinned">False</x:Boolean>
+                                                                                  </scg:Dictionary>
+                                                                                </sap:WorkflowViewStateService.ViewState>
+                                                                              </ui:CommentOut>
+                                                                            </Sequence>
+                                                                          </ActivityAction>
+                                                                        </ui:GetLastDownloadedFile.Body>
+                                                                        <sap:WorkflowViewStateService.ViewState>
+                                                                          <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                                                                            <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+                                                                            <x:Boolean x:Key="IsPinned">False</x:Boolean>
+                                                                          </scg:Dictionary>
+                                                                        </sap:WorkflowViewStateService.ViewState>
+                                                                      </ui:GetLastDownloadedFile>
                                                                     </Sequence>
                                                                   </ActivityAction>
-                                                                </ui:GetLastDownloadedFile.Body>
+                                                                </ui:RetryScope.ActivityBody>
+                                                                <ui:RetryScope.Condition>
+                                                                  <ActivityFunc x:TypeArguments="x:Boolean" />
+                                                                </ui:RetryScope.Condition>
                                                                 <sap:WorkflowViewStateService.ViewState>
                                                                   <scg:Dictionary x:TypeArguments="x:String, x:Object">
                                                                     <x:Boolean x:Key="IsExpanded">True</x:Boolean>
                                                                     <x:Boolean x:Key="IsPinned">False</x:Boolean>
                                                                   </scg:Dictionary>
                                                                 </sap:WorkflowViewStateService.ViewState>
-                                                              </ui:GetLastDownloadedFile>
+                                                              </ui:RetryScope>
+                                                              <Delay Duration="00:00:01" sap:VirtualizedContainerService.HintSize="562,124" sap2010:WorkflowViewState.IdRef="Delay_1" />
+                                                              <ui:MoveFile ContinueOnError="{x:Null}" DestinationResource="{x:Null}" PathResource="{x:Null}" Destination="[Path.Combine(CollatedFolder.FullName, CurrentSP)]" DisplayName="Move File" sap:VirtualizedContainerService.HintSize="562,196.66666666666666" sap2010:WorkflowViewState.IdRef="MoveFile_1" Path="[downloadedFile.FullName]">
+                                                                <sap:WorkflowViewStateService.ViewState>
+                                                                  <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                                                                    <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+                                                                    <x:Boolean x:Key="IsPinned">False</x:Boolean>
+                                                                  </scg:Dictionary>
+                                                                </sap:WorkflowViewStateService.ViewState>
+                                                              </ui:MoveFile>
+                                                              <ui:RenameFileX DisplayName="Rename File" FilePath="[Path.Combine(CollatedFolder.FullName, CurrentSP, downloadedFile.Name)]" sap:VirtualizedContainerService.HintSize="562,170.66666666666666" sap2010:WorkflowViewState.IdRef="RenameFileX_1" KeepExtension="True" NewName="[PID_actualName]" />
                                                             </Sequence>
                                                           </ActivityAction>
                                                         </ui:RetryScope.ActivityBody>
                                                         <ui:RetryScope.Condition>
                                                           <ActivityFunc x:TypeArguments="x:Boolean" />
                                                         </ui:RetryScope.Condition>
-                                                        <sap:WorkflowViewStateService.ViewState>
-                                                          <scg:Dictionary x:TypeArguments="x:String, x:Object">
-                                                            <x:Boolean x:Key="IsExpanded">False</x:Boolean>
-                                                            <x:Boolean x:Key="IsPinned">False</x:Boolean>
-                                                          </scg:Dictionary>
-                                                        </sap:WorkflowViewStateService.ViewState>
                                                       </ui:RetryScope>
-                                                      <ui:MoveFile ContinueOnError="{x:Null}" DestinationResource="{x:Null}" PathResource="{x:Null}" Destination="[Path.Combine(CollatedFolder.FullName, currentTP)]" DisplayName="Move File" sap:VirtualizedContainerService.HintSize="382,196.66666666666666" sap2010:WorkflowViewState.IdRef="MoveFile_1" Path="[downloadedFile.FullName]" />
-                                                      <ui:RenameFileX DisplayName="Rename File" FilePath="[Path.Combine(CollatedFolder.FullName, currentTP, downloadedFile.Name)]" sap:VirtualizedContainerService.HintSize="382,170.66666666666666" sap2010:WorkflowViewState.IdRef="RenameFileX_1" KeepExtension="True" NewName="[PID_actualName]" />
                                                     </Sequence>
                                                   </If.Then>
                                                   <If.Else>
-                                                    <Sequence DisplayName="Else" sap:VirtualizedContainerService.HintSize="416,25.333333333333332" sap2010:WorkflowViewState.IdRef="Sequence_29">
+                                                    <Sequence DisplayName="Else" sap:VirtualizedContainerService.HintSize="672,25.333333333333332" sap2010:WorkflowViewState.IdRef="Sequence_29">
                                                       <sap:WorkflowViewStateService.ViewState>
                                                         <scg:Dictionary x:TypeArguments="x:String, x:Object">
                                                           <x:Boolean x:Key="IsExpanded">False</x:Boolean>
@@ -720,7 +856,7 @@
                                   </If.Else>
                                 </If>
                               </Sequence>
-                              <uix:NNavigateBrowser Action="CloseTab" DisplayName="Navigate Browser - Close Tab" sap:VirtualizedContainerService.HintSize="574,110" sap2010:WorkflowViewState.IdRef="NNavigateBrowser_1" Version="V4" />
+                              <uix:NNavigateBrowser Action="CloseTab" DisplayName="Navigate Browser - Close Tab" sap:VirtualizedContainerService.HintSize="814,110" sap2010:WorkflowViewState.IdRef="NNavigateBrowser_1" Version="V4" />
                             </Sequence>
                           </ActivityAction>
                         </uix:NApplicationCard.Body>

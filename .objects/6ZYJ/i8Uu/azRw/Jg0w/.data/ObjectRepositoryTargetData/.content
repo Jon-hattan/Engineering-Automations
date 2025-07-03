@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="utf-16"?>
+<ObjectRepositoryTargetData ContentHash="d78-G44W80mItBOn_MIpaA" Reference="xGt2OSXt7UW47kSHt2k5yg/Jg0wslxmzkWUI46BIkMrsQ" xmlns="http://schemas.uipath.com/workflow/activities/uix" xmlns:scg="clr-namespace:System.Collections.Generic;assembly=System.Private.CoreLib" xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml">
+  <ObjectRepositoryTargetData.Data>
+    <TargetAnchorable x:Key="TargetAnchorable" DesignTimeRectangle="756, 834, 442, 120" ElementType="Text" FuzzySelectorArgument="[string.Format(&quot;&lt;wnd cls='UIX:Window' /&gt;&lt;ctrl automationid='pagesView@' matching:automationid='fuzzy' fuzzylevel:automationid='0.0' /&gt;&lt;ctrl automationid='106@' role='text' matching:automationid='fuzzy' fuzzylevel:automationid='0.0' check:text='{0}' /&gt;&quot;, TagNumber)]" Guid="66173848-1c64-4750-abb8-ba0329ebf7c6" ImageBase64="" ScopeSelectorArgument="&lt;wnd app='pdfxedit.exe' omit:cls='PXE:{C*AD*E*B1E*D8AF3B9D}' title='* - PDF-XChange Editor' /&gt;" SearchSteps="FuzzySelector" Version="V6" Visibility="Interactive" WaitForReadyArgument="None">
+      <TargetAnchorable.PointOffset>
+        <PointOffset Position="TopLeft" X="0" Y="0" />
+      </TargetAnchorable.PointOffset>
+      <imageRef attrName="InformativeScreenshot" originalValue="c9c925a52ad7efc7d0cc300755ccf9ad.png" xmlns="">0RgJx5yC7eU2ABHSkTAjGyw</imageRef>
+    </TargetAnchorable>
+    <scg:List x:TypeArguments="ObjectRepositoryVariableData" x:Key="Variables" Capacity="1">
+      <ObjectRepositoryVariableData DefaultValue="FSL-0701" Name="TagNumber" />
+    </scg:List>
+    <x:String x:Key="ActivityType">Click</x:String>
+  </ObjectRepositoryTargetData.Data>
+</ObjectRepositoryTargetData>
