@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="utf-16"?>
+<ObjectRepositoryTargetData ContentHash="bWEhH2cEHEapzxiV63D-kQ" xmlns="http://schemas.uipath.com/workflow/activities/uix" xmlns:scg="clr-namespace:System.Collections.Generic;assembly=System.Private.CoreLib" xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml">
+  <ObjectRepositoryTargetData.Data>
+    <TargetAnchorable x:Key="TargetAnchorable" DesignTimeRectangle="82, 74, 336, 21" ElementType="InputBox" FuzzySelectorArgument="&lt;ctrl automationid='msg:edit@' role='editable text' matching:automationid='fuzzy' fuzzylevel:automationid='0.0' /&gt;" Guid="b694e53b-2436-40ac-bb2e-5be504bc62d3" IsResponsive="True" ScopeSelectorArgument="&lt;wnd app='pdfxedit.exe' cls='UIX:Window' title='New Stamp Collection' /&gt;" SearchSteps="FuzzySelector" Version="V6" Visibility="Interactive" WaitForReadyArgument="None">
+      <TargetAnchorable.Anchors>
+        <scg:List x:TypeArguments="ITarget" Capacity="4">
+          <Target DesignTimeRectangle="82, 49, 336, 15" ElementType="Text" FuzzySelectorArgument="&lt;ctrl automationid='msg:text@' role='text' matching:automationid='fuzzy' fuzzylevel:automationid='0.0' check:text='Enter a unique name of new stamp collection:' /&gt;" Guid="df1ca5c7-5b8a-42ee-890e-2b9731e8b8b1" SearchSteps="FuzzySelector" />
+        </scg:List>
+      </TargetAnchorable.Anchors>
+      <imageRef attrName="InformativeScreenshot" originalValue="949fe625cda2568ec51643a7515b24ab.png" xmlns="">0J6Vy3v3p_EOg52cSgU7kew</imageRef>
+    </TargetAnchorable>
+    <x:String x:Key="ActivityType">TypeInto</x:String>
+  </ObjectRepositoryTargetData.Data>
+</ObjectRepositoryTargetData>

@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="utf-16"?>
+<ObjectRepositoryTargetData ContentHash="dEfEk8KcqESVH_nhCIkgdg" Reference="xGt2OSXt7UW47kSHt2k5yg/dAiG-iLIfEmJ5dFcrmhAVw" xmlns="http://schemas.uipath.com/workflow/activities/uix" xmlns:scg="clr-namespace:System.Collections.Generic;assembly=System.Private.CoreLib" xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml">
+  <ObjectRepositoryTargetData.Data>
+    <TargetAnchorable x:Key="TargetAnchorable" DesignTimeRectangle="145, 608, 303, 22" ElementType="InputBox" FuzzySelectorArgument="&lt;ctrl automationid='DlgInsertStamp@' name='Add New Stamp' role='pane' matching:automationid='fuzzy' fuzzylevel:automationid='0.0' matching:name='fuzzy' fuzzylevel:name='0.0' /&gt;&lt;ctrl automationid='stamp.title@' role='editable text' matching:automationid='fuzzy' fuzzylevel:automationid='0.0' /&gt;" Guid="1abe894a-53e2-4422-8ef7-72e02f017033" IsResponsive="True" ScopeSelectorArgument="&lt;wnd app='pdfxedit.exe' cls='UIX:Window' title='Add New Stamp' /&gt;" SearchSteps="FuzzySelector" Version="V6" Visibility="Interactive" WaitForReadyArgument="None">
+      <TargetAnchorable.Anchors>
+        <scg:List x:TypeArguments="ITarget" Capacity="4">
+          <Target DesignTimeRectangle="27, 611, 113, 16" ElementType="Text" FuzzySelectorArgument="&lt;ctrl automationid='DlgInsertStamp@' name='Add New Stamp' role='pane' matching:automationid='fuzzy' fuzzylevel:automationid='0.0' matching:name='fuzzy' fuzzylevel:name='0.0' /&gt;&lt;ctrl automationid='stm.l.stampTitle@' role='text' matching:automationid='fuzzy' fuzzylevel:automationid='0.0' check:text='Stamp Title:' /&gt;" Guid="309f9ac5-048b-4eee-941c-c225781f5fe3" SearchSteps="FuzzySelector" />
+        </scg:List>
+      </TargetAnchorable.Anchors>
+      <imageRef attrName="InformativeScreenshot" originalValue="dc4895d1af2c76bd28f6c3565f0d4f83.png" xmlns="">0T7J2L8yZJEinWhC4PcXSeA</imageRef>
+    </TargetAnchorable>
+    <x:String x:Key="ActivityType">TypeInto</x:String>
+  </ObjectRepositoryTargetData.Data>
+</ObjectRepositoryTargetData>

@@ -1,0 +1,13 @@
+﻿{
+  "Name": "Element 'Open Files'",
+  "Type": "Element",
+  "Id": "cKrLZ1o7vESlWemyDn-9Eg",
+  "Reference": "xGt2OSXt7UW47kSHt2k5yg/cKrLZ1o7vESlWemyDn-9Eg",
+  "ParentRef": "xGt2OSXt7UW47kSHt2k5yg/uEVOMjhytkelQKytf16-Og",
+  "Created": "2025-07-04T12:12:40.4362602Z",
+  "Updated": "2025-07-04T12:12:40.4362602Z",
+  "CreatedBy": [
+    "UiPath.UIAutomationCore, Version=25.10.4.0, Culture=neutral, PublicKeyToken=null",
+    "UiPath.Platform, Version=25.4.0.0, Culture=neutral, PublicKeyToken=null"
+  ]
+}

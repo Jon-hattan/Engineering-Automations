@@ -1,0 +1,14 @@
+﻿{
+  "Name": "Stamp",
+  "Type": "Element",
+  "TaxonomyType": "Button",
+  "Id": "w3AOV5AEdky9Os_kTJempA",
+  "Reference": "xGt2OSXt7UW47kSHt2k5yg/w3AOV5AEdky9Os_kTJempA",
+  "ParentRef": "xGt2OSXt7UW47kSHt2k5yg/uEVOMjhytkelQKytf16-Og",
+  "Created": "2025-07-04T11:46:13.0525479Z",
+  "Updated": "2025-07-04T11:46:13.0525479Z",
+  "CreatedBy": [
+    "UiPath.UIAutomationCore, Version=25.10.4.0, Culture=neutral, PublicKeyToken=null",
+    "UiPath.Platform, Version=25.4.0.0, Culture=neutral, PublicKeyToken=null"
+  ]
+}

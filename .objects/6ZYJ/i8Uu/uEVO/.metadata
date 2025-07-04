@@ -1,0 +1,13 @@
+﻿{
+  "Name": "PID - PDF-XChange Editor",
+  "Type": "Screen",
+  "Id": "uEVOMjhytkelQKytf16-Og",
+  "Reference": "xGt2OSXt7UW47kSHt2k5yg/uEVOMjhytkelQKytf16-Og",
+  "ParentRef": "xGt2OSXt7UW47kSHt2k5yg/i8UuNrrsWEyxtj0DfoBuCg",
+  "Created": "2025-07-04T11:44:58.8841246Z",
+  "Updated": "2025-07-04T11:44:58.8841246Z",
+  "CreatedBy": [
+    "UiPath.UIAutomationCore, Version=25.10.4.0, Culture=neutral, PublicKeyToken=null",
+    "UiPath.Platform, Version=25.4.0.0, Culture=neutral, PublicKeyToken=null"
+  ]
+}

@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="utf-16"?>
+<ObjectRepositoryTargetData ContentHash="x67tna7ew0O2jpUoin8KTg" Reference="xGt2OSXt7UW47kSHt2k5yg/lCAc7t6yJE69_3MQDxbZ7w" xmlns="http://schemas.uipath.com/workflow/activities/uix" xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml">
+  <ObjectRepositoryTargetData.Data>
+    <TargetAnchorable x:Key="TargetAnchorable" DesignTimeRectangle="152, 41, 499, 34" ElementType="Toolbar" FullSelectorArgument="&lt;wnd aaname='Loading' cls='msctls_progress32' /&gt;&lt;wnd ctrlid='1001' title='Address: *' /&gt;" FuzzySelectorArgument="&lt;wnd aaname='Loading' cls='msctls_progress32' matching:aaname='fuzzy' fuzzylevel:aaname='0.0' /&gt;&lt;wnd ctrlid='1001' title='Address: C:\Users\*\AppData\Roaming\Tracker Software\PDFXEdi*' matching:ctrlid='fuzzy' fuzzylevel:ctrlid='0.0' fuzzylevel:title='0.0' /&gt;" Guid="e804563e-6e2e-490b-8bbc-e81c7938c698" ImageBase64="" ScopeSelectorArgument="&lt;wnd app='pdfxedit.exe' omit:cls='#32770' title='Open Files' /&gt;" SearchSteps="Selector, FuzzySelector" Version="V6" Visibility="Interactive" WaitForReadyArgument="None">
+      <TargetAnchorable.PointOffset>
+        <PointOffset Position="BottomLeft" X="11" Y="-17" />
+      </TargetAnchorable.PointOffset>
+      <imageRef attrName="InformativeScreenshot" originalValue="2bc2a04c2a4b550bdedf5e2b86ef8f40.png" xmlns="">0fi2d5vL9r0KlCe3X-hDsRQ</imageRef>
+    </TargetAnchorable>
+    <x:String x:Key="ActivityType">TypeInto</x:String>
+  </ObjectRepositoryTargetData.Data>
+</ObjectRepositoryTargetData>

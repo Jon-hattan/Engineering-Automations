@@ -1,0 +1,14 @@
+﻿{
+  "Name": "Add New Stamp from File…",
+  "Type": "Element",
+  "TaxonomyType": "Button",
+  "Id": "oMkFTD0haUCKv6XbfKA2Mw",
+  "Reference": "xGt2OSXt7UW47kSHt2k5yg/oMkFTD0haUCKv6XbfKA2Mw",
+  "ParentRef": "xGt2OSXt7UW47kSHt2k5yg/uEVOMjhytkelQKytf16-Og",
+  "Created": "2025-07-04T11:57:49.7049218Z",
+  "Updated": "2025-07-04T11:57:49.7049218Z",
+  "CreatedBy": [
+    "UiPath.UIAutomationCore, Version=25.10.4.0, Culture=neutral, PublicKeyToken=null",
+    "UiPath.Platform, Version=25.4.0.0, Culture=neutral, PublicKeyToken=null"
+  ]
+}

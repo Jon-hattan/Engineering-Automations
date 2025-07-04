@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="utf-16"?>
+<ObjectRepositoryTargetData ContentHash="g2MV9cPToUyFqCoTf4UnUg" Reference="xGt2OSXt7UW47kSHt2k5yg/w3AOV5AEdky9Os_kTJempA" xmlns="http://schemas.uipath.com/workflow/activities/uix" xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml">
+  <ObjectRepositoryTargetData.Data>
+    <TargetAnchorable x:Key="TargetAnchorable" DesignTimeRectangle="883, 70, 52, 84" ElementType="Button" FullSelectorArgument="&lt;ctrl automationid='3CE@' /&gt;&lt;ctrl automationid='3D0@' /&gt;&lt;ctrl automationid='rbar.home.comment@' /&gt;&lt;ctrl automationid='cmd.tool.annot.stamp@' /&gt;" FuzzySelectorArgument="&lt;ctrl automationid='3CE@' matching:automationid='fuzzy' fuzzylevel:automationid='0.0' /&gt;&lt;ctrl automationid='3D0@' matching:automationid='fuzzy' fuzzylevel:automationid='0.0' /&gt;&lt;ctrl automationid='rbar.home.comment@' matching:automationid='fuzzy' fuzzylevel:automationid='0.0' /&gt;&lt;ctrl automationid='cmd.tool.annot.stamp@' role='split button' matching:automationid='fuzzy' fuzzylevel:automationid='0.0' check:text='Stamp' /&gt;" Guid="c795cc1d-83dd-4782-9a3f-fa31c4a4e2ca" ScopeSelectorArgument="&lt;wnd app='pdfxedit.exe' omit:cls='PXE:{C*AD*E*B1E*D8AF3B9D}' title='PID - PDF-XChange Editor' /&gt;" SearchSteps="Selector, FuzzySelector" Version="V6" Visibility="Interactive" WaitForReadyArgument="None">
+      <imageRef attrName="InformativeScreenshot" originalValue="582252e81a0158a71426d1de15bdc5f6.png" xmlns="">0xEyiYrwyDk6F9IgV0zDRRQ</imageRef>
+    </TargetAnchorable>
+    <x:String x:Key="ActivityType">CheckState</x:String>
+  </ObjectRepositoryTargetData.Data>
+</ObjectRepositoryTargetData>

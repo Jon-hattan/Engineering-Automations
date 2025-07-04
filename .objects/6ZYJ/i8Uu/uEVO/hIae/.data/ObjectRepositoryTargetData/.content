@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="utf-16"?>
+<ObjectRepositoryTargetData ContentHash="JhVe2A2K_UGoq8FWrIZveQ" Reference="xGt2OSXt7UW47kSHt2k5yg/hIaeZcHKOkGWbhgdPagC4Q" xmlns="http://schemas.uipath.com/workflow/activities/uix" xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml">
+  <ObjectRepositoryTargetData.Data>
+    <TargetAnchorable x:Key="TargetAnchorable" DesignTimeRectangle="886, 492, 570, 28" ElementType="Button" FullSelectorArgument="&lt;ctrl automationid='3CE@' /&gt;&lt;ctrl automationid='3D0@' /&gt;&lt;ctrl automationid='rbar.home.comment@' /&gt;&lt;ctrl automationid='cmd.tool.annot.stamp@' /&gt;&lt;ctrl automationid='cmd.view.stamps@' /&gt;" FuzzySelectorArgument="&lt;ctrl automationid='3CE@' matching:automationid='fuzzy' fuzzylevel:automationid='0.0' /&gt;&lt;ctrl automationid='3D0@' matching:automationid='fuzzy' fuzzylevel:automationid='0.0' /&gt;&lt;ctrl automationid='rbar.home.comment@' matching:automationid='fuzzy' fuzzylevel:automationid='0.0' /&gt;&lt;ctrl automationid='cmd.tool.annot.stamp@' matching:automationid='fuzzy' fuzzylevel:automationid='0.0' /&gt;&lt;ctrl automationid='cmd.view.stamps@' role='push button' matching:automationid='fuzzy' fuzzylevel:automationid='0.0' check:text='Stamps Palette' /&gt;" Guid="74955dc6-cf6c-4d41-b464-d3e95a702377" ScopeSelectorArgument="&lt;wnd app='pdfxedit.exe' omit:cls='PXE:{C*AD*E*B1E*D8AF3B9D}' title='PID - PDF-XChange Editor' /&gt;" SearchSteps="Selector, FuzzySelector" Version="V6" Visibility="Interactive" WaitForReadyArgument="None">
+      <imageRef attrName="InformativeScreenshot" originalValue="94c0b09b3f49507318cf68406c590791.png" xmlns="">0BxQhZ6vfjk2E8ZohTcrt_A</imageRef>
+    </TargetAnchorable>
+    <x:String x:Key="ActivityType">Click</x:String>
+  </ObjectRepositoryTargetData.Data>
+</ObjectRepositoryTargetData>

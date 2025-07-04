@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="utf-16"?>
+<ObjectRepositoryTargetData ContentHash="Zede6OMHqEy4lSY2YYWMAA" Reference="xGt2OSXt7UW47kSHt2k5yg/HCJnD_4M_UWahJiAHG6KfQ" xmlns="http://schemas.uipath.com/workflow/activities/uix" xmlns:scg="clr-namespace:System.Collections.Generic;assembly=System.Private.CoreLib" xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml">
+  <ObjectRepositoryTargetData.Data>
+    <TargetAnchorable x:Key="TargetAnchorable" DesignTimeRectangle="888, 159, 566, 24" ElementType="InputBox" FullSelectorArgument="&lt;ctrl automationid='3CE@' /&gt;&lt;ctrl automationid='3D0@' /&gt;&lt;ctrl automationid='rbar.home.comment@' /&gt;&lt;ctrl automationid='cmd.tool.annot.stamp@' /&gt;&lt;ctrl automationid='0@' name='Stamps:' role='pane' /&gt;&lt;ctrl automationid='ed.filter@' /&gt;" FuzzySelectorArgument="&lt;ctrl automationid='3CE@' matching:automationid='fuzzy' fuzzylevel:automationid='0.0' /&gt;&lt;ctrl automationid='3D0@' matching:automationid='fuzzy' fuzzylevel:automationid='0.0' /&gt;&lt;ctrl automationid='rbar.home.comment@' matching:automationid='fuzzy' fuzzylevel:automationid='0.0' /&gt;&lt;ctrl automationid='cmd.tool.annot.stamp@' matching:automationid='fuzzy' fuzzylevel:automationid='0.0' /&gt;&lt;ctrl automationid='0@' name='Stamps:' role='pane' matching:automationid='fuzzy' fuzzylevel:automationid='0.0' matching:name='fuzzy' fuzzylevel:name='0.0' /&gt;&lt;ctrl automationid='ed.filter@' role='editable text' matching:automationid='fuzzy' fuzzylevel:automationid='0.0' /&gt;" Guid="c8790b27-4d21-48e2-9edb-648e69be67e3" ScopeSelectorArgument="&lt;wnd app='pdfxedit.exe' omit:cls='PXE:{C*AD*E*B1E*D8AF3B9D}' title='PID - PDF-XChange Editor' /&gt;" SearchSteps="Selector, FuzzySelector" Version="V6" Visibility="Interactive" WaitForReadyArgument="None">
+      <TargetAnchorable.Anchors>
+        <scg:List x:TypeArguments="ITarget" Capacity="4">
+          <Target DesignTimeRectangle="883, 70, 52, 84" ElementType="Button" FuzzySelectorArgument="&lt;ctrl automationid='3CE@' matching:automationid='fuzzy' fuzzylevel:automationid='0.0' /&gt;&lt;ctrl automationid='3D0@' matching:automationid='fuzzy' fuzzylevel:automationid='0.0' /&gt;&lt;ctrl automationid='rbar.home.comment@' matching:automationid='fuzzy' fuzzylevel:automationid='0.0' /&gt;&lt;ctrl automationid='cmd.tool.annot.stamp@' role='split button' matching:automationid='fuzzy' fuzzylevel:automationid='0.0' check:text='Stamp' /&gt;" Guid="f5e3015b-f636-4b7d-8ba8-d5265c71d20f" SearchSteps="FuzzySelector" />
+        </scg:List>
+      </TargetAnchorable.Anchors>
+      <imageRef attrName="InformativeScreenshot" originalValue="3cf13c02e62e958fbf951c12c3756cf9.png" xmlns="">0n_lAuYLTuEKShwdjpsI3PQ</imageRef>
+    </TargetAnchorable>
+    <x:String x:Key="ActivityType">TypeInto</x:String>
+  </ObjectRepositoryTargetData.Data>
+</ObjectRepositoryTargetData>

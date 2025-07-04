@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="utf-16"?>
+<ObjectRepositoryTargetData ContentHash="GqpFrgxyM0W-JTwMQORi1Q" Reference="xGt2OSXt7UW47kSHt2k5yg/AvUhwnn-aUu8X-KF8PTK_g" xmlns="http://schemas.uipath.com/workflow/activities/uix" xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml">
+  <ObjectRepositoryTargetData.Data>
+    <TargetAnchorable x:Key="TargetAnchorable" DesignTimeRectangle="459, 77, 38, 22" ElementType="Button" FullSelectorArgument="&lt;ctrl automationid='DlgInsertStamp@' name='Add New Stamp' role='pane' /&gt;&lt;ctrl automationid='ChooseFile.Browse@' /&gt;" FuzzySelectorArgument="&lt;ctrl automationid='DlgInsertStamp@' name='Add New Stamp' role='pane' matching:automationid='fuzzy' fuzzylevel:automationid='0.0' matching:name='fuzzy' fuzzylevel:name='0.0' /&gt;&lt;ctrl automationid='ChooseFile.Browse@' role='push button' matching:automationid='fuzzy' fuzzylevel:automationid='0.0' check:text='Browse...' /&gt;" Guid="dc77dc27-4e2d-4a43-9a72-e033e6b25f51" ScopeSelectorArgument="&lt;wnd app='pdfxedit.exe' cls='UIX:Window' title='Add New Stamp' /&gt;" SearchSteps="Selector, FuzzySelector" Version="V6" Visibility="Interactive" WaitForReadyArgument="None">
+      <imageRef attrName="InformativeScreenshot" originalValue="437f41ce5552625477dee3f1427a160e.png" xmlns="">0unTA3dy4yECqxNlWmjx22g</imageRef>
+    </TargetAnchorable>
+    <x:String x:Key="ActivityType">CheckState</x:String>
+  </ObjectRepositoryTargetData.Data>
+</ObjectRepositoryTargetData>

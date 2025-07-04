@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="utf-16"?>
+<ObjectRepositoryTargetData ContentHash="l7Pqj3FxsEayQ0uLTCaRRg" Reference="xGt2OSXt7UW47kSHt2k5yg/oMkFTD0haUCKv6XbfKA2Mw" xmlns="http://schemas.uipath.com/workflow/activities/uix" xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml">
+  <ObjectRepositoryTargetData.Data>
+    <TargetAnchorable x:Key="TargetAnchorable" DesignTimeRectangle="265, 63, 240, 28" ElementType="Button" FullSelectorArgument="&lt;ctrl automationid='D97F@' /&gt;&lt;ctrl automationid='cmdbar.stampsView@' /&gt;&lt;ctrl automationid='cmd.stampsView.addGroup@' /&gt;&lt;ctrl automationid='cmd.stampsView.addNew@' /&gt;" FuzzySelectorArgument="&lt;ctrl automationid='D97F@' matching:automationid='fuzzy' fuzzylevel:automationid='0.0' /&gt;&lt;ctrl automationid='cmdbar.stampsView@' matching:automationid='fuzzy' fuzzylevel:automationid='0.0' /&gt;&lt;ctrl automationid='cmd.stampsView.addGroup@' matching:automationid='fuzzy' fuzzylevel:automationid='0.0' /&gt;&lt;ctrl automationid='cmd.stampsView.addNew@' role='push button' matching:automationid='fuzzy' fuzzylevel:automationid='0.0' check:text='Add New Stamp from File...' /&gt;" Guid="3f247a65-2c25-46a1-82a0-2f06de15ab77" ScopeSelectorArgument="&lt;wnd app='pdfxedit.exe' cls='UIX:Window' title='Stamps Palette' /&gt;" SearchSteps="Selector, FuzzySelector" Version="V6" Visibility="Interactive" WaitForReadyArgument="None">
+      <imageRef attrName="InformativeScreenshot" originalValue="2043cdbf71d031cc71ed084f7225c21b.png" xmlns="">0TVJgxCjTikCuvBkHYPXNpw</imageRef>
+    </TargetAnchorable>
+    <x:String x:Key="ActivityType">Click</x:String>
+  </ObjectRepositoryTargetData.Data>
+</ObjectRepositoryTargetData>
