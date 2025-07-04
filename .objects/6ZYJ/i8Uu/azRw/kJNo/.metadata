@@ -1,0 +1,13 @@
+﻿{
+  "Name": "Pending",
+  "Type": "Element",
+  "Id": "kJNo2VhgnEGhthrlQi5b-Q",
+  "Reference": "xGt2OSXt7UW47kSHt2k5yg/kJNo2VhgnEGhthrlQi5b-Q",
+  "ParentRef": "xGt2OSXt7UW47kSHt2k5yg/azRws-oh30qsXz-7zKiLeg",
+  "Created": "2025-07-04T07:41:44.3969428Z",
+  "Updated": "2025-07-04T07:41:44.3969428Z",
+  "CreatedBy": [
+    "UiPath.UIAutomationCore, Version=25.10.4.0, Culture=neutral, PublicKeyToken=null",
+    "UiPath.Platform, Version=25.4.0.0, Culture=neutral, PublicKeyToken=null"
+  ]
+}
