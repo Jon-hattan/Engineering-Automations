@@ -143,7 +143,7 @@
       <AssemblyReference>UiPath.Workflow</AssemblyReference>
     </sco:Collection>
   </TextExpression.ReferencesForImplementation>
-  <Sequence DisplayName="Stamping_test" sap:VirtualizedContainerService.HintSize="1473.2,8212.8" sap2010:WorkflowViewState.IdRef="Sequence_1">
+  <Sequence DisplayName="Stamping_test" sap:VirtualizedContainerService.HintSize="1473.2,8553.6" sap2010:WorkflowViewState.IdRef="Sequence_1">
     <Sequence.Variables>
       <Variable x:TypeArguments="x:String" Name="TagPattern" />
       <Variable x:TypeArguments="x:Boolean" Name="fileExists" />
@@ -153,6 +153,7 @@
           <VisualBasicValue x:TypeArguments="scg:Dictionary(x:String, x:Int32)" ExpressionText="New Dictionary(of String, Integer)" />
         </Variable.Default>
       </Variable>
+      <Variable x:TypeArguments="scg:Dictionary(x:String, x:Int32)" Name="newEN_searchprog" />
     </Sequence.Variables>
     <sap:WorkflowViewStateService.ViewState>
       <scg:Dictionary x:TypeArguments="x:String, x:Object">
@@ -304,13 +305,13 @@
       </If.Else>
     </If>
     <ui:StartProcess WorkingDirectory="{x:Null}" Arguments="[filePath]" DisplayName="Start Process" FileName="C:\Program Files\Tracker Software\PDF Editor\pdfxedit.exe" sap:VirtualizedContainerService.HintSize="662.4,120" sap2010:WorkflowViewState.IdRef="StartProcess_1" />
-    <uix:NApplicationCard AttachMode="ByInstance" DisplayName="PDF xchange editor" HealingAgentBehavior="Job" sap:VirtualizedContainerService.HintSize="662.4,7006.4" sap2010:WorkflowViewState.IdRef="NApplicationCard_1" ScopeGuid="e6d15a65-45fe-4d86-87cd-3001ce0f92fa" Timeout="10" Version="V2">
+    <uix:NApplicationCard AttachMode="ByInstance" DisplayName="PDF xchange editor" HealingAgentBehavior="Job" sap:VirtualizedContainerService.HintSize="662.4,7347.2" sap2010:WorkflowViewState.IdRef="NApplicationCard_1" ScopeGuid="e6d15a65-45fe-4d86-87cd-3001ce0f92fa" Timeout="10" Version="V2">
       <uix:NApplicationCard.Body>
         <ActivityAction x:TypeArguments="x:Object">
           <ActivityAction.Argument>
             <DelegateInArgument x:TypeArguments="x:Object" Name="WSSessionData" />
           </ActivityAction.Argument>
-          <Sequence DisplayName="Do" sap:VirtualizedContainerService.HintSize="628.8,6642.4" sap2010:WorkflowViewState.IdRef="Sequence_2">
+          <Sequence DisplayName="Do" sap:VirtualizedContainerService.HintSize="628.8,6983.2" sap2010:WorkflowViewState.IdRef="Sequence_2">
             <Sequence.Variables>
               <Variable x:TypeArguments="x:String" Default="FSL-0701" Name="TagNumber" />
               <Variable x:TypeArguments="str:Match" Name="match" />
@@ -382,27 +383,27 @@
                 <InArgument x:TypeArguments="scg:HashSet(x:String)">[New Hashset(of String)]</InArgument>
               </Assign.Value>
             </Assign>
-            <ui:ForEach x:TypeArguments="x:String" CurrentIndex="{x:Null}" sap2010:Annotation.AnnotationText="Highlight PASSES as green" DisplayName="For Each currentTag" sap:VirtualizedContainerService.HintSize="595.2,1932.8" sap2010:WorkflowViewState.IdRef="ForEach`1_5" Values="[tag_status.Keys.tolist]">
+            <ui:ForEach x:TypeArguments="x:String" CurrentIndex="{x:Null}" sap2010:Annotation.AnnotationText="Highlight PASSES as green" DisplayName="For Each currentTag" sap:VirtualizedContainerService.HintSize="595.2,2046.4" sap2010:WorkflowViewState.IdRef="ForEach`1_5" Values="[tag_status.Keys.tolist]">
               <ui:ForEach.Body>
                 <ActivityAction x:TypeArguments="x:String">
                   <ActivityAction.Argument>
                     <DelegateInArgument x:TypeArguments="x:String" Name="currentTag" />
                   </ActivityAction.Argument>
-                  <Sequence DisplayName="Body" sap:VirtualizedContainerService.HintSize="593.6,1771.2" sap2010:WorkflowViewState.IdRef="Sequence_22">
+                  <Sequence DisplayName="Body" sap:VirtualizedContainerService.HintSize="593.6,1884.8" sap2010:WorkflowViewState.IdRef="Sequence_22">
                     <sap:WorkflowViewStateService.ViewState>
                       <scg:Dictionary x:TypeArguments="x:String, x:Object">
                         <x:Boolean x:Key="IsExpanded">True</x:Boolean>
                       </scg:Dictionary>
                     </sap:WorkflowViewStateService.ViewState>
-                    <If Condition="[tag_status(currentTag).Contains(&quot;Pass&quot;) andalso not visitedTags.Contains(currentTag)]" sap:VirtualizedContainerService.HintSize="560,1711.2" sap2010:WorkflowViewState.IdRef="If_1">
+                    <If Condition="[tag_status(currentTag).Contains(&quot;Pass&quot;) andalso not visitedTags.Contains(currentTag)]" sap:VirtualizedContainerService.HintSize="560,1824.8" sap2010:WorkflowViewState.IdRef="If_1">
                       <If.Then>
-                        <Sequence DisplayName="Then" sap:VirtualizedContainerService.HintSize="558.4,1556.8" sap2010:WorkflowViewState.IdRef="Sequence_24">
+                        <Sequence DisplayName="Then" sap:VirtualizedContainerService.HintSize="558.4,1670.4" sap2010:WorkflowViewState.IdRef="Sequence_24">
                           <sap:WorkflowViewStateService.ViewState>
                             <scg:Dictionary x:TypeArguments="x:String, x:Object">
                               <x:Boolean x:Key="IsExpanded">True</x:Boolean>
                             </scg:Dictionary>
                           </sap:WorkflowViewStateService.ViewState>
-                          <Sequence DisplayName="Highlight Tag" sap:VirtualizedContainerService.HintSize="524.8,1496.8" sap2010:WorkflowViewState.IdRef="Sequence_20">
+                          <Sequence DisplayName="Highlight Tag" sap:VirtualizedContainerService.HintSize="524.8,1610.4" sap2010:WorkflowViewState.IdRef="Sequence_20">
                             <sap:WorkflowViewStateService.ViewState>
                               <scg:Dictionary x:TypeArguments="x:String, x:Object">
                                 <x:Boolean x:Key="IsExpanded">True</x:Boolean>
@@ -522,16 +523,25 @@
                                 </scg:Dictionary>
                               </sap:WorkflowViewStateService.ViewState>
                             </ui:RetryScope>
-                            <ui:InvokeWorkflowFile ArgumentsVariable="{x:Null}" ContinueOnError="{x:Null}" DisplayName="Check sequence for Asset - Invoke Workflow File (P&amp;ID Marker\Marking PIDs\Check sequence for Asset.xaml)" sap:VirtualizedContainerService.HintSize="491.2,167.2" sap2010:WorkflowViewState.IdRef="InvokeWorkflowFile_4" UnSafe="False" WorkflowFileName="P&amp;ID Marker\Marking PIDs\Check sequence for Asset.xaml">
+                            <ui:InvokeWorkflowFile ArgumentsVariable="{x:Null}" ContinueOnError="{x:Null}" DisplayName="Check sequence for Asset - Invoke Workflow File (P&amp;ID Marker\Marking PIDs\Check sequence for Asset.xaml)" sap:VirtualizedContainerService.HintSize="491.2,176" sap2010:WorkflowViewState.IdRef="InvokeWorkflowFile_4" UnSafe="False" WorkflowFileName="P&amp;ID Marker\Marking PIDs\Check sequence for Asset.xaml">
                               <ui:InvokeWorkflowFile.Arguments>
                                 <InArgument x:TypeArguments="x:String" x:Key="EquipmentTag">[EquipmentTag]</InArgument>
                                 <InArgument x:TypeArguments="x:String" x:Key="EquipmentNumber">[EquipmentNumber]</InArgument>
                                 <InArgument x:TypeArguments="scg:Dictionary(x:String, x:String)" x:Key="tag_status">[tag_status]</InArgument>
                                 <InOutArgument x:TypeArguments="scg:HashSet(x:String)" x:Key="visitedTags">[visitedTags]</InOutArgument>
                                 <InArgument x:TypeArguments="x:String" x:Key="CurrentStamp">Passed</InArgument>
-                                <InOutArgument x:TypeArguments="scg:Dictionary(x:String, x:Int32)" x:Key="EN_searchProg">[EN_searchprog]</InOutArgument>
+                                <InArgument x:TypeArguments="scg:Dictionary(x:String, x:Int32)" x:Key="EN_searchProg">[EN_searchprog]</InArgument>
+                                <OutArgument x:TypeArguments="scg:Dictionary(x:String, x:Int32)" x:Key="newEN_searchProg">[newEN_searchprog]</OutArgument>
                               </ui:InvokeWorkflowFile.Arguments>
                             </ui:InvokeWorkflowFile>
+                            <Assign sap:VirtualizedContainerService.HintSize="491.2,104.8" sap2010:WorkflowViewState.IdRef="Assign_35">
+                              <Assign.To>
+                                <OutArgument x:TypeArguments="scg:Dictionary(x:String, x:Int32)">[EN_searchprog]</OutArgument>
+                              </Assign.To>
+                              <Assign.Value>
+                                <InArgument x:TypeArguments="scg:Dictionary(x:String, x:Int32)">[newEN_searchprog]</InArgument>
+                              </Assign.Value>
+                            </Assign>
                           </Sequence>
                         </Sequence>
                       </If.Then>
@@ -562,27 +572,27 @@
                 <InArgument x:TypeArguments="x:String" x:Key="Status">Witnessed</InArgument>
               </ui:InvokeWorkflowFile.Arguments>
             </ui:InvokeWorkflowFile>
-            <ui:ForEach x:TypeArguments="x:String" CurrentIndex="{x:Null}" sap2010:Annotation.AnnotationText="Highlight WITNESSED as yellow" DisplayName="For Each currentTag" sap:VirtualizedContainerService.HintSize="595.2,1254.4" sap2010:WorkflowViewState.IdRef="ForEach`1_4" Values="[tag_status.Keys.tolist]">
+            <ui:ForEach x:TypeArguments="x:String" CurrentIndex="{x:Null}" sap2010:Annotation.AnnotationText="Highlight WITNESSED as yellow" DisplayName="For Each currentTag" sap:VirtualizedContainerService.HintSize="595.2,1368" sap2010:WorkflowViewState.IdRef="ForEach`1_4" Values="[tag_status.Keys.tolist]">
               <ui:ForEach.Body>
                 <ActivityAction x:TypeArguments="x:String">
                   <ActivityAction.Argument>
                     <DelegateInArgument x:TypeArguments="x:String" Name="currentTag" />
                   </ActivityAction.Argument>
-                  <Sequence DisplayName="Body" sap:VirtualizedContainerService.HintSize="536,1092.8" sap2010:WorkflowViewState.IdRef="Sequence_19">
+                  <Sequence DisplayName="Body" sap:VirtualizedContainerService.HintSize="536,1206.4" sap2010:WorkflowViewState.IdRef="Sequence_19">
                     <sap:WorkflowViewStateService.ViewState>
                       <scg:Dictionary x:TypeArguments="x:String, x:Object">
                         <x:Boolean x:Key="IsExpanded">True</x:Boolean>
                       </scg:Dictionary>
                     </sap:WorkflowViewStateService.ViewState>
-                    <If Condition="[tag_status(currentTag).Contains(&quot;Witnessed&quot;) andalso not visitedTags.Contains(currentTag)]" sap:VirtualizedContainerService.HintSize="502.4,1032.8" sap2010:WorkflowViewState.IdRef="If_2">
+                    <If Condition="[tag_status(currentTag).Contains(&quot;Witnessed&quot;) andalso not visitedTags.Contains(currentTag)]" sap:VirtualizedContainerService.HintSize="502.4,1146.4" sap2010:WorkflowViewState.IdRef="If_2">
                       <If.Then>
-                        <Sequence DisplayName="Then" sap:VirtualizedContainerService.HintSize="500.8,878.4" sap2010:WorkflowViewState.IdRef="Sequence_25">
+                        <Sequence DisplayName="Then" sap:VirtualizedContainerService.HintSize="500.8,992" sap2010:WorkflowViewState.IdRef="Sequence_25">
                           <sap:WorkflowViewStateService.ViewState>
                             <scg:Dictionary x:TypeArguments="x:String, x:Object">
                               <x:Boolean x:Key="IsExpanded">True</x:Boolean>
                             </scg:Dictionary>
                           </sap:WorkflowViewStateService.ViewState>
-                          <Sequence DisplayName="Highlight Tag" sap:VirtualizedContainerService.HintSize="467.2,818.4" sap2010:WorkflowViewState.IdRef="Sequence_18">
+                          <Sequence DisplayName="Highlight Tag" sap:VirtualizedContainerService.HintSize="467.2,932" sap2010:WorkflowViewState.IdRef="Sequence_18">
                             <sap:WorkflowViewStateService.ViewState>
                               <scg:Dictionary x:TypeArguments="x:String, x:Object">
                                 <x:Boolean x:Key="IsExpanded">True</x:Boolean>
@@ -702,16 +712,25 @@
                                 </scg:Dictionary>
                               </sap:WorkflowViewStateService.ViewState>
                             </ui:RetryScope>
-                            <ui:InvokeWorkflowFile ArgumentsVariable="{x:Null}" ContinueOnError="{x:Null}" DisplayName="Check sequence for Asset - Invoke Workflow File (P&amp;ID Marker\Marking PIDs\Check sequence for Asset.xaml)" sap:VirtualizedContainerService.HintSize="433.6,167.2" sap2010:WorkflowViewState.IdRef="InvokeWorkflowFile_7" UnSafe="False" WorkflowFileName="P&amp;ID Marker\Marking PIDs\Check sequence for Asset.xaml">
+                            <ui:InvokeWorkflowFile ArgumentsVariable="{x:Null}" ContinueOnError="{x:Null}" DisplayName="Check sequence for Asset - Invoke Workflow File (P&amp;ID Marker\Marking PIDs\Check sequence for Asset.xaml)" sap:VirtualizedContainerService.HintSize="433.6,176" sap2010:WorkflowViewState.IdRef="InvokeWorkflowFile_7" UnSafe="False" WorkflowFileName="P&amp;ID Marker\Marking PIDs\Check sequence for Asset.xaml">
                               <ui:InvokeWorkflowFile.Arguments>
                                 <InArgument x:TypeArguments="x:String" x:Key="EquipmentTag">[EquipmentTag]</InArgument>
                                 <InArgument x:TypeArguments="x:String" x:Key="EquipmentNumber">[EquipmentNumber]</InArgument>
                                 <InArgument x:TypeArguments="scg:Dictionary(x:String, x:String)" x:Key="tag_status">[tag_status]</InArgument>
                                 <InOutArgument x:TypeArguments="scg:HashSet(x:String)" x:Key="visitedTags">[visitedTags]</InOutArgument>
                                 <InArgument x:TypeArguments="x:String" x:Key="CurrentStamp">Witnessed</InArgument>
-                                <InOutArgument x:TypeArguments="scg:Dictionary(x:String, x:Int32)" x:Key="EN_searchProg">[EN_searchProg]</InOutArgument>
+                                <InArgument x:TypeArguments="scg:Dictionary(x:String, x:Int32)" x:Key="EN_searchProg">[EN_searchProg]</InArgument>
+                                <OutArgument x:TypeArguments="scg:Dictionary(x:String, x:Int32)" x:Key="newEN_searchProg">[newEN_searchprog]</OutArgument>
                               </ui:InvokeWorkflowFile.Arguments>
                             </ui:InvokeWorkflowFile>
+                            <Assign sap:VirtualizedContainerService.HintSize="433.6,104.8" sap2010:WorkflowViewState.IdRef="Assign_36">
+                              <Assign.To>
+                                <OutArgument x:TypeArguments="scg:Dictionary(x:String, x:Int32)">[EN_searchprog]</OutArgument>
+                              </Assign.To>
+                              <Assign.Value>
+                                <InArgument x:TypeArguments="scg:Dictionary(x:String, x:Int32)">[newEN_searchprog]</InArgument>
+                              </Assign.Value>
+                            </Assign>
                           </Sequence>
                         </Sequence>
                       </If.Then>
@@ -742,27 +761,27 @@
                 <InArgument x:TypeArguments="x:String" x:Key="Status">Pending</InArgument>
               </ui:InvokeWorkflowFile.Arguments>
             </ui:InvokeWorkflowFile>
-            <ui:ForEach x:TypeArguments="x:String" CurrentIndex="{x:Null}" sap2010:Annotation.AnnotationText="Highlight PENDING as red" DisplayName="For Each currentTag" sap:VirtualizedContainerService.HintSize="595.2,1932.8" sap2010:WorkflowViewState.IdRef="ForEach`1_3" Values="[tag_status.Keys.tolist]">
+            <ui:ForEach x:TypeArguments="x:String" CurrentIndex="{x:Null}" sap2010:Annotation.AnnotationText="Highlight PENDING as red" DisplayName="For Each currentTag" sap:VirtualizedContainerService.HintSize="595.2,2046.4" sap2010:WorkflowViewState.IdRef="ForEach`1_3" Values="[tag_status.Keys.tolist]">
               <ui:ForEach.Body>
                 <ActivityAction x:TypeArguments="x:String">
                   <ActivityAction.Argument>
                     <DelegateInArgument x:TypeArguments="x:String" Name="currentTag" />
                   </ActivityAction.Argument>
-                  <Sequence DisplayName="Body" sap:VirtualizedContainerService.HintSize="593.6,1771.2" sap2010:WorkflowViewState.IdRef="Sequence_16">
+                  <Sequence DisplayName="Body" sap:VirtualizedContainerService.HintSize="593.6,1884.8" sap2010:WorkflowViewState.IdRef="Sequence_16">
                     <sap:WorkflowViewStateService.ViewState>
                       <scg:Dictionary x:TypeArguments="x:String, x:Object">
                         <x:Boolean x:Key="IsExpanded">True</x:Boolean>
                       </scg:Dictionary>
                     </sap:WorkflowViewStateService.ViewState>
-                    <If Condition="[tag_status(currentTag).contains(&quot;Pending&quot;) andalso not visitedTags.Contains(currentTag)]" sap:VirtualizedContainerService.HintSize="560,1711.2" sap2010:WorkflowViewState.IdRef="If_3">
+                    <If Condition="[tag_status(currentTag).contains(&quot;Pending&quot;) andalso not visitedTags.Contains(currentTag)]" sap:VirtualizedContainerService.HintSize="560,1824.8" sap2010:WorkflowViewState.IdRef="If_3">
                       <If.Then>
-                        <Sequence DisplayName="Then" sap:VirtualizedContainerService.HintSize="558.4,1556.8" sap2010:WorkflowViewState.IdRef="Sequence_28">
+                        <Sequence DisplayName="Then" sap:VirtualizedContainerService.HintSize="558.4,1670.4" sap2010:WorkflowViewState.IdRef="Sequence_28">
                           <sap:WorkflowViewStateService.ViewState>
                             <scg:Dictionary x:TypeArguments="x:String, x:Object">
                               <x:Boolean x:Key="IsExpanded">True</x:Boolean>
                             </scg:Dictionary>
                           </sap:WorkflowViewStateService.ViewState>
-                          <Sequence DisplayName="Highlight Tag" sap:VirtualizedContainerService.HintSize="524.8,1496.8" sap2010:WorkflowViewState.IdRef="Sequence_15">
+                          <Sequence DisplayName="Highlight Tag" sap:VirtualizedContainerService.HintSize="524.8,1610.4" sap2010:WorkflowViewState.IdRef="Sequence_15">
                             <sap:WorkflowViewStateService.ViewState>
                               <scg:Dictionary x:TypeArguments="x:String, x:Object">
                                 <x:Boolean x:Key="IsExpanded">True</x:Boolean>
@@ -882,16 +901,25 @@
                                 </scg:Dictionary>
                               </sap:WorkflowViewStateService.ViewState>
                             </ui:RetryScope>
-                            <ui:InvokeWorkflowFile ArgumentsVariable="{x:Null}" ContinueOnError="{x:Null}" DisplayName="Check sequence for Asset - Invoke Workflow File (P&amp;ID Marker\Marking PIDs\Check sequence for Asset.xaml)" sap:VirtualizedContainerService.HintSize="491.2,167.2" sap2010:WorkflowViewState.IdRef="InvokeWorkflowFile_8" UnSafe="False" WorkflowFileName="P&amp;ID Marker\Marking PIDs\Check sequence for Asset.xaml">
+                            <ui:InvokeWorkflowFile ArgumentsVariable="{x:Null}" ContinueOnError="{x:Null}" DisplayName="Check sequence for Asset - Invoke Workflow File (P&amp;ID Marker\Marking PIDs\Check sequence for Asset.xaml)" sap:VirtualizedContainerService.HintSize="491.2,176" sap2010:WorkflowViewState.IdRef="InvokeWorkflowFile_8" UnSafe="False" WorkflowFileName="P&amp;ID Marker\Marking PIDs\Check sequence for Asset.xaml">
                               <ui:InvokeWorkflowFile.Arguments>
                                 <InArgument x:TypeArguments="x:String" x:Key="EquipmentTag">[EquipmentTag]</InArgument>
                                 <InArgument x:TypeArguments="x:String" x:Key="EquipmentNumber">[EquipmentNumber]</InArgument>
                                 <InArgument x:TypeArguments="scg:Dictionary(x:String, x:String)" x:Key="tag_status">[tag_status]</InArgument>
                                 <InOutArgument x:TypeArguments="scg:HashSet(x:String)" x:Key="visitedTags">[visitedTags]</InOutArgument>
                                 <InArgument x:TypeArguments="x:String" x:Key="CurrentStamp">Pending</InArgument>
-                                <InOutArgument x:TypeArguments="scg:Dictionary(x:String, x:Int32)" x:Key="EN_searchProg">[EN_searchProg]</InOutArgument>
+                                <InArgument x:TypeArguments="scg:Dictionary(x:String, x:Int32)" x:Key="EN_searchProg">[EN_searchProg]</InArgument>
+                                <OutArgument x:TypeArguments="scg:Dictionary(x:String, x:Int32)" x:Key="newEN_searchProg">[newEN_searchprog]</OutArgument>
                               </ui:InvokeWorkflowFile.Arguments>
                             </ui:InvokeWorkflowFile>
+                            <Assign sap:VirtualizedContainerService.HintSize="491.2,104.8" sap2010:WorkflowViewState.IdRef="Assign_37">
+                              <Assign.To>
+                                <OutArgument x:TypeArguments="scg:Dictionary(x:String, x:Int32)">[EN_searchprog]</OutArgument>
+                              </Assign.To>
+                              <Assign.Value>
+                                <InArgument x:TypeArguments="scg:Dictionary(x:String, x:Int32)">[newEN_searchprog]</InArgument>
+                              </Assign.Value>
+                            </Assign>
                           </Sequence>
                         </Sequence>
                       </If.Then>
