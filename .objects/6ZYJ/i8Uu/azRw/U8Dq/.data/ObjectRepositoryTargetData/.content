@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="utf-16"?>
+<ObjectRepositoryTargetData ContentHash="c0efU1XYkEmP0NrZkwz_dQ" xmlns="http://schemas.uipath.com/workflow/activities/uix" xmlns:scg="clr-namespace:System.Collections.Generic;assembly=System.Private.CoreLib" xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml">
+  <ObjectRepositoryTargetData.Data>
+    <TargetAnchorable x:Key="TargetAnchorable" DesignTimeRectangle="613, 543, 725, 112" ElementType="Text" FuzzySelectorArgument="&lt;wnd cls='UIX:Window' /&gt;&lt;ctrl automationid='pagesView@' matching:automationid='fuzzy' fuzzylevel:automationid='0.0' /&gt;&lt;ctrl automationid='180@' role='text' matching:automationid='fuzzy' fuzzylevel:automationid='0.0' /&gt;" Guid="cee5b19a-c0b9-4d2d-b35d-93bd901f22bc" ScopeSelectorArgument="&lt;wnd app='pdfxedit.exe' cls='PXE:{C*AD*E*B1E*D8AF3B9D}' title='131241-WSB01-DR-P-6020 marked* - PDF-XChange Editor' /&gt;" SearchSteps="FuzzySelector" Version="V6" Visibility="Interactive" WaitForReadyArgument="None">
+      <TargetAnchorable.Anchors>
+        <scg:List x:TypeArguments="ITarget" Capacity="4">
+          <Target DesignTimeRectangle="905, 1011, 98, 28" ElementType="Text" FullSelectorArgument="&lt;wnd cls='UIX:Window' idx='2' /&gt;&lt;ctrl automationid='cmdbar.pageNav@' /&gt;&lt;ctrl automationid='cmd.view.pageNumber@' /&gt;" FuzzySelectorArgument="&lt;wnd cls='UIX:Window' /&gt;&lt;ctrl automationid='DA47@' matching:automationid='fuzzy' fuzzylevel:automationid='0.0' /&gt;&lt;ctrl automationid='documentView@' matching:automationid='fuzzy' fuzzylevel:automationid='0.0' /&gt;&lt;ctrl automationid='DA48@' matching:automationid='fuzzy' fuzzylevel:automationid='0.0' /&gt;&lt;ctrl automationid='cmdbar.pageNav@' matching:automationid='fuzzy' fuzzylevel:automationid='0.0' /&gt;&lt;ctrl automationid='cmd.view.pageNumber@' role='text' matching:automationid='fuzzy' fuzzylevel:automationid='0.0' /&gt;" Guid="89a8ae95-b3bb-41db-ab5e-f2cec35fb391" ImageBase64="" SearchSteps="Selector, FuzzySelector" />
+          <Target DesignTimeRectangle="8, 170, 1920, 33" ElementType="TabPageContainer" FullSelectorArgument="&lt;wnd cls='UIX:Window' /&gt;&lt;ctrl automationid='DA47@' /&gt;&lt;ctrl automationid='layout.tabs@' /&gt;" FuzzySelectorArgument="&lt;ctrl automationid='DA47@' matching:automationid='fuzzy' fuzzylevel:automationid='0.0' /&gt;&lt;ctrl automationid='layout.tabs@' role='page tab list' matching:automationid='fuzzy' fuzzylevel:automationid='0.0' /&gt;" Guid="02b5335a-e603-4c52-99fb-584df470f49e" ImageBase64="" SearchSteps="Selector, FuzzySelector" />
+        </scg:List>
+      </TargetAnchorable.Anchors>
+      <imageRef attrName="InformativeScreenshot" originalValue="97a76c12ff61eabe9458518052973009.png" xmlns="">047pZ7h6t1UaZhR9xbHopAA</imageRef>
+    </TargetAnchorable>
+    <x:String x:Key="ActivityType">GetText</x:String>
+  </ObjectRepositoryTargetData.Data>
+</ObjectRepositoryTargetData>

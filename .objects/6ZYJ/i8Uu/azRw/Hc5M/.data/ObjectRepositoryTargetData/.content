@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="utf-16"?>
+<ObjectRepositoryTargetData ContentHash="vZgGFING40O8wGBYIRWt_Q" Reference="xGt2OSXt7UW47kSHt2k5yg/Hc5MhXQWjU2871RB8hVwaA" xmlns="http://schemas.uipath.com/workflow/activities/uix" xmlns:scg="clr-namespace:System.Collections.Generic;assembly=System.Private.CoreLib" xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml">
+  <ObjectRepositoryTargetData.Data>
+    <TargetAnchorable x:Key="TargetAnchorable" DesignTimeRectangle="744, 818, 410, 112" ElementType="Text" FuzzySelectorArgument="[string.Format(&quot;&lt;wnd cls='UIX:Window' /&gt;&lt;ctrl automationid='pagesView@' matching:automationid='fuzzy' fuzzylevel:automationid='0.0' /&gt;&lt;ctrl automationid='DB@' role='text' matching:automationid='fuzzy' fuzzylevel:automationid='0.0' check:text='{0}' /&gt;&quot;, EquipmentNumber)]" Guid="4eb1737c-37f2-40c4-8bc7-05be2e912878" ImageBase64="" ScopeSelectorArgument="&lt;wnd app='pdfxedit.exe' omit:cls='PXE:{C*AD*E*B1E*D8AF3B9D}' title='* - PDF-XChange Editor' /&gt;" SearchSteps="FuzzySelector" Version="V6" Visibility="Interactive" WaitForReadyArgument="None">
+      <TargetAnchorable.Anchors>
+        <scg:List x:TypeArguments="ITarget" Capacity="2">
+          <Target DesignTimeRectangle="857, 544, 238, 111" ElementType="Text" FuzzySelectorArgument="[string.Format(&quot;&lt;wnd cls='UIX:Window' /&gt;&lt;ctrl automationid='pagesView@' matching:automationid='fuzzy' fuzzylevel:automationid='0.0' /&gt;&lt;ctrl automationid='DC@' role='text' matching:automationid='fuzzy' fuzzylevel:automationid='0.0' check:text='{0}' /&gt;&quot;, EquipmentTag)]" Guid="2b6379a5-f91f-4eb7-bd2e-6dead22e5730" SearchSteps="FuzzySelector" />
+          <Target DesignTimeRectangle="905, 1011, 98, 28" ElementType="Text" FullSelectorArgument="&lt;wnd cls='UIX:Window' idx='2' /&gt;&lt;ctrl automationid='cmdbar.pageNav@' /&gt;&lt;ctrl automationid='cmd.view.pageNumber@' /&gt;" FuzzySelectorArgument="&lt;wnd cls='UIX:Window' /&gt;&lt;ctrl automationid='DA47@' matching:automationid='fuzzy' fuzzylevel:automationid='0.0' /&gt;&lt;ctrl automationid='documentView@' matching:automationid='fuzzy' fuzzylevel:automationid='0.0' /&gt;&lt;ctrl automationid='DA48@' matching:automationid='fuzzy' fuzzylevel:automationid='0.0' /&gt;&lt;ctrl automationid='cmdbar.pageNav@' matching:automationid='fuzzy' fuzzylevel:automationid='0.0' /&gt;&lt;ctrl automationid='cmd.view.pageNumber@' role='text' matching:automationid='fuzzy' fuzzylevel:automationid='0.0' /&gt;" Guid="e59eaf05-5cd9-4004-96b6-17ce6351ea24" SearchSteps="Selector, FuzzySelector" />
+        </scg:List>
+      </TargetAnchorable.Anchors>
+      <imageRef attrName="InformativeScreenshot" originalValue="c06d6f3992d1dc1831f0ad74107577e6.png" xmlns="">0vkGxgw5J90ieMpMmKw4peQ</imageRef>
+    </TargetAnchorable>
+    <scg:List x:TypeArguments="ObjectRepositoryVariableData" x:Key="Variables" Capacity="2">
+      <ObjectRepositoryVariableData DefaultValue="0303" IsVariable="False" Name="EquipmentNumber" />
+      <ObjectRepositoryVariableData DefaultValue="PI" IsVariable="False" Name="EquipmentTag" />
+    </scg:List>
+    <x:String x:Key="ActivityType">CheckState</x:String>
+  </ObjectRepositoryTargetData.Data>
+</ObjectRepositoryTargetData>

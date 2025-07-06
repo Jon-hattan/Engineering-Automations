@@ -26,18 +26,18 @@
       },
       {
         "label": "Content",
-        "customClass": "addtext",
+        "customClass": "progresstext",
         "refreshOnChange": true,
-        "key": "content",
+        "key": "progress",
         "type": "content",
         "input": false,
         "tableView": false
       },
       {
         "label": "Content",
-        "customClass": "progresstext",
+        "customClass": "addtext",
         "refreshOnChange": true,
-        "key": "progress",
+        "key": "content",
         "type": "content",
         "input": false,
         "tableView": false

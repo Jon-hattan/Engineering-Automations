@@ -1,5 +1,6 @@
 <Activity mc:Ignorable="sap sap2010" x:Class="Check_sequence_for_Asset" this:Check_sequence_for_Asset.EquipmentTag="HV" this:Check_sequence_for_Asset.EquipmentNumber="0067" xmlns="http://schemas.microsoft.com/netfx/2009/xaml/activities" xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" xmlns:p="http://schemas.uipath.com/workflow/activities/ocr" xmlns:sap="http://schemas.microsoft.com/netfx/2009/xaml/activities/presentation" xmlns:sap2010="http://schemas.microsoft.com/netfx/2010/xaml/activities/presentation" xmlns:scg="clr-namespace:System.Collections.Generic;assembly=System.Private.CoreLib" xmlns:sco="clr-namespace:System.Collections.ObjectModel;assembly=System.Private.CoreLib" xmlns:sd="clr-namespace:System.Drawing;assembly=System.Drawing.Common" xmlns:sd1="clr-namespace:System.Drawing;assembly=System.Drawing.Primitives" xmlns:this="clr-namespace:" xmlns:ui="http://schemas.uipath.com/workflow/activities" xmlns:uix="http://schemas.uipath.com/workflow/activities/uix" xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml">
   <x:Members>
+    <x:Property Name="EN_searchProg" Type="InOutArgument(scg:Dictionary(x:String, x:Int32))" />
     <x:Property Name="EquipmentTag" Type="InArgument(x:String)" />
     <x:Property Name="EquipmentNumber" Type="InArgument(x:String)" />
     <x:Property Name="tag_status" Type="InArgument(scg:Dictionary(x:String, x:String))" />
@@ -54,6 +55,7 @@
       <x:String>UiPath.OCR.Activities</x:String>
       <x:String>UiPath.OCR.Contracts.Activities</x:String>
       <x:String>System.Linq.Expressions</x:String>
+      <x:String>System.Numerics</x:String>
     </sco:Collection>
   </TextExpression.NamespacesForImplementation>
   <TextExpression.ReferencesForImplementation>
@@ -123,37 +125,60 @@
       <AssemblyReference>System.Linq.Parallel</AssemblyReference>
       <AssemblyReference>System.Collections.Immutable</AssemblyReference>
       <AssemblyReference>System.Linq.Queryable</AssemblyReference>
+      <AssemblyReference>System.Runtime.Numerics</AssemblyReference>
     </sco:Collection>
   </TextExpression.ReferencesForImplementation>
-  <Sequence DisplayName="Check_sequence_for_Asset" sap:VirtualizedContainerService.HintSize="2144,1783.2" sap2010:WorkflowViewState.IdRef="Sequence_1">
+  <Sequence DisplayName="Check_sequence_for_Asset" sap:VirtualizedContainerService.HintSize="1667.2,2098.4" sap2010:WorkflowViewState.IdRef="Sequence_1">
     <sap:WorkflowViewStateService.ViewState>
       <scg:Dictionary x:TypeArguments="x:String, x:Object">
         <x:Boolean x:Key="IsExpanded">True</x:Boolean>
       </scg:Dictionary>
     </sap:WorkflowViewStateService.ViewState>
-    <uix:NApplicationCard AttachMode="ByInstance" DisplayName="PDF xchange editor" HealingAgentBehavior="Job" sap:VirtualizedContainerService.HintSize="2144,1760" sap2010:WorkflowViewState.IdRef="NApplicationCard_1" ScopeGuid="8d2e4ae8-3a9e-47ec-94a2-d4674ae0c4dc" Version="V2">
+    <If Condition="[string.IsNullOrEmpty(EquipmentNumber) orElse string.IsNullOrEmpty(EquipmentTag) orElse string.IsNullOrWhiteSpace(EquipmentNumber) orElse string.IsNullOrWhiteSpace(EquipmentTag)]" sap:VirtualizedContainerService.HintSize="1667.2,271.2" sap2010:WorkflowViewState.IdRef="If_1">
+      <If.Then>
+        <Sequence DisplayName="Then" sap:VirtualizedContainerService.HintSize="416,108" sap2010:WorkflowViewState.IdRef="Sequence_14">
+          <sap:WorkflowViewStateService.ViewState>
+            <scg:Dictionary x:TypeArguments="x:String, x:Object">
+              <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+            </scg:Dictionary>
+          </sap:WorkflowViewStateService.ViewState>
+          <ui:Return sap:VirtualizedContainerService.HintSize="382.4,48" sap2010:WorkflowViewState.IdRef="Return_1" />
+        </Sequence>
+      </If.Then>
+      <If.Else>
+        <Sequence DisplayName="Else" sap:VirtualizedContainerService.HintSize="416,24.8" sap2010:WorkflowViewState.IdRef="Sequence_15">
+          <sap:WorkflowViewStateService.ViewState>
+            <scg:Dictionary x:TypeArguments="x:String, x:Object">
+              <x:Boolean x:Key="IsExpanded">False</x:Boolean>
+              <x:Boolean x:Key="IsPinned">False</x:Boolean>
+            </scg:Dictionary>
+          </sap:WorkflowViewStateService.ViewState>
+        </Sequence>
+      </If.Else>
+    </If>
+    <uix:NApplicationCard AttachMode="ByInstance" DisplayName="PDF xchange editor" HealingAgentBehavior="Job" sap:VirtualizedContainerService.HintSize="1667.2,1804" sap2010:WorkflowViewState.IdRef="NApplicationCard_1" ScopeGuid="8d2e4ae8-3a9e-47ec-94a2-d4674ae0c4dc" Version="V2">
       <uix:NApplicationCard.Body>
         <ActivityAction x:TypeArguments="x:Object">
           <ActivityAction.Argument>
             <DelegateInArgument x:TypeArguments="x:Object" Name="WSSessionData" />
           </ActivityAction.Argument>
-          <Sequence DisplayName="Do" sap:VirtualizedContainerService.HintSize="2110.4,1404.8" sap2010:WorkflowViewState.IdRef="Sequence_11">
+          <Sequence DisplayName="Do" sap:VirtualizedContainerService.HintSize="1633.6,1448.8" sap2010:WorkflowViewState.IdRef="Sequence_11">
             <sap:WorkflowViewStateService.ViewState>
               <scg:Dictionary x:TypeArguments="x:String, x:Object">
                 <x:Boolean x:Key="IsExpanded">True</x:Boolean>
                 <x:Boolean x:Key="IsPinned">False</x:Boolean>
               </scg:Dictionary>
             </sap:WorkflowViewStateService.ViewState>
-            <uix:NCheckState DisplayName="Check if found word" HealingAgentBehavior="Disabled" sap:VirtualizedContainerService.HintSize="1582.4,1096.8" sap2010:WorkflowViewState.IdRef="NCheckState_1" ScopeIdentifier="8d2e4ae8-3a9e-47ec-94a2-d4674ae0c4dc" Timeout="0.5" Version="V4">
+            <uix:NCheckState DisplayName="Check if found word" HealingAgentBehavior="Disabled" sap:VirtualizedContainerService.HintSize="1600,1388.8" sap2010:WorkflowViewState.IdRef="NCheckState_1" ScopeIdentifier="8d2e4ae8-3a9e-47ec-94a2-d4674ae0c4dc" Timeout="0.5" Version="V4">
               <uix:NCheckState.IfExists>
-                <Sequence DisplayName="Not found word - no search results." sap:VirtualizedContainerService.HintSize="526.4,878.4" sap2010:WorkflowViewState.IdRef="Sequence_8">
+                <Sequence DisplayName="Not found word - no search results." sap:VirtualizedContainerService.HintSize="544,1105.6" sap2010:WorkflowViewState.IdRef="Sequence_8">
                   <sap:WorkflowViewStateService.ViewState>
                     <scg:Dictionary x:TypeArguments="x:String, x:Object">
                       <x:Boolean x:Key="IsExpanded">True</x:Boolean>
                       <x:Boolean x:Key="IsPinned">False</x:Boolean>
                     </scg:Dictionary>
                   </sap:WorkflowViewStateService.ViewState>
-                  <uix:NTypeInto ActivateBefore="True" ClickBeforeMode="Single" ClipboardMode="Never" DisplayName="Type Into 'editable text cb.findTe…'" EmptyFieldMode="SingleLine" HealingAgentBehavior="SameAsCard" sap:VirtualizedContainerService.HintSize="492.8,286.4" sap2010:WorkflowViewState.IdRef="NTypeInto_2" ScopeIdentifier="8d2e4ae8-3a9e-47ec-94a2-d4674ae0c4dc" Text="[EquipmentTag &amp; &quot;[k(Enter)]&quot;]" Version="V4">
+                  <uix:NTypeInto ActivateBefore="True" ClickBeforeMode="Single" ClipboardMode="Never" DisplayName="Type Into 'editable text cb.findTe…'" EmptyFieldMode="SingleLine" HealingAgentBehavior="SameAsCard" sap:VirtualizedContainerService.HintSize="510.4,286.4" sap2010:WorkflowViewState.IdRef="NTypeInto_2" ScopeIdentifier="8d2e4ae8-3a9e-47ec-94a2-d4674ae0c4dc" Text="[EquipmentTag &amp; &quot;[k(Enter)]&quot;]" Version="V4">
                     <uix:NTypeInto.Target>
                       <uix:TargetAnchorable ContentHash="T8cIQYDre0ejrttwS_UtQw" DesignTimeRectangle="25, 4, 190, 22" ElementType="InputBox" FullSelectorArgument="&lt;wnd app='pdfxedit.exe' omit:cls='PXE:{C*AD*E*B1E*D8AF3B9D}' title='*- PDF-XChange Editor' /&gt;&lt;wnd aaname='Pages window' cls='UIX:Window' /&gt;&lt;ctrl automationid='cb.findText@' role='editable text' /&gt;" FuzzySelectorArgument="&lt;wnd aaname='Pages window' cls='UIX:Window' matching:aaname='fuzzy' fuzzylevel:aaname='0.0' /&gt;&lt;ctrl automationid='cb.findText@' role='editable text' matching:automationid='fuzzy' fuzzylevel:automationid='0.0' /&gt;" Guid="d3cc541c-c441-4b09-8eda-1e9bf5d26c67" InformativeScreenshot="90f9767b11b08c0c965384d0af1cdea4.png" Reference="xGt2OSXt7UW47kSHt2k5yg/UK7Mrotn0UeBW_KKIzuzTw" ScopeSelectorArgument="&lt;wnd app='pdfxedit.exe' omit:cls='PXE:{C*AD*E*B1E*D8AF3B9D}' omit:title='131235-WDL21-DR-P-6044* - PDF-XChange Editor' /&gt;" SearchSteps="Selector, FuzzySelector" Version="V6" Visibility="Interactive" WaitForReadyArgument="None" />
                     </uix:NTypeInto.Target>
@@ -168,7 +193,7 @@
                       </uix:VerifyExecutionTypeIntoOptions>
                     </uix:NTypeInto.VerifyOptions>
                   </uix:NTypeInto>
-                  <uix:NCheckState DisplayName="Check if no more search results" EnableIfExists="False" HealingAgentBehavior="Disabled" sap:VirtualizedContainerService.HintSize="492.8,530.4" sap2010:WorkflowViewState.IdRef="NCheckState_3" ScopeIdentifier="8d2e4ae8-3a9e-47ec-94a2-d4674ae0c4dc" Timeout="0.5" Version="V4">
+                  <uix:NCheckState DisplayName="Check if no more search results" EnableIfExists="False" HealingAgentBehavior="Disabled" sap:VirtualizedContainerService.HintSize="510.4,757.6" sap2010:WorkflowViewState.IdRef="NCheckState_3" ScopeIdentifier="8d2e4ae8-3a9e-47ec-94a2-d4674ae0c4dc" Timeout="0.5" Version="V4">
                     <uix:NCheckState.IfExists>
                       <Sequence DisplayName="Target appears" sap:VirtualizedContainerService.HintSize="449.6,91.2" sap2010:WorkflowViewState.IdRef="Sequence_3">
                         <sap:WorkflowViewStateService.ViewState>
@@ -179,22 +204,44 @@
                       </Sequence>
                     </uix:NCheckState.IfExists>
                     <uix:NCheckState.IfNotExists>
-                      <Sequence DisplayName="Target does not appear" sap:VirtualizedContainerService.HintSize="449.6,287.2" sap2010:WorkflowViewState.IdRef="Sequence_6">
+                      <Sequence DisplayName="Target does not appear" sap:VirtualizedContainerService.HintSize="467.2,514.4" sap2010:WorkflowViewState.IdRef="Sequence_6">
+                        <Sequence.Variables>
+                          <Variable x:TypeArguments="x:Int32" Name="searchProg_forTag" />
+                          <Variable x:TypeArguments="x:Int32" Name="newSearchProg_forTag" />
+                        </Sequence.Variables>
                         <sap:WorkflowViewStateService.ViewState>
                           <scg:Dictionary x:TypeArguments="x:String, x:Object">
                             <x:Boolean x:Key="IsExpanded">True</x:Boolean>
                           </scg:Dictionary>
                         </sap:WorkflowViewStateService.ViewState>
-                        <ui:InvokeWorkflowFile ArgumentsVariable="{x:Null}" ContinueOnError="{x:Null}" DisplayName="Number - Check within duplicate search results - Invoke Workflow File (P&amp;ID Marker\Marking PIDs\Number - Check within duplicate search results.xaml)" sap:VirtualizedContainerService.HintSize="416,176" sap2010:WorkflowViewState.IdRef="InvokeWorkflowFile_2" UnSafe="False" WorkflowFileName="P&amp;ID Marker\Marking PIDs\Number - Check within duplicate search results.xaml">
+                        <Assign sap:VirtualizedContainerService.HintSize="433.6,114.4" sap2010:WorkflowViewState.IdRef="Assign_2">
+                          <Assign.To>
+                            <OutArgument x:TypeArguments="x:Int32">[searchProg_forTag]</OutArgument>
+                          </Assign.To>
+                          <Assign.Value>
+                            <InArgument x:TypeArguments="x:Int32">[If(EN_searchprog.ContainsKey(EquipmentTag), EN_searchProg(EquipmentTag), 0)]</InArgument>
+                          </Assign.Value>
+                        </Assign>
+                        <ui:InvokeWorkflowFile ArgumentsVariable="{x:Null}" ContinueOnError="{x:Null}" DisplayName="Number - Check within duplicate search results - Invoke Workflow File (P&amp;ID Marker\Marking PIDs\Number - Check within duplicate search results.xaml)" sap:VirtualizedContainerService.HintSize="433.6,176" sap2010:WorkflowViewState.IdRef="InvokeWorkflowFile_2" UnSafe="False" WorkflowFileName="P&amp;ID Marker\Marking PIDs\Number - Check within duplicate search results.xaml">
                           <ui:InvokeWorkflowFile.Arguments>
                             <InArgument x:TypeArguments="scg:Dictionary(x:String, x:String)" x:Key="tag_status">[tag_status]</InArgument>
                             <InOutArgument x:TypeArguments="scg:HashSet(x:String)" x:Key="visitedTags">[visitedTags]</InOutArgument>
                             <InArgument x:TypeArguments="x:String" x:Key="currentStamp">[CurrentStamp]</InArgument>
                             <InArgument x:TypeArguments="x:String" x:Key="EquipmentTag">[EquipmentTag]</InArgument>
                             <InArgument x:TypeArguments="x:String" x:Key="EquipmentNumber">[EquipmentNumber]</InArgument>
+                            <InArgument x:TypeArguments="x:Int32" x:Key="searchProg_forTag">[searchProg_forTag]</InArgument>
+                            <OutArgument x:TypeArguments="x:Int32" x:Key="NewSearchProg_forTag">[newSearchProg_forTag]</OutArgument>
                           </ui:InvokeWorkflowFile.Arguments>
                         </ui:InvokeWorkflowFile>
-                        <ui:CommentOut DisplayName="Comment Out" sap:VirtualizedContainerService.HintSize="416,49.6" sap2010:WorkflowViewState.IdRef="CommentOut_2">
+                        <Assign sap:VirtualizedContainerService.HintSize="433.6,114.4" sap2010:WorkflowViewState.IdRef="Assign_3">
+                          <Assign.To>
+                            <OutArgument x:TypeArguments="x:Int32">[EN_searchProg(EquipmentTag)]</OutArgument>
+                          </Assign.To>
+                          <Assign.Value>
+                            <InArgument x:TypeArguments="x:Int32">[NewSearchProg_forTag]</InArgument>
+                          </Assign.Value>
+                        </Assign>
+                        <ui:CommentOut DisplayName="Comment Out" sap:VirtualizedContainerService.HintSize="433.6,49.6" sap2010:WorkflowViewState.IdRef="CommentOut_2">
                           <ui:CommentOut.Body>
                             <Sequence DisplayName="Ignored Activities" sap:VirtualizedContainerService.HintSize="450,108" sap2010:WorkflowViewState.IdRef="Sequence_13">
                               <sap:WorkflowViewStateService.ViewState>
@@ -453,7 +500,7 @@
         </ActivityFunc>
       </uix:NApplicationCard.OCREngine>
       <uix:NApplicationCard.TargetApp>
-        <uix:TargetApp Area="-759, -1088, 1936, 1048" ContentHash="mQ68TwdG-U-31IzmPcj1oQ" FilePath="C:\Program Files\Tracker Software\PDF Editor\pdfxedit.exe" IconBase64="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" InformativeScreenshot="fdfc708636ffdf3f382d924ac9c137e6.png" Reference="xGt2OSXt7UW47kSHt2k5yg/azRws-oh30qsXz-7zKiLeg" Selector="&lt;wnd app='pdfxedit.exe' omit:cls='PXE:{C*AD*E*B1E*D8AF3B9D}' title='* - PDF-XChange Editor' /&gt;" Version="V2" />
+        <uix:TargetApp Area="-759, -1088, 1936, 1048" ContentHash="YFAqsnk_REGV_qckCgR96w" FilePath="C:\Program Files\Tracker Software\PDF Editor\pdfxedit.exe" IconBase64="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" InformativeScreenshot="fdfc708636ffdf3f382d924ac9c137e6.png" Reference="xGt2OSXt7UW47kSHt2k5yg/azRws-oh30qsXz-7zKiLeg" Selector="&lt;wnd app='pdfxedit.exe' omit:cls='PXE:{C*AD*E*B1E*D8AF3B9D}' title='* - PDF-XChange Editor' /&gt;" Version="V2" />
       </uix:NApplicationCard.TargetApp>
     </uix:NApplicationCard>
   </Sequence>
