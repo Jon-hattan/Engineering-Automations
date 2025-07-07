@@ -30,7 +30,7 @@
         "type": "label"
       },
       {
-        "content": "Select the excel file template for extraction, and excel file for outputting the table.",
+        "content": "Select the P&ID Tracker and Asset list excel file.",
         "key": "label1",
         "input": false,
         "tableView": false,
@@ -42,7 +42,7 @@
           {
             "components": [
               {
-                "label": "Select Excel Output",
+                "label": "Select P&ID Tracker",
                 "action": "event",
                 "showValidations": false,
                 "theme": "secondary",
@@ -71,7 +71,7 @@
           {
             "components": [
               {
-                "label": "Select Excel Template",
+                "label": "Select Asset List",
                 "action": "event",
                 "showValidations": false,
                 "theme": "secondary",
@@ -112,18 +112,18 @@
         "tableView": false,
         "components": [
           {
-            "label": "Select the sheet that you want to output to.",
+            "label": "Select the contract.",
             "widget": "choicesjs",
-            "description": "Extracted data will be put into this sheet, please ensure that there isn't any existing data there as it will be overwritten.",
+            "description": "Select the sheet that contains the contract information in the P&ID tracker.",
             "tableView": true,
             "key": "sheets_lst_output",
             "type": "select",
             "input": true
           },
           {
-            "label": "Select the template sheet from template excel file",
+            "label": "Select the asset list sheet.",
             "widget": "choicesjs",
-            "description": "Data will be extracted from this file.",
+            "description": "Select the sheet that contains the Asset List.",
             "tableView": true,
             "key": "sheets_lst_template",
             "type": "select",

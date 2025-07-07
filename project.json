@@ -14,7 +14,7 @@
     "UiPath.OCR.Activities": "[3.23.0-alpha.8892146]",
     "UiPath.PDF.Activities": "[3.22.1]",
     "UiPath.System.Activities": "[25.4.4]",
-    "UiPath.UIAutomation.Activities": "[25.10.4]",
+    "UiPath.UIAutomation.Activities": "[25.10.8]",
     "UiPath.WebAPI.Activities": "[1.21.1]"
   },
   "webServices": [],
