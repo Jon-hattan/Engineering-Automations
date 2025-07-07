@@ -1,4 +1,4 @@
-<Activity mc:Ignorable="sap sap2010" x:Class="test" this:test.target="DMP-0201" xmlns="http://schemas.microsoft.com/netfx/2009/xaml/activities" xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" xmlns:p="http://schemas.uipath.com/workflow/activities/cv" xmlns:p1="http://schemas.uipath.com/workflow/activities/ocr" xmlns:sap="http://schemas.microsoft.com/netfx/2009/xaml/activities/presentation" xmlns:sap2010="http://schemas.microsoft.com/netfx/2010/xaml/activities/presentation" xmlns:scg="clr-namespace:System.Collections.Generic;assembly=System.Private.CoreLib" xmlns:sco="clr-namespace:System.Collections.ObjectModel;assembly=System.Private.CoreLib" xmlns:sd="clr-namespace:System.Drawing;assembly=System.Drawing.Common" xmlns:sd1="clr-namespace:System.Drawing;assembly=System.Drawing.Primitives" xmlns:si="clr-namespace:System.IO;assembly=System.Private.CoreLib" xmlns:this="clr-namespace:" xmlns:uc="clr-namespace:UiPath.CV;assembly=UiPath.CV" xmlns:ufa="clr-namespace:UiPath.Forms.Activities;assembly=UiPath.Forms.Activities" xmlns:ui="http://schemas.uipath.com/workflow/activities" xmlns:uix="http://schemas.uipath.com/workflow/activities/uix" xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml">
+<Activity mc:Ignorable="sap sap2010" x:Class="test" this:test.target="DMP-0201" xmlns="http://schemas.microsoft.com/netfx/2009/xaml/activities" xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" xmlns:p="http://schemas.uipath.com/workflow/activities/cv" xmlns:p1="http://schemas.uipath.com/workflow/activities/ocr" xmlns:sap="http://schemas.microsoft.com/netfx/2009/xaml/activities/presentation" xmlns:sap2010="http://schemas.microsoft.com/netfx/2010/xaml/activities/presentation" xmlns:scg="clr-namespace:System.Collections.Generic;assembly=System.Private.CoreLib" xmlns:sco="clr-namespace:System.Collections.ObjectModel;assembly=System.Private.CoreLib" xmlns:sd="clr-namespace:System.Drawing;assembly=System.Drawing.Common" xmlns:sd1="clr-namespace:System.Drawing;assembly=System.Drawing.Primitives" xmlns:si="clr-namespace:System.IO;assembly=System.Private.CoreLib" xmlns:this="clr-namespace:" xmlns:uasc="clr-namespace:UiPath.Activities.System.Collections;assembly=UiPath.System.Activities" xmlns:uc="clr-namespace:UiPath.CV;assembly=UiPath.CV" xmlns:ufa="clr-namespace:UiPath.Forms.Activities;assembly=UiPath.Forms.Activities" xmlns:ui="http://schemas.uipath.com/workflow/activities" xmlns:uisapm="clr-namespace:UiPath.IntelligentOCR.StudioWeb.Activities.PDF.MergePDFs;assembly=UiPath.IntelligentOCR.StudioWeb.Activities" xmlns:uix="http://schemas.uipath.com/workflow/activities/uix" xmlns:upr="clr-namespace:UiPath.Platform.ResourceHandling;assembly=UiPath.Platform" xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml">
   <x:Members>
     <x:Property Name="target" Type="InArgument(x:String)" />
   </x:Members>
@@ -60,6 +60,12 @@
       <x:String>UiPath.Platform.GlobalVariables</x:String>
       <x:String>UiPath.Forms.Activities.Base</x:String>
       <x:String>System.Numerics</x:String>
+      <x:String>UiPath.Shared.Activities.Business</x:String>
+      <x:String>UiPath.IntelligentOCR.StudioWeb.Activities.PDF.MergePDFs</x:String>
+      <x:String>UiPath.IntelligentOCR.StudioWeb.Activities.PDF</x:String>
+      <x:String>UiPath.Activities.System.Collections</x:String>
+      <x:String>UiPath.Platform</x:String>
+      <x:String>UiPath</x:String>
     </sco:Collection>
   </TextExpression.NamespacesForImplementation>
   <TextExpression.ReferencesForImplementation>
@@ -138,22 +144,24 @@
       <AssemblyReference>Microsoft.VisualBasic.Forms</AssemblyReference>
       <AssemblyReference>Microsoft.VisualBasic.Core</AssemblyReference>
       <AssemblyReference>System.Runtime.Numerics</AssemblyReference>
+      <AssemblyReference>UiPath.CodedWorkflows</AssemblyReference>
+      <AssemblyReference>UiPath.System.Activities.Api</AssemblyReference>
+      <AssemblyReference>UiPath.Interop</AssemblyReference>
+      <AssemblyReference>UiPath.Mail.Activities.Design</AssemblyReference>
     </sco:Collection>
   </TextExpression.ReferencesForImplementation>
-  <Sequence DisplayName="test" sap:VirtualizedContainerService.HintSize="1479.2,436.44000000000005" sap2010:WorkflowViewState.IdRef="Sequence_1">
+  <Sequence DisplayName="test" sap:VirtualizedContainerService.HintSize="1216,1600.6666666666667" sap2010:WorkflowViewState.IdRef="Sequence_1">
     <Sequence.Variables>
-      <Variable x:TypeArguments="x:String" Name="result" />
-      <Variable x:TypeArguments="x:Boolean" Name="found" />
-      <Variable x:TypeArguments="si:FileInfo" Name="TextFile" />
-      <Variable x:TypeArguments="scg:Dictionary(x:String, scg:Dictionary(x:String, scg:List(x:String)))" Name="SP_PID_remainingTags" />
-      <Variable x:TypeArguments="x:String" Name="Message" />
+      <Variable x:TypeArguments="x:String" Name="folderPath" />
+      <Variable x:TypeArguments="scg:List(upr:IResource)" Name="CollatedPIDs" />
+      <Variable x:TypeArguments="upr:ILocalResource" Name="MergedPIDs" />
     </Sequence.Variables>
     <sap:WorkflowViewStateService.ViewState>
       <scg:Dictionary x:TypeArguments="x:String, x:Object">
         <x:Boolean x:Key="IsExpanded">True</x:Boolean>
       </scg:Dictionary>
     </sap:WorkflowViewStateService.ViewState>
-    <ui:CommentOut DisplayName="Comment Out" sap:VirtualizedContainerService.HintSize="416,56.8" sap2010:WorkflowViewState.IdRef="CommentOut_1">
+    <ui:CommentOut DisplayName="Comment Out" sap:VirtualizedContainerService.HintSize="486,57.333333333333336" sap2010:WorkflowViewState.IdRef="CommentOut_1">
       <ui:CommentOut.Body>
         <Sequence DisplayName="Ignored Activities" sap:VirtualizedContainerService.HintSize="449.6,278.4" sap2010:WorkflowViewState.IdRef="Sequence_14">
           <sap:WorkflowViewStateService.ViewState>
@@ -1160,7 +1168,7 @@
         </scg:Dictionary>
       </sap:WorkflowViewStateService.ViewState>
     </ui:CommentOut>
-    <ui:CommentOut DisplayName="Comment Out" sap:VirtualizedContainerService.HintSize="416,56.8" sap2010:WorkflowViewState.IdRef="CommentOut_2">
+    <ui:CommentOut DisplayName="Comment Out" sap:VirtualizedContainerService.HintSize="486,57.333333333333336" sap2010:WorkflowViewState.IdRef="CommentOut_2">
       <ui:CommentOut.Body>
         <Sequence DisplayName="Ignored Activities" sap:VirtualizedContainerService.HintSize="483.2,108" sap2010:WorkflowViewState.IdRef="Sequence_17">
           <sap:WorkflowViewStateService.ViewState>
@@ -1227,54 +1235,130 @@
         </scg:Dictionary>
       </sap:WorkflowViewStateService.ViewState>
     </ui:CommentOut>
-    <uix:NApplicationCard AttachMode="ByInstance" DisplayName="PDF xchange editor" HealingAgentBehavior="Job" sap:VirtualizedContainerService.HintSize="416,48" sap2010:WorkflowViewState.IdRef="NApplicationCard_1" ScopeGuid="17c5e98b-2f5e-4d83-9e85-a49649439197" Version="V2">
-      <uix:NApplicationCard.Body>
-        <ActivityAction x:TypeArguments="x:Object">
-          <ActivityAction.Argument>
-            <DelegateInArgument x:TypeArguments="x:Object" Name="WSSessionData" />
-          </ActivityAction.Argument>
-          <Sequence DisplayName="Do" sap:VirtualizedContainerService.HintSize="467.2,355.2" sap2010:WorkflowViewState.IdRef="Sequence_18">
-            <Sequence.Variables>
-              <Variable x:TypeArguments="x:String" Name="searchProg" />
-            </Sequence.Variables>
+    <ui:CommentOut DisplayName="Comment Out" sap:VirtualizedContainerService.HintSize="486,57.333333333333336" sap2010:WorkflowViewState.IdRef="CommentOut_3">
+      <ui:CommentOut.Body>
+        <Sequence DisplayName="Ignored Activities" sap:VirtualizedContainerService.HintSize="450,108" sap2010:WorkflowViewState.IdRef="Sequence_19">
+          <sap:WorkflowViewStateService.ViewState>
+            <scg:Dictionary x:TypeArguments="x:String, x:Object">
+              <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+            </scg:Dictionary>
+          </sap:WorkflowViewStateService.ViewState>
+          <uix:NApplicationCard AttachMode="ByInstance" DisplayName="PDF xchange editor" HealingAgentBehavior="Job" sap:VirtualizedContainerService.HintSize="416,48" sap2010:WorkflowViewState.IdRef="NApplicationCard_1" ScopeGuid="17c5e98b-2f5e-4d83-9e85-a49649439197" Version="V2">
+            <uix:NApplicationCard.Body>
+              <ActivityAction x:TypeArguments="x:Object">
+                <ActivityAction.Argument>
+                  <DelegateInArgument x:TypeArguments="x:Object" Name="WSSessionData" />
+                </ActivityAction.Argument>
+                <Sequence DisplayName="Do" sap:VirtualizedContainerService.HintSize="467.2,355.2" sap2010:WorkflowViewState.IdRef="Sequence_18">
+                  <Sequence.Variables>
+                    <Variable x:TypeArguments="x:String" Name="searchProg" />
+                  </Sequence.Variables>
+                  <sap:WorkflowViewStateService.ViewState>
+                    <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                      <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+                    </scg:Dictionary>
+                  </sap:WorkflowViewStateService.ViewState>
+                  <uix:NGetText DisplayName="Get Text '120'" HealingAgentBehavior="SameAsCard" sap:VirtualizedContainerService.HintSize="433.6,189.6" sap2010:WorkflowViewState.IdRef="NGetText_1" ScopeIdentifier="17c5e98b-2f5e-4d83-9e85-a49649439197" TextString="[searchProg]" Version="V4">
+                    <uix:NGetText.Target>
+                      <uix:TargetAnchorable ContentHash="icbvPcMAjkGBoDpUiQamdg" DesignTimeRectangle="1761, 212, 23, 22" ElementType="InputBox" FuzzySelectorArgument="&lt;wnd aaname='Pages window' cls='UIX:Window' matching:aaname='fuzzy' fuzzylevel:aaname='0.0' /&gt;&lt;ctrl automationid='lb0@' role='text' matching:automationid='fuzzy' fuzzylevel:automationid='0.0' /&gt;" Guid="f5cfac76-ed82-4afe-b91d-409fd0cf4f56" ImageBase64="" InformativeScreenshot="47253c8b94c8c5e1b999c10d76d1ee95.png" Reference="xGt2OSXt7UW47kSHt2k5yg/wXmmUEbdxUG_AqIrTocJuA" ScopeSelectorArgument="&lt;wnd app='pdfxedit.exe' omit:cls='PXE:{C*AD*E*B1E*D8AF3B9D}' title='*- PDF-XChange Editor' /&gt;" SearchSteps="FuzzySelector" Version="V6" Visibility="Interactive" WaitForReadyArgument="None" />
+                    </uix:NGetText.Target>
+                  </uix:NGetText>
+                  <Assign sap:VirtualizedContainerService.HintSize="433.6,105.6" sap2010:WorkflowViewState.IdRef="Assign_8">
+                    <Assign.To>
+                      <OutArgument x:TypeArguments="x:String">[searchProg]</OutArgument>
+                    </Assign.To>
+                    <Assign.Value>
+                      <InArgument x:TypeArguments="x:String">[If(searchProg.Contains("/"), searchProg.Substring(0, searchProg.IndexOf("/")), searchProg)]</InArgument>
+                    </Assign.Value>
+                  </Assign>
+                </Sequence>
+              </ActivityAction>
+            </uix:NApplicationCard.Body>
+            <uix:NApplicationCard.OCREngine>
+              <ActivityFunc x:TypeArguments="sd:Image, scg:IEnumerable(scg:KeyValuePair(sd1:Rectangle, x:String))">
+                <ActivityFunc.Argument>
+                  <DelegateInArgument x:TypeArguments="sd:Image" Name="Image" />
+                </ActivityFunc.Argument>
+                <p1:UiPathDocumentOCR ApiKey="{x:Null}" Endpoint="{x:Null}" Output="{x:Null}" PredictionId="{x:Null}" Text="{x:Null}" UseLocalServer="{x:Null}" ComputeSkewAngle="False" DisplayName="UiPath Document OCR" ExtractWords="True" sap:VirtualizedContainerService.HintSize="400,24.8" sap2010:WorkflowViewState.IdRef="UiPathDocumentOCR_1" Image="[Image]" Language="auto" NoopExecution="False" Profile="None" Scale="1" Timeout="100000" />
+              </ActivityFunc>
+            </uix:NApplicationCard.OCREngine>
+            <uix:NApplicationCard.TargetApp>
+              <uix:TargetApp Area="-759, -1088, 1936, 1048" ContentHash="YFAqsnk_REGV_qckCgR96w" FilePath="C:\Program Files\Tracker Software\PDF Editor\pdfxedit.exe" IconBase64="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" InformativeScreenshot="fdfc708636ffdf3f382d924ac9c137e6.png" Reference="xGt2OSXt7UW47kSHt2k5yg/azRws-oh30qsXz-7zKiLeg" Selector="&lt;wnd app='pdfxedit.exe' omit:cls='PXE:{C*AD*E*B1E*D8AF3B9D}' title='* - PDF-XChange Editor' /&gt;" Version="V2" />
+            </uix:NApplicationCard.TargetApp>
             <sap:WorkflowViewStateService.ViewState>
               <scg:Dictionary x:TypeArguments="x:String, x:Object">
-                <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+                <x:Boolean x:Key="IsExpanded">False</x:Boolean>
+                <x:Boolean x:Key="IsPinned">False</x:Boolean>
               </scg:Dictionary>
             </sap:WorkflowViewStateService.ViewState>
-            <uix:NGetText DisplayName="Get Text '120'" HealingAgentBehavior="SameAsCard" sap:VirtualizedContainerService.HintSize="433.6,189.6" sap2010:WorkflowViewState.IdRef="NGetText_1" ScopeIdentifier="17c5e98b-2f5e-4d83-9e85-a49649439197" TextString="[searchProg]" Version="V4">
-              <uix:NGetText.Target>
-                <uix:TargetAnchorable ContentHash="icbvPcMAjkGBoDpUiQamdg" DesignTimeRectangle="1761, 212, 23, 22" ElementType="InputBox" FuzzySelectorArgument="&lt;wnd aaname='Pages window' cls='UIX:Window' matching:aaname='fuzzy' fuzzylevel:aaname='0.0' /&gt;&lt;ctrl automationid='lb0@' role='text' matching:automationid='fuzzy' fuzzylevel:automationid='0.0' /&gt;" Guid="f5cfac76-ed82-4afe-b91d-409fd0cf4f56" ImageBase64="" InformativeScreenshot="47253c8b94c8c5e1b999c10d76d1ee95.png" Reference="xGt2OSXt7UW47kSHt2k5yg/wXmmUEbdxUG_AqIrTocJuA" ScopeSelectorArgument="&lt;wnd app='pdfxedit.exe' omit:cls='PXE:{C*AD*E*B1E*D8AF3B9D}' title='*- PDF-XChange Editor' /&gt;" SearchSteps="FuzzySelector" Version="V6" Visibility="Interactive" WaitForReadyArgument="None" />
-              </uix:NGetText.Target>
-            </uix:NGetText>
-            <Assign sap:VirtualizedContainerService.HintSize="433.6,105.6" sap2010:WorkflowViewState.IdRef="Assign_8">
-              <Assign.To>
-                <OutArgument x:TypeArguments="x:String">[searchProg]</OutArgument>
-              </Assign.To>
-              <Assign.Value>
-                <InArgument x:TypeArguments="x:String">[If(searchProg.Contains("/"), searchProg.Substring(0, searchProg.IndexOf("/")), searchProg)]</InArgument>
-              </Assign.Value>
-            </Assign>
-          </Sequence>
-        </ActivityAction>
-      </uix:NApplicationCard.Body>
-      <uix:NApplicationCard.OCREngine>
-        <ActivityFunc x:TypeArguments="sd:Image, scg:IEnumerable(scg:KeyValuePair(sd1:Rectangle, x:String))">
-          <ActivityFunc.Argument>
-            <DelegateInArgument x:TypeArguments="sd:Image" Name="Image" />
-          </ActivityFunc.Argument>
-          <p1:UiPathDocumentOCR ApiKey="{x:Null}" Endpoint="{x:Null}" Output="{x:Null}" PredictionId="{x:Null}" Text="{x:Null}" UseLocalServer="{x:Null}" ComputeSkewAngle="False" DisplayName="UiPath Document OCR" ExtractWords="True" sap:VirtualizedContainerService.HintSize="400,24.8" sap2010:WorkflowViewState.IdRef="UiPathDocumentOCR_1" Image="[Image]" Language="auto" NoopExecution="False" Profile="None" Scale="1" Timeout="100000" />
-        </ActivityFunc>
-      </uix:NApplicationCard.OCREngine>
-      <uix:NApplicationCard.TargetApp>
-        <uix:TargetApp Area="-759, -1088, 1936, 1048" ContentHash="YFAqsnk_REGV_qckCgR96w" FilePath="C:\Program Files\Tracker Software\PDF Editor\pdfxedit.exe" IconBase64="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" InformativeScreenshot="fdfc708636ffdf3f382d924ac9c137e6.png" Reference="xGt2OSXt7UW47kSHt2k5yg/azRws-oh30qsXz-7zKiLeg" Selector="&lt;wnd app='pdfxedit.exe' omit:cls='PXE:{C*AD*E*B1E*D8AF3B9D}' title='* - PDF-XChange Editor' /&gt;" Version="V2" />
-      </uix:NApplicationCard.TargetApp>
+          </uix:NApplicationCard>
+        </Sequence>
+      </ui:CommentOut.Body>
       <sap:WorkflowViewStateService.ViewState>
         <scg:Dictionary x:TypeArguments="x:String, x:Object">
           <x:Boolean x:Key="IsExpanded">False</x:Boolean>
           <x:Boolean x:Key="IsPinned">False</x:Boolean>
         </scg:Dictionary>
       </sap:WorkflowViewStateService.ViewState>
-    </uix:NApplicationCard>
+    </ui:CommentOut>
+    <ui:SelectFolder DisplayName="Browse For Folder" sap:VirtualizedContainerService.HintSize="486,112.66666666666667" sap2010:WorkflowViewState.IdRef="SelectFolder_1" SelectedFolder="[folderPath]" />
+    <Assign sap:VirtualizedContainerService.HintSize="486,117.33333333333333" sap2010:WorkflowViewState.IdRef="Assign_10">
+      <Assign.To>
+        <OutArgument x:TypeArguments="scg:List(upr:IResource)">[CollatedPIDs]</OutArgument>
+      </Assign.To>
+      <Assign.Value>
+        <InArgument x:TypeArguments="scg:List(upr:IResource)">[New List(of IResource)]</InArgument>
+      </Assign.Value>
+    </Assign>
+    <ui:ForEachFileX DisplayName="For Each File in Folder" Filter="*.pdf" Folder="[folderPath]" sap:VirtualizedContainerService.HintSize="486,746" sap2010:WorkflowViewState.IdRef="ForEachFileX_1" IncludeSubDirectories="True" OrderBy="NameAscFirst" SkipFolderWithoutPermission="False">
+      <ui:ForEachFileX.Body>
+        <ActivityAction x:TypeArguments="si:FileInfo, x:Int32">
+          <ActivityAction.Argument1>
+            <DelegateInArgument x:TypeArguments="si:FileInfo" Name="CurrentPID" />
+          </ActivityAction.Argument1>
+          <ActivityAction.Argument2>
+            <DelegateInArgument x:TypeArguments="x:Int32" Name="CurrentIndex" />
+          </ActivityAction.Argument2>
+          <Sequence DisplayName="Do" sap:VirtualizedContainerService.HintSize="452,444" sap2010:WorkflowViewState.IdRef="Sequence_20">
+            <sap:WorkflowViewStateService.ViewState>
+              <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+              </scg:Dictionary>
+            </sap:WorkflowViewStateService.ViewState>
+            <If Condition="[Not CollatedPIDs.Contains(LocalResource.FromPath(currentPID.FullName))]" sap:VirtualizedContainerService.HintSize="418,384" sap2010:WorkflowViewState.IdRef="If_3">
+              <If.Then>
+                <Sequence DisplayName="Then" sap:VirtualizedContainerService.HintSize="416,228" sap2010:WorkflowViewState.IdRef="Sequence_21">
+                  <sap:WorkflowViewStateService.ViewState>
+                    <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                      <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+                    </scg:Dictionary>
+                  </sap:WorkflowViewStateService.ViewState>
+                  <uasc:AppendItemToCollection x:TypeArguments="upr:IResource" Collection="[CollatedPIDs]" DisplayName="Append Items to Collection" sap:VirtualizedContainerService.HintSize="382,168" sap2010:WorkflowViewState.IdRef="AppendItemToCollection`1_1">
+                    <uasc:AppendItemToCollection.Items>
+                      <scg:List x:TypeArguments="InArgument(upr:IResource)" Capacity="4">
+                        <InArgument x:TypeArguments="upr:IResource">[LocalResource.FromPath(CurrentPID.FullName)]</InArgument>
+                      </scg:List>
+                    </uasc:AppendItemToCollection.Items>
+                  </uasc:AppendItemToCollection>
+                </Sequence>
+              </If.Then>
+              <If.Else>
+                <Sequence DisplayName="Else" sap:VirtualizedContainerService.HintSize="416,25.333333333333332" sap2010:WorkflowViewState.IdRef="Sequence_22">
+                  <sap:WorkflowViewStateService.ViewState>
+                    <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                      <x:Boolean x:Key="IsExpanded">False</x:Boolean>
+                      <x:Boolean x:Key="IsPinned">False</x:Boolean>
+                    </scg:Dictionary>
+                  </sap:WorkflowViewStateService.ViewState>
+                </Sequence>
+              </If.Else>
+            </If>
+          </Sequence>
+        </ActivityAction>
+      </ui:ForEachFileX.Body>
+    </ui:ForEachFileX>
+    <uisapm:MergePDFs IndividualPdfFiles="{x:Null}" CollectionPdfFiles="[CollatedPIDs]" DisplayName="Merge PDFs" ExportedPdf="[MergedPIDs]" sap:VirtualizedContainerService.HintSize="486,124" sap2010:WorkflowViewState.IdRef="MergePDFs_1" ResultFileName="MergedPID" />
+    <ui:MessageBox Caption="{x:Null}" ChosenButton="{x:Null}" AutoCloseAfter="00:00:00" DisplayName="Message Box" sap:VirtualizedContainerService.HintSize="486,118.66666666666667" sap2010:WorkflowViewState.IdRef="MessageBox_4" Text="[MergedPIDs.LocalPath]" />
+    <ui:MoveFile ContinueOnError="{x:Null}" DestinationResource="{x:Null}" PathResource="{x:Null}" Destination="[Environment.GetFolderPath(Environment.SpecialFolder.Desktop)]" DisplayName="Move File" sap:VirtualizedContainerService.HintSize="486,187.33333333333334" sap2010:WorkflowViewState.IdRef="MoveFile_1" Path="[MergedPIDs.LocalPath]" />
   </Sequence>
 </Activity>
