@@ -1,5 +1,0 @@
-WSB01-SP-0001:
-	131241-WSB01-DR-P-6000:
-		AIT-0201 - Pending
-		LSL-0202 - Pending
-		MV-0201 - Pending
