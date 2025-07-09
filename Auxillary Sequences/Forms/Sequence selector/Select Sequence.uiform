@@ -8,7 +8,7 @@
     "Theme": "Default",
     "ShowInTaskbar": true,
     "ShowMargin": true,
-    "CustomStyle": ".col1, .col2, .col3 {\r\ndisplay: inline-block;\r\nwidth: 33%;\r\nvertical-align: top;\r\nmin-width: 1px;\r\n}\r\n"
+    "CustomStyle": ".col1, .col2, .col3, .col4 {\r\ndisplay: inline-block;\r\nwidth: 33%;\r\nvertical-align: top;\r\nmin-width: max-content;\r\n}\r\n"
   },
   "Data": {
     "components": [
@@ -148,6 +148,33 @@
                 "showValidations": false,
                 "tableView": false,
                 "key": "prologPID",
+                "type": "button",
+                "input": true
+              }
+            ]
+          },
+          {
+            "label": "Container",
+            "customClass": "col4",
+            "key": "container4",
+            "type": "container",
+            "input": true,
+            "tableView": false,
+            "components": [
+              {
+                "content": "PDF Markup Automation",
+                "key": "label",
+                "input": false,
+                "tableView": false,
+                "label": "Label",
+                "type": "label"
+              },
+              {
+                "label": "P&ID Marker",
+                "action": "event",
+                "showValidations": false,
+                "tableView": false,
+                "key": "pidMarker",
                 "type": "button",
                 "input": true
               }

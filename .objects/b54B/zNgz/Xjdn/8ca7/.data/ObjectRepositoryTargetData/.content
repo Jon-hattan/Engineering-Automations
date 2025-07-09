@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="utf-16"?>
+<ObjectRepositoryTargetData ContentHash="slHQWAV9PUmHyYG1881JeQ" Reference="xGt2OSXt7UW47kSHt2k5yg/8ca7AeLXaUODeWPCSANgcQ" xmlns="http://schemas.uipath.com/workflow/activities/uix" xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml">
+  <ObjectRepositoryTargetData.Data>
+    <TargetAnchorable x:Key="TargetAnchorable" BrowserURL="convergeaus.jacobs.com/PrologConverge/WebClient/SubmittalPackage.aspx" CVScreenId="ccd5fcd6-c793-4d1a-89b1-935ff75b8ac5" CvElementArea="789, 6, 19, 18" CvType="CloseButton" DesignTimeRectangle="776, 1, 46, 31" ElementType="Button" FullSelectorArgument="&lt;ctrl name='Editing Submittals - Microsoft Edge' role='pane' /&gt;&lt;ctrl name='Close' role='push button' /&gt;" Guid="77cd62c7-b94c-46e0-88bd-64a6b2aa6ed7" ScopeSelectorArgument="&lt;wnd app='msedge.exe' cls='Chrome_WidgetWin_1' title='*Submittals - Work - Microsoft​ Edge' /&gt;" SearchSteps="Selector, CV" Version="V6" Visibility="Interactive" WaitForReadyArgument="Interactive">
+      <imageRef attrName="InformativeScreenshot" originalValue="4f3d3faf10179de652be142571e6a6b5.png" xmlns="">0YJHtFBZGyESAL44s7f4VEQ</imageRef>
+    </TargetAnchorable>
+    <x:String x:Key="ActivityType">Click</x:String>
+  </ObjectRepositoryTargetData.Data>
+</ObjectRepositoryTargetData>

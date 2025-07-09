@@ -282,7 +282,7 @@
       <AssemblyReference>System.Memory.Data</AssemblyReference>
     </sco:Collection>
   </TextExpression.ReferencesForImplementation>
-  <Sequence sap2010:Annotation.AnnotationText="using content generator in integration service activities, search for the all the equipments in a technical proposal, and their respective quantities, electrical power, voltage, etc. store in a datatable" DisplayName="Main Sequence" sap:VirtualizedContainerService.HintSize="1216,2404.6666666666665" sap2010:WorkflowViewState.IdRef="Sequence_1">
+  <Sequence sap2010:Annotation.AnnotationText="using content generator in integration service activities, search for the all the equipments in a technical proposal, and their respective quantities, electrical power, voltage, etc. store in a datatable" DisplayName="Main Sequence" sap:VirtualizedContainerService.HintSize="1216,2671.3333333333335" sap2010:WorkflowViewState.IdRef="Sequence_1">
     <Sequence.Variables>
       <Variable x:TypeArguments="x:String" Name="ProposalText" />
       <Variable x:TypeArguments="x:String" Name="ExtractedInfo" />
@@ -294,6 +294,7 @@
       <Variable x:TypeArguments="x:Boolean" Name="GENsep" />
       <Variable x:TypeArguments="x:Boolean" Name="prologPID" />
       <Variable x:TypeArguments="x:Boolean" Name="prologTnC" />
+      <Variable x:TypeArguments="x:Boolean" Name="pidMarker" />
     </Sequence.Variables>
     <sap:WorkflowViewStateService.ViewState>
       <scg:Dictionary x:TypeArguments="x:String, x:Object">
@@ -320,10 +321,11 @@
         <OutArgument x:TypeArguments="x:Boolean" x:Key="genSeparator">[GENsep]</OutArgument>
         <OutArgument x:TypeArguments="x:Boolean" x:Key="prologPID">[prologPID]</OutArgument>
         <OutArgument x:TypeArguments="x:Boolean" x:Key="prologTC">[prologTnC]</OutArgument>
+        <OutArgument x:TypeArguments="x:Boolean" x:Key="pidMarker">[pidMarker]</OutArgument>
       </ufa:GetFormFieldsActivity.Arguments>
     </ufa:GetFormFieldsActivity>
     <ufa:CloseFormActivity InstanceName="{x:Null}" DisplayName="Close Form" FormId="94648528-99b2-4e47-bda9-638af2dadd49" sap:VirtualizedContainerService.HintSize="418,124" sap2010:WorkflowViewState.IdRef="CloseFormActivity_1" />
-    <ui:IfElseIfV2 Condition="[GTgen]" DisplayName="Else If" sap:VirtualizedContainerService.HintSize="418,1693.3333333333333" sap2010:WorkflowViewState.IdRef="IfElseIfV2_1">
+    <ui:IfElseIfV2 Condition="[GTgen]" DisplayName="Else If" sap:VirtualizedContainerService.HintSize="418,1960" sap2010:WorkflowViewState.IdRef="IfElseIfV2_1">
       <ui:IfElseIfV2.Else>
         <Sequence DisplayName="Else" sap:VirtualizedContainerService.HintSize="416,90.66666666666667" sap2010:WorkflowViewState.IdRef="Sequence_15">
           <sap:WorkflowViewStateService.ViewState>
@@ -403,6 +405,22 @@
                   </scg:Dictionary>
                 </sap:WorkflowViewStateService.ViewState>
                 <ui:InvokeWorkflowFile ArgumentsVariable="{x:Null}" ContinueOnError="{x:Null}" DisplayName="Asset List Updater - Invoke Workflow File (Prolog Updater\Asset List Updater.xaml)" sap:VirtualizedContainerService.HintSize="382,168" sap2010:WorkflowViewState.IdRef="InvokeWorkflowFile_6" UnSafe="False" WorkflowFileName="Prolog Updater\Asset List Updater.xaml">
+                  <ui:InvokeWorkflowFile.Arguments>
+                    <scg:Dictionary x:TypeArguments="x:String, Argument" />
+                  </ui:InvokeWorkflowFile.Arguments>
+                </ui:InvokeWorkflowFile>
+              </Sequence>
+            </ui:IfElseIfBlock.Then>
+          </ui:IfElseIfBlock>
+          <ui:IfElseIfBlock BlockType="ElseIf" Condition="[pidMarker]" DisplayName="If else if block" sap2010:WorkflowViewState.IdRef="IfElseIfBlock_6">
+            <ui:IfElseIfBlock.Then>
+              <Sequence DisplayName="Body" sap:VirtualizedContainerService.HintSize="416,228" sap2010:WorkflowViewState.IdRef="Sequence_19">
+                <sap:WorkflowViewStateService.ViewState>
+                  <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                    <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+                  </scg:Dictionary>
+                </sap:WorkflowViewStateService.ViewState>
+                <ui:InvokeWorkflowFile ArgumentsVariable="{x:Null}" ContinueOnError="{x:Null}" DisplayName="Collate Markings - Invoke Workflow File (P&amp;ID Marker\Collate Markings.xaml)" sap:VirtualizedContainerService.HintSize="382,168" sap2010:WorkflowViewState.IdRef="InvokeWorkflowFile_7" UnSafe="True" WorkflowFileName="P&amp;ID Marker\Collate Markings.xaml">
                   <ui:InvokeWorkflowFile.Arguments>
                     <scg:Dictionary x:TypeArguments="x:String, Argument" />
                   </ui:InvokeWorkflowFile.Arguments>

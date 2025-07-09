@@ -9,6 +9,7 @@
     "UiPath.Form.Activities": "[25.4.1]",
     "UiPath.GSuite.Activities": "3.0.10",
     "UiPath.IntegrationService.Activities": "[1.15.0]",
+    "UiPath.IntelligentOCR.Activities": "[6.24.0]",
     "UiPath.Mail.Activities": "[2.2.0-preview]",
     "UiPath.MicrosoftOffice365.Activities": "[3.2.0-preview]",
     "UiPath.OCR.Activities": "[3.23.0-alpha.8892146]",
@@ -21,7 +22,7 @@
   "entitiesStores": [],
   "schemaVersion": "4.0",
   "studioVersion": "25.0.166.0",
-  "projectVersion": "1.0.1",
+  "projectVersion": "1.0.4",
   "runtimeOptions": {
     "autoDispose": false,
     "netFrameworkLazyLoading": false,
@@ -35,8 +36,8 @@
       "*password*"
     ],
     "executionType": "Workflow",
-    "readyForPiP": false,
-    "startsInPiP": false,
+    "readyForPiP": true,
+    "startsInPiP": true,
     "mustRestoreAllDependencies": true,
     "pipType": "ChildSession"
   },

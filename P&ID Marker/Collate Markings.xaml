@@ -1,4 +1,4 @@
-<Activity mc:Ignorable="sap sap2010" x:Class="Collate_Markings" VisualBasic.Settings="{x:Null}" sap2010:WorkflowViewState.IdRef="Collate_Markings_1" xmlns="http://schemas.microsoft.com/netfx/2009/xaml/activities" xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" xmlns:sap="http://schemas.microsoft.com/netfx/2009/xaml/activities/presentation" xmlns:sap2010="http://schemas.microsoft.com/netfx/2010/xaml/activities/presentation" xmlns:scg="clr-namespace:System.Collections.Generic;assembly=System.Private.CoreLib" xmlns:sco="clr-namespace:System.Collections.ObjectModel;assembly=System.Private.CoreLib" xmlns:sd="clr-namespace:System.Data;assembly=System.Data.Common" xmlns:si="clr-namespace:System.IO;assembly=System.Private.CoreLib" xmlns:ue="clr-namespace:UiPath.Excel;assembly=UiPath.Excel.Activities" xmlns:ueab="clr-namespace:UiPath.Excel.Activities.Business;assembly=UiPath.Excel.Activities" xmlns:ueabf="clr-namespace:UiPath.Excel.Activities.Business.Filter;assembly=UiPath.Excel.Activities" xmlns:ufa="clr-namespace:UiPath.Forms.Activities;assembly=UiPath.Forms.Activities" xmlns:ui="http://schemas.uipath.com/workflow/activities" xmlns:upr="clr-namespace:UiPath.Platform.ResourceHandling;assembly=UiPath.Platform" xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml">
+<Activity mc:Ignorable="sap sap2010" x:Class="Collate_Markings" VisualBasic.Settings="{x:Null}" sap2010:WorkflowViewState.IdRef="Collate_Markings_1" xmlns="http://schemas.microsoft.com/netfx/2009/xaml/activities" xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" xmlns:sap="http://schemas.microsoft.com/netfx/2009/xaml/activities/presentation" xmlns:sap2010="http://schemas.microsoft.com/netfx/2010/xaml/activities/presentation" xmlns:scg="clr-namespace:System.Collections.Generic;assembly=System.Private.CoreLib" xmlns:sco="clr-namespace:System.Collections.ObjectModel;assembly=System.Private.CoreLib" xmlns:sd="clr-namespace:System.Data;assembly=System.Data.Common" xmlns:si="clr-namespace:System.IO;assembly=System.Private.CoreLib" xmlns:ue="clr-namespace:UiPath.Excel;assembly=UiPath.Excel.Activities" xmlns:ueab="clr-namespace:UiPath.Excel.Activities.Business;assembly=UiPath.Excel.Activities" xmlns:ueabf="clr-namespace:UiPath.Excel.Activities.Business.Filter;assembly=UiPath.Excel.Activities" xmlns:ufa="clr-namespace:UiPath.Forms.Activities;assembly=UiPath.Forms.Activities" xmlns:ui="http://schemas.uipath.com/workflow/activities" xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml">
   <TextExpression.NamespacesForImplementation>
     <sco:Collection x:TypeArguments="x:String">
       <x:String>System.Activities</x:String>
@@ -144,14 +144,13 @@
       <AssemblyReference>Microsoft.Extensions.DependencyModel</AssemblyReference>
     </sco:Collection>
   </TextExpression.ReferencesForImplementation>
-  <Sequence DisplayName="Collate_Markings" sap:VirtualizedContainerService.HintSize="1563,4848" sap2010:WorkflowViewState.IdRef="Sequence_1">
+  <Sequence DisplayName="Collate_Markings" sap:VirtualizedContainerService.HintSize="1218,4499.333333333333" sap2010:WorkflowViewState.IdRef="Sequence_1">
     <Sequence.Variables>
       <Variable x:TypeArguments="scg:Dictionary(x:String, scg:Dictionary(x:String, x:String))" Name="PID_tags_status" />
       <Variable x:TypeArguments="scg:Dictionary(x:String, x:String)" Name="PID_src" />
       <Variable x:TypeArguments="x:Boolean" Name="process_finished" />
       <Variable x:TypeArguments="x:Int32" Default="0" Name="Progress" />
       <Variable x:TypeArguments="x:String" Name="curr_process" />
-      <Variable x:TypeArguments="upr:ILocalResource" Name="FolderResource" />
       <Variable x:TypeArguments="si:FileInfo" Name="CollatedFolder" />
       <Variable x:TypeArguments="scg:Dictionary(x:String, scg:Dictionary(x:String, scg:Dictionary(x:String, x:String)))" Name="SP_PID_tags_status" />
       <Variable x:TypeArguments="x:Int32" Name="packageIDX" />
@@ -162,27 +161,38 @@
       <Variable x:TypeArguments="x:String" Default="C:\Users\CHEWJ1\Downloads\TWRP Overall P&amp;ID Tracker (8).xlsx" Name="PIDtrackerPath" />
       <Variable x:TypeArguments="x:String" Default="C4A" Name="selectedcontract" />
       <Variable x:TypeArguments="x:String" Default="Asset List" Name="assetsheet" />
+      <Variable x:TypeArguments="x:String" Name="folderPath">
+        <Variable.Default>
+          <Literal x:TypeArguments="x:String">C:\Users\CHEWJ1\Desktop\Vikash Deliverables</Literal>
+        </Variable.Default>
+      </Variable>
+      <Variable x:TypeArguments="x:Boolean" Name="pidDownloaded">
+        <Variable.Default>
+          <Literal x:TypeArguments="x:Boolean" />
+        </Variable.Default>
+      </Variable>
     </Sequence.Variables>
     <sap:WorkflowViewStateService.ViewState>
       <scg:Dictionary x:TypeArguments="x:String, x:Object">
         <x:Boolean x:Key="IsExpanded">True</x:Boolean>
       </scg:Dictionary>
     </sap:WorkflowViewStateService.ViewState>
-    <ui:CreateDirectory ContinueOnError="True" DisplayName="Create Folder" sap:VirtualizedContainerService.HintSize="1290,112" sap2010:WorkflowViewState.IdRef="CreateDirectory_2" Output="[FolderResource]" Path="[System.IO.Path.Combine(Environment.GetFolderPath(Environment.SpecialFolder.Desktop), &quot;Vikash Deliverables&quot;)]" />
-    <ui:InvokeWorkflowFile ArgumentsVariable="{x:Null}" ContinueOnError="{x:Null}" DisplayName="Select Excel Template and Output - Invoke Workflow File (Auxillary Sequences\File Select Sequences\Select Excel Template and Output.xaml)" sap:VirtualizedContainerService.HintSize="1290,177" sap2010:WorkflowViewState.IdRef="InvokeWorkflowFile_8" UnSafe="False" WorkflowFileName="Auxillary Sequences\File Select Sequences\Select Excel Template and Output.xaml">
+    <ui:InvokeWorkflowFile ArgumentsVariable="{x:Null}" ContinueOnError="{x:Null}" DisplayName="Select Files for PID marking - Invoke Workflow File (Auxillary Sequences\File Select Sequences\Select Files for PID marking.xaml)" sap:VirtualizedContainerService.HintSize="1218,177.33333333333334" sap2010:WorkflowViewState.IdRef="InvokeWorkflowFile_12" UnSafe="True" WorkflowFileName="Auxillary Sequences\File Select Sequences\Select Files for PID marking.xaml">
       <ui:InvokeWorkflowFile.Arguments>
         <InArgument x:TypeArguments="x:String" x:Key="title">Select Files for P&amp;ID Marking</InArgument>
         <OutArgument x:TypeArguments="x:String" x:Key="exceloutput_filePath">[PIDtrackerPath]</OutArgument>
         <OutArgument x:TypeArguments="x:String" x:Key="selected_output_sheet">[selectedcontract]</OutArgument>
         <OutArgument x:TypeArguments="x:String" x:Key="exceltemplate_filePath">[AssetlistPath]</OutArgument>
         <OutArgument x:TypeArguments="x:String" x:Key="selected_template_sheet">[assetsheet]</OutArgument>
+        <OutArgument x:TypeArguments="x:String" x:Key="folderPath">[folderPath]</OutArgument>
+        <OutArgument x:TypeArguments="x:Boolean" x:Key="downloadedPID_bool">[pidDownloaded]</OutArgument>
       </ui:InvokeWorkflowFile.Arguments>
     </ui:InvokeWorkflowFile>
-    <ui:GetFileInfoX DisplayName="Get File Info" FilePath="[FolderResource.LocalPath]" sap:VirtualizedContainerService.HintSize="1290,165" sap2010:WorkflowViewState.IdRef="GetFileInfoX_2" Output="[CollatedFolder]" />
-    <Sequence DisplayName="Initiate variables" sap:VirtualizedContainerService.HintSize="1290,57" sap2010:WorkflowViewState.IdRef="Sequence_24">
+    <ui:GetFileInfoX DisplayName="Get File Info" FilePath="[folderPath]" sap:VirtualizedContainerService.HintSize="1218,168.66666666666666" sap2010:WorkflowViewState.IdRef="GetFileInfoX_5" Output="[CollatedFolder]" />
+    <Sequence DisplayName="Initiate variables" sap:VirtualizedContainerService.HintSize="1218,817.3333333333334" sap2010:WorkflowViewState.IdRef="Sequence_24">
       <sap:WorkflowViewStateService.ViewState>
         <scg:Dictionary x:TypeArguments="x:String, x:Object">
-          <x:Boolean x:Key="IsExpanded">False</x:Boolean>
+          <x:Boolean x:Key="IsExpanded">True</x:Boolean>
           <x:Boolean x:Key="IsPinned">False</x:Boolean>
         </scg:Dictionary>
       </sap:WorkflowViewStateService.ViewState>
@@ -242,14 +252,14 @@
         </Assign.Value>
       </Assign>
     </Sequence>
-    <Parallel DisplayName="Processing Excel sheets" sap:VirtualizedContainerService.HintSize="1290,57" sap2010:WorkflowViewState.IdRef="Parallel_2">
+    <Parallel DisplayName="Processing Excel sheets" sap:VirtualizedContainerService.HintSize="1218,57.333333333333336" sap2010:WorkflowViewState.IdRef="Parallel_11">
       <sap:WorkflowViewStateService.ViewState>
         <scg:Dictionary x:TypeArguments="x:String, x:Object">
           <x:Boolean x:Key="IsExpanded">False</x:Boolean>
           <x:Boolean x:Key="IsPinned">False</x:Boolean>
         </scg:Dictionary>
       </sap:WorkflowViewStateService.ViewState>
-      <Sequence DisplayName="Do" sap:VirtualizedContainerService.HintSize="524,982" sap2010:WorkflowViewState.IdRef="Sequence_2">
+      <Sequence DisplayName="Do" sap:VirtualizedContainerService.HintSize="524,1001.3333333333334" sap2010:WorkflowViewState.IdRef="Sequence_2">
         <Sequence.Variables>
           <Variable x:TypeArguments="x:String" Name="tableRange" />
         </Sequence.Variables>
@@ -259,7 +269,7 @@
             <x:Boolean x:Key="IsPinned">False</x:Boolean>
           </scg:Dictionary>
         </sap:WorkflowViewStateService.ViewState>
-        <ui:CommentOut DisplayName="Comment Out" sap:VirtualizedContainerService.HintSize="450,57" sap2010:WorkflowViewState.IdRef="CommentOut_10">
+        <ui:CommentOut DisplayName="Comment Out" sap:VirtualizedContainerService.HintSize="450,57.333333333333336" sap2010:WorkflowViewState.IdRef="CommentOut_10">
           <ui:CommentOut.Body>
             <Sequence DisplayName="Ignored Activities" sap:VirtualizedContainerService.HintSize="450,153.33333333333334" sap2010:WorkflowViewState.IdRef="Sequence_45">
               <sap:WorkflowViewStateService.ViewState>
@@ -513,7 +523,7 @@
             </scg:Dictionary>
           </sap:WorkflowViewStateService.ViewState>
         </ui:CommentOut>
-        <ui:CommentOut DisplayName="Comment Out" sap:VirtualizedContainerService.HintSize="450,57" sap2010:WorkflowViewState.IdRef="CommentOut_19">
+        <ui:CommentOut DisplayName="Comment Out" sap:VirtualizedContainerService.HintSize="450,57.333333333333336" sap2010:WorkflowViewState.IdRef="CommentOut_19">
           <ui:CommentOut.Body>
             <Sequence DisplayName="Ignored Activities" sap:VirtualizedContainerService.HintSize="468,168" sap2010:WorkflowViewState.IdRef="Sequence_83">
               <sap:WorkflowViewStateService.ViewState>
@@ -676,7 +686,7 @@
             </sap:WorkflowViewStateService.ViewState>
           </ui:ExcelApplicationScope>
         </Sequence>
-        <ui:CommentOut DisplayName="Comment Out" sap:VirtualizedContainerService.HintSize="450,57" sap2010:WorkflowViewState.IdRef="CommentOut_11">
+        <ui:CommentOut DisplayName="Comment Out" sap:VirtualizedContainerService.HintSize="450,57.333333333333336" sap2010:WorkflowViewState.IdRef="CommentOut_11">
           <ui:CommentOut.Body>
             <Sequence DisplayName="Ignored Activities" sap:VirtualizedContainerService.HintSize="484,108" sap2010:WorkflowViewState.IdRef="Sequence_56">
               <sap:WorkflowViewStateService.ViewState>
@@ -801,7 +811,7 @@
             </scg:Dictionary>
           </sap:WorkflowViewStateService.ViewState>
         </ui:CommentOut>
-        <ui:CommentOut DisplayName="Comment Out" sap:VirtualizedContainerService.HintSize="450,57" sap2010:WorkflowViewState.IdRef="CommentOut_2">
+        <ui:CommentOut DisplayName="Comment Out" sap:VirtualizedContainerService.HintSize="450,57.333333333333336" sap2010:WorkflowViewState.IdRef="CommentOut_2">
           <ui:CommentOut.Body>
             <Sequence DisplayName="Ignored Activities" sap:VirtualizedContainerService.HintSize="450,169.33333333333334" sap2010:WorkflowViewState.IdRef="Sequence_12">
               <sap:WorkflowViewStateService.ViewState>
@@ -819,7 +829,7 @@
             </scg:Dictionary>
           </sap:WorkflowViewStateService.ViewState>
         </ui:CommentOut>
-        <ui:CommentOut DisplayName="Comment Out" sap:VirtualizedContainerService.HintSize="450,57" sap2010:WorkflowViewState.IdRef="CommentOut_9">
+        <ui:CommentOut DisplayName="Comment Out" sap:VirtualizedContainerService.HintSize="450,57.333333333333336" sap2010:WorkflowViewState.IdRef="CommentOut_9">
           <ui:CommentOut.Body>
             <Sequence DisplayName="Ignored Activities" sap:VirtualizedContainerService.HintSize="546,1523.3333333333333" sap2010:WorkflowViewState.IdRef="Sequence_38">
               <sap:WorkflowViewStateService.ViewState>
@@ -1603,7 +1613,7 @@
             </scg:Dictionary>
           </sap:WorkflowViewStateService.ViewState>
         </ui:CommentOut>
-        <Assign sap:VirtualizedContainerService.HintSize="450,105" sap2010:WorkflowViewState.IdRef="Assign_15">
+        <Assign sap:VirtualizedContainerService.HintSize="450,108" sap2010:WorkflowViewState.IdRef="Assign_15">
           <Assign.To>
             <OutArgument x:TypeArguments="x:Boolean">[process_finished]</OutArgument>
           </Assign.To>
@@ -1612,20 +1622,20 @@
           </Assign.Value>
         </Assign>
       </Sequence>
-      <Sequence sap:VirtualizedContainerService.HintSize="544,982" sap2010:WorkflowViewState.IdRef="Sequence_14">
+      <Sequence sap:VirtualizedContainerService.HintSize="544,1001.3333333333334" sap2010:WorkflowViewState.IdRef="Sequence_14">
         <sap:WorkflowViewStateService.ViewState>
           <scg:Dictionary x:TypeArguments="x:String, x:Object">
             <x:Boolean x:Key="IsExpanded">True</x:Boolean>
           </scg:Dictionary>
         </sap:WorkflowViewStateService.ViewState>
-        <ufa:ShowFormActivity Height="{x:Null}" InstanceName="{x:Null}" Left="{x:Null}" ShowInTaskbar="{x:Null}" ShowMargin="{x:Null}" Title="{x:Null}" Top="{x:Null}" TopMost="{x:Null}" Width="{x:Null}" DisplayName="Show Form" FormId="b06fb60e-b22c-4152-9e7e-4246db6d5e32" sap:VirtualizedContainerService.HintSize="470,218" sap2010:WorkflowViewState.IdRef="ShowFormActivity_1" IsAsync="True" WindowState="[UiPath.Studio.Forms.Runtime.WindowState.Maximized]">
+        <ufa:ShowFormActivity Height="{x:Null}" InstanceName="{x:Null}" Left="{x:Null}" ShowInTaskbar="{x:Null}" ShowMargin="{x:Null}" Title="{x:Null}" Top="{x:Null}" TopMost="{x:Null}" Width="{x:Null}" DisplayName="Show Form" FormId="b06fb60e-b22c-4152-9e7e-4246db6d5e32" sap:VirtualizedContainerService.HintSize="470,225.33333333333334" sap2010:WorkflowViewState.IdRef="ShowFormActivity_1" IsAsync="True" WindowState="[UiPath.Studio.Forms.Runtime.WindowState.Maximized]">
           <ufa:ShowFormActivity.Arguments>
             <InArgument x:TypeArguments="x:String" x:Key="content1">Processing Excel Sheets. Please wait.</InArgument>
           </ufa:ShowFormActivity.Arguments>
         </ufa:ShowFormActivity>
-        <ui:InterruptibleWhile CurrentIndex="{x:Null}" Condition="[Not process_finished]" DisplayName="While" sap:VirtualizedContainerService.HintSize="470,589" sap2010:WorkflowViewState.IdRef="InterruptibleWhile_1">
+        <ui:InterruptibleWhile CurrentIndex="{x:Null}" Condition="[Not process_finished]" DisplayName="While" sap:VirtualizedContainerService.HintSize="470,601.3333333333334" sap2010:WorkflowViewState.IdRef="InterruptibleWhile_1">
           <ui:InterruptibleWhile.Body>
-            <Sequence DisplayName="Body" sap:VirtualizedContainerService.HintSize="468,459" sap2010:WorkflowViewState.IdRef="Sequence_15">
+            <Sequence DisplayName="Body" sap:VirtualizedContainerService.HintSize="468,469.3333333333333" sap2010:WorkflowViewState.IdRef="Sequence_15">
               <Sequence.Variables>
                 <Variable x:TypeArguments="x:String" Name="LoadingMessage" />
                 <Variable x:TypeArguments="x:String" Name="LoadingMessage2" />
@@ -1635,8 +1645,8 @@
                   <x:Boolean x:Key="IsExpanded">True</x:Boolean>
                 </scg:Dictionary>
               </sap:WorkflowViewStateService.ViewState>
-              <Delay Duration="00:00:00.1000000" sap:VirtualizedContainerService.HintSize="434,122" sap2010:WorkflowViewState.IdRef="Delay_1" />
-              <Assign sap:VirtualizedContainerService.HintSize="434,114" sap2010:WorkflowViewState.IdRef="Assign_13">
+              <Delay Duration="00:00:00.1000000" sap:VirtualizedContainerService.HintSize="434,124" sap2010:WorkflowViewState.IdRef="Delay_1" />
+              <Assign sap:VirtualizedContainerService.HintSize="434,117.33333333333333" sap2010:WorkflowViewState.IdRef="Assign_13">
                 <Assign.To>
                   <OutArgument x:TypeArguments="x:String">[LoadingMessage]</OutArgument>
                 </Assign.To>
@@ -1644,7 +1654,7 @@
                   <InArgument x:TypeArguments="x:String" xml:space="preserve">[String.Format("Completing {1},  processing number {0}.", Progress, curr_process)]</InArgument>
                 </Assign.Value>
               </Assign>
-              <ufa:SetFormFieldsActivity InstanceName="{x:Null}" DisplayName="Set Form Values" FormId="b06fb60e-b22c-4152-9e7e-4246db6d5e32" sap:VirtualizedContainerService.HintSize="434,163" sap2010:WorkflowViewState.IdRef="SetFormFieldsActivity_1">
+              <ufa:SetFormFieldsActivity InstanceName="{x:Null}" DisplayName="Set Form Values" FormId="b06fb60e-b22c-4152-9e7e-4246db6d5e32" sap:VirtualizedContainerService.HintSize="434,168" sap2010:WorkflowViewState.IdRef="SetFormFieldsActivity_1">
                 <ufa:SetFormFieldsActivity.Arguments>
                   <InArgument x:TypeArguments="x:String" x:Key="progress">[LoadingMessage]</InArgument>
                 </ufa:SetFormFieldsActivity.Arguments>
@@ -1661,7 +1671,7 @@
         <ufa:CloseFormActivity InstanceName="{x:Null}" DisplayName="Close Form" FormId="b06fb60e-b22c-4152-9e7e-4246db6d5e32" sap:VirtualizedContainerService.HintSize="470,114.66666666666667" sap2010:WorkflowViewState.IdRef="CloseFormActivity_1" />
       </Sequence>
     </Parallel>
-    <ui:CommentOut DisplayName="Comment Out" sap:VirtualizedContainerService.HintSize="1290,57" sap2010:WorkflowViewState.IdRef="CommentOut_13">
+    <ui:CommentOut DisplayName="Comment Out" sap:VirtualizedContainerService.HintSize="1218,57.333333333333336" sap2010:WorkflowViewState.IdRef="CommentOut_13">
       <ui:CommentOut.Body>
         <Sequence DisplayName="Ignored Activities" sap:VirtualizedContainerService.HintSize="450,288" sap2010:WorkflowViewState.IdRef="Sequence_61">
           <sap:WorkflowViewStateService.ViewState>
@@ -1680,7 +1690,7 @@
         </scg:Dictionary>
       </sap:WorkflowViewStateService.ViewState>
     </ui:CommentOut>
-    <Assign sap:VirtualizedContainerService.HintSize="1290,114" sap2010:WorkflowViewState.IdRef="Assign_87">
+    <Assign sap:VirtualizedContainerService.HintSize="1218,117.33333333333333" sap2010:WorkflowViewState.IdRef="Assign_87">
       <Assign.To>
         <OutArgument x:TypeArguments="x:Boolean">[process_finished]</OutArgument>
       </Assign.To>
@@ -1688,40 +1698,51 @@
         <InArgument x:TypeArguments="x:Boolean">False</InArgument>
       </Assign.Value>
     </Assign>
-    <ui:CommentOut DisplayName="Comment Out" sap:VirtualizedContainerService.HintSize="1250,219" sap2010:WorkflowViewState.IdRef="CommentOut_17">
-      <ui:CommentOut.Body>
-        <Sequence DisplayName="Ignored Activities" sap:VirtualizedContainerService.HintSize="450,108" sap2010:WorkflowViewState.IdRef="Sequence_82">
+    <If Condition="[not pidDownloaded]" sap:VirtualizedContainerService.HintSize="1218,1349.3333333333333" sap2010:WorkflowViewState.IdRef="If_16">
+      <sap:WorkflowViewStateService.ViewState>
+        <scg:Dictionary x:TypeArguments="x:String, x:Object">
+          <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+          <x:Boolean x:Key="IsPinned">False</x:Boolean>
+        </scg:Dictionary>
+      </sap:WorkflowViewStateService.ViewState>
+      <If.Then>
+        <Sequence DisplayName="Then" sap:VirtualizedContainerService.HintSize="1216,1184" sap2010:WorkflowViewState.IdRef="Sequence_90">
           <sap:WorkflowViewStateService.ViewState>
             <scg:Dictionary x:TypeArguments="x:String, x:Object">
               <x:Boolean x:Key="IsExpanded">True</x:Boolean>
             </scg:Dictionary>
           </sap:WorkflowViewStateService.ViewState>
-          <Parallel DisplayName="Downloading relevant PIDs" sap:VirtualizedContainerService.HintSize="416,48" sap2010:WorkflowViewState.IdRef="Parallel_7">
+          <Parallel DisplayName="Downloading relevant PIDs" sap:VirtualizedContainerService.HintSize="1182,1124" sap2010:WorkflowViewState.IdRef="Parallel_10">
             <sap:WorkflowViewStateService.ViewState>
               <scg:Dictionary x:TypeArguments="x:String, x:Object">
-                <x:Boolean x:Key="IsExpanded">False</x:Boolean>
+                <x:Boolean x:Key="IsExpanded">True</x:Boolean>
                 <x:Boolean x:Key="IsPinned">False</x:Boolean>
               </scg:Dictionary>
             </sap:WorkflowViewStateService.ViewState>
-            <Sequence sap:VirtualizedContainerService.HintSize="542.4,862.4" sap2010:WorkflowViewState.IdRef="Sequence_72">
+            <Sequence sap:VirtualizedContainerService.HintSize="544,1054" sap2010:WorkflowViewState.IdRef="Sequence_72">
               <sap:WorkflowViewStateService.ViewState>
                 <scg:Dictionary x:TypeArguments="x:String, x:Object">
                   <x:Boolean x:Key="IsExpanded">True</x:Boolean>
                 </scg:Dictionary>
               </sap:WorkflowViewStateService.ViewState>
-              <ui:ForEach x:TypeArguments="x:String" CurrentIndex="[packageIDX]" DisplayName="For Each SysPackageNo" sap:VirtualizedContainerService.HintSize="468.8,697.6" sap2010:WorkflowViewState.IdRef="ForEach`1_3" Values="[SP_PID_tags_status.keys.ToList]">
+              <ui:InvokeWorkflowFile ArgumentsVariable="{x:Null}" ContinueOnError="{x:Null}" DisplayName="Select Contract - Invoke Workflow File (P&amp;ID Marker\Prolog scraping and downloading\References\Select Contract.xaml)" sap:VirtualizedContainerService.HintSize="470,177.33333333333334" sap2010:WorkflowViewState.IdRef="InvokeWorkflowFile_10" UnSafe="False" WorkflowFileName="P&amp;ID Marker\Prolog scraping and downloading\References\Select Contract.xaml">
+                <ui:InvokeWorkflowFile.Arguments>
+                  <InArgument x:TypeArguments="x:String" x:Key="CurrentContract">[selectedcontract]</InArgument>
+                </ui:InvokeWorkflowFile.Arguments>
+              </ui:InvokeWorkflowFile>
+              <ui:ForEach x:TypeArguments="x:String" CurrentIndex="[packageIDX]" DisplayName="For Each SysPackageNo" sap:VirtualizedContainerService.HintSize="470,708.6666666666666" sap2010:WorkflowViewState.IdRef="ForEach`1_3" Values="[SP_PID_tags_status.keys.ToList]">
                 <ui:ForEach.Body>
                   <ActivityAction x:TypeArguments="x:String">
                     <ActivityAction.Argument>
                       <DelegateInArgument x:TypeArguments="x:String" Name="SysPackageNo" />
                     </ActivityAction.Argument>
-                    <Sequence DisplayName="Body" sap:VirtualizedContainerService.HintSize="467.2,567.2" sap2010:WorkflowViewState.IdRef="Sequence_66">
+                    <Sequence DisplayName="Body" sap:VirtualizedContainerService.HintSize="468,576.6666666666666" sap2010:WorkflowViewState.IdRef="Sequence_66">
                       <sap:WorkflowViewStateService.ViewState>
                         <scg:Dictionary x:TypeArguments="x:String, x:Object">
                           <x:Boolean x:Key="IsExpanded">True</x:Boolean>
                         </scg:Dictionary>
                       </sap:WorkflowViewStateService.ViewState>
-                      <Assign sap:VirtualizedContainerService.HintSize="433.6,113.6" sap2010:WorkflowViewState.IdRef="Assign_84">
+                      <Assign sap:VirtualizedContainerService.HintSize="434,117.33333333333333" sap2010:WorkflowViewState.IdRef="Assign_84">
                         <Assign.To>
                           <OutArgument x:TypeArguments="x:String">[curr_process]</OutArgument>
                         </Assign.To>
@@ -1729,8 +1750,8 @@
                           <InArgument x:TypeArguments="x:String">[SysPackageNo]</InArgument>
                         </Assign.Value>
                       </Assign>
-                      <ui:CreateDirectory ContinueOnError="True" DisplayName="Create Folder" sap:VirtualizedContainerService.HintSize="433.6,112.8" sap2010:WorkflowViewState.IdRef="CreateDirectory_3" Output="[FolderResource]" Path="[System.IO.Path.Combine(Environment.GetFolderPath(Environment.SpecialFolder.Desktop), &quot;Vikash Deliverables&quot;, SysPackageNo)]" />
-                      <Assign sap:VirtualizedContainerService.HintSize="433.6,113.6" sap2010:WorkflowViewState.IdRef="Assign_82">
+                      <ui:CreateDirectory Output="{x:Null}" ContinueOnError="True" DisplayName="Create Folder" sap:VirtualizedContainerService.HintSize="434,114" sap2010:WorkflowViewState.IdRef="CreateDirectory_3" Path="[System.IO.Path.Combine(CollatedFolder.FullName, SysPackageNo)]" />
+                      <Assign sap:VirtualizedContainerService.HintSize="434,117.33333333333333" sap2010:WorkflowViewState.IdRef="Assign_82">
                         <Assign.To>
                           <OutArgument x:TypeArguments="scg:Dictionary(x:String, scg:Dictionary(x:String, x:String))">[PID_tags_status]</OutArgument>
                         </Assign.To>
@@ -1738,7 +1759,7 @@
                           <InArgument x:TypeArguments="scg:Dictionary(x:String, scg:Dictionary(x:String, x:String))">[SP_PID_tags_status(SysPackageNo)]</InArgument>
                         </Assign.Value>
                       </Assign>
-                      <ui:InvokeWorkflowFile ArgumentsVariable="{x:Null}" ContinueOnError="{x:Null}" DisplayName="Download PnIDs - Invoke Workflow File (P&amp;ID Marker\Download PnIDs.xaml)" sap:VirtualizedContainerService.HintSize="433.6,167.2" sap2010:WorkflowViewState.IdRef="InvokeWorkflowFile_2" UnSafe="False" WorkflowFileName="P&amp;ID Marker\Prolog scraping and downloading\Download PnIDs.xaml">
+                      <ui:InvokeWorkflowFile ArgumentsVariable="{x:Null}" ContinueOnError="{x:Null}" DisplayName="Download PnIDs - Invoke Workflow File (P&amp;ID Marker\Download PnIDs.xaml)" sap:VirtualizedContainerService.HintSize="434,168" sap2010:WorkflowViewState.IdRef="InvokeWorkflowFile_2" UnSafe="False" WorkflowFileName="P&amp;ID Marker\Prolog scraping and downloading\Download PnIDs.xaml">
                         <ui:InvokeWorkflowFile.Arguments>
                           <InArgument x:TypeArguments="scg:Dictionary(x:String, scg:Dictionary(x:String, x:String))" x:Key="PID_tags_status">[PID_tags_status]</InArgument>
                           <InArgument x:TypeArguments="scg:Dictionary(x:String, x:String)" x:Key="PID_src">[PID_src]</InArgument>
@@ -1756,7 +1777,7 @@
                   </scg:Dictionary>
                 </sap:WorkflowViewStateService.ViewState>
               </ui:ForEach>
-              <Assign sap:VirtualizedContainerService.HintSize="468.8,104.8" sap2010:WorkflowViewState.IdRef="Assign_88">
+              <Assign sap:VirtualizedContainerService.HintSize="470,108" sap2010:WorkflowViewState.IdRef="Assign_88">
                 <Assign.To>
                   <OutArgument x:TypeArguments="x:Boolean">[process_finished]</OutArgument>
                 </Assign.To>
@@ -1765,21 +1786,21 @@
                 </Assign.Value>
               </Assign>
             </Sequence>
-            <Sequence sap:VirtualizedContainerService.HintSize="542.4,862.4" sap2010:WorkflowViewState.IdRef="Sequence_68">
+            <Sequence sap:VirtualizedContainerService.HintSize="544,1054" sap2010:WorkflowViewState.IdRef="Sequence_68">
               <sap:WorkflowViewStateService.ViewState>
                 <scg:Dictionary x:TypeArguments="x:String, x:Object">
                   <x:Boolean x:Key="IsExpanded">True</x:Boolean>
                   <x:Boolean x:Key="IsPinned">False</x:Boolean>
                 </scg:Dictionary>
               </sap:WorkflowViewStateService.ViewState>
-              <ufa:ShowFormActivity Height="{x:Null}" InstanceName="{x:Null}" Left="{x:Null}" ShowInTaskbar="{x:Null}" ShowMargin="{x:Null}" Title="{x:Null}" Top="{x:Null}" TopMost="{x:Null}" Width="{x:Null}" DisplayName="Show Form" FormId="b06fb60e-b22c-4152-9e7e-4246db6d5e32" sap:VirtualizedContainerService.HintSize="468.8,219.2" sap2010:WorkflowViewState.IdRef="ShowFormActivity_2" IsAsync="True" WindowState="[UiPath.Studio.Forms.Runtime.WindowState.Maximized]">
+              <ufa:ShowFormActivity Height="{x:Null}" InstanceName="{x:Null}" Left="{x:Null}" ShowInTaskbar="{x:Null}" ShowMargin="{x:Null}" Title="{x:Null}" Top="{x:Null}" TopMost="{x:Null}" Width="{x:Null}" DisplayName="Show Form" FormId="b06fb60e-b22c-4152-9e7e-4246db6d5e32" sap:VirtualizedContainerService.HintSize="470,225.33333333333334" sap2010:WorkflowViewState.IdRef="ShowFormActivity_2" IsAsync="True" WindowState="[UiPath.Studio.Forms.Runtime.WindowState.Maximized]">
                 <ufa:ShowFormActivity.Arguments>
                   <InArgument x:TypeArguments="x:String" x:Key="content1">Downloading relevant P&amp;IDs, please wait.</InArgument>
                 </ufa:ShowFormActivity.Arguments>
               </ufa:ShowFormActivity>
-              <ui:InterruptibleWhile CurrentIndex="{x:Null}" Condition="[Not process_finished]" DisplayName="While" sap:VirtualizedContainerService.HintSize="468.8,417.6" sap2010:WorkflowViewState.IdRef="InterruptibleWhile_2">
+              <ui:InterruptibleWhile CurrentIndex="{x:Null}" Condition="[Not process_finished]" DisplayName="While" sap:VirtualizedContainerService.HintSize="470,424" sap2010:WorkflowViewState.IdRef="InterruptibleWhile_2">
                 <ui:InterruptibleWhile.Body>
-                  <Sequence DisplayName="Body" sap:VirtualizedContainerService.HintSize="467.2,287.2" sap2010:WorkflowViewState.IdRef="Sequence_67">
+                  <Sequence DisplayName="Body" sap:VirtualizedContainerService.HintSize="468,292" sap2010:WorkflowViewState.IdRef="Sequence_67">
                     <Sequence.Variables>
                       <Variable x:TypeArguments="x:String" Name="LoadingMessage" />
                       <Variable x:TypeArguments="x:String" Name="LoadingMessage2" />
@@ -1789,8 +1810,8 @@
                         <x:Boolean x:Key="IsExpanded">True</x:Boolean>
                       </scg:Dictionary>
                     </sap:WorkflowViewStateService.ViewState>
-                    <Delay Duration="00:00:00.1000000" sap:VirtualizedContainerService.HintSize="433.6,122.4" sap2010:WorkflowViewState.IdRef="Delay_2" />
-                    <Assign sap:VirtualizedContainerService.HintSize="433.6,104.8" sap2010:WorkflowViewState.IdRef="Assign_83">
+                    <Delay Duration="00:00:00.1000000" sap:VirtualizedContainerService.HintSize="434,124" sap2010:WorkflowViewState.IdRef="Delay_2" />
+                    <Assign sap:VirtualizedContainerService.HintSize="434,108" sap2010:WorkflowViewState.IdRef="Assign_83">
                       <Assign.To>
                         <OutArgument x:TypeArguments="x:String">[LoadingMessage]</OutArgument>
                       </Assign.To>
@@ -1807,13 +1828,23 @@
                   </scg:Dictionary>
                 </sap:WorkflowViewStateService.ViewState>
               </ui:InterruptibleWhile>
-              <ufa:CloseFormActivity InstanceName="{x:Null}" DisplayName="Close Form" FormId="b06fb60e-b22c-4152-9e7e-4246db6d5e32" sap:VirtualizedContainerService.HintSize="468.8,112.8" sap2010:WorkflowViewState.IdRef="CloseFormActivity_2" />
+              <ufa:CloseFormActivity InstanceName="{x:Null}" DisplayName="Close Form" FormId="b06fb60e-b22c-4152-9e7e-4246db6d5e32" sap:VirtualizedContainerService.HintSize="470,114.66666666666667" sap2010:WorkflowViewState.IdRef="CloseFormActivity_2" />
             </Sequence>
           </Parallel>
         </Sequence>
-      </ui:CommentOut.Body>
-    </ui:CommentOut>
-    <Assign DisplayName="Track remaining errors" sap:VirtualizedContainerService.HintSize="1290,114" sap2010:WorkflowViewState.IdRef="Assign_101">
+      </If.Then>
+      <If.Else>
+        <Sequence DisplayName="Else" sap:VirtualizedContainerService.HintSize="1216,25.333333333333332" sap2010:WorkflowViewState.IdRef="Sequence_89">
+          <sap:WorkflowViewStateService.ViewState>
+            <scg:Dictionary x:TypeArguments="x:String, x:Object">
+              <x:Boolean x:Key="IsExpanded">False</x:Boolean>
+              <x:Boolean x:Key="IsPinned">False</x:Boolean>
+            </scg:Dictionary>
+          </sap:WorkflowViewStateService.ViewState>
+        </Sequence>
+      </If.Else>
+    </If>
+    <Assign DisplayName="Track remaining errors" sap:VirtualizedContainerService.HintSize="1218,117.33333333333333" sap2010:WorkflowViewState.IdRef="Assign_101">
       <Assign.To>
         <OutArgument x:TypeArguments="scg:Dictionary(x:String, scg:Dictionary(x:String, scg:List(x:String)))">[SP_PID_remainingTags]</OutArgument>
       </Assign.To>
@@ -1821,7 +1852,7 @@
         <InArgument x:TypeArguments="scg:Dictionary(x:String, scg:Dictionary(x:String, scg:List(x:String)))">[New Dictionary(Of String, Dictionary(Of String, List(Of String)))]</InArgument>
       </Assign.Value>
     </Assign>
-    <Assign sap:VirtualizedContainerService.HintSize="1290,114" sap2010:WorkflowViewState.IdRef="Assign_90">
+    <Assign sap:VirtualizedContainerService.HintSize="1218,117.33333333333333" sap2010:WorkflowViewState.IdRef="Assign_90">
       <Assign.To>
         <OutArgument x:TypeArguments="x:Boolean">[process_finished]</OutArgument>
       </Assign.To>
@@ -1829,32 +1860,32 @@
         <InArgument x:TypeArguments="x:Boolean">False</InArgument>
       </Assign.Value>
     </Assign>
-    <ui:GetFileInfoX DisplayName="Get File Info" FilePath="P&amp;ID Marker\Marking PIDs\Unfinished PIDs.txt" sap:VirtualizedContainerService.HintSize="1250,165" sap2010:WorkflowViewState.IdRef="GetFileInfoX_4" Output="[TextFile]" />
-    <Parallel DisplayName="Calibration process" sap:VirtualizedContainerService.HintSize="1290,1141" sap2010:WorkflowViewState.IdRef="Parallel_9">
+    <ui:GetFileInfoX DisplayName="Get File Info" FilePath="P&amp;ID Marker\Marking PIDs\Unfinished PIDs.txt" sap:VirtualizedContainerService.HintSize="1218,168.66666666666666" sap2010:WorkflowViewState.IdRef="GetFileInfoX_4" Output="[TextFile]" />
+    <Parallel DisplayName="Calibration process" sap:VirtualizedContainerService.HintSize="1218,1163.3333333333333" sap2010:WorkflowViewState.IdRef="Parallel_9">
       <sap:WorkflowViewStateService.ViewState>
         <scg:Dictionary x:TypeArguments="x:String, x:Object">
           <x:Boolean x:Key="IsExpanded">True</x:Boolean>
           <x:Boolean x:Key="IsPinned">False</x:Boolean>
         </scg:Dictionary>
       </sap:WorkflowViewStateService.ViewState>
-      <Sequence sap:VirtualizedContainerService.HintSize="508,1062" sap2010:WorkflowViewState.IdRef="Sequence_85">
+      <Sequence sap:VirtualizedContainerService.HintSize="508,1084" sap2010:WorkflowViewState.IdRef="Sequence_85">
         <sap:WorkflowViewStateService.ViewState>
           <scg:Dictionary x:TypeArguments="x:String, x:Object">
             <x:Boolean x:Key="IsExpanded">True</x:Boolean>
             <x:Boolean x:Key="IsPinned">False</x:Boolean>
           </scg:Dictionary>
         </sap:WorkflowViewStateService.ViewState>
-        <ui:InvokeWorkflowFile ArgumentsVariable="{x:Null}" ContinueOnError="{x:Null}" DisplayName="Adding PID Stamps - Invoke Workflow File (P&amp;ID Marker\Marking PIDs\Adding PID Stamps.xaml)" sap:VirtualizedContainerService.HintSize="434,177" sap2010:WorkflowViewState.IdRef="InvokeWorkflowFile_4" UnSafe="False" WorkflowFileName="P&amp;ID Marker\Marking PIDs\Adding PID Stamps.xaml">
+        <ui:InvokeWorkflowFile ArgumentsVariable="{x:Null}" ContinueOnError="{x:Null}" DisplayName="Adding PID Stamps - Invoke Workflow File (P&amp;ID Marker\Marking PIDs\Adding PID Stamps.xaml)" sap:VirtualizedContainerService.HintSize="434,177.33333333333334" sap2010:WorkflowViewState.IdRef="InvokeWorkflowFile_4" UnSafe="False" WorkflowFileName="P&amp;ID Marker\Marking PIDs\Adding PID Stamps.xaml">
           <ui:InvokeWorkflowFile.Arguments>
             <scg:Dictionary x:TypeArguments="x:String, Argument" />
           </ui:InvokeWorkflowFile.Arguments>
         </ui:InvokeWorkflowFile>
-        <ui:InvokeWorkflowFile ArgumentsVariable="{x:Null}" ContinueOnError="{x:Null}" DisplayName="Calibrating Stamping and Zoom - Invoke Workflow File (P&amp;ID Marker\Marking PIDs\Calibrating Stamping and Zoom.xaml)" sap:VirtualizedContainerService.HintSize="434,177" sap2010:WorkflowViewState.IdRef="InvokeWorkflowFile_5" UnSafe="False" WorkflowFileName="P&amp;ID Marker\Marking PIDs\Calibrating Stamping and Zoom.xaml">
+        <ui:InvokeWorkflowFile ArgumentsVariable="{x:Null}" ContinueOnError="{x:Null}" DisplayName="Calibrating Stamping and Zoom - Invoke Workflow File (P&amp;ID Marker\Marking PIDs\Calibrating Stamping and Zoom.xaml)" sap:VirtualizedContainerService.HintSize="434,177.33333333333334" sap2010:WorkflowViewState.IdRef="InvokeWorkflowFile_5" UnSafe="False" WorkflowFileName="P&amp;ID Marker\Marking PIDs\Calibrating Stamping and Zoom.xaml">
           <ui:InvokeWorkflowFile.Arguments>
             <OutArgument x:TypeArguments="x:String" x:Key="Zoom">[Zoom]</OutArgument>
           </ui:InvokeWorkflowFile.Arguments>
         </ui:InvokeWorkflowFile>
-        <Assign sap:VirtualizedContainerService.HintSize="434,105" sap2010:WorkflowViewState.IdRef="Assign_108">
+        <Assign sap:VirtualizedContainerService.HintSize="434,108" sap2010:WorkflowViewState.IdRef="Assign_108">
           <Assign.To>
             <OutArgument x:TypeArguments="x:Boolean">[process_finished]</OutArgument>
           </Assign.To>
@@ -1863,27 +1894,27 @@
           </Assign.Value>
         </Assign>
       </Sequence>
-      <Sequence sap:VirtualizedContainerService.HintSize="578,1062" sap2010:WorkflowViewState.IdRef="Sequence_86">
+      <Sequence sap:VirtualizedContainerService.HintSize="578,1084" sap2010:WorkflowViewState.IdRef="Sequence_86">
         <sap:WorkflowViewStateService.ViewState>
           <scg:Dictionary x:TypeArguments="x:String, x:Object">
             <x:Boolean x:Key="IsExpanded">True</x:Boolean>
           </scg:Dictionary>
         </sap:WorkflowViewStateService.ViewState>
-        <Sequence sap:VirtualizedContainerService.HintSize="504,1002" sap2010:WorkflowViewState.IdRef="Sequence_88">
+        <Sequence sap:VirtualizedContainerService.HintSize="504,1024" sap2010:WorkflowViewState.IdRef="Sequence_88">
           <sap:WorkflowViewStateService.ViewState>
             <scg:Dictionary x:TypeArguments="x:String, x:Object">
               <x:Boolean x:Key="IsExpanded">True</x:Boolean>
               <x:Boolean x:Key="IsPinned">False</x:Boolean>
             </scg:Dictionary>
           </sap:WorkflowViewStateService.ViewState>
-          <ufa:ShowFormActivity Height="{x:Null}" InstanceName="{x:Null}" Left="{x:Null}" ShowInTaskbar="{x:Null}" ShowMargin="{x:Null}" Title="{x:Null}" Top="{x:Null}" TopMost="{x:Null}" Width="{x:Null}" DisplayName="Show Form" FormId="b06fb60e-b22c-4152-9e7e-4246db6d5e32" sap:VirtualizedContainerService.HintSize="470,218" sap2010:WorkflowViewState.IdRef="ShowFormActivity_4" IsAsync="True" WindowState="[UiPath.Studio.Forms.Runtime.WindowState.Maximized]">
+          <ufa:ShowFormActivity Height="{x:Null}" InstanceName="{x:Null}" Left="{x:Null}" ShowInTaskbar="{x:Null}" ShowMargin="{x:Null}" Title="{x:Null}" Top="{x:Null}" TopMost="{x:Null}" Width="{x:Null}" DisplayName="Show Form" FormId="b06fb60e-b22c-4152-9e7e-4246db6d5e32" sap:VirtualizedContainerService.HintSize="470,225.33333333333334" sap2010:WorkflowViewState.IdRef="ShowFormActivity_4" IsAsync="True" WindowState="[UiPath.Studio.Forms.Runtime.WindowState.Maximized]">
             <ufa:ShowFormActivity.Arguments>
               <InArgument x:TypeArguments="x:String" x:Key="content1">Marking relevant P&amp;IDs, please wait.</InArgument>
             </ufa:ShowFormActivity.Arguments>
           </ufa:ShowFormActivity>
-          <ui:InterruptibleWhile CurrentIndex="{x:Null}" Condition="[Not process_finished]" DisplayName="While" sap:VirtualizedContainerService.HintSize="470,589" sap2010:WorkflowViewState.IdRef="InterruptibleWhile_4">
+          <ui:InterruptibleWhile CurrentIndex="{x:Null}" Condition="[Not process_finished]" DisplayName="While" sap:VirtualizedContainerService.HintSize="470,601.3333333333334" sap2010:WorkflowViewState.IdRef="InterruptibleWhile_4">
             <ui:InterruptibleWhile.Body>
-              <Sequence DisplayName="Body" sap:VirtualizedContainerService.HintSize="468,459" sap2010:WorkflowViewState.IdRef="Sequence_87">
+              <Sequence DisplayName="Body" sap:VirtualizedContainerService.HintSize="468,469.3333333333333" sap2010:WorkflowViewState.IdRef="Sequence_87">
                 <Sequence.Variables>
                   <Variable x:TypeArguments="x:String" Name="LoadingMessage" />
                   <Variable x:TypeArguments="x:String" Name="LoadingMessage2" />
@@ -1893,8 +1924,8 @@
                     <x:Boolean x:Key="IsExpanded">True</x:Boolean>
                   </scg:Dictionary>
                 </sap:WorkflowViewStateService.ViewState>
-                <Delay Duration="00:00:00.1000000" sap:VirtualizedContainerService.HintSize="434,122" sap2010:WorkflowViewState.IdRef="Delay_4" />
-                <Assign sap:VirtualizedContainerService.HintSize="434,114" sap2010:WorkflowViewState.IdRef="Assign_105">
+                <Delay Duration="00:00:00.1000000" sap:VirtualizedContainerService.HintSize="434,124" sap2010:WorkflowViewState.IdRef="Delay_4" />
+                <Assign sap:VirtualizedContainerService.HintSize="434,117.33333333333333" sap2010:WorkflowViewState.IdRef="Assign_105">
                   <Assign.To>
                     <OutArgument x:TypeArguments="x:String">[LoadingMessage]</OutArgument>
                   </Assign.To>
@@ -1902,7 +1933,7 @@
                     <InArgument x:TypeArguments="x:String">[String.Format("Adding stamps and calibrating zoom, please wait.")]</InArgument>
                   </Assign.Value>
                 </Assign>
-                <ufa:SetFormFieldsActivity InstanceName="{x:Null}" DisplayName="Set Form Values" FormId="b06fb60e-b22c-4152-9e7e-4246db6d5e32" sap:VirtualizedContainerService.HintSize="434,163" sap2010:WorkflowViewState.IdRef="SetFormFieldsActivity_4">
+                <ufa:SetFormFieldsActivity InstanceName="{x:Null}" DisplayName="Set Form Values" FormId="b06fb60e-b22c-4152-9e7e-4246db6d5e32" sap:VirtualizedContainerService.HintSize="434,168" sap2010:WorkflowViewState.IdRef="SetFormFieldsActivity_4">
                   <ufa:SetFormFieldsActivity.Arguments>
                     <InArgument x:TypeArguments="x:String" x:Key="progress">[LoadingMessage]</InArgument>
                   </ufa:SetFormFieldsActivity.Arguments>
@@ -1916,11 +1947,11 @@
               </scg:Dictionary>
             </sap:WorkflowViewStateService.ViewState>
           </ui:InterruptibleWhile>
-          <ufa:CloseFormActivity InstanceName="{x:Null}" DisplayName="Close Form" FormId="b06fb60e-b22c-4152-9e7e-4246db6d5e32" sap:VirtualizedContainerService.HintSize="470,112" sap2010:WorkflowViewState.IdRef="CloseFormActivity_4" />
+          <ufa:CloseFormActivity InstanceName="{x:Null}" DisplayName="Close Form" FormId="b06fb60e-b22c-4152-9e7e-4246db6d5e32" sap:VirtualizedContainerService.HintSize="470,114.66666666666667" sap2010:WorkflowViewState.IdRef="CloseFormActivity_4" />
         </Sequence>
       </Sequence>
     </Parallel>
-    <Assign sap:VirtualizedContainerService.HintSize="1250,114" sap2010:WorkflowViewState.IdRef="Assign_107">
+    <Assign sap:VirtualizedContainerService.HintSize="1218,117.33333333333333" sap2010:WorkflowViewState.IdRef="Assign_107">
       <Assign.To>
         <OutArgument x:TypeArguments="x:Boolean">[process_finished]</OutArgument>
       </Assign.To>
@@ -1928,7 +1959,7 @@
         <InArgument x:TypeArguments="x:Boolean">False</InArgument>
       </Assign.Value>
     </Assign>
-    <Parallel DisplayName="Marking" sap:VirtualizedContainerService.HintSize="1290,2219" sap2010:WorkflowViewState.IdRef="Parallel_6">
+    <Parallel DisplayName="Marking" sap:VirtualizedContainerService.HintSize="1218,48" sap2010:WorkflowViewState.IdRef="Parallel_6">
       <Parallel.Variables>
         <Variable x:TypeArguments="x:String" Name="curr_number" />
         <Variable x:TypeArguments="x:String" Name="Message_remainingTags" />

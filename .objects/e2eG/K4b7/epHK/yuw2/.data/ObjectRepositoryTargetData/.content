@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="utf-16"?>
+<ObjectRepositoryTargetData ContentHash="etxNqpscSEqNhmeVaqi5nA" Reference="xGt2OSXt7UW47kSHt2k5yg/yuw2T684ZUGX2AhV4S2f-g" xmlns="http://schemas.uipath.com/workflow/activities/uix" xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml">
+  <ObjectRepositoryTargetData.Data>
+    <TargetAnchorable x:Key="TargetAnchorable" BrowserURL="convergeaus.jacobs.com/PrologConverge/WebClient/projects.aspx" DesignTimeRectangle="61, 286, 1816, 693" FullSelectorArgument="&lt;webctrl id='fraMainPI' tag='IFRAME' /&gt;&lt;webctrl id='dvTB_lstList_Table' tag='DIV' /&gt;" Guid="0bad0e43-f5e0-493f-bd08-99041399af54" ScopeSelectorArgument="&lt;html app='msedge.exe' title='Prolog Converge' /&gt;" SearchSteps="Selector" Version="V6" Visibility="Interactive" WaitForReadyArgument="None">
+      <imageRef attrName="InformativeScreenshot" originalValue="5cb5ef4fb28b4b886c21a6718d2c6ef8.png" xmlns="">0C-CYj-sFOk-_viGXdcbPAQ</imageRef>
+    </TargetAnchorable>
+    <x:String x:Key="ActivityType">CheckState</x:String>
+  </ObjectRepositoryTargetData.Data>
+</ObjectRepositoryTargetData>

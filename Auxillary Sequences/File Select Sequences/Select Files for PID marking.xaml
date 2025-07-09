@@ -5,6 +5,8 @@
     <x:Property Name="selected_output_sheet" Type="OutArgument(x:String)" />
     <x:Property Name="exceltemplate_filePath" Type="OutArgument(x:String)" />
     <x:Property Name="selected_template_sheet" Type="OutArgument(x:String)" />
+    <x:Property Name="folderPath" Type="OutArgument(x:String)" />
+    <x:Property Name="downloadedPID_bool" Type="OutArgument(x:Boolean)" />
   </x:Members>
   <VisualBasic.Settings>
     <x:Null />
@@ -97,32 +99,45 @@
       <AssemblyReference>Microsoft.VisualBasic.Core</AssemblyReference>
     </sco:Collection>
   </TextExpression.ReferencesForImplementation>
-  <Sequence DisplayName="test4" sap:VirtualizedContainerService.HintSize="1216,728.6666666666666" sap2010:WorkflowViewState.IdRef="Sequence_1">
+  <Sequence DisplayName="test4" sap:VirtualizedContainerService.HintSize="1216,846" sap2010:WorkflowViewState.IdRef="Sequence_1">
+    <Sequence.Variables>
+      <Variable x:TypeArguments="x:String" Name="pidsDownloaded" />
+    </Sequence.Variables>
     <sap:WorkflowViewStateService.ViewState>
       <scg:Dictionary x:TypeArguments="x:String, x:Object">
         <x:Boolean x:Key="IsExpanded">True</x:Boolean>
       </scg:Dictionary>
     </sap:WorkflowViewStateService.ViewState>
-    <ufa:ShowFormActivity Height="{x:Null}" InstanceName="{x:Null}" Left="{x:Null}" ShowInTaskbar="{x:Null}" ShowMargin="{x:Null}" Title="{x:Null}" Top="{x:Null}" TopMost="{x:Null}" Width="{x:Null}" WindowState="{x:Null}" DisplayName="Show Form" FormId="38efa2d6-d038-43d8-9169-20fec1495836" sap:VirtualizedContainerService.HintSize="416,225.33333333333334" sap2010:WorkflowViewState.IdRef="ShowFormActivity_1" IsAsync="True">
+    <ufa:ShowFormActivity Height="{x:Null}" InstanceName="{x:Null}" Left="{x:Null}" ShowInTaskbar="{x:Null}" ShowMargin="{x:Null}" Title="{x:Null}" Top="{x:Null}" TopMost="{x:Null}" Width="{x:Null}" WindowState="{x:Null}" DisplayName="Show Form" FormId="38efa2d6-d038-43d8-9169-20fec1495836" sap:VirtualizedContainerService.HintSize="434,225.33333333333334" sap2010:WorkflowViewState.IdRef="ShowFormActivity_1" IsAsync="True">
       <ufa:ShowFormActivity.Arguments>
         <InArgument x:TypeArguments="x:String" x:Key="title">[title]</InArgument>
       </ufa:ShowFormActivity.Arguments>
     </ufa:ShowFormActivity>
-    <ui:StartTriggers ArgumentsVariable="{x:Null}" ContinueOnError="{x:Null}" DisplayName="Run Local Triggers" sap:VirtualizedContainerService.HintSize="416,131.33333333333334" sap2010:WorkflowViewState.IdRef="StartTriggers_1" UnSafe="False" WorkflowFileName=".local\generated\Triggers.Generated.xaml">
+    <ui:StartTriggers ArgumentsVariable="{x:Null}" ContinueOnError="{x:Null}" DisplayName="Run Local Triggers" sap:VirtualizedContainerService.HintSize="434,131.33333333333334" sap2010:WorkflowViewState.IdRef="StartTriggers_1" UnSafe="False" WorkflowFileName=".local\generated\Triggers.Generated.xaml">
       <ui:StartTriggers.Arguments>
         <scg:Dictionary x:TypeArguments="x:String, Argument" />
       </ui:StartTriggers.Arguments>
     </ui:StartTriggers>
-    <ufa:GetFormFieldsActivity InstanceName="{x:Null}" DisplayName="Get Form Values" FormId="38efa2d6-d038-43d8-9169-20fec1495836" sap:VirtualizedContainerService.HintSize="416,177.33333333333334" sap2010:WorkflowViewState.IdRef="GetFormFieldsActivity_1">
+    <ufa:GetFormFieldsActivity InstanceName="{x:Null}" DisplayName="Get Form Values" FormId="38efa2d6-d038-43d8-9169-20fec1495836" sap:VirtualizedContainerService.HintSize="434,177.33333333333334" sap2010:WorkflowViewState.IdRef="GetFormFieldsActivity_1">
       <ufa:GetFormFieldsActivity.Arguments>
         <OutArgument x:TypeArguments="x:String" x:Key="exceltemplate_filePath">[exceltemplate_filePath]</OutArgument>
         <OutArgument x:TypeArguments="x:String" x:Key="exceloutput_filePath">[exceloutput_filePath]</OutArgument>
         <OutArgument x:TypeArguments="x:String" x:Key="sheets_lst_output">[selected_output_sheet]</OutArgument>
         <OutArgument x:TypeArguments="x:String" x:Key="sheets_lst_template">[selected_template_sheet]</OutArgument>
+        <OutArgument x:TypeArguments="x:String" x:Key="folderPath">[folderPath]</OutArgument>
+        <OutArgument x:TypeArguments="x:String" x:Key="pidsDownloaded">[pidsDownloaded]</OutArgument>
       </ufa:GetFormFieldsActivity.Arguments>
     </ufa:GetFormFieldsActivity>
-    <ufa:CloseFormActivity InstanceName="{x:Null}" DisplayName="Close Form" FormId="38efa2d6-d038-43d8-9169-20fec1495836" sap:VirtualizedContainerService.HintSize="416,124" sap2010:WorkflowViewState.IdRef="CloseFormActivity_1" />
-    <ui:CommentOut DisplayName="Comment Out" sap:VirtualizedContainerService.HintSize="416,48" sap2010:WorkflowViewState.IdRef="CommentOut_1">
+    <ufa:CloseFormActivity InstanceName="{x:Null}" DisplayName="Close Form" FormId="38efa2d6-d038-43d8-9169-20fec1495836" sap:VirtualizedContainerService.HintSize="434,124" sap2010:WorkflowViewState.IdRef="CloseFormActivity_1" />
+    <Assign sap:VirtualizedContainerService.HintSize="434,117.33333333333333" sap2010:WorkflowViewState.IdRef="Assign_1">
+      <Assign.To>
+        <OutArgument x:TypeArguments="x:Boolean">[downloadedPID_bool]</OutArgument>
+      </Assign.To>
+      <Assign.Value>
+        <InArgument x:TypeArguments="x:Boolean">[If(pidsDownloaded = "yes", True, False)]</InArgument>
+      </Assign.Value>
+    </Assign>
+    <ui:CommentOut DisplayName="Comment Out" sap:VirtualizedContainerService.HintSize="434,48" sap2010:WorkflowViewState.IdRef="CommentOut_1">
       <ui:CommentOut.Body>
         <Sequence DisplayName="Ignored Activities" sap:VirtualizedContainerService.HintSize="450,169.33333333333334" sap2010:WorkflowViewState.IdRef="Sequence_2">
           <sap:WorkflowViewStateService.ViewState>

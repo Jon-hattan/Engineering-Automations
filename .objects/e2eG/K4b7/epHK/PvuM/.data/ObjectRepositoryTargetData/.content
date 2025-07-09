@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="utf-16"?>
+<ObjectRepositoryTargetData ContentHash="SxVWVZ_qME2rPwuBuyWCXQ" xmlns="http://schemas.uipath.com/workflow/activities/uix" xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml">
+  <ObjectRepositoryTargetData.Data>
+    <TargetAnchorable x:Key="TargetAnchorable" BrowserURL="convergeaus.jacobs.com/PrologConverge/WebClient/default.aspx" CVScreenId="7c74cb3f-7dd5-42f0-b2ed-2f6900581e17" CvElementArea="785, 498, 368, 49" CvTextArea="938, 514, 61, 27" CvTextArgument="Log In" CvType="Button" DesignTimeRectangle="787, 500, 365, 45" ElementType="Button" FullSelectorArgument="&lt;webctrl id='ucLogin_cmdLogin' tag='INPUT' /&gt;" Guid="87db5a1e-0263-4a12-9667-c7ec12d6b9f3" ScopeSelectorArgument="&lt;html app='msedge.exe' title='Prolog Converge' /&gt;" SearchSteps="Selector, CV" Version="V6" Visibility="Interactive" WaitForReadyArgument="Interactive">
+      <imageRef attrName="InformativeScreenshot" originalValue="0aff71cc8678195a93a73363ab7ed280.png" xmlns="">0Q8wwNXF1jEi354BPbajM1Q</imageRef>
+    </TargetAnchorable>
+    <x:String x:Key="ActivityType">Click</x:String>
+  </ObjectRepositoryTargetData.Data>
+</ObjectRepositoryTargetData>

@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="utf-16"?>
+<ObjectRepositoryTargetData ContentHash="qhed2NmgbE6CIC1ck6VgmQ" Reference="xGt2OSXt7UW47kSHt2k5yg/R7p4eFWlZ0as8Pj0o17kwA" xmlns="http://schemas.uipath.com/workflow/activities/uix" xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml">
+  <ObjectRepositoryTargetData.Data>
+    <TargetAnchorable x:Key="TargetAnchorable" BrowserURL="convergeaus.jacobs.com/PrologConverge/WebClient/SubmittalPackage.aspx" CVScreenId="1df6343d-d734-4ea8-a40f-d4a287fd3478" CvElementArea="345, 109, 71, 34" CvTextArea="363, 119, 33, 12" CvTextArgument="Leave" CvType="Button" DesignTimeRectangle="346, 110, 68, 32" ElementType="Button" FullSelectorArgument="&lt;ctrl name='Leave site?' role='dialog' /&gt;&lt;ctrl name='Leave' role='push button' /&gt;" Guid="ae3668b2-43c6-4819-8890-0d88772ae45a" ScopeSelectorArgument="&lt;wnd app='msedge.exe' cls='Chrome_WidgetWin_1' title='Leave site?' /&gt;" SearchSteps="Selector, CV" Version="V6" Visibility="Interactive" WaitForReadyArgument="Interactive">
+      <imageRef attrName="InformativeScreenshot" originalValue="27ab52622a531b25f0332c166dfc28d3.png" xmlns="">0GeI-IdxKFkKXpc4nGH6QAg</imageRef>
+    </TargetAnchorable>
+    <x:String x:Key="ActivityType">CheckState</x:String>
+  </ObjectRepositoryTargetData.Data>
+</ObjectRepositoryTargetData>

@@ -1,0 +1,14 @@
+﻿{
+  "Name": "Leave",
+  "Type": "Element",
+  "TaxonomyType": "Button",
+  "Id": "R7p4eFWlZ0as8Pj0o17kwA",
+  "Reference": "xGt2OSXt7UW47kSHt2k5yg/R7p4eFWlZ0as8Pj0o17kwA",
+  "ParentRef": "xGt2OSXt7UW47kSHt2k5yg/XjdnKYfXk0i5FKYbnjDKBg",
+  "Created": "2025-07-09T09:41:36.190834Z",
+  "Updated": "2025-07-09T09:41:36.190834Z",
+  "CreatedBy": [
+    "UiPath.UIAutomationCore, Version=25.10.8.0, Culture=neutral, PublicKeyToken=null",
+    "UiPath.Platform, Version=25.4.0.0, Culture=neutral, PublicKeyToken=null"
+  ]
+}

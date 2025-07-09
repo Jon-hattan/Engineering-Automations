@@ -1,0 +1,12 @@
+﻿{
+  "Name": "Select Contract",
+  "Type": "App",
+  "Id": "e2eGPoh_k0Sg6Yj8wWL5oA",
+  "Reference": "xGt2OSXt7UW47kSHt2k5yg/e2eGPoh_k0Sg6Yj8wWL5oA",
+  "Created": "2025-07-09T02:48:32.3734927Z",
+  "Updated": "2025-07-09T02:48:32.3734927Z",
+  "CreatedBy": [
+    "UiPath.UIAutomationCore, Version=25.10.8.0, Culture=neutral, PublicKeyToken=null",
+    "UiPath.Platform, Version=25.4.0.0, Culture=neutral, PublicKeyToken=null"
+  ]
+}

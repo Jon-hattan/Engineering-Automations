@@ -1,0 +1,210 @@
+﻿{
+  "Metadata": {
+    "Id": "38efa2d6-d038-43d8-9169-20fec1495836",
+    "Kind": "FormIo"
+  },
+  "DesignProperties": {
+    "Title": "Select Files",
+    "Theme": "Default",
+    "ShowInTaskbar": true,
+    "ShowMargin": true,
+    "CustomStyle": ".button1, .button2, .button3 {\r\ndisplay: inline-block;\r\nmin-width: max-content;\r\nvertical-align: top;\r\nmargin-right: 10px;\r\n}"
+  },
+  "Data": {
+    "components": [
+      {
+        "tag": "h1",
+        "key": "label2",
+        "input": false,
+        "tableView": false,
+        "label": "Label",
+        "type": "label"
+      },
+      {
+        "tag": "h2",
+        "content": "Select Files",
+        "key": "label",
+        "input": false,
+        "tableView": false,
+        "label": "Label",
+        "type": "label"
+      },
+      {
+        "content": "Select the P&ID Tracker and Asset list excel file.",
+        "key": "label1",
+        "input": false,
+        "tableView": false,
+        "label": "Label",
+        "type": "label"
+      },
+      {
+        "label": "Container",
+        "customClass": "button1",
+        "key": "container1",
+        "type": "container",
+        "input": true,
+        "tableView": false,
+        "components": [
+          {
+            "label": "Select P&ID Tracker",
+            "action": "event",
+            "showValidations": false,
+            "theme": "secondary",
+            "size": "lg",
+            "tableView": false,
+            "key": "selectExcel",
+            "type": "button",
+            "input": true
+          },
+          {
+            "label": "excel name",
+            "customClass": "name1",
+            "refreshOnChange": true,
+            "key": "exceloutput_fileName",
+            "type": "content",
+            "input": false,
+            "tableView": false
+          }
+        ]
+      },
+      {
+        "label": "Container",
+        "customClass": "button2",
+        "key": "container2",
+        "type": "container",
+        "input": true,
+        "tableView": false,
+        "components": [
+          {
+            "label": "Select Asset List",
+            "action": "event",
+            "showValidations": false,
+            "theme": "secondary",
+            "size": "lg",
+            "tableView": false,
+            "key": "selectSheetsTemplate",
+            "type": "button",
+            "input": true
+          },
+          {
+            "label": "exceltemplate_name",
+            "customClass": "name2",
+            "refreshOnChange": true,
+            "key": "exceltemplate_fileName",
+            "type": "content",
+            "input": false,
+            "tableView": false
+          }
+        ]
+      },
+      {
+        "label": "Container",
+        "customClass": "button3",
+        "key": "container3",
+        "type": "container",
+        "input": true,
+        "tableView": false,
+        "components": [
+          {
+            "label": "Select P&ID Folder",
+            "action": "event",
+            "showValidations": false,
+            "theme": "secondary",
+            "size": "lg",
+            "tableView": false,
+            "key": "PIDfolder",
+            "type": "button",
+            "input": true
+          },
+          {
+            "label": "Content",
+            "refreshOnChange": true,
+            "key": "folderName",
+            "type": "content",
+            "input": false,
+            "tableView": false
+          }
+        ]
+      },
+      {
+        "label": "Have you downloaded all the relevant P&IDs?",
+        "optionsLabelPosition": "right",
+        "description": "If not, the automation will scrape Prolog for the P&IDs.",
+        "inline": false,
+        "tableView": false,
+        "values": [
+          {
+            "label": "Yes",
+            "value": "yes",
+            "shortcut": ""
+          },
+          {
+            "label": "No",
+            "value": "no",
+            "shortcut": ""
+          }
+        ],
+        "key": "pidsDownloaded",
+        "type": "radio",
+        "input": true
+      },
+      {
+        "label": "Container",
+        "key": "container",
+        "type": "container",
+        "input": true,
+        "tableView": false,
+        "components": [
+          {
+            "label": "Select the contract.",
+            "widget": "choicesjs",
+            "description": "Select the sheet that contains the contract information in the P&ID tracker.",
+            "tableView": true,
+            "key": "sheets_lst_output",
+            "type": "select",
+            "input": true
+          },
+          {
+            "label": "Select the asset list sheet.",
+            "widget": "choicesjs",
+            "description": "Select the sheet that contains the Asset List.",
+            "tableView": true,
+            "key": "sheets_lst_template",
+            "type": "select",
+            "input": true
+          }
+        ]
+      },
+      {
+        "label": "Submit",
+        "action": "event",
+        "showValidations": false,
+        "tableView": false,
+        "key": "submit",
+        "type": "button",
+        "input": true
+      },
+      {
+        "label": "excelfilepath output",
+        "key": "exceloutput_filePath",
+        "type": "hidden",
+        "input": true,
+        "tableView": false
+      },
+      {
+        "label": "excelfilepath template",
+        "key": "exceltemplate_filePath",
+        "type": "hidden",
+        "input": true,
+        "tableView": false
+      },
+      {
+        "label": "folderPath",
+        "key": "folderPath",
+        "type": "hidden",
+        "input": true,
+        "tableView": false
+      }
+    ]
+  }
+}
