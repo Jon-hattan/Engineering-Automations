@@ -141,12 +141,9 @@
       <x:Boolean x:Key="ShouldCollapseAll">False</x:Boolean>
     </scg:Dictionary>
   </sap:WorkflowViewStateService.ViewState>
-  <Sequence DisplayName="Download_PnID" sap:VirtualizedContainerService.HintSize="1216,7768" sap2010:WorkflowViewState.IdRef="Sequence_1">
+  <Sequence DisplayName="Download_PnID" sap:VirtualizedContainerService.HintSize="1216,6250" sap2010:WorkflowViewState.IdRef="Sequence_1">
     <Sequence.Variables>
-      <Variable x:TypeArguments="x:Int32" Name="index">
-        <Variable.Default>
-          <Literal x:TypeArguments="x:Int32" />
-        </Variable.Default>
+      <Variable x:TypeArguments="x:Int32" Default="0" Name="index">
         <sap:WorkflowViewStateService.ViewState>
           <scg:Dictionary x:TypeArguments="x:String, x:Object">
             <x:String x:Key="SourceIdRef">ForEach`1_1</x:String>
@@ -160,96 +157,20 @@
         <x:Boolean x:Key="IsExpanded">True</x:Boolean>
       </scg:Dictionary>
     </sap:WorkflowViewStateService.ViewState>
-    <Sequence sap:VirtualizedContainerService.HintSize="872,1190" sap2010:WorkflowViewState.IdRef="Sequence_47">
-      <Sequence.Variables>
-        <Variable x:TypeArguments="si:FileInfo" Name="test" />
-      </Sequence.Variables>
+    <Sequence sap:VirtualizedContainerService.HintSize="872,6227.333333333333" sap2010:WorkflowViewState.IdRef="Sequence_4">
       <sap:WorkflowViewStateService.ViewState>
         <scg:Dictionary x:TypeArguments="x:String, x:Object">
           <x:Boolean x:Key="IsExpanded">True</x:Boolean>
           <x:Boolean x:Key="IsPinned">False</x:Boolean>
         </scg:Dictionary>
       </sap:WorkflowViewStateService.ViewState>
-      <ui:GetFileInfoX DisplayName="Get File Info" FilePath="C:\Users\CHEWJ1\Desktop\Test" sap:VirtualizedContainerService.HintSize="434,168.66666666666666" sap2010:WorkflowViewState.IdRef="GetFileInfoX_1" Output="[test]" />
-      <Assign sap:VirtualizedContainerService.HintSize="434,117.33333333333333" sap2010:WorkflowViewState.IdRef="Assign_25">
-        <Assign.To>
-          <OutArgument x:TypeArguments="x:String">[CurrentSP]</OutArgument>
-        </Assign.To>
-        <Assign.Value>
-          <InArgument x:TypeArguments="x:String">A</InArgument>
-        </Assign.Value>
-      </Assign>
-      <Assign sap:VirtualizedContainerService.HintSize="434,117.33333333333333" sap2010:WorkflowViewState.IdRef="Assign_24">
-        <Assign.To>
-          <OutArgument x:TypeArguments="si:FileInfo">[CollatedFolder]</OutArgument>
-        </Assign.To>
-        <Assign.Value>
-          <InArgument x:TypeArguments="si:FileInfo">[test]</InArgument>
-        </Assign.Value>
-      </Assign>
-      <Assign sap:VirtualizedContainerService.HintSize="434,117.33333333333333" sap2010:WorkflowViewState.IdRef="Assign_18">
-        <Assign.To>
-          <OutArgument x:TypeArguments="scg:Dictionary(x:String, x:String)">[PID_tags_status("131235-WDL00-DR-P-6009")]</OutArgument>
-        </Assign.To>
-        <Assign.Value>
-          <InArgument x:TypeArguments="scg:Dictionary(x:String, x:String)">[New Dictionary(of String, String)]</InArgument>
-        </Assign.Value>
-      </Assign>
-      <Assign sap:VirtualizedContainerService.HintSize="434,117.33333333333333" sap2010:WorkflowViewState.IdRef="Assign_23">
-        <Assign.To>
-          <OutArgument x:TypeArguments="scg:Dictionary(x:String, x:String)">[PID_tags_status("131235-WDL11-DR-P-6020")]</OutArgument>
-        </Assign.To>
-        <Assign.Value>
-          <InArgument x:TypeArguments="scg:Dictionary(x:String, x:String)">[New Dictionary(of String, String)]</InArgument>
-        </Assign.Value>
-      </Assign>
-      <Assign sap:VirtualizedContainerService.HintSize="434,117.33333333333333" sap2010:WorkflowViewState.IdRef="Assign_22">
-        <Assign.To>
-          <OutArgument x:TypeArguments="scg:Dictionary(x:String, x:String)">[PID_tags_status("131235-WDL11-DR-P-6021")]</OutArgument>
-        </Assign.To>
-        <Assign.Value>
-          <InArgument x:TypeArguments="scg:Dictionary(x:String, x:String)">[New Dictionary(of String, String)]</InArgument>
-        </Assign.Value>
-      </Assign>
-      <Assign sap:VirtualizedContainerService.HintSize="434,117.33333333333333" sap2010:WorkflowViewState.IdRef="Assign_19">
-        <Assign.To>
-          <OutArgument x:TypeArguments="x:String">[PID_src("131235-WDL11-DR-P-6021")]</OutArgument>
-        </Assign.To>
-        <Assign.Value>
-          <InArgument x:TypeArguments="x:String">111</InArgument>
-        </Assign.Value>
-      </Assign>
-      <Assign sap:VirtualizedContainerService.HintSize="434,117.33333333333333" sap2010:WorkflowViewState.IdRef="Assign_21">
-        <Assign.To>
-          <OutArgument x:TypeArguments="x:String">[PID_src("131235-WDL11-DR-P-6020")]</OutArgument>
-        </Assign.To>
-        <Assign.Value>
-          <InArgument x:TypeArguments="x:String">111</InArgument>
-        </Assign.Value>
-      </Assign>
-      <Assign sap:VirtualizedContainerService.HintSize="434,108" sap2010:WorkflowViewState.IdRef="Assign_20">
-        <Assign.To>
-          <OutArgument x:TypeArguments="x:String">[PID_src("131235-WDL00-DR-P-6009")]</OutArgument>
-        </Assign.To>
-        <Assign.Value>
-          <InArgument x:TypeArguments="x:String">111</InArgument>
-        </Assign.Value>
-      </Assign>
-    </Sequence>
-    <Sequence sap:VirtualizedContainerService.HintSize="872,6555.333333333333" sap2010:WorkflowViewState.IdRef="Sequence_4">
-      <sap:WorkflowViewStateService.ViewState>
-        <scg:Dictionary x:TypeArguments="x:String, x:Object">
-          <x:Boolean x:Key="IsExpanded">True</x:Boolean>
-          <x:Boolean x:Key="IsPinned">False</x:Boolean>
-        </scg:Dictionary>
-      </sap:WorkflowViewStateService.ViewState>
-      <ui:ForEach x:TypeArguments="x:String" CurrentIndex="[index]" DisplayName="For Each currentPID" sap:VirtualizedContainerService.HintSize="838,6472.666666666667" sap2010:WorkflowViewState.IdRef="ForEach`1_1" Values="[PID_tags_status.Keys.AsEnumerable()]">
+      <ui:ForEach x:TypeArguments="x:String" CurrentIndex="[index]" DisplayName="For Each currentPID" sap:VirtualizedContainerService.HintSize="838,6144.666666666667" sap2010:WorkflowViewState.IdRef="ForEach`1_1" Values="[PID_tags_status.Keys.AsEnumerable()]">
         <ui:ForEach.Body>
           <ActivityAction x:TypeArguments="x:String">
             <ActivityAction.Argument>
               <DelegateInArgument x:TypeArguments="x:String" Name="currentPID" />
             </ActivityAction.Argument>
-            <Sequence DisplayName="Body" sap:VirtualizedContainerService.HintSize="836,6350" sap2010:WorkflowViewState.IdRef="Sequence_2">
+            <Sequence DisplayName="Body" sap:VirtualizedContainerService.HintSize="836,6022" sap2010:WorkflowViewState.IdRef="Sequence_2">
               <Sequence.Variables>
                 <Variable x:TypeArguments="x:Boolean" Name="PIDexists" />
                 <Variable x:TypeArguments="x:Boolean" Name="markedPIDexists" />
@@ -289,13 +210,13 @@
                   </Sequence>
                 </If.Else>
               </If>
-              <uix:NApplicationCard AttachMode="ByInstance" DisplayName="Edge Prolog Converge" HealingAgentBehavior="Job" sap:VirtualizedContainerService.HintSize="802,5679.333333333333" sap2010:WorkflowViewState.IdRef="NApplicationCard_1" InteractionMode="DebuggerApi" ScopeGuid="7d6a64e0-5812-4015-8f66-0187699324d9" Version="V2">
+              <uix:NApplicationCard AttachMode="ByInstance" DisplayName="Edge Prolog Converge" HealingAgentBehavior="Job" sap:VirtualizedContainerService.HintSize="802,5351.333333333333" sap2010:WorkflowViewState.IdRef="NApplicationCard_1" InteractionMode="DebuggerApi" ScopeGuid="7d6a64e0-5812-4015-8f66-0187699324d9" Version="V2">
                 <uix:NApplicationCard.Body>
                   <ActivityAction x:TypeArguments="x:Object">
                     <ActivityAction.Argument>
                       <DelegateInArgument x:TypeArguments="x:Object" Name="WSSessionData" />
                     </ActivityAction.Argument>
-                    <Sequence DisplayName="Do" sap:VirtualizedContainerService.HintSize="768,5372" sap2010:WorkflowViewState.IdRef="Sequence_3">
+                    <Sequence DisplayName="Do" sap:VirtualizedContainerService.HintSize="768,5044" sap2010:WorkflowViewState.IdRef="Sequence_3">
                       <Sequence.Variables>
                         <Variable x:TypeArguments="x:String" Name="largestRevNumber" />
                         <Variable x:TypeArguments="x:String" Name="dynamic_selector" />
@@ -305,27 +226,6 @@
                           <x:Boolean x:Key="IsExpanded">True</x:Boolean>
                         </scg:Dictionary>
                       </sap:WorkflowViewStateService.ViewState>
-                      <uix:NTypeInto ActivateBefore="True" ClickBeforeMode="Single" ClipboardMode="Never" DelayBetweenKeys="0.05" DisplayName="Type Into 'Subject'" EmptyFieldMode="SingleLine" HealingAgentBehavior="SameAsCard" sap:VirtualizedContainerService.HintSize="734,292.6666666666667" sap2010:WorkflowViewState.IdRef="NTypeInto_1" InteractionMode="HardwareEvents" ScopeIdentifier="7d6a64e0-5812-4015-8f66-0187699324d9" Text="P&amp;ID" Version="V4">
-                        <uix:NTypeInto.Target>
-                          <uix:TargetAnchorable BrowserURL="convergeaus.jacobs.com/PrologConverge/WebClient/navigate.aspx" ContentHash="LFmYWZFd-0GeVbG0QmeMYA" DesignTimeRectangle="315, 293, 465, 20" FuzzySelectorArgument="&lt;webctrl id='fraMainPI' tag='IFRAME' matching:id='fuzzy' fuzzylevel:id='0.0' /&gt;&lt;webctrl parentid='dvCH_lstList_SubmittalPackages' tag='TABLE' matching:parentid='fuzzy' fuzzylevel:parentid='0.0' /&gt;&lt;webctrl class='WEI6J7 WEI688  WGGIJH' aaname='' tag='TD' type='FilterColumn' matching:class='fuzzy' fuzzylevel:class='0.0' matching:aaname='fuzzy' fuzzylevel:aaname='0.0' /&gt;" Guid="82964bca-73fe-4558-b49d-eaffd5c89273" InformativeScreenshot="838718ff1eecb52af2e8165e91a1f086.png" Reference="xGt2OSXt7UW47kSHt2k5yg/_zQMLse1Kk-BiWQcr6Hrnw" ScopeSelectorArgument="&lt;html app='msedge.exe' title='Prolog Converge' /&gt;" SearchSteps="FuzzySelector" Version="V6" Visibility="Interactive" WaitForReadyArgument="None">
-                            <uix:TargetAnchorable.Anchors>
-                              <scg:List x:TypeArguments="uix:ITarget" Capacity="1">
-                                <uix:Target DesignTimeRectangle="316, 267, 50, 16" FuzzySelectorArgument="&lt;webctrl id='fraMainPI' tag='IFRAME' matching:id='fuzzy' fuzzylevel:id='0.0' /&gt;&lt;webctrl parentid='dvCH_lstList_SubmittalPackages' tag='TABLE' matching:parentid='fuzzy' fuzzylevel:parentid='0.0' /&gt;&lt;webctrl type='' class='' tag='NOBR' aaname='Subject' matching:class='fuzzy' fuzzylevel:class='0.0' matching:aaname='fuzzy' fuzzylevel:aaname='0.0' check:innerText='Subject' /&gt;" Guid="59acc7fa-0d50-4903-822e-bc30008554fb" SearchSteps="FuzzySelector" />
-                              </scg:List>
-                            </uix:TargetAnchorable.Anchors>
-                          </uix:TargetAnchorable>
-                        </uix:NTypeInto.Target>
-                        <uix:NTypeInto.VerifyOptions>
-                          <uix:VerifyExecutionTypeIntoOptions DisplayName="{x:Null}" Mode="Appears">
-                            <uix:VerifyExecutionTypeIntoOptions.Retry>
-                              <InArgument x:TypeArguments="x:Boolean" />
-                            </uix:VerifyExecutionTypeIntoOptions.Retry>
-                            <uix:VerifyExecutionTypeIntoOptions.Timeout>
-                              <InArgument x:TypeArguments="x:Double" />
-                            </uix:VerifyExecutionTypeIntoOptions.Timeout>
-                          </uix:VerifyExecutionTypeIntoOptions>
-                        </uix:NTypeInto.VerifyOptions>
-                      </uix:NTypeInto>
                       <uix:NTypeInto ActivateBefore="True" ClickBeforeMode="Single" ClipboardMode="Never" DelayBetweenKeys="0.05" DisplayName="Type Into 'Submittal #'" EmptyFieldMode="SingleLine" HealingAgentBehavior="SameAsCard" sap:VirtualizedContainerService.HintSize="734,292.6666666666667" sap2010:WorkflowViewState.IdRef="NTypeInto_2" InteractionMode="HardwareEvents" ScopeIdentifier="7d6a64e0-5812-4015-8f66-0187699324d9" Text="[PID_src(currentPID) + &quot;[k(Enter)]&quot;]" Version="V4">
                         <uix:NTypeInto.Target>
                           <uix:TargetAnchorable BrowserURL="convergeaus.jacobs.com/PrologConverge/WebClient/navigate.aspx" ContentHash="NPuNlxJyh0-OHOw7rGuT-g" DesignTimeRectangle="131, 293, 184, 20" FuzzySelectorArgument="&lt;webctrl id='fraMainPI' tag='IFRAME' matching:id='fuzzy' fuzzylevel:id='0.0' /&gt;&lt;webctrl parentid='dvCH_lstList_SubmittalPackages' tag='TABLE' matching:parentid='fuzzy' fuzzylevel:parentid='0.0' /&gt;&lt;webctrl class='WEI6J7 WEI688  WGGIJH' tag='TD' type='FilterColumn' aaname='' matching:class='fuzzy' fuzzylevel:class='0.0' matching:aaname='fuzzy' fuzzylevel:aaname='0.0' /&gt;" Guid="735bfce3-28e8-452a-8e37-dd7938ed3591" InformativeScreenshot="37009b49c0c15c26ccc70611c8444182.png" Reference="xGt2OSXt7UW47kSHt2k5yg/fjBX6fWCk0W5qp1qzVWnaw" ScopeSelectorArgument="&lt;html app='msedge.exe' title='Prolog Converge' /&gt;" SearchSteps="FuzzySelector" Version="V6" Visibility="Interactive" WaitForReadyArgument="None">
@@ -347,7 +247,7 @@
                           </uix:VerifyExecutionTypeIntoOptions>
                         </uix:NTypeInto.VerifyOptions>
                       </uix:NTypeInto>
-                      <ui:InvokeWorkflowFile ArgumentsVariable="{x:Null}" ContinueOnError="{x:Null}" DisplayName="Find LargestRevNumber and Is_locked - Invoke Workflow File (P&amp;ID Marker\Prolog scraping and downloading\Find LargestRevNumber and Is_locked.xaml)" sap:VirtualizedContainerService.HintSize="734,177.33333333333334" sap2010:WorkflowViewState.IdRef="InvokeWorkflowFile_1" UnSafe="False" WorkflowFileName="P&amp;ID Marker\Prolog scraping and downloading\Find LargestRevNumber and Is_locked.xaml">
+                      <ui:InvokeWorkflowFile ArgumentsVariable="{x:Null}" ContinueOnError="{x:Null}" DisplayName="Find LargestRevNumber and Is_locked - Invoke Workflow File (P&amp;ID Marker\Prolog scraping and downloading\Find LargestRevNumber and Is_locked.xaml)" sap:VirtualizedContainerService.HintSize="734,176.66666666666666" sap2010:WorkflowViewState.IdRef="InvokeWorkflowFile_1" UnSafe="False" WorkflowFileName="P&amp;ID Marker\Prolog scraping and downloading\Find LargestRevNumber and Is_locked.xaml">
                         <ui:InvokeWorkflowFile.Arguments>
                           <InArgument x:TypeArguments="x:String" x:Key="SRC_num">[PID_src(currentPID)]</InArgument>
                           <OutArgument x:TypeArguments="x:String" x:Key="LargestRevNumber">[largestRevNumber]</OutArgument>
@@ -399,13 +299,13 @@
                           </scg:Dictionary>
                         </sap:WorkflowViewStateService.ViewState>
                       </uix:NCheckState>
-                      <uix:NApplicationCard AttachMode="ByInstance" CloseMode="Never" DisplayName="Edge Reading Submittals(2)" HealingAgentBehavior="Job" sap:VirtualizedContainerService.HintSize="734,3722" sap2010:WorkflowViewState.IdRef="NApplicationCard_2" InteractionMode="DebuggerApi" ScopeGuid="329f03eb-fe68-46b2-b90a-97de11c5861f" Version="V2">
+                      <uix:NApplicationCard AttachMode="ByInstance" CloseMode="Never" DisplayName="Edge Reading Submittals(2)" HealingAgentBehavior="Job" sap:VirtualizedContainerService.HintSize="734,3687.3333333333335" sap2010:WorkflowViewState.IdRef="NApplicationCard_2" InteractionMode="DebuggerApi" ScopeGuid="329f03eb-fe68-46b2-b90a-97de11c5861f" Version="V2">
                         <uix:NApplicationCard.Body>
                           <ActivityAction x:TypeArguments="x:Object">
                             <ActivityAction.Argument>
                               <DelegateInArgument x:TypeArguments="x:Object" Name="WSSessionData" />
                             </ActivityAction.Argument>
-                            <Sequence DisplayName="Reading/Editing Submittals" sap:VirtualizedContainerService.HintSize="700,3477.3333333333335" sap2010:WorkflowViewState.IdRef="Sequence_10">
+                            <Sequence DisplayName="Reading/Editing Submittals" sap:VirtualizedContainerService.HintSize="700,3442.6666666666665" sap2010:WorkflowViewState.IdRef="Sequence_10">
                               <Sequence.Variables>
                                 <Variable x:TypeArguments="sd2:DataTable" Name="Submittal_Files" />
                               </Sequence.Variables>
@@ -415,7 +315,7 @@
                                   <x:Boolean x:Key="IsPinned">False</x:Boolean>
                                 </scg:Dictionary>
                               </sap:WorkflowViewStateService.ViewState>
-                              <Sequence DisplayName="Check each P&amp;ID in the submittal" sap:VirtualizedContainerService.HintSize="666,2616" sap2010:WorkflowViewState.IdRef="Sequence_11">
+                              <Sequence DisplayName="Check each P&amp;ID in the submittal" sap:VirtualizedContainerService.HintSize="666,2618.6666666666665" sap2010:WorkflowViewState.IdRef="Sequence_11">
                                 <Sequence.Variables>
                                   <Variable x:TypeArguments="x:Int32" Default="0" Name="curr_PnIDcount" />
                                 </Sequence.Variables>
@@ -484,7 +384,7 @@
                                     </scg:Dictionary>
                                   </sap:WorkflowViewStateService.ViewState>
                                 </ui:CommentOut>
-                                <If Condition="[curr_PnIDcount = 0]" DisplayName="Find out method of P&amp;ID extraction" sap:VirtualizedContainerService.HintSize="632,1798" sap2010:WorkflowViewState.IdRef="If_3">
+                                <If Condition="[curr_PnIDcount = 0]" DisplayName="Find out method of P&amp;ID extraction" sap:VirtualizedContainerService.HintSize="632,1800.6666666666667" sap2010:WorkflowViewState.IdRef="If_3">
                                   <sap:WorkflowViewStateService.ViewState>
                                     <scg:Dictionary x:TypeArguments="x:String, x:Object">
                                       <x:Boolean x:Key="IsExpanded">True</x:Boolean>
@@ -928,7 +828,14 @@
                               </Sequence>
                               <uix:NClick ActivateBefore="True" ClickType="Single" DisplayName="Click 'Close'" HealingAgentBehavior="SameAsCard" sap:VirtualizedContainerService.HintSize="666,229.33333333333334" sap2010:WorkflowViewState.IdRef="NClick_9" InteractionMode="HardwareEvents" KeyModifiers="None" MouseButton="Left" ScopeIdentifier="329f03eb-fe68-46b2-b90a-97de11c5861f" Version="V5">
                                 <uix:NClick.Target>
-                                  <uix:TargetAnchorable BrowserURL="convergeaus.jacobs.com/PrologConverge/WebClient/SubmittalPackage.aspx" CVScreenId="ccd5fcd6-c793-4d1a-89b1-935ff75b8ac5" ContentHash="slHQWAV9PUmHyYG1881JeQ" CvElementArea="789, 6, 19, 18" CvType="CloseButton" DesignTimeRectangle="776, 1, 46, 31" ElementType="Button" FullSelectorArgument="&lt;ctrl name='Editing Submittals - Microsoft Edge' role='pane' /&gt;&lt;ctrl name='Close' role='push button' /&gt;" Guid="77cd62c7-b94c-46e0-88bd-64a6b2aa6ed7" InformativeScreenshot="4f3d3faf10179de652be142571e6a6b5.png" Reference="xGt2OSXt7UW47kSHt2k5yg/8ca7AeLXaUODeWPCSANgcQ" ScopeSelectorArgument="&lt;wnd app='msedge.exe' cls='Chrome_WidgetWin_1' title='*Submittals - Work - Microsoft​ Edge' /&gt;" SearchSteps="Selector, CV" Version="V6" Visibility="Interactive" WaitForReadyArgument="Interactive" />
+                                  <uix:TargetAnchorable BrowserURL="convergeaus.jacobs.com/PrologConverge/WebClient/SubmittalPackage.aspx" CVScreenId="ccd5fcd6-c793-4d1a-89b1-935ff75b8ac5" ContentHash="7CKPa6tvRkGb2zRRt2houQ" CvElementArea="789, 6, 19, 18" CvType="CloseButton" DesignTimeRectangle="789, 6, 19, 18" ElementType="Button" FullSelectorArgument="&lt;ctrl name='Editing Submittals - Microsoft Edge' role='pane' /&gt;&lt;ctrl name='Close' role='push button' /&gt;" Guid="77cd62c7-b94c-46e0-88bd-64a6b2aa6ed7" ImageBase64="" InformativeScreenshot="7e4dd8e0ff15788ec1bfd617ffc58e7c.png" Reference="xGt2OSXt7UW47kSHt2k5yg/8ca7AeLXaUODeWPCSANgcQ" ScopeSelectorArgument="&lt;wnd app='msedge.exe' cls='Chrome_WidgetWin_1' title='*Submittals - Work - Microsoft​ Edge' /&gt;" SearchSteps="Selector, CV" Version="V6" Visibility="Interactive" WaitForReadyArgument="Interactive">
+                                    <uix:TargetAnchorable.Anchors>
+                                      <scg:List x:TypeArguments="uix:ITarget" Capacity="2">
+                                        <uix:Target CVScreenId="3b45b004-6d5f-4064-8784-da510c1e1a7e" CvElementArea="743, 6, 19, 19" CvType="MaximizeButton" DesignTimeRectangle="743, 6, 19, 19" ElementType="Button" FuzzySelectorArgument="&lt;ctrl name='* Submittals - Microsoft Edge' role='pane' matching:name='fuzzy' fuzzylevel:name='0.0' /&gt;&lt;ctrl name='Maximize' role='push button' automationid='' matching:name='fuzzy' fuzzylevel:name='0.0' matching:automationid='fuzzy' fuzzylevel:automationid='0.0' check:text='Maximize' /&gt;" Guid="69abba02-ace9-43e4-850e-1d89805dbaa0" SearchSteps="FuzzySelector, CV" />
+                                        <uix:Target CVScreenId="3b45b004-6d5f-4064-8784-da510c1e1a7e" CvTextArea="33, 9, 233, 15" CvTextArgument="* Submittals - Work - Microsoft Edge" CvType="Text" DesignTimeRectangle="78, 9, 188, 15" ElementType="Text" Guid="3c444c3c-aca5-4b6c-b394-b3047eeb886b" ImageBase64="" SearchSteps="CV" TargetType="ComputerVisionBased" />
+                                      </scg:List>
+                                    </uix:TargetAnchorable.Anchors>
+                                  </uix:TargetAnchorable>
                                 </uix:NClick.Target>
                                 <uix:NClick.VerifyOptions>
                                   <uix:VerifyExecutionOptions DisplayName="{x:Null}" Mode="Appears">
@@ -941,9 +848,9 @@
                                   </uix:VerifyExecutionOptions>
                                 </uix:NClick.VerifyOptions>
                               </uix:NClick>
-                              <uix:NCheckState DisplayName="Check App State 'Leave'" EnableIfNotExists="False" HealingAgentBehavior="Disabled" sap:VirtualizedContainerService.HintSize="666,569.3333333333334" sap2010:WorkflowViewState.IdRef="NCheckState_3" ScopeIdentifier="329f03eb-fe68-46b2-b90a-97de11c5861f" Timeout="0.5" Version="V5">
+                              <uix:NCheckState DisplayName="Check App State 'Leave'" EnableIfNotExists="False" HealingAgentBehavior="Disabled" sap:VirtualizedContainerService.HintSize="666,532" sap2010:WorkflowViewState.IdRef="NCheckState_3" ScopeIdentifier="329f03eb-fe68-46b2-b90a-97de11c5861f" Timeout="0.5" Version="V5">
                                 <uix:NCheckState.IfExists>
-                                  <Sequence DisplayName="Target appears" sap:VirtualizedContainerService.HintSize="450,282.6666666666667" sap2010:WorkflowViewState.IdRef="Sequence_48">
+                                  <Sequence DisplayName="Target appears" sap:VirtualizedContainerService.HintSize="450,285.3333333333333" sap2010:WorkflowViewState.IdRef="Sequence_48">
                                     <sap:WorkflowViewStateService.ViewState>
                                       <scg:Dictionary x:TypeArguments="x:String, x:Object">
                                         <x:Boolean x:Key="IsExpanded">True</x:Boolean>

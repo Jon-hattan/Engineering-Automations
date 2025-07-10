@@ -1,4 +1,4 @@
-<Activity mc:Ignorable="sap sap2010" x:Class="Stamping_test" this:Stamping_test.filePath="[&quot;&quot;&quot;C:\Users\CHEWJ1\Desktop\Vikash Deliverables\WSB01-SP-0002\131241-WSB01-DR-P-6011.pdf&quot;&quot;&quot;]" this:Stamping_test.tag_status="[New Dictionary(of String, String)]" this:Stamping_test.Zoom="1400" xmlns="http://schemas.microsoft.com/netfx/2009/xaml/activities" xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" xmlns:p="http://schemas.uipath.com/workflow/activities/ocr" xmlns:sap="http://schemas.microsoft.com/netfx/2009/xaml/activities/presentation" xmlns:sap2010="http://schemas.microsoft.com/netfx/2010/xaml/activities/presentation" xmlns:scg="clr-namespace:System.Collections.Generic;assembly=System.Private.CoreLib" xmlns:sco="clr-namespace:System.Collections.ObjectModel;assembly=System.Private.CoreLib" xmlns:sd="clr-namespace:System.Drawing;assembly=System.Drawing.Common" xmlns:sd1="clr-namespace:System.Drawing;assembly=System.Drawing.Primitives" xmlns:str="clr-namespace:System.Text.RegularExpressions;assembly=System.Text.RegularExpressions" xmlns:this="clr-namespace:" xmlns:ui="http://schemas.uipath.com/workflow/activities" xmlns:uix="http://schemas.uipath.com/workflow/activities/uix" xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml">
+<Activity mc:Ignorable="sap sap2010" x:Class="Stamping_test" this:Stamping_test.filePath="[&quot;&quot;&quot;&quot; &amp; System.IO.Path.Combine(&quot;C:\Users\CHEWJ1\Desktop\Vikash Deliverables&quot;, &quot;WSB01-SP-0012&quot;, &quot;131241-WSD07-DR-P-6601.pdf&quot;) &amp; &quot;&quot;&quot;&quot;]" this:Stamping_test.tag_status="[New Dictionary(of String, String)]" this:Stamping_test.Zoom="1400" xmlns="http://schemas.microsoft.com/netfx/2009/xaml/activities" xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" xmlns:p="http://schemas.uipath.com/workflow/activities/ocr" xmlns:sap="http://schemas.microsoft.com/netfx/2009/xaml/activities/presentation" xmlns:sap2010="http://schemas.microsoft.com/netfx/2010/xaml/activities/presentation" xmlns:scg="clr-namespace:System.Collections.Generic;assembly=System.Private.CoreLib" xmlns:sco="clr-namespace:System.Collections.ObjectModel;assembly=System.Private.CoreLib" xmlns:sd="clr-namespace:System.Drawing;assembly=System.Drawing.Common" xmlns:sd1="clr-namespace:System.Drawing;assembly=System.Drawing.Primitives" xmlns:str="clr-namespace:System.Text.RegularExpressions;assembly=System.Text.RegularExpressions" xmlns:this="clr-namespace:" xmlns:ui="http://schemas.uipath.com/workflow/activities" xmlns:uix="http://schemas.uipath.com/workflow/activities/uix" xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml">
   <x:Members>
     <x:Property Name="remainingTags" Type="OutArgument(scg:List(x:String))" />
     <x:Property Name="filePath" Type="InArgument(x:String)" />
@@ -60,6 +60,7 @@
       <x:String>UiPath.CV</x:String>
       <x:String>UiPath.CV.Activities</x:String>
       <x:String>UiPath.CV.Activities.Interfaces</x:String>
+      <x:String>UiPath.Platform.ResourceHandling</x:String>
     </sco:Collection>
   </TextExpression.NamespacesForImplementation>
   <TextExpression.ReferencesForImplementation>
@@ -144,7 +145,7 @@
       <AssemblyReference>UiPath.Workflow</AssemblyReference>
     </sco:Collection>
   </TextExpression.ReferencesForImplementation>
-  <Sequence DisplayName="Stamping_test" sap:VirtualizedContainerService.HintSize="1177.2,9328.8" sap2010:WorkflowViewState.IdRef="Sequence_1">
+  <Sequence DisplayName="Stamping_test" sap:VirtualizedContainerService.HintSize="1216,9142" sap2010:WorkflowViewState.IdRef="Sequence_1">
     <Sequence.Variables>
       <Variable x:TypeArguments="x:String" Name="TagPattern" />
       <Variable x:TypeArguments="x:Boolean" Name="fileExists" />
@@ -157,7 +158,7 @@
         <x:Boolean x:Key="IsExpanded">True</x:Boolean>
       </scg:Dictionary>
     </sap:WorkflowViewStateService.ViewState>
-    <Assign sap:VirtualizedContainerService.HintSize="665.6,113.6" sap2010:WorkflowViewState.IdRef="Assign_2">
+    <Assign sap:VirtualizedContainerService.HintSize="666,117.33333333333333" sap2010:WorkflowViewState.IdRef="Assign_2">
       <Assign.To>
         <OutArgument x:TypeArguments="x:String">[TagPattern]</OutArgument>
       </Assign.To>
@@ -165,7 +166,7 @@
         <InArgument x:TypeArguments="x:String">^([A-Z]{1,4}(?:-[A-Z]{1,4})?)-(\d{4}[A-Z]?)$</InArgument>
       </Assign.Value>
     </Assign>
-    <ui:CommentOut DisplayName="Comment Out" sap:VirtualizedContainerService.HintSize="665.6,56.8" sap2010:WorkflowViewState.IdRef="CommentOut_13">
+    <ui:CommentOut DisplayName="Comment Out" sap:VirtualizedContainerService.HintSize="666,57.333333333333336" sap2010:WorkflowViewState.IdRef="CommentOut_13">
       <ui:CommentOut.Body>
         <Sequence DisplayName="Ignored Activities" sap:VirtualizedContainerService.HintSize="483.2,108" sap2010:WorkflowViewState.IdRef="Sequence_145">
           <sap:WorkflowViewStateService.ViewState>
@@ -261,7 +262,7 @@
         </scg:Dictionary>
       </sap:WorkflowViewStateService.ViewState>
     </ui:CommentOut>
-    <ui:FileExistsX DisplayName="File Exists" Exists="[fileExists]" sap:VirtualizedContainerService.HintSize="665.6,166.4" sap2010:WorkflowViewState.IdRef="FileExistsX_1" Path="[filePath.Substring(1, filePath.Length - 2)]">
+    <ui:FileExistsX DisplayName="File Exists" Exists="[fileExists]" sap:VirtualizedContainerService.HintSize="666,168.66666666666666" sap2010:WorkflowViewState.IdRef="FileExistsX_1" Path="[filePath.replace(&quot;&quot;&quot;&quot;, &quot;&quot;)]">
       <sap:WorkflowViewStateService.ViewState>
         <scg:Dictionary x:TypeArguments="x:String, x:Object">
           <x:Boolean x:Key="IsExpanded">True</x:Boolean>
@@ -269,7 +270,7 @@
         </scg:Dictionary>
       </sap:WorkflowViewStateService.ViewState>
     </ui:FileExistsX>
-    <If Condition="[not fileExists]" sap:VirtualizedContainerService.HintSize="665.6,1144.8" sap2010:WorkflowViewState.IdRef="If_4">
+    <If Condition="[not fileExists]" sap:VirtualizedContainerService.HintSize="666,952" sap2010:WorkflowViewState.IdRef="If_4">
       <sap:WorkflowViewStateService.ViewState>
         <scg:Dictionary x:TypeArguments="x:String, x:Object">
           <x:Boolean x:Key="IsExpanded">True</x:Boolean>
@@ -277,7 +278,7 @@
         </scg:Dictionary>
       </sap:WorkflowViewStateService.ViewState>
       <If.Then>
-        <Sequence DisplayName="Then" sap:VirtualizedContainerService.HintSize="468,980.8" sap2010:WorkflowViewState.IdRef="Sequence_35">
+        <Sequence DisplayName="Then" sap:VirtualizedContainerService.HintSize="468,786.6666666666666" sap2010:WorkflowViewState.IdRef="Sequence_35">
           <Sequence.Variables>
             <Variable x:TypeArguments="x:Boolean" Name="filemarked" />
             <Variable x:TypeArguments="x:String" Name="trunc_filePath" />
@@ -287,15 +288,15 @@
               <x:Boolean x:Key="IsExpanded">True</x:Boolean>
             </scg:Dictionary>
           </sap:WorkflowViewStateService.ViewState>
-          <Assign sap:VirtualizedContainerService.HintSize="434.4,113.6" sap2010:WorkflowViewState.IdRef="Assign_38">
+          <Assign sap:VirtualizedContainerService.HintSize="434,117.33333333333333" sap2010:WorkflowViewState.IdRef="Assign_38">
             <Assign.To>
               <OutArgument x:TypeArguments="x:String">[trunc_filePath]</OutArgument>
             </Assign.To>
             <Assign.Value>
-              <InArgument x:TypeArguments="x:String">[filePath.Substring(1, filePath.Length - 2)]</InArgument>
+              <InArgument x:TypeArguments="x:String">[filePath.replace("""", "")]</InArgument>
             </Assign.Value>
           </Assign>
-          <ui:FileExistsX DisplayName="File Exists" Exists="[fileExists]" sap:VirtualizedContainerService.HintSize="434.4,166.4" sap2010:WorkflowViewState.IdRef="FileExistsX_2" Path="[If(trunc_filePath.EndsWith(&quot;.pdf&quot;), trunc_filePath.Substring(0, trunc_filePath.Length - 4) + &quot; marked.pdf&quot;, trunc_filePath)]">
+          <ui:FileExistsX DisplayName="File Exists" Exists="[fileExists]" sap:VirtualizedContainerService.HintSize="434,168.66666666666666" sap2010:WorkflowViewState.IdRef="FileExistsX_2" Path="[If(trunc_filePath.EndsWith(&quot;.pdf&quot;), trunc_filePath.Substring(0, trunc_filePath.Length - 4) + &quot; marked.pdf&quot;, trunc_filePath)]">
             <sap:WorkflowViewStateService.ViewState>
               <scg:Dictionary x:TypeArguments="x:String, x:Object">
                 <x:Boolean x:Key="IsExpanded">True</x:Boolean>
@@ -303,12 +304,13 @@
               </scg:Dictionary>
             </sap:WorkflowViewStateService.ViewState>
           </ui:FileExistsX>
-          <If Condition="[fileExists]" sap:VirtualizedContainerService.HintSize="434.4,592.8" sap2010:WorkflowViewState.IdRef="If_5">
+          <If Condition="[fileExists]" sap:VirtualizedContainerService.HintSize="434,392.6666666666667" sap2010:WorkflowViewState.IdRef="If_5">
             <If.Then>
-              <Sequence DisplayName="Then" sap:VirtualizedContainerService.HintSize="416,227.33333333333334" sap2010:WorkflowViewState.IdRef="Sequence_146">
+              <Sequence DisplayName="Then" sap:VirtualizedContainerService.HintSize="416,25.333333333333332" sap2010:WorkflowViewState.IdRef="Sequence_146">
                 <sap:WorkflowViewStateService.ViewState>
                   <scg:Dictionary x:TypeArguments="x:String, x:Object">
-                    <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+                    <x:Boolean x:Key="IsExpanded">False</x:Boolean>
+                    <x:Boolean x:Key="IsPinned">False</x:Boolean>
                   </scg:Dictionary>
                 </sap:WorkflowViewStateService.ViewState>
                 <ui:LogMessage DisplayName="Log Message" sap:VirtualizedContainerService.HintSize="382,167.33333333333334" sap2010:WorkflowViewState.IdRef="LogMessage_2" Level="Info" Message="[&quot;File already marked&quot; &amp;vbNewLine &amp; filePath]" />

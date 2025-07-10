@@ -1,5 +1,15 @@
-WSB01-SP-0011:
-	131241-WSB01-DR-P-6070:
-		MSL-0202 - Pending
-		MV-0101A - Pending
-		MV-0101B - Pending
+WSB01-SP-0012:
+	131241-WSD07-DR-P-6602:
+		MV-0201 - Pending
+		SV-0201 - Pending
+		SV-0202 - Pending
+		SV-0203 - Pending
+		SV-0204 - Pending
+		AV-0201 - Pending
+		AV-0202 - Pending
+		AV-0203 - Pending
+		AV-0204 - Pending
+		AV-0205 - Pending
+		TIT-0201 - Pending
+		TIT-0200 - Pending
+		PIT-0201 - Pending

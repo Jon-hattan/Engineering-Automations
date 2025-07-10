@@ -1,8 +1,14 @@
 <?xml version="1.0" encoding="utf-16"?>
-<ObjectRepositoryTargetData ContentHash="slHQWAV9PUmHyYG1881JeQ" Reference="xGt2OSXt7UW47kSHt2k5yg/8ca7AeLXaUODeWPCSANgcQ" xmlns="http://schemas.uipath.com/workflow/activities/uix" xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml">
+<ObjectRepositoryTargetData ContentHash="7CKPa6tvRkGb2zRRt2houQ" Reference="xGt2OSXt7UW47kSHt2k5yg/8ca7AeLXaUODeWPCSANgcQ" xmlns="http://schemas.uipath.com/workflow/activities/uix" xmlns:scg="clr-namespace:System.Collections.Generic;assembly=System.Private.CoreLib" xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml">
   <ObjectRepositoryTargetData.Data>
-    <TargetAnchorable x:Key="TargetAnchorable" BrowserURL="convergeaus.jacobs.com/PrologConverge/WebClient/SubmittalPackage.aspx" CVScreenId="ccd5fcd6-c793-4d1a-89b1-935ff75b8ac5" CvElementArea="789, 6, 19, 18" CvType="CloseButton" DesignTimeRectangle="776, 1, 46, 31" ElementType="Button" FullSelectorArgument="&lt;ctrl name='Editing Submittals - Microsoft Edge' role='pane' /&gt;&lt;ctrl name='Close' role='push button' /&gt;" Guid="77cd62c7-b94c-46e0-88bd-64a6b2aa6ed7" ScopeSelectorArgument="&lt;wnd app='msedge.exe' cls='Chrome_WidgetWin_1' title='*Submittals - Work - Microsoft​ Edge' /&gt;" SearchSteps="Selector, CV" Version="V6" Visibility="Interactive" WaitForReadyArgument="Interactive">
-      <imageRef attrName="InformativeScreenshot" originalValue="4f3d3faf10179de652be142571e6a6b5.png" xmlns="">0YJHtFBZGyESAL44s7f4VEQ</imageRef>
+    <TargetAnchorable x:Key="TargetAnchorable" BrowserURL="convergeaus.jacobs.com/PrologConverge/WebClient/SubmittalPackage.aspx" CVScreenId="ccd5fcd6-c793-4d1a-89b1-935ff75b8ac5" CvElementArea="789, 6, 19, 18" CvType="CloseButton" DesignTimeRectangle="789, 6, 19, 18" ElementType="Button" FullSelectorArgument="&lt;ctrl name='Editing Submittals - Microsoft Edge' role='pane' /&gt;&lt;ctrl name='Close' role='push button' /&gt;" Guid="77cd62c7-b94c-46e0-88bd-64a6b2aa6ed7" ImageBase64="" ScopeSelectorArgument="&lt;wnd app='msedge.exe' cls='Chrome_WidgetWin_1' title='*Submittals - Work - Microsoft​ Edge' /&gt;" SearchSteps="Selector, CV" Version="V6" Visibility="Interactive" WaitForReadyArgument="Interactive">
+      <TargetAnchorable.Anchors>
+        <scg:List x:TypeArguments="ITarget" Capacity="4">
+          <Target CVScreenId="3b45b004-6d5f-4064-8784-da510c1e1a7e" CvElementArea="743, 6, 19, 19" CvType="MaximizeButton" DesignTimeRectangle="743, 6, 19, 19" ElementType="Button" FuzzySelectorArgument="&lt;ctrl name='* Submittals - Microsoft Edge' role='pane' matching:name='fuzzy' fuzzylevel:name='0.0' /&gt;&lt;ctrl name='Maximize' role='push button' automationid='' matching:name='fuzzy' fuzzylevel:name='0.0' matching:automationid='fuzzy' fuzzylevel:automationid='0.0' check:text='Maximize' /&gt;" Guid="69abba02-ace9-43e4-850e-1d89805dbaa0" SearchSteps="FuzzySelector, CV" />
+          <Target CVScreenId="3b45b004-6d5f-4064-8784-da510c1e1a7e" CvTextArea="33, 9, 233, 15" CvTextArgument="* Submittals - Work - Microsoft Edge" CvType="Text" DesignTimeRectangle="78, 9, 188, 15" ElementType="Text" Guid="3c444c3c-aca5-4b6c-b394-b3047eeb886b" ImageBase64="" SearchSteps="CV" TargetType="ComputerVisionBased" />
+        </scg:List>
+      </TargetAnchorable.Anchors>
+      <imageRef attrName="InformativeScreenshot" originalValue="7e4dd8e0ff15788ec1bfd617ffc58e7c.png" xmlns="">08JAJnXsK6kCEIwx8Y-xoDA</imageRef>
     </TargetAnchorable>
     <x:String x:Key="ActivityType">Click</x:String>
   </ObjectRepositoryTargetData.Data>

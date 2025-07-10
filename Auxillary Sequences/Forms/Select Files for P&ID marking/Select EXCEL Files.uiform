@@ -149,6 +149,53 @@
         "input": true
       },
       {
+        "label": "Please add any additional filters to your automation.",
+        "description": "You can write multiple values in each section, but separate them with a comma (,). Ensure that the values are written exactly as they appear in the excel sheet.",
+        "reorder": false,
+        "addAnotherPosition": "bottom",
+        "layoutFixed": false,
+        "enableRowGroups": false,
+        "initEmpty": false,
+        "key": "addFilters",
+        "type": "datagrid",
+        "input": true,
+        "tableView": false,
+        "components": [
+          {
+            "label": "Column Name",
+            "placeholder": "Please write the column name exactly.",
+            "tableView": true,
+            "key": "label",
+            "type": "textfield",
+            "input": true
+          },
+          {
+            "label": "Filter for:",
+            "placeholder": "Write the values you want to search for.",
+            "tableView": true,
+            "key": "filteredValue",
+            "conditional": {
+              "show": true,
+              "when": "pleaseAddAnyAdditionalFiltersToYourAutomation.dontInclude"
+            },
+            "type": "textfield",
+            "input": true
+          },
+          {
+            "label": "Don't include:",
+            "placeholder": "Write the values you want to exclude.",
+            "tableView": true,
+            "key": "dontInclude",
+            "conditional": {
+              "show": true,
+              "when": "pleaseAddAnyAdditionalFiltersToYourAutomation.filteredValue"
+            },
+            "type": "textfield",
+            "input": true
+          }
+        ]
+      },
+      {
         "label": "Container",
         "key": "container",
         "type": "container",
