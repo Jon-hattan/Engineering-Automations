@@ -8,7 +8,7 @@
     "Theme": "Default",
     "ShowInTaskbar": true,
     "ShowMargin": true,
-    "CustomStyle": ".button1, .button2, .button3 {\r\ndisplay: inline-block;\r\nmin-width: max-content;\r\nvertical-align: top;\r\nmargin-right: 10px;\r\n}"
+    "CustomStyle": ".button1, .button2, .button3, .filterTemplate, .savebutton, .filterName, .gridname {\r\ndisplay: inline-block;\r\nmin-width: max-content;\r\nvertical-align: top;\r\nmargin-right: 15px;\r\n}\r\n\r\n.gridname {\r\nmargin-right: 10px;\r\n}\r\n\r\n.filterTemplate {\r\nmargin-left: 10px;\r\ndisplay: inline-block;\r\n}"
   },
   "Data": {
     "components": [
@@ -149,6 +149,29 @@
         "input": true
       },
       {
+        "html": "<p>Please add any additional filters to your automation.</p>",
+        "label": "Content",
+        "customClass": "gridname",
+        "refreshOnChange": false,
+        "key": "content",
+        "type": "content",
+        "input": false,
+        "tableView": false
+      },
+      {
+        "label": "Choose Filter",
+        "labelPosition": "left-right",
+        "widget": "choicesjs",
+        "placeholder": "Select Filter",
+        "customClass": "filterTemplate",
+        "hideLabel": true,
+        "tableView": true,
+        "key": "ChooseFilterTemplate",
+        "type": "select",
+        "refreshOn": "data",
+        "input": true
+      },
+      {
         "label": "Please add any additional filters to your automation.",
         "description": "You can write multiple values in each section, but separate them with a comma (,). Ensure that the values are written exactly as they appear in the excel sheet.",
         "reorder": false,
@@ -156,6 +179,7 @@
         "layoutFixed": false,
         "enableRowGroups": false,
         "initEmpty": false,
+        "hideLabel": true,
         "key": "addFilters",
         "type": "datagrid",
         "input": true,
@@ -176,7 +200,7 @@
             "key": "filteredValue",
             "conditional": {
               "show": true,
-              "when": "pleaseAddAnyAdditionalFiltersToYourAutomation.dontInclude"
+              "when": "addFilters.dontInclude"
             },
             "type": "textfield",
             "input": true
@@ -188,12 +212,37 @@
             "key": "dontInclude",
             "conditional": {
               "show": true,
-              "when": "pleaseAddAnyAdditionalFiltersToYourAutomation.filteredValue"
+              "when": "addFilters.filteredValue"
             },
             "type": "textfield",
             "input": true
           }
         ]
+      },
+      {
+        "label": "Save current filters",
+        "action": "event",
+        "showValidations": false,
+        "theme": "secondary",
+        "customClass": "savebutton",
+        "tableView": false,
+        "key": "saveCurrentFilters",
+        "type": "button",
+        "input": true
+      },
+      {
+        "label": "Filter Name:",
+        "labelPosition": "left-right",
+        "customClass": "filterName",
+        "tableView": true,
+        "key": "filterName",
+        "conditional": {
+          "show": true,
+          "when": "filterNameShow",
+          "eq": "True"
+        },
+        "type": "textfield",
+        "input": true
       },
       {
         "label": "Container",
@@ -248,6 +297,13 @@
       {
         "label": "folderPath",
         "key": "folderPath",
+        "type": "hidden",
+        "input": true,
+        "tableView": false
+      },
+      {
+        "label": "filterNameShow",
+        "key": "filterNameShow",
         "type": "hidden",
         "input": true,
         "tableView": false

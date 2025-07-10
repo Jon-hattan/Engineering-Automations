@@ -106,16 +106,16 @@
       <AssemblyReference>System.Linq.Queryable</AssemblyReference>
     </sco:Collection>
   </TextExpression.ReferencesForImplementation>
-  <Sequence DisplayName="SelectExcelOutputTrigger2" sap:VirtualizedContainerService.HintSize="1216,1420.6666666666667" sap2010:WorkflowViewState.IdRef="Sequence_1">
+  <Sequence DisplayName="SelectExcelOutputTrigger2" sap:VirtualizedContainerService.HintSize="1216,1653.3333333333333" sap2010:WorkflowViewState.IdRef="Sequence_1">
     <sap:WorkflowViewStateService.ViewState>
       <scg:Dictionary x:TypeArguments="x:String, x:Object">
         <x:Boolean x:Key="IsExpanded">True</x:Boolean>
       </scg:Dictionary>
     </sap:WorkflowViewStateService.ViewState>
-    <ufa:FormTriggerActivity x:TypeArguments="ufa:FormInfoTriggerEventArgs" MessageId="{x:Null}" Tag="{x:Null}" DisplayName="Form Event Trigger" Enabled="True" Event="click.selectExcel" FormId="38efa2d6-d038-43d8-9169-20fec1495836" sap:VirtualizedContainerService.HintSize="418,198" sap2010:WorkflowViewState.IdRef="FormTriggerActivity`1_1" SchedulingMode="Sequential" TriggerId="e9f80978-b028-429b-b432-5d65832253a6" />
-    <TryCatch DisplayName="Try Catch" sap:VirtualizedContainerService.HintSize="418,1200" sap2010:WorkflowViewState.IdRef="TryCatch_1">
+    <ufa:FormTriggerActivity x:TypeArguments="ufa:FormInfoTriggerEventArgs" MessageId="{x:Null}" Tag="{x:Null}" DisplayName="Form Event Trigger" Enabled="True" Event="click.selectExcel" FormId="38efa2d6-d038-43d8-9169-20fec1495836" sap:VirtualizedContainerService.HintSize="520,198" sap2010:WorkflowViewState.IdRef="FormTriggerActivity`1_1" SchedulingMode="Sequential" TriggerId="e9f80978-b028-429b-b432-5d65832253a6" />
+    <TryCatch DisplayName="Try Catch" sap:VirtualizedContainerService.HintSize="520,1432.6666666666667" sap2010:WorkflowViewState.IdRef="TryCatch_1">
       <TryCatch.Try>
-        <Sequence DisplayName="Try" sap:VirtualizedContainerService.HintSize="416,919.3333333333334" sap2010:WorkflowViewState.IdRef="Sequence_2">
+        <Sequence DisplayName="Try" sap:VirtualizedContainerService.HintSize="518,1152" sap2010:WorkflowViewState.IdRef="Sequence_2">
           <Sequence.Variables>
             <Variable x:TypeArguments="x:Int32" Name="idx" />
             <Variable x:TypeArguments="x:String" Name="filePath" />
@@ -127,15 +127,15 @@
               <x:Boolean x:Key="IsExpanded">True</x:Boolean>
             </scg:Dictionary>
           </sap:WorkflowViewStateService.ViewState>
-          <ui:SelectFile InitialDirectory="{x:Null}" Multiselect="{x:Null}" SelectedFiles="{x:Null}" DisplayName="Browse For File" Filter="Excel|*.xlsx;*.xls;*.xlsm;*.xlsb" sap:VirtualizedContainerService.HintSize="382,173.33333333333334" sap2010:WorkflowViewState.IdRef="SelectFile_1" SelectedFile="[filePath]" />
-          <ui:GetFileInfoX DisplayName="Get File Info" FilePath="[filePath]" sap:VirtualizedContainerService.HintSize="382,168.66666666666666" sap2010:WorkflowViewState.IdRef="GetFileInfoX_1" Output="[fileInfo]" />
-          <ufa:SetFormFieldsActivity InstanceName="{x:Null}" DisplayName="Set Form Values" FormId="38efa2d6-d038-43d8-9169-20fec1495836" sap:VirtualizedContainerService.HintSize="382,177.33333333333334" sap2010:WorkflowViewState.IdRef="SetFormFieldsActivity_1">
+          <ui:SelectFile InitialDirectory="{x:Null}" Multiselect="{x:Null}" SelectedFiles="{x:Null}" DisplayName="Browse For File" Filter="Excel|*.xlsx;*.xls;*.xlsm;*.xlsb" sap:VirtualizedContainerService.HintSize="484,173.33333333333334" sap2010:WorkflowViewState.IdRef="SelectFile_1" SelectedFile="[filePath]" />
+          <ui:GetFileInfoX DisplayName="Get File Info" FilePath="[filePath]" sap:VirtualizedContainerService.HintSize="484,168.66666666666666" sap2010:WorkflowViewState.IdRef="GetFileInfoX_1" Output="[fileInfo]" />
+          <ufa:SetFormFieldsActivity InstanceName="{x:Null}" DisplayName="Set Form Values" FormId="38efa2d6-d038-43d8-9169-20fec1495836" sap:VirtualizedContainerService.HintSize="484,177.33333333333334" sap2010:WorkflowViewState.IdRef="SetFormFieldsActivity_1">
             <ufa:SetFormFieldsActivity.Arguments>
               <InArgument x:TypeArguments="x:String" x:Key="exceloutput_fileName">[fileInfo.Name]</InArgument>
               <InArgument x:TypeArguments="x:String" x:Key="exceloutput_filePath">[fileInfo.FullName]</InArgument>
             </ufa:SetFormFieldsActivity.Arguments>
           </ufa:SetFormFieldsActivity>
-          <ui:CommentOut DisplayName="Comment Out" sap:VirtualizedContainerService.HintSize="382,57.333333333333336" sap2010:WorkflowViewState.IdRef="CommentOut_3">
+          <ui:CommentOut DisplayName="Comment Out" sap:VirtualizedContainerService.HintSize="484,57.333333333333336" sap2010:WorkflowViewState.IdRef="CommentOut_3">
             <ui:CommentOut.Body>
               <Sequence DisplayName="Ignored Activities" sap:VirtualizedContainerService.HintSize="468,168" sap2010:WorkflowViewState.IdRef="Sequence_8">
                 <sap:WorkflowViewStateService.ViewState>
@@ -160,7 +160,7 @@
               </scg:Dictionary>
             </sap:WorkflowViewStateService.ViewState>
           </ui:CommentOut>
-          <ui:ExcelApplicationScope Password="{x:Null}" SensitivityLabel="{x:Null}" AutoSave="False" DisplayName="Excel Application Scope" sap:VirtualizedContainerService.HintSize="382,57.333333333333336" sap2010:WorkflowViewState.IdRef="ExcelApplicationScope_2" InstanceCachePeriod="3000" ReadOnly="True" SensitivityOperation="None" Visible="False" WorkbookPath="[filePath]">
+          <ui:ExcelApplicationScope Password="{x:Null}" SensitivityLabel="{x:Null}" AutoSave="False" DisplayName="Excel Application Scope" sap:VirtualizedContainerService.HintSize="484,290" sap2010:WorkflowViewState.IdRef="ExcelApplicationScope_2" InstanceCachePeriod="3000" ReadOnly="True" SensitivityOperation="None" Visible="False" WorkbookPath="[filePath]">
             <ui:ExcelApplicationScope.Body>
               <ActivityAction x:TypeArguments="ui:WorkbookApplication">
                 <ActivityAction.Argument>
@@ -178,12 +178,12 @@
             </ui:ExcelApplicationScope.Body>
             <sap:WorkflowViewStateService.ViewState>
               <scg:Dictionary x:TypeArguments="x:String, x:Object">
-                <x:Boolean x:Key="IsExpanded">False</x:Boolean>
+                <x:Boolean x:Key="IsExpanded">True</x:Boolean>
                 <x:Boolean x:Key="IsPinned">False</x:Boolean>
               </scg:Dictionary>
             </sap:WorkflowViewStateService.ViewState>
           </ui:ExcelApplicationScope>
-          <ui:CommentOut DisplayName="Comment Out" sap:VirtualizedContainerService.HintSize="382,57.333333333333336" sap2010:WorkflowViewState.IdRef="CommentOut_1">
+          <ui:CommentOut DisplayName="Comment Out" sap:VirtualizedContainerService.HintSize="484,57.333333333333336" sap2010:WorkflowViewState.IdRef="CommentOut_1">
             <ui:CommentOut.Body>
               <Sequence DisplayName="Ignored Activities" sap:VirtualizedContainerService.HintSize="450,248" sap2010:WorkflowViewState.IdRef="Sequence_4">
                 <sap:WorkflowViewStateService.ViewState>
@@ -206,7 +206,7 @@
               </scg:Dictionary>
             </sap:WorkflowViewStateService.ViewState>
           </ui:CommentOut>
-          <ufa:SetFormFieldsActivity InstanceName="{x:Null}" DisplayName="Set Form Values" FormId="38efa2d6-d038-43d8-9169-20fec1495836" sap:VirtualizedContainerService.HintSize="382,168" sap2010:WorkflowViewState.IdRef="SetFormFieldsActivity_2">
+          <ufa:SetFormFieldsActivity InstanceName="{x:Null}" DisplayName="Set Form Values" FormId="38efa2d6-d038-43d8-9169-20fec1495836" sap:VirtualizedContainerService.HintSize="484,168" sap2010:WorkflowViewState.IdRef="SetFormFieldsActivity_2">
             <ufa:SetFormFieldsActivity.Arguments>
               <InArgument x:TypeArguments="scg:List(x:String)" x:Key="sheets_lst_output">[sheet_lst]</InArgument>
             </ufa:SetFormFieldsActivity.Arguments>
@@ -219,7 +219,7 @@
             <ActivityAction.Argument>
               <DelegateInArgument x:TypeArguments="s:Exception" Name="exception" />
             </ActivityAction.Argument>
-            <Sequence DisplayName="Body" sap:VirtualizedContainerService.HintSize="416,90.66666666666667" sap2010:WorkflowViewState.IdRef="Sequence_5">
+            <Sequence DisplayName="Body" sap:VirtualizedContainerService.HintSize="518,90.66666666666667" sap2010:WorkflowViewState.IdRef="Sequence_5">
               <sap:WorkflowViewStateService.ViewState>
                 <scg:Dictionary x:TypeArguments="x:String, x:Object">
                   <x:Boolean x:Key="IsExpanded">True</x:Boolean>
