@@ -8,7 +8,7 @@
     "Theme": "Default",
     "ShowInTaskbar": true,
     "ShowMargin": true,
-    "CustomStyle": ".button1, .button2, .button3, .filterTemplate, .savebutton, .filterName, .gridname {\r\ndisplay: inline-block;\r\nmin-width: max-content;\r\nvertical-align: top;\r\nmargin-right: 15px;\r\n}\r\n\r\n.gridname {\r\nmargin-right: 10px;\r\n}\r\n\r\n.filterTemplate {\r\nmargin-left: 10px;\r\ndisplay: inline-block;\r\n}"
+    "CustomStyle": ".button1, .button2, .button3, .deleteDropdown, .filterTemplate, .savebutton, .deletebutton, .filterName, .gridname {\r\ndisplay: inline-block;\r\nmin-width: max-content;\r\nvertical-align: top;\r\nmargin-right: 15px;\r\n}\r\n\r\n.gridname {\r\nmargin-right: 10px;\r\nmargin-bottom: 0px;\r\nvertical-align: middle;\r\n}\r\n\r\n.downloadingPIDquestion {\r\nmargin-bottom: 20px;\r\n}\r\n\r\n.filterTemplate, .deleteDropdown {\r\nmargin-left: 0px;\r\ndisplay: inline-block;\r\nvertical-align: middle;\r\n}\r\n\r\n.addFilters {\r\nmargin-top: 0px;\r\n}\r\n"
   },
   "Data": {
     "components": [
@@ -130,6 +130,7 @@
         "label": "Have you downloaded all the relevant P&IDs?",
         "optionsLabelPosition": "right",
         "description": "If not, the automation will scrape Prolog for the P&IDs.",
+        "customClass": "downloadingPIDquestion",
         "inline": false,
         "tableView": false,
         "values": [
@@ -168,12 +169,11 @@
         "tableView": true,
         "key": "ChooseFilterTemplate",
         "type": "select",
-        "refreshOn": "data",
         "input": true
       },
       {
         "label": "Please add any additional filters to your automation.",
-        "description": "You can write multiple values in each section, but separate them with a comma (,). Ensure that the values are written exactly as they appear in the excel sheet.",
+        "description": "You can write multiple values in each section, but separate them with a comma (,). Ensure that the values are written exactly as they appear in the excel sheet (CAPS SENSITIVE).",
         "reorder": false,
         "addAnotherPosition": "bottom",
         "layoutFixed": false,
@@ -220,7 +220,7 @@
         ]
       },
       {
-        "label": "Save current filters",
+        "label": "Save current filter template",
         "action": "event",
         "showValidations": false,
         "theme": "secondary",
@@ -242,6 +242,80 @@
           "eq": "True"
         },
         "type": "textfield",
+        "input": true
+      },
+      {
+        "label": "Delete filter template",
+        "action": "event",
+        "showValidations": false,
+        "theme": "secondary",
+        "customClass": "deletebutton",
+        "tableView": false,
+        "key": "deleteFilterTemplate",
+        "logic": [
+          {
+            "name": "ChangeColour",
+            "trigger": {
+              "type": "simple",
+              "simple": {
+                "show": true,
+                "when": "ShowDeleteFilterDropdown",
+                "eq": "True"
+              }
+            },
+            "actions": [
+              {
+                "name": "changeColour",
+                "type": "property",
+                "property": {
+                  "label": "CSS Class",
+                  "value": "className",
+                  "type": "string"
+                },
+                "text": "button2"
+              }
+            ]
+          }
+        ],
+        "type": "button",
+        "input": true
+      },
+      {
+        "label": "delete templates",
+        "widget": "choicesjs",
+        "placeholder": "Select filters to delete",
+        "customClass": "deleteDropdown",
+        "hidden": true,
+        "hideLabel": true,
+        "tableView": true,
+        "key": "deleteTemplates",
+        "logic": [
+          {
+            "name": "Show",
+            "trigger": {
+              "type": "simple",
+              "simple": {
+                "show": true,
+                "when": "ShowDeleteFilterDropdown",
+                "eq": "True"
+              }
+            },
+            "actions": [
+              {
+                "name": "Show",
+                "type": "property",
+                "property": {
+                  "label": "Hidden",
+                  "value": "hidden",
+                  "type": "boolean"
+                },
+                "state": false
+              }
+            ]
+          }
+        ],
+        "type": "select",
+        "refreshOn": "deleteFilterTemplate1",
         "input": true
       },
       {
@@ -304,6 +378,13 @@
       {
         "label": "filterNameShow",
         "key": "filterNameShow",
+        "type": "hidden",
+        "input": true,
+        "tableView": false
+      },
+      {
+        "label": "ShowDeleteFilterDropdown",
+        "key": "ShowDeleteFilterDropdown",
         "type": "hidden",
         "input": true,
         "tableView": false

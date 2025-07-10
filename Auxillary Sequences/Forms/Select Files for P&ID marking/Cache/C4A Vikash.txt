@@ -1,0 +1,1 @@
+[{"label":"Required for CM3","filteredValue":"Yes","dontInclude":null},{"label":"Discipline","filteredValue":null,"dontInclude":"Electrical"},{"label":"System Package Number","filteredValue":null,"dontInclude":"N.A."}]

@@ -7,7 +7,7 @@
     <x:Property Name="selected_template_sheet" Type="OutArgument(x:String)" />
     <x:Property Name="folderPath" Type="OutArgument(x:String)" />
     <x:Property Name="downloadedPID_bool" Type="OutArgument(x:Boolean)" />
-    <x:Property Name="FilterList" Type="OutArgument(scg:Dictionary(x:String, s:Tuple(x:Boolean, scg:List(x:String))))" />
+    <x:Property Name="FilterDict" Type="OutArgument(scg:Dictionary(x:String, s:Tuple(x:Boolean, scg:List(x:String))))" />
   </x:Members>
   <VisualBasic.Settings>
     <x:Null />
@@ -127,7 +127,7 @@
       <AssemblyReference>System.IO.FileSystem.DriveInfo</AssemblyReference>
     </sco:Collection>
   </TextExpression.ReferencesForImplementation>
-  <Sequence DisplayName="test4" sap:VirtualizedContainerService.HintSize="1216,3028" sap2010:WorkflowViewState.IdRef="Sequence_1">
+  <Sequence DisplayName="test4" sap:VirtualizedContainerService.HintSize="1473.2,2907.2" sap2010:WorkflowViewState.IdRef="Sequence_1">
     <Sequence.Variables>
       <Variable x:TypeArguments="x:String" Name="pidsDownloaded" />
       <Variable x:TypeArguments="sd:DataTable" Default="[New DataTable]" Name="filtersTable" />
@@ -141,15 +141,15 @@
         <x:Boolean x:Key="IsExpanded">True</x:Boolean>
       </scg:Dictionary>
     </sap:WorkflowViewStateService.ViewState>
-    <Assign sap:VirtualizedContainerService.HintSize="506,117.33333333333333" sap2010:WorkflowViewState.IdRef="Assign_8">
+    <Assign sap:VirtualizedContainerService.HintSize="504,113.6" sap2010:WorkflowViewState.IdRef="Assign_8">
       <Assign.To>
         <OutArgument x:TypeArguments="x:String">[cachepath]</OutArgument>
       </Assign.To>
       <Assign.Value>
-        <InArgument x:TypeArguments="x:String">[Path.Combine(Environment.CurrentDirectory, "Auxillary Sequences", "Forms", "Select Files for P&amp;ID marking", "Cache", "recentlyUsed.txt")]</InArgument>
+        <InArgument x:TypeArguments="x:String">[Path.Combine(Environment.CurrentDirectory, "Auxillary Sequences", "Forms", "Select Files for P&amp;ID marking", "Cache", "Recently Used.txt")]</InArgument>
       </Assign.Value>
     </Assign>
-    <Assign sap:VirtualizedContainerService.HintSize="506,117.33333333333333" sap2010:WorkflowViewState.IdRef="Assign_7">
+    <Assign sap:VirtualizedContainerService.HintSize="504,113.6" sap2010:WorkflowViewState.IdRef="Assign_7">
       <Assign.To>
         <OutArgument x:TypeArguments="sd:DataTable">[currTable]</OutArgument>
       </Assign.To>
@@ -157,25 +157,26 @@
         <InArgument x:TypeArguments="sd:DataTable">[If(System.IO.File.Exists(cachePath), (CType(Newtonsoft.Json.JsonConvert.DeserializeObject(System.IO.File.ReadAllText(cachePath), (GetType(System.Data.DataTable))), System.Data.DataTable)), New System.Data.DataTable())]</InArgument>
       </Assign.Value>
     </Assign>
-    <ufa:ShowFormActivity Height="{x:Null}" InstanceName="{x:Null}" Left="{x:Null}" ShowInTaskbar="{x:Null}" ShowMargin="{x:Null}" Title="{x:Null}" Top="{x:Null}" TopMost="{x:Null}" Width="{x:Null}" WindowState="{x:Null}" DisplayName="Show Form" FormId="38efa2d6-d038-43d8-9169-20fec1495836" sap:VirtualizedContainerService.HintSize="506,225.33333333333334" sap2010:WorkflowViewState.IdRef="ShowFormActivity_1" IsAsync="True">
+    <ufa:ShowFormActivity Height="{x:Null}" InstanceName="{x:Null}" Left="{x:Null}" ShowInTaskbar="{x:Null}" ShowMargin="{x:Null}" Title="{x:Null}" Top="{x:Null}" TopMost="{x:Null}" Width="{x:Null}" WindowState="{x:Null}" DisplayName="Show Form" FormId="38efa2d6-d038-43d8-9169-20fec1495836" sap:VirtualizedContainerService.HintSize="504,219.2" sap2010:WorkflowViewState.IdRef="ShowFormActivity_1" IsAsync="True">
       <ufa:ShowFormActivity.Arguments>
         <InArgument x:TypeArguments="x:String" x:Key="title">[title]</InArgument>
         <InArgument x:TypeArguments="sd:DataTable" x:Key="addFilters">[currTable]</InArgument>
         <InArgument x:TypeArguments="x:Boolean" x:Key="filterNameShow">False</InArgument>
       </ufa:ShowFormActivity.Arguments>
     </ufa:ShowFormActivity>
-    <ufa:SetFormFieldsActivity InstanceName="{x:Null}" DisplayName="Set Form Values" FormId="38efa2d6-d038-43d8-9169-20fec1495836" sap:VirtualizedContainerService.HintSize="506,177.33333333333334" sap2010:WorkflowViewState.IdRef="SetFormFieldsActivity_1">
+    <ufa:SetFormFieldsActivity InstanceName="{x:Null}" DisplayName="Set Form Values" FormId="38efa2d6-d038-43d8-9169-20fec1495836" sap:VirtualizedContainerService.HintSize="504,172.8" sap2010:WorkflowViewState.IdRef="SetFormFieldsActivity_1">
       <ufa:SetFormFieldsActivity.Arguments>
         <InArgument x:TypeArguments="x:String" x:Key="filterNameShow">False</InArgument>
         <InArgument x:TypeArguments="scg:List(x:String)" x:Key="ChooseFilterTemplate">[Directory.GetFiles(Path.Combine(Environment.CurrentDirectory, "Auxillary Sequences", "Forms", "Select Files for P&amp;ID marking", "Cache")).Select(Function(file) Path.GetFileNameWithoutExtension(file)).ToList()]</InArgument>
+        <InArgument x:TypeArguments="scg:IEnumerable(x:String)" x:Key="deleteTemplates">[Directory.GetFiles(Path.Combine(Environment.CurrentDirectory, "Auxillary Sequences", "Forms", "Select Files for P&amp;ID marking", "Cache")).Select(Function(file) Path.GetFileNameWithoutExtension(file)).ToList()]</InArgument>
       </ufa:SetFormFieldsActivity.Arguments>
     </ufa:SetFormFieldsActivity>
-    <ui:StartTriggers ArgumentsVariable="{x:Null}" ContinueOnError="{x:Null}" DisplayName="Run Local Triggers" sap:VirtualizedContainerService.HintSize="506,131.33333333333334" sap2010:WorkflowViewState.IdRef="StartTriggers_1" UnSafe="False" WorkflowFileName=".local\generated\Triggers.Generated.xaml">
+    <ui:StartTriggers ArgumentsVariable="{x:Null}" ContinueOnError="{x:Null}" DisplayName="Run Local Triggers" sap:VirtualizedContainerService.HintSize="504,128" sap2010:WorkflowViewState.IdRef="StartTriggers_1" UnSafe="False" WorkflowFileName=".local\generated\Triggers.Generated.xaml">
       <ui:StartTriggers.Arguments>
         <scg:Dictionary x:TypeArguments="x:String, Argument" />
       </ui:StartTriggers.Arguments>
     </ui:StartTriggers>
-    <ufa:GetFormFieldsActivity InstanceName="{x:Null}" DisplayName="Get Form Values" FormId="38efa2d6-d038-43d8-9169-20fec1495836" sap:VirtualizedContainerService.HintSize="506,177.33333333333334" sap2010:WorkflowViewState.IdRef="GetFormFieldsActivity_1">
+    <ufa:GetFormFieldsActivity InstanceName="{x:Null}" DisplayName="Get Form Values" FormId="38efa2d6-d038-43d8-9169-20fec1495836" sap:VirtualizedContainerService.HintSize="504,172.8" sap2010:WorkflowViewState.IdRef="GetFormFieldsActivity_1">
       <ufa:GetFormFieldsActivity.Arguments>
         <OutArgument x:TypeArguments="x:String" x:Key="exceltemplate_filePath">[exceltemplate_filePath]</OutArgument>
         <OutArgument x:TypeArguments="x:String" x:Key="exceloutput_filePath">[exceloutput_filePath]</OutArgument>
@@ -188,8 +189,8 @@
         <OutArgument x:TypeArguments="x:String" x:Key="filterName">[cacheName]</OutArgument>
       </ufa:GetFormFieldsActivity.Arguments>
     </ufa:GetFormFieldsActivity>
-    <ufa:CloseFormActivity InstanceName="{x:Null}" DisplayName="Close Form" FormId="38efa2d6-d038-43d8-9169-20fec1495836" sap:VirtualizedContainerService.HintSize="506,124" sap2010:WorkflowViewState.IdRef="CloseFormActivity_1" />
-    <Assign sap:VirtualizedContainerService.HintSize="506,117.33333333333333" sap2010:WorkflowViewState.IdRef="Assign_1">
+    <ufa:CloseFormActivity InstanceName="{x:Null}" DisplayName="Close Form" FormId="38efa2d6-d038-43d8-9169-20fec1495836" sap:VirtualizedContainerService.HintSize="504,121.6" sap2010:WorkflowViewState.IdRef="CloseFormActivity_1" />
+    <Assign sap:VirtualizedContainerService.HintSize="504,113.6" sap2010:WorkflowViewState.IdRef="Assign_1">
       <Assign.To>
         <OutArgument x:TypeArguments="x:Boolean">[downloadedPID_bool]</OutArgument>
       </Assign.To>
@@ -197,9 +198,9 @@
         <InArgument x:TypeArguments="x:Boolean">[If(pidsDownloaded = "yes", True, False)]</InArgument>
       </Assign.Value>
     </Assign>
-    <Assign sap2010:Annotation.AnnotationText="Filter Dictionary: &#xA;key: column name&#xA;value: Tuple( bool, list of string) --&gt; True if Filter for, False if Don't include. List of string is the values to filter for/against.&#xA;" DisplayName="Create the Filter Dictionary" sap:VirtualizedContainerService.HintSize="506,212.66666666666666" sap2010:WorkflowViewState.IdRef="Assign_2">
+    <Assign sap2010:Annotation.AnnotationText="Filter Dictionary: &#xA;key: column name&#xA;value: Tuple( bool, list of string) --&gt; True if Filter for, False if Don't include. List of string is the values to filter for/against.&#xA;" DisplayName="Create the Filter Dictionary" sap:VirtualizedContainerService.HintSize="504,205.6" sap2010:WorkflowViewState.IdRef="Assign_2">
       <Assign.To>
-        <OutArgument x:TypeArguments="scg:Dictionary(x:String, s:Tuple(x:Boolean, scg:List(x:String)))">[FilterList]</OutArgument>
+        <OutArgument x:TypeArguments="scg:Dictionary(x:String, s:Tuple(x:Boolean, scg:List(x:String)))">[FilterDict]</OutArgument>
       </Assign.To>
       <Assign.Value>
         <InArgument x:TypeArguments="scg:Dictionary(x:String, s:Tuple(x:Boolean, scg:List(x:String)))">[New Dictionary(of string, Tuple(of Boolean, List(of String)))]</InArgument>
@@ -210,13 +211,13 @@
         </scg:Dictionary>
       </sap:WorkflowViewStateService.ViewState>
     </Assign>
-    <ui:ForEachRow ColumnNames="{x:Null}" CurrentIndex="{x:Null}" DataTable="[filtersTable]" DisplayName="For Each Row in Data Table" sap:VirtualizedContainerService.HintSize="506,885.3333333333334" sap2010:WorkflowViewState.IdRef="ForEachRow_1">
+    <ui:ForEachRow ColumnNames="{x:Null}" CurrentIndex="{x:Null}" DataTable="[filtersTable]" DisplayName="For Each Row in Data Table" sap:VirtualizedContainerService.HintSize="504,871.2" sap2010:WorkflowViewState.IdRef="ForEachRow_1">
       <ui:ForEachRow.Body>
         <ActivityAction x:TypeArguments="sd:DataRow">
           <ActivityAction.Argument>
             <DelegateInArgument x:TypeArguments="sd:DataRow" Name="CurrentRow" />
           </ActivityAction.Argument>
-          <Sequence DisplayName="Body" sap:VirtualizedContainerService.HintSize="504,701.3333333333334" sap2010:WorkflowViewState.IdRef="Sequence_3">
+          <Sequence DisplayName="Body" sap:VirtualizedContainerService.HintSize="502.4,689.6" sap2010:WorkflowViewState.IdRef="Sequence_3">
             <Sequence.Variables>
               <Variable x:TypeArguments="x:Boolean" Name="filterType" />
             </Sequence.Variables>
@@ -225,7 +226,7 @@
                 <x:Boolean x:Key="IsExpanded">True</x:Boolean>
               </scg:Dictionary>
             </sap:WorkflowViewStateService.ViewState>
-            <If Condition="[String.IsNullOrWhiteSpace(If(CurrentRow(1) Is DBNull.Value, &quot;&quot;, CurrentRow(1).ToString())) AndAlso String.IsNullOrWhiteSpace(If(CurrentRow(2) Is DBNull.Value, &quot;&quot;, CurrentRow(2).ToString()))]" DisplayName="user didnt fill in both fields" sap:VirtualizedContainerService.HintSize="470,57.333333333333336" sap2010:WorkflowViewState.IdRef="If_1">
+            <If Condition="[String.IsNullOrWhiteSpace(If(CurrentRow(1) Is DBNull.Value, &quot;&quot;, CurrentRow(1).ToString())) AndAlso String.IsNullOrWhiteSpace(If(CurrentRow(2) Is DBNull.Value, &quot;&quot;, CurrentRow(2).ToString()))]" DisplayName="user didnt fill in both fields" sap:VirtualizedContainerService.HintSize="468.8,56.8" sap2010:WorkflowViewState.IdRef="If_1">
               <sap:WorkflowViewStateService.ViewState>
                 <scg:Dictionary x:TypeArguments="x:String, x:Object">
                   <x:Boolean x:Key="IsExpanded">False</x:Boolean>
@@ -253,15 +254,15 @@
                 </Sequence>
               </If.Else>
             </If>
-            <Assign sap:VirtualizedContainerService.HintSize="470,117.33333333333333" sap2010:WorkflowViewState.IdRef="Assign_4">
+            <Assign sap:VirtualizedContainerService.HintSize="468.8,113.6" sap2010:WorkflowViewState.IdRef="Assign_4">
               <Assign.To>
                 <OutArgument x:TypeArguments="x:Boolean">[filterType]</OutArgument>
               </Assign.To>
               <Assign.Value>
-                <InArgument x:TypeArguments="x:Boolean">[Not If(String.IsNullOrEmpty(CurrentRow(1).ToString()), False, If(String.IsNullOrEmpty(CurrentRow(2).ToString()), True, False))]</InArgument>
+                <InArgument x:TypeArguments="x:Boolean">[If(String.IsNullOrEmpty(CurrentRow(1).ToString()), False, If(String.IsNullOrEmpty(CurrentRow(2).ToString()), True, False))]</InArgument>
               </Assign.Value>
             </Assign>
-            <If Condition="[filterType]" sap:VirtualizedContainerService.HintSize="470,466.6666666666667" sap2010:WorkflowViewState.IdRef="If_2">
+            <If Condition="[filterType]" sap:VirtualizedContainerService.HintSize="468.8,459.2" sap2010:WorkflowViewState.IdRef="If_2">
               <sap:WorkflowViewStateService.ViewState>
                 <scg:Dictionary x:TypeArguments="x:String, x:Object">
                   <x:Boolean x:Key="IsExpanded">True</x:Boolean>
@@ -269,15 +270,15 @@
                 </scg:Dictionary>
               </sap:WorkflowViewStateService.ViewState>
               <If.Then>
-                <Sequence DisplayName="Then" sap:VirtualizedContainerService.HintSize="468,168" sap2010:WorkflowViewState.IdRef="Sequence_8">
+                <Sequence DisplayName="Then" sap:VirtualizedContainerService.HintSize="467.2,164.8" sap2010:WorkflowViewState.IdRef="Sequence_8">
                   <sap:WorkflowViewStateService.ViewState>
                     <scg:Dictionary x:TypeArguments="x:String, x:Object">
                       <x:Boolean x:Key="IsExpanded">True</x:Boolean>
                     </scg:Dictionary>
                   </sap:WorkflowViewStateService.ViewState>
-                  <Assign sap:VirtualizedContainerService.HintSize="434,108" sap2010:WorkflowViewState.IdRef="Assign_3">
+                  <Assign sap:VirtualizedContainerService.HintSize="433.6,104.8" sap2010:WorkflowViewState.IdRef="Assign_3">
                     <Assign.To>
-                      <OutArgument x:TypeArguments="s:Tuple(x:Boolean, scg:List(x:String))">[FilterList(CurrentRow(0).ToString)]</OutArgument>
+                      <OutArgument x:TypeArguments="s:Tuple(x:Boolean, scg:List(x:String))">[FilterDict(CurrentRow(0).ToString)]</OutArgument>
                     </Assign.To>
                     <Assign.Value>
                       <InArgument x:TypeArguments="s:Tuple(x:Boolean, scg:List(x:String))">[New Tuple(Of Boolean, List(Of String))(filterType, currentRow(1).ToString.Split(","c).Select(Function(x) x.Trim()).toList())]</InArgument>
@@ -286,15 +287,15 @@
                 </Sequence>
               </If.Then>
               <If.Else>
-                <Sequence DisplayName="Else" sap:VirtualizedContainerService.HintSize="468,168" sap2010:WorkflowViewState.IdRef="Sequence_9">
+                <Sequence DisplayName="Else" sap:VirtualizedContainerService.HintSize="467.2,164.8" sap2010:WorkflowViewState.IdRef="Sequence_9">
                   <sap:WorkflowViewStateService.ViewState>
                     <scg:Dictionary x:TypeArguments="x:String, x:Object">
                       <x:Boolean x:Key="IsExpanded">True</x:Boolean>
                     </scg:Dictionary>
                   </sap:WorkflowViewStateService.ViewState>
-                  <Assign sap:VirtualizedContainerService.HintSize="434,108" sap2010:WorkflowViewState.IdRef="Assign_6">
+                  <Assign sap:VirtualizedContainerService.HintSize="433.6,104.8" sap2010:WorkflowViewState.IdRef="Assign_6">
                     <Assign.To>
-                      <OutArgument x:TypeArguments="s:Tuple(x:Boolean, scg:List(x:String))">[FilterList(CurrentRow(0).ToString)]</OutArgument>
+                      <OutArgument x:TypeArguments="s:Tuple(x:Boolean, scg:List(x:String))">[FilterDict(CurrentRow(0).ToString)]</OutArgument>
                     </Assign.To>
                     <Assign.Value>
                       <InArgument x:TypeArguments="s:Tuple(x:Boolean, scg:List(x:String))">[New Tuple(Of Boolean, List(Of String))(filterType, currentRow(2).ToString.Split(","c).Select(Function(x) x.Trim()).toList())]</InArgument>
@@ -307,19 +308,19 @@
         </ActivityAction>
       </ui:ForEachRow.Body>
     </ui:ForEachRow>
-    <If Condition="[saveCurrentFilters]" sap:VirtualizedContainerService.HintSize="506,384.6666666666667" sap2010:WorkflowViewState.IdRef="If_3">
+    <If Condition="[saveCurrentFilters]" sap:VirtualizedContainerService.HintSize="504,380.8" sap2010:WorkflowViewState.IdRef="If_3">
       <If.Then>
-        <Sequence DisplayName="Then" sap:VirtualizedContainerService.HintSize="416,219.33333333333334" sap2010:WorkflowViewState.IdRef="Sequence_10">
+        <Sequence DisplayName="Then" sap:VirtualizedContainerService.HintSize="416,217.6" sap2010:WorkflowViewState.IdRef="Sequence_10">
           <sap:WorkflowViewStateService.ViewState>
             <scg:Dictionary x:TypeArguments="x:String, x:Object">
               <x:Boolean x:Key="IsExpanded">True</x:Boolean>
             </scg:Dictionary>
           </sap:WorkflowViewStateService.ViewState>
-          <ui:WriteTextFile File="{x:Null}" DisplayName="Write Text File" FileName="[String.Format(&quot;Auxillary Sequences\Forms\Select Files for P&amp;ID marking\Cache\{0}.txt&quot;, cacheName)]" sap:VirtualizedContainerService.HintSize="382,159.33333333333334" sap2010:WorkflowViewState.IdRef="WriteTextFile_1" Text="[Newtonsoft.Json.JsonConvert.SerializeObject(filtersTable)]" />
+          <ui:WriteTextFile File="{x:Null}" DisplayName="Write Text File" FileName="[String.Format(&quot;Auxillary Sequences\Forms\Select Files for P&amp;ID marking\Cache\{0}.txt&quot;, cacheName)]" sap:VirtualizedContainerService.HintSize="382.4,157.6" sap2010:WorkflowViewState.IdRef="WriteTextFile_1" Text="[Newtonsoft.Json.JsonConvert.SerializeObject(filtersTable)]" />
         </Sequence>
       </If.Then>
       <If.Else>
-        <Sequence DisplayName="Else" sap:VirtualizedContainerService.HintSize="416,25.333333333333332" sap2010:WorkflowViewState.IdRef="Sequence_11">
+        <Sequence DisplayName="Else" sap:VirtualizedContainerService.HintSize="416,24.8" sap2010:WorkflowViewState.IdRef="Sequence_11">
           <sap:WorkflowViewStateService.ViewState>
             <scg:Dictionary x:TypeArguments="x:String, x:Object">
               <x:Boolean x:Key="IsExpanded">False</x:Boolean>
@@ -329,9 +330,26 @@
         </Sequence>
       </If.Else>
     </If>
-    <ui:WriteTextFile File="{x:Null}" DisplayName="Write Text File" FileName="[String.Format(&quot;Auxillary Sequences\Forms\Select Files for P&amp;ID marking\Cache\{0}.txt&quot;, &quot;recentlyUsed&quot;)]" sap:VirtualizedContainerService.HintSize="506,168.66666666666666" sap2010:WorkflowViewState.IdRef="WriteTextFile_2" Text="[Newtonsoft.Json.JsonConvert.SerializeObject(filtersTable)]" />
-    <ui:MessageBox Caption="{x:Null}" ChosenButton="{x:Null}" AutoCloseAfter="00:00:00" DisplayName="Message Box" sap:VirtualizedContainerService.HintSize="506,118.66666666666667" sap2010:WorkflowViewState.IdRef="MessageBox_2" Text="[String.Join(Environment.NewLine, FilterList.Select(Function(kv) $&quot;Key: {kv.Key}, Boolean: {kv.Value.Item1}, Value: {String.Join(&quot;, &quot;, kv.Value.Item2)}&quot;))]" />
-    <ui:CommentOut DisplayName="Comment Out" sap:VirtualizedContainerService.HintSize="506,48" sap2010:WorkflowViewState.IdRef="CommentOut_1">
+    <ui:WriteTextFile File="{x:Null}" DisplayName="Write Text File" FileName="[String.Format(&quot;Auxillary Sequences\Forms\Select Files for P&amp;ID marking\Cache\{0}.txt&quot;, &quot;Recently Used&quot;)]" sap:VirtualizedContainerService.HintSize="504,166.4" sap2010:WorkflowViewState.IdRef="WriteTextFile_2" Text="[Newtonsoft.Json.JsonConvert.SerializeObject(filtersTable)]" />
+    <ui:CommentOut DisplayName="Comment Out" sap:VirtualizedContainerService.HintSize="504,56.8" sap2010:WorkflowViewState.IdRef="CommentOut_3">
+      <ui:CommentOut.Body>
+        <Sequence DisplayName="Ignored Activities" sap:VirtualizedContainerService.HintSize="449.6,168.8" sap2010:WorkflowViewState.IdRef="Sequence_13">
+          <sap:WorkflowViewStateService.ViewState>
+            <scg:Dictionary x:TypeArguments="x:String, x:Object">
+              <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+            </scg:Dictionary>
+          </sap:WorkflowViewStateService.ViewState>
+          <ui:MessageBox Caption="{x:Null}" ChosenButton="{x:Null}" AutoCloseAfter="00:00:00" DisplayName="Message Box" sap:VirtualizedContainerService.HintSize="416,108.8" sap2010:WorkflowViewState.IdRef="MessageBox_3" Text="[String.Join(Environment.NewLine, FilterDict.Select(Function(kv) $&quot;Key: {kv.Key}, Boolean: {kv.Value.Item1}, Value: {String.Join(&quot;, &quot;, kv.Value.Item2)}&quot;))]" />
+        </Sequence>
+      </ui:CommentOut.Body>
+      <sap:WorkflowViewStateService.ViewState>
+        <scg:Dictionary x:TypeArguments="x:String, x:Object">
+          <x:Boolean x:Key="IsExpanded">False</x:Boolean>
+          <x:Boolean x:Key="IsPinned">False</x:Boolean>
+        </scg:Dictionary>
+      </sap:WorkflowViewStateService.ViewState>
+    </ui:CommentOut>
+    <ui:CommentOut DisplayName="Comment Out" sap:VirtualizedContainerService.HintSize="504,48" sap2010:WorkflowViewState.IdRef="CommentOut_1">
       <ui:CommentOut.Body>
         <Sequence DisplayName="Ignored Activities" sap:VirtualizedContainerService.HintSize="450,169.33333333333334" sap2010:WorkflowViewState.IdRef="Sequence_2">
           <sap:WorkflowViewStateService.ViewState>

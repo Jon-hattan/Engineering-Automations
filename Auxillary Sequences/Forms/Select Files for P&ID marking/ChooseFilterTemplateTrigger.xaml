@@ -104,7 +104,7 @@
       <AssemblyReference>Newtonsoft.Json</AssemblyReference>
     </sco:Collection>
   </TextExpression.ReferencesForImplementation>
-  <Sequence DisplayName="ChooseFilterTemplateTrigger" sap:VirtualizedContainerService.HintSize="1216,800.6666666666666" sap2010:WorkflowViewState.IdRef="Sequence_1">
+  <Sequence DisplayName="ChooseFilterTemplateTrigger" sap:VirtualizedContainerService.HintSize="1177.2,781.6" sap2010:WorkflowViewState.IdRef="Sequence_1">
     <Sequence.Variables>
       <Variable x:TypeArguments="x:String" Name="ChooseFilterTemplate" />
       <Variable x:TypeArguments="x:String" Name="cachepath" />
@@ -115,13 +115,13 @@
         <x:Boolean x:Key="IsExpanded">True</x:Boolean>
       </scg:Dictionary>
     </sap:WorkflowViewStateService.ViewState>
-    <ufa:FormTriggerActivity x:TypeArguments="ufa:TextTriggerEventArgs" MessageId="{x:Null}" Tag="{x:Null}" DisplayName="Form Event Trigger" Enabled="True" Event="changed.ChooseFilterTemplate" FormId="38efa2d6-d038-43d8-9169-20fec1495836" sap:VirtualizedContainerService.HintSize="434,198" sap2010:WorkflowViewState.IdRef="FormTriggerActivity`1_1" SchedulingMode="Sequential" TriggerId="c97abe5e-fb8d-4359-862e-5687bbc682a1" />
-    <ufa:GetFormFieldsActivity InstanceName="{x:Null}" DisplayName="Get Form Values" FormId="38efa2d6-d038-43d8-9169-20fec1495836" sap:VirtualizedContainerService.HintSize="434,177.33333333333334" sap2010:WorkflowViewState.IdRef="GetFormFieldsActivity_1">
+    <ufa:FormTriggerActivity x:TypeArguments="ufa:TextTriggerEventArgs" MessageId="{x:Null}" Tag="{x:Null}" DisplayName="Form Event Trigger" Enabled="True" Event="changed.ChooseFilterTemplate" FormId="38efa2d6-d038-43d8-9169-20fec1495836" sap:VirtualizedContainerService.HintSize="433.6,194.4" sap2010:WorkflowViewState.IdRef="FormTriggerActivity`1_1" SchedulingMode="Sequential" TriggerId="c97abe5e-fb8d-4359-862e-5687bbc682a1" />
+    <ufa:GetFormFieldsActivity InstanceName="{x:Null}" DisplayName="Get Form Values" FormId="38efa2d6-d038-43d8-9169-20fec1495836" sap:VirtualizedContainerService.HintSize="433.6,172.8" sap2010:WorkflowViewState.IdRef="GetFormFieldsActivity_1">
       <ufa:GetFormFieldsActivity.Arguments>
         <OutArgument x:TypeArguments="x:String" x:Key="ChooseFilterTemplate">[ChooseFilterTemplate]</OutArgument>
       </ufa:GetFormFieldsActivity.Arguments>
     </ufa:GetFormFieldsActivity>
-    <Assign sap:VirtualizedContainerService.HintSize="434,117.33333333333333" sap2010:WorkflowViewState.IdRef="Assign_1">
+    <Assign sap:VirtualizedContainerService.HintSize="433.6,113.6" sap2010:WorkflowViewState.IdRef="Assign_1">
       <Assign.To>
         <OutArgument x:TypeArguments="x:String">[cachepath]</OutArgument>
       </Assign.To>
@@ -129,7 +129,7 @@
         <InArgument x:TypeArguments="x:String">[Path.Combine(Environment.CurrentDirectory, "Auxillary Sequences", "Forms", "Select Files for P&amp;ID marking", "Cache", ChooseFilterTemplate &amp; ".txt")]</InArgument>
       </Assign.Value>
     </Assign>
-    <Assign sap:VirtualizedContainerService.HintSize="434,117.33333333333333" sap2010:WorkflowViewState.IdRef="Assign_2">
+    <Assign sap:VirtualizedContainerService.HintSize="433.6,113.6" sap2010:WorkflowViewState.IdRef="Assign_2">
       <Assign.To>
         <OutArgument x:TypeArguments="sd:DataTable">[currTable]</OutArgument>
       </Assign.To>
@@ -137,7 +137,7 @@
         <InArgument x:TypeArguments="sd:DataTable">[If(System.IO.File.Exists(cachePath), (CType(Newtonsoft.Json.JsonConvert.DeserializeObject(System.IO.File.ReadAllText(cachePath), (GetType(System.Data.DataTable))), System.Data.DataTable)), New System.Data.DataTable())]</InArgument>
       </Assign.Value>
     </Assign>
-    <ufa:SetFormFieldsActivity InstanceName="{x:Null}" DisplayName="Set Form Values" FormId="38efa2d6-d038-43d8-9169-20fec1495836" sap:VirtualizedContainerService.HintSize="434,168" sap2010:WorkflowViewState.IdRef="SetFormFieldsActivity_2">
+    <ufa:SetFormFieldsActivity InstanceName="{x:Null}" DisplayName="Set Form Values" FormId="38efa2d6-d038-43d8-9169-20fec1495836" sap:VirtualizedContainerService.HintSize="433.6,164" sap2010:WorkflowViewState.IdRef="SetFormFieldsActivity_2">
       <ufa:SetFormFieldsActivity.Arguments>
         <InArgument x:TypeArguments="sd:DataTable" x:Key="addFilters">[currTable]</InArgument>
       </ufa:SetFormFieldsActivity.Arguments>
