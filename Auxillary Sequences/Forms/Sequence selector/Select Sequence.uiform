@@ -8,7 +8,7 @@
     "Theme": "Default",
     "ShowInTaskbar": true,
     "ShowMargin": true,
-    "CustomStyle": ".col1, .col2, .col3, .col4 {\r\ndisplay: inline-block;\r\nwidth: 33%;\r\nvertical-align: top;\r\nmin-width: max-content;\r\n}\r\n"
+    "CustomStyle": ".col1, .col2, .col3, .col4 {\r\ndisplay: inline-block;\r\nmargin-right: 10px;\r\nvertical-align: top;\r\nmin-width: max-content;\r\n}\r\n"
   },
   "Data": {
     "components": [
@@ -45,7 +45,7 @@
             "tableView": false,
             "components": [
               {
-                "content": "PDF to Excel Generators",
+                "content": "<b>PDF to Excel Generators</b>",
                 "key": "label2",
                 "input": false,
                 "tableView": false,
@@ -90,7 +90,7 @@
             "tableView": false,
             "components": [
               {
-                "content": "PDF Splitters",
+                "content": "<b>PDF Splitters</b>",
                 "key": "label2",
                 "input": false,
                 "tableView": false,
@@ -110,6 +110,7 @@
                 "label": "Generic PDF Separator",
                 "action": "event",
                 "showValidations": false,
+                "theme": "secondary",
                 "tableView": false,
                 "key": "genSeparator",
                 "type": "button",
@@ -126,7 +127,7 @@
             "tableView": false,
             "components": [
               {
-                "content": "Prolog Automations",
+                "content": "<b>Prolog Automations</b>",
                 "key": "label",
                 "input": false,
                 "tableView": false,
@@ -146,6 +147,7 @@
                 "label": "Prolog P&ID Tracker Updater",
                 "action": "event",
                 "showValidations": false,
+                "theme": "secondary",
                 "tableView": false,
                 "key": "prologPID",
                 "type": "button",
@@ -162,7 +164,7 @@
             "tableView": false,
             "components": [
               {
-                "content": "PDF Markup Automation",
+                "content": "<b>PDF Markup Automation</b>",
                 "key": "label",
                 "input": false,
                 "tableView": false,
@@ -179,6 +181,14 @@
                 "input": true
               }
             ]
+          },
+          {
+            "content": "** Grey buttons are still in progress",
+            "key": "label",
+            "input": false,
+            "tableView": false,
+            "label": "Label",
+            "type": "label"
           }
         ]
       }
