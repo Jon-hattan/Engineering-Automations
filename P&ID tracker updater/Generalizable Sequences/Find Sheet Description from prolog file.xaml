@@ -1,0 +1,1348 @@
+<Activity mc:Ignorable="sap sap2010" x:Class="test_interop_excel" this:test_interop_excel.Sheet_Number="131242-WSW41-DR-P-6001.pdf" xmlns="http://schemas.microsoft.com/netfx/2009/xaml/activities" xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" xmlns:p="http://schemas.uipath.com/workflow/activities/cv" xmlns:p1="http://schemas.uipath.com/workflow/activities/ocr" xmlns:sap="http://schemas.microsoft.com/netfx/2009/xaml/activities/presentation" xmlns:sap2010="http://schemas.microsoft.com/netfx/2010/xaml/activities/presentation" xmlns:scg="clr-namespace:System.Collections.Generic;assembly=System.Private.CoreLib" xmlns:sco="clr-namespace:System.Collections.ObjectModel;assembly=System.Private.CoreLib" xmlns:sd="clr-namespace:System.Drawing;assembly=System.Drawing.Common" xmlns:sd1="clr-namespace:System.Drawing;assembly=System.Drawing.Primitives" xmlns:this="clr-namespace:" xmlns:uc="clr-namespace:UiPath.CV;assembly=UiPath.CV" xmlns:ui="http://schemas.uipath.com/workflow/activities" xmlns:uix="http://schemas.uipath.com/workflow/activities/uix" xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml">
+  <x:Members>
+    <x:Property Name="Sheet_Number" Type="InArgument(x:String)" />
+    <x:Property Name="Drawing_Title" Type="OutArgument(x:String)" />
+  </x:Members>
+  <VisualBasic.Settings>
+    <x:Null />
+  </VisualBasic.Settings>
+  <sap2010:WorkflowViewState.IdRef>test_interop_excel_1</sap2010:WorkflowViewState.IdRef>
+  <TextExpression.NamespacesForImplementation>
+    <sco:Collection x:TypeArguments="x:String">
+      <x:String>System.Activities</x:String>
+      <x:String>System.Activities.Statements</x:String>
+      <x:String>System.Activities.Expressions</x:String>
+      <x:String>System.Activities.Validation</x:String>
+      <x:String>System.Activities.XamlIntegration</x:String>
+      <x:String>Microsoft.VisualBasic</x:String>
+      <x:String>Microsoft.VisualBasic.Activities</x:String>
+      <x:String>System</x:String>
+      <x:String>System.Collections</x:String>
+      <x:String>System.Collections.Generic</x:String>
+      <x:String>System.Collections.ObjectModel</x:String>
+      <x:String>System.Data</x:String>
+      <x:String>System.Diagnostics</x:String>
+      <x:String>System.Drawing</x:String>
+      <x:String>System.IO</x:String>
+      <x:String>System.Linq</x:String>
+      <x:String>System.Net.Mail</x:String>
+      <x:String>System.Xml</x:String>
+      <x:String>System.Xml.Linq</x:String>
+      <x:String>UiPath.Core</x:String>
+      <x:String>UiPath.Core.Activities</x:String>
+      <x:String>System.Windows.Markup</x:String>
+      <x:String>GlobalVariablesNamespace</x:String>
+      <x:String>GlobalConstantsNamespace</x:String>
+      <x:String>System.Runtime.Serialization</x:String>
+      <x:String>System.Reflection</x:String>
+      <x:String>System.Linq.Expressions</x:String>
+      <x:String>System.Numerics</x:String>
+      <x:String>UiPath.Excel</x:String>
+      <x:String>UiPath.Excel.Activities.Business</x:String>
+      <x:String>UiPath.Excel.Model</x:String>
+      <x:String>UiPath.Shared.Activities.Business</x:String>
+      <x:String>Microsoft.VisualBasic.CompilerServices</x:String>
+      <x:String>Microsoft.Win32.SafeHandles</x:String>
+      <x:String>System.Net</x:String>
+      <x:String>System.Globalization</x:String>
+      <x:String>System.Configuration.Assemblies</x:String>
+      <x:String>System.ComponentModel</x:String>
+      <x:String>System.CodeDom.Compiler</x:String>
+      <x:String>System.Buffers</x:String>
+      <x:String>System.Buffers.Text</x:String>
+      <x:String>System.Buffers.Binary</x:String>
+      <x:String>System.Threading</x:String>
+      <x:String>System.Threading.Tasks</x:String>
+      <x:String>System.Threading.Tasks.Sources</x:String>
+      <x:String>System.Text</x:String>
+      <x:String>System.Text.Unicode</x:String>
+      <x:String>System.Security</x:String>
+      <x:String>System.Security.Principal</x:String>
+      <x:String>System.Security.Permissions</x:String>
+      <x:String>System.Security.Cryptography</x:String>
+      <x:String>System.Runtime</x:String>
+      <x:String>System.Runtime.Remoting</x:String>
+      <x:String>System.Runtime.ExceptionServices</x:String>
+      <x:String>System.Runtime.ConstrainedExecution</x:String>
+      <x:String>System.Runtime.Versioning</x:String>
+      <x:String>System.Runtime.Loader</x:String>
+      <x:String>System.Runtime.Intrinsics</x:String>
+      <x:String>System.Runtime.Intrinsics.Wasm</x:String>
+      <x:String>System.Runtime.Intrinsics.Arm</x:String>
+      <x:String>System.Runtime.Intrinsics.X86</x:String>
+      <x:String>System.Runtime.InteropServices</x:String>
+      <x:String>System.Runtime.InteropServices.ObjectiveC</x:String>
+      <x:String>System.Runtime.InteropServices.Marshalling</x:String>
+      <x:String>System.Runtime.InteropServices.ComTypes</x:String>
+      <x:String>System.Runtime.CompilerServices</x:String>
+      <x:String>System.Resources</x:String>
+      <x:String>System.Reflection.Metadata</x:String>
+      <x:String>System.Reflection.Emit</x:String>
+      <x:String>System.IO.Enumeration</x:String>
+      <x:String>System.Diagnostics.SymbolStore</x:String>
+      <x:String>System.Diagnostics.Contracts</x:String>
+      <x:String>System.Diagnostics.CodeAnalysis</x:String>
+      <x:String>System.Diagnostics.Tracing</x:String>
+      <x:String>System.Collections.Concurrent</x:String>
+      <x:String>Internal</x:String>
+      <x:String>System.CodeDom</x:String>
+      <x:String>Microsoft.CSharp</x:String>
+      <x:String>System.Linq.Expressions.Interpreter</x:String>
+      <x:String>System.Dynamic</x:String>
+      <x:String>UiPath.Workflow.Runtime</x:String>
+      <x:String>System.Activities.Tracking</x:String>
+      <x:String>System.Activities.Statements.Tracking</x:String>
+      <x:String>System.Activities.Runtime</x:String>
+      <x:String>System.Activities.Runtime.DurableInstancing</x:String>
+      <x:String>System.Activities.Runtime.Collections</x:String>
+      <x:String>System.Activities.ParallelTracking</x:String>
+      <x:String>System.Activities.Hosting</x:String>
+      <x:String>System.Activities.Persistence</x:String>
+      <x:String>System.Activities.DurableInstancing</x:String>
+      <x:String>System.ComponentModel.Design.Serialization</x:String>
+      <x:String>System.Text.RegularExpressions</x:String>
+      <x:String>System.Security.Authentication.ExtendedProtection</x:String>
+      <x:String>System.Timers</x:String>
+      <x:String>System.ComponentModel.Design</x:String>
+      <x:String>System.Xml.Schema</x:String>
+      <x:String>System.Xml.Xsl</x:String>
+      <x:String>System.Xml.Xsl.Runtime</x:String>
+      <x:String>System.Xml.XPath</x:String>
+      <x:String>System.Xml.Resolvers</x:String>
+      <x:String>System.Xml.Serialization</x:String>
+      <x:String>Microsoft.VisualBasic.FileIO</x:String>
+      <x:String>UiPath.Shared.Activities</x:String>
+      <x:String>UiPath.UIAutomationNext.Enums</x:String>
+      <x:String>UiPath.UIAutomationCore.Contracts</x:String>
+      <x:String>UiPath.UIAutomationNext.Models</x:String>
+      <x:String>UiPath.UIAutomationNext.Activities</x:String>
+      <x:String>UiPath.Platform.ObjectLibrary</x:String>
+      <x:String>UiPath.Platform.SyncObjects</x:String>
+      <x:String>UiPath.UIAutomationNext.Contracts</x:String>
+      <x:String>UiPath.UIAutomationNext.Models.CV</x:String>
+      <x:String>UiPath.CV</x:String>
+      <x:String>UiPath.Vision.OCR</x:String>
+      <x:String>UiPath.OCR.Contracts</x:String>
+      <x:String>UiPath.CV.Activities</x:String>
+      <x:String>UiPath.OCR.Activities</x:String>
+      <x:String>UiPath.OCR.Contracts.Activities</x:String>
+      <x:String>UiPath.CV.Activities.Interfaces</x:String>
+    </sco:Collection>
+  </TextExpression.NamespacesForImplementation>
+  <TextExpression.ReferencesForImplementation>
+    <sco:Collection x:TypeArguments="AssemblyReference">
+      <AssemblyReference>Microsoft.VisualBasic</AssemblyReference>
+      <AssemblyReference>mscorlib</AssemblyReference>
+      <AssemblyReference>System</AssemblyReference>
+      <AssemblyReference>System.Activities</AssemblyReference>
+      <AssemblyReference>System.ComponentModel.TypeConverter</AssemblyReference>
+      <AssemblyReference>System.Core</AssemblyReference>
+      <AssemblyReference>System.Data</AssemblyReference>
+      <AssemblyReference>System.Data.Common</AssemblyReference>
+      <AssemblyReference>System.Data.DataSetExtensions</AssemblyReference>
+      <AssemblyReference>System.Drawing</AssemblyReference>
+      <AssemblyReference>System.Drawing.Common</AssemblyReference>
+      <AssemblyReference>System.Drawing.Primitives</AssemblyReference>
+      <AssemblyReference>System.Linq</AssemblyReference>
+      <AssemblyReference>System.Net.Mail</AssemblyReference>
+      <AssemblyReference>System.ObjectModel</AssemblyReference>
+      <AssemblyReference>System.Private.CoreLib</AssemblyReference>
+      <AssemblyReference>System.Xaml</AssemblyReference>
+      <AssemblyReference>System.Xml</AssemblyReference>
+      <AssemblyReference>System.Xml.Linq</AssemblyReference>
+      <AssemblyReference>UiPath.System.Activities</AssemblyReference>
+      <AssemblyReference>UiPath.UiAutomation.Activities</AssemblyReference>
+      <AssemblyReference>UiPath.Studio.Constants</AssemblyReference>
+      <AssemblyReference>System.Private.ServiceModel</AssemblyReference>
+      <AssemblyReference>System.Private.DataContractSerialization</AssemblyReference>
+      <AssemblyReference>System.Runtime.Serialization.Formatters</AssemblyReference>
+      <AssemblyReference>System.Runtime.Serialization.Primitives</AssemblyReference>
+      <AssemblyReference>System.Reflection.DispatchProxy</AssemblyReference>
+      <AssemblyReference>System.Reflection.TypeExtensions</AssemblyReference>
+      <AssemblyReference>System.Reflection.Metadata</AssemblyReference>
+      <AssemblyReference>UiPath.Excel.Activities.Design</AssemblyReference>
+      <AssemblyReference>System.Memory.Data</AssemblyReference>
+      <AssemblyReference>System.Console</AssemblyReference>
+      <AssemblyReference>System.Security.Permissions</AssemblyReference>
+      <AssemblyReference>System.Memory</AssemblyReference>
+      <AssemblyReference>System.Configuration.ConfigurationManager</AssemblyReference>
+      <AssemblyReference>System.ComponentModel</AssemblyReference>
+      <AssemblyReference>System.Private.Uri</AssemblyReference>
+      <AssemblyReference>System.Linq.Async</AssemblyReference>
+      <AssemblyReference>System.Collections</AssemblyReference>
+      <AssemblyReference>System.Collections.NonGeneric</AssemblyReference>
+      <AssemblyReference>System.Linq.Expressions</AssemblyReference>
+      <AssemblyReference>System.Runtime.Numerics</AssemblyReference>
+      <AssemblyReference>UiPath.Excel</AssemblyReference>
+      <AssemblyReference>UiPath.Excel.Activities</AssemblyReference>
+      <AssemblyReference>UiPath.UIAutomationNext.Activities</AssemblyReference>
+      <AssemblyReference>UiPath.OCR.Activities</AssemblyReference>
+      <AssemblyReference>UiPath.IntelligentOCR.StudioWeb.Activities</AssemblyReference>
+      <AssemblyReference>UiPath.MicrosoftOffice365.Activities</AssemblyReference>
+      <AssemblyReference>UiPath.UIAutomationCore</AssemblyReference>
+      <AssemblyReference>System.Data.SqlClient</AssemblyReference>
+      <AssemblyReference>System.IO.FileSystem.Watcher</AssemblyReference>
+      <AssemblyReference>System.IO.Packaging</AssemblyReference>
+      <AssemblyReference>System.IO.FileSystem.AccessControl</AssemblyReference>
+      <AssemblyReference>System.IO.FileSystem.DriveInfo</AssemblyReference>
+      <AssemblyReference>System.Linq.Async.Queryable</AssemblyReference>
+      <AssemblyReference>System.Linq.Parallel</AssemblyReference>
+      <AssemblyReference>System.Collections.Immutable</AssemblyReference>
+      <AssemblyReference>System.Linq.Queryable</AssemblyReference>
+      <AssemblyReference>Microsoft.VisualBasic.Forms</AssemblyReference>
+      <AssemblyReference>Microsoft.VisualBasic.Core</AssemblyReference>
+      <AssemblyReference>System.IO.Pipes</AssemblyReference>
+      <AssemblyReference>System.Security.Cryptography</AssemblyReference>
+      <AssemblyReference>System.Security.Principal.Windows</AssemblyReference>
+      <AssemblyReference>System.Diagnostics.Process</AssemblyReference>
+      <AssemblyReference>System.IO.MemoryMappedFiles</AssemblyReference>
+      <AssemblyReference>Microsoft.Win32.Registry</AssemblyReference>
+      <AssemblyReference>System.Net.WebClient</AssemblyReference>
+      <AssemblyReference>System.Net.Primitives</AssemblyReference>
+      <AssemblyReference>System.Net.HttpListener</AssemblyReference>
+      <AssemblyReference>System.Net.WebProxy</AssemblyReference>
+      <AssemblyReference>System.Net.NameResolution</AssemblyReference>
+      <AssemblyReference>System.Net.WebHeaderCollection</AssemblyReference>
+      <AssemblyReference>System.Net.Requests</AssemblyReference>
+      <AssemblyReference>System.Net.ServicePoint</AssemblyReference>
+      <AssemblyReference>System.ComponentModel.EventBasedAsync</AssemblyReference>
+      <AssemblyReference>PresentationFramework</AssemblyReference>
+      <AssemblyReference>WindowsBase</AssemblyReference>
+      <AssemblyReference>System.ComponentModel.Primitives</AssemblyReference>
+      <AssemblyReference>System.CodeDom</AssemblyReference>
+      <AssemblyReference>System.Threading.AccessControl</AssemblyReference>
+      <AssemblyReference>System.Threading</AssemblyReference>
+      <AssemblyReference>UiPath.OCR.Core</AssemblyReference>
+      <AssemblyReference>UiPath.Vision.Core</AssemblyReference>
+      <AssemblyReference>UiPath.IntelligentOCR</AssemblyReference>
+      <AssemblyReference>System.Threading.Tasks.Parallel</AssemblyReference>
+      <AssemblyReference>System.Text.Encoding.CodePages</AssemblyReference>
+      <AssemblyReference>System.Text.Encodings.Web</AssemblyReference>
+      <AssemblyReference>System.Runtime.InteropServices</AssemblyReference>
+      <AssemblyReference>System.Security.Claims</AssemblyReference>
+      <AssemblyReference>System.Security.Cryptography.Pkcs</AssemblyReference>
+      <AssemblyReference>System.Security.Cryptography.ProtectedData</AssemblyReference>
+      <AssemblyReference>System.Windows.Forms.Design</AssemblyReference>
+      <AssemblyReference>UiPath.UIAutomationNext</AssemblyReference>
+      <AssemblyReference>System.Runtime.CompilerServices.VisualC</AssemblyReference>
+      <AssemblyReference>System.Windows.Forms</AssemblyReference>
+      <AssemblyReference>System.Resources.Writer</AssemblyReference>
+      <AssemblyReference>Microsoft.PowerShell.Commands.Diagnostics</AssemblyReference>
+      <AssemblyReference>System.Diagnostics.FileVersionInfo</AssemblyReference>
+      <AssemblyReference>System.Diagnostics.DiagnosticSource</AssemblyReference>
+      <AssemblyReference>System.Diagnostics.TraceSource</AssemblyReference>
+      <AssemblyReference>System.Diagnostics.EventLog</AssemblyReference>
+      <AssemblyReference>System.Diagnostics.PerformanceCounter</AssemblyReference>
+      <AssemblyReference>System.Diagnostics.TextWriterTraceListener</AssemblyReference>
+      <AssemblyReference>System.Diagnostics.StackTrace</AssemblyReference>
+      <AssemblyReference>System.Collections.Concurrent</AssemblyReference>
+      <AssemblyReference>UiPath.Workflow</AssemblyReference>
+      <AssemblyReference>System.Text.RegularExpressions</AssemblyReference>
+      <AssemblyReference>System.Net.Security</AssemblyReference>
+      <AssemblyReference>System.Private.Xml</AssemblyReference>
+      <AssemblyReference>System.Private.Xml.Linq</AssemblyReference>
+      <AssemblyReference>System.Xml.XPath.XDocument</AssemblyReference>
+      <AssemblyReference>UiPath.System.Activities.Design</AssemblyReference>
+      <AssemblyReference>UiPath.Platform</AssemblyReference>
+      <AssemblyReference>UiPath.CV</AssemblyReference>
+      <AssemblyReference>UiPath.OCR.Contracts</AssemblyReference>
+      <AssemblyReference>UiPath.CV.Activities</AssemblyReference>
+    </sco:Collection>
+  </TextExpression.ReferencesForImplementation>
+  <Sequence DisplayName="test_interop_excel" sap:VirtualizedContainerService.HintSize="1311,4420" sap2010:WorkflowViewState.IdRef="Sequence_1">
+    <sap:WorkflowViewStateService.ViewState>
+      <scg:Dictionary x:TypeArguments="x:String, x:Object">
+        <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+      </scg:Dictionary>
+    </sap:WorkflowViewStateService.ViewState>
+    <uix:NApplicationCard AttachMode="ByInstance" DisplayName="Edge Reading Submittals" HealingAgentBehavior="Job" sap:VirtualizedContainerService.HintSize="1168,4397" sap2010:WorkflowViewState.IdRef="NApplicationCard_2" InteractionMode="DebuggerApi" ScopeGuid="43c728c8-9cc0-49ec-8642-23f1bb325433" Version="V2">
+      <uix:NApplicationCard.Body>
+        <ActivityAction x:TypeArguments="x:Object">
+          <ActivityAction.Argument>
+            <DelegateInArgument x:TypeArguments="x:Object" Name="WSSessionData" />
+          </ActivityAction.Argument>
+          <Sequence DisplayName="Do" sap:VirtualizedContainerService.HintSize="1134,4157" sap2010:WorkflowViewState.IdRef="Sequence_19">
+            <sap:WorkflowViewStateService.ViewState>
+              <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+              </scg:Dictionary>
+            </sap:WorkflowViewStateService.ViewState>
+            <uix:NClick ActivateBefore="True" ClickType="Single" DisplayName="Click 'View'" HealingAgentBehavior="SameAsCard" sap:VirtualizedContainerService.HintSize="1100,225" sap2010:WorkflowViewState.IdRef="NClick_1" KeyModifiers="None" MouseButton="Left" ScopeIdentifier="43c728c8-9cc0-49ec-8642-23f1bb325433" Version="V4">
+              <uix:NClick.Target>
+                <uix:TargetAnchorable BrowserURL="convergeaus.jacobs.com/PrologConverge/WebClient/SubmittalPackage.aspx" CVScreenId="802fd9df-c079-40b9-b404-275d7d16e339" ContentHash="DEowhtt4yEuon2ylQ7r6NQ" CvTextArea="499, 360, 27, 12" CvTextArgument="View" CvType="Text" DesignTimeRectangle="501, 358, 24, 16" ElementType="Text" FuzzySelectorArgument="&lt;webctrl id='ugDocuments' tag='TABLE' matching:id='fuzzy' fuzzylevel:id='0.0' /&gt;&lt;webctrl aaname='View' type='' tag='A' class='' matching:aaname='fuzzy' fuzzylevel:aaname='0.0' matching:class='fuzzy' fuzzylevel:class='0.0' check:innerText='View' /&gt;" Guid="740f865c-ff81-47a2-b2c1-2de22412d0c8" InformativeScreenshot="957b9e22a10862b2117ca5e011a77cdb.png" Reference="SRHzbWhimEWn6FoI8hcZfg/61lyK2vJHU-PkQl6SQUqiA" ScopeSelectorArgument="&lt;html app='msedge.exe' title='Reading Submittals' /&gt;" SearchSteps="FuzzySelector, CV" Version="V6" Visibility="Interactive" WaitForReadyArgument="None">
+                  <uix:TargetAnchorable.Anchors>
+                    <scg:List x:TypeArguments="uix:ITarget" Capacity="1">
+                      <uix:Target DesignTimeRectangle="263, 347, 130, 38" ElementType="Text" FuzzySelectorArgument="[string.Format(&quot;&lt;webctrl id='ugDocuments' tag='TABLE' matching:id='fuzzy' fuzzylevel:id='0.0' /&gt;&lt;webctrl isleaf='1' type='' class='TextDisabled ui-iggrid-selectedcell ui-state-active' tag='TD' aaname='{0}' matching:isleaf='fuzzy' fuzzylevel:isleaf='0.0' matching:class='fuzzy' fuzzylevel:class='0.0' matching:aaname='fuzzy' fuzzylevel:aaname='0.0' check:innerText='{0}' /&gt;&quot;, Sheet_Number)]" Guid="54a91a7c-da44-431e-8a44-db147e8fe45e" SearchSteps="FuzzySelector" />
+                    </scg:List>
+                  </uix:TargetAnchorable.Anchors>
+                </uix:TargetAnchorable>
+              </uix:NClick.Target>
+              <uix:NClick.VerifyOptions>
+                <uix:VerifyExecutionOptions DisplayName="{x:Null}" Mode="Appears">
+                  <uix:VerifyExecutionOptions.Retry>
+                    <InArgument x:TypeArguments="x:Boolean" />
+                  </uix:VerifyExecutionOptions.Retry>
+                  <uix:VerifyExecutionOptions.Timeout>
+                    <InArgument x:TypeArguments="x:Double" />
+                  </uix:VerifyExecutionOptions.Timeout>
+                </uix:VerifyExecutionOptions>
+              </uix:NClick.VerifyOptions>
+            </uix:NClick>
+            <uix:NCheckState DisplayName="Check App State 'CH2M HILL Singapore Pte…'" EnableIfNotExists="False" HealingAgentBehavior="Disabled" sap:VirtualizedContainerService.HintSize="1100,3820" sap2010:WorkflowViewState.IdRef="NCheckState_1" IsLoose="True" Timeout="45" Version="V4">
+              <uix:NCheckState.IfExists>
+                <Sequence DisplayName="Target appears" sap:VirtualizedContainerService.HintSize="1056,3571" sap2010:WorkflowViewState.IdRef="Sequence_21">
+                  <sap:WorkflowViewStateService.ViewState>
+                    <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                      <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+                    </scg:Dictionary>
+                  </sap:WorkflowViewStateService.ViewState>
+                  <uix:NApplicationCard sap2010:Annotation.AnnotationText="open pdf" AttachMode="ByInstance" CloseMode="Always" DisplayName="Edge download.aspx" HealingAgentBehavior="Job" sap:VirtualizedContainerService.HintSize="1022,3509" sap2010:WorkflowViewState.IdRef="NApplicationCard_3" InteractionMode="DebuggerApi" ScopeGuid="dd0f12b3-c167-4a3f-8eb8-dd8f0e8e2f9b" Version="V2">
+                    <uix:NApplicationCard.Body>
+                      <ActivityAction x:TypeArguments="x:Object">
+                        <ActivityAction.Argument>
+                          <DelegateInArgument x:TypeArguments="x:Object" Name="WSSessionData" />
+                        </ActivityAction.Argument>
+                        <Sequence DisplayName="Do" sap:VirtualizedContainerService.HintSize="988,3236" sap2010:WorkflowViewState.IdRef="Sequence_23">
+                          <Sequence.Variables>
+                            <Variable x:TypeArguments="x:Boolean" Name="not_FitToWidth" />
+                          </Sequence.Variables>
+                          <sap:WorkflowViewStateService.ViewState>
+                            <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                              <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+                              <x:Boolean x:Key="IsPinned">False</x:Boolean>
+                            </scg:Dictionary>
+                          </sap:WorkflowViewStateService.ViewState>
+                          <uix:NCheckState DisplayName="Check App State 'push button Fit to widt…(1)'" HealingAgentBehavior="Disabled" sap:VirtualizedContainerService.HintSize="954,529" sap2010:WorkflowViewState.IdRef="NCheckState_2" ScopeIdentifier="dd0f12b3-c167-4a3f-8eb8-dd8f0e8e2f9b" Timeout="5" Version="V4">
+                            <uix:NCheckState.IfExists>
+                              <Sequence DisplayName="Target appears" sap:VirtualizedContainerService.HintSize="450,280" sap2010:WorkflowViewState.IdRef="Sequence_24">
+                                <sap:WorkflowViewStateService.ViewState>
+                                  <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                                    <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+                                  </scg:Dictionary>
+                                </sap:WorkflowViewStateService.ViewState>
+                                <uix:NClick ActivateBefore="True" ClickType="Single" DelayAfter="0" DelayBefore="0" DisplayName="Click 'push button Fit to page…'" HealingAgentBehavior="SameAsCard" sap:VirtualizedContainerService.HintSize="416,218" sap2010:WorkflowViewState.IdRef="NClick_2" InteractionMode="HardwareEvents" KeyModifiers="None" MouseButton="Left" ScopeIdentifier="dd0f12b3-c167-4a3f-8eb8-dd8f0e8e2f9b" Version="V4">
+                                  <uix:NClick.Target>
+                                    <uix:TargetAnchorable ContentHash="xe3QPSIXI0mQoP5buSWzcA" DesignTimeRectangle="896, 131, 37, 32" ElementType="Button" FullSelectorArgument="&lt;ctrl name='download.aspx' role='document' /&gt;&lt;ctrl name='PDF bar' role='tool bar' /&gt;&lt;ctrl name='Fit to width (Ctrl+\)' role='push button' /&gt;" Guid="e0869fa9-4838-4a17-ab04-bde220bac19a" ImageBase64="" InformativeScreenshot="cb4f6ad5d787a1ae1b64eb9370380084.png" Reference="SRHzbWhimEWn6FoI8hcZfg/5YgVM0u1Y0CJgJHUckS_vQ" ScopeSelectorArgument="&lt;wnd app='msedge.exe' cls='Chrome_WidgetWin_1' title='download.aspx*' /&gt;" SearchSteps="Selector" Version="V6" Visibility="Interactive" WaitForReadyArgument="None" />
+                                  </uix:NClick.Target>
+                                  <uix:NClick.VerifyOptions>
+                                    <uix:VerifyExecutionOptions DisplayName="{x:Null}" Mode="Appears">
+                                      <uix:VerifyExecutionOptions.Retry>
+                                        <InArgument x:TypeArguments="x:Boolean" />
+                                      </uix:VerifyExecutionOptions.Retry>
+                                      <uix:VerifyExecutionOptions.Timeout>
+                                        <InArgument x:TypeArguments="x:Double" />
+                                      </uix:VerifyExecutionOptions.Timeout>
+                                    </uix:VerifyExecutionOptions>
+                                  </uix:NClick.VerifyOptions>
+                                </uix:NClick>
+                              </Sequence>
+                            </uix:NCheckState.IfExists>
+                            <uix:NCheckState.IfNotExists>
+                              <Sequence DisplayName="Target does not appear" sap:VirtualizedContainerService.HintSize="450,280" sap2010:WorkflowViewState.IdRef="Sequence_25">
+                                <sap:WorkflowViewStateService.ViewState>
+                                  <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                                    <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+                                  </scg:Dictionary>
+                                </sap:WorkflowViewStateService.ViewState>
+                                <uix:NClick ActivateBefore="True" ClickType="Double" DelayAfter="0" DelayBefore="0" DisplayName="Click 'push button Fit to page…(1)'" HealingAgentBehavior="SameAsCard" sap:VirtualizedContainerService.HintSize="416,218" sap2010:WorkflowViewState.IdRef="NClick_3" InteractionMode="HardwareEvents" KeyModifiers="None" MouseButton="Left" ScopeIdentifier="dd0f12b3-c167-4a3f-8eb8-dd8f0e8e2f9b" Version="V4">
+                                  <uix:NClick.Target>
+                                    <uix:TargetAnchorable BrowserURL="convergeaus.jacobs.com/PrologConverge/WebClient/download.aspx" CVScreenId="0a8a45a9-4a69-47ad-9e1d-4c8cc3911eaa" ContentHash="wrQsXJikB0OmU-gZJ7-PEw" CvElementArea="894, 129, 38, 35" CvType="Button" DesignTimeRectangle="896, 131, 37, 32" ElementType="Button" FullSelectorArgument="&lt;ctrl name='download.aspx' role='document' /&gt;&lt;ctrl name='PDF bar' role='tool bar' /&gt;&lt;ctrl name='Fit to page (Ctrl+\)' role='push button' /&gt;" Guid="c0f8e8a3-cc22-4b85-a104-a5a91354340d" ImageBase64="iVBORw0KGgoAAAANSUhEUgAAACkAAAAkCAYAAAAU/hMoAAAAAXNSR0IArs4c6QAAAARnQU1BAACxjwv8YQUAAAAJcEhZcwAAEnQAABJ0Ad5mH3gAAAD9SURBVFhH7ZU9CoQwEEb3NIqgNpYWNoIi2Agey9Mo1oLewBvY2dmlnCUDwmLiSmTI/jDFY0a+mDxSTB5CCPh2WJIKlqSCJalgSSpYkor/lOz7HrIsA8dxjMjzHNq21e55hbFkHMcwTZM2e8c4jlAUhTa7wlhS3oqsdV1j73mesmYnSRJc0zQNfu//mnJbUtZ5npX8yLIsEIYh9tYlXddVsjOiKMJqXfIOLPnKflAQBEp2RlmWWK1Lyrquq5If2bYNfN/H3rpkVVXYf+UIkgP5zjAfhsHeMJdPW5qmeCsmyGex6zrtnlcYS34ClqSCJalgSSpYkgqWpOIHJAU8ARkxysxdnW3ZAAAAAElFTkSuQmCC" InformativeScreenshot="d21828bedc07a81556e89530b0eaf69b.png" Reference="SRHzbWhimEWn6FoI8hcZfg/BKzoJqQZW0KzzSqwGC8VWw" ScopeSelectorArgument="&lt;wnd app='msedge.exe' cls='Chrome_WidgetWin_1' title='download.aspx*' /&gt;" SearchSteps="Selector, Image, CV" Version="V6" Visibility="Interactive" WaitForReadyArgument="None">
+                                      <uix:TargetAnchorable.Anchors>
+                                        <scg:List x:TypeArguments="uix:ITarget" Capacity="1">
+                                          <uix:Target CVScreenId="0a8a45a9-4a69-47ad-9e1d-4c8cc3911eaa" CvTextArea="870, 139, 14, 14" CvTextArgument="+" CvType="Text" DesignTimeRectangle="860, 131, 37, 32" ElementType="Button" FullSelectorArgument="&lt;ctrl name='download.aspx' role='document' /&gt;&lt;ctrl name='PDF bar' role='tool bar' /&gt;&lt;ctrl name='Zoom in (Ctrl+Plus key)' role='push button' /&gt;" Guid="43c5609e-1e02-49e0-81f0-4981bcddc99f" SearchSteps="Selector, CV" />
+                                        </scg:List>
+                                      </uix:TargetAnchorable.Anchors>
+                                    </uix:TargetAnchorable>
+                                  </uix:NClick.Target>
+                                  <uix:NClick.VerifyOptions>
+                                    <uix:VerifyExecutionOptions DisplayName="{x:Null}" Mode="Appears">
+                                      <uix:VerifyExecutionOptions.Retry>
+                                        <InArgument x:TypeArguments="x:Boolean" />
+                                      </uix:VerifyExecutionOptions.Retry>
+                                      <uix:VerifyExecutionOptions.Timeout>
+                                        <InArgument x:TypeArguments="x:Double" />
+                                      </uix:VerifyExecutionOptions.Timeout>
+                                    </uix:VerifyExecutionOptions>
+                                  </uix:NClick.VerifyOptions>
+                                </uix:NClick>
+                              </Sequence>
+                            </uix:NCheckState.IfNotExists>
+                            <uix:NCheckState.Target>
+                              <uix:TargetAnchorable BrowserURL="convergeaus.jacobs.com/PrologConverge/WebClient/download.aspx" ContentHash="5OCAEZJVWEu3iuygWEhfbg" DesignTimeRectangle="894, 129, 41, 36" ElementType="Button" Guid="f7d36147-9b36-4ec5-9526-4d10fd58d599" ImageBase64="iVBORw0KGgoAAAANSUhEUgAAACkAAAAkCAYAAAAU/hMoAAAAAXNSR0IArs4c6QAAAARnQU1BAACxjwv8YQUAAAAJcEhZcwAAEnQAABJ0Ad5mH3gAAAFBSURBVFhH7ZU9ioQwGIb3NIIIIoJnEKw8g3aOhSfxFoIWVl7AHxTmApZaW/hXWX7DF1CYHddZ3aC7S4qHmC9vkkeC8WOaJvjtMElaMElaMElaMElaMEla/E/JcRzBtm0QRRE4jvs2mL/dbtB13eq6W+yW9DwPTNPcvRnmcV4URavjW+yWdF2XsDb2jqNzfyxZ1zW0bfuUmcF6VVVL/xLJPM9BURSI4/glh4RhCLIsQ5ZlpH+6ZJqmIAgC6Lq+1MqyJBls55qmacDzPHmRufZ5zXcclkyShEiqqrrU7vc7yWA71y6VxOeiKMhx+r7/kkOCIABJkq477rmPH07TNE+ZGaxf/uHs5TRJvIzxUh6GYXX8K/AyNwzjnMscN7Ms69Bv0XEc6Pt+dd0tdkteAZOkBZOkBZOkBZOkBZOkxR+QnOABP0HG9AHM6OgAAAAASUVORK5CYII=" InformativeScreenshot="5f0ccd9349cf4eabe8354c5c9aba4144.png" Reference="SRHzbWhimEWn6FoI8hcZfg/bWAqQVIT1EWDk-T07XFBcQ" ScopeSelectorArgument="&lt;wnd app='msedge.exe' cls='Chrome_WidgetWin_1' title='download.aspx and 6 more pages - Work - Microsoft​ Edge' /&gt;" SearchSteps="Image" Version="V6" Visibility="Interactive" WaitForReadyArgument="None">
+                                <uix:TargetAnchorable.Anchors>
+                                  <scg:List x:TypeArguments="uix:ITarget" Capacity="1">
+                                    <uix:Target CVScreenId="ee91be06-28a7-4009-9054-b8c5b1cd8156" CvTextArea="870, 139, 14, 14" CvTextArgument="+" CvType="Text" DesignTimeRectangle="870, 139, 14, 14" ElementType="Button" FullSelectorArgument="&lt;ctrl name='download.aspx' role='document' /&gt;&lt;ctrl name='PDF bar' role='tool bar' /&gt;&lt;ctrl name='Zoom in (Ctrl+Plus key)' role='push button' /&gt;" Guid="3bf933ea-40c8-40d8-bc6b-967e8ea029b3" SearchSteps="Selector, CV" />
+                                  </scg:List>
+                                </uix:TargetAnchorable.Anchors>
+                              </uix:TargetAnchorable>
+                            </uix:NCheckState.Target>
+                            <sap:WorkflowViewStateService.ViewState>
+                              <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                                <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+                                <x:Boolean x:Key="IsPinned">False</x:Boolean>
+                              </scg:Dictionary>
+                            </sap:WorkflowViewStateService.ViewState>
+                          </uix:NCheckState>
+                          <uix:NClick ActivateBefore="True" ClickType="Double" DelayAfter="0" DelayBefore="0" DisplayName="Click 'push button Zoom in (Ct…(1)'" HealingAgentBehavior="SameAsCard" sap:VirtualizedContainerService.HintSize="954,225" sap2010:WorkflowViewState.IdRef="NClick_5" InteractionMode="HardwareEvents" KeyModifiers="None" MouseButton="Left" ScopeIdentifier="dd0f12b3-c167-4a3f-8eb8-dd8f0e8e2f9b" Version="V4">
+                            <uix:NClick.Target>
+                              <uix:TargetAnchorable BrowserURL="convergeaus.jacobs.com/PrologConverge/WebClient/download.aspx" CVScreenId="37b58dd4-531e-4893-824a-608c59bb315c" ContentHash="xPlpV82viEiCV7EtXdJBTw" CvTextArea="870, 139, 14, 14" CvTextArgument="+" CvType="Text" DesignTimeRectangle="860, 131, 37, 32" ElementType="Button" FullSelectorArgument="&lt;ctrl name='download.aspx' role='document' /&gt;&lt;ctrl name='PDF bar' role='tool bar' /&gt;&lt;ctrl name='Zoom in (Ctrl+Plus key)' role='push button' /&gt;" Guid="941fa9dd-44f3-4ee8-99ca-5bde022fe67a" InformativeScreenshot="cf9bbecdcd225db0a8923b892aee46fc.png" Reference="SRHzbWhimEWn6FoI8hcZfg/NyJCyB9hTUKYwLEi6y4ffA" ScopeSelectorArgument="&lt;wnd app='msedge.exe' cls='Chrome_WidgetWin_1' title='download.aspx and 1 more page - Work - Microsoft​ Edge' /&gt;" SearchSteps="Selector, CV" Version="V6" Visibility="Interactive" WaitForReadyArgument="None" />
+                            </uix:NClick.Target>
+                            <uix:NClick.VerifyOptions>
+                              <uix:VerifyExecutionOptions DisplayName="{x:Null}" Mode="Appears">
+                                <uix:VerifyExecutionOptions.Retry>
+                                  <InArgument x:TypeArguments="x:Boolean" />
+                                </uix:VerifyExecutionOptions.Retry>
+                                <uix:VerifyExecutionOptions.Timeout>
+                                  <InArgument x:TypeArguments="x:Double" />
+                                </uix:VerifyExecutionOptions.Timeout>
+                              </uix:VerifyExecutionOptions>
+                            </uix:NClick.VerifyOptions>
+                          </uix:NClick>
+                          <uix:NClick ActivateBefore="True" ClickType="Double" DelayAfter="0" DelayBefore="0" DisplayName="Click 'push button Zoom in (Ct…(1)'" HealingAgentBehavior="SameAsCard" sap:VirtualizedContainerService.HintSize="954,225" sap2010:WorkflowViewState.IdRef="NClick_6" InteractionMode="HardwareEvents" KeyModifiers="None" MouseButton="Left" ScopeIdentifier="dd0f12b3-c167-4a3f-8eb8-dd8f0e8e2f9b" Version="V4">
+                            <uix:NClick.Target>
+                              <uix:TargetAnchorable BrowserURL="convergeaus.jacobs.com/PrologConverge/WebClient/download.aspx" CVScreenId="37b58dd4-531e-4893-824a-608c59bb315c" ContentHash="xPlpV82viEiCV7EtXdJBTw" CvTextArea="870, 139, 14, 14" CvTextArgument="+" CvType="Text" DesignTimeRectangle="860, 131, 37, 32" ElementType="Button" FullSelectorArgument="&lt;ctrl name='download.aspx' role='document' /&gt;&lt;ctrl name='PDF bar' role='tool bar' /&gt;&lt;ctrl name='Zoom in (Ctrl+Plus key)' role='push button' /&gt;" Guid="941fa9dd-44f3-4ee8-99ca-5bde022fe67a" InformativeScreenshot="cf9bbecdcd225db0a8923b892aee46fc.png" Reference="SRHzbWhimEWn6FoI8hcZfg/NyJCyB9hTUKYwLEi6y4ffA" ScopeSelectorArgument="&lt;wnd app='msedge.exe' cls='Chrome_WidgetWin_1' title='download.aspx and 1 more page - Work - Microsoft​ Edge' /&gt;" SearchSteps="Selector, CV" Version="V6" Visibility="Interactive" WaitForReadyArgument="None" />
+                            </uix:NClick.Target>
+                            <uix:NClick.VerifyOptions>
+                              <uix:VerifyExecutionOptions DisplayName="{x:Null}" Mode="Appears">
+                                <uix:VerifyExecutionOptions.Retry>
+                                  <InArgument x:TypeArguments="x:Boolean" />
+                                </uix:VerifyExecutionOptions.Retry>
+                                <uix:VerifyExecutionOptions.Timeout>
+                                  <InArgument x:TypeArguments="x:Double" />
+                                </uix:VerifyExecutionOptions.Timeout>
+                              </uix:VerifyExecutionOptions>
+                            </uix:NClick.VerifyOptions>
+                          </uix:NClick>
+                          <ui:CommentOut DisplayName="Comment Out" sap:VirtualizedContainerService.HintSize="954,57" sap2010:WorkflowViewState.IdRef="CommentOut_1">
+                            <ui:CommentOut.Body>
+                              <Sequence DisplayName="Ignored Activities" sap:VirtualizedContainerService.HintSize="449.6,276.8" sap2010:WorkflowViewState.IdRef="Sequence_26">
+                                <sap:WorkflowViewStateService.ViewState>
+                                  <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                                    <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+                                  </scg:Dictionary>
+                                </sap:WorkflowViewStateService.ViewState>
+                                <uix:NClick ActivateBefore="True" ClickType="Single" DisplayName="Click 'push button Zoom in (Ct…'" HealingAgentBehavior="SameAsCard" sap:VirtualizedContainerService.HintSize="416,216.8" sap2010:WorkflowViewState.IdRef="NClick_4" InteractionMode="HardwareEvents" KeyModifiers="None" MouseButton="Left" ScopeIdentifier="dd0f12b3-c167-4a3f-8eb8-dd8f0e8e2f9b" Version="V4">
+                                  <uix:NClick.Target>
+                                    <uix:TargetAnchorable BrowserURL="convergeaus.jacobs.com/PrologConverge/WebClient/download.aspx" CVScreenId="c00f2b4f-c91c-4b34-9c07-35de842f0b6d" ContentHash="p07VVMkl4UeG8sjENDG3Tg" CvTextArea="870, 139, 14, 14" CvTextArgument="+" CvType="Text" DesignTimeRectangle="860, 131, 37, 32" ElementType="Button" FullSelectorArgument="&lt;ctrl name='download.aspx' role='document' /&gt;&lt;ctrl name='PDF bar' role='tool bar' /&gt;&lt;ctrl name='Zoom in (Ctrl+Plus key)' role='push button' /&gt;" Guid="c3afb1de-30e6-4fb9-a2ae-8cccdab5e439" InformativeScreenshot="19146c19b11b4997fc351bb3e3439381.png" Reference="SRHzbWhimEWn6FoI8hcZfg/Rgg-KaWqc06tMhU6XRgGrA" ScopeSelectorArgument="&lt;wnd app='msedge.exe' cls='Chrome_WidgetWin_1' title='download.aspx and 5 more pages - Work - Microsoft​ Edge' /&gt;" SearchSteps="Selector, CV" Version="V6" Visibility="Interactive" WaitForReadyArgument="None" />
+                                  </uix:NClick.Target>
+                                  <uix:NClick.VerifyOptions>
+                                    <uix:VerifyExecutionOptions DisplayName="{x:Null}" Mode="Appears">
+                                      <uix:VerifyExecutionOptions.Retry>
+                                        <InArgument x:TypeArguments="x:Boolean" />
+                                      </uix:VerifyExecutionOptions.Retry>
+                                      <uix:VerifyExecutionOptions.Timeout>
+                                        <InArgument x:TypeArguments="x:Double" />
+                                      </uix:VerifyExecutionOptions.Timeout>
+                                    </uix:VerifyExecutionOptions>
+                                  </uix:NClick.VerifyOptions>
+                                </uix:NClick>
+                              </Sequence>
+                            </ui:CommentOut.Body>
+                            <sap:WorkflowViewStateService.ViewState>
+                              <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                                <x:Boolean x:Key="IsExpanded">False</x:Boolean>
+                                <x:Boolean x:Key="IsPinned">False</x:Boolean>
+                              </scg:Dictionary>
+                            </sap:WorkflowViewStateService.ViewState>
+                          </ui:CommentOut>
+                          <p:CVScope ContinueOnError="{x:Null}" DelayBefore="{x:Null}" ScopeId="{x:Null}" ScrollOffset="{x:Null}" Server="{x:Null}" sap2010:Annotation.AnnotationText="Scan for the title" CvMethod="ElementDetection, OCR" DesignTimeCacheId="c25949c4-dcea-4f8e-ab37-7547a7f8b60e" DisplayName="CV Screen Scope 'document  PDF Document'" sap:VirtualizedContainerService.HintSize="954,1976" sap2010:WorkflowViewState.IdRef="CVScope_1" SendOnPremData="False" Version="V6">
+                            <p:CVScope.Body>
+                              <ActivityAction x:TypeArguments="x:Object">
+                                <ActivityAction.Argument>
+                                  <DelegateInArgument x:TypeArguments="x:Object" Name="CVSessionData" />
+                                </ActivityAction.Argument>
+                                <Sequence DisplayName="Do" sap2010:WorkflowViewState.IdRef="Sequence_28">
+                                  <uix:NMouseScroll KeyModifiers="{x:Null}" CursorMotionType="Instant" DelayAfter="0" DelayBefore="0" Direction="Right" DisplayName="Mouse Scroll" HealingAgentBehavior="SameAsCard" sap:VirtualizedContainerService.HintSize="418,169" sap2010:WorkflowViewState.IdRef="NMouseScroll_1" MovementUnits="15" Version="V4" />
+                                  <uix:NMouseScroll KeyModifiers="{x:Null}" CursorMotionType="Instant" DelayAfter="0" DelayBefore="0" Direction="Down" DisplayName="Mouse Scroll" HealingAgentBehavior="SameAsCard" sap:VirtualizedContainerService.HintSize="418,169" sap2010:WorkflowViewState.IdRef="NMouseScroll_2" MovementUnits="15" Version="V4" />
+                                  <TryCatch DisplayName="Try Catch" sap:VirtualizedContainerService.HintSize="418,1209" sap2010:WorkflowViewState.IdRef="TryCatch_1">
+                                    <sap:WorkflowViewStateService.ViewState>
+                                      <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                                        <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+                                        <x:Boolean x:Key="IsPinned">False</x:Boolean>
+                                      </scg:Dictionary>
+                                    </sap:WorkflowViewStateService.ViewState>
+                                    <TryCatch.Try>
+                                      <Sequence DisplayName="Try" sap:VirtualizedContainerService.HintSize="416,303" sap2010:WorkflowViewState.IdRef="Sequence_32">
+                                        <sap:WorkflowViewStateService.ViewState>
+                                          <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                                            <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+                                          </scg:Dictionary>
+                                        </sap:WorkflowViewStateService.ViewState>
+                                        <p:CvGetTextWithDescriptor DelayScreenshotAfterScroll="{x:Null}" ScrollOffset="{x:Null}" DelayBefore="0" DelayMS="0" Descriptor="[&quot;Target: Text 'DRAWING TITLE' (1513,508,69,10) Offset: (3,16,326,82)&quot;]" DesignTimeCacheId="a4798857-00b0-4c5d-baa5-67eab36eecf3" DesignTimeScaleFactor="1" DisplayName="CV Get Text - Text" sap:VirtualizedContainerService.HintSize="382,243" sap2010:WorkflowViewState.IdRef="CvGetTextWithDescriptor_1" InformativeScreenshot="68bbd1f1ab58ab9bda90305c9b822ac8" NumberOfScrolls="15" RefreshBefore="True" Result="[Drawing_Title]" ScrollDirection="[Scroll.Down]" TimeoutMS="5000" Version="V6">
+                                          <p:CvGetTextWithDescriptor.DesignTimeDescriptor>
+                                            <uc:CvDescriptor Id="aedd72c2-24ae-443d-b1e4-3f25b754cb9c" TargetOffset="3, 16, 326, 82">
+                                              <uc:CvDescriptor.Target>
+                                                <uc:CvElementDescriptor CellExtraInfo="{x:Null}" DesignTimeArea="1513, 508, 69, 10" ElementType="Text" Text="DRAWING TITLE" />
+                                              </uc:CvDescriptor.Target>
+                                            </uc:CvDescriptor>
+                                          </p:CvGetTextWithDescriptor.DesignTimeDescriptor>
+                                        </p:CvGetTextWithDescriptor>
+                                      </Sequence>
+                                    </TryCatch.Try>
+                                    <TryCatch.Catches>
+                                      <Catch x:TypeArguments="uc:ElementNotFoundException" sap2010:WorkflowViewState.IdRef="Catch`1_2">
+                                        <ActivityAction x:TypeArguments="uc:ElementNotFoundException">
+                                          <ActivityAction.Argument>
+                                            <DelegateInArgument x:TypeArguments="uc:ElementNotFoundException" Name="exception" />
+                                          </ActivityAction.Argument>
+                                          <Sequence DisplayName="Body" sap:VirtualizedContainerService.HintSize="416,641" sap2010:WorkflowViewState.IdRef="Sequence_33">
+                                            <sap:WorkflowViewStateService.ViewState>
+                                              <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                                                <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+                                              </scg:Dictionary>
+                                            </sap:WorkflowViewStateService.ViewState>
+                                            <uix:NMouseScroll KeyModifiers="{x:Null}" CursorMotionType="Instant" DelayAfter="0" DelayBefore="0" Direction="Right" DisplayName="Mouse Scroll" HealingAgentBehavior="SameAsCard" sap:VirtualizedContainerService.HintSize="382,169" sap2010:WorkflowViewState.IdRef="NMouseScroll_3" MovementUnits="10" Version="V4" />
+                                            <uix:NMouseScroll KeyModifiers="{x:Null}" CursorMotionType="Instant" DelayAfter="0" DelayBefore="0" Direction="Down" DisplayName="Mouse Scroll" HealingAgentBehavior="SameAsCard" sap:VirtualizedContainerService.HintSize="382,169" sap2010:WorkflowViewState.IdRef="NMouseScroll_4" MovementUnits="15" Version="V4" />
+                                            <p:CvGetTextWithDescriptor DelayScreenshotAfterScroll="{x:Null}" NumberOfScrolls="{x:Null}" ScrollOffset="{x:Null}" DelayBefore="0" DelayMS="0" Descriptor="[&quot;Target: Text 'DRAWING TITLE' (1513,508,69,10) Offset: (3,16,326,82)&quot;]" DesignTimeCacheId="a4798857-00b0-4c5d-baa5-67eab36eecf3" DesignTimeScaleFactor="1" DisplayName="CV Get Text - Text" sap:VirtualizedContainerService.HintSize="382,243" sap2010:WorkflowViewState.IdRef="CvGetTextWithDescriptor_2" InformativeScreenshot="68bbd1f1ab58ab9bda90305c9b822ac8" RefreshBefore="True" Result="[Drawing_Title]" ScrollDirection="None" TimeoutMS="5000" Version="V6">
+                                              <p:CvGetTextWithDescriptor.DesignTimeDescriptor>
+                                                <uc:CvDescriptor Id="aedd72c2-24ae-443d-b1e4-3f25b754cb9c" TargetOffset="3, 16, 326, 82">
+                                                  <uc:CvDescriptor.Target>
+                                                    <uc:CvElementDescriptor CellExtraInfo="{x:Null}" DesignTimeArea="1513, 508, 69, 10" ElementType="Text" Text="DRAWING TITLE" />
+                                                  </uc:CvDescriptor.Target>
+                                                </uc:CvDescriptor>
+                                              </p:CvGetTextWithDescriptor.DesignTimeDescriptor>
+                                            </p:CvGetTextWithDescriptor>
+                                          </Sequence>
+                                        </ActivityAction>
+                                      </Catch>
+                                    </TryCatch.Catches>
+                                    <TryCatch.Finally>
+                                      <Sequence DisplayName="Finally" sap:VirtualizedContainerService.HintSize="416,91" sap2010:WorkflowViewState.IdRef="Sequence_34">
+                                        <sap:WorkflowViewStateService.ViewState>
+                                          <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                                            <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+                                          </scg:Dictionary>
+                                        </sap:WorkflowViewStateService.ViewState>
+                                      </Sequence>
+                                    </TryCatch.Finally>
+                                  </TryCatch>
+                                  <ui:CommentOut DisplayName="Comment Out" sap:VirtualizedContainerService.HintSize="418,48" sap2010:WorkflowViewState.IdRef="CommentOut_5">
+                                    <ui:CommentOut.Body>
+                                      <Sequence DisplayName="Ignored Activities" sap:VirtualizedContainerService.HintSize="449.6,168.8" sap2010:WorkflowViewState.IdRef="Sequence_31">
+                                        <sap:WorkflowViewStateService.ViewState>
+                                          <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                                            <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+                                          </scg:Dictionary>
+                                        </sap:WorkflowViewStateService.ViewState>
+                                        <ui:MessageBox Caption="{x:Null}" ChosenButton="{x:Null}" AutoCloseAfter="00:00:00" DisplayName="Message Box" sap:VirtualizedContainerService.HintSize="416,108.8" sap2010:WorkflowViewState.IdRef="MessageBox_8" Text="[Drawing_Title]" />
+                                      </Sequence>
+                                    </ui:CommentOut.Body>
+                                    <sap:WorkflowViewStateService.ViewState>
+                                      <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                                        <x:Boolean x:Key="IsExpanded">False</x:Boolean>
+                                        <x:Boolean x:Key="IsPinned">False</x:Boolean>
+                                      </scg:Dictionary>
+                                    </sap:WorkflowViewStateService.ViewState>
+                                  </ui:CommentOut>
+                                </Sequence>
+                              </ActivityAction>
+                            </p:CVScope.Body>
+                            <p:CVScope.DesignTimeCache>
+                              <uc:CVCache CvUiElements="{x:Null}" OcrTexts="{x:Null}" DataSent="False" />
+                            </p:CVScope.DesignTimeCache>
+                            <p:CVScope.DesignTimeCacheContainer>
+                              <uc:CvCacheContainer>
+                                <uc:CvCacheContainer.Caches>
+                                  <scg:List x:TypeArguments="uc:CVCache" Capacity="2">
+                                    <uc:CVCache DataSent="False" DisplayName="Screen CV Get Text - 'DRAWING  (Main)" Id="c25949c4-dcea-4f8e-ab37-7547a7f8b60e" InformativeScreenshot="8a4dfa23ae815851c51a5309f8813053" LogicalPosition="-1915, 204" OcrText="Jacobs CH2M HILL Singapore Pte Ltd MAIN CONTRACTOR: &lt; CES_SALCON-SDC JV CONSULTANT/ SUB CONTRACTOR: CAMB TN - recycling energy PROJECT TITLE: TUAS WATER RECLAMATION PLANT (TWRP) DTSS PHASE 2 DRAWING TITLE P&amp;ID THERMAL HYDROLYSIS PROCESS NOTES: TRAIN 1 WATER DISTRIBUTION 1) POSSIBLE CONNECTION FOR FINAL EFFLUENT. 2) IN CASE FINAL EFFLUENT WATER IS CONNECTED IN ADDITION TO PLANT SERVICE WATER.VALVE MUST BE REMOVED AND FLANGES DRAFTED: DESIGNED: SHEET SIZE: FY MF A1 BLINDED IN ORDER TO ELIMINATE RISK OF CROSS CONTAMINATION DRAFTING CHECK: DESIGN CHECK: SCALE: OF DISINFECTED WATER. WHP RLJ NTS DATE: REVIEWED: PBS: 16/08/24 XZ 131242 CONTRACT: DRAWING NUMBER: PUB-DTSS2-TWRP C4B SHEET NUMBER: REVISION: WSD11-P-6013 C THIS DRAWING IS COPYRIGHT" Position="-1916, 164" ScreenshotGuid="5facdc74-2ddd-4bcb-99f0-ea3a53ecc495" ServerVersion="24.10.5.1">
+                                      <uc:CVCache.CvAnchorRelations>
+                                        <scg:List x:TypeArguments="uc:AnchorRelationInfo" Capacity="16">
+                                          <uc:AnchorRelationInfo IsTargetText="True" Target="107">
+                                            <uc:AnchorRelationInfo.Anchors>
+                                              <x:Array Type="x:Int32">
+                                                <x:Int32>105</x:Int32>
+                                              </x:Array>
+                                            </uc:AnchorRelationInfo.Anchors>
+                                          </uc:AnchorRelationInfo>
+                                          <uc:AnchorRelationInfo IsTargetText="True" Target="71">
+                                            <uc:AnchorRelationInfo.Anchors>
+                                              <x:Array Type="x:Int32">
+                                                <x:Int32>67</x:Int32>
+                                                <x:Int32>68</x:Int32>
+                                              </x:Array>
+                                            </uc:AnchorRelationInfo.Anchors>
+                                          </uc:AnchorRelationInfo>
+                                          <uc:AnchorRelationInfo IsTargetText="True" Target="97">
+                                            <uc:AnchorRelationInfo.Anchors>
+                                              <x:Array Type="x:Int32">
+                                                <x:Int32>94</x:Int32>
+                                              </x:Array>
+                                            </uc:AnchorRelationInfo.Anchors>
+                                          </uc:AnchorRelationInfo>
+                                          <uc:AnchorRelationInfo IsTargetText="True" Target="70">
+                                            <uc:AnchorRelationInfo.Anchors>
+                                              <x:Array Type="x:Int32">
+                                                <x:Int32>66</x:Int32>
+                                              </x:Array>
+                                            </uc:AnchorRelationInfo.Anchors>
+                                          </uc:AnchorRelationInfo>
+                                          <uc:AnchorRelationInfo IsTargetText="True" Target="96">
+                                            <uc:AnchorRelationInfo.Anchors>
+                                              <x:Array Type="x:Int32">
+                                                <x:Int32>93</x:Int32>
+                                              </x:Array>
+                                            </uc:AnchorRelationInfo.Anchors>
+                                          </uc:AnchorRelationInfo>
+                                          <uc:AnchorRelationInfo IsTargetText="False" Target="7">
+                                            <uc:AnchorRelationInfo.Anchors>
+                                              <x:Array Type="x:Int32">
+                                                <x:Int32>99</x:Int32>
+                                                <x:Int32>100</x:Int32>
+                                              </x:Array>
+                                            </uc:AnchorRelationInfo.Anchors>
+                                          </uc:AnchorRelationInfo>
+                                          <uc:AnchorRelationInfo IsTargetText="False" Target="3">
+                                            <uc:AnchorRelationInfo.Anchors>
+                                              <x:Array Type="x:Int32">
+                                                <x:Int32>106</x:Int32>
+                                              </x:Array>
+                                            </uc:AnchorRelationInfo.Anchors>
+                                          </uc:AnchorRelationInfo>
+                                          <uc:AnchorRelationInfo IsTargetText="True" Target="95">
+                                            <uc:AnchorRelationInfo.Anchors>
+                                              <x:Array Type="x:Int32">
+                                                <x:Int32>92</x:Int32>
+                                              </x:Array>
+                                            </uc:AnchorRelationInfo.Anchors>
+                                          </uc:AnchorRelationInfo>
+                                          <uc:AnchorRelationInfo IsTargetText="True" Target="69">
+                                            <uc:AnchorRelationInfo.Anchors>
+                                              <x:Array Type="x:Int32">
+                                                <x:Int32>65</x:Int32>
+                                              </x:Array>
+                                            </uc:AnchorRelationInfo.Anchors>
+                                          </uc:AnchorRelationInfo>
+                                        </scg:List>
+                                      </uc:CVCache.CvAnchorRelations>
+                                      <uc:CVCache.CvTables>
+                                        <x:Array Type="uc:CvTableInfo">
+                                          <uc:CvTableInfo>
+                                            <uc:CvTableInfo.Columns>
+                                              <x:Array Type="x:Int32">
+                                                <x:Int32>1464</x:Int32>
+                                                <x:Int32>1590</x:Int32>
+                                                <x:Int32>1716</x:Int32>
+                                                <x:Int32>1841</x:Int32>
+                                              </x:Array>
+                                            </uc:CvTableInfo.Columns>
+                                            <uc:CvTableInfo.Rows>
+                                              <x:Array Type="x:Int32">
+                                                <x:Int32>585</x:Int32>
+                                                <x:Int32>614</x:Int32>
+                                                <x:Int32>646</x:Int32>
+                                                <x:Int32>676</x:Int32>
+                                              </x:Array>
+                                            </uc:CvTableInfo.Rows>
+                                          </uc:CvTableInfo>
+                                        </x:Array>
+                                      </uc:CVCache.CvTables>
+                                      <uc:CVCache.CvUiElements>
+                                        <scg:List x:TypeArguments="uc:CvElementInfo" Capacity="32">
+                                          <uc:CvElementInfo Category="Icon" Description="Icon" Region="1518, 131, 61, 83" />
+                                          <uc:CvElementInfo Category="ArrowButton" Description="ArrowButton" Region="1892, 0, 20, 22" />
+                                          <uc:CvElementInfo Category="ArrowButton" Description="ArrowButton" Region="1875, 851, 20, 17" />
+                                          <uc:CvElementInfo Category="InputBox" Description="Inputbox" Region="1541, 723, 229, 45" />
+                                          <uc:CvElementInfo Category="ArrowButton" Description="ArrowButton" Region="1, 851, 19, 17" />
+                                          <uc:CvElementInfo Category="ArrowButton" Description="ArrowButton" Region="1894, 831, 18, 21" />
+                                          <uc:CvElementInfo Category="Icon" Description="recycle bin icon" Region="1695, 243, 62, 66" />
+                                          <uc:CvElementInfo Category="InputBox" Description="Inputbox" Region="1542, 689, 235, 34" />
+                                          <uc:CvElementInfo Category="Cell" Description="Cell" Region="1464, 585, 126, 29" />
+                                          <uc:CvElementInfo Category="Cell" Description="Cell" Region="1464, 614, 126, 32" />
+                                          <uc:CvElementInfo Category="Cell" Description="Cell" Region="1464, 646, 126, 30" />
+                                          <uc:CvElementInfo Category="Cell" Description="Cell" Region="1590, 585, 126, 29" />
+                                          <uc:CvElementInfo Category="Cell" Description="Cell" Region="1590, 614, 126, 32" />
+                                          <uc:CvElementInfo Category="Cell" Description="Cell" Region="1590, 646, 126, 30" />
+                                          <uc:CvElementInfo Category="Cell" Description="Cell" Region="1716, 585, 125, 29" />
+                                          <uc:CvElementInfo Category="Cell" Description="Cell" Region="1716, 614, 125, 32" />
+                                          <uc:CvElementInfo Category="Cell" Description="Cell" Region="1716, 646, 125, 30" />
+                                          <uc:CvElementInfo Description="{x:Null}" Category="Button" Confidence="Runtime" Region="1462, 768, 386, 31" />
+                                          <uc:CvElementInfo Description="{x:Null}" Category="InputBox" Confidence="Runtime" Region="1596, 623, 120, 24" />
+                                          <uc:CvElementInfo Description="{x:Null}" Category="Button" Confidence="Runtime" Region="1767, 724, 77, 45" />
+                                          <uc:CvElementInfo Description="{x:Null}" Category="InputBox" Confidence="Runtime" Region="1594, 653, 124, 24" />
+                                          <uc:CvElementInfo Description="{x:Null}" Category="InputBox" Confidence="Runtime" Region="1596, 596, 121, 21" />
+                                          <uc:CvElementInfo Description="{x:Null}" Category="Icon" Confidence="Runtime" Region="1517, 252, 66, 60" />
+                                          <uc:CvElementInfo Description="{x:Null}" Category="Button" Confidence="Runtime" Region="1464, 684, 80, 83" />
+                                          <uc:CvElementInfo Description="{x:Null}" Category="Button" Confidence="Runtime" Region="1897, 515, 14, 317" />
+                                          <uc:CvElementInfo Description="{x:Null}" Category="Icon" Confidence="Runtime" Region="1581, 319, 14, 14" />
+                                          <uc:CvElementInfo Description="{x:Null}" Category="Button" Confidence="Runtime" Region="1463, 0, 389, 109" />
+                                          <uc:CvElementInfo Description="{x:Null}" Category="Icon" Confidence="Runtime" Region="4, 852, 14, 15" />
+                                          <uc:CvElementInfo Description="{x:Null}" Category="Button" Confidence="Runtime" Region="1543, 690, 217, 31" />
+                                          <uc:CvElementInfo Description="{x:Null}" Category="Icon" Confidence="Runtime" Region="1797, 740, 20, 22" />
+                                          <uc:CvElementInfo Description="{x:Null}" Category="InputBox" Confidence="Runtime" Region="1468, 620, 122, 26" />
+                                          <uc:CvElementInfo Description="{x:Null}" Category="InputBox" Confidence="Runtime" Region="1768, 724, 76, 44" />
+                                        </scg:List>
+                                      </uc:CVCache.CvUiElements>
+                                      <uc:CVCache.OcrTexts>
+                                        <scg:List x:TypeArguments="uc:OcrTextInfo" Capacity="112">
+                                          <uc:OcrTextInfo Region="1519, 1, 263, 67" Text="Jacobs" />
+                                          <uc:OcrTextInfo Region="1551, 78, 47, 16" Text="CH2M" />
+                                          <uc:OcrTextInfo Region="1601, 78, 36, 16" Text="HILL" />
+                                          <uc:OcrTextInfo Region="1639, 78, 74, 19" Text="Singapore" />
+                                          <uc:OcrTextInfo Region="1716, 79, 26, 14" Text="Pte" />
+                                          <uc:OcrTextInfo Region="1745, 78, 23, 15" Text="Ltd" />
+                                          <uc:OcrTextInfo Region="1471, 108, 25, 11" Text="MAIN" />
+                                          <uc:OcrTextInfo Region="1497, 109, 71, 10" Text="CONTRACTOR:" />
+                                          <uc:OcrTextInfo Region="1519, 133, 56, 80" Text="&lt;" />
+                                          <uc:OcrTextInfo Region="1585, 162, 161, 26" Text="CES_SALCON-SDC" />
+                                          <uc:OcrTextInfo Region="1749, 163, 24, 20" Text="JV" />
+                                          <uc:OcrTextInfo Region="1471, 229, 69, 11" Text="CONSULTANT/" />
+                                          <uc:OcrTextInfo Region="1541, 230, 21, 10" Text="SUB" />
+                                          <uc:OcrTextInfo Region="1563, 229, 71, 11" Text="CONTRACTOR:" />
+                                          <uc:OcrTextInfo Region="1519, 250, 220, 60" Text="CAMB" />
+                                          <uc:OcrTextInfo Region="1757, 256, 15, 11" Text="TN" />
+                                          <uc:OcrTextInfo Region="1584, 317, 9, 16" Text="-" />
+                                          <uc:OcrTextInfo Region="1596, 314, 85, 23" Text="recycling" />
+                                          <uc:OcrTextInfo Region="1684, 318, 67, 19" Text="energy" />
+                                          <uc:OcrTextInfo Region="1471, 350, 46, 10" Text="PROJECT" />
+                                          <uc:OcrTextInfo Region="1518, 350, 30, 10" Text="TITLE:" />
+                                          <uc:OcrTextInfo Region="1484, 380, 45, 24" Text="TUAS" />
+                                          <uc:OcrTextInfo Region="1531, 381, 60, 23" Text="WATER" />
+                                          <uc:OcrTextInfo Region="1592, 380, 117, 24" Text="RECLAMATION" />
+                                          <uc:OcrTextInfo Region="1712, 381, 53, 23" Text="PLANT" />
+                                          <uc:OcrTextInfo Region="1767, 380, 59, 29" Text="(TWRP)" />
+                                          <uc:OcrTextInfo Region="1598, 413, 44, 23" Text="DTSS" />
+                                          <uc:OcrTextInfo Region="1644, 413, 56, 23" Text="PHASE" />
+                                          <uc:OcrTextInfo Region="1702, 413, 12, 23" Text="2" />
+                                          <uc:OcrTextInfo Region="1471, 470, 47, 10" Text="DRAWING" />
+                                          <uc:OcrTextInfo Region="1519, 470, 28, 10" Text="TITLE" />
+                                          <uc:OcrTextInfo Region="1634, 492, 44, 17" Text="P&amp;ID" />
+                                          <uc:OcrTextInfo Region="1500, 511, 90, 17" Text="THERMAL" />
+                                          <uc:OcrTextInfo Region="1594, 511, 121, 18" Text="HYDROLYSIS" />
+                                          <uc:OcrTextInfo Region="1719, 511, 91, 18" Text="PROCESS" />
+                                          <uc:OcrTextInfo Region="801, 535, 51, 14" Text="NOTES:" />
+                                          <uc:OcrTextInfo Region="1515, 531, 57, 17" Text="TRAIN" />
+                                          <uc:OcrTextInfo Region="1578, 531, 8, 17" Text="1" />
+                                          <uc:OcrTextInfo Region="1591, 531, 69, 17" Text="WATER" />
+                                          <uc:OcrTextInfo Region="1663, 531, 133, 17" Text="DISTRIBUTION" />
+                                          <uc:OcrTextInfo Region="802, 554, 13, 16" Text="1)" />
+                                          <uc:OcrTextInfo Region="817, 554, 67, 13" Text="POSSIBLE" />
+                                          <uc:OcrTextInfo Region="885, 554, 91, 14" Text="CONNECTION" />
+                                          <uc:OcrTextInfo Region="978, 554, 30, 13" Text="FOR" />
+                                          <uc:OcrTextInfo Region="1010, 554, 39, 13" Text="FINAL" />
+                                          <uc:OcrTextInfo Region="1051, 554, 73, 13" Text="EFFLUENT." />
+                                          <uc:OcrTextInfo Region="801, 573, 14, 16" Text="2)" />
+                                          <uc:OcrTextInfo Region="817, 573, 14, 13" Text="IN" />
+                                          <uc:OcrTextInfo Region="833, 573, 38, 13" Text="CASE" />
+                                          <uc:OcrTextInfo Region="873, 573, 40, 13" Text="FINAL" />
+                                          <uc:OcrTextInfo Region="914, 573, 71, 13" Text="EFFLUENT" />
+                                          <uc:OcrTextInfo Region="986, 573, 50, 13" Text="WATER" />
+                                          <uc:OcrTextInfo Region="1041, 573, 14, 13" Text="IS" />
+                                          <uc:OcrTextInfo Region="1057, 573, 85, 13" Text="CONNECTED" />
+                                          <uc:OcrTextInfo Region="1144, 573, 15, 13" Text="IN" />
+                                          <uc:OcrTextInfo Region="1160, 573, 66, 13" Text="ADDITION" />
+                                          <uc:OcrTextInfo Region="1228, 573, 20, 13" Text="TO" />
+                                          <uc:OcrTextInfo Region="816, 592, 45, 13" Text="PLANT" />
+                                          <uc:OcrTextInfo Region="862, 593, 59, 12" Text="SERVICE" />
+                                          <uc:OcrTextInfo Region="923, 592, 97, 13" Text="WATER.VALVE" />
+                                          <uc:OcrTextInfo Region="1021, 592, 40, 13" Text="MUST" />
+                                          <uc:OcrTextInfo Region="1063, 592, 19, 13" Text="BE" />
+                                          <uc:OcrTextInfo Region="1084, 592, 68, 13" Text="REMOVED" />
+                                          <uc:OcrTextInfo Region="1153, 592, 31, 13" Text="AND" />
+                                          <uc:OcrTextInfo Region="1186, 592, 63, 13" Text="FLANGES" />
+                                          <uc:OcrTextInfo Region="1471, 589, 49, 10" Text="DRAFTED:" />
+                                          <uc:OcrTextInfo Region="1597, 589, 53, 10" Text="DESIGNED:" />
+                                          <uc:OcrTextInfo Region="1723, 589, 33, 10" Text="SHEET" />
+                                          <uc:OcrTextInfo Region="1757, 589, 25, 10" Text="SIZE:" />
+                                          <uc:OcrTextInfo Region="1470, 601, 19, 13" Text="FY" />
+                                          <uc:OcrTextInfo Region="1597, 601, 20, 13" Text="MF" />
+                                          <uc:OcrTextInfo Region="1772, 602, 17, 12" Text="A1" />
+                                          <uc:OcrTextInfo Region="816, 611, 59, 13" Text="BLINDED" />
+                                          <uc:OcrTextInfo Region="877, 611, 15, 13" Text="IN" />
+                                          <uc:OcrTextInfo Region="893, 611, 50, 13" Text="ORDER" />
+                                          <uc:OcrTextInfo Region="944, 611, 21, 13" Text="TO" />
+                                          <uc:OcrTextInfo Region="967, 611, 71, 13" Text="ELIMINATE" />
+                                          <uc:OcrTextInfo Region="1040, 611, 33, 13" Text="RISK" />
+                                          <uc:OcrTextInfo Region="1075, 611, 20, 13" Text="OF" />
+                                          <uc:OcrTextInfo Region="1097, 611, 48, 13" Text="CROSS" />
+                                          <uc:OcrTextInfo Region="1147, 611, 113, 13" Text="CONTAMINATION" />
+                                          <uc:OcrTextInfo Region="1470, 619, 51, 11" Text="DRAFTING" />
+                                          <uc:OcrTextInfo Region="1522, 619, 37, 10" Text="CHECK:" />
+                                          <uc:OcrTextInfo Region="1597, 619, 38, 10" Text="DESIGN" />
+                                          <uc:OcrTextInfo Region="1636, 619, 37, 10" Text="CHECK:" />
+                                          <uc:OcrTextInfo Region="1723, 619, 35, 11" Text="SCALE:" />
+                                          <uc:OcrTextInfo Region="816, 630, 20, 13" Text="OF" />
+                                          <uc:OcrTextInfo Region="838, 630, 90, 13" Text="DISINFECTED" />
+                                          <uc:OcrTextInfo Region="929, 630, 53, 13" Text="WATER." />
+                                          <uc:OcrTextInfo Region="1469, 630, 33, 13" Text="WHP" />
+                                          <uc:OcrTextInfo Region="1597, 631, 25, 13" Text="RLJ" />
+                                          <uc:OcrTextInfo Region="1764, 631, 28, 13" Text="NTS" />
+                                          <uc:OcrTextInfo Region="1471, 649, 29, 11" Text="DATE:" />
+                                          <uc:OcrTextInfo Region="1597, 649, 54, 11" Text="REVIEWED:" />
+                                          <uc:OcrTextInfo Region="1723, 650, 23, 10" Text="PBS:" />
+                                          <uc:OcrTextInfo Region="1471, 662, 52, 13" Text="16/08/24" />
+                                          <uc:OcrTextInfo Region="1595, 661, 19, 13" Text="XZ" />
+                                          <uc:OcrTextInfo Region="1756, 661, 45, 12" Text="131242" />
+                                          <uc:OcrTextInfo Region="1470, 680, 57, 10" Text="CONTRACT:" />
+                                          <uc:OcrTextInfo Region="1547, 680, 47, 10" Text="DRAWING" />
+                                          <uc:OcrTextInfo Region="1595, 679, 45, 11" Text="NUMBER:" />
+                                          <uc:OcrTextInfo Region="1546, 696, 214, 22" Text="PUB-DTSS2-TWRP" />
+                                          <uc:OcrTextInfo Region="1481, 716, 48, 22" Text="C4B" />
+                                          <uc:OcrTextInfo Region="1546, 724, 33, 11" Text="SHEET" />
+                                          <uc:OcrTextInfo Region="1581, 725, 45, 10" Text="NUMBER:" />
+                                          <uc:OcrTextInfo Region="1773, 725, 49, 10" Text="REVISION:" />
+                                          <uc:OcrTextInfo Region="1545, 738, 170, 22" Text="WSD11-P-6013" />
+                                          <uc:OcrTextInfo Region="1799, 741, 15, 18" Text="C" />
+                                          <uc:OcrTextInfo Region="1536, 776, 38, 14" Text="THIS" />
+                                          <uc:OcrTextInfo Region="1578, 775, 78, 16" Text="DRAWING" />
+                                          <uc:OcrTextInfo Region="1658, 775, 17, 15" Text="IS" />
+                                          <uc:OcrTextInfo Region="1677, 775, 97, 16" Text="COPYRIGHT" />
+                                        </scg:List>
+                                      </uc:CVCache.OcrTexts>
+                                    </uc:CVCache>
+                                    <uc:CVCache DataSent="False" DisplayName="Screen CV Get Text - 'DRAWING " Id="a4798857-00b0-4c5d-baa5-67eab36eecf3" InformativeScreenshot="85734bfae4bdb2666f39ea19bea54eab" LogicalPosition="-1915, 204" OcrText="SRV 1 2 ommeS ASCOM P-0402 I 0540 -400-BN-00440-15-CPVC CS Pl A JOINT VENTURE DELIVERING THE DTS82 PROJECT HV-0441 MICRONUTRIENTS 0541 DOSING PUMP CONSULTANT: PD-0504 I I HV-0547 HV-0543 Jacobs i I ZC 32 WST02-400-BN-00543-15-CPVC I NRV-0540 HV-0544 KO MAIN CONTRACTOR: CH2M HILL Singapore Pte Ltd LCS-P-0502 0502 NOTE 3 MTR-0502 CES_SALCON-SDC JV 2-400-BN-00540-15-CPVC P-0502 CS CONSULTANTI SUB CONTRACTOR: HV-0541 MICRONUTRIENTS DOSING PUMP E 3 PAQUES MATTEN PROJECT TITLE: 003-25-CPVC TUAS WATER RECLAMATION PLANT (TWRP) -CPVC DTSS PHASE 2 DRAWING TITLE HV-0004 P&amp;ID LC PLANT DRAIN SYSTEM SIDESTREAM - N REMOVAL 02 WST02-P-6301 MICRONUTRIENTS DOSING TANK AND LC DOSING PUMPS NOTE DRAFTED: DESIGNED: SHEET SIZE: PLANT DRAIN SYSTEM FY HQL A1 01 WST02-P-6301 DRAFTING CHECK: DESIGN CHECK: SCALE: NOTES: WHP JKO NTS MICRONUTRIENTS DOSING PUMP 1. TAGS ARE PREFIXED WITH THE FACILITY CODE OF THE DRAWING AND THE DRAWING PROCESS UNIT CODE UNLESS OTHERWISE INDICATED. DATE: REVEWED: PBS 13/08/24 FS 131242 4 DUTY 1 STANDBY 2. ALL CHEMCIAL DISCHARGE PIPNG OUTSIDE DOSING SKID UP TO DOSING POINT (UNDER WATER TANK TOP SLAB)IS PROVIDED WITH DOUBLE CONTRACT: DRAWING NUMBER: CONTAIMMENTLEAKDETECTIONATLONPOINISISPROVIDEDA AND DRAIN TO CHEMICAL BUND. 3. DISCHARGED TO THE BUND PUB-DTSS2-TWRP 4. VENT HAS TO BE CONNECTED TO ASAFE LOCATION. C4B SHEET NUMBER REVSION 5. EXTENSION SPRINDLE TO BE PROVIDED FOR OPERATION. WST02-P-6019 B THIS DRAWING IS COPYRIGHT" Position="-1916, 164" ScreenshotGuid="a53e5c8d-1a4e-468d-a974-c5575be8f525" ServerVersion="24.10.5.1">
+                                      <uc:CVCache.CvAnchorRelations>
+                                        <scg:List x:TypeArguments="uc:AnchorRelationInfo" Capacity="16">
+                                          <uc:AnchorRelationInfo IsTargetText="True" Target="212">
+                                            <uc:AnchorRelationInfo.Anchors>
+                                              <x:Array Type="x:Int32">
+                                                <x:Int32>202</x:Int32>
+                                              </x:Array>
+                                            </uc:AnchorRelationInfo.Anchors>
+                                          </uc:AnchorRelationInfo>
+                                          <uc:AnchorRelationInfo IsTargetText="True" Target="110">
+                                            <uc:AnchorRelationInfo.Anchors>
+                                              <x:Array Type="x:Int32">
+                                                <x:Int32>103</x:Int32>
+                                                <x:Int32>104</x:Int32>
+                                              </x:Array>
+                                            </uc:AnchorRelationInfo.Anchors>
+                                          </uc:AnchorRelationInfo>
+                                          <uc:AnchorRelationInfo IsTargetText="True" Target="74">
+                                            <uc:AnchorRelationInfo.Anchors>
+                                              <x:Array Type="x:Int32">
+                                                <x:Int32>67</x:Int32>
+                                                <x:Int32>68</x:Int32>
+                                              </x:Array>
+                                            </uc:AnchorRelationInfo.Anchors>
+                                          </uc:AnchorRelationInfo>
+                                          <uc:AnchorRelationInfo IsTargetText="True" Target="121">
+                                            <uc:AnchorRelationInfo.Anchors>
+                                              <x:Array Type="x:Int32">
+                                                <x:Int32>117</x:Int32>
+                                              </x:Array>
+                                            </uc:AnchorRelationInfo.Anchors>
+                                          </uc:AnchorRelationInfo>
+                                          <uc:AnchorRelationInfo IsTargetText="True" Target="147">
+                                            <uc:AnchorRelationInfo.Anchors>
+                                              <x:Array Type="x:Int32">
+                                                <x:Int32>146</x:Int32>
+                                              </x:Array>
+                                            </uc:AnchorRelationInfo.Anchors>
+                                          </uc:AnchorRelationInfo>
+                                          <uc:AnchorRelationInfo IsTargetText="True" Target="109">
+                                            <uc:AnchorRelationInfo.Anchors>
+                                              <x:Array Type="x:Int32">
+                                                <x:Int32>102</x:Int32>
+                                              </x:Array>
+                                            </uc:AnchorRelationInfo.Anchors>
+                                          </uc:AnchorRelationInfo>
+                                          <uc:AnchorRelationInfo IsTargetText="False" Target="13">
+                                            <uc:AnchorRelationInfo.Anchors>
+                                              <x:Array Type="x:Int32">
+                                                <x:Int32>149</x:Int32>
+                                              </x:Array>
+                                            </uc:AnchorRelationInfo.Anchors>
+                                          </uc:AnchorRelationInfo>
+                                          <uc:AnchorRelationInfo IsTargetText="False" Target="12">
+                                            <uc:AnchorRelationInfo.Anchors>
+                                              <x:Array Type="x:Int32">
+                                                <x:Int32>115</x:Int32>
+                                                <x:Int32>116</x:Int32>
+                                              </x:Array>
+                                            </uc:AnchorRelationInfo.Anchors>
+                                          </uc:AnchorRelationInfo>
+                                          <uc:AnchorRelationInfo IsTargetText="False" Target="5">
+                                            <uc:AnchorRelationInfo.Anchors>
+                                              <x:Array Type="x:Int32">
+                                                <x:Int32>199</x:Int32>
+                                              </x:Array>
+                                            </uc:AnchorRelationInfo.Anchors>
+                                          </uc:AnchorRelationInfo>
+                                          <uc:AnchorRelationInfo IsTargetText="True" Target="148">
+                                            <uc:AnchorRelationInfo.Anchors>
+                                              <x:Array Type="x:Int32">
+                                                <x:Int32>145</x:Int32>
+                                              </x:Array>
+                                            </uc:AnchorRelationInfo.Anchors>
+                                          </uc:AnchorRelationInfo>
+                                          <uc:AnchorRelationInfo IsTargetText="True" Target="67">
+                                            <uc:AnchorRelationInfo.Anchors>
+                                              <x:Array Type="x:Int32">
+                                                <x:Int32>66</x:Int32>
+                                              </x:Array>
+                                            </uc:AnchorRelationInfo.Anchors>
+                                          </uc:AnchorRelationInfo>
+                                          <uc:AnchorRelationInfo IsTargetText="True" Target="108">
+                                            <uc:AnchorRelationInfo.Anchors>
+                                              <x:Array Type="x:Int32">
+                                                <x:Int32>101</x:Int32>
+                                              </x:Array>
+                                            </uc:AnchorRelationInfo.Anchors>
+                                          </uc:AnchorRelationInfo>
+                                        </scg:List>
+                                      </uc:CVCache.CvAnchorRelations>
+                                      <uc:CVCache.CvTables>
+                                        <x:Array Type="uc:CvTableInfo">
+                                          <uc:CvTableInfo>
+                                            <uc:CvTableInfo.Columns>
+                                              <x:Array Type="x:Int32">
+                                                <x:Int32>1509</x:Int32>
+                                                <x:Int32>1620</x:Int32>
+                                                <x:Int32>1733</x:Int32>
+                                                <x:Int32>1846</x:Int32>
+                                              </x:Array>
+                                            </uc:CvTableInfo.Columns>
+                                            <uc:CvTableInfo.Rows>
+                                              <x:Array Type="x:Int32">
+                                                <x:Int32>612</x:Int32>
+                                                <x:Int32>640</x:Int32>
+                                                <x:Int32>666</x:Int32>
+                                                <x:Int32>693</x:Int32>
+                                              </x:Array>
+                                            </uc:CvTableInfo.Rows>
+                                          </uc:CvTableInfo>
+                                          <uc:CvTableInfo>
+                                            <uc:CvTableInfo.Columns>
+                                              <x:Array Type="x:Int32">
+                                                <x:Int32>1271</x:Int32>
+                                                <x:Int32>1326</x:Int32>
+                                                <x:Int32>1437</x:Int32>
+                                              </x:Array>
+                                            </uc:CvTableInfo.Columns>
+                                            <uc:CvTableInfo.Rows>
+                                              <x:Array Type="x:Int32">
+                                                <x:Int32>642</x:Int32>
+                                                <x:Int32>663</x:Int32>
+                                              </x:Array>
+                                            </uc:CvTableInfo.Rows>
+                                          </uc:CvTableInfo>
+                                        </x:Array>
+                                      </uc:CVCache.CvTables>
+                                      <uc:CVCache.CvUiElements>
+                                        <scg:List x:TypeArguments="uc:CvElementInfo" Capacity="128">
+                                          <uc:CvElementInfo Category="Icon" Description="Icon" Region="1556, 205, 54, 73" />
+                                          <uc:CvElementInfo Category="ArrowButton" Description="ArrowButton" Region="1875, 851, 20, 17" />
+                                          <uc:CvElementInfo Category="Icon" Description="Icon" Region="1594, 313, 67, 56" />
+                                          <uc:CvElementInfo Category="ArrowButton" Description="ArrowButton" Region="1893, 0, 19, 22" />
+                                          <uc:CvElementInfo Category="ArrowButton" Description="ArrowButton" Region="1894, 831, 18, 21" />
+                                          <uc:CvElementInfo Category="InputBox" Description="Inputbox" Region="1577, 736, 205, 41" />
+                                          <uc:CvElementInfo Category="Icon" Description="Icon" Region="498, 28, 49, 49" />
+                                          <uc:CvElementInfo Category="ArrowButton" Description="ArrowButton" Region="1, 851, 19, 17" />
+                                          <uc:CvElementInfo Category="Icon" Description="clock icon" Region="828, 13, 29, 28" />
+                                          <uc:CvElementInfo Category="Icon" Description="Icon" Region="144, 187, 48, 49" />
+                                          <uc:CvElementInfo Category="Button" Description="Button" Region="308, 171, 24, 20" />
+                                          <uc:CvElementInfo Category="Icon" Description="Icon" Region="1676, 323, 92, 54" />
+                                          <uc:CvElementInfo Category="InputBox" Description="Inputbox" Region="1623, 648, 111, 19" />
+                                          <uc:CvElementInfo Category="InputBox" Description="Inputbox" Region="1624, 671, 111, 25" />
+                                          <uc:CvElementInfo Category="Button" Description="Button" Region="1270, 562, 59, 25" />
+                                          <uc:CvElementInfo Category="InputBox" Description="Inputbox" Region="261, 224, 53, 29" />
+                                          <uc:CvElementInfo Category="Cell" Description="Cell" Region="1509, 612, 111, 28" />
+                                          <uc:CvElementInfo Category="Cell" Description="Cell" Region="1509, 640, 111, 26" />
+                                          <uc:CvElementInfo Category="Cell" Description="Cell" Region="1509, 666, 111, 27" />
+                                          <uc:CvElementInfo Category="Cell" Description="Cell" Region="1620, 612, 113, 28" />
+                                          <uc:CvElementInfo Category="Cell" Description="Cell" Region="1620, 640, 113, 26" />
+                                          <uc:CvElementInfo Category="Cell" Description="Cell" Region="1620, 666, 113, 27" />
+                                          <uc:CvElementInfo Category="Cell" Description="Cell" Region="1733, 612, 113, 28" />
+                                          <uc:CvElementInfo Category="Cell" Description="Cell" Region="1733, 640, 113, 26" />
+                                          <uc:CvElementInfo Category="Cell" Description="Cell" Region="1733, 666, 113, 27" />
+                                          <uc:CvElementInfo Category="Cell" Description="Cell" Region="1271, 642, 55, 21" />
+                                          <uc:CvElementInfo Category="Cell" Description="Cell" Region="1326, 642, 111, 21" />
+                                          <uc:CvElementInfo Description="{x:Null}" Category="Button" Confidence="Runtime" Region="1271, 642, 59, 24" />
+                                          <uc:CvElementInfo Description="{x:Null}" Category="Button" Confidence="Runtime" Region="1506, 776, 346, 28" />
+                                          <uc:CvElementInfo Description="{x:Null}" Category="InputBox" Confidence="Runtime" Region="1578, 705, 263, 31" />
+                                          <uc:CvElementInfo Description="{x:Null}" Category="Button" Confidence="Runtime" Region="1326, 562, 114, 25" />
+                                          <uc:CvElementInfo Description="{x:Null}" Category="Icon" Confidence="Runtime" Region="747, 162, 20, 28" />
+                                          <uc:CvElementInfo Description="{x:Null}" Category="Button" Confidence="Runtime" Region="134, 110, 22, 61" />
+                                          <uc:CvElementInfo Description="{x:Null}" Category="Icon" Confidence="Runtime" Region="1194, 0, 41, 59" />
+                                          <uc:CvElementInfo Description="{x:Null}" Category="Button" Confidence="Runtime" Region="288, 263, 50, 21" />
+                                          <uc:CvElementInfo Description="{x:Null}" Category="Button" Confidence="Runtime" Region="1326, 642, 113, 25" />
+                                          <uc:CvElementInfo Description="{x:Null}" Category="InputBox" Confidence="Runtime" Region="220, 260, 63, 29" />
+                                          <uc:CvElementInfo Description="{x:Null}" Category="Button" Confidence="Runtime" Region="1, 106, 10, 13" />
+                                          <uc:CvElementInfo Description="{x:Null}" Category="InputBox" Confidence="Runtime" Region="1510, 647, 112, 21" />
+                                          <uc:CvElementInfo Description="{x:Null}" Category="Icon" Confidence="Runtime" Region="707, 142, 25, 20" />
+                                          <uc:CvElementInfo Description="{x:Null}" Category="InputBox" Confidence="Runtime" Region="220, 20, 62, 28" />
+                                          <uc:CvElementInfo Description="{x:Null}" Category="InputBox" Confidence="Runtime" Region="1781, 744, 67, 33" />
+                                          <uc:CvElementInfo Description="{x:Null}" Category="InputBox" Confidence="Runtime" Region="1625, 620, 110, 20" />
+                                          <uc:CvElementInfo Description="{x:Null}" Category="Button" Confidence="Runtime" Region="10, 52, 57, 22" />
+                                          <uc:CvElementInfo Description="{x:Null}" Category="Button" Confidence="Runtime" Region="13, 295, 58, 22" />
+                                          <uc:CvElementInfo Description="{x:Null}" Category="InputBox" Confidence="Runtime" Region="1271, 643, 59, 24" />
+                                          <uc:CvElementInfo Description="{x:Null}" Category="Button" Confidence="Runtime" Region="144, 187, 48, 49" />
+                                          <uc:CvElementInfo Description="{x:Null}" Category="Button" Confidence="Runtime" Region="321, 227, 67, 22" />
+                                          <uc:CvElementInfo Description="{x:Null}" Category="Button" Confidence="Runtime" Region="1897, 480, 14, 377" />
+                                          <uc:CvElementInfo Description="{x:Null}" Category="Icon" Confidence="Runtime" Region="310, 173, 19, 16" />
+                                          <uc:CvElementInfo Description="{x:Null}" Category="InputBox" Confidence="Runtime" Region="0, 483, 54, 34" />
+                                          <uc:CvElementInfo Description="{x:Null}" Category="InputBox" Confidence="Runtime" Region="0, 1, 76, 33" />
+                                          <uc:CvElementInfo Description="{x:Null}" Category="Button" Confidence="Runtime" Region="657, 22, 26, 138" />
+                                          <uc:CvElementInfo Description="{x:Null}" Category="InputBox" Confidence="Runtime" Region="1509, 669, 115, 27" />
+                                          <uc:CvElementInfo Description="{x:Null}" Category="InputBox" Confidence="Runtime" Region="242, 172, 90, 36" />
+                                          <uc:CvElementInfo Description="{x:Null}" Category="RadioButton" Confidence="Runtime" Region="828, 14, 28, 28" />
+                                          <uc:CvElementInfo Description="{x:Null}" Category="ArrowButton" Confidence="Runtime" Region="409, 740, 12, 15" />
+                                          <uc:CvElementInfo Description="{x:Null}" Category="InputBox" Confidence="Runtime" Region="1271, 562, 59, 24" />
+                                          <uc:CvElementInfo Description="{x:Null}" Category="Button" Confidence="Runtime" Region="350, 308, 13, 14" />
+                                          <uc:CvElementInfo Description="{x:Null}" Category="Icon" Confidence="Runtime" Region="427, 112, 19, 31" />
+                                          <uc:CvElementInfo Description="{x:Null}" Category="Icon" Confidence="Runtime" Region="1424, 645, 18, 24" />
+                                          <uc:CvElementInfo Description="{x:Null}" Category="Button" Confidence="Runtime" Region="219, 259, 64, 30" />
+                                          <uc:CvElementInfo Description="{x:Null}" Category="Button" Confidence="Runtime" Region="288, 19, 49, 21" />
+                                          <uc:CvElementInfo Description="{x:Null}" Category="Button" Confidence="Runtime" Region="499, 28, 48, 48" />
+                                          <uc:CvElementInfo Description="{x:Null}" Category="Icon" Confidence="Runtime" Region="873, 9, 30, 36" />
+                                          <uc:CvElementInfo Description="{x:Null}" Category="InputBox" Confidence="Runtime" Region="13, 295, 57, 22" />
+                                          <uc:CvElementInfo Description="{x:Null}" Category="Button" Confidence="Runtime" Region="828, 14, 27, 26" />
+                                          <uc:CvElementInfo Description="{x:Null}" Category="ArrowButton" Confidence="Runtime" Region="1227, 560, 14, 14" />
+                                          <uc:CvElementInfo Description="{x:Null}" Category="InputBox" Confidence="Runtime" Region="572, 2, 91, 28" />
+                                          <uc:CvElementInfo Description="{x:Null}" Category="Icon" Confidence="Runtime" Region="874, 16, 17, 29" />
+                                          <uc:CvElementInfo Description="{x:Null}" Category="Icon" Confidence="Runtime" Region="135, 112, 21, 60" />
+                                        </scg:List>
+                                      </uc:CVCache.CvUiElements>
+                                      <uc:CVCache.OcrTexts>
+                                        <scg:List x:TypeArguments="uc:OcrTextInfo" Capacity="217">
+                                          <uc:OcrTextInfo Region="686, 15, 24, 11" Text="SRV" />
+                                          <uc:OcrTextInfo Region="956, 0, 13, 28" Text="1" />
+                                          <uc:OcrTextInfo Region="1013, 0, 13, 26" Text="2" />
+                                          <uc:OcrTextInfo Region="1565, 0, 136, 24" Text="ommeS" />
+                                          <uc:OcrTextInfo Region="1714, 0, 125, 24" Text="ASCOM" />
+                                          <uc:OcrTextInfo Region="293, 24, 41, 12" Text="P-0402" />
+                                          <uc:OcrTextInfo Region="1216, 4, 13, 50" Text="I" />
+                                          <uc:OcrTextInfo Region="685, 32, 27, 11" Text="0540" />
+                                          <uc:OcrTextInfo Region="21, 37, 133, 13" Text="-400-BN-00440-15-CPVC" />
+                                          <uc:OcrTextInfo Region="349, 41, 19, 12" Text="CS" />
+                                          <uc:OcrTextInfo Region="516, 36, 13, 13" Text="Pl" />
+                                          <uc:OcrTextInfo Region="1519, 39, 12, 14" Text="A" />
+                                          <uc:OcrTextInfo Region="1532, 39, 38, 14" Text="JOINT" />
+                                          <uc:OcrTextInfo Region="1572, 39, 59, 13" Text="VENTURE" />
+                                          <uc:OcrTextInfo Region="1634, 39, 75, 13" Text="DELIVERING" />
+                                          <uc:OcrTextInfo Region="1711, 39, 27, 14" Text="THE" />
+                                          <uc:OcrTextInfo Region="1740, 39, 41, 13" Text="DTS82" />
+                                          <uc:OcrTextInfo Region="1783, 39, 58, 14" Text="PROJECT" />
+                                          <uc:OcrTextInfo Region="15, 57, 49, 12" Text="HV-0441" />
+                                          <uc:OcrTextInfo Region="256, 54, 106, 13" Text="MICRONUTRIENTS" />
+                                          <uc:OcrTextInfo Region="509, 56, 25, 11" Text="0541" />
+                                          <uc:OcrTextInfo Region="264, 68, 48, 12" Text="DOSING" />
+                                          <uc:OcrTextInfo Region="314, 68, 36, 12" Text="PUMP" />
+                                          <uc:OcrTextInfo Region="1513, 74, 61, 10" Text="CONSULTANT:" />
+                                          <uc:OcrTextInfo Region="365, 83, 49, 12" Text="PD-0504" />
+                                          <uc:OcrTextInfo Region="663, 37, 14, 114" Text="I" />
+                                          <uc:OcrTextInfo Region="888, 24, 14, 117" Text="I" />
+                                          <uc:OcrTextInfo Region="374, 119, 50, 12" Text="HV-0547" />
+                                          <uc:OcrTextInfo Region="460, 120, 51, 12" Text="HV-0543" />
+                                          <uc:OcrTextInfo Region="1557, 86, 235, 60" Text="Jacobs" />
+                                          <uc:OcrTextInfo Region="100, 93, 14, 148" Text="i" />
+                                          <uc:OcrTextInfo Region="138, 116, 14, 51" Text="I" />
+                                          <uc:OcrTextInfo Region="159, 195, 18, 13" Text="ZC" />
+                                          <uc:OcrTextInfo Region="312, 175, 15, 11" Text="32" />
+                                          <uc:OcrTextInfo Region="354, 160, 176, 15" Text="WST02-400-BN-00543-15-CPVC" />
+                                          <uc:OcrTextInfo Region="663, 141, 13, 74" Text="I" />
+                                          <uc:OcrTextInfo Region="691, 125, 59, 13" Text="NRV-0540" />
+                                          <uc:OcrTextInfo Region="698, 169, 49, 12" Text="HV-0544" />
+                                          <uc:OcrTextInfo Region="706, 143, 25, 17" Text="KO" />
+                                          <uc:OcrTextInfo Region="1513, 183, 23, 10" Text="MAIN" />
+                                          <uc:OcrTextInfo Region="1537, 183, 64, 10" Text="CONTRACTOR:" />
+                                          <uc:OcrTextInfo Region="1585, 156, 42, 14" Text="CH2M" />
+                                          <uc:OcrTextInfo Region="1629, 156, 33, 14" Text="HILL" />
+                                          <uc:OcrTextInfo Region="1664, 156, 68, 17" Text="Singapore" />
+                                          <uc:OcrTextInfo Region="1734, 156, 23, 14" Text="Pte" />
+                                          <uc:OcrTextInfo Region="1759, 156, 22, 14" Text="Ltd" />
+                                          <uc:OcrTextInfo Region="252, 192, 66, 11" Text="LCS-P-0502" />
+                                          <uc:OcrTextInfo Region="152, 215, 31, 11" Text="0502" />
+                                          <uc:OcrTextInfo Region="736, 218, 35, 12" Text="NOTE" />
+                                          <uc:OcrTextInfo Region="772, 218, 9, 12" Text="3" />
+                                          <uc:OcrTextInfo Region="325, 232, 59, 12" Text="MTR-0502" />
+                                          <uc:OcrTextInfo Region="1616, 232, 145, 22" Text="CES_SALCON-SDC" />
+                                          <uc:OcrTextInfo Region="1763, 232, 22, 19" Text="JV" />
+                                          <uc:OcrTextInfo Region="2, 277, 147, 13" Text="2-400-BN-00540-15-CPVC" />
+                                          <uc:OcrTextInfo Region="293, 267, 40, 12" Text="P-0502" />
+                                          <uc:OcrTextInfo Region="349, 284, 19, 12" Text="CS" />
+                                          <uc:OcrTextInfo Region="1513, 292, 62, 9" Text="CONSULTANTI" />
+                                          <uc:OcrTextInfo Region="1576, 292, 19, 9" Text="SUB" />
+                                          <uc:OcrTextInfo Region="1596, 292, 64, 10" Text="CONTRACTOR:" />
+                                          <uc:OcrTextInfo Region="18, 299, 48, 12" Text="HV-0541" />
+                                          <uc:OcrTextInfo Region="255, 295, 110, 12" Text="MICRONUTRIENTS" />
+                                          <uc:OcrTextInfo Region="264, 309, 49, 12" Text="DOSING" />
+                                          <uc:OcrTextInfo Region="314, 309, 35, 12" Text="PUMP" />
+                                          <uc:OcrTextInfo Region="352, 309, 9, 12" Text="E" />
+                                          <uc:OcrTextInfo Region="17, 344, 8, 12" Text="3" />
+                                          <uc:OcrTextInfo Region="1678, 337, 87, 21" Text="PAQUES" />
+                                          <uc:OcrTextInfo Region="1594, 368, 67, 16" Text="MATTEN" />
+                                          <uc:OcrTextInfo Region="1513, 401, 41, 9" Text="PROJECT" />
+                                          <uc:OcrTextInfo Region="1555, 401, 27, 9" Text="TITLE:" />
+                                          <uc:OcrTextInfo Region="0, 426, 78, 13" Text="003-25-CPVC" />
+                                          <uc:OcrTextInfo Region="1525, 428, 40, 21" Text="TUAS" />
+                                          <uc:OcrTextInfo Region="1566, 428, 55, 21" Text="WATER" />
+                                          <uc:OcrTextInfo Region="1622, 428, 106, 21" Text="RECLAMATION" />
+                                          <uc:OcrTextInfo Region="1729, 428, 49, 21" Text="PLANT" />
+                                          <uc:OcrTextInfo Region="1780, 428, 53, 26" Text="(TWRP)" />
+                                          <uc:OcrTextInfo Region="0, 464, 37, 14" Text="-CPVC" />
+                                          <uc:OcrTextInfo Region="1627, 457, 40, 21" Text="DTSS" />
+                                          <uc:OcrTextInfo Region="1669, 457, 50, 21" Text="PHASE" />
+                                          <uc:OcrTextInfo Region="1721, 457, 10, 21" Text="2" />
+                                          <uc:OcrTextInfo Region="1513, 508, 43, 10" Text="DRAWING" />
+                                          <uc:OcrTextInfo Region="1556, 508, 26, 10" Text="TITLE" />
+                                          <uc:OcrTextInfo Region="1162, 536, 48, 12" Text="HV-0004" />
+                                          <uc:OcrTextInfo Region="1659, 528, 40, 16" Text="P&amp;ID" />
+                                          <uc:OcrTextInfo Region="1184, 554, 17, 12" Text="LC" />
+                                          <uc:OcrTextInfo Region="1271, 547, 40, 12" Text="PLANT" />
+                                          <uc:OcrTextInfo Region="1313, 547, 38, 12" Text="DRAIN" />
+                                          <uc:OcrTextInfo Region="1353, 547, 51, 12" Text="SYSTEM" />
+                                          <uc:OcrTextInfo Region="1567, 546, 111, 15" Text="SIDESTREAM" />
+                                          <uc:OcrTextInfo Region="1680, 547, 8, 14" Text="-" />
+                                          <uc:OcrTextInfo Region="1691, 546, 13, 15" Text="N" />
+                                          <uc:OcrTextInfo Region="1707, 546, 84, 15" Text="REMOVAL" />
+                                          <uc:OcrTextInfo Region="1293, 569, 15, 11" Text="02" />
+                                          <uc:OcrTextInfo Region="1339, 568, 82, 12" Text="WST02-P-6301" />
+                                          <uc:OcrTextInfo Region="1524, 563, 152, 16" Text="MICRONUTRIENTS" />
+                                          <uc:OcrTextInfo Region="1679, 563, 67, 16" Text="DOSING" />
+                                          <uc:OcrTextInfo Region="1749, 563, 47, 16" Text="TANK" />
+                                          <uc:OcrTextInfo Region="1797, 563, 38, 16" Text="AND" />
+                                          <uc:OcrTextInfo Region="1177, 581, 18, 13" Text="LC" />
+                                          <uc:OcrTextInfo Region="1613, 582, 68, 15" Text="DOSING" />
+                                          <uc:OcrTextInfo Region="1684, 582, 61, 15" Text="PUMPS" />
+                                          <uc:OcrTextInfo Region="1163, 602, 34, 12" Text="NOTE" />
+                                          <uc:OcrTextInfo Region="1513, 616, 44, 9" Text="DRAFTED:" />
+                                          <uc:OcrTextInfo Region="1626, 615, 49, 10" Text="DESIGNED:" />
+                                          <uc:OcrTextInfo Region="1740, 616, 29, 9" Text="SHEET" />
+                                          <uc:OcrTextInfo Region="1771, 615, 22, 10" Text="SIZE:" />
+                                          <uc:OcrTextInfo Region="1271, 627, 40, 12" Text="PLANT" />
+                                          <uc:OcrTextInfo Region="1313, 627, 38, 12" Text="DRAIN" />
+                                          <uc:OcrTextInfo Region="1353, 627, 51, 12" Text="SYSTEM" />
+                                          <uc:OcrTextInfo Region="1513, 627, 17, 11" Text="FY" />
+                                          <uc:OcrTextInfo Region="1626, 627, 26, 12" Text="HQL" />
+                                          <uc:OcrTextInfo Region="1784, 627, 15, 12" Text="A1" />
+                                          <uc:OcrTextInfo Region="1294, 648, 14, 12" Text="01" />
+                                          <uc:OcrTextInfo Region="1340, 648, 82, 12" Text="WST02-P-6301" />
+                                          <uc:OcrTextInfo Region="1513, 643, 45, 10" Text="DRAFTING" />
+                                          <uc:OcrTextInfo Region="1559, 643, 34, 9" Text="CHECK:" />
+                                          <uc:OcrTextInfo Region="1627, 643, 34, 9" Text="DESIGN" />
+                                          <uc:OcrTextInfo Region="1661, 643, 34, 9" Text="CHECK:" />
+                                          <uc:OcrTextInfo Region="1740, 643, 31, 9" Text="SCALE:" />
+                                          <uc:OcrTextInfo Region="422, 657, 46, 12" Text="NOTES:" />
+                                          <uc:OcrTextInfo Region="1511, 653, 30, 12" Text="WHP" />
+                                          <uc:OcrTextInfo Region="1625, 654, 26, 12" Text="JKO" />
+                                          <uc:OcrTextInfo Region="1776, 653, 26, 12" Text="NTS" />
+                                          <uc:OcrTextInfo Region="64, 675, 110, 12" Text="MICRONUTRIENTS" />
+                                          <uc:OcrTextInfo Region="175, 675, 49, 12" Text="DOSING" />
+                                          <uc:OcrTextInfo Region="225, 675, 36, 12" Text="PUMP" />
+                                          <uc:OcrTextInfo Region="423, 674, 11, 12" Text="1." />
+                                          <uc:OcrTextInfo Region="435, 673, 34, 13" Text="TAGS" />
+                                          <uc:OcrTextInfo Region="471, 674, 26, 11" Text="ARE" />
+                                          <uc:OcrTextInfo Region="499, 674, 61, 11" Text="PREFIXED" />
+                                          <uc:OcrTextInfo Region="562, 674, 32, 11" Text="WITH" />
+                                          <uc:OcrTextInfo Region="595, 674, 26, 11" Text="THE" />
+                                          <uc:OcrTextInfo Region="622, 673, 54, 13" Text="FACILITY" />
+                                          <uc:OcrTextInfo Region="678, 674, 36, 12" Text="CODE" />
+                                          <uc:OcrTextInfo Region="715, 674, 19, 12" Text="OF" />
+                                          <uc:OcrTextInfo Region="735, 674, 26, 12" Text="THE" />
+                                          <uc:OcrTextInfo Region="763, 674, 59, 11" Text="DRAWING" />
+                                          <uc:OcrTextInfo Region="822, 674, 27, 12" Text="AND" />
+                                          <uc:OcrTextInfo Region="851, 674, 26, 11" Text="THE" />
+                                          <uc:OcrTextInfo Region="878, 674, 60, 11" Text="DRAWING" />
+                                          <uc:OcrTextInfo Region="939, 674, 60, 12" Text="PROCESS" />
+                                          <uc:OcrTextInfo Region="1001, 674, 29, 11" Text="UNIT" />
+                                          <uc:OcrTextInfo Region="1032, 674, 36, 12" Text="CODE" />
+                                          <uc:OcrTextInfo Region="1069, 674, 49, 11" Text="UNLESS" />
+                                          <uc:OcrTextInfo Region="1120, 673, 74, 13" Text="OTHERWISE" />
+                                          <uc:OcrTextInfo Region="1195, 673, 69, 13" Text="INDICATED." />
+                                          <uc:OcrTextInfo Region="1513, 670, 26, 9" Text="DATE:" />
+                                          <uc:OcrTextInfo Region="1626, 670, 50, 10" Text="REVEWED:" />
+                                          <uc:OcrTextInfo Region="1739, 670, 21, 10" Text="PBS" />
+                                          <uc:OcrTextInfo Region="1513, 681, 47, 12" Text="13/08/24" />
+                                          <uc:OcrTextInfo Region="1625, 681, 17, 12" Text="FS" />
+                                          <uc:OcrTextInfo Region="1769, 680, 41, 12" Text="131242" />
+                                          <uc:OcrTextInfo Region="105, 693, 9, 12" Text="4" />
+                                          <uc:OcrTextInfo Region="116, 693, 34, 11" Text="DUTY" />
+                                          <uc:OcrTextInfo Region="152, 693, 6, 12" Text="1" />
+                                          <uc:OcrTextInfo Region="161, 693, 59, 12" Text="STANDBY" />
+                                          <uc:OcrTextInfo Region="422, 691, 12, 12" Text="2." />
+                                          <uc:OcrTextInfo Region="435, 691, 24, 12" Text="ALL" />
+                                          <uc:OcrTextInfo Region="460, 690, 63, 13" Text="CHEMCIAL" />
+                                          <uc:OcrTextInfo Region="525, 690, 72, 13" Text="DISCHARGE" />
+                                          <uc:OcrTextInfo Region="599, 690, 38, 12" Text="PIPNG" />
+                                          <uc:OcrTextInfo Region="639, 690, 54, 13" Text="OUTSIDE" />
+                                          <uc:OcrTextInfo Region="695, 690, 49, 13" Text="DOSING" />
+                                          <uc:OcrTextInfo Region="745, 690, 30, 13" Text="SKID" />
+                                          <uc:OcrTextInfo Region="776, 691, 18, 12" Text="UP" />
+                                          <uc:OcrTextInfo Region="795, 691, 19, 11" Text="TO" />
+                                          <uc:OcrTextInfo Region="816, 690, 49, 13" Text="DOSING" />
+                                          <uc:OcrTextInfo Region="866, 690, 38, 13" Text="POINT" />
+                                          <uc:OcrTextInfo Region="906, 691, 48, 14" Text="(UNDER" />
+                                          <uc:OcrTextInfo Region="955, 691, 45, 11" Text="WATER" />
+                                          <uc:OcrTextInfo Region="1001, 691, 34, 12" Text="TANK" />
+                                          <uc:OcrTextInfo Region="1036, 691, 26, 12" Text="TOP" />
+                                          <uc:OcrTextInfo Region="1064, 690, 47, 15" Text="SLAB)IS" />
+                                          <uc:OcrTextInfo Region="1113, 690, 63, 12" Text="PROVIDED" />
+                                          <uc:OcrTextInfo Region="1178, 690, 32, 12" Text="WITH" />
+                                          <uc:OcrTextInfo Region="1212, 691, 51, 12" Text="DOUBLE" />
+                                          <uc:OcrTextInfo Region="1513, 697, 51, 10" Text="CONTRACT:" />
+                                          <uc:OcrTextInfo Region="1581, 697, 43, 10" Text="DRAWING" />
+                                          <uc:OcrTextInfo Region="1625, 697, 40, 10" Text="NUMBER:" />
+                                          <uc:OcrTextInfo Region="419, 707, 379, 16" Text="CONTAIMMENTLEAKDETECTIONATLONPOINISISPROVIDEDA" />
+                                          <uc:OcrTextInfo Region="792, 708, 26, 12" Text="AND" />
+                                          <uc:OcrTextInfo Region="820, 707, 38, 13" Text="DRAIN" />
+                                          <uc:OcrTextInfo Region="859, 708, 19, 11" Text="TO" />
+                                          <uc:OcrTextInfo Region="880, 707, 63, 13" Text="CHEMICAL" />
+                                          <uc:OcrTextInfo Region="945, 708, 38, 12" Text="BUND." />
+                                          <uc:OcrTextInfo Region="422, 725, 12, 12" Text="3." />
+                                          <uc:OcrTextInfo Region="436, 725, 81, 12" Text="DISCHARGED" />
+                                          <uc:OcrTextInfo Region="518, 725, 18, 12" Text="TO" />
+                                          <uc:OcrTextInfo Region="538, 725, 25, 12" Text="THE" />
+                                          <uc:OcrTextInfo Region="565, 725, 35, 11" Text="BUND" />
+                                          <uc:OcrTextInfo Region="1581, 712, 192, 20" Text="PUB-DTSS2-TWRP" />
+                                          <uc:OcrTextInfo Region="422, 742, 12, 12" Text="4." />
+                                          <uc:OcrTextInfo Region="436, 742, 33, 11" Text="VENT" />
+                                          <uc:OcrTextInfo Region="471, 742, 26, 12" Text="HAS" />
+                                          <uc:OcrTextInfo Region="498, 741, 18, 12" Text="TO" />
+                                          <uc:OcrTextInfo Region="518, 742, 18, 12" Text="BE" />
+                                          <uc:OcrTextInfo Region="537, 741, 77, 13" Text="CONNECTED" />
+                                          <uc:OcrTextInfo Region="615, 742, 19, 11" Text="TO" />
+                                          <uc:OcrTextInfo Region="635, 741, 41, 13" Text="ASAFE" />
+                                          <uc:OcrTextInfo Region="678, 741, 66, 13" Text="LOCATION." />
+                                          <uc:OcrTextInfo Region="1522, 731, 43, 19" Text="C4B" />
+                                          <uc:OcrTextInfo Region="1581, 738, 29, 10" Text="SHEET" />
+                                          <uc:OcrTextInfo Region="1611, 738, 41, 9" Text="NUMBER" />
+                                          <uc:OcrTextInfo Region="1785, 738, 44, 10" Text="REVSION" />
+                                          <uc:OcrTextInfo Region="422, 759, 12, 12" Text="5." />
+                                          <uc:OcrTextInfo Region="436, 758, 70, 13" Text="EXTENSION" />
+                                          <uc:OcrTextInfo Region="508, 758, 61, 13" Text="SPRINDLE" />
+                                          <uc:OcrTextInfo Region="570, 759, 18, 12" Text="TO" />
+                                          <uc:OcrTextInfo Region="590, 759, 18, 12" Text="BE" />
+                                          <uc:OcrTextInfo Region="609, 758, 64, 13" Text="PROVIDED" />
+                                          <uc:OcrTextInfo Region="675, 759, 26, 11" Text="FOR" />
+                                          <uc:OcrTextInfo Region="703, 758, 75, 13" Text="OPERATION." />
+                                          <uc:OcrTextInfo Region="1579, 749, 151, 21" Text="WST02-P-6019" />
+                                          <uc:OcrTextInfo Region="1809, 753, 13, 15" Text="B" />
+                                          <uc:OcrTextInfo Region="1572, 783, 34, 14" Text="THIS" />
+                                          <uc:OcrTextInfo Region="1609, 783, 70, 14" Text="DRAWING" />
+                                          <uc:OcrTextInfo Region="1682, 783, 14, 14" Text="IS" />
+                                          <uc:OcrTextInfo Region="1699, 783, 87, 14" Text="COPYRIGHT" />
+                                        </scg:List>
+                                      </uc:CVCache.OcrTexts>
+                                    </uc:CVCache>
+                                  </scg:List>
+                                </uc:CvCacheContainer.Caches>
+                              </uc:CvCacheContainer>
+                            </p:CVScope.DesignTimeCacheContainer>
+                            <p:CVScope.OCREngine>
+                              <ActivityFunc x:TypeArguments="sd:Image, scg:IEnumerable(scg:KeyValuePair(sd1:Rectangle, x:String))">
+                                <ActivityFunc.Argument>
+                                  <DelegateInArgument x:TypeArguments="sd:Image" Name="Image" />
+                                </ActivityFunc.Argument>
+                                <p1:UiPathScreenOCR ApiKey="{x:Null}" Endpoint="{x:Null}" Output="{x:Null}" PredictionId="{x:Null}" Text="{x:Null}" UseAccents="{x:Null}" UseLocalServer="{x:Null}" ComputeSkewAngle="False" ExtractWords="True" sap:VirtualizedContainerService.HintSize="418,25" sap2010:WorkflowViewState.IdRef="UiPathScreenOCR_1" Image="[Image]" Language="en" NoopExecution="False" Profile="Screen" Scale="1" Timeout="100000" />
+                              </ActivityFunc>
+                            </p:CVScope.OCREngine>
+                            <p:CVScope.Target>
+                              <ui:Target ClippingRegion="{x:Null}" Element="{x:Null}" Id="18e40580-b525-4af5-8e70-e6b12390d884" InformativeScreenshot="d246eec70b9f852bd4ecd9d5bb403963" Selector="&lt;wnd app='msedge.exe' cls='Chrome_WidgetWin_1' title='download.aspx*' /&gt;&lt;ctrl name='download.aspx' role='document' /&gt;&lt;ctrl omit:name='PDF Document' role='document' /&gt;" WaitForReady="INTERACTIVE">
+                                <ui:Target.TimeoutMS>
+                                  <InArgument x:TypeArguments="x:Int32" />
+                                </ui:Target.TimeoutMS>
+                              </ui:Target>
+                            </p:CVScope.Target>
+                            <p:CVScope.UseLocalServer>
+                              <InArgument x:TypeArguments="x:Boolean" />
+                            </p:CVScope.UseLocalServer>
+                            <sap:WorkflowViewStateService.ViewState>
+                              <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                                <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+                                <x:Boolean x:Key="IsPinned">False</x:Boolean>
+                                <x:Boolean x:Key="IsAnnotationDocked">True</x:Boolean>
+                              </scg:Dictionary>
+                            </sap:WorkflowViewStateService.ViewState>
+                          </p:CVScope>
+                          <ui:CommentOut DisplayName="Comment Out" sap:VirtualizedContainerService.HintSize="954,57" sap2010:WorkflowViewState.IdRef="CommentOut_3">
+                            <ui:CommentOut.Body>
+                              <Sequence DisplayName="Ignored Activities" sap:VirtualizedContainerService.HintSize="449.6,165.6" sap2010:WorkflowViewState.IdRef="Sequence_29">
+                                <sap:WorkflowViewStateService.ViewState>
+                                  <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                                    <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+                                  </scg:Dictionary>
+                                </sap:WorkflowViewStateService.ViewState>
+                                <uix:NNavigateBrowser Action="CloseTab" DisplayName="Navigate Browser - Close Tab" sap:VirtualizedContainerService.HintSize="416,105.6" sap2010:WorkflowViewState.IdRef="NNavigateBrowser_1" Version="V4" />
+                              </Sequence>
+                            </ui:CommentOut.Body>
+                            <sap:WorkflowViewStateService.ViewState>
+                              <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                                <x:Boolean x:Key="IsExpanded">False</x:Boolean>
+                                <x:Boolean x:Key="IsPinned">False</x:Boolean>
+                              </scg:Dictionary>
+                            </sap:WorkflowViewStateService.ViewState>
+                          </ui:CommentOut>
+                          <uix:NNavigateBrowser Action="CloseTab" DisplayName="Navigate Browser - Close Tab" sap:VirtualizedContainerService.HintSize="954,105" sap2010:WorkflowViewState.IdRef="NNavigateBrowser_2" Version="V4" />
+                        </Sequence>
+                      </ActivityAction>
+                    </uix:NApplicationCard.Body>
+                    <uix:NApplicationCard.TargetApp>
+                      <uix:TargetApp Area="-1928, -4, 1936, 1048" BrowserType="Edge" ContentHash="ooYyJ1JIKkqU36famMyatw" IconBase64="iVBORw0KGgoAAAANSUhEUgAAABAAAAAQCAYAAAAf8/9hAAAAAXNSR0IArs4c6QAAAARnQU1BAACxjwv8YQUAAAAJcEhZcwAAEnQAABJ0Ad5mH3gAAABLSURBVDhP7c6xEQAgCENR9l+CUfVioDKoJYX/Lt0rYq0ajysbt2BIdcHqYEh1C7n7tgyGVBesDoZUt9B/cA6GVBesDoZUl+C2VplNFyNVyOLZh00AAAAASUVORK5CYII=" InformativeScreenshot="4968a858d008cee54888be198a8e4593.jpg" Reference="SRHzbWhimEWn6FoI8hcZfg/V5ReFhXxzES52wBjkEKarg" Selector="&lt;html app='msedge.exe' title='download.aspx' /&gt;" Url="https://convergeaus.jacobs.com/PrologConverge/WebClient/download.aspx*" Version="V2" />
+                    </uix:NApplicationCard.TargetApp>
+                    <sap:WorkflowViewStateService.ViewState>
+                      <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                        <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+                        <x:Boolean x:Key="IsPinned">False</x:Boolean>
+                        <x:Boolean x:Key="IsAnnotationDocked">True</x:Boolean>
+                      </scg:Dictionary>
+                    </sap:WorkflowViewStateService.ViewState>
+                  </uix:NApplicationCard>
+                </Sequence>
+              </uix:NCheckState.IfExists>
+              <uix:NCheckState.IfNotExists>
+                <Sequence DisplayName="Target does not appear" sap:VirtualizedContainerService.HintSize="468,415" sap2010:WorkflowViewState.IdRef="Sequence_22">
+                  <sap:WorkflowViewStateService.ViewState>
+                    <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                      <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+                    </scg:Dictionary>
+                  </sap:WorkflowViewStateService.ViewState>
+                  <uix:NApplicationCard sap2010:Annotation.AnnotationText="open pdf" AttachMode="ByInstance" CloseMode="Always" DisplayName="Edge download.aspx" HealingAgentBehavior="Job" sap:VirtualizedContainerService.HintSize="434,353" sap2010:WorkflowViewState.IdRef="NApplicationCard_4" InteractionMode="DebuggerApi" ScopeGuid="dd0f12b3-c167-4a3f-8eb8-dd8f0e8e2f9b" Version="V2">
+                    <uix:NApplicationCard.Body>
+                      <ActivityAction x:TypeArguments="x:Object">
+                        <ActivityAction.Argument>
+                          <DelegateInArgument x:TypeArguments="x:Object" Name="WSSessionData" />
+                        </ActivityAction.Argument>
+                        <uix:NNavigateBrowser Action="CloseTab" DisplayName="Navigate Browser - Close Tab" sap:VirtualizedContainerService.HintSize="400,82" sap2010:WorkflowViewState.IdRef="NNavigateBrowser_4" Version="V4" />
+                      </ActivityAction>
+                    </uix:NApplicationCard.Body>
+                    <uix:NApplicationCard.TargetApp>
+                      <uix:TargetApp Area="-1928, -4, 1936, 1048" BrowserType="Edge" ContentHash="ooYyJ1JIKkqU36famMyatw" IconBase64="iVBORw0KGgoAAAANSUhEUgAAABAAAAAQCAYAAAAf8/9hAAAAAXNSR0IArs4c6QAAAARnQU1BAACxjwv8YQUAAAAJcEhZcwAAEnQAABJ0Ad5mH3gAAABLSURBVDhP7c6xEQAgCENR9l+CUfVioDKoJYX/Lt0rYq0ajysbt2BIdcHqYEh1C7n7tgyGVBesDoZUt9B/cA6GVBesDoZUl+C2VplNFyNVyOLZh00AAAAASUVORK5CYII=" InformativeScreenshot="4968a858d008cee54888be198a8e4593.jpg" Reference="SRHzbWhimEWn6FoI8hcZfg/V5ReFhXxzES52wBjkEKarg" Selector="&lt;html app='msedge.exe' title='download.aspx' /&gt;" Url="https://convergeaus.jacobs.com/PrologConverge/WebClient/download.aspx*" Version="V2" />
+                    </uix:NApplicationCard.TargetApp>
+                    <sap:WorkflowViewStateService.ViewState>
+                      <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                        <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+                        <x:Boolean x:Key="IsPinned">False</x:Boolean>
+                        <x:Boolean x:Key="IsAnnotationDocked">True</x:Boolean>
+                      </scg:Dictionary>
+                    </sap:WorkflowViewStateService.ViewState>
+                  </uix:NApplicationCard>
+                </Sequence>
+              </uix:NCheckState.IfNotExists>
+              <uix:NCheckState.Target>
+                <uix:TargetAnchorable ContentHash="7W4TibuCoUWqUYwSxgFcyQ" DesignTimeRectangle="12, 168, 1912, 868" FullSelectorArgument="&lt;ctrl name='download.aspx' role='document' /&gt;&lt;ctrl omit:name='PDF Document' role='document' /&gt;" FuzzySelectorArgument="&lt;ctrl name='download.aspx' role='document' matching:name='fuzzy' fuzzylevel:name='0.0' /&gt;&lt;ctrl name='PDF Document' role='document' automationid='' matching:name='fuzzy' fuzzylevel:name='0.0' matching:automationid='fuzzy' fuzzylevel:automationid='0.0' check:fulltext='CH2M HILL Singapore Pte Ltd A B C D     PUB-DTSS2-TWRP 131242 07/03/25 C4B 15/08/23FOR APPROVAL NTS WIL13-P-6080 WDL13-P-6097 WIL11-P-6000 WSB01-P-6090 013 PROCESS UNIT WIL12-P-6023 WIL11-P-6008 WST02-P-6000 WIL13-P-6042 WSB01-P-6081 WSB01-P-6010 C3B1 C4B C3B1 C4B C3B1 C4B C3B1 C4B C3B1 C4A C4B C4A C4B C4A C4B C4A C4B C4A WDL13-P-6020 WSW41-P-6000 500 x 750 P&amp;amp;ID SITEWIDE PIPE RACK YQD WHP KL FS HQL JKO FS C4B C1A NOTE 4 NOTE 4 NOTE 4 150 x 300 WSW00-P-6200 NOTE 3 NOTE 3 NOTE 3 NOTE 2 PART 1 16/02/24 FOR APPROVAL FS KL 30/07/24 FOR APPROVAL FS KL M NOTE 2 NOTE 5 5.CONNECTED TO FIRE HOSEREEL AT SSNR PLANT 4.INDICATES PIPE FLANGE CONNECTION WITH UNDERGROUND PIPING. 3. AIR RELEASE VALVE AT HIGHEST POINT OF THE PIPELINE. STRUCTURAL DESIGN FOR FUTURE INSTALLATION BY PUB.  SUPPLY. PIPE LOADING CONSIDERATION IS INCLUDED IN PIPERACK 2. DN600 INDUSTRIAL WATER PIPELINE IS OMMITED FROM C4B SCOPE OF 1.REFER TO TENDER P&amp;amp;ID LEGEND SHEET. NOTES: WSW00-P-6202 13/11/24 FOR APPROVAL FS KL RE RE07/03/25 FOR APPROVAL FS KL C4B C1A THIS DRAWING IS COPYRIGHT CLIENT: CONSULTANT: PROJECT TITLE: PROGRAMME MANAGER: SHEET SIZE: DRAFTED: DESIGNED: SCALE: DESIGN CHECK: DRAFTING CHECK: DATE: REVIEWED: PBS: CONTRACT: DRAWING NUMBER: SHEET NUMBER: REVISION: A1 AUTHORISED REVIEWED DESCRIPTION DATE REV TUAS WATER RECLAMATION PLANT (TWRP) DRAWING TITLE                                                DTSS PHASE 2 PUB-DTSS2-TWRP MAIN CONTRACTOR: FOR APPROVAL CONSULTANT/ SUB CONTRACTOR: CES_SALCON-SDC JV CES_SALCON-SDC JV 01 01 ILM1 IW TERTIARY PLANT OUTPUT IW STORAGE TANK 01 01 ILM HEADWORKS UPSTREAM &amp;amp; ILM INTERMEDIATE SCREENS PUMPING STATION BIOSOLIDS DRAINAGE 02 01 PSI HOLDING TANK ILM1 PSI TANKS 01 01 01 01 ILM1 WAS CHANNEL TO ILM GRIT TANK EFFLUENT TCI PUMPS WAS HOLDING TANK BIOSOLIDS FACILITY TP WIL13-TP-IW-0102 TP WIL12-TP-PSI-0101 TP WSB01-TP-TCI-0101 TP WIL13-TP-WASI-0204 TP WIL13-TP-IW-0103 TP WSB01-TP-PD-0103 TP WSB01-TP-PSI-0101 TP WSB01-TP-TCI-0102 TP WSB01-TP-WASI-0101 01 SSN REMOVAL TP WST02-TP-PD-0101 WSW41-013-TCI-00101-750-CSEL WSW41-013-TCI-00102-500-CSEL TP WST02-TP-PW-0101 NRV-0101 NRV-0102 TP WST00-TP-G2D-0101 01 G2D WATER SUPPLY WSW41-013-G2D-00101-300-DIPU WSW41-013-PSI-00101-250-SS16 WSW41-013-WASI-00101-250-SS16 WSW41-013-FPW-00102-50-SS04 WST02-201-TCI-00001-250-CSEL 01 SSN REMOVAL WST02-P-6500 WST02-005-PW-00101-65-SS04 01 SSN REMOVAL WST02-P-6200 HV-0101 HV-0102 HV-0103 ARV 0101 ARV 0102 ARV 0103 WSW41-013-PD-00101-350-SS16 HV-0105 HV-0106 HV-0111 HV-0110 HV-0112 HV-0113 FIT FIA FE 0101 0101 WSW41-013-G2D-00103-150-SS16 01 POTABLE WATER SUPPLY 65 X 150 HV-0104 WSW41-013-PW-00101-150-DICL 200X150 150 X 100 100 X 150 L WSW41-013-G2D-00102-150-SS16 NO 0101 NO' /&gt;" Guid="a4e23ed2-8e25-4f4d-bef8-fa6bba21b013" InformativeScreenshot="005b6c99f2e90a1c2dbbd146c13ac0cf.png" Reference="SRHzbWhimEWn6FoI8hcZfg/C0c52T4GO0er7a-JRplCEA" ScopeSelectorArgument="&lt;wnd app='msedge.exe' cls='Chrome_WidgetWin_1' title='download.aspx*' /&gt;" SearchSteps="Selector" Version="V6" Visibility="Interactive" WaitForReadyArgument="None" />
+              </uix:NCheckState.Target>
+            </uix:NCheckState>
+            <ui:CommentOut DisplayName="Comment Out" sap:VirtualizedContainerService.HintSize="1100,50" sap2010:WorkflowViewState.IdRef="CommentOut_4">
+              <ui:CommentOut.Body>
+                <Sequence DisplayName="Ignored Activities" sap:VirtualizedContainerService.HintSize="449.6,168.8" sap2010:WorkflowViewState.IdRef="Sequence_30">
+                  <sap:WorkflowViewStateService.ViewState>
+                    <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                      <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+                    </scg:Dictionary>
+                  </sap:WorkflowViewStateService.ViewState>
+                  <ui:MessageBox Caption="{x:Null}" ChosenButton="{x:Null}" AutoCloseAfter="00:00:00" DisplayName="Message Box" sap:VirtualizedContainerService.HintSize="416,108.8" sap2010:WorkflowViewState.IdRef="MessageBox_6" Text="[Drawing_Title]" />
+                </Sequence>
+              </ui:CommentOut.Body>
+              <sap:WorkflowViewStateService.ViewState>
+                <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                  <x:Boolean x:Key="IsExpanded">False</x:Boolean>
+                  <x:Boolean x:Key="IsPinned">False</x:Boolean>
+                </scg:Dictionary>
+              </sap:WorkflowViewStateService.ViewState>
+            </ui:CommentOut>
+          </Sequence>
+        </ActivityAction>
+      </uix:NApplicationCard.Body>
+      <uix:NApplicationCard.TargetApp>
+        <uix:TargetApp Area="-829, 4, 829, 671" BrowserType="Edge" ContentHash="p62x_0TQF0eZPxa-vj7efQ" IconBase64="iVBORw0KGgoAAAANSUhEUgAAABAAAAAQCAYAAAAf8/9hAAAAAXNSR0IArs4c6QAAAARnQU1BAACxjwv8YQUAAAAJcEhZcwAAEnQAABJ0Ad5mH3gAAAGySURBVDhPlZJPKINhHMe/G6NIVgqFg9ROi4PiRji4kJSDXOak1XLTcFAsFyUlKeVmkddef7LZspuSUu4OTkoSLpZ/27zv4/u869XeMebbnt73/f1+38++z/O+yNWCB4tdbvTJe7sNdqP4H4VnEblR8NjpxoB8LhhiM36AMokdcQLxsIXEcAd8RjMjo/+n1GnsajFoqX1o7wfQ/INYYLlY9kjIn8ZMEJqCKuIQiW0kCdFFBGJlDBuOIlTKft4tmQCZQBxDvISQflOZYhcfIgaxOYGosxx12bMWWQBM8LyDVHIPOiH6K2ESGp/HeX0V3IYhV7kAmYD/LggRvOoEpmWSyzVctzSiO9tj6DeAkULlVqJMEcAVUwxx1DjYL1kAjGtugUbtfQ+aNK+P46ysBP0cq+ayHqYJ4Fv4SsClpQ+ga2GIuREcFdnRwxGnOWuRWWQCVSfgSUFSP2QSFWlvL4JstXNV/GjOlkwgPySa9bsgnvtascRyM11lmYk8MsmKHyFxytNexX2bCzMsuWw2lMpeQYoGEL1Yxm1TLbx8bOCX58h0CtRoD3w0e3hbQ7P1VX0T8AnOiMjg4njsrwAAAABJRU5ErkJggg==" InformativeScreenshot="739f13adfd2ec9290d22df661722c901.jpg" Reference="SRHzbWhimEWn6FoI8hcZfg/s6wXVnIqdUiABffOYkV-Hw" Selector="&lt;html app='msedge.exe' title='????ing Submittals' /&gt;" Url="https://convergeaus.jacobs.com/PrologConverge/WebClient/SubmittalPackage.aspx*" Version="V2" />
+      </uix:NApplicationCard.TargetApp>
+      <sap:WorkflowViewStateService.ViewState>
+        <scg:Dictionary x:TypeArguments="x:String, x:Object">
+          <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+          <x:Boolean x:Key="IsPinned">False</x:Boolean>
+        </scg:Dictionary>
+      </sap:WorkflowViewStateService.ViewState>
+    </uix:NApplicationCard>
+  </Sequence>
+</Activity>

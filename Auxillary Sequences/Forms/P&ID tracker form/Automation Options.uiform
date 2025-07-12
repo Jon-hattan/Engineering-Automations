@@ -1,0 +1,265 @@
+﻿{
+  "Metadata": {
+    "Id": "b58a9940-2a1a-4418-8888-7ac08e1318dc",
+    "Kind": "FormIo"
+  },
+  "DesignProperties": {
+    "Title": "Automation Options",
+    "Theme": "Default",
+    "ShowInTaskbar": true,
+    "ShowMargin": true,
+    "CustomStyle": ""
+  },
+  "Data": {
+    "components": [
+      {
+        "tag": "h3",
+        "content": "Configure Prolog Automation Settings",
+        "key": "label",
+        "input": false,
+        "tableView": false,
+        "label": "Label",
+        "type": "label"
+      },
+      {
+        "content": "Please complete the following instructions before proceeding with the automation.",
+        "key": "label1",
+        "input": false,
+        "tableView": false,
+        "label": "Label",
+        "type": "label"
+      },
+      {
+        "label": "Have you logged into Prolog in your <b> Edge Browser? </b>",
+        "optionsLabelPosition": "right",
+        "description": "Ensure Prolog is on the Portfolio Page.",
+        "tooltip": "If you have not logged in, the automation may not run properly. Please log in before proceeding.",
+        "inline": false,
+        "tableView": false,
+        "values": [
+          {
+            "label": "Yes",
+            "value": "yes",
+            "shortcut": ""
+          },
+          {
+            "label": "No",
+            "value": "no",
+            "shortcut": ""
+          }
+        ],
+        "validate": {
+          "required": true
+        },
+        "key": "LoggedIntoEdge",
+        "type": "radio",
+        "input": true
+      },
+      {
+        "label": "Have you downloaded a copy of the P&ID tracker Excel Sheet? ",
+        "optionsLabelPosition": "right",
+        "tooltip": "The automation will run on the excel sheet if it is in your downloads folder. Ensure it is downloaded.",
+        "inline": false,
+        "tableView": false,
+        "values": [
+          {
+            "label": "Yes",
+            "value": "yes",
+            "shortcut": ""
+          },
+          {
+            "label": "No",
+            "value": "no",
+            "shortcut": ""
+          }
+        ],
+        "validate": {
+          "required": true
+        },
+        "key": "DownloadedExcel",
+        "type": "radio",
+        "input": true
+      },
+      {
+        "label": "Select P&ID tracker",
+        "action": "event",
+        "showValidations": false,
+        "tableView": false,
+        "key": "selectPIdTracker",
+        "type": "button",
+        "input": true
+      },
+      {
+        "label": "Content",
+        "refreshOnChange": false,
+        "key": "fileName",
+        "type": "content",
+        "input": false,
+        "tableView": false
+      },
+      {
+        "label": "Do you have any other tabs open in your Edge Browser? If yes, please close everything except for the Prolog tab.",
+        "optionsLabelPosition": "right",
+        "tooltip": "If there are other tabs open, it may disrupt the automation.",
+        "inline": false,
+        "tableView": false,
+        "values": [
+          {
+            "label": "Yes",
+            "value": "yes",
+            "shortcut": ""
+          },
+          {
+            "label": "No",
+            "value": "no",
+            "shortcut": ""
+          }
+        ],
+        "validate": {
+          "required": true
+        },
+        "key": "OtherTabsOpen",
+        "type": "radio",
+        "input": true
+      },
+      {
+        "label": "Please select which contracts you would like to update.",
+        "tableView": false,
+        "defaultValue": {
+          "C1A": false,
+          "c2A": false,
+          "c2B": false,
+          "c3A": false,
+          "c3B1": false,
+          "c3C": false,
+          "c3D1": false,
+          "c3D2": false,
+          "c3E": false,
+          "c4A": false,
+          "c4B": false,
+          "c5A": false,
+          "C2A": false,
+          "C2B": false,
+          "C3A": false,
+          "C3B1": false,
+          "C3C": false,
+          "C3D1": false,
+          "C3D2": false,
+          "C3E": false,
+          "C4A": false,
+          "C4B": false
+        },
+        "values": [
+          {
+            "label": "C1A",
+            "value": "C1A",
+            "shortcut": ""
+          },
+          {
+            "label": "C2A",
+            "value": "C2A",
+            "shortcut": ""
+          },
+          {
+            "label": "C2B",
+            "value": "C2B",
+            "shortcut": ""
+          },
+          {
+            "label": "C3A",
+            "value": "C3A",
+            "shortcut": ""
+          },
+          {
+            "label": "C3B1",
+            "value": "C3B1",
+            "shortcut": ""
+          },
+          {
+            "label": "C3C",
+            "value": "C3C",
+            "shortcut": ""
+          },
+          {
+            "label": "C3D1",
+            "value": "C3D1",
+            "shortcut": ""
+          },
+          {
+            "label": "C3D2",
+            "value": "C3D2",
+            "shortcut": ""
+          },
+          {
+            "label": "C3E",
+            "value": "C3E",
+            "shortcut": ""
+          },
+          {
+            "label": "C4A",
+            "value": "C4A",
+            "shortcut": ""
+          },
+          {
+            "label": "C4B",
+            "value": "C4B",
+            "shortcut": ""
+          },
+          {
+            "label": "C5A",
+            "value": "c5A",
+            "shortcut": ""
+          }
+        ],
+        "validate": {
+          "required": true
+        },
+        "key": "UpdateContracts",
+        "type": "selectboxes",
+        "input": true,
+        "inputType": "checkbox"
+      },
+      {
+        "label": "Would you like to search for new SRC numbers?",
+        "optionsLabelPosition": "right",
+        "tooltip": "If you select no, the automation will only update existing P&IDs indicated in the Excel Sheet",
+        "inline": false,
+        "tableView": false,
+        "values": [
+          {
+            "label": "Yes",
+            "value": "yes",
+            "shortcut": ""
+          },
+          {
+            "label": "No",
+            "value": "no",
+            "shortcut": ""
+          }
+        ],
+        "validate": {
+          "required": true
+        },
+        "key": "wouldYouLikeToSearchForNewPIDs",
+        "type": "radio",
+        "input": true
+      },
+      {
+        "label": "Begin Automation",
+        "action": "event",
+        "showValidations": false,
+        "tableView": false,
+        "key": "beginAutomation",
+        "type": "button",
+        "input": true
+      },
+      {
+        "label": "PnID_filePath",
+        "key": "pnidFilePath",
+        "type": "hidden",
+        "input": true,
+        "tableView": false
+      }
+    ]
+  }
+}
