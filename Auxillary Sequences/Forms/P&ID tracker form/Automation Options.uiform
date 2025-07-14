@@ -207,7 +207,12 @@
           },
           {
             "label": "C5A",
-            "value": "c5A",
+            "value": "C5A",
+            "shortcut": ""
+          },
+          {
+            "label": "Another Contract",
+            "value": "anotherContract",
             "shortcut": ""
           }
         ],
@@ -218,6 +223,19 @@
         "type": "selectboxes",
         "input": true,
         "inputType": "checkbox"
+      },
+      {
+        "label": "Please type in the contract name (in all caps).",
+        "description": "If you want to indicate multiple new contracts, please separate them with a comma (eg. C4C1, C4C2)",
+        "tableView": true,
+        "key": "contractName",
+        "conditional": {
+          "show": true,
+          "when": "UpdateContracts",
+          "eq": "anotherContract"
+        },
+        "type": "textfield",
+        "input": true
       },
       {
         "label": "Would you like to search for new SRC numbers?",
