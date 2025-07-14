@@ -49,7 +49,7 @@ To run the automation workflows provided in this repository, follow the steps be
 ### 📦 Step-by-Step Instructions
 
 1. **Download the Automation Package**  
-   Download the latest `.nupkg` file from this link: [Jacobs.Engineering.Automations.1.0.6.nupkg](https://github.com/Jon-hattan/Engineering-Automations/releases/downloadPackage)  
+   Download the latest `.nupkg` file from this link: [Jacobs.Engineering.Automations.1.0.6.nupkg](https://github.com/Jon-hattan/Engineering-Automations/releases/download/v1.0.6/Jacobs.Engineering.Automations.1.0.6.nupkg)  
    Move the downloaded `.nupkg` file to the following directory:
      ```
      %ProgramData%\UiPath\Packages
