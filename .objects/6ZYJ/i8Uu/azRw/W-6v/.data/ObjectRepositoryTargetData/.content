@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="utf-16"?>
+<ObjectRepositoryTargetData ContentHash="Ksl-9eYGV0iPg01Ihh1ZNQ" xmlns="http://schemas.uipath.com/workflow/activities/uix" xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml">
+  <ObjectRepositoryTargetData.Data>
+    <TargetAnchorable x:Key="TargetAnchorable" DesignTimeRectangle="1620, 970, 76, 21" ElementType="Text" FullSelectorArgument="&lt;wnd cls='UIX:Window' idx='2' /&gt;&lt;ctrl automationid='cmdbar.pageZoom@' /&gt;&lt;ctrl automationid='E@' /&gt;&lt;ctrl automationid='0@' /&gt;" FuzzySelectorArgument="&lt;wnd cls='UIX:Window' /&gt;&lt;ctrl automationid='cmdbar.pageZoom@' matching:automationid='fuzzy' fuzzylevel:automationid='0.0' /&gt;&lt;ctrl automationid='E@' matching:automationid='fuzzy' fuzzylevel:automationid='0.0' /&gt;&lt;ctrl automationid='0@' role='text' matching:automationid='fuzzy' fuzzylevel:automationid='0.0' check:text='Fit Page' /&gt;" Guid="6b39e465-d5a0-456f-b55b-e48de516a97d" ScopeSelectorArgument="&lt;wnd app='pdfxedit.exe' omit:cls='PXE:{C*AD*E*B1E*D8AF3B9D}' title='* - PDF-XChange Editor' /&gt;" SearchSteps="Selector, FuzzySelector" Version="V6" Visibility="Interactive" WaitForReadyArgument="Interactive">
+      <imageRef attrName="InformativeScreenshot" originalValue="5ee75849aafe3bb4590ffb0ce3a0830e.png" xmlns="">05Ibc2NslLkSOfkuQFtsN2w</imageRef>
+    </TargetAnchorable>
+    <x:String x:Key="ActivityType">Click</x:String>
+  </ObjectRepositoryTargetData.Data>
+</ObjectRepositoryTargetData>

@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="utf-16"?>
+<ObjectRepositoryTargetData ContentHash="OqX2_xJpeEun0glADi3_oA" Reference="xGt2OSXt7UW47kSHt2k5yg/RhF2ghKiBUugnHSPqDZ3BQ" xmlns="http://schemas.uipath.com/workflow/activities/uix" xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml">
+  <ObjectRepositoryTargetData.Data>
+    <TargetAnchorable x:Key="TargetAnchorable" DesignTimeRectangle="33, 579, 295, 16" ElementType="RadioButton" FullSelectorArgument="&lt;ctrl automationid='DlgAddImage@' name='Add Image' role='pane' /&gt;&lt;ctrl automationid='rb.AsStamp@' /&gt;" FuzzySelectorArgument="&lt;ctrl automationid='DlgAddImage@' name='Add Image' role='pane' matching:automationid='fuzzy' fuzzylevel:automationid='0.0' matching:name='fuzzy' fuzzylevel:name='0.0' /&gt;&lt;ctrl automationid='rb.AsStamp@' role='radio button' matching:automationid='fuzzy' fuzzylevel:automationid='0.0' check:fulltext='As a Stamp' /&gt;" Guid="8f672e96-2b27-401b-b1c9-6af0dc9dad0c" ImageBase64="" ScopeSelectorArgument="&lt;wnd app='pdfxedit.exe' cls='UIX:Window' title='Add Image' /&gt;" SearchSteps="Selector, FuzzySelector" Version="V6" Visibility="Interactive" WaitForReadyArgument="Interactive">
+      <TargetAnchorable.PointOffset>
+        <PointOffset Position="BottomLeft" X="9" Y="-8" />
+      </TargetAnchorable.PointOffset>
+      <imageRef attrName="InformativeScreenshot" originalValue="ae44fa97ab31057fa6a673efcc90666a.png" xmlns="">0QfsFHm_8tUqh3SyRSu5WlA</imageRef>
+    </TargetAnchorable>
+    <x:String x:Key="ActivityType">Click</x:String>
+  </ObjectRepositoryTargetData.Data>
+</ObjectRepositoryTargetData>

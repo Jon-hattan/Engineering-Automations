@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="utf-16"?>
+<ObjectRepositoryTargetData ContentHash="wO1QciEaekW7y0pqQkFlRA" xmlns="http://schemas.uipath.com/workflow/activities/uix" xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml">
+  <ObjectRepositoryTargetData.Data>
+    <TargetAnchorable x:Key="TargetAnchorable" DesignTimeRectangle="82, 94, 351, 43" ElementType="Button" FullSelectorArgument="&lt;ctrl automationid='msg.dragImageRect@' /&gt;" FuzzySelectorArgument="&lt;ctrl automationid='msg.dragImageRect@' role='push button' matching:automationid='fuzzy' fuzzylevel:automationid='0.0' check:text='Drag Image Rectangle...' /&gt;" Guid="8f94bbe7-39ec-41ce-953a-560a984dbaff" ImageBase64="" ScopeSelectorArgument="&lt;wnd app='pdfxedit.exe' cls='UIX:Window' title='Select Image Placement Tool' /&gt;" SearchSteps="Selector, FuzzySelector" Version="V6" Visibility="Interactive" WaitForReadyArgument="Interactive">
+      <imageRef attrName="InformativeScreenshot" originalValue="629c2dd6345ad4ffa1c9b397c5460cc4.png" xmlns="">0RXU_8QwY-0S5Avomq0MqYA</imageRef>
+    </TargetAnchorable>
+    <x:String x:Key="ActivityType">Click</x:String>
+  </ObjectRepositoryTargetData.Data>
+</ObjectRepositoryTargetData>

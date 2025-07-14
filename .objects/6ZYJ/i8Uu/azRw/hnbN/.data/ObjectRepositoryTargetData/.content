@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="utf-16"?>
+<ObjectRepositoryTargetData ContentHash="oiwh5PqaJ0O0EQIz6ILv0A" xmlns="http://schemas.uipath.com/workflow/activities/uix" xmlns:scg="clr-namespace:System.Collections.Generic;assembly=System.Private.CoreLib" xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml">
+  <ObjectRepositoryTargetData.Data>
+    <TargetAnchorable x:Key="TargetAnchorable" DesignTimeRectangle="565, 185, 152, 28" ElementType="Button" FullSelectorArgument="&lt;ctrl automationid='3CE@' /&gt;&lt;ctrl automationid='3D0@' /&gt;&lt;ctrl automationid='rbar.home.objects@' /&gt;&lt;ctrl automationid='cmd.addObjectGroup@' /&gt;&lt;ctrl automationid='cmd.tool.selImagePlace@' /&gt;" FuzzySelectorArgument="&lt;ctrl automationid='3CE@' matching:automationid='fuzzy' fuzzylevel:automationid='0.0' /&gt;&lt;ctrl automationid='3D0@' matching:automationid='fuzzy' fuzzylevel:automationid='0.0' /&gt;&lt;ctrl automationid='rbar.home.objects@' matching:automationid='fuzzy' fuzzylevel:automationid='0.0' /&gt;&lt;ctrl automationid='cmd.addObjectGroup@' matching:automationid='fuzzy' fuzzylevel:automationid='0.0' /&gt;&lt;ctrl automationid='cmd.tool.selImagePlace@' role='push button' matching:automationid='fuzzy' fuzzylevel:automationid='0.0' check:text='Add Image...' /&gt;" Guid="a1e2c6fb-ed59-4842-a834-688d961b5488" ImageBase64="" ScopeSelectorArgument="&lt;wnd app='pdfxedit.exe' omit:cls='PXE:{C*AD*E*B1E*D8AF3B9D}' title='* - PDF-XChange Editor' /&gt;" SearchSteps="Selector, FuzzySelector" Version="V6" Visibility="Interactive" WaitForReadyArgument="Interactive">
+      <TargetAnchorable.Anchors>
+        <scg:List x:TypeArguments="ITarget" Capacity="4">
+          <Target DesignTimeRectangle="454, 68, 214, 102" ElementType="Toolbar" FullSelectorArgument="&lt;ctrl automationid='3CE@' /&gt;&lt;ctrl automationid='3D0@' /&gt;&lt;ctrl automationid='rbar.home.objects@' /&gt;" FuzzySelectorArgument="&lt;ctrl automationid='3CE@' matching:automationid='fuzzy' fuzzylevel:automationid='0.0' /&gt;&lt;ctrl automationid='3D0@' matching:automationid='fuzzy' fuzzylevel:automationid='0.0' /&gt;&lt;ctrl automationid='rbar.home.objects@' role='tool bar' matching:automationid='fuzzy' fuzzylevel:automationid='0.0' check:text='Objects' /&gt;" Guid="4a77cf08-9bdf-4558-a007-ea4e21f13b54" SearchSteps="Selector, FuzzySelector" />
+        </scg:List>
+      </TargetAnchorable.Anchors>
+      <imageRef attrName="InformativeScreenshot" originalValue="6403040cc1677897c00543fccea01b95.png" xmlns="">0lKMrDq02FUWle_D3jCfWhA</imageRef>
+    </TargetAnchorable>
+    <x:String x:Key="ActivityType">Click</x:String>
+  </ObjectRepositoryTargetData.Data>
+</ObjectRepositoryTargetData>

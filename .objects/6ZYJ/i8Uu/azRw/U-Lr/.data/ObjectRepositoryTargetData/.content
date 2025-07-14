@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="utf-16"?>
+<ObjectRepositoryTargetData ContentHash="yjRJXjGIE02A1iLTo9fmHw" xmlns="http://schemas.uipath.com/workflow/activities/uix" xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml">
+  <ObjectRepositoryTargetData.Data>
+    <TargetAnchorable x:Key="TargetAnchorable" DesignTimeRectangle="318, 651, 109, 26" ElementType="Button" FullSelectorArgument="&lt;ctrl automationid='btn.place@' /&gt;" FuzzySelectorArgument="&lt;ctrl automationid='btn.place@' role='push button' matching:automationid='fuzzy' fuzzylevel:automationid='0.0' check:text='Place' /&gt;" Guid="ee4ca068-02f7-405c-8b53-86e52cdd7388" ImageBase64="" ScopeSelectorArgument="&lt;wnd app='pdfxedit.exe' cls='UIX:Window' title='Add Image' /&gt;" SearchSteps="Selector, FuzzySelector" Version="V6" Visibility="Interactive" WaitForReadyArgument="Interactive">
+      <imageRef attrName="InformativeScreenshot" originalValue="202c861e2a38a0e40c466225d3fa40cd.png" xmlns="">0ebrmIW6EFkG67OacV0Y33g</imageRef>
+    </TargetAnchorable>
+    <x:String x:Key="ActivityType">Click</x:String>
+  </ObjectRepositoryTargetData.Data>
+</ObjectRepositoryTargetData>

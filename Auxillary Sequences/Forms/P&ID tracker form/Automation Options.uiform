@@ -226,7 +226,7 @@
       },
       {
         "label": "Please type in the contract name (in all caps).",
-        "description": "If you want to indicate multiple new contracts, please separate them with a comma (eg. C4C1, C4C2)",
+        "description": "If you want to indicate multiple new contracts, please separate them with a comma (eg. C4C1, C4C2). \nEnsure that the Tracker Sheet already has Sheet with the contract name, and the table for the data is already set up.",
         "tableView": true,
         "key": "contractName",
         "conditional": {

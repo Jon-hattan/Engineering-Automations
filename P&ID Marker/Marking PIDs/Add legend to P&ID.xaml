@@ -1,0 +1,429 @@
+<Activity mc:Ignorable="sap sap2010" x:Class="Add_legend_to_P_ID" VisualBasic.Settings="{x:Null}" sap2010:WorkflowViewState.IdRef="Add_legend_to_P_ID_1" xmlns="http://schemas.microsoft.com/netfx/2009/xaml/activities" xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" xmlns:p="http://schemas.uipath.com/workflow/activities/ocr" xmlns:sap="http://schemas.microsoft.com/netfx/2009/xaml/activities/presentation" xmlns:sap2010="http://schemas.microsoft.com/netfx/2010/xaml/activities/presentation" xmlns:scg="clr-namespace:System.Collections.Generic;assembly=System.Private.CoreLib" xmlns:sco="clr-namespace:System.Collections.ObjectModel;assembly=System.Private.CoreLib" xmlns:sd="clr-namespace:System.Drawing;assembly=System.Drawing.Common" xmlns:sd1="clr-namespace:System.Drawing;assembly=System.Drawing.Primitives" xmlns:si="clr-namespace:System.IO;assembly=System.Private.CoreLib" xmlns:ui="http://schemas.uipath.com/workflow/activities" xmlns:uix="http://schemas.uipath.com/workflow/activities/uix" xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml">
+  <TextExpression.NamespacesForImplementation>
+    <sco:Collection x:TypeArguments="x:String">
+      <x:String>System.Activities</x:String>
+      <x:String>System.Activities.Statements</x:String>
+      <x:String>System.Activities.Expressions</x:String>
+      <x:String>System.Activities.Validation</x:String>
+      <x:String>System.Activities.XamlIntegration</x:String>
+      <x:String>Microsoft.VisualBasic</x:String>
+      <x:String>Microsoft.VisualBasic.Activities</x:String>
+      <x:String>System</x:String>
+      <x:String>System.Collections</x:String>
+      <x:String>System.Collections.Generic</x:String>
+      <x:String>System.Collections.ObjectModel</x:String>
+      <x:String>System.Data</x:String>
+      <x:String>System.Diagnostics</x:String>
+      <x:String>System.Drawing</x:String>
+      <x:String>System.IO</x:String>
+      <x:String>System.Linq</x:String>
+      <x:String>System.Net.Mail</x:String>
+      <x:String>System.Xml</x:String>
+      <x:String>System.Xml.Linq</x:String>
+      <x:String>UiPath.Core</x:String>
+      <x:String>UiPath.Core.Activities</x:String>
+      <x:String>System.Windows.Markup</x:String>
+      <x:String>GlobalVariablesNamespace</x:String>
+      <x:String>GlobalConstantsNamespace</x:String>
+      <x:String>System.Runtime.Serialization</x:String>
+      <x:String>UiPath.UIAutomationNext.Enums</x:String>
+      <x:String>UiPath.UIAutomationCore.Contracts</x:String>
+      <x:String>UiPath.UIAutomationNext.Models</x:String>
+      <x:String>UiPath.Vision.OCR</x:String>
+      <x:String>UiPath.OCR.Contracts</x:String>
+      <x:String>System.Reflection</x:String>
+      <x:String>UiPath.UIAutomationNext.Activities</x:String>
+      <x:String>UiPath.Shared.Activities</x:String>
+      <x:String>UiPath.Platform.ObjectLibrary</x:String>
+      <x:String>UiPath.Platform.SyncObjects</x:String>
+      <x:String>UiPath.OCR.Activities</x:String>
+      <x:String>UiPath.OCR.Contracts.Activities</x:String>
+      <x:String>System.Security</x:String>
+      <x:String>UiPath.UIAutomationNext.Contracts</x:String>
+      <x:String>UiPath.UIAutomationNext.Models.CV</x:String>
+      <x:String>System.ComponentModel</x:String>
+      <x:String>System.Linq.Expressions</x:String>
+    </sco:Collection>
+  </TextExpression.NamespacesForImplementation>
+  <TextExpression.ReferencesForImplementation>
+    <sco:Collection x:TypeArguments="AssemblyReference">
+      <AssemblyReference>Microsoft.VisualBasic</AssemblyReference>
+      <AssemblyReference>mscorlib</AssemblyReference>
+      <AssemblyReference>System</AssemblyReference>
+      <AssemblyReference>System.Activities</AssemblyReference>
+      <AssemblyReference>System.ComponentModel.TypeConverter</AssemblyReference>
+      <AssemblyReference>System.Core</AssemblyReference>
+      <AssemblyReference>System.Data</AssemblyReference>
+      <AssemblyReference>System.Data.Common</AssemblyReference>
+      <AssemblyReference>System.Data.DataSetExtensions</AssemblyReference>
+      <AssemblyReference>System.Drawing</AssemblyReference>
+      <AssemblyReference>System.Drawing.Common</AssemblyReference>
+      <AssemblyReference>System.Drawing.Primitives</AssemblyReference>
+      <AssemblyReference>System.Linq</AssemblyReference>
+      <AssemblyReference>System.Net.Mail</AssemblyReference>
+      <AssemblyReference>System.ObjectModel</AssemblyReference>
+      <AssemblyReference>System.Private.CoreLib</AssemblyReference>
+      <AssemblyReference>System.Xaml</AssemblyReference>
+      <AssemblyReference>System.Xml</AssemblyReference>
+      <AssemblyReference>System.Xml.Linq</AssemblyReference>
+      <AssemblyReference>UiPath.System.Activities</AssemblyReference>
+      <AssemblyReference>UiPath.UiAutomation.Activities</AssemblyReference>
+      <AssemblyReference>UiPath.Studio.Constants</AssemblyReference>
+      <AssemblyReference>System.Private.ServiceModel</AssemblyReference>
+      <AssemblyReference>System.Private.DataContractSerialization</AssemblyReference>
+      <AssemblyReference>System.Runtime.Serialization.Formatters</AssemblyReference>
+      <AssemblyReference>System.Runtime.Serialization.Primitives</AssemblyReference>
+      <AssemblyReference>UiPath.UIAutomationNext</AssemblyReference>
+      <AssemblyReference>UiPath.UIAutomationCore</AssemblyReference>
+      <AssemblyReference>UiPath.Vision.Core</AssemblyReference>
+      <AssemblyReference>UiPath.OCR.Core</AssemblyReference>
+      <AssemblyReference>UiPath.OCR.Contracts</AssemblyReference>
+      <AssemblyReference>System.Reflection.DispatchProxy</AssemblyReference>
+      <AssemblyReference>System.Reflection.TypeExtensions</AssemblyReference>
+      <AssemblyReference>System.Reflection.Metadata</AssemblyReference>
+      <AssemblyReference>UiPath.UIAutomationNext.Activities</AssemblyReference>
+      <AssemblyReference>UiPath.IntelligentOCR.Activities</AssemblyReference>
+      <AssemblyReference>UiPath.PDF.Activities</AssemblyReference>
+      <AssemblyReference>UiPath.DocumentUnderstanding.ML.Activities</AssemblyReference>
+      <AssemblyReference>UiPath.IntelligentOCR.StudioWeb.Activities</AssemblyReference>
+      <AssemblyReference>UiPath.Mail.Activities</AssemblyReference>
+      <AssemblyReference>UiPath.Excel.Activities</AssemblyReference>
+      <AssemblyReference>UiPath.OCR.Activities</AssemblyReference>
+      <AssemblyReference>UiPath.GSuite.Activities</AssemblyReference>
+      <AssemblyReference>UiPath.MicrosoftOffice365.Activities</AssemblyReference>
+      <AssemblyReference>UiPath.Web.Activities</AssemblyReference>
+      <AssemblyReference>UiPath.Platform</AssemblyReference>
+      <AssemblyReference>System.Security.Permissions</AssemblyReference>
+      <AssemblyReference>System.Runtime.InteropServices</AssemblyReference>
+      <AssemblyReference>System.ComponentModel.EventBasedAsync</AssemblyReference>
+      <AssemblyReference>PresentationFramework</AssemblyReference>
+      <AssemblyReference>WindowsBase</AssemblyReference>
+      <AssemblyReference>System.ComponentModel</AssemblyReference>
+      <AssemblyReference>System.ComponentModel.Primitives</AssemblyReference>
+      <AssemblyReference>System.Memory.Data</AssemblyReference>
+      <AssemblyReference>UiPath.Excel.Activities.Design</AssemblyReference>
+      <AssemblyReference>System.Console</AssemblyReference>
+      <AssemblyReference>System.Memory</AssemblyReference>
+      <AssemblyReference>System.Configuration.ConfigurationManager</AssemblyReference>
+      <AssemblyReference>System.Private.Uri</AssemblyReference>
+      <AssemblyReference>System.Linq.Async</AssemblyReference>
+      <AssemblyReference>System.Collections</AssemblyReference>
+      <AssemblyReference>System.Collections.NonGeneric</AssemblyReference>
+      <AssemblyReference>System.Linq.Expressions</AssemblyReference>
+      <AssemblyReference>UiPath.System.Activities.Design</AssemblyReference>
+    </sco:Collection>
+  </TextExpression.ReferencesForImplementation>
+  <Sequence DisplayName="Add_legend_to_P_ID" sap:VirtualizedContainerService.HintSize="1216,3790" sap2010:WorkflowViewState.IdRef="Sequence_1">
+    <sap:WorkflowViewStateService.ViewState>
+      <scg:Dictionary x:TypeArguments="x:String, x:Object">
+        <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+      </scg:Dictionary>
+    </sap:WorkflowViewStateService.ViewState>
+    <uix:NApplicationCard AttachMode="ByInstance" DisplayName="PDF xchange editor" HealingAgentBehavior="Job" sap:VirtualizedContainerService.HintSize="1022,3767.3333333333335" sap2010:WorkflowViewState.IdRef="NApplicationCard_1" ScopeGuid="4ea9fe55-5d54-4cf1-b000-fbed5f0c79ae" Version="V2">
+      <uix:NApplicationCard.Body>
+        <ActivityAction x:TypeArguments="x:Object">
+          <ActivityAction.Argument>
+            <DelegateInArgument x:TypeArguments="x:Object" Name="WSSessionData" />
+          </ActivityAction.Argument>
+          <Sequence DisplayName="Do" sap:VirtualizedContainerService.HintSize="988,3408" sap2010:WorkflowViewState.IdRef="Sequence_2">
+            <Sequence.Variables>
+              <Variable x:TypeArguments="x:String" Name="directoryPath" />
+              <Variable x:TypeArguments="si:FileInfo" Name="LegendFile" />
+            </Sequence.Variables>
+            <sap:WorkflowViewStateService.ViewState>
+              <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+              </scg:Dictionary>
+            </sap:WorkflowViewStateService.ViewState>
+            <uix:NClick ActivateBefore="True" ClickType="Single" DisplayName="Click '150%'" HealingAgentBehavior="SameAsCard" sap:VirtualizedContainerService.HintSize="954,229.33333333333334" sap2010:WorkflowViewState.IdRef="NClick_1" KeyModifiers="None" MouseButton="Left" ScopeIdentifier="4ea9fe55-5d54-4cf1-b000-fbed5f0c79ae" Version="V5">
+              <uix:NClick.Target>
+                <uix:TargetAnchorable DesignTimeRectangle="1618, 1014, 80, 21" ElementType="InputBox" FullSelectorArgument="&lt;wnd cls='UIX:Window' /&gt;&lt;ctrl automationid='DA47@' /&gt;&lt;ctrl automationid='documentView@' /&gt;&lt;ctrl automationid='DC22@' /&gt;&lt;ctrl automationid='cmdbar.pageZoom@' /&gt;&lt;ctrl automationid='cmd.zoom.combo@' name='Zoom' role='editable text' /&gt;" FuzzySelectorArgument="&lt;wnd cls='UIX:Window' /&gt;&lt;ctrl automationid='cmdbar.pageZoom@' matching:automationid='fuzzy' fuzzylevel:automationid='0.0' /&gt;&lt;ctrl automationid='cmd.zoom.combo@' name='Zoom' role='editable text' matching:automationid='fuzzy' fuzzylevel:automationid='0.0' matching:name='fuzzy' fuzzylevel:name='0.0' /&gt;" Guid="00b4a068-38ff-443c-82bd-2a074c82eb36" ImageBase64="" InformativeScreenshot="c18fbc0ef75e494e0ec946b4f5fb2f59.png" ScopeSelectorArgument="&lt;wnd app='pdfxedit.exe' omit:cls='PXE:{C*AD*E*B1E*D8AF3B9D}' title='* - PDF-XChange Editor' /&gt;" SearchSteps="Selector, FuzzySelector" Version="V6" Visibility="Interactive" WaitForReadyArgument="None">
+                  <uix:TargetAnchorable.PointOffset>
+                    <uix:PointOffset Position="BottomRight" X="-9" Y="-11" />
+                  </uix:TargetAnchorable.PointOffset>
+                </uix:TargetAnchorable>
+              </uix:NClick.Target>
+              <uix:NClick.VerifyOptions>
+                <uix:VerifyExecutionOptions DisplayName="{x:Null}" Mode="Appears">
+                  <uix:VerifyExecutionOptions.Retry>
+                    <InArgument x:TypeArguments="x:Boolean" />
+                  </uix:VerifyExecutionOptions.Retry>
+                  <uix:VerifyExecutionOptions.Timeout>
+                    <InArgument x:TypeArguments="x:Double" />
+                  </uix:VerifyExecutionOptions.Timeout>
+                </uix:VerifyExecutionOptions>
+              </uix:NClick.VerifyOptions>
+            </uix:NClick>
+            <uix:NClick ActivateBefore="True" ClickType="Single" DisplayName="Click 'Fit Page'" HealingAgentBehavior="SameAsCard" sap:VirtualizedContainerService.HintSize="954,229.33333333333334" sap2010:WorkflowViewState.IdRef="NClick_2" KeyModifiers="None" MouseButton="Left" ScopeIdentifier="4ea9fe55-5d54-4cf1-b000-fbed5f0c79ae" Version="V5">
+              <uix:NClick.Target>
+                <uix:TargetAnchorable ContentHash="Ksl-9eYGV0iPg01Ihh1ZNQ" DesignTimeRectangle="1620, 970, 76, 21" ElementType="Text" FullSelectorArgument="&lt;wnd cls='UIX:Window' idx='2' /&gt;&lt;ctrl automationid='cmdbar.pageZoom@' /&gt;&lt;ctrl automationid='E@' /&gt;&lt;ctrl automationid='0@' /&gt;" FuzzySelectorArgument="&lt;wnd cls='UIX:Window' /&gt;&lt;ctrl automationid='cmdbar.pageZoom@' matching:automationid='fuzzy' fuzzylevel:automationid='0.0' /&gt;&lt;ctrl automationid='E@' matching:automationid='fuzzy' fuzzylevel:automationid='0.0' /&gt;&lt;ctrl automationid='0@' role='text' matching:automationid='fuzzy' fuzzylevel:automationid='0.0' check:text='Fit Page' /&gt;" Guid="6b39e465-d5a0-456f-b55b-e48de516a97d" InformativeScreenshot="5ee75849aafe3bb4590ffb0ce3a0830e.png" Reference="xGt2OSXt7UW47kSHt2k5yg/W-6v862Tn0CvnIlqPEjPJg" ScopeSelectorArgument="&lt;wnd app='pdfxedit.exe' omit:cls='PXE:{C*AD*E*B1E*D8AF3B9D}' title='* - PDF-XChange Editor' /&gt;" SearchSteps="Selector, FuzzySelector" Version="V6" Visibility="Interactive" WaitForReadyArgument="Interactive" />
+              </uix:NClick.Target>
+              <uix:NClick.VerifyOptions>
+                <uix:VerifyExecutionOptions DisplayName="{x:Null}" Mode="Appears">
+                  <uix:VerifyExecutionOptions.Retry>
+                    <InArgument x:TypeArguments="x:Boolean" />
+                  </uix:VerifyExecutionOptions.Retry>
+                  <uix:VerifyExecutionOptions.Timeout>
+                    <InArgument x:TypeArguments="x:Double" />
+                  </uix:VerifyExecutionOptions.Timeout>
+                </uix:VerifyExecutionOptions>
+              </uix:NClick.VerifyOptions>
+            </uix:NClick>
+            <uix:NClick ActivateBefore="True" ClickType="Single" DisplayName="Click 'Add'" HealingAgentBehavior="SameAsCard" sap:VirtualizedContainerService.HintSize="954,229.33333333333334" sap2010:WorkflowViewState.IdRef="NClick_3" KeyModifiers="None" MouseButton="Left" ScopeIdentifier="4ea9fe55-5d54-4cf1-b000-fbed5f0c79ae" Version="V5">
+              <uix:NClick.Target>
+                <uix:TargetAnchorable ContentHash="CI3DmMX5kUm5eG7Isyp79g" DesignTimeRectangle="562, 70, 52, 84" ElementType="Button" FullSelectorArgument="&lt;ctrl automationid='3CE@' /&gt;&lt;ctrl automationid='3D0@' /&gt;&lt;ctrl automationid='rbar.home.objects@' /&gt;&lt;ctrl automationid='cmd.addObjectGroup@' /&gt;" FuzzySelectorArgument="&lt;ctrl automationid='3CE@' matching:automationid='fuzzy' fuzzylevel:automationid='0.0' /&gt;&lt;ctrl automationid='3D0@' matching:automationid='fuzzy' fuzzylevel:automationid='0.0' /&gt;&lt;ctrl automationid='rbar.home.objects@' matching:automationid='fuzzy' fuzzylevel:automationid='0.0' /&gt;&lt;ctrl automationid='cmd.addObjectGroup@' role='push button' matching:automationid='fuzzy' fuzzylevel:automationid='0.0' check:text='Add' /&gt;" Guid="94eab201-763f-49e8-99e4-70068ef3a25f" InformativeScreenshot="d0078a9e75a6f96e6fd193d10b81b986.png" Reference="xGt2OSXt7UW47kSHt2k5yg/wbeeTpIxsUihaM3Z630tMQ" ScopeSelectorArgument="&lt;wnd app='pdfxedit.exe' omit:cls='PXE:{C*AD*E*B1E*D8AF3B9D}' title='* - PDF-XChange Editor' /&gt;" SearchSteps="Selector, FuzzySelector" Version="V6" Visibility="Interactive" WaitForReadyArgument="Interactive">
+                  <uix:TargetAnchorable.Anchors>
+                    <scg:List x:TypeArguments="uix:ITarget" Capacity="1">
+                      <uix:Target DesignTimeRectangle="454, 68, 214, 102" ElementType="Toolbar" FullSelectorArgument="&lt;ctrl automationid='3CE@' /&gt;&lt;ctrl automationid='3D0@' /&gt;&lt;ctrl automationid='rbar.home.objects@' /&gt;" FuzzySelectorArgument="&lt;ctrl automationid='3CE@' matching:automationid='fuzzy' fuzzylevel:automationid='0.0' /&gt;&lt;ctrl automationid='3D0@' matching:automationid='fuzzy' fuzzylevel:automationid='0.0' /&gt;&lt;ctrl automationid='rbar.home.objects@' role='tool bar' matching:automationid='fuzzy' fuzzylevel:automationid='0.0' check:text='Objects' /&gt;" Guid="aafffb9c-937a-483a-949d-618e322d2f69" SearchSteps="Selector, FuzzySelector" />
+                    </scg:List>
+                  </uix:TargetAnchorable.Anchors>
+                  <uix:TargetAnchorable.PointOffset>
+                    <uix:PointOffset Position="BottomLeft" X="27" Y="-10" />
+                  </uix:TargetAnchorable.PointOffset>
+                </uix:TargetAnchorable>
+              </uix:NClick.Target>
+              <uix:NClick.VerifyOptions>
+                <uix:VerifyExecutionOptions DisplayName="{x:Null}" Mode="Appears">
+                  <uix:VerifyExecutionOptions.Retry>
+                    <InArgument x:TypeArguments="x:Boolean" />
+                  </uix:VerifyExecutionOptions.Retry>
+                  <uix:VerifyExecutionOptions.Timeout>
+                    <InArgument x:TypeArguments="x:Double" />
+                  </uix:VerifyExecutionOptions.Timeout>
+                </uix:VerifyExecutionOptions>
+              </uix:NClick.VerifyOptions>
+            </uix:NClick>
+            <uix:NClick ActivateBefore="True" ClickType="Single" DisplayName="Click 'Add Image...'" HealingAgentBehavior="SameAsCard" sap:VirtualizedContainerService.HintSize="954,229.33333333333334" sap2010:WorkflowViewState.IdRef="NClick_4" KeyModifiers="None" MouseButton="Left" ScopeIdentifier="4ea9fe55-5d54-4cf1-b000-fbed5f0c79ae" Version="V5">
+              <uix:NClick.Target>
+                <uix:TargetAnchorable ContentHash="oiwh5PqaJ0O0EQIz6ILv0A" DesignTimeRectangle="565, 185, 152, 28" ElementType="Button" FullSelectorArgument="&lt;ctrl automationid='3CE@' /&gt;&lt;ctrl automationid='3D0@' /&gt;&lt;ctrl automationid='rbar.home.objects@' /&gt;&lt;ctrl automationid='cmd.addObjectGroup@' /&gt;&lt;ctrl automationid='cmd.tool.selImagePlace@' /&gt;" FuzzySelectorArgument="&lt;ctrl automationid='3CE@' matching:automationid='fuzzy' fuzzylevel:automationid='0.0' /&gt;&lt;ctrl automationid='3D0@' matching:automationid='fuzzy' fuzzylevel:automationid='0.0' /&gt;&lt;ctrl automationid='rbar.home.objects@' matching:automationid='fuzzy' fuzzylevel:automationid='0.0' /&gt;&lt;ctrl automationid='cmd.addObjectGroup@' matching:automationid='fuzzy' fuzzylevel:automationid='0.0' /&gt;&lt;ctrl automationid='cmd.tool.selImagePlace@' role='push button' matching:automationid='fuzzy' fuzzylevel:automationid='0.0' check:text='Add Image...' /&gt;" Guid="a1e2c6fb-ed59-4842-a834-688d961b5488" ImageBase64="" InformativeScreenshot="6403040cc1677897c00543fccea01b95.png" Reference="xGt2OSXt7UW47kSHt2k5yg/hnbNbxOS3EWcb97qOHJj1Q" ScopeSelectorArgument="&lt;wnd app='pdfxedit.exe' omit:cls='PXE:{C*AD*E*B1E*D8AF3B9D}' title='* - PDF-XChange Editor' /&gt;" SearchSteps="Selector, FuzzySelector" Version="V6" Visibility="Interactive" WaitForReadyArgument="Interactive">
+                  <uix:TargetAnchorable.Anchors>
+                    <scg:List x:TypeArguments="uix:ITarget" Capacity="4">
+                      <uix:Target DesignTimeRectangle="454, 68, 214, 102" ElementType="Toolbar" FullSelectorArgument="&lt;ctrl automationid='3CE@' /&gt;&lt;ctrl automationid='3D0@' /&gt;&lt;ctrl automationid='rbar.home.objects@' /&gt;" FuzzySelectorArgument="&lt;ctrl automationid='3CE@' matching:automationid='fuzzy' fuzzylevel:automationid='0.0' /&gt;&lt;ctrl automationid='3D0@' matching:automationid='fuzzy' fuzzylevel:automationid='0.0' /&gt;&lt;ctrl automationid='rbar.home.objects@' role='tool bar' matching:automationid='fuzzy' fuzzylevel:automationid='0.0' check:text='Objects' /&gt;" Guid="4a77cf08-9bdf-4558-a007-ea4e21f13b54" SearchSteps="Selector, FuzzySelector" />
+                    </scg:List>
+                  </uix:TargetAnchorable.Anchors>
+                </uix:TargetAnchorable>
+              </uix:NClick.Target>
+              <uix:NClick.VerifyOptions>
+                <uix:VerifyExecutionOptions DisplayName="{x:Null}" Mode="Appears">
+                  <uix:VerifyExecutionOptions.Retry>
+                    <InArgument x:TypeArguments="x:Boolean" />
+                  </uix:VerifyExecutionOptions.Retry>
+                  <uix:VerifyExecutionOptions.Timeout>
+                    <InArgument x:TypeArguments="x:Double" />
+                  </uix:VerifyExecutionOptions.Timeout>
+                </uix:VerifyExecutionOptions>
+              </uix:NClick.VerifyOptions>
+            </uix:NClick>
+            <uix:NClick ActivateBefore="True" ClickType="Single" DisplayName="Click 'Drag Image Rectangle...'" HealingAgentBehavior="SameAsCard" sap:VirtualizedContainerService.HintSize="954,229.33333333333334" sap2010:WorkflowViewState.IdRef="NClick_5" KeyModifiers="None" MouseButton="Left" ScopeIdentifier="4ea9fe55-5d54-4cf1-b000-fbed5f0c79ae" Version="V5">
+              <uix:NClick.Target>
+                <uix:TargetAnchorable ContentHash="wO1QciEaekW7y0pqQkFlRA" DesignTimeRectangle="82, 94, 351, 43" ElementType="Button" FullSelectorArgument="&lt;ctrl automationid='msg.dragImageRect@' /&gt;" FuzzySelectorArgument="&lt;ctrl automationid='msg.dragImageRect@' role='push button' matching:automationid='fuzzy' fuzzylevel:automationid='0.0' check:text='Drag Image Rectangle...' /&gt;" Guid="8f94bbe7-39ec-41ce-953a-560a984dbaff" ImageBase64="" InformativeScreenshot="629c2dd6345ad4ffa1c9b397c5460cc4.png" Reference="xGt2OSXt7UW47kSHt2k5yg/mIez6h3yz0iOk1WSsJ_KAg" ScopeSelectorArgument="&lt;wnd app='pdfxedit.exe' cls='UIX:Window' title='Select Image Placement Tool' /&gt;" SearchSteps="Selector, FuzzySelector" Version="V6" Visibility="Interactive" WaitForReadyArgument="Interactive" />
+              </uix:NClick.Target>
+              <uix:NClick.VerifyOptions>
+                <uix:VerifyExecutionOptions DisplayName="{x:Null}" Mode="Appears">
+                  <uix:VerifyExecutionOptions.Retry>
+                    <InArgument x:TypeArguments="x:Boolean" />
+                  </uix:VerifyExecutionOptions.Retry>
+                  <uix:VerifyExecutionOptions.Timeout>
+                    <InArgument x:TypeArguments="x:Double" />
+                  </uix:VerifyExecutionOptions.Timeout>
+                </uix:VerifyExecutionOptions>
+              </uix:NClick.VerifyOptions>
+            </uix:NClick>
+            <uix:NCheckState DisplayName="Check App State 'FOR APPROVAL'" HealingAgentBehavior="Disabled" sap:VirtualizedContainerService.HintSize="954,762.6666666666666" sap2010:WorkflowViewState.IdRef="NCheckState_1" ScopeIdentifier="4ea9fe55-5d54-4cf1-b000-fbed5f0c79ae" Timeout="0.5" Version="V5">
+              <uix:NCheckState.IfExists>
+                <Sequence DisplayName="Target appears" sap:VirtualizedContainerService.HintSize="450,509.3333333333333" sap2010:WorkflowViewState.IdRef="Sequence_3">
+                  <sap:WorkflowViewStateService.ViewState>
+                    <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                      <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+                    </scg:Dictionary>
+                  </sap:WorkflowViewStateService.ViewState>
+                  <uix:NClick ActivateBefore="True" ClickType="Down" DisplayName="Click 'FOR APPROVAL'" HealingAgentBehavior="SameAsCard" sap:VirtualizedContainerService.HintSize="416,229.33333333333334" sap2010:WorkflowViewState.IdRef="NClick_6" InteractionMode="HardwareEvents" KeyModifiers="None" MouseButton="Left" ScopeIdentifier="4ea9fe55-5d54-4cf1-b000-fbed5f0c79ae" Version="V5">
+                    <uix:NClick.Target>
+                      <uix:TargetAnchorable Accuracy="0.7" ContentHash="aMfzaBRxm02pBtlx83f5Rw" DesignTimeRectangle="1392, 521, 128, 31" Guid="48420714-6984-416d-8e56-ada70f775f4a" ImageBase64="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" InformativeScreenshot="566e61de042207a0d35ca9fb590b6808.png" Reference="xGt2OSXt7UW47kSHt2k5yg/6QUnxP0PUEa5pwMWRdseWQ" ScopeSelectorArgument="&lt;wnd app='pdfxedit.exe' omit:cls='PXE:{C*AD*E*B1E*D8AF3B9D}' title='*- PDF-XChange Editor' /&gt;" SearchSteps="Image" TargetType="ImageBased" Version="V6" Visibility="Interactive" WaitForReadyArgument="Interactive">
+                        <uix:TargetAnchorable.PointOffset>
+                          <uix:PointOffset Position="TopLeft" X="-2" Y="-4" />
+                        </uix:TargetAnchorable.PointOffset>
+                      </uix:TargetAnchorable>
+                    </uix:NClick.Target>
+                    <uix:NClick.VerifyOptions>
+                      <uix:VerifyExecutionOptions DisplayName="{x:Null}" Mode="Appears">
+                        <uix:VerifyExecutionOptions.Retry>
+                          <InArgument x:TypeArguments="x:Boolean" />
+                        </uix:VerifyExecutionOptions.Retry>
+                        <uix:VerifyExecutionOptions.Timeout>
+                          <InArgument x:TypeArguments="x:Double" />
+                        </uix:VerifyExecutionOptions.Timeout>
+                      </uix:VerifyExecutionOptions>
+                    </uix:NClick.VerifyOptions>
+                  </uix:NClick>
+                  <uix:NClick ActivateBefore="True" ClickType="Up" DisplayName="Click 'FOR APPROVAL'" HealingAgentBehavior="SameAsCard" sap:VirtualizedContainerService.HintSize="416,220" sap2010:WorkflowViewState.IdRef="NClick_7" InteractionMode="HardwareEvents" KeyModifiers="None" MouseButton="Left" ScopeIdentifier="4ea9fe55-5d54-4cf1-b000-fbed5f0c79ae" Version="V5">
+                    <uix:NClick.Target>
+                      <uix:TargetAnchorable Accuracy="0.5" DesignTimeRectangle="1392, 521, 128, 31" Guid="48420714-6984-416d-8e56-ada70f775f4a" ImageBase64="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" InformativeScreenshot="d1ff834b69cc58331e7e16f12fb0fd10.png" ScopeSelectorArgument="&lt;wnd app='pdfxedit.exe' omit:cls='PXE:{C*AD*E*B1E*D8AF3B9D}' title='*- PDF-XChange Editor' /&gt;" SearchSteps="Image" TargetType="ImageBased" Version="V6" Visibility="Interactive" WaitForReadyArgument="Interactive">
+                        <uix:TargetAnchorable.PointOffset>
+                          <uix:PointOffset Position="TopLeft" X="130" Y="-124" />
+                        </uix:TargetAnchorable.PointOffset>
+                      </uix:TargetAnchorable>
+                    </uix:NClick.Target>
+                    <uix:NClick.VerifyOptions>
+                      <uix:VerifyExecutionOptions DisplayName="{x:Null}" Mode="Appears">
+                        <uix:VerifyExecutionOptions.Retry>
+                          <InArgument x:TypeArguments="x:Boolean" />
+                        </uix:VerifyExecutionOptions.Retry>
+                        <uix:VerifyExecutionOptions.Timeout>
+                          <InArgument x:TypeArguments="x:Double" />
+                        </uix:VerifyExecutionOptions.Timeout>
+                      </uix:VerifyExecutionOptions>
+                    </uix:NClick.VerifyOptions>
+                  </uix:NClick>
+                </Sequence>
+              </uix:NCheckState.IfExists>
+              <uix:NCheckState.IfNotExists>
+                <Sequence DisplayName="Target does not appear" sap:VirtualizedContainerService.HintSize="450,509.3333333333333" sap2010:WorkflowViewState.IdRef="Sequence_4">
+                  <Sequence.Variables>
+                    <Variable x:TypeArguments="ui:UiElement" Name="ForConstruction" />
+                  </Sequence.Variables>
+                  <sap:WorkflowViewStateService.ViewState>
+                    <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                      <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+                    </scg:Dictionary>
+                  </sap:WorkflowViewStateService.ViewState>
+                  <uix:NClick ActivateBefore="True" ClickType="Down" DisplayName="Click 'FOR APPROVAL'" HealingAgentBehavior="SameAsCard" sap:VirtualizedContainerService.HintSize="416,229.33333333333334" sap2010:WorkflowViewState.IdRef="NClick_10" InteractionMode="HardwareEvents" KeyModifiers="None" MouseButton="Left" ScopeIdentifier="4ea9fe55-5d54-4cf1-b000-fbed5f0c79ae" Version="V5">
+                    <uix:NClick.Target>
+                      <uix:TargetAnchorable Accuracy="0.7" ContentHash="xoPRp1u7bkach4M7bdYDZA" DesignTimeRectangle="1386, 516, 122, 27" Guid="90bc6a5b-d6ec-4d99-92c6-d4baf04cb114" ImageBase64="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" InformativeScreenshot="bf7e0b57d3890c1715492e9c9c0de8f3.png" Reference="xGt2OSXt7UW47kSHt2k5yg/tHfF6pKn9EeIlbO0dkkl-g" ScopeSelectorArgument="&lt;wnd app='pdfxedit.exe' cls='PXE:{C*AD*E*B1E*D8AF3B9D}' title='131241-WSB01-DR-P-6011 marked - PDF-XChange Editor' /&gt;" SearchSteps="Image" TargetType="ImageBased" Version="V6" Visibility="Interactive" WaitForReadyArgument="Interactive">
+                        <uix:TargetAnchorable.PointOffset>
+                          <uix:PointOffset Position="TopLeft" X="-1" Y="-4" />
+                        </uix:TargetAnchorable.PointOffset>
+                      </uix:TargetAnchorable>
+                    </uix:NClick.Target>
+                    <uix:NClick.VerifyOptions>
+                      <uix:VerifyExecutionOptions DisplayName="{x:Null}" Mode="Appears">
+                        <uix:VerifyExecutionOptions.Retry>
+                          <InArgument x:TypeArguments="x:Boolean" />
+                        </uix:VerifyExecutionOptions.Retry>
+                        <uix:VerifyExecutionOptions.Timeout>
+                          <InArgument x:TypeArguments="x:Double" />
+                        </uix:VerifyExecutionOptions.Timeout>
+                      </uix:VerifyExecutionOptions>
+                    </uix:NClick.VerifyOptions>
+                  </uix:NClick>
+                  <uix:NClick ActivateBefore="True" ClickType="Up" DisplayName="Click 'FOR APPROVAL'" HealingAgentBehavior="SameAsCard" sap:VirtualizedContainerService.HintSize="416,220" sap2010:WorkflowViewState.IdRef="NClick_11" InteractionMode="HardwareEvents" KeyModifiers="None" MouseButton="Left" ScopeIdentifier="4ea9fe55-5d54-4cf1-b000-fbed5f0c79ae" Version="V5">
+                    <uix:NClick.Target>
+                      <uix:TargetAnchorable Accuracy="0.7" DesignTimeRectangle="1386, 516, 122, 27" Guid="90bc6a5b-d6ec-4d99-92c6-d4baf04cb114" ImageBase64="iVBORw0KGgoAAAANSUhEUgAAAHoAAAAbCAYAAACz8ZsbAAAAAXNSR0IArs4c6QAAAARnQU1BAACxjwv8YQUAAAAJcEhZcwAAFiUAABYlAUlSJPAAAAcBSURBVGhD7ZlnaBVNFIYj2Hus2MHeUGNDRUTE3lsUhaioKAYRu2IBO9h7IbG32GMDe0XQEBsIth+KFUXB3sv5eM7HDLObXG8U/5i7DwzZO7O7M3PeOWfObKIkICKI8lcEZE4CoSOEQOgIIRA6QvAIXbNmTcmePXtQMknJlStX+kJXqlRJbt68KV+/fg1KJihZsmQJLfTdu3fdqoB/mEDoCCEQOkLIkNBTp06V0aNHe8qVK1fsvUePHpUePXpI586dZfny5fL9+3fbNm/ePPvMmDFjZNasWb9cQOQFAwYMkNatW8ukSZPk1atXnvbr169L//79pX379jJ58mR58+aNbdu0aZMcOHDAc/+JEyfk7Nmzev3jxw9JSEiQjh076nh37dql9a9fv04zP1M+fvwoM2bMsL/Hjh0rc+bMkfv379t3Us9flylTpuh7DadOnZLY2Fhp166dLF26VL59+6b1M2fOTNMn5datW3Ly5Ek5ePCgfQdjWbx4sb6jT58+cv78edv24MEDGT9+vHz+/NnWocPEiRP1OkNCFypUSIYOHaqTNOXq1avaxqTLli0rK1eulK1bt0r9+vWlS5cu9j1Vq1aVkSNHysKFC2XBggUqUsGCBeXly5f2HgPGoC/euXv3bhWjbt261ij79u3TZzE8InXv3l2qVatmDdqtW7c0754+fbrMnz9fr3muXr16sm7dOlm1apWULl1aNm/erM+bedFf06ZN7W+MW6JECTWYmUPfvn2lcOHC+hyJTlRUlB2jgXE8evRIrxG2ZMmSsmbNGklKSlIbDRw4UNtmz56t/bD4ypcvb/u9ffu2LgJsBwjYsGFDdYCdO3fKokWLdAyMHy5duqTjwHYGnsmZM6deZ1johw8fus0Kq4jOnjx5Yut4eY0aNSQ5OVl/I3RqaqrzlKght23b5qmDOnXqWC8DvCQmJkZFZ3UWKVLEs4oBL8GzAaEx6LBhw2y7KzTjunbtmm1j4TRr1sz+hhEjRqjxXRDaH4UQ6/Dhw2GFZjHkz5/f8zxRKl++fHLv3j1bt2PHDunQoYP9Da7QLDDaf/78adtxNrR5//69Cl28eHHt6+nTp9r+14TGKwghfpYtW6beBukJXbt2bdm7d6+n7s6dO5InT540Bnv27JmKfO7cOR2Tn4sXL6onAEIzJiZ748YNrXOFbtmypS6KT58+6W/6ckMdZERoFmDlypXl2LFjYYVmQTdp0sTTBq5zQDihGzVqZJ3HBafBlgjNPUReoib8kdBt2rSRrl27ahk3bpzWx8fH6x7shxCMdwJCx8XFaThij27evLnUqlXLGttw5swZ/UgTihUrVqj3+mGPzpo1q14jNMYgD2jRooXWuULjzWXKlJG8efPqPDCu6yEQSuhBgwbZOWBcjGrOqL8Smr7JOcIRTmg+eJi8wGXIkCG6bxuhX7x4IdHR0epcfyQ0sX/16tVajDcSItm3/JBEuEIPHjxYEzpCZ6dOneTDhw/+R9Rj2W9DQQ7Qu3dvf7UKnS1bNr02QrOIypUrJ/v37/cIDUSH48ePq6BsBcOHD3feFlpo7iPBqlKlii44NyqEEvrx48dqHxZ6OMIJnTt37nSjKkIvWbLECg302bhx4z8TOr1O8Ob0JoFhSaTADd2sNvaRPXv2+J74P5QxmS9fvnjqEYsIgTi8yw8ZdYUKFfTaCA0kLIR0MnfGwz5mEhcDfebIkcNzSggltLHF8+fP1R5Hjhyx7RiRpM2Fz47Ml1MASZQfFi4JlyGc0Gx3hw4d8rRDgwYNNNdwhSbKoN/69ev/jtCEEtpIygxMuHr16nZQ/j16w4YNmu3690ZgFW7fvt3+xkuYIBPhmkSLaOHSq1cv9VpwhQZCLAsLoYki5ABuAvTu3Tut+x2hgeyZPdp4ccWKFeX06dO2nSNi0aJFdVvAHoRSV1TyDuz2O8kY4Znt0z3GpaSkaFSiD1dowP7M/a8IDRilVKlSmu5zRmX/JTwb/EIzUEI49/vBWAUKFNAQuXHjRp0YWbHZRxGRseCleGfbtm31XW/fvtV2v9Cc9ZmgCd0TJkzQxcKYOe/jDRkN3a7QCEwUIfEDjk/FihXTfohytDFGA+0YHbESExPVEUaNGmXbIZzQiImQ5DjYZtq0aWoLrsEvNLRq1er3hMbw/g8XLnww6devn3rX2rVrPatu7ty59jxpuHDhgue853L58mXd+0mWOFL4QyLZNJllz5499R14pYFJm2zbgBgkegaOb5yDed4/VmCr8EcNjEoYduEe5mZgq2D+5BGETD94GDai3y1btvibNVFkPC587HE/ABEF2X/ph3M4Hm0gqnLacSGK8BEFMiR0wL9PIHSEEAgdIQRCRwiB0BHCL4XmgwPHo6D8+yWk0Bzm+Z9oUDJHcT/Y/AcXZ0yOsXBfUgAAAABJRU5ErkJggg==" InformativeScreenshot="b69db9f18e8426189fdf75977613884c.png" ScopeSelectorArgument="&lt;wnd app='pdfxedit.exe' cls='PXE:{C*AD*E*B1E*D8AF3B9D}' title='131241-WSB01-DR-P-6011 marked - PDF-XChange Editor' /&gt;" SearchSteps="Image" TargetType="ImageBased" Version="V6" Visibility="Interactive" WaitForReadyArgument="Interactive">
+                        <uix:TargetAnchorable.PointOffset>
+                          <uix:PointOffset Position="TopLeft" X="125" Y="-111" />
+                        </uix:TargetAnchorable.PointOffset>
+                      </uix:TargetAnchorable>
+                    </uix:NClick.Target>
+                    <uix:NClick.VerifyOptions>
+                      <uix:VerifyExecutionOptions DisplayName="{x:Null}" Mode="Appears">
+                        <uix:VerifyExecutionOptions.Retry>
+                          <InArgument x:TypeArguments="x:Boolean" />
+                        </uix:VerifyExecutionOptions.Retry>
+                        <uix:VerifyExecutionOptions.Timeout>
+                          <InArgument x:TypeArguments="x:Double" />
+                        </uix:VerifyExecutionOptions.Timeout>
+                      </uix:VerifyExecutionOptions>
+                    </uix:NClick.VerifyOptions>
+                  </uix:NClick>
+                </Sequence>
+              </uix:NCheckState.IfNotExists>
+              <uix:NCheckState.Target>
+                <uix:TargetAnchorable Accuracy="0.7" ContentHash="aMfzaBRxm02pBtlx83f5Rw" DesignTimeRectangle="1392, 521, 128, 31" Guid="48420714-6984-416d-8e56-ada70f775f4a" ImageBase64="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" InformativeScreenshot="566e61de042207a0d35ca9fb590b6808.png" Reference="xGt2OSXt7UW47kSHt2k5yg/6QUnxP0PUEa5pwMWRdseWQ" ScopeSelectorArgument="&lt;wnd app='pdfxedit.exe' omit:cls='PXE:{C*AD*E*B1E*D8AF3B9D}' title='*- PDF-XChange Editor' /&gt;" SearchSteps="Image" TargetType="ImageBased" Version="V6" Visibility="Interactive" WaitForReadyArgument="Interactive">
+                  <uix:TargetAnchorable.PointOffset>
+                    <uix:PointOffset Position="TopLeft" X="-2" Y="-4" />
+                  </uix:TargetAnchorable.PointOffset>
+                </uix:TargetAnchorable>
+              </uix:NCheckState.Target>
+            </uix:NCheckState>
+            <ui:GetFileInfoX DisplayName="Get File Info" FilePath="[&quot;&quot;&quot;P&amp;ID Marker\Marking PIDs\Legend.png&quot;&quot;&quot;]" sap:VirtualizedContainerService.HintSize="954,168.66666666666666" sap2010:WorkflowViewState.IdRef="GetFileInfoX_1" Output="[LegendFile]" />
+            <Assign sap:VirtualizedContainerService.HintSize="954,117.33333333333333" sap2010:WorkflowViewState.IdRef="Assign_1">
+              <Assign.To>
+                <OutArgument x:TypeArguments="x:String">[directoryPath]</OutArgument>
+              </Assign.To>
+              <Assign.Value>
+                <InArgument x:TypeArguments="x:String">[Path.GetDirectoryName(LegendFIle.FullName).Replace("""", "")]</InArgument>
+              </Assign.Value>
+            </Assign>
+            <uix:NTypeInto ActivateBefore="True" ClickBeforeMode="Single" ClipboardMode="Never" DisplayName="Type Into 'Address CUsersjonch…'" EmptyFieldMode="SingleLine" HealingAgentBehavior="SameAsCard" sap:VirtualizedContainerService.HintSize="954,254.66666666666666" sap2010:WorkflowViewState.IdRef="NTypeInto_2" ScopeIdentifier="4ea9fe55-5d54-4cf1-b000-fbed5f0c79ae" Text="[directoryPath + &quot;[k(Enter)]&quot;]" Version="V4">
+              <uix:NTypeInto.Target>
+                <uix:TargetAnchorable ContentHash="x67tna7ew0O2jpUoin8KTg" DesignTimeRectangle="152, 41, 499, 34" ElementType="Toolbar" FullSelectorArgument="&lt;wnd aaname='Loading' cls='msctls_progress32' /&gt;&lt;wnd ctrlid='1001' title='Address: *' /&gt;" FuzzySelectorArgument="&lt;wnd aaname='Loading' cls='msctls_progress32' matching:aaname='fuzzy' fuzzylevel:aaname='0.0' /&gt;&lt;wnd ctrlid='1001' title='Address: C:\Users\*\AppData\Roaming\Tracker Software\PDFXEdi*' matching:ctrlid='fuzzy' fuzzylevel:ctrlid='0.0' fuzzylevel:title='0.0' /&gt;" Guid="e804563e-6e2e-490b-8bbc-e81c7938c698" ImageBase64="" InformativeScreenshot="2bc2a04c2a4b550bdedf5e2b86ef8f40.png" Reference="xGt2OSXt7UW47kSHt2k5yg/lCAc7t6yJE69_3MQDxbZ7w" ScopeSelectorArgument="&lt;wnd app='pdfxedit.exe' omit:cls='#32770' title='Open Files' /&gt;" SearchSteps="Selector, FuzzySelector" Version="V6" Visibility="Interactive" WaitForReadyArgument="None">
+                  <uix:TargetAnchorable.PointOffset>
+                    <uix:PointOffset Position="BottomLeft" X="11" Y="-17" />
+                  </uix:TargetAnchorable.PointOffset>
+                </uix:TargetAnchorable>
+              </uix:NTypeInto.Target>
+            </uix:NTypeInto>
+            <uix:NTypeInto ActivateBefore="True" ClickBeforeMode="Single" ClipboardMode="Never" DisplayName="Type Into 'Edit'" EmptyFieldMode="SingleLine" HealingAgentBehavior="SameAsCard" sap:VirtualizedContainerService.HintSize="954,254.66666666666666" sap2010:WorkflowViewState.IdRef="NTypeInto_3" ScopeIdentifier="4ea9fe55-5d54-4cf1-b000-fbed5f0c79ae" Text="Legend[k(Enter)]" Version="V4">
+              <uix:NTypeInto.Target>
+                <uix:TargetAnchorable ContentHash="Ymy5L8UAzUOzVYmHvWpkkQ" DesignTimeRectangle="201, 461, 510, 15" ElementType="InputBox" FullSelectorArgument="&lt;wnd ctrlid='1148' /&gt;&lt;wnd ctrlid='1148' /&gt;&lt;wnd ctrlid='1148' /&gt;" FuzzySelectorArgument="&lt;wnd ctrlid='1148' matching:ctrlid='fuzzy' fuzzylevel:ctrlid='0.0' /&gt;&lt;wnd ctrlid='1148' matching:ctrlid='fuzzy' fuzzylevel:ctrlid='0.0' /&gt;&lt;wnd ctrlid='1148' matching:ctrlid='fuzzy' fuzzylevel:ctrlid='0.0' /&gt;" Guid="9d906ff6-f42a-4553-ad54-13fcb9b38c10" InformativeScreenshot="db6431f33c64f8f4e1613b7f0d3421fb.png" Reference="xGt2OSXt7UW47kSHt2k5yg/ok68PtiIzkOrSNiATERF5w" ScopeSelectorArgument="&lt;wnd app='pdfxedit.exe' cls='#32770' title='Open Files' /&gt;" SearchSteps="Selector, FuzzySelector" Version="V6" Visibility="Interactive" WaitForReadyArgument="None" />
+              </uix:NTypeInto.Target>
+            </uix:NTypeInto>
+            <uix:NClick ActivateBefore="True" ClickType="Single" DisplayName="Click 'As a Stamp'" HealingAgentBehavior="SameAsCard" sap:VirtualizedContainerService.HintSize="954,229.33333333333334" sap2010:WorkflowViewState.IdRef="NClick_8" KeyModifiers="None" MouseButton="Left" ScopeIdentifier="4ea9fe55-5d54-4cf1-b000-fbed5f0c79ae" Version="V5">
+              <uix:NClick.Target>
+                <uix:TargetAnchorable ContentHash="OqX2_xJpeEun0glADi3_oA" DesignTimeRectangle="33, 579, 295, 16" ElementType="RadioButton" FullSelectorArgument="&lt;ctrl automationid='DlgAddImage@' name='Add Image' role='pane' /&gt;&lt;ctrl automationid='rb.AsStamp@' /&gt;" FuzzySelectorArgument="&lt;ctrl automationid='DlgAddImage@' name='Add Image' role='pane' matching:automationid='fuzzy' fuzzylevel:automationid='0.0' matching:name='fuzzy' fuzzylevel:name='0.0' /&gt;&lt;ctrl automationid='rb.AsStamp@' role='radio button' matching:automationid='fuzzy' fuzzylevel:automationid='0.0' check:fulltext='As a Stamp' /&gt;" Guid="8f672e96-2b27-401b-b1c9-6af0dc9dad0c" ImageBase64="" InformativeScreenshot="ae44fa97ab31057fa6a673efcc90666a.png" Reference="xGt2OSXt7UW47kSHt2k5yg/RhF2ghKiBUugnHSPqDZ3BQ" ScopeSelectorArgument="&lt;wnd app='pdfxedit.exe' cls='UIX:Window' title='Add Image' /&gt;" SearchSteps="Selector, FuzzySelector" Version="V6" Visibility="Interactive" WaitForReadyArgument="Interactive">
+                  <uix:TargetAnchorable.PointOffset>
+                    <uix:PointOffset Position="BottomLeft" X="9" Y="-8" />
+                  </uix:TargetAnchorable.PointOffset>
+                </uix:TargetAnchorable>
+              </uix:NClick.Target>
+              <uix:NClick.VerifyOptions>
+                <uix:VerifyExecutionOptions DisplayName="{x:Null}" Mode="Appears">
+                  <uix:VerifyExecutionOptions.Retry>
+                    <InArgument x:TypeArguments="x:Boolean" />
+                  </uix:VerifyExecutionOptions.Retry>
+                  <uix:VerifyExecutionOptions.Timeout>
+                    <InArgument x:TypeArguments="x:Double" />
+                  </uix:VerifyExecutionOptions.Timeout>
+                </uix:VerifyExecutionOptions>
+              </uix:NClick.VerifyOptions>
+            </uix:NClick>
+            <uix:NClick ActivateBefore="True" ClickType="Single" DisplayName="Click 'Place'" HealingAgentBehavior="SameAsCard" sap:VirtualizedContainerService.HintSize="954,229.33333333333334" sap2010:WorkflowViewState.IdRef="NClick_9" KeyModifiers="None" MouseButton="Left" ScopeIdentifier="4ea9fe55-5d54-4cf1-b000-fbed5f0c79ae" Version="V5">
+              <uix:NClick.Target>
+                <uix:TargetAnchorable ContentHash="yjRJXjGIE02A1iLTo9fmHw" DesignTimeRectangle="318, 651, 109, 26" ElementType="Button" FullSelectorArgument="&lt;ctrl automationid='btn.place@' /&gt;" FuzzySelectorArgument="&lt;ctrl automationid='btn.place@' role='push button' matching:automationid='fuzzy' fuzzylevel:automationid='0.0' check:text='Place' /&gt;" Guid="ee4ca068-02f7-405c-8b53-86e52cdd7388" ImageBase64="" InformativeScreenshot="202c861e2a38a0e40c466225d3fa40cd.png" Reference="xGt2OSXt7UW47kSHt2k5yg/U-Lrrc48WEedat2Vy9xlkg" ScopeSelectorArgument="&lt;wnd app='pdfxedit.exe' cls='UIX:Window' title='Add Image' /&gt;" SearchSteps="Selector, FuzzySelector" Version="V6" Visibility="Interactive" WaitForReadyArgument="Interactive" />
+              </uix:NClick.Target>
+              <uix:NClick.VerifyOptions>
+                <uix:VerifyExecutionOptions DisplayName="{x:Null}" Mode="Appears">
+                  <uix:VerifyExecutionOptions.Retry>
+                    <InArgument x:TypeArguments="x:Boolean" />
+                  </uix:VerifyExecutionOptions.Retry>
+                  <uix:VerifyExecutionOptions.Timeout>
+                    <InArgument x:TypeArguments="x:Double" />
+                  </uix:VerifyExecutionOptions.Timeout>
+                </uix:VerifyExecutionOptions>
+              </uix:NClick.VerifyOptions>
+            </uix:NClick>
+            <ui:SendHotkey ClickBeforeTyping="{x:Null}" DelayBefore="{x:Null}" DelayBetweenKeys="{x:Null}" DelayMS="{x:Null}" EmptyField="{x:Null}" SendWindowMessages="{x:Null}" Activate="True" DisplayName="Send Hotkey 'pane  0@'" sap:VirtualizedContainerService.HintSize="954,184.66666666666666" sap2010:WorkflowViewState.IdRef="SendHotkey_2" Key="s" KeyModifiers="Ctrl" SpecialKey="False">
+              <ui:SendHotkey.Target>
+                <ui:Target ClippingRegion="{x:Null}" Element="{x:Null}" Id="02bcf46d-2e68-40c2-9731-85cec418e48b" InformativeScreenshot="48361f3130270e389dd577abf429ab1d" Selector="&lt;wnd omit:aaname='Pages window' omit:cls='UIX:Window' /&gt;">
+                  <ui:Target.TimeoutMS>
+                    <InArgument x:TypeArguments="x:Int32" />
+                  </ui:Target.TimeoutMS>
+                  <ui:Target.WaitForReady>
+                    <InArgument x:TypeArguments="ui:WaitForReady" />
+                  </ui:Target.WaitForReady>
+                </ui:Target>
+              </ui:SendHotkey.Target>
+            </ui:SendHotkey>
+          </Sequence>
+        </ActivityAction>
+      </uix:NApplicationCard.Body>
+      <uix:NApplicationCard.OCREngine>
+        <ActivityFunc x:TypeArguments="sd:Image, scg:IEnumerable(scg:KeyValuePair(sd1:Rectangle, x:String))">
+          <ActivityFunc.Argument>
+            <DelegateInArgument x:TypeArguments="sd:Image" Name="Image" />
+          </ActivityFunc.Argument>
+          <p:UiPathDocumentOCR ApiKey="{x:Null}" Endpoint="{x:Null}" Output="{x:Null}" PredictionId="{x:Null}" Text="{x:Null}" UseLocalServer="{x:Null}" ComputeSkewAngle="False" DisplayName="UiPath Document OCR" ExtractWords="True" sap:VirtualizedContainerService.HintSize="400,25.333333333333332" sap2010:WorkflowViewState.IdRef="UiPathDocumentOCR_1" Image="[Image]" Language="auto" NoopExecution="False" Profile="None" Scale="1" Timeout="100000" />
+        </ActivityFunc>
+      </uix:NApplicationCard.OCREngine>
+      <uix:NApplicationCard.TargetApp>
+        <uix:TargetApp Area="-759, -1088, 1936, 1048" ContentHash="CvzeKcOv7kOTNEGt926NQg" FilePath="C:\Program Files\Tracker Software\PDF Editor\pdfxedit.exe" IconBase64="iVBORw0KGgoAAAANSUhEUgAAACAAAAAgCAYAAABzenr0AAAAAXNSR0IArs4c6QAAAARnQU1BAACxjwv8YQUAAAAJcEhZcwAAFiUAABYlAUlSJPAAAApeSURBVFhHfZd3dJRVGoe/f2Dmm5mv3plJMjVlUigGCEVA5CzIiooiKngU0LUgRaQpRQiwCEgRRJGSkEJHUdeyCIsQhRQ4FCEIQiihCCK7+4ciuIqBwLPn+2aSBcvec55z733vnff3u++9M+eMJEmStD6U3WpbpMWnNent6mvT2lKb1o6zsY78M+vOm+hyK5lduJB5BxcyO3Mh1olvMyw6xol1smMXYtZa5/ieBOez7qg/kdf94Bd/7tPd0pZWhTJbb0uJXaxMzmB3IJua1FbURHNtzmZ04Hzsdptv/pAOnMtoz7n0dpxNb2tjja2YtWbvyfwtX+d0ulJ51/13SRsCsU2fJaVR5k9liy/KjuQY1cEcqoPZHAo143Rq6zhRi1b/m6e2SdCaU9FWnIzkcjJym91b89NprTmTnseZjLZ8ndHudzmS17Va2uRPrdvsj7LRG+bvIkBDu3H9Oj+fPM2pRwZyLJAdj9XXc/3KFS5v2sLpLvdwPNScY8FmjZ9paMdCzTkeaUltai4n01rbnEpv8xtqM/LqpY3+KBt8YT4UQd4zk+0EH2W1pMwb5NiosVys2snBpHQ7frRVJ2py8vhu7Xp+OXWaw8EsvkqJ2WtHcjva+w6lxDgczOZopAXHUm/jeFouJ9JacSL995E+9oX4wBvkXZHMGt1nJ3sn1ow1imBvrz58V7mDcjPFjn91W3uqfVEOZuba85rO3dnvj9rjgy3bs88XpTopjS8DmXwVzuFItDlHoi2oSW35h0jvewOsFymsNf0s14SdzGr1dXX8eOZrdvfqw8aEsQMt2rLXG7KxrujoA4+wxxtq/ExD25+SzoFQFgcjORyKNvu/SOu9KawTyaw0fRQlDKyKZVOg6CxTDN7XvWww4gb2tcxjlzfE7nC87F927cEOb9AeH/jT3XzRMo/9t7VjbyCd/eFMDkSyORDNaaQ6mh0nkuij2UhrRRKrhJ9Sw0uhZsYNZOawTDUoUk1KNJMPDa8dr2yeS5U/xKlJU/jlm/NU+gJUeOPXs7tZfG1ncpQ9wTS+CMfYF8lkfySLfTaZ7A3H2BPKaMSaSyuFnxXCR7HppVCPV2BNdjOKdUGpISjVBSsScavduHaN/9Qc5cB9vSn3BSj3x785uyxzKRF2BlPZHc5gTyTG3mimzZ5oJrsiGVSF0qhMy2LPnd0pD0TtuVQq/JQIH0WmlwJd2BQlxFeYXpYbghJdsEoXfCh8fCL8bPMF2OYPst0fYntSnPLkCJWBVHaE0tkVzmBXJGazMxKjKpxOeTCVvb168+OJWttw9aAhlCWHkYqFoEgIlpmCQjPel5iCFUKwKsFyK2aYvGMKPhJetialsD0lSHkgRHkgTHkwTEUwQlU4SlUklR3RNJuqSBrl4Sjb0mOcKSi0H27d99+zc9Ag3hNePklKQSoQceEGLAOlosGA1zaw0ppbpkzBB14fn/iSbNHyUCRB1BaqCKdSEYmzPRylLBhm5333c7k2fupvNm3ivcwsVukGn/d7lH9XVCItFoKlQmAbSVSjpNFAnNU3sU4INvj9bA0EqYhGKb+J7ZEo2yJRysJhtqSmcXLxkvipL16kcvBgSjWd1eEwJ9aubXxT0kLTZJFpssQ0KTBNCk0T61oaqmCdvsHEGiFYKwTver1sTEpiWzgSFw1H+DwcoSwUZnMwREXPe7h0/Hj81J9+ytvZ2RTrOp882Icfz59vFLcNLDB13jQN3jINFpsGS4VBoTApEiYlwmT5TdVoMLHOK/ibz8umlCTKImG2RsJsDgXZGI1wfOFCrtfXU/fDD5QPHUKhplEaDFCzYsUtwlb7et8XSK8ZGvNNHcvIQlNnkdBZIgwKhMEyYVAsDEptIyYrhckqr8lqr8kar8n7fsGGQBIbQil81rMHPxw9aic+t3ULq5tls1RX+ej+Xlw6d/YW4Wt1dXw0ZTJD3S6kWbrKXF1lnqGxwNB409B4y9RYbOosNXWWmTpFQqdE6JQKgxXCYGWiX27qrPN7OTx/HtevXaPu0g98/vwwFmkKBcl+DhUXcePGjVvEv/nyS2a2zWOo08GrnTshTdcVZuoKsw2FuYbKfENlgaHypqmyyNRYYmoUCI1CoVEkNIqFRok1ttaEwb+q99uJz5aVUZKTxRuah/X33s3FM6dvEa6/epV/zJzBCMXNCE3h03mv2VclTdU9vKJ7mKF7mGV4mGMozDMUXjcV3jAVFpoKi0yVxUJlqVApsLDMGQrzdYXD765nw7AhzFFdLEjxUb2s4DenPn/wIHM6tOMFuSlz7ujIhZoaO350+zakfM3DFM3DXzUP0zUPMy0jusJcXWGervC6obDAUFhoqLyV4E1d4eOBj7OyRzf+6pbJdzkpuasb3506dYtw/bVrbJ45g1GKm9Gqhy2vzY0/0J9+4u0xo3lOdiBN1NxY5GtupmpupmluputuXtU9zNY9zDU8vGZ4mG94eD3Rz9HcnNu9i6s//8wU1c3qfo9w/fr1W8S/PXSIube3Y4R16o4d+PbwYTt+orKCSc2yGepyMNzlQJqguWhgkuZisuZiqubiFd3FdN3FTN3NLN3NHCPOLN3Fko7t7GSW6HhTY+ucWY3C1qmtux6puBilutg8+1U7Zp36nTGjGoVHe5yMVWSk8ZqLm5moucjXXEzRXEzT40Zm2BVxM1N3MVWV2VlU2ChY8HAf8tOj1FZWcLKqkjm3W3fdhFkd2nL+0CF7T21VJZOb5zDc1ZSRbgdjFScvq7KtJY3TZG5mvCbzsiYzSZOZrMlM1WWm6TKv6DJTNZkpSYIrly83Grj47Xmmt8lluNzEFh6pyGyaOd1+9dap1784mmG2cFNeUhxMUJ127vyEhjRWlfk141SZCZZDVSZflZmcYILi5J3hwxrFG5pV4v3vvWu/8g3Tptqx2h1VTG6ezXC5KaNcTRnncTLpplxWXmsujVFkXlJ/i2VkvCrHS5UwNNrj4OyB6l/rN7bZd3RkYlYGRU8MYKjbwQuuprzkcdjGLcEpVgUTlbXErfzSIMXFi6rzd3lJdTJWdTLOGisORniaMsTVhEFyE56TmzBYbsIQuQlD5SY874ozLNGPsErucTBRdTJZdTJFczJZc5KvWVdgvQEnwxQX0kNuz7URipMx6h9jG1IcjFYcjPTEGeWxXrKDMR4HLyawBG0UB+OUuLgleLPwxIS4VeVHPUq91FN2b+2naAxWPYz6HXELS3iM4rBNWMmtylhVGa867UdlYSW1BBuYlBBvEG4Qn6DJ9k/xQFXnAbdaJnV1yG16yZ5LfVWDgSKJZ1IiDI3GGJnVgnG5eeS378y0Lt14tXtP5t3bm4UP9mNp3/4se/xJivs/RemApykZ8BTFjz3Bsr79WdK7Lwvv6c3r3Xoyu1NXprW5nYnNW/FiWjbDg1Ge9aYwQBM85FIv93ArefY/5G4Ouc19TvfmB52euoedCo84FR51qjwmq/SXNQY4NZ5w6vzFafC00+BZ2WSwbDJMFjwvC4bbvTU3GZpYe042eEbWeUrWeVLWGOjU6O9U6SerV/u41C13u1Vb/L+DoJMazJ/5BgAAAABJRU5ErkJggg==" InformativeScreenshot="fdfc708636ffdf3f382d924ac9c137e6.png" Reference="xGt2OSXt7UW47kSHt2k5yg/azRws-oh30qsXz-7zKiLeg" Selector="&lt;wnd app='pdfxedit.exe' omit:cls='PXE:{C*AD*E*B1E*D8AF3B9D}' title='* - PDF-XChange Editor' /&gt;" Version="V2" />
+      </uix:NApplicationCard.TargetApp>
+      <sap:WorkflowViewStateService.ViewState>
+        <scg:Dictionary x:TypeArguments="x:String, x:Object">
+          <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+          <x:Boolean x:Key="IsPinned">False</x:Boolean>
+        </scg:Dictionary>
+      </sap:WorkflowViewStateService.ViewState>
+    </uix:NApplicationCard>
+  </Sequence>
+</Activity>
