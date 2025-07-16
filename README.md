@@ -103,3 +103,30 @@ To run the automation workflows provided in this repository, follow the steps be
   These require more user input and are better run in the foreground.
 
 > You can enable or disable PiP by clicking on the automation and going to "Configure".
+
+
+
+
+
+
+
+```
+### 🛠️ Editing or Customizing Automations in UiPath Studio
+
+If you want to view or modify the automation workflows, you can open the project directly in UiPath Studio:
+
+#### 1. **Open UiPath Studio**
+- Launch **UiPath Studio** on your machine.
+
+#### 2. **Clone the Repository**
+- On the start screen, click **Clone or Check Out**, then click **Clone Repository** .
+- Paste the following GitHub URL into the Repository URL:
+  ```
+  https://github.com/Jon-hattan/Engineering-Automations.git
+  ```
+- Choose a local path where the project will be saved.
+- Click **Open**.
+
+#### 3. **Start Editing**
+- Once the project loads, you can begin editing the workflows using the **Designer Panel**.
+- Make sure to restore any missing dependencies via **Manage Packages** if prompted.
