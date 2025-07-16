@@ -107,10 +107,6 @@ To run the automation workflows provided in this repository, follow the steps be
 
 
 
-
-
-
-```
 ### 🛠️ Editing or Customizing Automations in UiPath Studio
 
 If you want to view or modify the automation workflows, you can open the project directly in UiPath Studio:
