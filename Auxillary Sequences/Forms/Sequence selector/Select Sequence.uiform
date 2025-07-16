@@ -147,7 +147,6 @@
                 "label": "Prolog P&ID Tracker Updater",
                 "action": "event",
                 "showValidations": false,
-                "theme": "secondary",
                 "tableView": false,
                 "key": "prologPID",
                 "type": "button",

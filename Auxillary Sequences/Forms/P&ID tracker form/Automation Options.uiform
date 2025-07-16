@@ -30,57 +30,6 @@
         "type": "label"
       },
       {
-        "label": "Have you logged into Prolog in your <b> Edge Browser? </b>",
-        "optionsLabelPosition": "right",
-        "description": "Ensure Prolog is on the Portfolio Page.",
-        "tooltip": "If you have not logged in, the automation may not run properly. Please log in before proceeding.",
-        "inline": false,
-        "tableView": false,
-        "values": [
-          {
-            "label": "Yes",
-            "value": "yes",
-            "shortcut": ""
-          },
-          {
-            "label": "No",
-            "value": "no",
-            "shortcut": ""
-          }
-        ],
-        "validate": {
-          "required": true
-        },
-        "key": "LoggedIntoEdge",
-        "type": "radio",
-        "input": true
-      },
-      {
-        "label": "Have you downloaded a copy of the P&ID tracker Excel Sheet? ",
-        "optionsLabelPosition": "right",
-        "tooltip": "The automation will run on the excel sheet if it is in your downloads folder. Ensure it is downloaded.",
-        "inline": false,
-        "tableView": false,
-        "values": [
-          {
-            "label": "Yes",
-            "value": "yes",
-            "shortcut": ""
-          },
-          {
-            "label": "No",
-            "value": "no",
-            "shortcut": ""
-          }
-        ],
-        "validate": {
-          "required": true
-        },
-        "key": "DownloadedExcel",
-        "type": "radio",
-        "input": true
-      },
-      {
         "label": "Select P&ID tracker",
         "action": "event",
         "showValidations": false,
@@ -98,7 +47,7 @@
         "tableView": false
       },
       {
-        "label": "Do you have any other tabs open in your Edge Browser? If yes, please close everything except for the Prolog tab.",
+        "label": "Do you have any other tabs open in your Edge Browser? If yes, please close everything.",
         "optionsLabelPosition": "right",
         "tooltip": "If there are other tabs open, it may disrupt the automation.",
         "inline": false,
@@ -147,7 +96,9 @@
           "C3D2": false,
           "C3E": false,
           "C4A": false,
-          "C4B": false
+          "C4B": false,
+          "C5A": false,
+          "anotherContract": false
         },
         "values": [
           {
