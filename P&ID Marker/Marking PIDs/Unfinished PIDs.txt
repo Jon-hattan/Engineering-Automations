@@ -1,16 +1,13 @@
-WSW42-SP-0002:
-	131235-WDL11-DR-P-6034:
-		FSL-0110 - Pending
-	131235-WDL11-DR-P-6021:
-		PSL-0010 - Pending
-WSW42-SP-0003:
-	131235-WDL11-DR-P-6038:
-		LCS-FEU-0101 - Pending
-		LCS-FEU-0201 - Pending
-		LCS-FEU-0301 - Pending
-WSW42-SP-0004:
-	131235-WDL11-DR-P-6041:
-		PIT-0101A - Pending
-		PDIT-0102 - Passed
-	131235-WDL11-DR-P-6043:
-		TIT-0602 - Passed
+WSB01-SP-0013:
+	131241-WSB01-DR-0-6200:
+		PID was not downloaded from Prolog. Check if PID was indicated correctly in excel sheet - unknown
+WSB01-SP-0009:
+	131241-WSB01-DR-P-6049:
+		PID was not downloaded from Prolog. Check if PID was indicated correctly in excel sheet - unknown
+WSB12-SP-0001:
+	132141-WSB01-DR-P-6400:
+		PID was not downloaded from Prolog. Check if PID was indicated correctly in excel sheet - unknown
+	132141-WSB01-DR-P-6401:
+		PID was not downloaded from Prolog. Check if PID was indicated correctly in excel sheet - unknown
+	132141-WSB01-DR-P-6402:
+		PID was not downloaded from Prolog. Check if PID was indicated correctly in excel sheet - unknown

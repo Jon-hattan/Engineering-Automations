@@ -145,7 +145,7 @@
       <AssemblyReference>UiPath.Workflow</AssemblyReference>
     </sco:Collection>
   </TextExpression.ReferencesForImplementation>
-  <Sequence DisplayName="Stamping_test" sap:VirtualizedContainerService.HintSize="1216,9344" sap2010:WorkflowViewState.IdRef="Sequence_1">
+  <Sequence DisplayName="Stamping_test" sap:VirtualizedContainerService.HintSize="1216,8829.333333333334" sap2010:WorkflowViewState.IdRef="Sequence_1">
     <Sequence.Variables>
       <Variable x:TypeArguments="x:String" Name="TagPattern" />
       <Variable x:TypeArguments="x:Boolean" Name="fileExists" />
@@ -270,7 +270,7 @@
         </scg:Dictionary>
       </sap:WorkflowViewStateService.ViewState>
     </ui:FileExistsX>
-    <If Condition="[not fileExists]" sap:VirtualizedContainerService.HintSize="666,1154" sap2010:WorkflowViewState.IdRef="If_4">
+    <If Condition="[not fileExists]" sap:VirtualizedContainerService.HintSize="666,559.3333333333334" sap2010:WorkflowViewState.IdRef="If_4">
       <sap:WorkflowViewStateService.ViewState>
         <scg:Dictionary x:TypeArguments="x:String, x:Object">
           <x:Boolean x:Key="IsExpanded">True</x:Boolean>
@@ -278,7 +278,7 @@
         </scg:Dictionary>
       </sap:WorkflowViewStateService.ViewState>
       <If.Then>
-        <Sequence DisplayName="Then" sap:VirtualizedContainerService.HintSize="468,988.6666666666666" sap2010:WorkflowViewState.IdRef="Sequence_35">
+        <Sequence DisplayName="Then" sap:VirtualizedContainerService.HintSize="468,394" sap2010:WorkflowViewState.IdRef="Sequence_35">
           <Sequence.Variables>
             <Variable x:TypeArguments="x:Boolean" Name="filemarked" />
             <Variable x:TypeArguments="x:String" Name="trunc_filePath" />
@@ -304,29 +304,6 @@
               </scg:Dictionary>
             </sap:WorkflowViewStateService.ViewState>
           </ui:FileExistsX>
-          <If Condition="[fileExists]" sap:VirtualizedContainerService.HintSize="434,594.6666666666666" sap2010:WorkflowViewState.IdRef="If_5">
-            <If.Then>
-              <Sequence DisplayName="Then" sap:VirtualizedContainerService.HintSize="416,227.33333333333334" sap2010:WorkflowViewState.IdRef="Sequence_146">
-                <sap:WorkflowViewStateService.ViewState>
-                  <scg:Dictionary x:TypeArguments="x:String, x:Object">
-                    <x:Boolean x:Key="IsExpanded">True</x:Boolean>
-                    <x:Boolean x:Key="IsPinned">False</x:Boolean>
-                  </scg:Dictionary>
-                </sap:WorkflowViewStateService.ViewState>
-                <ui:LogMessage DisplayName="Log Message" sap:VirtualizedContainerService.HintSize="382,167.33333333333334" sap2010:WorkflowViewState.IdRef="LogMessage_2" Level="Info" Message="[&quot;File already marked&quot; &amp;vbNewLine &amp; filePath]" />
-              </Sequence>
-            </If.Then>
-            <If.Else>
-              <Sequence DisplayName="Else" sap:VirtualizedContainerService.HintSize="416,227.33333333333334" sap2010:WorkflowViewState.IdRef="Sequence_147">
-                <sap:WorkflowViewStateService.ViewState>
-                  <scg:Dictionary x:TypeArguments="x:String, x:Object">
-                    <x:Boolean x:Key="IsExpanded">True</x:Boolean>
-                  </scg:Dictionary>
-                </sap:WorkflowViewStateService.ViewState>
-                <ui:LogMessage DisplayName="Log Message" sap:VirtualizedContainerService.HintSize="382,167.33333333333334" sap2010:WorkflowViewState.IdRef="LogMessage_1" Level="Info" Message="[&quot;File does not exist.&quot; &amp;vbNewLine &amp; filePath]" />
-              </Sequence>
-            </If.Else>
-          </If>
           <ui:Return sap:VirtualizedContainerService.HintSize="434,48" sap2010:WorkflowViewState.IdRef="Return_2" />
         </Sequence>
       </If.Then>
@@ -342,7 +319,7 @@
       </If.Else>
     </If>
     <ui:StartProcess WorkingDirectory="{x:Null}" Arguments="[filePath]" DisplayName="Start Process" FileName="C:\Program Files\Tracker Software\PDF Editor\pdfxedit.exe" sap:VirtualizedContainerService.HintSize="666,120" sap2010:WorkflowViewState.IdRef="StartProcess_1" />
-    <uix:NApplicationCard AttachMode="ByInstance" DisplayName="PDF xchange editor" HealingAgentBehavior="Job" sap:VirtualizedContainerService.HintSize="666,7419.333333333333" sap2010:WorkflowViewState.IdRef="NApplicationCard_1" ScopeGuid="e6d15a65-45fe-4d86-87cd-3001ce0f92fa" Timeout="10" Version="V2">
+    <uix:NApplicationCard AttachMode="ByInstance" DisplayName="PDF xchange editor" HealingAgentBehavior="Job" sap:VirtualizedContainerService.HintSize="666,7499.333333333333" sap2010:WorkflowViewState.IdRef="NApplicationCard_1" ScopeGuid="e6d15a65-45fe-4d86-87cd-3001ce0f92fa" Timeout="10" Version="V2">
       <uix:NApplicationCard.Body>
         <ActivityAction x:TypeArguments="x:Object">
           <ActivityAction.Argument>
