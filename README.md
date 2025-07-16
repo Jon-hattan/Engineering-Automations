@@ -104,8 +104,9 @@ To run the automation workflows provided in this repository, follow the steps be
 
 > You can enable or disable PiP by clicking on the automation and going to "Configure".
 
-<br>
 ---
+<br>
+
 
 ### 🛠️ Editing or Customizing Automations in UiPath Studio
 
