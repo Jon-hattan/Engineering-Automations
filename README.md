@@ -66,7 +66,14 @@ To run the automation workflows provided in this repository, follow the steps be
    - After migration, locate the automation in the Assistant
    - Click **Install** to add it to your local environment
 
-5. **Configure GenAI Activities (if required)**  
+5. **Configure UIPath Extension on Microsoft Edge**  
+  - Open Microsoft Edge.
+  - In the address bar, type edge://extensions/ and press **Enter**.
+  - Find the **UiPath Web Automation** extension, enable it by clicking on the slider, and then click **Details**.
+  - Enable "**Allow access to file URLs**"
+These settings are essential for Prolog Converge Automations.
+
+5. **Configure GenAI Activities**  
    - Click on your **profile name** → **Preferences**
    - Under **GenAI Activities**, select your **email address** to enable GenAI-powered activities
   
@@ -76,6 +83,8 @@ To run the automation workflows provided in this repository, follow the steps be
 7. **Run the Automation**  
    - Once installed and configured, click **Run** to execute the automation
    - Ensure any required input files or configurations are in place
+
+
 
 ---
 
