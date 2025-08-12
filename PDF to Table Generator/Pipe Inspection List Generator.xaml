@@ -85,7 +85,7 @@
       <AssemblyReference>System.Linq.Expressions</AssemblyReference>
     </sco:Collection>
   </TextExpression.ReferencesForImplementation>
-  <Sequence DisplayName="Pipe_Inspection_List_Generator" sap:VirtualizedContainerService.HintSize="926.6666666666666,580.7066666666666" sap2010:WorkflowViewState.IdRef="Sequence_1">
+  <Sequence DisplayName="Pipe_Inspection_List_Generator" sap:VirtualizedContainerService.HintSize="948.6666666666666,558.7066666666666" sap2010:WorkflowViewState.IdRef="Sequence_1">
     <Sequence.Variables>
       <Variable x:TypeArguments="sd:DataTable" Name="generatedTable" />
       <Variable x:TypeArguments="x:String" Name="excelfilepath" />
@@ -105,19 +105,17 @@ Extract all defect observations from the following inspection report text. Each 
 
 The table must include the following columns:
 
-'Sewer S/N': A serial number assigned to each unique sewer segment. This should be a simple counter starting from 1 (e.g., 1, 2, 3...) and not the Sewer ID.
 'Sewer ID': Unique identifier of the sewer segment.
 'Diameter (mm)': Pipe diameter in millimeters.
-'Defect Number': Serial number for each defect entry within the same Sewer ID (start from 1 and increment).
 'Distance (m)': Location of the defect along the pipe.
-'Human Coded Defect(s) Remarks': Describe the human-coded defect at this location, including defect type and clock position if available. If no human-coded defect is present at this location, use a dash ('-').
-'Defect Grade': Structural grade associated with the human-coded defect. If not explicitly stated, use a dash ('-').
-'Dragonfly Coded Defect(s) Remarks': Describe the Dragonfly-coded defect at this location, including MSCC5 code and clock position if available. If no Dragonfly-coded defect is present at this location, use a dash ('-').
-'Defect Grade': Structural grade associated with the Dragonfly-coded defect. If not explicitly stated, use a dash ('-').
+'Human Coded Defect(s) Remarks': Describe the human-coded defect at this location, specifically the Code, joint, clock position and remarks, in that order, if available. If no human-coded defect is present at this location, use a dash ('-').
+'Defect Grade (Human)': Grade associated with the human-coded defect, should be from 1-5. If not explicitly stated, use a dash ('-').
+'Dragonfly Coded Defect(s) Remarks': Describe the Dragonfly-coded defect at this location, specifically the MSCC5 code, joint, clock position and remarks, in that order, if available. If no Dragonfly-coded defect is present at this location, use a dash ('-').
+'Defect Grade (Dragonfly)': Grade associated with the Dragonfly-coded defect, should be from 1-5. It is the maximum between the structural and service grade. It is the  Include  If not explicitly stated, use a dash ('-').
 Each row must correspond to a unique defect location. If both human and Dragonfly observations exist at the same location, show them side-by-side. If only one source has a defect at that location, the other should be marked with a dash ('-').
 
-Do not infer any missing information. If any detail is not stated in the report, leave the corresponding cell as a dash ('-').
-
+Ensure that ALL DEFECTS ARE INCLUDED. From 0m all the way to the end. 
+Do not infer any missing information. Do not include things that are not defects (like general photographs or backdrops). If any detail is not stated in the report, leave the corresponding cell as a dash ('-').
 Ensure the table is clean, consistent, and formatted for easy comparison across defect locations and sewer segments.
 
 Output the table as a raw CSV string.
