@@ -296,7 +296,7 @@
       <AssemblyReference>System.Linq.Async.Queryable</AssemblyReference>
     </sco:Collection>
   </TextExpression.ReferencesForImplementation>
-  <Sequence sap2010:Annotation.AnnotationText="using content generator in integration service activities, search for the all the equipments in a technical proposal, and their respective quantities, electrical power, voltage, etc. store in a datatable" DisplayName="Main Sequence" sap:VirtualizedContainerService.HintSize="1130,1539.9999999999998" sap2010:WorkflowViewState.IdRef="Sequence_1">
+  <Sequence sap2010:Annotation.AnnotationText="using content generator in integration service activities, search for the all the equipments in a technical proposal, and their respective quantities, electrical power, voltage, etc. store in a datatable" DisplayName="Main Sequence" sap:VirtualizedContainerService.HintSize="1146,1997.9999999999998" sap2010:WorkflowViewState.IdRef="Sequence_1">
     <Sequence.Variables>
       <Variable x:TypeArguments="x:String" Name="ProposalText" />
       <Variable x:TypeArguments="x:String" Name="ExtractedInfo" />
@@ -309,7 +309,7 @@
         <x:Boolean x:Key="IsAnnotationDocked">True</x:Boolean>
       </scg:Dictionary>
     </sap:WorkflowViewStateService.ViewState>
-    <Parallel sap2010:Annotation.AnnotationText="Extract text from pdf. Churn into gpt-4. Receive table in CSV format. Write to Excel.&#xA;&#xA;Open loading popup to show user it is loading." sap:VirtualizedContainerService.HintSize="1130,1486.6666666666667" sap2010:WorkflowViewState.IdRef="Parallel_1">
+    <Parallel sap2010:Annotation.AnnotationText="Extract text from pdf. Churn into gpt-4. Receive table in CSV format. Write to Excel.&#xA;&#xA;Open loading popup to show user it is loading." sap:VirtualizedContainerService.HintSize="1146,1944.6666666666667" sap2010:WorkflowViewState.IdRef="Parallel_1">
       <Parallel.Variables>
         <Variable x:TypeArguments="x:Boolean" Default="False" Name="process_finished" />
         <Variable x:TypeArguments="si:FileInfo" Name="currentFileInfo" />
@@ -321,7 +321,7 @@
           <x:Boolean x:Key="IsAnnotationDocked">True</x:Boolean>
         </scg:Dictionary>
       </sap:WorkflowViewStateService.ViewState>
-      <Sequence DisplayName="Fill out table using pdf data" sap:VirtualizedContainerService.HintSize="544,1356.6666666666667" sap2010:WorkflowViewState.IdRef="Sequence_4">
+      <Sequence DisplayName="Fill out table using pdf data" sap:VirtualizedContainerService.HintSize="544,1814.6666666666667" sap2010:WorkflowViewState.IdRef="Sequence_4">
         <Sequence.Variables>
           <Variable x:TypeArguments="x:String" Name="Data" />
           <Variable x:TypeArguments="x:Int32" Name="document_idx" />
@@ -479,23 +479,31 @@ DO NOT PROVIDE ANY OTHER COMMENTARY. Ensure that data in each document is distin
             </scg:Dictionary>
           </sap:WorkflowViewStateService.ViewState>
         </isactr:ConnectorActivity>
-        <ui:GenerateDataTable ColumnSizes="{x:Null}" NewLineSeparator="{x:Null}" Positions="{x:Null}" CSVParsing="True" ColumnSeparators="," DataTable="[Table]" DisplayName="Generate Data Table From Text" sap:VirtualizedContainerService.HintSize="470,57.333333333333336" sap2010:WorkflowViewState.IdRef="GenerateDataTable_1" Input="[ExtractedInfo]" UseColumnHeader="True">
+        <ui:GenerateDataTable ColumnSizes="{x:Null}" NewLineSeparator="{x:Null}" Positions="{x:Null}" CSVParsing="True" ColumnSeparators="," DataTable="[Table]" DisplayName="Generate Data Table From Text" sap:VirtualizedContainerService.HintSize="470,234.66666666666666" sap2010:WorkflowViewState.IdRef="GenerateDataTable_1" Input="[ExtractedInfo]" UseColumnHeader="True">
           <sap:WorkflowViewStateService.ViewState>
             <scg:Dictionary x:TypeArguments="x:String, x:Object">
-              <x:Boolean x:Key="IsExpanded">False</x:Boolean>
+              <x:Boolean x:Key="IsExpanded">True</x:Boolean>
               <x:Boolean x:Key="IsPinned">False</x:Boolean>
             </scg:Dictionary>
           </sap:WorkflowViewStateService.ViewState>
         </ui:GenerateDataTable>
-        <ui:RemoveDataRow Row="{x:Null}" sap2010:Annotation.AnnotationText="remove ''' from last row" DataTable="[Table]" DisplayName="Remove Data Row" sap:VirtualizedContainerService.HintSize="470,88" sap2010:WorkflowViewState.IdRef="RemoveDataRow_5" RowIndex="[Table.RowCount-1]">
+        <ui:RemoveDataRow Row="{x:Null}" sap2010:Annotation.AnnotationText="remove ''' from last row" DataTable="[Table]" DisplayName="Remove Data Row" sap:VirtualizedContainerService.HintSize="470,252" sap2010:WorkflowViewState.IdRef="RemoveDataRow_5" RowIndex="[Table.RowCount-1]">
           <sap:WorkflowViewStateService.ViewState>
             <scg:Dictionary x:TypeArguments="x:String, x:Object">
               <x:Boolean x:Key="IsAnnotationDocked">True</x:Boolean>
-              <x:Boolean x:Key="IsExpanded">False</x:Boolean>
+              <x:Boolean x:Key="IsExpanded">True</x:Boolean>
               <x:Boolean x:Key="IsPinned">False</x:Boolean>
             </scg:Dictionary>
           </sap:WorkflowViewStateService.ViewState>
         </ui:RemoveDataRow>
+        <Assign sap:VirtualizedContainerService.HintSize="470,116.66666666666667" sap2010:WorkflowViewState.IdRef="Assign_15">
+          <Assign.To>
+            <OutArgument x:TypeArguments="sd:DataTable">[generatedTable]</OutArgument>
+          </Assign.To>
+          <Assign.Value>
+            <InArgument x:TypeArguments="sd:DataTable">[Table]</InArgument>
+          </Assign.Value>
+        </Assign>
         <Assign sap:VirtualizedContainerService.HintSize="470,107.33333333333333" sap2010:WorkflowViewState.IdRef="Assign_13">
           <Assign.To>
             <OutArgument x:TypeArguments="x:Boolean">[process_finished]</OutArgument>
@@ -505,16 +513,27 @@ DO NOT PROVIDE ANY OTHER COMMENTARY. Ensure that data in each document is distin
           </Assign.Value>
         </Assign>
       </Sequence>
-      <Sequence sap:VirtualizedContainerService.HintSize="492,1356.6666666666667" sap2010:WorkflowViewState.IdRef="Sequence_12">
+      <Sequence sap:VirtualizedContainerService.HintSize="508,1814.6666666666667" sap2010:WorkflowViewState.IdRef="Sequence_12">
+        <Sequence.Variables>
+          <Variable x:TypeArguments="x:String" Name="currentFile" />
+        </Sequence.Variables>
         <sap:WorkflowViewStateService.ViewState>
           <scg:Dictionary x:TypeArguments="x:String, x:Object">
             <x:Boolean x:Key="IsExpanded">True</x:Boolean>
             <x:Boolean x:Key="IsPinned">False</x:Boolean>
           </scg:Dictionary>
         </sap:WorkflowViewStateService.ViewState>
-        <ufa:ShowFormActivity Height="{x:Null}" InstanceName="{x:Null}" Left="{x:Null}" ShowMargin="{x:Null}" Title="{x:Null}" Top="{x:Null}" Width="{x:Null}" DisplayName="Show Form" FormId="b06fb60e-b22c-4152-9e7e-4246db6d5e32" sap:VirtualizedContainerService.HintSize="418,222.66666666666666" sap2010:WorkflowViewState.IdRef="ShowFormActivity_2" IsAsync="True" WindowState="[UiPath.Studio.Forms.Runtime.WindowState.Maximized]">
+        <Assign sap:VirtualizedContainerService.HintSize="434,116.66666666666667" sap2010:WorkflowViewState.IdRef="Assign_14">
+          <Assign.To>
+            <OutArgument x:TypeArguments="x:String">[currentFile]</OutArgument>
+          </Assign.To>
+          <Assign.Value>
+            <InArgument x:TypeArguments="x:String">[If(currentFileInfo Is Nothing, "NULL", currentFileInfo.Name)]</InArgument>
+          </Assign.Value>
+        </Assign>
+        <ufa:ShowFormActivity Height="{x:Null}" InstanceName="{x:Null}" Left="{x:Null}" ShowMargin="{x:Null}" Title="{x:Null}" Top="{x:Null}" Width="{x:Null}" DisplayName="Show Form" FormId="b06fb60e-b22c-4152-9e7e-4246db6d5e32" sap:VirtualizedContainerService.HintSize="434,222.66666666666666" sap2010:WorkflowViewState.IdRef="ShowFormActivity_2" IsAsync="True" WindowState="[UiPath.Studio.Forms.Runtime.WindowState.Maximized]">
           <ufa:ShowFormActivity.Arguments>
-            <InArgument x:TypeArguments="x:String" x:Key="content">[String.Format("Currently processing {0} ...... ",currentFileInfo.Name)]</InArgument>
+            <InArgument x:TypeArguments="x:String" x:Key="content">[String.Format("Currently processing {0} ...... ",currentFile)]</InArgument>
           </ufa:ShowFormActivity.Arguments>
           <ufa:ShowFormActivity.ShowInTaskbar>
             <InArgument x:TypeArguments="s:Nullable(x:Boolean)">
@@ -527,7 +546,7 @@ DO NOT PROVIDE ANY OTHER COMMENTARY. Ensure that data in each document is distin
             </InArgument>
           </ufa:ShowFormActivity.TopMost>
         </ufa:ShowFormActivity>
-        <ui:InterruptibleWhile CurrentIndex="{x:Null}" Condition="[Not process_finished]" DisplayName="While" sap:VirtualizedContainerService.HintSize="418,305.3333333333333" sap2010:WorkflowViewState.IdRef="InterruptibleWhile_1">
+        <ui:InterruptibleWhile CurrentIndex="{x:Null}" Condition="[Not process_finished]" DisplayName="While" sap:VirtualizedContainerService.HintSize="434,305.3333333333333" sap2010:WorkflowViewState.IdRef="InterruptibleWhile_1">
           <ui:InterruptibleWhile.Body>
             <Sequence DisplayName="Body" sap:VirtualizedContainerService.HintSize="416,174" sap2010:WorkflowViewState.IdRef="Sequence_13">
               <sap:WorkflowViewStateService.ViewState>
@@ -539,7 +558,7 @@ DO NOT PROVIDE ANY OTHER COMMENTARY. Ensure that data in each document is distin
             </Sequence>
           </ui:InterruptibleWhile.Body>
         </ui:InterruptibleWhile>
-        <ufa:CloseFormActivity InstanceName="{x:Null}" DisplayName="Close Form" FormId="b06fb60e-b22c-4152-9e7e-4246db6d5e32" sap:VirtualizedContainerService.HintSize="418,113.33333333333333" sap2010:WorkflowViewState.IdRef="CloseFormActivity_1" />
+        <ufa:CloseFormActivity InstanceName="{x:Null}" DisplayName="Close Form" FormId="b06fb60e-b22c-4152-9e7e-4246db6d5e32" sap:VirtualizedContainerService.HintSize="434,113.33333333333333" sap2010:WorkflowViewState.IdRef="CloseFormActivity_1" />
       </Sequence>
     </Parallel>
   </Sequence>
