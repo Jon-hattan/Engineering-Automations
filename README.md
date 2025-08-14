@@ -72,14 +72,18 @@ To run the automation workflows provided in this repository, follow the steps be
    - Find the **UiPath Web Automation** extension, enable it by clicking on the slider, and then click **Details**.
    - Enable "**Allow access to file URLs**". These settings are essential for Prolog Converge Automations.
 
-5. **Configure GenAI Activities**  
-   - Click on your **profile name** → **Preferences**
-   - Under **GenAI Activities**, select your **email address** to enable GenAI-powered activities
+5. **Configure GenAI Activities**
+   - Login to [UiPath Automation Cloud](https://cloud.uipath.com)
+   - Click on <img width="22" height="27" alt="image" src="https://github.com/user-attachments/assets/5b5546bc-edee-4b42-b4a3-3e4f67e3d37e" /> on the left sidebar, then go to **More** → **Integration Service**.
+   - In Connectors, search for **UiPath GenAI Activties**. Click on it, then click **Connect to UiPath GenAI Activities**.
+     
+   - In **UiPath Assistant**, click on the automation, then click **Configure**
+   - Under **GenAI Activities**, select your **email address** to enable GenAI-powered activities (**specifically the one that is not default**). There may be multiple options with your email address, select only the one without the word default.
   
-6. **Configure PiP (if required)**  
+7. **Configure PiP (if required)**  
    - Click Run in PiP if you wish to run it in picture-in-picture (a guide for when to run it in PiP is included below).
 
-7. **Run the Automation**  
+8. **Run the Automation**  
    - Once installed and configured, click **Run** to execute the automation
    - Ensure any required input files or configurations are in place
 
