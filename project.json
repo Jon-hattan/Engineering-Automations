@@ -1,7 +1,7 @@
 {
-  "name": "Agentic Automation",
+  "name": "Jacobs Automations",
   "projectId": "7864210f-0222-4987-aed6-22bc8ad19546",
-  "description": "Trying out the new agentic automation",
+  "description": "Streamlining workflows in Jacobs",
   "main": "Main.xaml",
   "dependencies": {
     "UiPath.DocumentUnderstanding.Activities": "[2.15.0-preview]",
@@ -22,7 +22,7 @@
   "entitiesStores": [],
   "schemaVersion": "4.0",
   "studioVersion": "25.0.166.0",
-  "projectVersion": "1.0.4",
+  "projectVersion": "1.0.7",
   "runtimeOptions": {
     "autoDispose": false,
     "netFrameworkLazyLoading": false,
@@ -37,7 +37,7 @@
     ],
     "executionType": "Workflow",
     "readyForPiP": true,
-    "startsInPiP": true,
+    "startsInPiP": false,
     "mustRestoreAllDependencies": true,
     "pipType": "ChildSession"
   },
