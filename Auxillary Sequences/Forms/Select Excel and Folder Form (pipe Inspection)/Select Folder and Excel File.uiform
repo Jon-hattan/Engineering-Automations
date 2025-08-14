@@ -114,24 +114,6 @@
         "label": "Columns"
       },
       {
-        "label": "Container",
-        "key": "container",
-        "type": "container",
-        "input": true,
-        "tableView": false,
-        "components": [
-          {
-            "label": "Select the sheet that you want to extract to in Excel",
-            "widget": "choicesjs",
-            "description": "Extracted data will be put into this sheet, please ensure that there isn't any existing data there as it will be overwritten.",
-            "tableView": true,
-            "key": "sheets_lst",
-            "type": "select",
-            "input": true
-          }
-        ]
-      },
-      {
         "label": "Begin Automation",
         "action": "event",
         "showValidations": false,

@@ -58,6 +58,28 @@
         "type": "htmlelement",
         "input": false,
         "tableView": false
+      },
+      {
+        "label": "HTML",
+        "attrs": [
+          {
+            "attr": "",
+            "value": ""
+          }
+        ],
+        "content": "{{data.htmlTable}}",
+        "refreshOnChange": true,
+        "key": "htmltable",
+        "type": "htmlelement",
+        "input": false,
+        "tableView": false
+      },
+      {
+        "label": "htmlContent",
+        "key": "htmlTable",
+        "type": "hidden",
+        "input": true,
+        "tableView": false
       }
     ]
   }

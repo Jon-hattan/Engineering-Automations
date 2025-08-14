@@ -1,4 +1,4 @@
-<Activity mc:Ignorable="sap sap2010" x:Class="Main" this:Main.title="Generic Table Generator" this:Main.customPrompt="create a table from the data" xmlns="http://schemas.microsoft.com/netfx/2009/xaml/activities" xmlns:isactr="http://schemas.uipath.com/workflow/integration-service-activities/isactr" xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" xmlns:s="clr-namespace:System;assembly=System.Private.CoreLib" xmlns:sap="http://schemas.microsoft.com/netfx/2009/xaml/activities/presentation" xmlns:sap2010="http://schemas.microsoft.com/netfx/2010/xaml/activities/presentation" xmlns:scg="clr-namespace:System.Collections.Generic;assembly=System.Private.CoreLib" xmlns:sco="clr-namespace:System.Collections.ObjectModel;assembly=System.Private.CoreLib" xmlns:sd="clr-namespace:System.Data;assembly=System.Data.Common" xmlns:si="clr-namespace:System.IO;assembly=System.Private.CoreLib" xmlns:this="clr-namespace:" xmlns:ufa="clr-namespace:UiPath.Forms.Activities;assembly=UiPath.Forms.Activities" xmlns:ui="http://schemas.uipath.com/workflow/activities" xmlns:uiascb="clr-namespace:UiPath.IntegrationService.Activities.SWEntities.C062E936AE5_v2_sub_generateChatCompletion_Create.Bundle;assembly=C062E936AE5_v2_sub_g.Yyc8N1xW8HH1MgQo8jS8zC2" xmlns:uisape="clr-namespace:UiPath.IntelligentOCR.StudioWeb.Activities.PDF.ExtractPDFText;assembly=UiPath.IntelligentOCR.StudioWeb.Activities" xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml">
+<Activity mc:Ignorable="sap sap2010" x:Class="Main" this:Main.title="Generic Table Generator" this:Main.customPrompt="create a table from the data" xmlns="http://schemas.microsoft.com/netfx/2009/xaml/activities" xmlns:isactr="http://schemas.uipath.com/workflow/integration-service-activities/isactr" xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" xmlns:sap="http://schemas.microsoft.com/netfx/2009/xaml/activities/presentation" xmlns:sap2010="http://schemas.microsoft.com/netfx/2010/xaml/activities/presentation" xmlns:scg="clr-namespace:System.Collections.Generic;assembly=System.Private.CoreLib" xmlns:sco="clr-namespace:System.Collections.ObjectModel;assembly=System.Private.CoreLib" xmlns:sd="clr-namespace:System.Data;assembly=System.Data.Common" xmlns:si="clr-namespace:System.IO;assembly=System.Private.CoreLib" xmlns:this="clr-namespace:" xmlns:ui="http://schemas.uipath.com/workflow/activities" xmlns:uiascb="clr-namespace:UiPath.IntegrationService.Activities.SWEntities.C062E936AE5_v2_sub_generateChatCompletion_Create.Bundle;assembly=C062E936AE5_v2_sub_g.Yyc8N1xW8HH1MgQo8jS8zC2" xmlns:uisape="clr-namespace:UiPath.IntelligentOCR.StudioWeb.Activities.PDF.ExtractPDFText;assembly=UiPath.IntelligentOCR.StudioWeb.Activities" xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml">
   <x:Members>
     <x:Property Name="pdf_filePaths" Type="InArgument(scg:List(x:String))" />
     <x:Property Name="title" Type="InArgument(x:String)" />
@@ -296,7 +296,7 @@
       <AssemblyReference>System.Linq.Async.Queryable</AssemblyReference>
     </sco:Collection>
   </TextExpression.ReferencesForImplementation>
-  <Sequence sap2010:Annotation.AnnotationText="using content generator in integration service activities, search for the all the equipments in a technical proposal, and their respective quantities, electrical power, voltage, etc. store in a datatable" DisplayName="Main Sequence" sap:VirtualizedContainerService.HintSize="1146,1997.9999999999998" sap2010:WorkflowViewState.IdRef="Sequence_1">
+  <Sequence sap2010:Annotation.AnnotationText="using content generator in integration service activities, search for the all the equipments in a technical proposal, and their respective quantities, electrical power, voltage, etc. store in a datatable" DisplayName="Main Sequence" sap:VirtualizedContainerService.HintSize="942.6666666666666,1894.6666666666667" sap2010:WorkflowViewState.IdRef="Sequence_1">
     <Sequence.Variables>
       <Variable x:TypeArguments="x:String" Name="ProposalText" />
       <Variable x:TypeArguments="x:String" Name="ExtractedInfo" />
@@ -309,7 +309,7 @@
         <x:Boolean x:Key="IsAnnotationDocked">True</x:Boolean>
       </scg:Dictionary>
     </sap:WorkflowViewStateService.ViewState>
-    <Parallel sap2010:Annotation.AnnotationText="Extract text from pdf. Churn into gpt-4. Receive table in CSV format. Write to Excel.&#xA;&#xA;Open loading popup to show user it is loading." sap:VirtualizedContainerService.HintSize="1146,1944.6666666666667" sap2010:WorkflowViewState.IdRef="Parallel_1">
+    <Parallel sap2010:Annotation.AnnotationText="Extract text from pdf. Churn into gpt-4. Receive table in CSV format. Write to Excel.&#xA;&#xA;Open loading popup to show user it is loading." sap:VirtualizedContainerService.HintSize="638,1828" sap2010:WorkflowViewState.IdRef="Parallel_1">
       <Parallel.Variables>
         <Variable x:TypeArguments="x:Boolean" Default="False" Name="process_finished" />
         <Variable x:TypeArguments="si:FileInfo" Name="currentFileInfo" />
@@ -321,7 +321,7 @@
           <x:Boolean x:Key="IsAnnotationDocked">True</x:Boolean>
         </scg:Dictionary>
       </sap:WorkflowViewStateService.ViewState>
-      <Sequence DisplayName="Fill out table using pdf data" sap:VirtualizedContainerService.HintSize="544,1814.6666666666667" sap2010:WorkflowViewState.IdRef="Sequence_4">
+      <Sequence DisplayName="Fill out table using pdf data" sap:VirtualizedContainerService.HintSize="544,1698" sap2010:WorkflowViewState.IdRef="Sequence_4">
         <Sequence.Variables>
           <Variable x:TypeArguments="x:String" Name="Data" />
           <Variable x:TypeArguments="x:Int32" Name="document_idx" />
@@ -496,7 +496,7 @@ DO NOT PROVIDE ANY OTHER COMMENTARY. Ensure that data in each document is distin
             </scg:Dictionary>
           </sap:WorkflowViewStateService.ViewState>
         </ui:RemoveDataRow>
-        <Assign sap:VirtualizedContainerService.HintSize="470,116.66666666666667" sap2010:WorkflowViewState.IdRef="Assign_15">
+        <Assign sap:VirtualizedContainerService.HintSize="470,107.33333333333333" sap2010:WorkflowViewState.IdRef="Assign_15">
           <Assign.To>
             <OutArgument x:TypeArguments="sd:DataTable">[generatedTable]</OutArgument>
           </Assign.To>
@@ -504,61 +504,6 @@ DO NOT PROVIDE ANY OTHER COMMENTARY. Ensure that data in each document is distin
             <InArgument x:TypeArguments="sd:DataTable">[Table]</InArgument>
           </Assign.Value>
         </Assign>
-        <Assign sap:VirtualizedContainerService.HintSize="470,107.33333333333333" sap2010:WorkflowViewState.IdRef="Assign_13">
-          <Assign.To>
-            <OutArgument x:TypeArguments="x:Boolean">[process_finished]</OutArgument>
-          </Assign.To>
-          <Assign.Value>
-            <InArgument x:TypeArguments="x:Boolean">True</InArgument>
-          </Assign.Value>
-        </Assign>
-      </Sequence>
-      <Sequence sap:VirtualizedContainerService.HintSize="508,1814.6666666666667" sap2010:WorkflowViewState.IdRef="Sequence_12">
-        <Sequence.Variables>
-          <Variable x:TypeArguments="x:String" Name="currentFile" />
-        </Sequence.Variables>
-        <sap:WorkflowViewStateService.ViewState>
-          <scg:Dictionary x:TypeArguments="x:String, x:Object">
-            <x:Boolean x:Key="IsExpanded">True</x:Boolean>
-            <x:Boolean x:Key="IsPinned">False</x:Boolean>
-          </scg:Dictionary>
-        </sap:WorkflowViewStateService.ViewState>
-        <Assign sap:VirtualizedContainerService.HintSize="434,116.66666666666667" sap2010:WorkflowViewState.IdRef="Assign_14">
-          <Assign.To>
-            <OutArgument x:TypeArguments="x:String">[currentFile]</OutArgument>
-          </Assign.To>
-          <Assign.Value>
-            <InArgument x:TypeArguments="x:String">[If(currentFileInfo Is Nothing, "NULL", currentFileInfo.Name)]</InArgument>
-          </Assign.Value>
-        </Assign>
-        <ufa:ShowFormActivity Height="{x:Null}" InstanceName="{x:Null}" Left="{x:Null}" ShowMargin="{x:Null}" Title="{x:Null}" Top="{x:Null}" Width="{x:Null}" DisplayName="Show Form" FormId="b06fb60e-b22c-4152-9e7e-4246db6d5e32" sap:VirtualizedContainerService.HintSize="434,222.66666666666666" sap2010:WorkflowViewState.IdRef="ShowFormActivity_2" IsAsync="True" WindowState="[UiPath.Studio.Forms.Runtime.WindowState.Maximized]">
-          <ufa:ShowFormActivity.Arguments>
-            <InArgument x:TypeArguments="x:String" x:Key="content">[String.Format("Currently processing {0} ...... ",currentFile)]</InArgument>
-          </ufa:ShowFormActivity.Arguments>
-          <ufa:ShowFormActivity.ShowInTaskbar>
-            <InArgument x:TypeArguments="s:Nullable(x:Boolean)">
-              <Literal x:TypeArguments="s:Nullable(x:Boolean)" Value="True" />
-            </InArgument>
-          </ufa:ShowFormActivity.ShowInTaskbar>
-          <ufa:ShowFormActivity.TopMost>
-            <InArgument x:TypeArguments="s:Nullable(x:Boolean)">
-              <Literal x:TypeArguments="s:Nullable(x:Boolean)" Value="False" />
-            </InArgument>
-          </ufa:ShowFormActivity.TopMost>
-        </ufa:ShowFormActivity>
-        <ui:InterruptibleWhile CurrentIndex="{x:Null}" Condition="[Not process_finished]" DisplayName="While" sap:VirtualizedContainerService.HintSize="434,305.3333333333333" sap2010:WorkflowViewState.IdRef="InterruptibleWhile_1">
-          <ui:InterruptibleWhile.Body>
-            <Sequence DisplayName="Body" sap:VirtualizedContainerService.HintSize="416,174" sap2010:WorkflowViewState.IdRef="Sequence_13">
-              <sap:WorkflowViewStateService.ViewState>
-                <scg:Dictionary x:TypeArguments="x:String, x:Object">
-                  <x:Boolean x:Key="IsExpanded">True</x:Boolean>
-                </scg:Dictionary>
-              </sap:WorkflowViewStateService.ViewState>
-              <Delay Duration="00:00:00.1000000" sap:VirtualizedContainerService.HintSize="382,114" sap2010:WorkflowViewState.IdRef="Delay_1" />
-            </Sequence>
-          </ui:InterruptibleWhile.Body>
-        </ui:InterruptibleWhile>
-        <ufa:CloseFormActivity InstanceName="{x:Null}" DisplayName="Close Form" FormId="b06fb60e-b22c-4152-9e7e-4246db6d5e32" sap:VirtualizedContainerService.HintSize="434,113.33333333333333" sap2010:WorkflowViewState.IdRef="CloseFormActivity_1" />
       </Sequence>
     </Parallel>
   </Sequence>
