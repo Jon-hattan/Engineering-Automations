@@ -128,9 +128,10 @@
       <AssemblyReference>System.CodeDom</AssemblyReference>
       <AssemblyReference>Microsoft.VisualBasic.Forms</AssemblyReference>
       <AssemblyReference>Microsoft.VisualBasic.Core</AssemblyReference>
+      <AssemblyReference>Microsoft.Extensions.DependencyModel</AssemblyReference>
     </sco:Collection>
   </TextExpression.ReferencesForImplementation>
-  <Sequence DisplayName="test" sap:VirtualizedContainerService.HintSize="1311,3159" sap2010:WorkflowViewState.IdRef="Sequence_1">
+  <Sequence DisplayName="test" sap:VirtualizedContainerService.HintSize="1317,735" sap2010:WorkflowViewState.IdRef="Sequence_1">
     <Sequence.Variables>
       <Variable x:TypeArguments="sd:DataTable" Name="dataTable" />
       <Variable x:TypeArguments="x:String" Name="sheetName" />
@@ -144,7 +145,7 @@
         <x:Boolean x:Key="IsExpanded">True</x:Boolean>
       </scg:Dictionary>
     </sap:WorkflowViewStateService.ViewState>
-    <ui:CommentOut DisplayName="Comment Out" sap:VirtualizedContainerService.HintSize="1238,57" sap2010:WorkflowViewState.IdRef="CommentOut_1">
+    <ui:CommentOut DisplayName="Comment Out" sap:VirtualizedContainerService.HintSize="468,57" sap2010:WorkflowViewState.IdRef="CommentOut_1">
       <ui:CommentOut.Body>
         <Sequence DisplayName="Ignored Activities" sap:VirtualizedContainerService.HintSize="450,165.33333333333334" sap2010:WorkflowViewState.IdRef="Sequence_8">
           <sap:WorkflowViewStateService.ViewState>
@@ -273,14 +274,14 @@
         </scg:Dictionary>
       </sap:WorkflowViewStateService.ViewState>
     </ui:CommentOut>
-    <ui:InvokeWorkflowFile ArgumentsVariable="{x:Null}" ContinueOnError="{x:Null}" DisplayName="Select Excel and Folder - Invoke Workflow File (Auxillary Sequences\File Select Sequences\Select Excel and Folder.xaml)" sap:VirtualizedContainerService.HintSize="1238,177" sap2010:WorkflowViewState.IdRef="InvokeWorkflowFile_5" UnSafe="True" WorkflowFileName="Auxillary Sequences\File Select Sequences\Select Excel and Folder.xaml">
+    <ui:InvokeWorkflowFile ArgumentsVariable="{x:Null}" ContinueOnError="{x:Null}" DisplayName="Select Excel and Folder - Invoke Workflow File (Auxillary Sequences\File Select Sequences\Select Excel and Folder.xaml)" sap:VirtualizedContainerService.HintSize="468,177" sap2010:WorkflowViewState.IdRef="InvokeWorkflowFile_5" UnSafe="True" WorkflowFileName="Auxillary Sequences\File Select Sequences\Select Excel and Folder.xaml">
       <ui:InvokeWorkflowFile.Arguments>
         <InArgument x:TypeArguments="x:String" x:Key="title">Pipe Inspection List Generator</InArgument>
         <OutArgument x:TypeArguments="x:String" x:Key="excel_filePath">[excel_filePath]</OutArgument>
         <OutArgument x:TypeArguments="x:String" x:Key="folder_Path">[folder_Path]</OutArgument>
       </ui:InvokeWorkflowFile.Arguments>
     </ui:InvokeWorkflowFile>
-    <Sequence DisplayName="Collate all the reports." sap:VirtualizedContainerService.HintSize="1238,315" sap2010:WorkflowViewState.IdRef="Sequence_11">
+    <Sequence DisplayName="Collate all the reports." sap:VirtualizedContainerService.HintSize="468,315" sap2010:WorkflowViewState.IdRef="Sequence_11">
       <sap:WorkflowViewStateService.ViewState>
         <scg:Dictionary x:TypeArguments="x:String, x:Object">
           <x:Boolean x:Key="IsExpanded">True</x:Boolean>
@@ -367,7 +368,7 @@
         </sap:WorkflowViewStateService.ViewState>
       </ui:ForEachFolderX>
     </Sequence>
-    <Assign sap:VirtualizedContainerService.HintSize="1238,115" sap2010:WorkflowViewState.IdRef="Assign_3">
+    <Assign sap:VirtualizedContainerService.HintSize="468,115" sap2010:WorkflowViewState.IdRef="Assign_3">
       <Assign.To>
         <OutArgument x:TypeArguments="sd:DataTable">[Full_Report_dataTable]</OutArgument>
       </Assign.To>
@@ -375,11 +376,17 @@
         <InArgument x:TypeArguments="sd:DataTable">[New DataTable]</InArgument>
       </Assign.Value>
     </Assign>
-    <Parallel sap:VirtualizedContainerService.HintSize="1238,2472" sap2010:WorkflowViewState.IdRef="Parallel_1">
+    <Parallel sap:VirtualizedContainerService.HintSize="1238,2449" sap2010:WorkflowViewState.IdRef="Parallel_1">
       <Parallel.Variables>
         <Variable x:TypeArguments="x:Boolean" Name="process_finished" />
         <Variable x:TypeArguments="x:String" Name="current_report" />
       </Parallel.Variables>
+      <sap:WorkflowViewStateService.ViewState>
+        <scg:Dictionary x:TypeArguments="x:String, x:Object">
+          <x:Boolean x:Key="IsExpanded">False</x:Boolean>
+          <x:Boolean x:Key="IsPinned">False</x:Boolean>
+        </scg:Dictionary>
+      </sap:WorkflowViewStateService.ViewState>
       <Sequence sap:VirtualizedContainerService.HintSize="564,2402" sap2010:WorkflowViewState.IdRef="Sequence_20">
         <Sequence.Variables>
           <Variable x:TypeArguments="x:Int32" Name="curr_report_idx" />
@@ -422,10 +429,10 @@ The table must include the following columns:
 'Sewer ID': Unique identifier of the sewer segment.
 'Diameter (mm)': Pipe diameter in millimeters.
 'Distance (m)': Location of the defect along the pipe.
-'Human Coded Defect(s) Remarks': Describe the human-coded defect at this location, specifically the Code, joint, clock position and remarks, in that order, if available. If no human-coded defect is present at this location, use a dash ('-').
-'Defect Grade (Human)': Grade associated with the human-coded defect, should be from 1-5. If not explicitly stated, use a dash ('-').
-'Dragonfly Coded Defect(s) Remarks': Describe the Dragonfly-coded defect at this location, specifically the MSCC5 code, joint, clock position and remarks, in that order, if available. If no Dragonfly-coded defect is present at this location, use a dash ('-').
-'Defect Grade (Dragonfly)': Grade associated with the Dragonfly-coded defect, should be from 1-5. It is the maximum between the structural and service grade. It is the  Include  If not explicitly stated, use a dash ('-').
+'Human Coded Defect(s) Remarks': Describe the human-coded defect at this location, specifically the defect, joint, clock position and remarks, in that order, if available. For example: Broken pipe, Joint J, Clock Position 7-8. If no human-coded defect is present at this location, use a dash ('-').
+'Defect Grade (Human)': FINAL Grade associated with the human-coded defects of that sewer ID, should be from 1-5. This is a standardized human final grade for that sewer ID.
+'Dragonfly Coded Defect(s) Remarks': Describe the Dragonfly-coded defect at this location, specifically the MSCC5 code, joint, clock position and remarks, in that order, if available. for Example: CS, Joint: J, Clock Position: 10-11, Remarks: Value: 40. If no Dragonfly-coded defect is present at this location, use a dash ('-'). 
+'Defect Grade (Dragonfly)': Final Grade associated with the Dragonfly-coded defect, should be from 1-5. It is the maximum between the structural and service grade. This is a standardized dragonfly final grade for that sewer ID.
 Each row must correspond to a unique defect location. If both human and Dragonfly observations exist at the same location, show them side-by-side. If only one source has a defect at that location, the other should be marked with a dash ('-').
 
 Ensure that ALL DEFECTS ARE INCLUDED. From 0m all the way to the end. 

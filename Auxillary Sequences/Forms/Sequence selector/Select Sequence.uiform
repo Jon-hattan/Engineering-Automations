@@ -78,6 +78,15 @@
                 "key": "GTgen",
                 "type": "button",
                 "input": true
+              },
+              {
+                "label": "Pipe Inspection Report Generator",
+                "action": "event",
+                "showValidations": false,
+                "tableView": false,
+                "key": "PIRGen",
+                "type": "button",
+                "input": true
               }
             ]
           },
