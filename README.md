@@ -48,9 +48,9 @@ To run the automation workflows provided in this repository, follow the steps be
 
 ### 📦 Step-by-Step Instructions
 
-1. **Download the Automation Package**  
-   Download the latest `.nupkg` file from this link: [Jacobs.Engineering.Automations.1.0.6.nupkg](https://github.com/Jon-hattan/Engineering-Automations/releases/download/v1.0.6/Jacobs.Engineering.Automations.1.0.6.nupkg)  
-   Move the downloaded `.nupkg` file to the following directory:
+1. **Download the Automation Package**
+   - Download the latest `.nupkg` file from this link: [Jacobs.RPA.1.0.7.nupkg](https://github.com/Jon-hattan/Engineering-Automations/releases/download/v1.0.7/Jacobs.RPA.1.0.7.nupkg)
+   - Move the downloaded `.nupkg` file to the following directory:
      ```
      %ProgramData%\UiPath\Packages
      ```
@@ -72,9 +72,14 @@ To run the automation workflows provided in this repository, follow the steps be
    - Find the **UiPath Web Automation** extension, enable it by clicking on the slider, and then click **Details**.
    - Enable "**Allow access to file URLs**". These settings are essential for Prolog Converge Automations.
 
-5. **Configure GenAI Activities**  
-   - Click on your **profile name** → **Preferences**
-   - Under **GenAI Activities**, select your **email address** to enable GenAI-powered activities
+5. **Configure GenAI Activities**
+   - Login to [UiPath Automation Cloud](https://cloud.uipath.com/)
+   - Click on <img width="22" height="27" alt="image" src="https://github.com/user-attachments/assets/5b5546bc-edee-4b42-b4a3-3e4f67e3d37e" /> on the left sidebar, then go to **More → Integration Service**.
+   - In Connectors, search for **UiPath GenAI Activties**. Click on it, then click **Connect to UiPath GenAI Activities.**
+     
+   - In UiPath Assistant, click on the automation, then click Configure
+   - Under GenAI Activities, select your email address to enable GenAI-powered activities (**specifically the one that is not default**). There may be multiple options with your email address, select only the one without the word default.
+  
   
 6. **Configure PiP (if required)**  
    - Click Run in PiP if you wish to run it in picture-in-picture (a guide for when to run it in PiP is included below).
